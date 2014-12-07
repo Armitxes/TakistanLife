@@ -9,10 +9,7 @@ _plyer = _this select 3;
 if ((player call ISSE_IsVictim) or (!INV_CanUseInventory)) exitWith {player groupChat localize "STRS_inv_cannotUseNow";};
 INV_InventarGiveReceiver = _plyer;
 
-if ((_action == "use") and (INV_CanUseItem)) then
-
-{
-
+if ((_action == "use") and (INV_CanUseItem)) then {
   _fn = _item call INV_getitemFilename;
   if (_fn == "" || _fn == "code") then {
     if(_fn == "code") then { [_item call INV_getitemCode] call execString; } else { player groupChat localize "STRS_inv_inventar_cannotuse"; };
@@ -20,7 +17,6 @@ if ((_action == "use") and (INV_CanUseItem)) then
     _pfad = format ["%1", _item call INV_getitemFilename];
   	["use", _item, _amount, []] execVM _pfad;
 	};
-
 };
 
 if ((_action == "drop") and (INV_CanDropItem)) then
