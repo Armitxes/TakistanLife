@@ -1,0 +1,1 @@
+player groupChat "Can't you see im talking to my friend?";
