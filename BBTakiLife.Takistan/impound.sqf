@@ -22,39 +22,30 @@ if(_art == "impound")then
   _vcl setvehiclelock "locked";
 };
 
-if(_art == "buy")then
-{
+if (_art == "buy") then {
   _dollarz = "dollarz" call INV_getitemamount;
   _fine = 250;
   if (_vcl isKindOf "Motorcycle") then { _fine = 75; };
-  
   if(_dollarz < _fine)exitWith{player groupchat "You do not have enough money"};
-  
   ["dollarz", -_fine] call INV_AddInventoryItem;
   
   _vcl = call compile format["%1", _vcl];
-
-  if(isciv)then
-	{
-
-  	_vcl setpos [(getPos impoundarea2 select 0)-(random 10)+(random 10), (getPos impoundarea2 select 1)-(random 10)+(random 10), getPos impoundarea2 select 2];
-  	_vcl setdir getdir impoundarea2;
-
-	}else{
-    if(iscop)then
-    {
-      _vcl setpos getpos ccarspawn;
-    	_vcl setdir getdir ccarspawn;
-  	}
-  	else
-  	{
-      _vcl setpos getpos uncarspawn;
-    	_vcl setdir getdir uncarspawn;
+  _impounds = [impoundarea2,ccarspawn,uncarspawn];
+  _closestDis = 100000;
+  _closestImpound = "";
+  
+  {
+    _dist = player distance _x;
+    if (_closestDis > _dist) then {
+      _closestDis = _dist;
+      _closestImpound = _x;
     };
-	};
+  } forEach (_impounds);
 
-player groupChat "You payed the fine and retrieved your vehicle!";
+  _vcl setpos getpos _closestImpound;
+  _vcl setdir getdir _closestImpound;
 
+  player groupChat "You payed the fine and retrieved your vehicle!";
 };
 
 
