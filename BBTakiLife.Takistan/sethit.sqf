@@ -27,12 +27,12 @@ if(player == _vehicle && (_ammo in ["B_12Gauge_74Slug","F_40mm_White",1,"B_9x19_
     skipDmg = false; 
     waitUntil{(not(ctrlVisible 1023)) || !(alive player)};
     
-    if(!alive player) then { while { ctrlVisible 1023 } do { closeDialog 1023; }; } else {
+    if(!alive player) then { while { ctrlVisible 1023 } do { closeDialog 0; }; } else {
       if (Antwort == 1) then {
         _medCount = 0;
         {
           if((typeOf _x) in ["Dr_Hladik_EP1","USMC_LHD_Crew_Blue","Doctor"]) then { _medCount = _medCount + 1; }; 
-        } forEach civarray;
+        } forEach playableUnits;
       
         if (_medCount > 0) then {
           prioCall = true;
