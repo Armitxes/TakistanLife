@@ -6,6 +6,9 @@ INV_smscost		           = 5;
 
 fvspam = false;
 skipDmg = false;
+lastCall = -300;
+prioCall = false;
+
 add_workplace		         = 75;
 copchoprespawntime       = 120;
 CopWaffenAvailable       = 0;

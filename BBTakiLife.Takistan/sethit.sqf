@@ -16,18 +16,16 @@ if(player == _vehicle && (_ammo in ["B_12Gauge_74Slug","F_40mm_White",1,"B_9x19_
   _shooter	= _this select 2;
   _nvcls		= _this select 3;
   
-  if(_selection == "head_hit") then { hint str(_selection); }; 
   if((alive player) && ((damage player) + _damage) >= 1 && (_selection != "head_hit")) then { 
     skipDmg = true;    
     if (vehicle player != player) then { player action ["eject", vehicle player]; sleep 2; };
-    player playMove "AdthPercMstpSlowWrf_beating";
+    player playMove "AdthPercMstpSlowWrf_beating"; 
+    sleep 2;
     
     if (!(createDialog "ja_nein")) exitWith {hint "Dialog Error!"};
     ctrlSetText [1,"You are unconscious, want to call a medic? Pressing no or closibg this window will result in a suicide."];
-    sleep 3;
-    
+    skipDmg = false; 
     waitUntil{(not(ctrlVisible 1023)) || !(alive player)};
-    skipDmg = false;
     
     if(!alive player) then { while { ctrlVisible 1023 } do { closeDialog 1023; }; } else {
       if (Antwort == 1) then {
@@ -37,6 +35,7 @@ if(player == _vehicle && (_ammo in ["B_12Gauge_74Slug","F_40mm_White",1,"B_9x19_
         } forEach civarray;
       
         if (_medCount > 0) then {
+          prioCall = true;
           ["call_medic"] execVM "armitxes\phone.sqf";
           systemChat "EMERGENCY CALL SENT";
         } else {
