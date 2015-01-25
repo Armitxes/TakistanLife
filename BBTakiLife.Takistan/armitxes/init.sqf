@@ -24,6 +24,7 @@ if(!isDedicated) then
     ((findDisplay 5000) displayCtrl 1) ctrlSetText format["%1", getPlayerUID player]; 
     waitUntil { !dialog };
   };
-  
+   
   ["elections",false] call execARM;
+  civstatsdone = true;
 };

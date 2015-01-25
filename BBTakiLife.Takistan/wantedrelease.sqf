@@ -55,9 +55,11 @@ if (iscop && (_autoReason == 0)) then
       case 25: { _reason  = "Manslaughter"; _bounty = 5000;};
       case 26: { _reason  = "Kidnapping a VIP"; _bounty = 18000;};
       case 27: { _reason  = "Breach of Aviation Law"; _bounty = 2500;};
-      case 28: { _reason = "Theft of UN/Cop Vehicle"; _bounty = 6000; };
-      case 29: { _reason = "Illegal Border Crossing"; _bounty = 5000; };
-      case 30: { _reason = "Crimes Against Humanity"; _bounty = 17000; };
+      case 28: { _reason = "Terrorism"; _bounty = 15000; };
+	  case 29: { _reason = "Theft of UN/Cop Vehicle"; _bounty = 6000; };
+      case 30: { _reason = "Illegal Border Crossing"; _bounty = 5000; };
+      case 31: { _reason = "Crimes Against Humanity"; _bounty = 17000; };
+      case 32: { _reason = "Abuse of Emergency call"; _bounty = 2500; };
     };
   } else {
     if(isun) then {
@@ -66,6 +68,7 @@ if (iscop && (_autoReason == 0)) then
         case 0: { _reason = "Theft of UN/Cop Vehicle"; _bounty = 6000; };
         case 1: { _reason = "Illegal Border Crossing"; _bounty = 5000; };
         case 2: { _reason = "Crimes Against Humanity"; _bounty = 17000; };
+		case 3: { _reason = "Abuse of Emergency call"; _bounty = 3000; };
       };
     };
   };

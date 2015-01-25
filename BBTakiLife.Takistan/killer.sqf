@@ -10,7 +10,6 @@ if (_victim in civarray) then
   _gesucht = 0;
   
 	extradeadtime = extradeadtime + killedplayerinc;
-	true call TurnWantedFunc;
   
   sleep 1;
 };
@@ -29,7 +28,6 @@ if ((_victim in coptypes) || (_victim in untypes)) then
 
 	extradeadtime = extradeadtime + killedplayerinc;
 	player groupChat format [localize "STRS_handlerdeadpub_copkilled", _victim];
-	true call TurnWantedFunc;
 
 	};
 

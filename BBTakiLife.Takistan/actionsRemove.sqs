@@ -1,4 +1,5 @@
 _role = Player;
+_role RemoveAction armiPhone;
 _role RemoveAction action1;
 _role RemoveAction action2;
 _role RemoveAction action3;
@@ -35,8 +36,6 @@ _role RemoveAction action54;
 _role RemoveAction action55;
 _role RemoveAction action56;
 
-_role RemoveAction action100;
-_role RemoveAction action101;
 _role RemoveAction action102;
 _role RemoveAction action103;
 

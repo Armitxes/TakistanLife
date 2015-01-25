@@ -225,6 +225,7 @@ switch _key do
 
     if(_shift and (vehicle player == player) and call INV_isArmed) then
     {
+	if(keyblock)exitwith{};
       _men = nearestobjects [getpos player, ["Man"], 2] - [player];
       _men spawn {
         (format ["%1 switchmove ""%2"";", player, "AwopPercMstpSgthWnonDnon_end"]) call toClients;
@@ -235,6 +236,7 @@ switch _key do
           if((_civ distance player) > 2 || (!isPlayer _civ) || ([_civ] call plr_isUnConscious))exitWith{};
           (format ["if (player == %1) then {[""hit"", %2, ""Melee"", 1] execVM ""stun.sqf""};", _civ, player]) call toClients;
           player groupchat "You stunned this player!";
+		  keyblock=true; [] spawn {sleep 2; keyblock=false;};
 				};
 			};
       
@@ -310,7 +312,7 @@ switch _key do
 
 	if(!INV_shortcuts)exitwith{};
 
-	if(keyblock)exitwith{};
+	if(keyblock or (animationstate player == "CivilSitting"))exitwith{};
 
 	keyblock=true; [] spawn {sleep 2; keyblock=false;};
 
@@ -328,9 +330,21 @@ switch _key do
 		_handled=true;
 		if(dialog)exitwith{closeDialog 0;};
 
-		[0,0,0,["gangmenu"]] execVM "maindialogs.sqf";
-		};
+		[0,0,0,["gangmenu"]] execVM "maindialogs.sqf";};
 	};
+   
+   //6 key
+   case 7:
+   {
+	if (!isciv) then
+		{
+		if(!INV_shortcuts)exitwith{};
+		_handled=true;
+		if(dialog)exitwith{closeDialog 0;};
+
+		[0,0,0,["coplog"]] execVM "maindialogs.sqf";};
+		};
+	
 	
   // Space (Speedcam)
   case 57:

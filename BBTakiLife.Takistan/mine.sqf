@@ -151,15 +151,15 @@ if(_item == "JackHammer")then
 	if ((vehicle player) == player) then {
 	[_resource, totalamount] call INV_AddInventoryItem;
 	} else {
-	_vcls = nearestobjects [getpos player, ["LandVehicle", "Air", "ship"],5];
+	_vcls = nearestobjects [getpos player, ["LandVehicle", "Air", "ship"],15];
     _vcl = _vcls select 0;
 	_vclClass = (typeOf _vcl);
 	_maxweight = _vclClass call INV_getvehmaxkg;
 	_totalamount = totalamount call ISSE_str_StrToInt;
-	_storageweight = (format["%1_storage", (vehicle player)] call INV_GetStorageWeight) + (_totalamount * (_resource call INV_getitemTypeKg));
+	_storageweight = (format["%1_storage", _vcl] call INV_GetStorageWeight) + (_totalamount * (_resource call INV_getitemTypeKg));
 	if(_storageweight > _maxweight)then{player groupchat "The vehicle's storage is full";
 	} else {
-	[_resource, totalamount, format["%1_storage", (vehicle player)]] call INV_AddItemStorage;};
+	[_resource, totalamount, format["%1_storage", _vcl]] call INV_AddItemStorage;};
 	};
 
 	};

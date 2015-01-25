@@ -1,45 +1,36 @@
 iactionarr = [];
 
-while {true} do
+while {true} do {
+  _objs 	= nearestobjects [getpos player, ["Suitcase", "EvMoney"], 5];
 
-{
+  {
+    _exitvar = false;
 
-_objs 	= nearestobjects [getpos player, ["Suitcase", "EvMoney"], 5];
-
-
-	{
-
-	_exitvar = false;
-
-	for "_i" from 0 to (count iactionarr) do
-
-		{
-
-		_arr = iactionarr select _i;
-		if(_x in _arr)exitwith{_exitvar=true};
-
-		};
-
-	if(_exitvar)exitwith{};
-
-	if(_x distance player < 3 and [_x, playerarray, 3] call ISSE_ArrayNumberNear < 2)then
-
-		{
-
-		_arr	= _x getvariable "droparray";
-		if(isnil "_arr")exitwith{};
-		_amount	= _arr select 0;
-		_item 	= _arr select 1;
-		_infos	= _item call INV_getitemarray;
-		_name	= _infos call INV_getitemname;
-
-		_action = player addaction [format["Pickup %1 (%2)", _name, _amount],"pickup.sqf",[_x, _item, _amount]];
-
-		iactionarr = iactionarr + [[_x, _action]];
-
-		};
-
-	} foreach _objs;
+    if ( (count iactionarr) > 0 ) then {
+    	for "_i" from 0 to (count iactionarr) do {
+    		_arr = iactionarr select _i;
+    		if(_x in _arr)exitwith{_exitvar=true};
+      };
+  
+      if(_exitvar)exitWith{};
+  
+      if(_x distance player < 3 and [_x, playerarray, 3] call ISSE_ArrayNumberNear < 2)then
+  
+  		{
+  
+  		_arr	= _x getvariable "droparray";
+  		if(isnil "_arr")exitwith{};
+  		_amount	= _arr select 0;
+  		_item 	= _arr select 1;
+  		_infos	= _item call INV_getitemarray;
+  		_name	= _infos call INV_getitemname;
+  
+  		_action = player addaction [format["Pickup %1 (%2)", _name, _amount],"pickup.sqf",[_x, _item, _amount]];
+  
+  		iactionarr = iactionarr + [[_x, _action]];
+  		};
+    };
+	} forEach _objs;
 
 	for [{_i=0}, {_i < (count iactionarr)}, {_i=_i+1}] do
 
@@ -61,7 +52,6 @@ _objs 	= nearestobjects [getpos player, ["Suitcase", "EvMoney"], 5];
 			};
 
 		};
-
-sleep 0.2;
+    sleep 0.2;
 
 };

@@ -403,14 +403,14 @@ INV_AlleFahrzeugeArray = [
 ["BMP3",["Fahrzeug", "car"],["BMP3", "BMP3"],[70000, 25000], [2, "truck", "sobr_training", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["LAV25",["Fahrzeug", "car"],["LAV25", "LAV25"],[60000, 30000], [2, "truck", "sobr_training", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 //civ air
-["AH6X_EP1",["Fahrzeug", "air"],["AH6X_EP1", "Little Bird"],[16700, 7983], [5, "air", "copAir", 200], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
+["AH6X_EP1",["Fahrzeug", "air"],["AH6X_EP1", "Little Bird"],[25000, 7983], [5, "air", "copAir", 200], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["An2_1_TK_CIV_EP1",["Fahrzeug", "air"],["An2_1_TK_CIV_EP1", "An-2 Prop Plane"],[43000, 13600], [5, "air", "copAir", 800], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["UH1H_TK_EP1",["Fahrzeug", "air"],["UH1H_TK_EP1", "Terrorist Huey"],[65000, 10000], [5, "bomb", "copAir", 2000], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
-["Ka60_PMC",["Fahrzeug", "air"],["Ka60_PMC", "Ka-60"],[77500, 6000], [5, "air", "copAir", 1000], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
+["Ka60_PMC",["Fahrzeug", "air"],["Ka60_PMC", "Ka-60"],[82000, 6000], [5, "air", "copAir", 1000], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["C130J_US_EP1",["Fahrzeug", "air"],["C130J_US_EP1", "C130 Hercules"],[245000, 49525], [5, "air", "copAir", 20000], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
-["Ka137_PMC",["Fahrzeug", "air"],["Ka137_PMC", "Ka137 UAV"],[15100, 6000], [5, "air", "copAir", 1000], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
-["UH1Y",["Fahrzeug", "air"],["UH1Y", "UH-1Y Venom"],[75000, 20000], [5, "air", "sobr_training", 1000], [1000, [1,2,0,13] ], "UH1Y", "UH1Y", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
-["Mi17_Civilian",["Fahrzeug", "air"],["Mi17_Civilian", "Mi17 Civilian"],[30000, 20000], [5, "air", "copAir", 1000], [1000, [1,2,0,13] ], "Mi17_Civilian", "Mi17_Civilian", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
+["Ka137_PMC",["Fahrzeug", "air"],["Ka137_PMC", "Ka137 UAV"],[20000, 6000], [5, "air", "copAir", 1000], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
+["UH1Y",["Fahrzeug", "air"],["UH1Y", "UH-1Y Venom"],[80000, 20000], [5, "air", "sobr_training", 1000], [1000, [1,2,0,13] ], "UH1Y", "UH1Y", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
+["Mi17_Civilian",["Fahrzeug", "air"],["Mi17_Civilian", "Mi17 Civilian"],[50000, 20000], [5, "air", "copAir", 1000], [1000, [1,2,0,13] ], "Mi17_Civilian", "Mi17_Civilian", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 
 //cop air
 ["MH6J_EP1",["Fahrzeug", "air"],["MH6J_EP1", "Transport Little Bird"],[28500, 12975], [5, "air", "copAir", 500], [1000, [1,2,0,13] ], "MH6J_EP1", "MH6J_EP1", [["Steel ", 10],["iron", 20],["dollarz",15000]]],
@@ -423,7 +423,7 @@ INV_AlleFahrzeugeArray = [
 ["UH60M_EP1",["Fahrzeug", "air"],["UH60M_EP1", "Blackhawk"],[75000, 37500], [5, "air", "sobr_training", 1000], [1000, [1,2,0,13] ], "UH60M_EP1", "UH60M_EP1", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["Mi171Sh_CZ_EP1",["Fahrzeug", "air"],["Mi171Sh_CZ_EP1", "Mi-171Sh"],[55000, 20000], [5, "air", "sobr_training", 1000], [1000, [1,2,0,13] ], "Mi171Sh_CZ_EP1", "Mi171Sh_CZ_EP1", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["BAF_Merlin_HC3_D",["Fahrzeug", "air"],["BAF_Merlin_HC3_D", "Merlin HC3"],[75000, 30000], [5, "air", "copAir", 1000], [1000, [1,2,0,13] ], "BAF_Merlin_HC3_D", "BAF_Merlin_HC3_D", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
-["CH_47F_EP1",["Fahrzeug", "air"],["CH_47F_EP1", "Chinook"],[70000, 37500], [5, "air", "sobr_training", 1000], [1000, [1,2,0,13] ], "CH_47F_EP1", "CH_47F_EP1", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
+["CH_47F_EP1",["Fahrzeug", "air"],["CH_47F_EP1", "Chinook"],[100000, 37500], [5, "air", "sobr_training", 1000], [1000, [1,2,0,13] ], "CH_47F_EP1", "CH_47F_EP1", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["An2_TK_EP1",["Fahrzeug", "air"],["An2_TK_EP1", "Armed Police An-2 Plane"],[35000, 15000], [5, "air", "sobr_training", 800], [1000, [1,2,0,13] ], "An2_TK_EP1", "An2_TK_EP1", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["MV22",["Fahrzeug", "air"],["MV22", "MV22 Osprey"],[78000, 30000], [5, "air", "copAir", 1200], [1000, [1,2,0,13] ], "MV22", "MV22", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["AW159_Lynx_BAF",["Fahrzeug", "air"],["AW159_Lynx_BAF", "Wildcat AH11"],[50000, 25000], [5, "air", "copAir", 2000], [1000, [1,2,0,13] ], "AW159_Lynx_BAF", "AW159_Lynx_BAF", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
@@ -490,9 +490,9 @@ INV_AlleItemsArray = [
 
 ["kanister", ["Item", "service"],["kanister", "Refuel Can"], [1500, 10], [2, "", "patrol_training"],[true,true,true, false, "code","[cursorTarget,'[""kanister"",-1] call INV_AddInventoryItem;'] spawn veh_refuel;"], localize "STRS_inv_item_kanister", localize "STRS_inv_item_kanister_info",[["plastik", 1],["erdoel", 1]] ],
 
-["Fuelline", ["Item", "service"],["Syphon Fuelkit", "Syphon Fuel-kit"], [11, 4], [1.7, "", "patrol_training"],[true,true,true, false, "syphon.sqf"], localize "STRS_inv_item_fuelcut", localize "STRS_inv_item_fuelcut_info",[["stahl", 1]] ],
+["Fuelline", ["Item", "service"],["Syphon Fuelkit", "Syphon Fuel-kit"], [1600, 4], [1.7, "", "patrol_training"],[true,true,true, false, "syphon.sqf"], localize "STRS_inv_item_fuelcut", localize "STRS_inv_item_fuelcut_info",[["stahl", 1]] ],
 
-["OilBarrel", ["Item", "service"],["Oil Barrel", "Oil Barrel"], [3600, 2000], [10, "", ""],[true,true,true, false, "refuelveh.sqf"], "Barrel of oil", localize "STRS_inv_item_kanister_info",[["Oil", 50]] ],
+["OilBarrel", ["Item", "service"],["Oil Barrel", "Oil Barrel"], [3200, 2000], [10, "", ""],[true,true,true, false, "refuelveh.sqf"], "Barrel of oil", localize "STRS_inv_item_kanister_info",[["Oil", 50]] ],
 
 ["schluesselbund",["Item", "carobjects"],["schluesselbund", "Key chain"],[0, 0], [0, ""], [false,false, false,false,"keys.sqf"],localize "STRS_inv_item_schluesselbund",localize "STRS_inv_item_schluesselb_info", [] ],
 
@@ -582,15 +582,15 @@ INV_AlleItemsArray = [
 
 ["Unprocessed_Heroin",["Item", "illegal"],["Unprocessed Heroin", "Unprocessed Heroin"],[0, 0], [1, ""], [true, true, true,true,"useresource.sqf"],localize "STRS_inv_item_heroin",localize "STRS_item_farmitem_info", [] ],
 
-["Cannabis",["Item", "illegal"],["Cannabis", "Cannabis"],[1225, 885], [2, ""], [true, true, true,true,"drugs.sqf"],localize "STRS_inv_item_Cannabis",localize "STRS_inv_item_drogen_info", [["Unprocessed_Cannabis", 8]]],
+["Cannabis",["Item", "illegal"],["Cannabis", "Cannabis"],[1512, 2000], [2, ""], [true, true, true,true,"drugs.sqf"],localize "STRS_inv_item_Cannabis",localize "STRS_inv_item_drogen_info", [["Unprocessed_Cannabis", 8]]],
 
-["cocaine",["Item", "illegal"],["cocaine", "Cocaine"],[1512, 837], [2, ""], [true, true, true,true,"drugs.sqf"],localize "STRS_inv_item_cocaine",localize "STRS_inv_item_drogen_info", [["Unprocessed_Cocaine", 10]]],
+["cocaine",["Item", "illegal"],["cocaine", "Cocaine"],[1512, 2000], [2, ""], [true, true, true,true,"drugs.sqf"],localize "STRS_inv_item_cocaine",localize "STRS_inv_item_drogen_info", [["Unprocessed_Cocaine", 10]]],
 
-["lsd", ["Item", "illegal"], ["lsd", "LSD"],[899, 525], [2, ""],[true,true,true, true, "drugs.sqf"], localize "STRS_inv_item_lsd",localize "STRS_inv_item_drogen_info", [["Unprocessed_LSD", 15]]],
+["lsd", ["Item", "illegal"], ["lsd", "LSD"],[1512, 2000], [2, ""],[true,true,true, true, "drugs.sqf"], localize "STRS_inv_item_lsd",localize "STRS_inv_item_drogen_info", [["Unprocessed_LSD", 15]]],
 
-["heroin", ["Item", "illegal"], ["heroin", "Heroin"],[1512.5, 837], [2, ""],[true,true,true, true, "drugs.sqf"], localize "STRS_inv_item_heroin",localize "STRS_inv_item_drogen_info", [["Unprocessed_Heroin", 20]]],
+["heroin", ["Item", "illegal"], ["heroin", "Heroin"],[1512, 2000], [2, ""],[true,true,true, true, "drugs.sqf"], localize "STRS_inv_item_heroin",localize "STRS_inv_item_drogen_info", [["Unprocessed_Heroin", 20]]],
 
-["handy",["Item", "Shop"], ["handy", "Mobile Phone"], [50, 22], [0, ""],[true,false,false, false, "handy.sqf"], localize "STRS_inv_item_handy",localize "STRS_inv_item_handy_info", [["plastik", 2],["ebauteile", 2]]],
+["handy",["Item", "Shop"], ["handy", "Smartphone"], [50, 22], [0, ""],[true,true,false, false, "handy.sqf"], localize "STRS_inv_item_handy",localize "STRS_inv_item_handy_info", [["plastik", 2],["ebauteile", 2]]],
 
 ["roadblock",["Item", "misc"],["Land_CncBlock_Stripes", "Roadblock"],[50, 20], [10, "", "patrol_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_roadblock",localize "STRS_inv_item_roadblock_info", [] ],
 
@@ -604,15 +604,9 @@ INV_AlleItemsArray = [
 
 ["bunkersmall",["Item", "misc"],["Land_fortified_nest_small", "Bunker (Small)"],[114.5, 53], [10, "", "patrol_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_bunkersmall",localize "STRS_inv_item_bunkersmall_info", [] ],
 
-//["danger",["Item", "misc"],["Sign_Danger", "Danger Sign"],[80, 10], [20, "", "patrol_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_danger",localize "STRS_inv_item_danger_info", [] ],
-
 ["roadcone",["Item", "misc"],["Land_coneLight", "Road Cone"],[5, 1], [0.2, "", "patrol_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_roadcone",localize "STRS_inv_item_roadcone_info", [] ],
 
 ["RoadBarrier",["Item", "misc"],["RoadBarrier_light", "Road Barrier"],[2, 0], [0.5, "", "patrol_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_roadcone",localize "STRS_inv_item_roadcone_info", [] ],
-
-//["factory",["Item", "misc"],["Land_A_GeneralStore_01a", "Factory"],[18000, 100], [20, "", "patrol_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_factory",localize "STRS_inv_item_factory_info", [] ],
-
-//["officebuilding",["Item", "misc"],["Land_A_Office01", "Office Building"],[15000, 100], [20, "", "patrol_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_officebuilding",localize "STRS_inv_item_officebuilding_info", [] ],
 
 ["barrack",["Item", "misc"],["Land_Barrack2", "Barrack"],[3500, 1000], [20, "", "patrol_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_barrack",localize "STRS_inv_item_barrack_info", [] ],
 
@@ -736,7 +730,7 @@ INV_AlleItemsArray = [
 ["Sheep",["Animal","Sheep"],["Sheep","Sheep (Pet)"], [2000,1000], [0.1, "", ""],[true,false,true, false, "armitxes\pet.sqf"],"Hen (Sheep)","Hen (Sheep)"],
 ["WildBoar",["Animal","WildBoar"],["WildBoar","Wild Boar (Pet)"], [2000,1000], [0.1, "", ""],[true,false,true, false, "armitxes\pet.sqf"],"Wild Boar (Pet)","Wild Boar (Pet)"],
 
-["C4",["Item","illegal"],["C4","C4 (Explosive)"], [50000,10000], [0.1, "bomb", "sobr_training"],[true,false,true, false, "armitxes\explosive.sqf"],"C4 (Explosive)","C4 (Explosive)"]
+["C4",["Item","illegal"],["C4","C4 (Explosive)"], [25000,7500], [0.1, "bomb", "sobr_training"],[true,false,true, false, "armitxes\explosive.sqf"],"C4 (Explosive)","C4 (Explosive)"]
 ];
 
 // Create an Array of Everything

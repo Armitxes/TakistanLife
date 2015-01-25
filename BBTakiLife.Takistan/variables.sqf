@@ -5,7 +5,7 @@ attached                 = false;
 INV_smscost		           = 5;
 
 fvspam = false;
-
+skipDmg = false;
 add_workplace		         = 75;
 copchoprespawntime       = 120;
 CopWaffenAvailable       = 0;
@@ -65,7 +65,7 @@ motdwaittime = 60;
 //===============Cop Patrol==================
 pmissionactive = false;
 patrolwaittime = false;
-patrolmoneyperkm = 0.40;  // 1 would be equal to $7,000 for 1KM
+patrolmoneyperkm = 0.55;  // 1 would be equal to $7,000 for 1KM
 //========= government convoy =============
 govconvoybonus 		  = 3500;
 govconvoythiefbonus	= 15000;
@@ -73,7 +73,7 @@ convoyrespawntime   = 30;  // 30 minutes
 moneyintruck 	    	= true; //dont change
 convoyguardsdead		= false;
 convoywinner        = "Cops and UN";
-
+emMarkers = [];
 //===== Gas station robbing
 maxstationmoney = 5000;
 //==============================PETROL/OIL=========================================
@@ -158,7 +158,7 @@ CopsKilled               = 0;
 CivsKilled               = 0;
 SelfKilled               = 0;
 GesetzAnzahl             = 10;
-GesetzArray              = ["Always Drive on the RIGHT side of the road", "Police MUST read civilians their rights when being arrested.", "Civilians in posession of a weapon MUST have it holstered at all times.","Any vehicle not in car parks will be impounded.", "Speedlimit is 50km/h in town and 90km/h out of town.", "Do not fly under 300 meters","Do not land in towns", "", "", ""];
+GesetzArray              = ["Always Drive on the RIGHT side of the road", "Police MUST read civilians their rights when being arrested.", "Civilians in posession of a weapon MUST have it holstered at all times.","Any vehicle not in car parks will be impounded.", "Speedlimit is 50km/h in town and 90km/h out of town.", "Do not fly under 200 meters","Do not land in towns", "Do not drive off road", "Do not abuse Emergency number for fake calls", ""];
 
 isMayor                  = false;
 MayorNumber              = -1;

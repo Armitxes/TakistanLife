@@ -769,7 +769,7 @@ class ja_nein
 		h = 0.04;
 
 		text = $STRS_ja;
-		action = "Antwort = 1; closeDialog 0;";
+		action = "while { ctrlVisible 1023 } do { closeDialog 0; }; Antwort = 1;";
 	};
 
 	class button2 : RscButton
@@ -780,11 +780,10 @@ class ja_nein
 		h = 0.04;
 
 		text = $STRS_nein;
-		action = "Antwort = 2; closeDialog 0;";
+		action = "while { ctrlVisible 1023 } do { closeDialog 0; }; Antwort = 2;";
 	};
 
-	class dummybutton : RscDummy {idc = 1023;
-	};
+	class dummybutton : RscDummy {idc = 1023;};
 };
 
 class chiefdialog

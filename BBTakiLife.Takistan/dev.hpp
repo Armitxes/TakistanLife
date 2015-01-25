@@ -204,7 +204,8 @@ class MyCheckBox {
 
 class dev_menu {
 	idd = 93001;
-	movingEnable = 1;
+	movingEnable = true;
+  enableSimulation = true;
 	
 	class controlsBackground {
 		class Drag : RscGroupBox2 {

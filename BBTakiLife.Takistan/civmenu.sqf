@@ -35,7 +35,6 @@ if (Antwort == 1) then
 
 		};
 
-	false call TurnWantedFunc;
 	player groupChat format [localize "STRS_civmenucheck_ticketself", (_strafe call ISSE_str_IntToStr)];
 	(format ["server globalChat format [localize ""STRS_civmenu_didpayticket"", name %2, %3]; if (iscop) then{player groupChat ""You got $%4 because the %2 paid the ticket."";[""dollarz"", %4] call INV_AddInventoryItem;};", _cop, player, (_strafe call ISSE_str_IntToStr), (_copticket call ISSE_str_IntToStr)]) call toClients;
 

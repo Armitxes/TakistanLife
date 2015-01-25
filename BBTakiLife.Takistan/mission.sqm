@@ -87,7 +87,7 @@ class Mission
 	randomSeed=7826573;
 	class Intel
 	{
-		briefingName="BB Takistan Life RPG v2.9.0";
+		briefingName="BB Takistan Life RPG v2.9.4";
 		briefingDescription="By British Borders (http://www.britishborders.co.uk)";
 		resistanceEast=1;
 		startWeather=0;

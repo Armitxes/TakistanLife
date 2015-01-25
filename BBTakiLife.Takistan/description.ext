@@ -47,4 +47,5 @@ class CfgSounds
 #include "plantclass.hpp"
 #include "CodePad.hpp"
 #include "gcam_component.hpp"
+#include "armitxes\dialogs\common.hpp"
 #include "armitxes\dialogs\chat.hpp"

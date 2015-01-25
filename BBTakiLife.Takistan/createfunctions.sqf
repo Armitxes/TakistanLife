@@ -89,29 +89,19 @@ if (_classname == "AH6J_EP1") then {
 	newvehicle addmagazine "60Rnd_CMFlareMagazine";
 };
 if (_classname == "UH1Y") then {
-
 	hint "Reconfiguring helicopter armament...";
-	newvehicle removeweapon "FFARLauncher_14";
-	
-	
+	newvehicle removeweapon "FFARLauncher_14";	
+};
+if (_classname == "An2_TK_EP1") then {
+  newvehicle addWeapon "M230";
+  newvehicle addMagazine "1200Rnd_30x113mm_M789_HEDP";
+  newvehicle addMagazine "1200Rnd_30x113mm_M789_HEDP";
+  newvehicle addMagazine "1200Rnd_30x113mm_M789_HEDP";
 };
 
-//Cop SUV Re-Skin
-if (_classname == "SUV_TK_CIV_EP1") then 
-{
-	newvehicle setVehicleInit 'this setObjectTexture [0, "images\copsuv.paa"]'; processInitCommands;
-};
-//UN SUV Re-Skin
-if (_classname == "SUV_UN_EP1") then 
-{
-	newvehicle setVehicleInit 'this setObjectTexture [0, "images\unsuv.paa"]'; processInitCommands;
-};
-// Cop Vohla Re-Skin
-if (_classname == "VolhaLimo_TK_CIV_EP1") then
-{
-	newvehicle setVehicleInit 'this setObjectTexture [0, "images\copvolha.paa"]'; processInitCommands;
-};
-// Armoured SUV Gun Animation
+if (_classname == "SUV_TK_CIV_EP1") then { newvehicle setVehicleInit 'this setObjectTexture [0, "images\copsuv.paa"]'; processInitCommands; };
+if (_classname == "SUV_UN_EP1") then { newvehicle setVehicleInit 'this setObjectTexture [0, "images\unsuv.paa"]'; processInitCommands; };
+if (_classname == "VolhaLimo_TK_CIV_EP1") then { newvehicle setVehicleInit 'this setObjectTexture [0, "images\copvolha.paa"]'; processInitCommands; };
 if (_classname == "ArmoredSUV_PMC") then
 {
 	newvehicle setVehicleInit '
@@ -125,21 +115,17 @@ newvehicle removeweapon "M134";
 };
 };
 
-INV_CreateWeapon =
-
-{
-
-private["_class", "_menge", "_crate"];
-_class = _this select 0;
-_menge = _this select 1;
-_crate = _this select 2;
-_crate setDamage 0;
-
-_crate setvehicleinit format["
-this addweaponCargo [""%1"",%2];
-", _class, _menge];
-processInitCommands;
-
+INV_CreateWeapon = {
+  private["_class", "_menge", "_crate"];
+  _class = _this select 0;
+  _menge = _this select 1;
+  _crate = _this select 2;
+  _crate setDamage 0;
+  
+  _crate setvehicleinit format["
+  this addweaponCargo [""%1"",%2];
+  ", _class, _menge];
+  processInitCommands;
 };
 
 INV_CreateMag =

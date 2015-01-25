@@ -25,7 +25,7 @@ if(_art == "impound")then
 if (_art == "buy") then {
   _dollarz = "dollarz" call INV_getitemamount;
   _fine = 250;
-  if (_vcl isKindOf "Motorcycle") then { _fine = 75; };
+  if (_vcl isKindOf "Motorcycle") then { _fine = 75; };  
   if(_dollarz < _fine)exitWith{player groupchat "You do not have enough money"};
   ["dollarz", -_fine] call INV_AddInventoryItem;
   

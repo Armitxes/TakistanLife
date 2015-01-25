@@ -56,6 +56,7 @@ if (_art == "wantedrelease") then
   	_list = lbAdd [4, "Manslaughter"];
   	_list = lbAdd [4, "Kidnapping a VIP"];
 	_list = lbAdd [4, "Breach of Aviation Law"];
+	_list = lbAdd [4, "Terrorism"];
   };
   _list = lbAdd [4, "Theft of UN/Cop Vehicle"];
   _list = lbAdd [4, "Illegal Border Crossing"];

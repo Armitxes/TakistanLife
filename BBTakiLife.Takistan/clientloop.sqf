@@ -13,5 +13,9 @@ if (_art == "clientloop") then {
     _dblimit = 15000000;
     if ((PLAYERDATA select 1) > _dblimit) then { PLAYERDATA set [1,_dblimit]; hint format["You are not allowed to have more than $%1! Money has been removed",_dblimit]; };
 	  sleep 0.5;
+    
+    {
+      if ( (parseNumber _x) + 360 <= time ) then { deleteMarkerLocal _x; };
+    } forEach emMarkers;
 	};
 };
