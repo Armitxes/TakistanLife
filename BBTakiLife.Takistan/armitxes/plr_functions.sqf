@@ -3,7 +3,10 @@ plr_heal = {
   if((player distance _plr < 4) || player == _plr) then {
     if(!alive _plr || !(_plr_isWounded)) exitWith { hint "There's nothing that I could do.."; };
     player playMove "AinvPknlMstpSnonWrflDnon_medic";
-    ["Treating wounds..."] call msg_pd; sleep ((damage _plr)*15+7); _plr setDamage 0; ["Treatment successful!"] call msg_pd;
+    ["Treating wounds..."] call msg_pd; sleep ((damage _plr)*15+7);
+    dmgHead = 0; dmgBody = 0; dmgHands = 0; dmgLegs = 0;
+    _plr setDamage 0;
+    ["Treatment successful!"] call msg_pd;
     player playMove "AinvPknlMstpSnonWrflDnon_medicEnd";
     [_this select 1] call execString;  
   };

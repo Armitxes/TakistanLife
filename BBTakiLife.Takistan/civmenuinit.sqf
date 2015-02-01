@@ -25,7 +25,7 @@ switch (_art) do {
     (format ["if (player == %1) then {[""ticket"", %2, %3] execVM ""civmenu.sqf"";}; server globalchat format[localize ""STRS_civmenu_ticket_globalchat"", name %1, %2, name %3];", _civmenuciv, (_strafe call ISSE_str_IntToStr), player]) call toClients;
   };
   case 5: {
-    (format ["%1 setdamage 0; if (%1 == player) then {player Groupchat localize ""STRS_civmenucheck_youarehealed"";};", _civmenuciv]) call toClients;
+    (format ["%1 setdamage 0; if (%1 == player) then { dmgHead = 0; dmgBody = 0; dmgHands = 0; dmgLegs = 0; player Groupchat localize ""STRS_civmenucheck_youarehealed"";};", _civmenuciv]) call toClients;
     player groupChat format [localize "STRS_civmenu_heal", _civmenu_civ];  
   };
   case 6: {

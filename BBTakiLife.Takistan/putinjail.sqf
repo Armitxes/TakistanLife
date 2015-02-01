@@ -5,6 +5,7 @@ player setpos getmarkerpos "prisonspawn";
 (format ["%1 switchmove ""%2"";", player, "normal"]) call toClients;
 call INV_EntferneIllegales;
 player setDamage 0;
+dmgHead = 0; dmgBody = 0; dmgHands = 0; dmgLegs = 0;
 
 bountyToPay = 0;
 
@@ -40,6 +41,7 @@ while {true} do
     bountyToPay = 0;
     player setPos getMarkerPos "jail_freemarker";	
     player setDamage 0;
+    dmgHead = 0; dmgBody = 0; dmgHands = 0; dmgLegs = 0;
 	  ["deleteWarrant",player, "", 0] execVM "warrant.sqf";
 	  (format ["if (player == %1) then { player groupChat localize ""STRS_civmenucheck_free_self"";}; server GLOBALCHAT format [localize ""STRS_civmenucheck_free_global"", name %1];", player]) call toClients;
   };
