@@ -195,9 +195,8 @@ for [{_i=0}, {_i < (count workplacejob_deliveryflagarray)}, {_i=_i+1}] do {(work
 
 };
 
-if(!isServer) then {
-  //Armis Stuff
+if(!isDedicated) then {
   execVM "specialareas.sqf";
-  execVM "anticheat.sqf";
+  execVM "armitxes\anticheat.sqf";
   //_bounty = (PLAYERDATA select 7); if(_bounty > 0) then { ["addWarrant",player,"Various Crimes",_bounty] execVM "warrant.sqf"; };
 };

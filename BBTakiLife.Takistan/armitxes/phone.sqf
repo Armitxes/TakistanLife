@@ -22,14 +22,17 @@ if (_action == "call_cop" || _action == "call_medic" || _action == "call_un") th
 if(_legit) then {
   switch (_action) do {
     case "emergency": {
-      _pos = position (_this select 1);
-      _time = str(time); 
-      emMarkers = emMarkers + [_time];
-      createMarkerLocal [_time, _pos];
-      _time setMarkerTypeLocal "Warning";
-      _time setMarkerTextLocal (format["EMERGENCY (%1)",name _caller]); 
-      _time setMarkerColorLocal "ColorRed";
-      systemChat format["EMERGENCY CALL BY %1 - CHECK YOUR MAP",name _caller];  
+      if (alive _caller) then
+      {
+        _pos = position (_this select 1);
+        _time = str(time); 
+        emMarkers = emMarkers + [_time];
+        createMarkerLocal [_time, _pos];
+        _time setMarkerTypeLocal "Warning";
+        _time setMarkerTextLocal (format["EMERGENCY (%1)",name _caller]); 
+        _time setMarkerColorLocal "ColorRed";
+        systemChat format["EMERGENCY CALL BY %1 - CHECK YOUR MAP",name _caller];
+      };  
     };
     case "call_cop": { (format["if (iscop) then { [""emergency"",%1] execVM ""armitxes\phone.sqf""; };",player,""]) call toClients; };
     case "call_medic": { (format["if (ismedic) then { [""emergency"",%1] execVM ""armitxes\phone.sqf""; };",player]) call toClients; };
