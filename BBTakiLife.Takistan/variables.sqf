@@ -9,6 +9,11 @@ skipDmg = false;
 lastCall = -300;
 prioCall = false;
 
+dmgHead = 0;
+dmgBody = 0;
+dmgHands = 0;
+dmgLegs = 0;
+
 add_workplace		         = 75;
 copchoprespawntime       = 120;
 CopWaffenAvailable       = 0;

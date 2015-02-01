@@ -39,6 +39,11 @@ while {true} do
   };
   
   waituntil {!(alive player)};
+  dmgHead = 0;
+  dmgBody = 0;
+  dmgHands = 0;
+  dmgLegs = 0;
+  
   if(player isKindOf "Animal") then {
     if(alive petOwner) then {
       waitUntil {alive player};
