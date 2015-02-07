@@ -116,7 +116,7 @@ if(!dedicatedserver) then {
 for [{_i=0}, {_i < (count INV_ItemFabriken)}, {_i=_i+1}] do {_i execVM "facqueue.sqf"};
 
 player addEventHandler ["fired", {["fired", (_this select 4), (_this select 1)] execVM "stun.sqf";}];
-player addEventHandler ["handleDamage", {_this call compile preprocessfile "armitxes\sethit.sqf"}];
+player addEventHandler ["handleDamage", {_this call compile preprocessfile "armitxes\setHit.sqf"}];
 
 waituntil{vehicle player == player};
 player addEventHandler ["fired",{_this execVM "fired.sqf"}];
