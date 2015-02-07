@@ -43,7 +43,6 @@ if((alive player)
             waitUntil{!(ctrlVisible 1023) || !(alive player)};
           
             if(!alive player || Antwort > 2) then { while { ctrlVisible 1023 } do { closeDialog 0; }; } else {
-              hint str(Antwort);
               if (Antwort == 1) then {
                 _medCount = 0;
                 {
