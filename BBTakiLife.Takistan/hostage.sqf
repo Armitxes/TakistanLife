@@ -178,11 +178,4 @@ if (workplacejob_hostage_failed) then
 
 };
 
-
-
-
-
-
-
-
 // written by Wulfer, template by Eddie Vedder

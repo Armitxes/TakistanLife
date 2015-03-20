@@ -37,6 +37,7 @@ if(!isDedicated) then
         } else {
           if(isciv) then {
             _fcabbr = "| Civ]";
+	    if(isMedic) then { _fcabbr = "| MEDIC]"; };
             if(isMayor) then { _fcabbr = "| PM]"; };
           };
         };

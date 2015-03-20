@@ -4,7 +4,7 @@ waitUntil { !isNil("station3money") };
 
 while {true} do
 {
-_randomamount = ceil ((random 250) + 250);
+_randomamount = ceil ((random 100) + 100);
 if (station1money < maxstationmoney) then
 	{
 	station1money = station1money + _randomamount;
@@ -42,7 +42,7 @@ if (station7money < maxstationmoney) then
 	};
 if (station8money < maxstationmoney) then
 	{
-	station8money = station8money + _randomamount;
+	station8money = station8money + _randomamount + ceil (random 100);
 	if (station8money > maxstationmoney) then {station8money = maxstationmoney;};
 	};
 if (station9money < maxstationmoney) then
@@ -66,7 +66,7 @@ publicvariable "station8money";
 publicvariable "station9money";
 publicvariable "station10money";
 
-sleep 70;
+sleep 90;
 };
 
 

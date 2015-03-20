@@ -32,9 +32,10 @@ if (_art == "clientgesetz") then {
 _nummer = _this select 1;
 _text   = _this select 2;
 if (_nummer == -1) exitWith {};
+if (_nummer <= 4) exitwith {player groupchat "You cannot change this law";};
 if ((_text call ISSE_str_Length) > 60) exitWith {player groupChat localize "STRS_text_zu_lang";};
 format ["GesetzArray SET [%1, ""%2""];
-hint format [localize ""STRS_gilde_gesetze_public"", %1, ""%2""];", _nummer, _text] call broadcast;
+hint format [localize ""STRS_gilde_gesetze_public"", %1, ""%2""];", (_nummer + 1), _text] call broadcast;
 
 };
 

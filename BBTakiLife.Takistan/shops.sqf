@@ -65,6 +65,7 @@ if (isServer) then {
   -1,// Clothing Shop #72
   -1,//Clothing Shop Basic
   -1,//doc
+  -1,//hosair
   -1,// PMC Shop	
   -1,// PMC Car
   -1,// PMC Air
@@ -140,6 +141,7 @@ INV_itemmaxstocks = [
 -1,// Clothing Shop #72
 -1,//Clothing Shop Basic
 -1,//doc
+-1,//hosair
 -1,// PMC Shop	
 -1,// PMC Car
 -1,// PMC Air
@@ -199,11 +201,11 @@ _dsl = ["lsd"];
 //Heroin Sell
 _dsh = ["heroin"];
 //Cop Vehicle Shop
-_cv = ["Old_bike_TK_INS_EP1","MMT_USMC","M1030_US_DES_EP1","ATV_US_EP1","VolhaLimo_TK_CIV_EP1","LadaLM","UAZ_Unarmed_TK_EP1","BAF_Offroad_D","SUV_TK_CIV_EP1","HMMWV_M1035_DES_EP1","MTVR_DES_EP1","MtvrReammo_DES_EP1","MtvrRepair_DES_EP1","MtvrRefuel_DES_EP1"];
+_cv = ["Old_bike_TK_INS_EP1","MMT_USMC","M1030_US_DES_EP1","ATV_US_EP1","VolhaLimo_TK_CIV_EP1","LadaLM","UAZ_Unarmed_TK_EP1","BAF_Offroad_D","SUV_TK_CIV_EP1_COP","HMMWV_M1035_DES_EP1","MTVR_DES_EP1","MtvrReammo_DES_EP1","MtvrRepair_DES_EP1","MtvrRefuel_DES_EP1"];
 //Cop Air Shop
-_ca = ["MH6J_EP1","AH6X_EP1","AW159_Lynx_BAF"];
+_ca = ["MH6J_EP1","AH6X_EP1_COP"];
 //SOBR Vehicle Shop
-_sv = ["HMMWV_DES_EP1","HMMWV_M1151_M2_DES_EP1","M2A3_EP1","BAF_Jackal2_L2A1_D"];
+_sv = ["SUV_TK_CIV_EP1_SCO","HMMWV_DES_EP1","HMMWV_M1151_M2_DES_EP1","M2A3_EP1","BAF_Jackal2_L2A1_D"];
 //SOBR Air Shop
 _sa = ["MH6J_EP1","UH60M_EP1"];
 // UN vehicles
@@ -215,7 +217,8 @@ _souveh = ["T55_TK_GUE_EP1","T72_TK_EP1","BRDM2_TK_GUE_EP1","Ural_ZU23_TK_GUE_EP
 // South Government Air Shop
 _souair = ["Mi17_Ins","UH1H_TK_GUE_EP1","Mi17_medevac_Ins"];
 //Medic Shop
-_hos = ["medikit","docUni","docUni2","docUni3","S1203_ambulance_EP1","HMMWV_Ambulance","GAZ_Vodnik_MedEvac","UH60M_MEV_EP1"];
+_hos = ["medikit","docUni","docUni2","docUni3","S1203_ambulance_EP1","HMMWV_Ambulance","GAZ_Vodnik_MedEvac"];
+_hosair = ["UH60M_MEV_EP1"];
 //South Goverment Shop
 _soushop = [
 "Binocular",
@@ -375,6 +378,7 @@ _copfo=
 "copUni6",
 "copUni8",
 "copUni9",
+"copUni10",
 "US_Backpack_EP1",
 "M4A1",
 "M16A4",
@@ -795,6 +799,7 @@ INV_ItemShops = [
 [unnco, "UN NCO Equipment",unnco,uncarspawn,_unnco,_unnco],
 [clothciv, "Clothing Shop",dummyobj,dummyobj,_civCloth,_civCloth,true],
 [objNull,"Hospital",dummyobj,hosSpwn,_hos,_hos,false],
+[objNull,"Hospital Air",dummyobj,hosairSpwn,_hosair,_hosair,false],
 [clothcivbase, "Clothing Shop",dummyobj,dummyobj,_civClothbase,_civClothbase,true],
 [pmcshop,"PMC Shop",pmcbox,dummyobj,_pmcshop,_pmcshop,true],
 [pmccar,"PMC Car Shop",dummyobj,pmccarspawn,_pmccar,_pmccar,true],

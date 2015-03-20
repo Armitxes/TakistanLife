@@ -42,9 +42,11 @@ INV_DialogPlayers =
 
 INV_CreateVehicle =
 {
-  private ["_classname", "_position","_dir"];
+  private ["_classname","_itemname","_position","_dir"];
   _classname = _this select 0;
   _logic	   = _this select 1;
+  _itemname	   = _this select 2;
+  
 
   call compile format ['
 
@@ -66,6 +68,8 @@ processInitCommands;
 INV_VehicleArray = INV_VehicleArray + [vehicle_%1_%2];
 "INV_ServerVclArray = INV_ServerVclArray + [vehicle_%1_%2];if (""%3"" != """") then {[""CreatedVehicle"", vehicle_%1_%2, typeOf vehicle_%1_%2, %4] execVM ""%3"";};" call broadcast;
 ', player, round(time), INV_CALL_CREATVEHICLE, getpos _logic, getdir _logic];
+
+hintsilent format ["%1",_itemname];
 
 // Attack helicopter re-armament
 if (_classname == "AW159_Lynx_BAF") then {
@@ -98,8 +102,13 @@ if (_classname == "An2_TK_EP1") then {
   newvehicle addMagazine "1200Rnd_30x113mm_M789_HEDP";
   newvehicle addMagazine "1200Rnd_30x113mm_M789_HEDP";
 };
-
-if (_classname == "SUV_TK_CIV_EP1") then { newvehicle setVehicleInit 'this setObjectTexture [0, "images\copsuv.paa"]'; processInitCommands; };
+if (_itemname == "AH6X_EP1_COP") then {
+newvehicle setVehicleInit 'this setObjectTexture [0, "images\PoliceHeli.paa"]'; processInitCommands;};
+if (_classname == "SUV_TK_CIV_EP1") then {
+	if (_itemname == "SUV_TK_CIV_EP1_COP") then {
+newvehicle setVehicleInit 'this setObjectTexture [0, "images\copsuv.paa"]'; processInitCommands; };
+	if (_itemname == "SUV_TK_CIV_EP1_SCO") then {
+newvehicle setVehicleInit 'this setObjectTexture [0, "images\scosuv.paa"]'; processInitCommands; };};
 if (_classname == "SUV_UN_EP1") then { newvehicle setVehicleInit 'this setObjectTexture [0, "images\unsuv.paa"]'; processInitCommands; };
 if (_classname == "VolhaLimo_TK_CIV_EP1") then { newvehicle setVehicleInit 'this setObjectTexture [0, "images\copvolha.paa"]'; processInitCommands; };
 if (_classname == "ArmoredSUV_PMC") then

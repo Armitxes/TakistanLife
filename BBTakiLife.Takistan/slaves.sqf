@@ -38,7 +38,7 @@ while {true} do
 
 		{
 
-		if ((player distance (_x select 0)) < (_x select 1)) then {call compile format ["arbeitergeld%1 = arbeitergeld%1 + slavemoneyprosekunde + round(random 500 - random 500);", _arbeiternummer];};
+		if ((player distance (_x select 0)) < (_x select 1)) then {call compile format ["arbeitergeld%1 = arbeitergeld%1 + slavemoneyprosekunde + round(random 750 - random 250);", _arbeiternummer];};
 
 		} forEach slavearray;
 

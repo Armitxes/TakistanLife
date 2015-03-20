@@ -265,18 +265,13 @@ switch _key do
 	};
 
 	//1 key
-	case 2:
+	case 2: {
+	    if(!INV_shortcuts)exitwith{};
+	    _handled=true;
+	    if(dialog)exitWith{closeDialog 0;};
 
-	{
-
-	if(!INV_shortcuts)exitwith{};
-	_handled=true;
-	if(dialog)exitwith{closeDialog 0;};
-
-	call fn_ClearWarrantsArray;
-	[0,0,0,["spielerliste"]] execVM "maindialogs.sqf";
-
-
+	    call fn_ClearWarrantsArray;
+	    if (_shift) then { [0,0,0,["generalstats"]] execVM "maindialogs.sqf"; } else { [0,0,0,["spielerliste"]] execVM "maindialogs.sqf"; };
 	};
 
 	//2 key

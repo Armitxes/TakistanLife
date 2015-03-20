@@ -26,6 +26,9 @@ if(_dollarz < gangcreatecost)exitwith{player groupchat "not enough money"};
 
 format['gangsarray = gangsarray + [["%1", ["%2"], true]]', _text, _name] call broadcast;
 
+if !(gangleader) then {gangleader = true};
+if !(gangmember) then {gangmember = true};
+
 player groupchat format["you have created a new gang called %1!", _text];
 
 };
@@ -47,14 +50,16 @@ if(_id == -1)exitwith{player groupchat "this gang no longer exists!"};
 _gangarray = gangsarray select _id;
 _members   = _gangarray select 1;
 _canjoin   = _gangarray select 2;
+_random    = ceil(random 5);
 
 if(!_canjoin)exitwith{player groupchat "the leader of this gang is not currently not recruiting"};
-
+if(_name in _members) exitwith{player groupchat "you are already in this gang"};
 _members   = _members + [_name];
 _gangarray set[1, _members];
-
+player groupchat format ["Joining %1 please wait....",_gang];
+sleep _random; 
 format['gangsarray set[%1, %2]', _id, _gangarray] call broadcast;
-
+if !(gangmember) then {gangmember = true};
 player groupchat format["you have joined %1!", _gang];
 
 };
@@ -204,15 +209,15 @@ while {isciv} do
 			{
 
 			_leader    = _members select 0;
-			_lunit	   = [_leader, civarray] call INV_findunit;
+			//_lunit	   = [_leader, civarray] call INV_findunit;
 			//if(isnull _lunit and !(player in (units startgroup)))then{[player] joinsilent startgroup};
-			if(isnull _lunit)exitwith{};
-			_group	   = group _lunit;
+			//if(isnull _lunit)exitwith{};
+			//_group	   = group _lunit;
 			_name      = name player;
-			if (_lunit == player) then {gangleader = true} else {gangleader = false};
-			if(leader _group != _lunit)then{_group selectleader _lunit};
-			if(player == _lunit and !gangleader)then{gangleader = true;};
-			if(gangleader and player != _lunit and _name in _members)then{gangleader = false};
+			//if (_lunit == player) then {gangleader = true} else {gangleader = false};
+			//if(leader _group != _lunit)then{_group selectleader _lunit};
+			//if(player == _lunit and !gangleader)then{gangleader = true;};
+			if(_name == _leader) then {gangleader = true} else {gangleader = false};
 			if(_name in _members and !gangmember)then{gangmember = true};
 			if(_name in _members and gangmember)then{_mygang = _gang; _mymembers = _members};
 			//if(_name in _members and player != _lunit and !(player in (units _group))) then {[player] joinsilent _group;};
@@ -234,6 +239,6 @@ while {isciv} do
         };
       };
 		};
-    sleep 1;
+    sleep 5;
   };
 };

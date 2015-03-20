@@ -20,11 +20,11 @@ switch _key do
   case 17: {
     _vcl = vehicle player;
     if((_vcl == player) || ((speed _vcl) >= 140))exitwith{};
-    
-    _lvl = _vcl getvariable "tuning";
+    _lvl = 1;
+    if(ismedic) then { _lvl = 1.01; } else { _lvl = _vcl getvariable "tuning"; };
     if(isEngineOn _vcl and !isnil "_lvl") then {
   		_vel = velocity _vcl;
-    	_vcl setVelocity [(_vel select 0) * _lvl, (_vel select 1) * _lvl, (_vel select 2) * 0.99]
+    	_vcl setVelocity [(_vel select 0) * _lvl, (_vel select 1) * _lvl, (_vel select 2) * _lvl]
 		};  
   };
 };

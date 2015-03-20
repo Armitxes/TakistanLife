@@ -393,7 +393,8 @@ INV_AlleFahrzeugeArray = [
 
 //UN equipment
 ["UAZ_Unarmed_UN_EP1",["Fahrzeug", "car"],["UAZ_Unarmed_UN_EP1", "UAZ UN"],[400, 385], [2, "car", "patrol_training",200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
-["SUV_TK_CIV_EP1",["Fahrzeug", "car"],["SUV_TK_CIV_EP1", "Police SUV"],[5000, 2000], [2, "car", "patrol_training", 200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["SUV_TK_CIV_EP1_COP",["Fahrzeug", "car"],["SUV_TK_CIV_EP1", "Police SUV"],[5000, 2000], [2, "car", "patrol_training", 200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["SUV_TK_CIV_EP1_SCO",["Fahrzeug", "car"],["SUV_TK_CIV_EP1", "SCO19 SUV"],[5000, 2000], [2, "car", "patrol_training", 200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["Ural_UN_EP1",["Fahrzeug", "truck"],["Ural_UN_EP1", "Ural UN"],[6000, 2999], [2, "truck", "probator", 1200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["Mi17_UN_CDF_EP1",["Fahrzeug", "air"],["Mi17_UN_CDF_EP1", "UN Mi17"],[30000, 20000], [5, "air", "copAir", 1000], [1000, [1,2,0,13] ], "Mi17_UN_CDF_EP1", "Mi17_UN_CDF_EP1", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["M113_UN_EP1",["Fahrzeug", "car"],["M113_UN_EP1", "M113 UN(M2)"],[49500, 19475], [2, "car", "", 150], [150, [1,0,0,3]], "M113_UN_EP1" call ISSE_Cfg_Vehicle_GetName, "M113_UN_EP1" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
@@ -408,14 +409,14 @@ INV_AlleFahrzeugeArray = [
 ["UH1H_TK_EP1",["Fahrzeug", "air"],["UH1H_TK_EP1", "Terrorist Huey"],[65000, 10000], [5, "bomb", "copAir", 2000], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["Ka60_PMC",["Fahrzeug", "air"],["Ka60_PMC", "Ka-60"],[82000, 6000], [5, "air", "copAir", 1000], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["C130J_US_EP1",["Fahrzeug", "air"],["C130J_US_EP1", "C130 Hercules"],[245000, 49525], [5, "air", "copAir", 20000], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
-["Ka137_PMC",["Fahrzeug", "air"],["Ka137_PMC", "Ka137 UAV"],[20000, 6000], [5, "air", "copAir", 1000], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
+["Ka137_PMC",["Fahrzeug", "air"],["Ka137_PMC", "Ka137 UAV"],[20000, 6000], [5, "air", "copAir", 1000], [500, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["UH1Y",["Fahrzeug", "air"],["UH1Y", "UH-1Y Venom"],[80000, 20000], [5, "air", "sobr_training", 1000], [1000, [1,2,0,13] ], "UH1Y", "UH1Y", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["Mi17_Civilian",["Fahrzeug", "air"],["Mi17_Civilian", "Mi17 Civilian"],[50000, 20000], [5, "air", "copAir", 1000], [1000, [1,2,0,13] ], "Mi17_Civilian", "Mi17_Civilian", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 
 //cop air
 ["MH6J_EP1",["Fahrzeug", "air"],["MH6J_EP1", "Transport Little Bird"],[28500, 12975], [5, "air", "copAir", 500], [1000, [1,2,0,13] ], "MH6J_EP1", "MH6J_EP1", [["Steel ", 10],["iron", 20],["dollarz",15000]]],
 ["UH60M_MEV_EP1",["Fahrzeug", "air"],["UH60M_MEV_EP1", "UH60-M Medevac"],[48000, 19000], [5, "air", "copAir", 500], [1000, [1,2,0,13] ], "UH60M_MEV_EP1", "UH60M_MEV_EP1", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
-
+["AH6X_EP1_COP",["Fahrzeug", "air"],["AH6X_EP1", "Police Little Bird"],[25000, 7983], [5, "air", "copAir", 200], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 
 //sobr air
 ["AH6J_EP1",["Fahrzeug", "air"],["AH6J_EP1", "Armed Little Bird"],[55000, 25000], [5, "air", "sobr_training", 400], [1000, [1,2,0,13] ], "AH6J_EP1", "AH6J_EP1", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
@@ -435,30 +436,30 @@ INV_AlleFahrzeugeArray = [
 ["FlagCarrierBLUFOR_EP1",["Item", "misc"],["FlagCarrierBLUFOR_EP1", "Police Flag"],[100, 80], [1, "", "sobr_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_barrack",localize "STRS_inv_item_barrack_info", [] ],
 
 //armed cop
-["ArmoredSUV_PMC",["Fahrzeug", "car"],["Skoda", "Armored SUV"],[30000, 12500], [2, "car", "sobr_training", 100],[150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["ArmoredSUV_PMC",["Fahrzeug", "car"],["ArmoredSUV_PMC", "Armored SUV"],[30000, 12500], [2, "car", "sobr_training", 100],[150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["HMMWV_M998_crows_M2_DES_EP1",["Fahrzeug", "car"],["Skoda", "HMMWV CROWS (M2)"],[58000, 0], [2, "car", "sobr_training", 150], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["M113_TK_EP1",["Fahrzeug", "car"],["M113_TK_EP1", "M113 UN MG (M2)"],[66800, 0], [2, "car", "sobr_training", 150], [150, [1,0,0,3]], "M113_TK_EP1" call ISSE_Cfg_Vehicle_GetName, "M113_TK_EP1" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
-["M2A3_EP1",["Fahrzeug", "car"],["Skoda", "Bradley"],[250000, 0], [2, "car", "sobr_training", 150], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
-["HMMWV_M1151_M2_DES_EP1",["Fahrzeug", "car"],["Skoda", "HMMWV GPK"],[38000, 7500], [2, "car", "sobr_training", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["M2A3_EP1",["Fahrzeug", "car"],["M2A3_EP1", "Bradley"],[250000, 0], [2, "car", "sobr_training", 150], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["HMMWV_M1151_M2_DES_EP1",["Fahrzeug", "car"],["HMMWV_M1151_M2_DES_EP1", "HMMWV GPK"],[38000, 7500], [2, "car", "sobr_training", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["M1126_ICV_M2_EP1",["Fahrzeug", "car"],["Skoda", "Stryker"],[85000, 40000], [2, "car", "sobr_training", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 
 //armed civ/terrorist
-["Pickup_PK_TK_GUE_EP1",["Fahrzeug", "car"],["Skoda", "Pickup Pk"],[25000, 15000], [2, "bomb", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
-["UAZ_MG_TK_EP1",["Fahrzeug", "car"],["Skoda", "UAZ DShKM"],[25000, 15000], [2, "bomb", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
-["Offroad_DSHKM_TK_GUE_EP1",["Fahrzeug", "car"],["Skoda", "Offroad DShKM"],[37000, 17000], [2, "bomb", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
-["BMP2_TK_EP1",["Fahrzeug", "car"],["Skoda", "BMP2"],[300000, 150000], [2, "bomb", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["Pickup_PK_TK_GUE_EP1",["Fahrzeug", "car"],["Pickup_PK_TK_GUE_EP1", "Pickup Pk"],[25000, 15000], [2, "bomb", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["UAZ_MG_TK_EP1",["Fahrzeug", "car"],["UAZ_MG_TK_EP1", "UAZ DShKM"],[25000, 15000], [2, "bomb", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["Offroad_DSHKM_TK_GUE_EP1",["Fahrzeug", "car"],["Offroad_DSHKM_TK_GUE_EP1", "Offroad DShKM"],[37000, 17000], [2, "bomb", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["BMP2_TK_EP1",["Fahrzeug", "car"],["BMP2_TK_EP1", "BMP2"],[300000, 150000], [2, "bomb", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["Mi17_TK_EP1",["Fahrzeug", "air"],["Mi17_TK_EP1", "Terrorist Mi17"],[75000, 15000], [5, "bomb", "", 200], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["An2_2_TK_CIV_EP1",["Fahrzeug", "air"],["An2_2_TK_CIV_EP1", "Armed An-2 Plane"],[75000, 37500], [5, "bomb", "", 800], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 
 //south goverment vehicles
-["T55_TK_GUE_EP1",["Fahrzeug", "car"],["Skoda", "T55"],[300000, 150000], [2, "southgov", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
-["BRDM2_TK_GUE_EP1",["Fahrzeug", "car"],["Skoda", "BRDM2"],[88000, 20000], [2, "southgov", "", 300], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
-["Ural_ZU23_TK_GUE_EP1",["Fahrzeug", "car"],["Skoda", "AA Ural"],[90000, 40000], [2, "southgov", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
-["BTR40_MG_TK_INS_EP1",["Fahrzeug", "car"],["Skoda", "BTR40 DShKM"],[40000, 20000], [2, "southgov", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["T55_TK_GUE_EP1",["Fahrzeug", "car"],["T55_TK_GUE_EP1", "T55"],[300000, 150000], [2, "southgov", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["BRDM2_TK_GUE_EP1",["Fahrzeug", "car"],["BRDM2_TK_GUE_EP1", "BRDM2"],[88000, 20000], [2, "southgov", "", 300], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["Ural_ZU23_TK_GUE_EP1",["Fahrzeug", "car"],["Ural_ZU23_TK_GUE_EP1", "AA Ural"],[90000, 40000], [2, "southgov", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["BTR40_MG_TK_INS_EP1",["Fahrzeug", "car"],["BTR40_MG_TK_INS_EP1", "BTR40 DShKM"],[40000, 20000], [2, "southgov", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["M113_TK_EP1",["Fahrzeug", "car"],["M113_TK_EP1", "M113(M2)"],[66800, 0], [2, "southgov", "", 150], [150, [1,0,0,3]], "M113_TK_EP1" call ISSE_Cfg_Vehicle_GetName, "M113_TK_EP1" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
-["T72_TK_EP1",["Fahrzeug", "car"],["Skoda", "T72"],[400000, 150000], [2, "southgov", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
-["BTR60_TK_EP1",["Fahrzeug", "car"],["Skoda", "BTR60"],[120000, 40000], [2, "southgov", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
-["LandRover_MG_TK_EP1",["Fahrzeug", "car"],["Skoda", "LandRover(M2)"],[32000, 15000], [2, "southgov", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["T72_TK_EP1",["Fahrzeug", "car"],["T72_TK_EP1", "T72"],[400000, 150000], [2, "southgov", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["BTR60_TK_EP1",["Fahrzeug", "car"],["BTR60_TK_EP1", "BTR60"],[120000, 40000], [2, "southgov", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["LandRover_MG_TK_EP1",["Fahrzeug", "car"],["LandRover_MG_TK_EP1", "LandRover(M2)"],[32000, 15000], [2, "southgov", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["Mi17_Ins",["Fahrzeug", "air"],["Mi17_Ins", "Mi17"],[75000, 15000], [5, "southgov", "", 200], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["UH1H_TK_GUE_EP1",["Fahrzeug", "air"],["UH1H_TK_GUE_EP1", "Huey"],[45000, 20000], [5, "southgov", "", 200], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["Mi17_medevac_Ins",["Fahrzeug", "air"],["Mi17_medevac_Ins", "Mi17 Transport"],[65000, 15000], [5, "southgov", "", 200], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
@@ -492,7 +493,7 @@ INV_AlleItemsArray = [
 
 ["Fuelline", ["Item", "service"],["Syphon Fuelkit", "Syphon Fuel-kit"], [1600, 4], [1.7, "", "patrol_training"],[true,true,true, false, "syphon.sqf"], localize "STRS_inv_item_fuelcut", localize "STRS_inv_item_fuelcut_info",[["stahl", 1]] ],
 
-["OilBarrel", ["Item", "service"],["Oil Barrel", "Oil Barrel"], [3200, 2000], [10, "", ""],[true,true,true, false, "refuelveh.sqf"], "Barrel of oil", localize "STRS_inv_item_kanister_info",[["Oil", 50]] ],
+["OilBarrel", ["Item", "service"],["Oil Barrel", "Oil Barrel"], [1300, 650], [10, "", ""],[true,true,true, false, "refuelveh.sqf"], "Barrel of oil", localize "STRS_inv_item_kanister_info",[["Oil", 50]] ],
 
 ["schluesselbund",["Item", "carobjects"],["schluesselbund", "Key chain"],[0, 0], [0, ""], [false,false, false,false,"keys.sqf"],localize "STRS_inv_item_schluesselbund",localize "STRS_inv_item_schluesselb_info", [] ],
 
@@ -560,11 +561,11 @@ INV_AlleItemsArray = [
 
 ["Rubies",["Item", "ressource"],["Rubies", "Rubies"],[142.5, 62], [3, ""], [true, true, true,false,"useresource.sqf"],"Rubies",localize "STRS_item_farmitem_info", []],
 
-["Platinum",["Item", "ressource"],["Platinum", "Platinum"],[350, 90], [2, ""], [true, true, true,false,"useresource.sqf"],"Platinum",localize "STRS_item_farmitem_info", []],
+["Platinum",["Item", "ressource"],["Platinum", "Platinum"],[200, 90], [2, ""], [true, true, true,false,"useresource.sqf"],"Platinum",localize "STRS_item_farmitem_info", []],
 
 ["Silver",["Item", "ressource"],["Silver", "Silver"],[125, 57.5], [1.8, ""], [true, true, true,false,"useresource.sqf"],localize "STRS_item_silver",localize "STRS_item_farmitem_info", []],
 
-["Gold",["Item", "ressource"],["Gold", "Gold"],[150, 70], [3.5, ""], [true, true, true,false,"useresource.sqf"],localize "STRS_item_gold",localize "STRS_item_farmitem_info", []],
+["Gold",["Item", "ressource"],["Gold", "Gold"],[250, 70], [4, ""], [true, true, true,false,"useresource.sqf"],localize "STRS_item_gold",localize "STRS_item_farmitem_info", []],
 
 ["Oil",["Item", "ressource"],["Oil", "Oil"],[0, 0], [2, ""], [true, true, true,false,"useresource.sqf"],"Oil",localize "STRS_item_farmitem_info", []],
 
@@ -582,15 +583,15 @@ INV_AlleItemsArray = [
 
 ["Unprocessed_Heroin",["Item", "illegal"],["Unprocessed Heroin", "Unprocessed Heroin"],[0, 0], [1, ""], [true, true, true,true,"useresource.sqf"],localize "STRS_inv_item_heroin",localize "STRS_item_farmitem_info", [] ],
 
-["Cannabis",["Item", "illegal"],["Cannabis", "Cannabis"],[1512, 2000], [2, ""], [true, true, true,true,"drugs.sqf"],localize "STRS_inv_item_Cannabis",localize "STRS_inv_item_drogen_info", [["Unprocessed_Cannabis", 8]]],
+["Cannabis",["Item", "illegal"],["Cannabis", "Cannabis"],[1512, 525], [2, ""], [true, true, true,true,"drugs.sqf"],localize "STRS_inv_item_Cannabis",localize "STRS_inv_item_drogen_info", [["Unprocessed_Cannabis", 8]]],
 
-["cocaine",["Item", "illegal"],["cocaine", "Cocaine"],[1512, 2000], [2, ""], [true, true, true,true,"drugs.sqf"],localize "STRS_inv_item_cocaine",localize "STRS_inv_item_drogen_info", [["Unprocessed_Cocaine", 10]]],
+["cocaine",["Item", "illegal"],["cocaine", "Cocaine"],[1512, 725], [2, ""], [true, true, true,true,"drugs.sqf"],localize "STRS_inv_item_cocaine",localize "STRS_inv_item_drogen_info", [["Unprocessed_Cocaine", 10]]],
 
-["lsd", ["Item", "illegal"], ["lsd", "LSD"],[1512, 2000], [2, ""],[true,true,true, true, "drugs.sqf"], localize "STRS_inv_item_lsd",localize "STRS_inv_item_drogen_info", [["Unprocessed_LSD", 15]]],
+["lsd", ["Item", "illegal"], ["lsd", "LSD"],[1512, 525], [2, ""],[true,true,true, true, "drugs.sqf"], localize "STRS_inv_item_lsd",localize "STRS_inv_item_drogen_info", [["Unprocessed_LSD", 15]]],
 
-["heroin", ["Item", "illegal"], ["heroin", "Heroin"],[1512, 2000], [2, ""],[true,true,true, true, "drugs.sqf"], localize "STRS_inv_item_heroin",localize "STRS_inv_item_drogen_info", [["Unprocessed_Heroin", 20]]],
+["heroin", ["Item", "illegal"], ["heroin", "Heroin"],[1512, 725], [2, ""],[true,true,true, true, "drugs.sqf"], localize "STRS_inv_item_heroin",localize "STRS_inv_item_drogen_info", [["Unprocessed_Heroin", 20]]],
 
-["handy",["Item", "Shop"], ["handy", "Smartphone"], [50, 22], [0, ""],[true,true,false, false, "handy.sqf"], localize "STRS_inv_item_handy",localize "STRS_inv_item_handy_info", [["plastik", 2],["ebauteile", 2]]],
+["handy",["Item", "Shop"], ["handy", "Smartphone"], [50, 22], [0, ""],[true,false,false, false, "handy.sqf"], localize "STRS_inv_item_handy",localize "STRS_inv_item_handy_info", [["plastik", 2],["ebauteile", 2]]],
 
 ["roadblock",["Item", "misc"],["Land_CncBlock_Stripes", "Roadblock"],[50, 20], [10, "", "patrol_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_roadblock",localize "STRS_inv_item_roadblock_info", [] ],
 
@@ -656,7 +657,7 @@ INV_AlleItemsArray = [
 
 ["fishingpole", ["Item", "Shop"], ["fishingpole", "Fishing Pole"],[75, 33], [3, "", "probator"],[true,true,true, false, "fishing.sqf"], "Fishing Pole", "Use it in a fishing area.",[["stahl", 1], ["plastik", 1],["ebauteile", 1]] ],
 
-["Spikestrip",["Item", "misc"],["Fort_RazorWire", "Spike Strip"],[14, 5], [2, "", "probator"], [true, true, true,false, "Spikestrip.sqf"], "Spike Strip", "Use it to pop a tire.",[["stahl", 1], ["plastik", 1],["ebauteile", 1]] ],
+["Spikestrip",["Item", "misc"],["Fort_RazorWire", "Spike Strip"],[350, 5], [2, "", "probator"], [true, true, true,false, "Spikestrip.sqf"], "Spike Strip", "Use it to pop a tire.",[["stahl", 1], ["plastik", 1],["ebauteile", 1]] ],
 
 ["LocalBasicWeaponsBox", ["Item", "misc"], ["LocalBasicWeaponsBox", "Storage box"],[1000, 375], [0, "", "", 200],[true,true,true, false, "nouse.sqf"], "Storage box", "Storage box",[] ],
 
@@ -679,6 +680,7 @@ INV_AlleItemsArray = [
 ["copUni7",["Item", "cloth"],["copUni7", "Pilot Uniform (Urban)"], [30, 30], [0.1, "", "copAir"],[true,false,true, false, "armitxes\clothing.sqf"], "SCO19 Uniform Light","SCO19 Uniform Light", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["copUni8",["Item", "cloth"],["copUni8", "Police Sergeant Uniform"], [30, 30], [0.1, "", "response_training"],[true,false,true, false, "armitxes\clothing.sqf"], "Police Sergeant Uniform","Police Sergeant Uniform", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["copUni9",["Item", "cloth"],["copUni9", "Police Interceptor Uniform"], [30, 30], [0.1, "", "response_training"],[true,false,true, false, "armitxes\clothing.sqf"], "Police Interceptor Uniform","Police Interceptor Uniform", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
+["copUni10",["Item", "cloth"],["copUni10", "Military Police Uniform"], [30, 30], [0.1, "", "response_training"],[true,false,true, false, "armitxes\clothing.sqf"], "Military Police Uniform","Military Police Uniform", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["civUni1",["Item", "cloth"],["civUni1", "Takistani (sweater)"], [30, 30], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Takistani (sweater)","Takistani (sweater)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["civUni2",["Item", "cloth"],["civUni2", "Takistani (jacket)"], [30, 30], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Takistani (jacket)","Takistani (jacket)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["civUni3",["Item", "cloth"],["civUni3", "Takistani (hat)"], [30, 30], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Takistani (hat)","Takistani (hat)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],

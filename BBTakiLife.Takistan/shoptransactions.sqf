@@ -161,11 +161,11 @@ if (_itemart == "fahrzeug" and instock) then
 	['dollarz', -(_CostMitTax)] call INV_AddInventoryItem;
 	INV_SteuernGezahlt = (INV_SteuernGezahlt + _einzelSteuer);
 	player groupChat format [localize "STRS_inv_buyvehicles_buy_car", (_infos call INV_getitemName), (_CostMitTax call ISSE_str_IntToStr)];
-	[_item, _logic] spawn
+	[_classname, _logic,_item] spawn
 
 		{
   		if (not(alive player)) exitWith {};
-  		[_this select 0, _this select 1] spawn INV_CreateVehicle;
+  		[_this select 0, _this select 1,_this select 2] spawn INV_CreateVehicle;
 		};
 
 	};

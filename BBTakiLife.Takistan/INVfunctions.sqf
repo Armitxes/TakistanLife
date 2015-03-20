@@ -230,7 +230,7 @@ INV_RemoveIllegalStorage = {
 	_re        = false;
 	drugsvalue = 0;
 
-	if ([_arrayname, "drug"] call INV_StorageHasKindOf) then
+	if ([_arrayname, "illegal"] call INV_StorageHasKindOf) then
 
 	{
 
@@ -241,30 +241,17 @@ INV_RemoveIllegalStorage = {
 		{
 
 		_item   = ((_Array select _i) select 0);
-		_infos  = _item call INV_getitemArray;
+		_infos  = _item call INV_getitemArray;};
 
-		if(_item call INV_getitemKindOf == "drug") then
-
-			{
-
-			_amount = ([_item, _arrayname] call INV_GetStorageAmount);
-			_preis  = (_infos call INV_getitemBuyCost);
-
-			drugsvalue = drugsvalue + (_preis*_amount);
-
-			};
-
-		};
-
-	[_arrayname, "drug"] call INV_StorageRemoveKindOf;
+	[_arrayname, "illegal"] call INV_StorageRemoveKindOf;
 	_re        = true;
-	(format ["if (player == %2) then {player groupChat ""%1 had drugs in its trunk, you removed them. You should jail the owner of %1 for %4 minutes or give him a ticket of $%5.""}; titletext [format[localize ""STRS_civmenucheck_haddrugs"", %1, %3], ""plain""];", _vcl, player, drugsvalue, ceil(drugsvalue/20000), ceil(drugsvalue/2)]) call broadcast;
+	(format ["if (player == %2) then {player groupChat ""%1 had Illegal Items in its trunk, you removed them.""};", _vcl, player]) call broadcast;
 
 	}
 	else
 	{
 
-	player groupchat "No illegal things found.";
+	player groupchat "No illegal items found.";
 
 	};
 

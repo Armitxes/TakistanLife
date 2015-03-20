@@ -42,7 +42,6 @@ if(0 < (count warrantarray)) then
         warrantarray set [_i,-1]; 
         warrantarray = warrantarray - [-1];
         PLAYERDATA set [7,0];
-        ["save"] execVM "armitxes\_db.sqf";
       };
     };
   };

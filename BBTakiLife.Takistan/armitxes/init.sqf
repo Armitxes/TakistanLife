@@ -16,8 +16,8 @@ if(!isDedicated) then
   isun = false;
   isciv = false;
   PLAYERDATA = [0];
-  waitUntil {alive player};
 
+  waitUntil {alive player};
   while {(count PLAYERDATA) != 9} do 
   {
     if (!(createDialog "Portal")) exitWith {hint "Dialog Error! - Portal";};

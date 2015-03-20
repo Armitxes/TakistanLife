@@ -15,6 +15,7 @@ _uniforms = [
   ["copUni7","BAF_Pilot_MTP",[0,"images\SCO19cloth.paa"],[1,"images\SCO19arm.paa"],[2,"images\SCO19equip.paa"]],
   ["copUni8","Soldier_Crew_PMC",[0,"images\policesgt.paa"]],
   ["copUni9","Soldier_Crew_PMC",[0,"images\polinter.paa"]],
+  ["copUni10","Soldier_Crew_PMC",[0,"images\copmp.paa"]],
   ["civUni1","TK_CIV_Takistani01_EP1"],
   ["civUni2","TK_CIV_Takistani02_EP1"],
   ["civUni3","TK_CIV_Takistani03_EP1"],

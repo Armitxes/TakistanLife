@@ -8,6 +8,7 @@
   (owner _plr) publicVariableClient "lastElection";
   (owner _plr) publicVariableClient "PLAYERDATA";
   (owner _plr) publicVariableClient "warrantarray";
+  (owner _plr) publicVariableClient "protesters";
 };
 
 "submitSave" addPublicVariableEventHandler { ("ArmA2Ext" callExtension format ["ArmiNET.DB save#%1",(_this select 1)]); };

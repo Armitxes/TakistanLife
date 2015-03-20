@@ -3,7 +3,7 @@ _unCP = [["Open/Close Border (West)","noscript.sqf",'[""unCP"",""cpWest""] execV
 _court = [["Open Cell 1","noscript.sqf",'[""door"",cCell1] execVM ""armitxes\remote.sqf""'],["Open Cell 2","noscript.sqf",'[""door"",cCell2] execVM ""armitxes\remote.sqf""'],["UNPOL Terminal","CodePad.sqf",[[9,1,4,8,2], {if(isun)then{createDialog "CopMenuLite";};}, {ctrlSetText [999,"Wrong code!"]; sleep 1; ctrlSetText [999, ""];}]]];
 
 _build = [
-  ["Land_A_Hospital",[4398,9579,0],327],
+  //["Land_A_Hospital",[4398,9579,0],327],
   ["Land_House_C_4_EP1",[6814.44,8905.19,0],-250],
   ["Notebook",[5153,6060,4],75,_unCP],
   ["Notebook",[3507.7, 8343.1,1],47,[(_unCP select 0),(_court select 2)]],

@@ -41,7 +41,7 @@ action52 = _role addaction ["Remove Road Barrier","noscript.sqf",'if (((call INV
 action53 = _role addaction ["Remove Small Breaching ladder","noscript.sqf",'if (((call INV_GetOwnWeight) + ("Land_ladder_half_EP1" call INV_getitemTypeKg)) > INV_Tragfaehigkeit)exitwith{player groupChat localize "STRS_inv_buyitems_maxgewicht"};deletevehicle (nearestobjects [getpos player, ["Land_ladder_half_EP1"],  5] select 0);["Land_ladder_half_EP1", 1] call INV_AddInventoryItem;player groupchat "you picked up a Small Breaching Ladder";',1,true,true,"",'player distance (nearestobjects [getpos player, ["Land_ladder_half_EP1"],  5] select 0) < 5 and !(isciv)'];
 action54 = _role addaction ["Remove UN Flag","noscript.sqf",'deletevehicle (nearestobjects [getpos player, ["FlagCarrierUNO_EP1"],  5] select 0);["FlagCarrierUNO_EP1", 1] call INV_AddInventoryItem;player groupchat "you picked up a UN Flag";',1,true,true,"",'player distance (nearestobjects [getpos player, ["FlagCarrierUNO_EP1"],  5] select 0) < 5 && isun && (typeOf (nearestobjects [getpos player, ["FlagCarrierUNO_EP1"],  5] select 0) == "FlagCarrierUNO_EP1")'];
 action55 = _role addaction ["Remove Police Flag","noscript.sqf",'deletevehicle (nearestobjects [getpos player, ["FlagCarrierBLUFOR_EP1"],  5] select 0);["FlagCarrierBLUFOR_EP1", 1] call INV_AddInventoryItem;player groupchat "you picked up a Police Flag";',1,true,true,"",'player distance (nearestobjects [getpos player, ["FlagCarrierUNO_EP1"],  5] select 0) < 5 && iscop && (typeOf (nearestobjects [getpos player, ["FlagCarrierBLUFOR_EP1"],  5] select 0) == "FlagCarrierBLUFOR_EP1")'];
-action56 = _role addaction ["Remove Spikestrip","noscript.sqf",'deletevehicle (nearestobjects [getpos player, ["Fort_RazorWire"],  5] select 0);["Fort_RazorWire", 1] call INV_AddInventoryItem;player groupchat "You removed a Spikestrip";',1,true,true,"",'player distance (nearestobjects [getpos player, ["Fort_RazorWire"],  5] select 0) < 5 && (isun || iscop) && (typeOf (nearestobjects [getpos player, ["Fort_RazorWire"],  5] select 0) == "Fort_RazorWire")'];
+action56 = _role addaction ["Remove Spikestrip","noscript.sqf",'deletevehicle (nearestobjects [getpos player, ["Fort_RazorWire"],  5] select 0);["Spikestrip", 1] call INV_AddInventoryItem;player groupchat "You removed a Spikestrip";',1,true,true,"",'player distance (nearestobjects [getpos player, ["Fort_RazorWire"],  5] select 0) < 5 && (isun || iscop) && (typeOf (nearestobjects [getpos player, ["Fort_RazorWire"],  5] select 0) == "Fort_RazorWire")'];
 //================================== ELECTION SYSTEM ===============================================
 action102 = _role addaction ["Change the Law","maindialogs.sqf",["gesetz"],1,false,true,"","player distance rathaus <= 3 and isMayor"];
 action103 = _role addaction ["Change taxes","maindialogs.sqf",["steuern"],1,false,true,"","player distance rathaus <= 3 and isMayor"];
@@ -80,24 +80,21 @@ action132 = _role addaction ["<t color='#00FFFF'>Impound vehicle</t>","noscript.
 action134 = _role addaction ["Pull out","noscript.sqf",'(nearestobjects [getpos player, ["Air", "Ship", "LandVehicle"], 3] select 0) execVM "pullout.sqf";',1,true,true,"",'_vcl = (nearestobjects [getpos player, ["Air", "Ship", "LandVehicle"], 3] select 0);player distance _vcl < 10 and count (crew _vcl) > 0 and _vcl in INV_ServerVclArray and (call INV_isArmed)'];
 action135 = _role addaction ["<t color='#00FFFF'>Vehicle Information</t>","noscript.sqf",'(nearestobjects [getpos player, ["Air", "Ship", "LandVehicle"], 3] select 0) execVM "vehinfo.sqf";',1,true,true,"",'_vcl = (nearestobjects [getpos player, ["Air", "Ship", "LandVehicle"], 3] select 0);player distance _vcl < 10 and _vcl in INV_ServerVclArray'];
 //======================================== GANG FLAGS ===================================================
-action136 = _role addaction ["Neutralise flag","gangflags.sqf",[gangarea1, "neutralise"],1,false,true,"",'_control = gangarea1 getvariable "control";if(isnil "_control")then{_control = ""};player distance gangarea1 <= 8 and _control != (call INV_mygang) and _control != "" and gangmember and !pickingup'];
-action137 = _role addaction ["Neutralise flag","gangflags.sqf",[gangarea2, "neutralise"],1,false,true,"",'_control = gangarea2 getvariable "control";if(isnil "_control")then{_control = ""};player distance gangarea2 <= 8 and _control != (call INV_mygang) and _control != "" and gangmember and !pickingup'];
-action138 = _role addaction ["Neutralise flag","gangflags.sqf",[gangarea3, "neutralise"],1,false,true,"",'_control = gangarea3 getvariable "control";if(isnil "_control")then{_control = ""};player distance gangarea3 <= 8 and _control != (call INV_mygang) and _control != "" and gangmember and !pickingup'];
-action139 = _role addaction ["Capture flag","gangflags.sqf",[gangarea1, "capture"],1,false,true,"",'_control = gangarea1 getvariable "control";player distance gangarea1 <= 10 and isnil "_control" and gangmember and !pickingup'];
-action140 = _role addaction ["Capture flag","gangflags.sqf",[gangarea2, "capture"],1,false,true,"",'_control = gangarea2 getvariable "control";player distance gangarea2 <= 10 and isnil "_control" and gangmember and !pickingup'];
-action141 = _role addaction ["Capture flag","gangflags.sqf",[gangarea3, "capture"],1,false,true,"",'_control = gangarea3 getvariable "control";player distance gangarea3 <= 10 and isnil "_control" and gangmember and !pickingup'];
+action136 = _role addaction ["Capture Gang Area","gangflags.sqf",[gangarea1, "capture"],1,false,true,"",'_control = gangarea1 getvariable "control";if(isnil "_control")then{_control = ""};player distance gangarea1 <= 8 and gangmember and !gangcap and ((_control != (call INV_mygang)) || (_control == ""))'];
+action137 = _role addaction ["Capture Gang Area","gangflags.sqf",[gangarea2, "capture"],1,false,true,"",'_control = gangarea2 getvariable "control";if(isnil "_control")then{_control = ""};player distance gangarea2 <= 8 and gangmember and !gangcap and ((_control != (call INV_mygang)) || (_control == ""))'];
+action138 = _role addaction ["Capture Gang Area","gangflags.sqf",[gangarea3, "capture"],1,false,true,"",'_control = gangarea3 getvariable "control";if(isnil "_control")then{_control = ""};player distance gangarea3 <= 8 and gangmember and !gangcap and ((_control != (call INV_mygang)) || (_control == ""))'];
 //======================================== SHOP EXPORT ==================================================
 _num1  = (shop1 call INV_getshopnum);
 _num2  = (shop2 call INV_getshopnum);
-action142 = _role addaction ["Shop 1 export","shopdialogs.sqf",[_num1],1,false,true,"","player distance shop1export <= 3"];
-action143 = _role addaction ["Shop 2 export","shopdialogs.sqf",[_num2],1,false,true,"","player distance shop2export <= 3"];
+action139 = _role addaction ["Shop 1 export","shopdialogs.sqf",[_num1],1,false,true,"","player distance shop1export <= 3"];
+action140 = _role addaction ["Shop 2 export","shopdialogs.sqf",[_num2],1,false,true,"","player distance shop2export <= 3"];
 //======================================= GANG GUNSHOPS ==================================================
 _num1  = (gangarea1 call INV_getshopnum);
 _num2  = (gangarea2 call INV_getshopnum);
 _num3  = (gangarea3 call INV_getshopnum);
-action144 = _role addaction ["Gang Shop","shopdialogs.sqf",[_num1],1,false,true,"","_control = gangarea1 getvariable ""control"";!isnil ""_control"" and player distance gangarea1 <= 5 and (_control == (call INV_mygang))"];
-action145 = _role addaction ["Gang Shop","shopdialogs.sqf",[_num2],1,false,true,"","_control = gangarea2 getvariable ""control"";!isnil ""_control"" and player distance gangarea2 <= 5 and (_control == (call INV_mygang))"];
-action146 = _role addaction ["Gang Shop","shopdialogs.sqf",[_num3],1,false,true,"","_control = gangarea3 getvariable ""control"";!isnil ""_control"" and player distance gangarea3 <= 5 and (_control == (call INV_mygang))"];
+action141 = _role addaction ["Gang Shop","shopdialogs.sqf",[_num1],1,false,true,"","_control = gangarea1 getvariable ""control"";!isnil ""_control"" and player distance gangarea1 <= 5 and (_control == (call INV_mygang))"];
+action142 = _role addaction ["Gang Shop","shopdialogs.sqf",[_num2],1,false,true,"","_control = gangarea2 getvariable ""control"";!isnil ""_control"" and player distance gangarea2 <= 5 and (_control == (call INV_mygang))"];
+action143 = _role addaction ["Gang Shop","shopdialogs.sqf",[_num3],1,false,true,"","_control = gangarea3 getvariable ""control"";!isnil ""_control"" and player distance gangarea3 <= 5 and (_control == (call INV_mygang))"];
 //===================================== Gas station Robbing===============================================
 gsshop1 = fuelshop1 addaction ["<t color='#FF0000'>Hack Gas Station (Rob)</t>","robthestations.sqf",["station 1"],1,false,true,"","isciv and station1money >= 1000"];
 gsshop2 = fuelshop2 addaction ["<t color='#FF0000'>Hack Gas Station (Rob)</t>","robthestations.sqf",["station 2"],1,false,true,"","isciv and station2money >= 1000"];
@@ -110,35 +107,36 @@ gsshop8 = fuelshop8 addaction ["<t color='#FF0000'>Rob Supermarket</t>","robthes
 gsshop9 = fuelshop9 addaction ["<t color='#FF0000'>Hack Gas Station (Rob)</t>","robthestations.sqf",["station 8"],1,false,true,"","isciv and station9money >= 1000"];
 gsshop10 = fuelshop10 addaction ["<t color='#FF0000'>Hack Gas Station (Rob)</t>","robthestations.sqf",["station 9"],1,false,true,"","isciv and station10money >= 1000"];
 //========================   unflip vehicle     ================================
-action147 = _role addaction ["Unflip vehicle","unflipvehicle.sqf",["unflip"],1,false,true,"",'_vcl = (nearestobjects [getpos player, ["Air", "Ship", "LandVehicle"], 3] select 0);player distance _vcl < 5 and _vcl in INV_VehicleArray'];
+action144 = _role addaction ["Unflip vehicle","unflipvehicle.sqf",["unflip"],1,false,true,"",'_vcl = (nearestobjects [getpos player, ["Air", "Ship", "LandVehicle"], 3] select 0);player distance _vcl < 5 and _vcl in INV_VehicleArray'];
 //=========================    Cop Patrol actions   ==============================
-action148 = _role addaction["<t color='#00FFFF'>Get patrol mission</t>","coppatrol.sqf",["start"],1,false,true,"","iscop and player distance copbank <= 4 and !pmissionactive and !patrolwaittime"];
-action149 = _role addaction["<t color='#00FFFF'>Cancel patrol mission</t>","coppatrol.sqf",["end"],1,false,true,"","iscop and pmissionactive and player distance copbank <= 4"];
+action145 = _role addaction["<t color='#00FFFF'>Get patrol mission</t>","coppatrol.sqf",["start"],1,false,true,"","iscop and player distance copbank <= 4 and !pmissionactive and !patrolwaittime"];
+action146 = _role addaction["<t color='#00FFFF'>Cancel patrol mission</t>","coppatrol.sqf",["end"],1,false,true,"","iscop and pmissionactive and player distance copbank <= 4"];
 //========================   HOSTAGE  ================================================
-action150 = _role addaction ["<t color='#FF0000'>Take Hostage Mission</t>","hostage.sqf",["getajob_hostage"],1,false,true,"","player distance hostage <= 3 and isciv"];
-action151 = _role addaction ["<t color='#FF0000'>Take Hostage</t>", "noscript.sqf", "[hostage1] join (group player); player groupchat ""Keep the hostage close or you will fail!"";",1,false,true,"","player distance hostage1 < 5 and isciv"];
+action147 = _role addaction ["<t color='#FF0000'>Take Hostage Mission</t>","hostage.sqf",["getajob_hostage"],1,false,true,"","player distance hostage <= 3 and isciv"];
+action148 = _role addaction ["<t color='#FF0000'>Take Hostage</t>", "noscript.sqf", "[hostage1] join (group player); player groupchat ""Keep the hostage close or you will fail!"";",1,false,true,"","player distance hostage1 < 5 and isciv"];
 //=======================   STAFF STUFF ==============================================
-action152 = _role addAction ["<t color='#FF69B4'>Devtool</t>","noscript.sqf","createDialog ""dev_menu"";",1,true,true,"","(PLAYERDATA select 2) > 229"];
-action153 = _role addaction ["<t color='#FF69B4'>Moderator Menu</t>","AdminMenu.sqf",[],1,false,true,"","(PLAYERDATA select 2) > 217"];
-action154 = _role addaction ["<t color='#FF69B4'>AdminCam</t>","gcam.sqf",[],1,false,true,"","(PLAYERDATA select 2) > 218"];
+action149 = _role addAction ["<t color='#FF69B4'>Devtool</t>","noscript.sqf","createDialog ""dev_menu"";",1,true,true,"","(PLAYERDATA select 2) > 229"];
+action150 = _role addaction ["<t color='#FF69B4'>Moderator Menu</t>","AdminMenu.sqf",[],1,false,true,"","(PLAYERDATA select 2) > 217"];
+action151 = _role addaction ["<t color='#FF69B4'>AdminCam</t>","gcam.sqf",[],1,false,true,"","(PLAYERDATA select 2) > 218"];
 //======================= CLOTHING SHOP ===============================================
-action155 = _role addAction ["<t color='#FFFF00'>Access Clothing Shop</t>","shopdialogs.sqf",[(clothciv call INV_getshopnum)],1,false,true,"","(player distance clothshop) <= 3 && isciv"];
-action156 = _role addAction ["<t color='#FFFF00'>Access Hospital Shop</t>","shopdialogs.sqf",[(clothciv call INV_getshopnum)+1],1,false,true,"","(player distance doc1 < 4) && isciv"];
-action157 = _role addAction ["<t color='#FFFF00'>Access Clothing Shop</t>","shopdialogs.sqf",[(clothcivbase call INV_getshopnum)],1,false,true,"","(player distance clothshop2) <= 3 && isciv"];
+action152 = _role addAction ["<t color='#FFFF00'>Access Clothing Shop</t>","shopdialogs.sqf",[(clothciv call INV_getshopnum)],1,false,true,"","(player distance clothshop) <= 3 && isciv"];
+action153 = _role addAction ["<t color='#FFFF00'>Access Hospital Shop</t>","shopdialogs.sqf",[(clothciv call INV_getshopnum)+1],1,false,true,"","(player distance doc1 < 4) && isciv"];
+action154 = _role addAction ["<t color='#FFFF00'>Access Hospital Air Shop</t>","shopdialogs.sqf",[(clothciv call INV_getshopnum)+2],1,false,true,"","(player distance doc1 < 4) && isciv && ismedic"];
+action155 = _role addAction ["<t color='#FFFF00'>Access Clothing Shop</t>","shopdialogs.sqf",[(clothcivbase call INV_getshopnum)],1,false,true,"","(player distance clothshop2) <= 3 && isciv"];
 
 
-action158 = _role addaction ["<t color='#FF0000'>Declare Terrorism</t>","terror.sqf",[],1,false,true,"","isciv and isterror"];
-action159 = _role addaction ["<t color='#00FFFF'>Release</t>","drag.sqf",[],1,false,true,"","dragging"];
-action160 = _role addaction ["<t color='#00FFFF'>Pull and Drag</t>","noscript.sqf",'(nearestobjects [getpos player, ["Air", "Ship", "LandVehicle"], 3] select 0) execVM "pulldrag.sqf";',1,true,true,"",'_vcl = (nearestobjects [getpos player, ["Air", "Ship", "LandVehicle"], 3] select 0);player distance _vcl < 10 and count (crew _vcl) > 0 and _vcl in INV_ServerVclArray and (call INV_isArmed)'];
-action161 = _role addaction ["<t color='#00FFFF'>Put in Vehicle</t>","putinvehicle.sqf",[],1,true,true,"",'_vcl = (nearestobjects [getpos player, ["Air", "Ship", "LandVehicle"], 3] select 0); player distance _vcl < 10 and dragging'];
+action156 = _role addaction ["<t color='#FF0000'>Declare Terrorism</t>","terror.sqf",[],1,false,true,"","isciv and isterror"];
+action157 = _role addaction ["<t color='#00FFFF'>Release</t>","drag.sqf",[],1,false,true,"","dragging"];
+action158 = _role addaction ["<t color='#00FFFF'>Pull and Drag</t>","noscript.sqf",'(nearestobjects [getpos player, ["Air", "Ship", "LandVehicle"], 3] select 0) execVM "pulldrag.sqf";',1,true,true,"",'_vcl = (nearestobjects [getpos player, ["Air", "Ship", "LandVehicle"], 3] select 0);player distance _vcl < 10 and count (crew _vcl) > 0 and _vcl in INV_ServerVclArray and (call INV_isArmed)'];
+action159 = _role addaction ["<t color='#00FFFF'>Put in Vehicle</t>","putinvehicle.sqf",[],1,true,true,"",'_vcl = (nearestobjects [getpos player, ["Air", "Ship", "LandVehicle"], 3] select 0); player distance _vcl < 10 and dragging'];
 
 memkey = _role addaction ["Member Keypad","CodePad.sqf",[[2,4,8,5,2], {["door",hgate] execVm "armitxes\remote.sqf"}, {ctrlSetText [999,"Wrong code!"]; sleep 1; ctrlSetText [999, ""];}],1,false,true,"","player distance memcont <= 5"];
 //==========  CASINO ======================
-action162 =_role addaction ["<t color='#FFD700'>Low Slotmachine ($100)</t>","casino.sqf",["slotmachineB"],1,false,true,"","player distance gamble1 < 4 && isciv && !isbet && !nobet"];
-action163 =_role addaction ["<t color='#FFD700'>Low Slotmachine ($100)</t>","casino.sqf",["slotmachineB"],1,false,true,"","player distance gamble2 < 4 && isciv && !isbet && !nobet"];
-action164 =_role addaction ["<t color='#FFD700'>High Slotmachine ($2000)</t>","casino.sqf",["slotmachine"],1,false,true,"","player distance gamble3 < 4 && isciv && !isbet && !nobet"];
-action165 =_role addaction ["<t color='#FFD700'>High Slotmachine ($2000)</t>","casino.sqf",["slotmachine"],1,false,true,"","player distance gamble4 < 4 && isciv && !isbet && !nobet"];
-action166 =_role addaction ["<t color='#FF0000'>Rob Casino</t>","casrob.sqf", ["robcas", csafe],1,false,true,"","player distance csafe <= 3 and isciv"];
+action160 =_role addaction ["<t color='#FFD700'>Low Slotmachine ($100)</t>","casino.sqf",["slotmachineB"],1,false,true,"","player distance gamble1 < 4 && isciv && !isbet && !nobet"];
+action161 =_role addaction ["<t color='#FFD700'>Low Slotmachine ($100)</t>","casino.sqf",["slotmachineB"],1,false,true,"","player distance gamble2 < 4 && isciv && !isbet && !nobet"];
+action162 =_role addaction ["<t color='#FFD700'>High Slotmachine ($2000)</t>","casino.sqf",["slotmachine"],1,false,true,"","player distance gamble3 < 4 && isciv && !isbet && !nobet"];
+action163 =_role addaction ["<t color='#FFD700'>High Slotmachine ($2000)</t>","casino.sqf",["slotmachine"],1,false,true,"","player distance gamble4 < 4 && isciv && !isbet && !nobet"];
+action164 =_role addaction ["<t color='#FF0000'>Rob Casino</t>","casrob.sqf", ["robcas", csafe],1,false,true,"","player distance csafe <= 3 and isciv"];
 // ====== Armis Medic ======  
 medAct = _role addAction ["Remove Body","noscript.sqf",'deleteVehicle cursorTarget; ["dollarz",1500] call INV_AddInventoryItem;',1,false,true,"",'ismedic && !(alive cursorTarget) && cursorTarget isKindOf "Man"'];                                                                                                                       
 medAct2 = _role addAction ["Revive","noscript.sqf",'_tar = cursorTarget; [_tar] spawn plr_heal; format [''%1 switchMove "AmovPsitMstpSlowWrflDnon_ground";'',_tar] call toClients; ["dollarz",2000] call INV_AddInventoryItem;',1,false,true,"",'ismedic && ([cursorTarget] call plr_isUnConscious)'];
@@ -152,7 +150,8 @@ armiPhone = _role addaction ["<t color='#FFA500'>ArmiPhone</t>","noscript.sqf",'
 //======= PM/CC Resign============
 CCAct = _role addAction ["<t color ='#58ACFA'>Resign from office </t>","resign.sqf",["CCresign"],0,false,true,"","player distance rathaus < 3 && isChief"]; 
 MayAct =  _role addAction ["<t color ='#FFD700'>Resign from office </t>","resign.sqf",["PMresign"],0,false,true,"","player distance rathaus < 3 && isMayor"]; 
-                                                                                                 
+protest = _role addAction ["<t color ='#FFD700'>Protest</t>","noscript.sqf",'protesters = protesters + [player];',0,false,true,"","player distance rathaus < 20 && !(player in protesters) && isciv"];
+
 holsterPrim = _role addaction ["Holster Primary","armitxes\holster.sqf",0,1,false,true,"","((primaryWeapon player) call INV_GetWeaponTyp) == 2"];
 unholsterPrim = _role addaction ["Unholster Primary","armitxes\holster.sqf",0,1,false,true,"","primHolster != ''"];
 holsterPist = _role addaction ["Holster Pistol","armitxes\holster.sqf",1,1,false,true,"","player call INV_getPistol != ''"];

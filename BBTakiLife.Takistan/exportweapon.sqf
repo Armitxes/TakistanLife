@@ -7,7 +7,6 @@ _shopnum    = _this select 4;
 
 fvspam=true;
 if(_stock >= _maxstock)exitWith{player groupchat "the shop has reached its maximum stock for this weapon";sleep 0.1;fvspam=false;};
-
 call compile format['favail = %1avail; %1avail = %1avail - 1;', _item];
 ['dollarz', _preis] call INV_AddInventoryItem;
 player groupchat format["The weapon has been exported for $%1!", _preis];

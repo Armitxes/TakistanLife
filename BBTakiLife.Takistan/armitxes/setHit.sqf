@@ -36,13 +36,14 @@ if((alive player)
             sleep 5;
             
             while { dialog } do { closeDialog 0; };
+	    titleText ["You are unconscious", "WHITE OUT", 2];
             if (!(createDialog "ja_nein")) exitWith {hint "Dialog Error!"};
             ctrlSetText [1,"You are unconscious, want to call a medic? Pressing no or closing this window will result in a suicide."];
             sleep 1;
             skipDmg = false; 
             waitUntil{!(ctrlVisible 1023) || !(alive player)};
           
-            if(!alive player || Antwort > 2) then { while { ctrlVisible 1023 } do { closeDialog 0; }; } else {
+            if(!(alive player) || Antwort > 2 || (animationState player) != "AdthPercMstpSlowWrf_beating") then { while { ctrlVisible 1023 } do { closeDialog 0; }; } else {
               if (Antwort == 1) then {
                 _medCount = 0;
                 {
@@ -55,9 +56,11 @@ if((alive player)
                   ["call_medic"] execVM "armitxes\phone.sqf";
                   systemChat "EMERGENCY CALL SENT";
                   waitUntil {!(alive player) || (animationState player) != "AdthPercMstpSlowWrf_beating"};
+		  if (alive player) then { titleText ["A medic revived you", "WHITE IN", 2]; } else { titleText ["You were killed", "WHITE IN", 2]; };
                   Antwort = 2;
                 } else {
                   systemChat "No medic online. You died.";
+		  titleText ["You suicided", "WHITE IN", 2];
                   player setDamage 1;
                 };
           	 } else { player setDamage 1; systemChat "You suicided"; }; 

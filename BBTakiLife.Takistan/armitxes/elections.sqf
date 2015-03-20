@@ -34,6 +34,7 @@ while {true} do {
 			if (_currentMayor == _MaxPos) then {
 				_msg = "The old Prime Minister stays.";
 			} else {
+				protesters = []; publicVariable "protesters";
 				_currentMayor = _MaxPos;
 				_MayorString  = (playerstringarray select _currentMayor);
 				_msg = format ["%1 is now the new Prime Minister!",_MayorString];
@@ -74,6 +75,6 @@ while {true} do {
     
     chiefNumber = _currentChief;
     PUBLICVARIABLE "chiefNumber";
-    (format["hint ""%1""; if ((rolenumber-1) == %2) then {isMayor = true;} else {isMayor = false;}; if ((rolenumber-1) == %3) then {ischief = true; [""use"", ""cc""] execVM ""armitxes\clothing.sqf""; } else {ischief = false;};",_msg,MayorNumber,chiefNumber]) call toClients;
+    (format["hint ""%1""; if ((rolenumber-1) == %2) then {isMayor = true;} else {isMayor = false;}; if ((rolenumber-1) == %3) then {ischief = true;} else {ischief = false;};",_msg,MayorNumber,chiefNumber]) call toClients;
   };
 };
