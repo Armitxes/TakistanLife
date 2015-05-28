@@ -148,6 +148,20 @@ ISSE_IsVictim =
 		false
 	};
 };
+ISSE_IsUncon =
+{
+	private ["_state", "_victimStats"];
+	_state  = animationState _this;
+	_victimStats = ["AdthPercMstpSlowWrf_beating","amovpercmstpssurwnondnon", "adthppnemstpsraswpstdnon_2", "adthpercmstpslowwrfldnon_4", "amovpercmwlkssurwnondf_forgoten", "civillying01"];
+	if (_state in _victimStats) then
+	{
+		true
+	}
+	else
+	{
+		false
+	};
+};
 
 ISSE_DeleteVehicle = {
 	private ["_vcl", "_deltime"];

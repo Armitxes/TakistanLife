@@ -28,7 +28,7 @@ switch (_art) do {
 	    _list = lbAdd [4, "Crime not in List"];
 	    _list = lbAdd [4, "Murder"];
 	    _list = lbAdd [4, "Hit & Run"];
-	    _list = lbAdd [4, "Use of an Illegal Weapon"];
+	    _list = lbAdd [4, "Bribery"];
 	    _list = lbAdd [4, "VIP Assassination"];
 	    _list = lbAdd [4, "Bank/Casino Robbery"];
 	    _list = lbAdd [4, "Breach of Highway Code"];
@@ -54,10 +54,12 @@ switch (_art) do {
 	    _list = lbAdd [4, "Kidnapping a VIP"];
 	    _list = lbAdd [4, "Breach of Aviation Law"];
 	    _list = lbAdd [4, "Terrorism"];
+		
 	};
 	_list = lbAdd [4, "Theft of UN/Cop Vehicle"];
 	_list = lbAdd [4, "Illegal Border Crossing"];
-	_list = lbAdd [4, "Crimes Against Humanity"];  
+	_list = lbAdd [4, "Crimes Against Humanity"]; 
+    _list = lbAdd [4, "Abuse of Emergency call"];	
   
 	lbSetCurSel [4, 0];
   
@@ -121,7 +123,7 @@ switch (_art) do {
 	lbAdd [1, localize "STRS_statdialog_playerinfo"];
 	lbAdd [1, _trennlinie];
 	lbAdd [1, format ["Money: $%1",_money]];
-	lbAdd [1, format ["Savings: $%1",PLAYERDATA select 1]];
+	lbAdd [1, format ["Savings: $%1",((PLAYERDATA select 1) call ISSE_str_IntToStr)]];
 	lbAdd [1, format ["%1: %2/%3", localize "STRS_statdialog_weight", (call INV_GetOwnWeight), INV_Tragfaehigkeit]];
 		
 	lbAdd [1, _trennlinie];
@@ -200,6 +202,13 @@ switch (_art) do {
 
 	lbAdd [1,""];lbAdd [1,""];
 	lbAdd [1, _trennlinie];
+	lbAdd [1, "O I L  D E M A N D"];
+	if (isNil "oildemand") then {
+	lbAdd [1,"Oil Barrel Trader demand: 1"];}
+	else {
+	lbAdd [1, format["Oil Barrel Trader demand: %1", oildemand]];};
+	
+	lbAdd [1, _trennlinie];
 	lbAdd [1, "W A N T E D:"];
 	lbAdd [1, _trennlinie];
          
@@ -210,7 +219,7 @@ switch (_art) do {
         _pReason = _singleWarrant select 1;
         _pBounty = _singleWarrant select 2;  
       
-	  lbAdd [1,(format ["%1 %2 ( Cop Bounty: %3, Jail Time: %4 min/s,Total Bail : %5): is wanted for :", _idCiv, (name _idCiv), _pBounty, round (_pBounty/(16.5*60)),(_pBounty*2)])];
+	  lbAdd [1,(format ["%1 %2 ( Cop Bounty: %3, Jail Time: %4 min/s,Total Bail : %5): is wanted for :", _idCiv, (name _idCiv), _pBounty, round (_pBounty/(16.5*60)),(_pBounty*4)])];
 				 lbAdd [1,(format ["  %1", _pReason])];
 		};
 	  lbAdd [1, _trennlinie];
@@ -338,7 +347,7 @@ switch (_art) do {
 	    _idCiv = _singleWarrant select 0;
 	    _pReason = _singleWarrant select 1;
 	    _pBounty = _singleWarrant select 2;  
-	    lbAdd [1, (format ["%1 %2 ( Cop Bounty: %3, Jail Time: %4 min/s,Total Bail : %5): is wanted for :", _idCiv, (name _idCiv), _pBounty, round (_pBounty/(16.5*60)),(_pBounty*2)])];
+	    lbAdd [1, (format ["%1 %2 ( Cop Bounty: %3, Jail Time: %4 min/s,Total Bail : %5): is wanted for :", _idCiv, (name _idCiv), _pBounty, round (_pBounty/(16.5*60)),(_pBounty*4)])];
 	    lbAdd [1,(format ["  %1", _pReason])]; 	
 	};
 	lbAdd [1, _trennlinie];

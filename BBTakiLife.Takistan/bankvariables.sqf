@@ -6,6 +6,7 @@ BankRaubKontoverlust     = 400;
 ShopRaubKontovershop     = 0;
 ShopRaubProzentVershop   = 0;
 rblock			 = 0;
+stolencash		 = 0;
 Maxbankrobpercentlost    = 0.01;
 MaxbankrobpercentlostA   = 0.025;
 MaxbankrobpercentlostB   = 0.05;

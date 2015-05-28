@@ -4,7 +4,7 @@ _legit = true;
 
 if (_action == "call_cop" || _action == "call_medic" || _action == "call_un") then {
   if(!prioCall) then {
-    if((lastCall + 600) < time) then {
+    if((lastCall + 360) < time) then {
       if (!(createDialog "ja_nein")) exitWith {hint "Dialog Error!"};
       ctrlSetText [1,"You are about to make an emergency call.<br />Note that you can only make 1 call every 10 minutes and that abuse is a criminal offense!\nThis call will cost you $200"];
       

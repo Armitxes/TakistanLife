@@ -5,7 +5,7 @@ _exitvar = false;
 
 player groupChat format ["You're pulling out %1. Stay close to the car!", _target];
 
-for [{_i=0}, {_i < _n}, {_i=_i+1}] do {if (player distance _target > 3) exitWith {player groupChat "You are too far away."; _exitvar = true;};sleep 0.3;};
+for [{_i=0}, {_i < _n}, {_i=_i+1}] do {if (player distance _target > 6) exitWith {player groupChat "You are too far away."; _exitvar = true;};sleep 0.3;};
 
 if(_exitvar)exitwith{};
 

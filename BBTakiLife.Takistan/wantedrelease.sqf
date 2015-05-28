@@ -30,10 +30,10 @@ if (iscop && (_autoReason == 0)) then
     {
       case 1: { _reason = "Murder"; _bounty = 12000; };
       case 2: { _reason = "Hit & Run"; _bounty = 10000; };
-      case 3: { _reason = "Use of an Illegal Weapon"; _bounty = 5000; };
+      case 3: { _reason = "Bribery"; _bounty = 2000; };
       case 4: { _reason = "VIP Assassination"; _bounty = 18000; };
       case 5: { _reason = "Bank/Casino Robbery"; _bounty = 8000; };
-      case 6: { _reason = "Breach of Highway Code"; _bounty = 2000; };
+      case 6: { _reason = "Breach of Highway Code"; _bounty = 1000; };
       case 7: { _reason = "Evading a Police Checkpoint"; _bounty = 5000; };
       case 8: { _reason = "Evading the Police"; _bounty = 3000; };
       case 9: { _reason = "Theft of Civilian Vehicle"; _bounty = 4000; };

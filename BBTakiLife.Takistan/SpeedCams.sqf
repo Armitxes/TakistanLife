@@ -26,7 +26,7 @@ while {isciv} do
 		  sleep 2;
 
 		  if (_car isKindOf "truck") then {
-		      if(truckDemerits == 0)exitWith{};
+		      if(truckDemerits == 0 || !("truck" call INV_HasLicense)) exitWith {};
 		      truckDemerits = truckDemerits - _penalty;
 		      if(truckDemerits <= 0) then {
 			  truckDemerits = 0;
@@ -35,7 +35,7 @@ while {isciv} do
 		      };
 		      player groupchat format["Truck Demerit points lost: %1. Truck Demerit points remaining: %2", _penalty, truckDemerits];
 		  } else {
-		      if(demerits == 0)exitWith{};
+		      if(demerits == 0 || !("car" call INV_HasLicense)) exitWith {};
 		      demerits = demerits - _penalty;
 		      if(demerits <= 0) then {
 			  demerits = 0;

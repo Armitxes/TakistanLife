@@ -46,14 +46,24 @@ _uniforms = [
   ["DonUni3","RU_Worker3"],                     // Worker
   ["DonUni4","Ins_Woodlander1"],                // Woodlander
   ["DonUni5","TK_INS_Soldier_AAT_EP1"],          // Rebel
+  ["DonUni6","INS_Worker2"], 					// local
+  ["DonUni7","INS_Bardak"], 					//Bardak
+  ["DonUni8","INS_Lopotev"], 					//Lopotev
   ["PmcUni1","Soldier_TL_PMC"],					// Team Coordinator
   ["PmcUni2","Soldier_Bodyguard_AA12_PMC"],		// Bodyguard
   ["PmcUni3","Soldier_Sniper_PMC"],				// Defensive Marksman
   ["PmcUni4","Soldier_Medic_PMC"],				// PMC Operative
-  ["PmcUni5","Soldier_MG_PKM_PMC"],			// Field Specialist
+  ["PmcUni5","Soldier_MG_PKM_PMC"],			    // Field Specialist
   ["PmcUni6","Soldier_GL_M16A2_PMC"],			// Security Contractor
   ["PmcUni7","Soldier_Pilot_PMC"],				// PMC Pilot
-  ["PmcUni8","Ry_PMC"]	  						// Team Leader
+  ["PmcUni8","Ry_PMC"],						   // Team Leader
+  ["GangUni1","GUE_Soldier_MG"],				// Hood		
+  ["GangUni2","GUE_Soldier_GL"],               //Balaclava
+  ["GangUni3","GUE_Soldier_CO"],			   // Cap
+  ["GangUni4","GUE_Soldier_AR"],			   // Boonie
+  ["GangUni5","GUE_Commander"],				   // Commander
+  ["GangUni6","GUE_Soldier_Pilot"]			  // Gang Pilot
+  
 ];
 
 _medics = ["docUni","docUni2","docUni3"];
@@ -70,6 +80,9 @@ if(_action == "use") exitWith {
       _pos = getPos player;
       _old = player;
       _grp = group player;
+	  _gnm = false;
+	  _gnl = false;
+	  
 
       
       titleText ["Changing clothes...", "BLACK FADED"];
@@ -78,8 +91,10 @@ if(_action == "use") exitWith {
       _pwep = primaryWeapon _old;
       _mag = magazines _old;
 	  
-      
-      _newUnit = _grp createUnit [(_x select 1), _pos, [], 0, "NONE"];
+	  if (gangmember) then {_gnm = true} else {_gnm = false};
+	  if (gangleader) then {_gnl = true} else {_gnl = false};
+	 
+	  _newUnit = _grp createUnit [(_x select 1), _pos, [], 0, "NONE"];
       addSwitchableUnit _newUnit;
       
       sleep 0.5;
@@ -116,6 +131,9 @@ if(_action == "use") exitWith {
         player addEventHandler ["fired", {["fired", (_this select 4), (_this select 1)] execVM "stun.sqf";}];
         player addEventHandler ["handleDamage", {_this call compile preprocessfile "armitxes\setHit.sqf"}];
         player addEventHandler ["fired",{_this execVM "fired.sqf"}];
+		if (_gnm) then {gangmember = true};
+		if (_gnl) then {gangleader = true};
+		
 		};
 
       titleText ["Clothes changed", "BLACK IN"];  

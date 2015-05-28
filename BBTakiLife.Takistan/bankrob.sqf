@@ -24,20 +24,21 @@ if (_art == "ausrauben") then {
     ((player distance safe) <= 100) &&
     (animationstate player != "civillying01") &&
     (alive player) &&
-    ((vehicle player) == player)
+    ((vehicle player) == player) && !([player] call plr_isUnConscious)
   } do {    
     hint format ["%1 seconds until successful robbery!",round(_startRob-time)];
     sleep 1;
   };
   hint ""; 
   
-  if((animationstate player == "civillying01") || ((player distance safe) >= 100) || !(alive player) || ((vehicle player) != player)) then {
+  if((animationstate player == "civillying01") || ((player distance safe) >= 100) || !(alive player) || ((vehicle player) != player) || ([player] call plr_isUnConscious)) then {
     format['[0,1,2,["busted", "%1"]] execVM "bankrob.sqf";', name player] call toClients; 
   } else {
     format['[0,1,2,["opfer", %1, %2]] execVM "bankrob.sqf";', _safe, _robpool] call toClients;  
     ['dollarz', _robpool] call INV_AddInventoryItem;
     player groupChat format[localize "STRS_bank_rob_success"];
-  local_useBankPossible = false;
+ stolencash = stolencash + _robpool; 
+ local_useBankPossible = false;
 robenable = true;
 rblock = rblock + ((_robpool/5000)*60);
 _rblock = rblock;
@@ -50,6 +51,7 @@ for [{rblock}, {rblock > -1}, {rblock=rblock-1}] do {sleep 1;};
 
 local_useBankPossible = true;
 rblock	   = 0;
+stolencash = 0;
   };
   
   robenable = true;

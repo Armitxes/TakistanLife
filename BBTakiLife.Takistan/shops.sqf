@@ -14,14 +14,15 @@ if (isServer) then {
   [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop2 #10
   [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop3 #11
   [10000,10000,10000,10000,10000,10000,10000], //Barshop #13
-  [10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //gunshop #14
-  [100,100,100,100,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //equipmentshop #15
+  [10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //gunshop #14
+  [100,100,100,100,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //equipmentshop #15
   [10,10,10,10,10], //tuning1 #16
   [10,10,10,10,10], //tuning2 #17
-  [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1], //carshop1 #19
-  [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1], //carshop2 #20
-  [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1], //carshop3 #21
-  [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1], //carshop4 #22
+  [10,10,10,10,10], //tuning3
+  [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop1 #19
+  [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop2 #20
+  [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop3 #21
+  [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop4 #22
   [8,8,8,8,8,8,8,8,-1,-1,-1], //truckshop1 #23
   [8,8,8,8,8,8,8,8,-1,-1,-1], //truckshop2 #24
   [3,5,3,3,3,3,3,-1,-1,-1,-1], //airshop1 #25
@@ -90,14 +91,15 @@ INV_itemmaxstocks = [
 [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop2 #10
 [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop3 #11
 [10000,10000,10000,10000,10000,10000,10000], //Barshop #13
-[20,-1,20,-1,20,-1,20,-1,20,-1,20,-1,20,-1,20,-1,20,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //gunshop #14
-[100,100,100,100,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //equipmentshop #15
+[20,-1,20,-1,20,-1,20,-1,20,-1,20,-1,20,-1,20,-1,20,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //gunshop #14
+[100,100,100,100,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //equipmentshop #15
 [15,15,15,15,15], //tuning1 #16
 [15,15,15,15,15], //tuning2 #17
-[-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1], //carshop1 #19
-[-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1], //carshop2 #20
-[-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1], //carshop3 #21
-[-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1], //carshop4 #22
+[15,15,15,15,15], //tuning3
+[-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop1 #19
+[-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop2 #20
+[-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop3 #21
+[-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop4 #22
 [13,13,13,13,13,13,13,13,-1,-1,-1], //truckshop1 #23
 [13,13,13,13,13,13,13,13,-1,-1,-1], //truckshop2 #24
 [3,5,3,3,3,3,3,-1,-1,-1,-1], //airshop1 #25
@@ -160,7 +162,7 @@ _is = ["perch", "trout", "walleye", "bass", "Bread", "rabbit", "boar", "medikit"
 _pub = ["beer","beer2","vodka","smirnoff","wiskey","wine","wine2"];
 //Gun Shop
 //Guns - M9, 1911, Revolver-Silver, Lee Enfield
-_gs = ["M9", "Rnd_9x19_M9","glock17_EP1","Rnd_9x19_glock17","Makarov","Rnd_9x18_Makarov","Colt1911", "Rnd_45ACP_1911", "revolver_EP1", "Rnd_45ACP", "LeeEnfield","x_303","M8_compact","Rnd_556x45_G36","Saiga12K","8Rnd_B_Saiga12_Pellets"];
+_gs = ["M9_Civ", "Rnd_9x19_M9","glock17_EP1","Rnd_9x19_glock17","Makarov","Rnd_9x18_Makarov","Colt1911", "Rnd_45ACP_1911", "revolver_EP1", "Rnd_45ACP", "LeeEnfield","x_303","M8_compact","Rnd_556x45_G36","Saiga12K","8Rnd_B_Saiga12_Pellets"];
 //Equiptment shop
 //Bino's, NVG's, GPS, Lockpick
 _es = ["Binocular", "NVGoggles", "GPS","Fuelline","handy","treefixer"];
@@ -546,7 +548,8 @@ _gangshop_buy =
 "Land_CamoNetVar_NATO_EP1",
 "bunkersmall",
 "US_WarfareBUAVterminal_Base_EP1",
-"CampEast_EP1"
+"CampEast_EP1","GangUni1",
+"GangUni2"
 ];
 _mayorveh =
 [
@@ -554,8 +557,8 @@ _mayorveh =
 "hilux1_civil_3_open_EP1",
 "LandRover_TK_CIV_EP1",
 "SUV_PMC_BAF",
-"ArmoredSUV_PMC",
-"Ka60_PMC",
+"ArmoredSUV_PM",
+"Ka60_PM",
 "MH6J_EP1"
 ];
 _mayorbox =
@@ -621,6 +624,7 @@ _pmcshop = [
 "m8_sharpshooter",
 "M4A3_CCO_EP1",
 "30Rnd_556x45_Stanag",
+"100Rnd_556x45_BetaCMag",
 "Sa58V_CCO_EP1_PMC",
 "Sa58V_RCO_EP1_PMC",
 "30Rnd_762x39_SA58",
@@ -655,6 +659,7 @@ if(!isDedicated) then {
     _civguns = _gs;
     _civair = _as;
     _civveh = _cs;
+	
   
     _cs = _cs + [
       "SUV_PMC_BAF",
@@ -669,33 +674,37 @@ if(!isDedicated) then {
                   "DonUni3","medikit","lockpick","NVGoggles","reparaturkit","lighter","handy",
                   "Fuelline","kanister","GPS","Binocular","supgrade"
                 ];
-    _ng = ["M9","15Rnd_9x19_M9","LeeEnfield","x_303"];
-    
+    _ng = ["M9_Civ","15Rnd_9x19_M9","LeeEnfield","x_303"];
+    _gangshop_buy = _gangshop_buy + ["GangUni3"];
     _gs = _gs + _ng;
     if (iscop) then { _copshop = ["M9SD"] + _copshop + _ng; };
     
     if(_vipLvl > 1) then {
-      _cs = _cs + ["Tractor","TT650_Gue","hilux1_civil_1_open"];
+      _cs = _cs + ["SUV_WHITE","Tractor","TT650_Gue","hilux1_civil_1_open"];
       _as = _as + ["MH6J_EP1"];
-      _es = _es + ["DonUni2"];
+      _es = _es + ["DonUni6","DonUni2"];
       _ng = ["MakarovSD","8Rnd_9x18_MakarovSD","Huntingrifle","x_22_LR_17_HMR","AKS_74_UN_Kobra","30Rnd_545x39_AKSD","AKS_GOLD","Rnd_762x39_AK47"];
       _gs = _gs + _ng;
-      if(iscop) then { _copshop_patrol = _copshop_patrol + _ng; }; 
+      _gangshop_buy = _gangshop_buy + ["GangUni4"];
+	  if(iscop) then { _copshop_patrol = _copshop_patrol + _ng; }; 
       
       if(_vipLvl > 2) then {
-        _cs = _cs + ["hilux1_civil_2_covered"];
+        _cs = _cs + ["SUV_RED","hilux1_civil_2_covered"];
         _ts = _ts + ["UralOpen_CDF"];
-        _es = _es + ["DonUni4","DonUni5"];
-        _ng = ["G36_C_SD_Camo","30Rnd_556x45_G36SD"]; 
+        _es = _es + ["DonUni7","DonUni4","DonUni5"];
+        _ng = ["G36_C_SD_Camo","30Rnd_556x45_G36SD","SCAR_L_CQC_Holo","30Rnd_556x45_Stanag"]; 
         _gs = _gs + _ng;
-        if(iscop) then { _copshop_response = _copshop_response + _ng; };  
+        _gangshop_buy = _gangshop_buy + ["GangUni5"];
+		if(iscop) then { _copshop_response = _copshop_response + _ng; };  
         
         if(_vipLvl > 3) then {
           _as = _as + ["BAF_Merlin_HC3_D","MV22"];
-          _es = _es + ["DonUni1"];
-          
-          _ng = ["M4A1_AIM_SD_CAMO","30Rnd_556x45_StanagSD","RPK_74","75Rnd_545x39_RPK","VSS_Vintorez","10Rnd_9x39_SP5_VSS"];
+          _es = _es + ["DonUni8","DonUni1"];
+		  _cs = _cs + ["SUV_BLUE"];
+		 
+		  _ng = ["M8_HOLO_SD","M4A1_AIM_SD_CAMO","30Rnd_556x45_StanagSD","RPK_74","75Rnd_545x39_RPK","VSS_Vintorez","10Rnd_9x39_SP5_VSS"];
           _gs = _gs + _ng;
+		  _gangshop_buy = _gangshop_buy + ["GangUni6"];
           if(iscop) then { _copshop_response = ["MP5SD"] + _copshop_response + _ng; };   
         };
       };
@@ -737,6 +746,7 @@ INV_ItemShops = [
 
 [tuning1,"Car Upgrades",dummyobj,dummyobj,_cu,_cu,true], // #16
 [tuning2,"Car Upgrades",dummyobj,dummyobj,_cu,_cu,true], // #17
+[tuning3,"Car Upgrades",dummyobj,dummyobj,_cu,_cu,true],
 
 [carshop1,"Car Shop",dummyobj,carspawn1,_cs,_cs,true],  // #18
 [carshop2,"Car Shop",dummyobj,carspawn2,_cs,_cs,true],  // #19

@@ -91,12 +91,11 @@ class Mission
 		briefingDescription="By British Borders (http://www.britishborders.co.uk)";
 		resistanceEast=1;
 		startWeather=0;
-		forecastWeather=0.76717043;
-		forecastFog=0.1263635;
+		forecastWeather=1;
 		year=2014;
-		month=10;
-		day=21;
-		hour=6;
+		month=8;
+		day=1;
+		minute=0;
 	};
 	class Groups
 	{
@@ -1555,7 +1554,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={5559.4604,79.787216,16998.379};
+					position[]={5326.7334,73.198982,18947.471};
 					special="NONE";
 					id=2003;
 					side="WEST";
@@ -34573,7 +34572,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Infostand_2_EP1";
 			skill=0.60000002;
-			text="tuning2_1";
+			text="tuning3";
 			init="this allowDamage false; this enableSimulation false; this setObjectTexture [0,""images\shopTuning.paa""]; this setpos [getpos this select 0, getpos this select 1, (getpos this select 2) + 0.2];";
 		};
 		class Item3284
@@ -43634,7 +43633,7 @@ class Mission
 		};
 		class Item183
 		{
-			position[]={4665.6304,322.32092,727.96979};
+			position[]={4667.5977,322.30533,722.9527};
 			name="tuning2_1";
 			text="Car tuning";
 			type="mil_dot";
@@ -44109,7 +44108,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=16;
+		items=10;
 		class Item0
 		{
 			position[]={1295.167,12.117385,19861.078};
@@ -44194,54 +44193,6 @@ class Mission
 		};
 		class Item6
 		{
-			position[]={7243.248,95.455521,11382.534};
-			a=40;
-			b=40;
-			angle=74.144997;
-			activationBy="WEST";
-			repeating=1;
-			interruptable=1;
-			age="UNKNOWN";
-			expActiv="hint ""The Police are Raiding a Gang Hideout!!!""";
-			class Effects
-			{
-			};
-		};
-		class Item7
-		{
-			position[]={6281.7783,66.889999,10763.507};
-			a=20;
-			b=20;
-			angle=105.197;
-			activationBy="WEST";
-			repeating=1;
-			interruptable=1;
-			age="UNKNOWN";
-			expActiv="hint ""The Police are Raiding a Gang Hideout!!!""";
-			class Effects
-			{
-			};
-		};
-		class Item8
-		{
-			position[]={6158.6284,59.92635,11187.06};
-			a=30;
-			b=20;
-			angle=121.382;
-			activationBy="ANY";
-			repeating=1;
-			interruptable=1;
-			age="UNKNOWN";
-			text="Jail sounds";
-			name="Jail";
-			expCond="";
-			class Effects
-			{
-				soundDet="RadioMusic1_EP1";
-			};
-		};
-		class Item9
-		{
 			position[]={10787.005,282.64667,6408.2837};
 			a=1;
 			b=1;
@@ -44255,7 +44206,7 @@ class Mission
 			{
 			};
 		};
-		class Item10
+		class Item7
 		{
 			position[]={646.29889,548.875,9326.4404};
 			a=3;
@@ -44267,12 +44218,12 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			expCond="this && vehicle player in thislist && !(isun);";
-			expActiv="(vehicle player) setpos (getmarkerpos ""ooga"");hint ""Out of Gamearea"";";
+			expActiv="(vehicle player) setpos [getMarkerPos ""ooga"" select 0, getMarkerPos ""ooga"" select 1, (getMarkerPos ""ooga"" select 2) + 40];hint ""Out of Gamearea"";";
 			class Effects
 			{
 			};
 		};
-		class Item11
+		class Item8
 		{
 			position[]={12144.57,739.42456,4459.6011};
 			a=3;
@@ -44284,12 +44235,12 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			expCond="this && vehicle player in thislist && !(isun);";
-			expActiv="(vehicle player) setpos (getmarkerpos ""ooga"");hint ""Out of Gamearea"";";
+			expActiv="(vehicle player) setpos [getMarkerPos ""ooga"" select 0, getMarkerPos ""ooga"" select 1, (getMarkerPos ""ooga"" select 2) + 40];hint ""Out of Gamearea"";";
 			class Effects
 			{
 			};
 		};
-		class Item12
+		class Item9
 		{
 			position[]={6162.6538,69.210609,11198.431};
 			a=4;
@@ -44303,51 +44254,6 @@ class Mission
 			name="prison_drag";
 			expCond="this && player in thislist && !(isciv) && dragging;";
 			expActiv="hint ""waiting for prisoners..""; a = execVM ""arrest.sqf"";";
-			class Effects
-			{
-			};
-		};
-		class Item13
-		{
-			position[]={4356.3452,45.19062,10855.137};
-			a=30;
-			b=30;
-			angle=105.197;
-			activationBy="WEST";
-			repeating=1;
-			interruptable=1;
-			age="UNKNOWN";
-			expActiv="hint ""The Police are Raiding Gang Area 1 !!!""";
-			class Effects
-			{
-			};
-		};
-		class Item14
-		{
-			position[]={6520.1904,350.81873,2089.6133};
-			a=30;
-			b=30;
-			angle=105.197;
-			activationBy="WEST";
-			repeating=1;
-			interruptable=1;
-			age="UNKNOWN";
-			expActiv="hint ""The Police are Raiding Gang Area 3 !!!""";
-			class Effects
-			{
-			};
-		};
-		class Item15
-		{
-			position[]={9937.4023,129.79742,11352.564};
-			a=30;
-			b=30;
-			angle=105.197;
-			activationBy="WEST";
-			repeating=1;
-			interruptable=1;
-			age="UNKNOWN";
-			expActiv="hint ""The Police are Raiding Gang Area 2 !!!""";
 			class Effects
 			{
 			};

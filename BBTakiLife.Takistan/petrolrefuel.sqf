@@ -44,7 +44,7 @@ if (_tankvehicle == player) exitWith
 
 	};
 
-if (vehicle player distance _fuelstartposition > 3) exitWith
+if (vehicle player distance _fuelstartposition > 6) exitWith
 
 	{
 

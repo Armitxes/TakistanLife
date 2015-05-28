@@ -47,6 +47,6 @@ if (_item != "") then
 
 	};
 
-sleep 1;
+sleep 0.2;
 
 };

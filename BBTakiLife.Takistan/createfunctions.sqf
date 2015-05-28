@@ -109,6 +109,13 @@ if (_classname == "SUV_TK_CIV_EP1") then {
 newvehicle setVehicleInit 'this setObjectTexture [0, "images\copsuv.paa"]'; processInitCommands; };
 	if (_itemname == "SUV_TK_CIV_EP1_SCO") then {
 newvehicle setVehicleInit 'this setObjectTexture [0, "images\scosuv.paa"]'; processInitCommands; };};
+if (_itemname == "SUV_RED") then {
+	newvehicle setVehicleInit 'this setObjectTexture [0, "images\RedSuv.paa"]'; processInitCommands; };
+if (_itemname == "SUV_BLUE") then {
+	newvehicle setVehicleInit 'this setObjectTexture [0, "images\BlueSuv.paa"]'; processInitCommands; };
+if (_itemname == "SUV_WHITE") then {
+	newvehicle setVehicleInit 'this setObjectTexture [0, "images\WhiteSuv.paa"]'; processInitCommands; };
+	
 if (_classname == "SUV_UN_EP1") then { newvehicle setVehicleInit 'this setObjectTexture [0, "images\unsuv.paa"]'; processInitCommands; };
 if (_classname == "VolhaLimo_TK_CIV_EP1") then { newvehicle setVehicleInit 'this setObjectTexture [0, "images\copvolha.paa"]'; processInitCommands; };
 if (_classname == "ArmoredSUV_PMC") then

@@ -124,6 +124,7 @@ if(_access) then {
   
   _item         = _itemsellarray select _i;
   _infos        = _item call INV_getitemArray;
+  _classname    = _infos call INV_getitemClassName;
   _stock        = [_item, INV_ActiveShopNumber] call INV_getstock;
   _preisOhneTax = (_infos call INV_getitemBuyCost)*0.5;
   _preis        = (_infos call INV_getitemSteuer)*0.5;
@@ -216,7 +217,7 @@ if(_access) then {
   
   			_vehicle = (INV_VehicleArray select _j);
   
-  			if ((typeOf _vehicle) == _item) then
+  			if ((typeOf _vehicle) == _classname) then
   
   				{
   

@@ -60,17 +60,15 @@ if(typeName (_this select 0) == "STRING") then {
       switch (typeName bombAttachment) do {
         case "OBJECT": {
           if(bombAttachment isKindOf "AllVehicles") then {
-            _owner = bombAttachment getVariable "bombActive";
-            if(!isNil "_owner") then { bombAttachment setDamage 1; };           
-          } else {
-            if(count _bombs > 0) then { bombAttachment setDamage 1; deleteVehicle (_bombs select 0); };           
+           _owner = bombAttachment getVariable "bombActive";
+            if(!isNil "_owner") then {"Bo_GBU12_LGB" createVehicle (getPos bombAttachment); };            
           };
-        };
         case "ARRAY": {
-          if(count _bombs > 0) then { "ARTY_Sh_122_HE" createVehicle bombAttachment; deleteVehicle (_bombs select 0); };     
+          if(count _bombs > 0) then {"Bo_GBU12_LGB" createVehicle bombAttachment; deleteVehicle (_bombs select 0); };     
         };
       };
       bombAttachment = nil;
     };
   };
+};
 };                                                                                                           

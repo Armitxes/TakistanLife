@@ -7,7 +7,7 @@ INV_AlleWaffenObjekte = [
 ["LeeEnfield",["Waffe", "rifle"],["LeeEnfield", "Lee Enfield"],[1980, 850], [2, "Riflelicense", "probator"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["", 5], ["", 5],["dollarz", 5000]] ],
 ["FN_FAL",["Waffe", "rifle"],["FN_FAL", "Fal"],[5145, 2195], [2, "automatic", "sobr_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["iron", 0], ["copper", 0],["dollarz", 10000]] ],
 ["UZI_SD_EP1",["Waffe", "rifle"],["UZI_SD_EP1", "Uzi w/silencer"],[2200, 1000], [2, "", ""],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
-["revolver_gold_EP1",["Waffe", "rifle"],["revolver_gold_EP1", "Gold Plated Revolver .45cal"],[1450, 637], [2, "Pistollicense", "sobr_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+["revolver_gold_EP1",["Waffe", "rifle"],["revolver_gold_EP1", "Gold Plated Revolver .45cal"],[1450, 637], [1, "Pistollicense", "sobr_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["FN_FAL_ANPVS4",["Waffe", "rifle"],["FN_FAL_ANPVS4", "Fal Night Scope"],[6800, 1700], [2, "PMClicense", "sobr_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["iron", 0], ["copper", 0],["dollarz", 10000]] ],
 ["AK_47_S",["Waffe", "rifle"],["AK_47_S", "aks"],[4000, 1500], [2, "bomb", "sobr_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["AK_47_M",["Waffe", "rifle"],["AK_47_M", "akm"],[4000, 1200], [2, "bomb", "sobr_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
@@ -52,6 +52,7 @@ INV_AlleWaffenObjekte = [
 ["G36K",["Waffe", "rifle"],["G36K", "G36K"],[10000, 1000], [2, "Riflelicense", "sobr_training"],[], "G36K" call ISSE_Cfg_Weapons_GetName,"G36K" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M4A1_HWS_GL_CAMO",["Waffe", "rifle"],["M4A1_HWS_GL_CAMO", "M4A1 HOLO with Tear Gas Launcher"],[10000, 1000], [2, "Riflelicense", "sobr_training"],[], "M4A1_HWS_GL_CAMO" call ISSE_Cfg_Weapons_GetName,"M4A1_HWS_GL_CAMO" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M4A1_HWS_GL",["Waffe", "rifle"],["M4A1_HWS_GL", "M4A1 HOLO with Tear Gas Launcher"],[10000, 1000], [2, "Riflelicense", "sobr_training"],[], "M4A1_HWS_GL_CAMO" call ISSE_Cfg_Weapons_GetName,"M4A1_HWS_GL_CAMO" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+["M8_HOLO_SD",["Waffe", "rifle"],["M8_HOLO_SD", "M8 HOLO SD"],[10000, 1000], [2, "", "response_training"],[], "M8_HOLO_SD" call ISSE_Cfg_Weapons_GetName,"M8_HOLO_SD" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 //PMC Weapons
 ["glock17_EP1_PMC",["Waffe", "pistol"],["glock17_EP1", "Glock"],[850, 412], [1, "PMClicense", "response_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M8_compact_PMC",["Waffe", "rifle"],["M8_compact", "XM8 Compact"],[8000, 1875], [2, "PMClicense", "response_training"],[], "M8_compact" call ISSE_Cfg_Weapons_GetName, "M8_compact" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 10],["plastik", 5],["kupfer", 5]]],
@@ -78,7 +79,7 @@ INV_AlleWaffenObjekte = [
 ["SCAR_H_LNG_Sniper",["Waffe", "rifle"],["SCAR_H_LNG_Sniper", "Mk17 Sniper"],[16000, 12000], [2, "Riflelicense", "sobr_training"],[], "SCAR_H_LNG_Sniper" call ISSE_Cfg_Weapons_GetName,"SCAR_H_LNG_Sniper" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M110_NVG_EP1",["Waffe", "rifle"],["M110_NVG_EP1", "M110 SASS NV"],[15000, 12000], [2, "Riflelicense", "sobr_training"],[], "M110_NVG_EP1" call ISSE_Cfg_Weapons_GetName,"M110_NVG_EP1" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["SCAR_L_CQC",["Waffe", "rifle"],["SCAR_L_CQC", "Mk16 CQC Iron Sights"],[10000, 7500], [2, "Riflelicense", "response_training"],[], "SCAR_L_CQC" call ISSE_Cfg_Weapons_GetName,"SCAR_L_CQC" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
-["SCAR_L_CQC_Holo",["Waffe", "rifle"],["SCAR_L_CQC_Holo", "Mk16 CQC Holo"],[10000, 7500], [2, "Riflelicense", "response_training"],[], "SCAR_L_CQC_Holo" call ISSE_Cfg_Weapons_GetName,"SCAR_L_CQC_Holo" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+["SCAR_L_CQC_Holo",["Waffe", "rifle"],["SCAR_L_CQC_Holo", "Mk16 CQC Holo"],[10000, 7500], [2, "", "response_training"],[], "SCAR_L_CQC_Holo" call ISSE_Cfg_Weapons_GetName,"SCAR_L_CQC_Holo" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["SCAR_L_STD_Mk4CQT",["Waffe", "rifle"],["SCAR_L_STD_Mk4CQT", "Mk16 Mk4 CQT Scope"],[13000, 7500], [2, "Riflelicense", "response_training"],[], "SCAR_L_STD_Mk4CQT" call ISSE_Cfg_Weapons_GetName,"SCAR_L_STD_Mk4CQT" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["SCAR_L_CQC_EGLM_Holo",["Waffe", "rifle"],["SCAR_L_CQC_EGLM_Holo", "Mk16 CQC GL Holo"],[10000, 7500], [2, "Riflelicense", "response_training"],[], "SCAR_L_CQC_EGLM_Holo" call ISSE_Cfg_Weapons_GetName,"SCAR_L_CQC_EGLM_Holo" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 
@@ -99,17 +100,17 @@ INV_AlleWaffenObjekte = [
 ["M1014", ["Waffe", "rifle"],["M1014", "M1014 Shotgun"],[5500, 1275], [2, "bomb", "response_training"], [], "M1014" call ISSE_Cfg_Weapons_GetName, "M1014" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 10],["plastik", 5],["kupfer", 5]]],
 
 ["MP5A5", ["Waffe", "rifle"],["mp5a5", "MP5A5"], [3800, 1212],[2, "smg", "response_training"], [], "MP5A5" call ISSE_Cfg_Weapons_GetName, "MP5A5" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 10],["plastik", 5],["kupfer", 5]]],
-["MP5SD", ["Waffe", "rifle"],["mp5sd", "MP5SD"], [3800, 3800],[2, "smg", "response_training"], [], "MP5SD" call ISSE_Cfg_Weapons_GetName, "MP5SD" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 10],["plastik", 5],["kupfer", 5]]],
+["MP5SD", ["Waffe", "rifle"],["mp5sd", "MP5SD"], [380, 380],[2, "smg", "response_training"], [], "MP5SD" call ISSE_Cfg_Weapons_GetName, "MP5SD" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 10],["plastik", 5],["kupfer", 5]]],
 
-["SVD", ["Waffe", "sniper"],["svd", "SVD"],[7500, 2500], [2, "bomb", "sobr_training"], [], "SVD" call ISSE_Cfg_Weapons_GetName, "SVD" call ISSE_Cfg_Weapons_GetDesc, [["", 5],["", 5],["dollarz", 10000]]],
+["SVD", ["Waffe", "sniper"],["svd", "SVD"],[10000, 2500], [2, "bomb", "sobr_training"], [], "SVD" call ISSE_Cfg_Weapons_GetName, "SVD" call ISSE_Cfg_Weapons_GetDesc, [["", 5],["", 5],["dollarz", 10000]]],
 
-["SVD_CAMO", ["Waffe", "sniper"],["svd_CAMO", "SVD (Camo)"],[6000, 4500], [2, "southgov", ""], [], "SVD" call ISSE_Cfg_Weapons_GetName, "SVD" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 40],["holz", 10],["kupfer", 10],["glas", 2]]],
+["SVD_CAMO", ["Waffe", "sniper"],["svd_CAMO", "SVD (Camo)"],[10000, 4500], [2, "southgov", ""], [], "SVD" call ISSE_Cfg_Weapons_GetName, "SVD" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 40],["holz", 10],["kupfer", 10],["glas", 2]]],
 
 ["Huntingrifle", ["Waffe", "sniper"],["Huntingrifle", "CZ 550 Scoped"],[4000, 4500], [2, "", "patrol_training"], [], "CZ 550 Scoped", "SVD" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 40],["holz", 10],["kupfer", 10],["glas", 2]]],
 
-["KSVK", ["Waffe", "sniper"],["ksvk", "KSVK"],[10000, 7500], [2, "bomb", ""], [], "KSVK" call ISSE_Cfg_Weapons_GetName, "KSVK" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["holz", 15],["kupfer", 20],["glas", 3]]],
+["KSVK", ["Waffe", "sniper"],["ksvk", "KSVK"],[15000, 7500], [2, "bomb", ""], [], "KSVK" call ISSE_Cfg_Weapons_GetName, "KSVK" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["holz", 15],["kupfer", 20],["glas", 3]]],
 
-["KSVK_sou", ["Waffe", "sniper"],["ksvk", "KSVK"],[10000, 7500], [2, "southgov", ""], [], "KSVK" call ISSE_Cfg_Weapons_GetName, "KSVK" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["holz", 15],["kupfer", 20],["glas", 3]]],
+["KSVK_sou", ["Waffe", "sniper"],["ksvk", "KSVK"],[15000, 7500], [2, "southgov", ""], [], "KSVK" call ISSE_Cfg_Weapons_GetName, "KSVK" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["holz", 15],["kupfer", 20],["glas", 3]]],
 
 ["M107", ["Waffe", "sniper"],["m107", "M107"],[21000, 7500], [2, "assassin", "sobr_training"], [], "M107" call ISSE_Cfg_Weapons_GetName, "M107" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 50],["plastik", 10],["kupfer", 15],["glas", 3]]],
 
@@ -119,7 +120,7 @@ INV_AlleWaffenObjekte = [
 
 ["AKS74U",["Waffe", "rifle"], ["AKS_74_U", "AKSU-74 5.45mm"], [6000, 700], [2, "bomb", "patrol_training"], [], "AKS74U" call ISSE_Cfg_Weapons_GetName, "AKS74U" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 15],["plastik", 5],["holz", 5]]],
 
-["AKS_GOLD",["Waffe", "rifle"], ["AKS_GOLD", "AKSU-74 GOLD 5.45mm"], [8500, 700], [2, "", "patrol_training"], [], "AKS74U" call ISSE_Cfg_Weapons_GetName, "AKS74U" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 15],["plastik", 5],["holz", 5]]],
+["AKS_GOLD",["Waffe", "rifle"], ["AKS_GOLD", "AKSU-74 GOLD 5.45mm"], [9500, 700], [2, "", "patrol_training"], [], "AKS74U" call ISSE_Cfg_Weapons_GetName, "AKS74U" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 15],["plastik", 5],["holz", 5]]],
 
 ["AKS74pso",["Waffe", "rifle"], ["AKS_74_pso", "AKS-74 PSO-1 5.45mm"], [10000, 1400], [2, "bomb", "sobr_training"], [], "AKS74PSO" call ISSE_Cfg_Weapons_GetName, "AKS74PSO" call ISSE_Cfg_Weapons_GetDesc, [["", 10],["dollarz", 10000]]],
 
@@ -131,9 +132,9 @@ INV_AlleWaffenObjekte = [
 
 ["MG36", ["Waffe", "mg"],["MG36", "MG36"], [13000, 7500], [2, "terrorist", "sobr_training"], [], "M249" call ISSE_Cfg_Weapons_GetName, "M249" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["plastik", 10],["kupfer", 15]]],
 
-["PK",["Waffe", "mg"], ["pk", "PKM"], [9800, 7500], [2, "bomb", ""],[], "PK" call ISSE_Cfg_Weapons_GetName, "PK" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["holz", 30],["kupfer", 15]]],
+["PK",["Waffe", "mg"], ["pk", "PKM"], [13000, 7500], [2, "bomb", ""],[], "PK" call ISSE_Cfg_Weapons_GetName, "PK" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["holz", 30],["kupfer", 15]]],
 
-["PK_sou",["Waffe", "mg"], ["pk", "PKM"], [9800, 7500], [2, "southgov", ""],[], "PK" call ISSE_Cfg_Weapons_GetName, "PK" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["holz", 30],["kupfer", 15]]],
+["PK_sou",["Waffe", "mg"], ["pk", "PKM"], [1300, 7500], [2, "southgov", ""],[], "PK" call ISSE_Cfg_Weapons_GetName, "PK" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["holz", 30],["kupfer", 15]]],
 
 ["MetisLauncher", ["Waffe", "launcher"],["MetisLauncher", "Metis AT-13"], [12000, 11250], [3, "bomb", "sobr_training"], [], "JAVELIN" call ISSE_Cfg_Weapons_GetName, "JAVELIN" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 70],["plastik", 20],["kupfer", 15],["ebauteile", 5]]],
 
@@ -152,6 +153,8 @@ INV_AlleWaffenObjekte = [
 ["Stinger", ["Waffe", "launcher"],["Stinger", "Stinger Launcher"], [26000, 11250], [3, "bomb", "sobr_training"], [], "Stinger" call ISSE_Cfg_Weapons_GetName, "Stinger" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["plastik", 10],["kupfer", 15],["ebauteile", 2]] ],
 
 ["M9",["Waffe", "pistol"],["M9", "M9"],[150, 50], [1, "Pistollicense", "probator"],[], "M9" call ISSE_Cfg_Weapons_GetName,"M9" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+
+["M9_Civ",["Waffe", "pistol"],["M9", "M9"],[900, 50], [1, "Pistollicense", "probator"],[], "M9" call ISSE_Cfg_Weapons_GetName,"M9" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M9SD",["Waffe", "pistol"],["M9SD", "M9SD"],[150, 50], [1, "Pistollicense", "patrol_training"],[], "M9" call ISSE_Cfg_Weapons_GetName,"M9" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 
 ["Colt1911",["Waffe", "pistol"],["Colt1911", "M1911A1"],[930, 408], [1, "Pistollicense", "patrol_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
@@ -387,8 +390,11 @@ INV_AlleFahrzeugeArray = [
 ["UAZ_Unarmed_TK_EP1",["Fahrzeug", "car"],["UAZ_Unarmed_TK_EP1", "UAZ (police)"],[812, 373], [2, "car", "patrol_training",200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["LadaLM",["Fahrzeug", "car"],["LadaLM", "Lada (Police)"],[812, 373], [2, "car", "patrol_training",200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["SUV_PMC_BAF",["Fahrzeug", "car"],["SUV_PMC_BAF", "Black SUV"],[5000, 2000], [2, "car", "patrol_training", 200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["SUV_BLUE",["Fahrzeug", "car"],["SUV_PMC_BAF", "Blue SUV"],[5000, 2000], [2, "car", "patrol_training", 200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["SUV_RED",["Fahrzeug", "car"],["SUV_PMC_BAF", "Red SUV"],[5000, 2000], [2, "car", "patrol_training", 200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["SUV_WHITE",["Fahrzeug", "car"],["SUV_PMC_BAF", "White SUV"],[5000, 2000], [2, "car", "patrol_training", 200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["SUV_UN_EP1",["Fahrzeug", "car"],["SUV_UN_EP1", "UN SUV"],[5000, 2000], [2, "car", "patrol_training", 200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
-["UralOpen_CDF", ["Fahrzeug", "truck"],["UralOpen", "Ural (Camo Open)"], [9140, 4854],[3, "truck", "patrol_training", 400], [500, [1,0,0,13] ], "Truck5tOpen" call ISSE_Cfg_Vehicle_GetName, "Truck5tOpen" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 17],["ebauteile", 2],["glas", 2],["plastik", 3],["erdoel", 6]] ],
+["UralOpen_CDF", ["Fahrzeug", "truck"],["UralOpen_CDF", "Ural (Camo Open)"], [9140, 4854],[3, "truck", "patrol_training", 400], [500, [1,0,0,13] ], "Truck5tOpen" call ISSE_Cfg_Vehicle_GetName, "Truck5tOpen" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 17],["ebauteile", 2],["glas", 2],["plastik", 3],["erdoel", 6]] ],
 ["BAF_Offroad_D",["Fahrzeug", "car"],["BAF_Offroad_D", "Offroad"],[6250, 2466], [2, "car", "patrol_training", 100], [150, [1,0,0,3]], "BAF_Offroad_D" call ISSE_Cfg_Vehicle_GetName, "BAF_Offroad_D" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 
 //UN equipment
@@ -407,7 +413,8 @@ INV_AlleFahrzeugeArray = [
 ["AH6X_EP1",["Fahrzeug", "air"],["AH6X_EP1", "Little Bird"],[25000, 7983], [5, "air", "copAir", 200], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["An2_1_TK_CIV_EP1",["Fahrzeug", "air"],["An2_1_TK_CIV_EP1", "An-2 Prop Plane"],[43000, 13600], [5, "air", "copAir", 800], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["UH1H_TK_EP1",["Fahrzeug", "air"],["UH1H_TK_EP1", "Terrorist Huey"],[65000, 10000], [5, "bomb", "copAir", 2000], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
-["Ka60_PMC",["Fahrzeug", "air"],["Ka60_PMC", "Ka-60"],[82000, 6000], [5, "air", "copAir", 1000], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
+["Ka60_PMC",["Fahrzeug", "air"],["Ka60_PMC", "Ka-60"],[45000, 6000], [5, "PMClicense", "copAir", 1000], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
+["Ka60_PM",["Fahrzeug", "air"],["Ka60_PMC", "Ka-60"],[75000, 6000], [5, "air", "copAir", 1000], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["C130J_US_EP1",["Fahrzeug", "air"],["C130J_US_EP1", "C130 Hercules"],[245000, 49525], [5, "air", "copAir", 20000], [1000, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["Ka137_PMC",["Fahrzeug", "air"],["Ka137_PMC", "Ka137 UAV"],[20000, 6000], [5, "air", "copAir", 1000], [500, [1,2,0,13] ], "Mi-17", "Mi-17", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 ["UH1Y",["Fahrzeug", "air"],["UH1Y", "UH-1Y Venom"],[80000, 20000], [5, "air", "sobr_training", 1000], [1000, [1,2,0,13] ], "UH1Y", "UH1Y", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
@@ -436,10 +443,11 @@ INV_AlleFahrzeugeArray = [
 ["FlagCarrierBLUFOR_EP1",["Item", "misc"],["FlagCarrierBLUFOR_EP1", "Police Flag"],[100, 80], [1, "", "sobr_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_barrack",localize "STRS_inv_item_barrack_info", [] ],
 
 //armed cop
-["ArmoredSUV_PMC",["Fahrzeug", "car"],["ArmoredSUV_PMC", "Armored SUV"],[30000, 12500], [2, "car", "sobr_training", 100],[150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["ArmoredSUV_PMC",["Fahrzeug", "car"],["ArmoredSUV_PMC", "Armored SUV"],[20000, 12500], [2, "PMClicense", "sobr_training", 100],[150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["ArmoredSUV_PM",["Fahrzeug", "car"],["ArmoredSUV_PMC", "Armored SUV"],[30000, 12500], [2, "car", "sobr_training", 100],[150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["HMMWV_M998_crows_M2_DES_EP1",["Fahrzeug", "car"],["Skoda", "HMMWV CROWS (M2)"],[58000, 0], [2, "car", "sobr_training", 150], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["M113_TK_EP1",["Fahrzeug", "car"],["M113_TK_EP1", "M113 UN MG (M2)"],[66800, 0], [2, "car", "sobr_training", 150], [150, [1,0,0,3]], "M113_TK_EP1" call ISSE_Cfg_Vehicle_GetName, "M113_TK_EP1" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
-["M2A3_EP1",["Fahrzeug", "car"],["M2A3_EP1", "Bradley"],[250000, 0], [2, "car", "sobr_training", 150], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["M2A3_EP1",["Fahrzeug", "car"],["M2A3_EP1", "Bradley"],[180000, 0], [2, "car", "sobr_training", 150], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["HMMWV_M1151_M2_DES_EP1",["Fahrzeug", "car"],["HMMWV_M1151_M2_DES_EP1", "HMMWV GPK"],[38000, 7500], [2, "car", "sobr_training", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["M1126_ICV_M2_EP1",["Fahrzeug", "car"],["Skoda", "Stryker"],[85000, 40000], [2, "car", "sobr_training", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 
@@ -627,15 +635,15 @@ INV_AlleItemsArray = [
 
 ["Land_CamoNetVar_NATO_EP1",["Item", "misc"],["Land_CamoNetVar_NATO_EP1", "Camo-Net"],[55, 19], [5, "", "patrol_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_barrack",localize "STRS_inv_item_barrack_info", [] ],
 
-["Land_ladderEP1",["Item", "misc"],["Land_ladderEP1", "Breaching ladder"],[350, 1000], [0, "", "sobr_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_barrack",localize "STRS_inv_item_barrack_info", [] ],
+["Land_ladderEP1",["Item", "misc"],["Land_ladderEP1", "Breaching ladder"],[350, 1000], [5, "", "sobr_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_barrack",localize "STRS_inv_item_barrack_info", [] ],
 
-["Land_ladder_half_EP1",["Item", "misc"],["Land_ladder_half_EP1", "Small Breaching ladder"],[350, 1000], [0, "", "sobr_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_barrack",localize "STRS_inv_item_barrack_info", [] ],
+["Land_ladder_half_EP1",["Item", "misc"],["Land_ladder_half_EP1", "Small Breaching ladder"],[350, 1000], [2, "", "sobr_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_barrack",localize "STRS_inv_item_barrack_info", [] ],
 
 ["Land_Campfire_burning",["Item", "misc"],["Land_Campfire_burning", "Campfire"],[5, 1], [0.5, "", ""], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_barrack",localize "STRS_inv_item_barrack_info", [] ],
 
 ["Fort_Barricade_EP1",["Item", "misc"],["Fort_Barricade_EP1", "Road barricade"],[500, 0], [60, "bomb", ""], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_barrack",localize "STRS_inv_item_barrack_info", [] ],
 
-["Diamondring",["Item", "Ring"],["Diamond Ring", "Diamond Ring"],[3600, 2400], [0.1, ""], [true, true, true, false,"nouse.sqf"],"Diamond Ring","Sell at the Jewelry store", [["Diamond rock", 10]]],
+["Diamondring",["Item", "Ring"],["Diamond Ring", "Diamond Ring"],[3300, 2400], [0.1, ""], [true, true, true, false,"nouse.sqf"],"Diamond Ring","Sell at the Jewelry store", [["Diamond rock", 10]]],
 
 ["EDiamondring",["Item", "Ring"],["Expensive Diamond Ring", "Expensive Diamond Ring"],[2100, 1600], [0.5, ""], [true, true, true, false,"nouse.sqf"],"Expensive Diamond Ring","Sell at the Jewelry store", [["Diamond rock", 15],["Gold", 10]]],
 
@@ -669,6 +677,7 @@ INV_AlleItemsArray = [
 ["treefixer", 						["Item", "misc"],["Treefixer", "Treefixer"], 								[1, 1], [0, "", ""],[true,false,true, false, "fixtrees.sqf"],"Treefixer","You can use this to pull fallen trees back up.", [] ],
 
 // Uniforms
+// Cop Skins
 ["CopUniDef",["Item", "cloth"],["CopUniDef", "Policeman Uniform"], [30, 30], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Policeman Uniform","Policeman Uniform", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["copUni",["Item", "cloth"],["copUni1", "Traffic Cop Uniform"], [30, 30], [0.1, "", "patrol_training"],[true,false,true, false, "armitxes\clothing.sqf"], "Traffic Cop Uniform","Traffic Cop Uniform", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["copUni1",["Item", "cloth"],["copUni1", "PC Uniform"], [30, 30], [0.1, "", "response_training"],[true,false,true, false, "armitxes\clothing.sqf"], "CR Uniform","Criminal Response Uniform", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
@@ -681,6 +690,7 @@ INV_AlleItemsArray = [
 ["copUni8",["Item", "cloth"],["copUni8", "Police Sergeant Uniform"], [30, 30], [0.1, "", "response_training"],[true,false,true, false, "armitxes\clothing.sqf"], "Police Sergeant Uniform","Police Sergeant Uniform", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["copUni9",["Item", "cloth"],["copUni9", "Police Interceptor Uniform"], [30, 30], [0.1, "", "response_training"],[true,false,true, false, "armitxes\clothing.sqf"], "Police Interceptor Uniform","Police Interceptor Uniform", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["copUni10",["Item", "cloth"],["copUni10", "Military Police Uniform"], [30, 30], [0.1, "", "response_training"],[true,false,true, false, "armitxes\clothing.sqf"], "Military Police Uniform","Military Police Uniform", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
+// Civ Skins
 ["civUni1",["Item", "cloth"],["civUni1", "Takistani (sweater)"], [30, 30], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Takistani (sweater)","Takistani (sweater)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["civUni2",["Item", "cloth"],["civUni2", "Takistani (jacket)"], [30, 30], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Takistani (jacket)","Takistani (jacket)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["civUni3",["Item", "cloth"],["civUni3", "Takistani (hat)"], [30, 30], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Takistani (hat)","Takistani (hat)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
@@ -689,9 +699,11 @@ INV_AlleItemsArray = [
 ["civUni6",["Item", "cloth"],["civUni6", "Pilot (civil)"], [50, 50], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Pilot (civil)","Pilot (civil)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["civUni7",["Item", "cloth"],["civUni7", "Brown Suit"], [100, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Brown Suit","Brown Suit", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["civUni8",["Item", "cloth"],["civUni8", "Black Suit"], [100, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Black Suit","Black Suit", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
+//Medic Skins
 ["docUni",["Item", "cloth"],["docUni", "Emergency Service"], [500, 300], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Emergency Service","Emergency Service", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["docUni2",["Item", "cloth"],["docUni2", "Pilot"], [500, 300], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Pilot","Pilot", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["docUni3",["Item", "cloth"],["docUni3", "Doctor"], [500, 300], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Doctor","Doctor", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
+//Terror Skins
 ["TerrorUni1",["Item", "cloth"],["TerrorUni1", "Terrorist (Bandanna)"], [500, 100], [0.1, "bomb", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Terrorist (Bandanna)","Terrorist (Bandanna)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["TerrorUni2",["Item", "cloth"],["TerrorUni2", "Terrorist (Turban)"], [500, 100], [0.1, "bomb", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Terrorist (Turban)","Terrorist (Turban)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["TerrorUni3",["Item", "cloth"],["TerrorUni3", "Terrorist (Brown)"], [500, 100], [0.1, "bomb", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Terrorist (Brown)","Terrorist (Brown)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
@@ -699,6 +711,7 @@ INV_AlleItemsArray = [
 ["TerrorUni5",["Item", "cloth"],["TerrorUni5", "MachineGunner"], [500, 100], [0.1, "bomb", ""],[true,false,true, false, "armitxes\clothing.sqf"], "MachineGunner","MachineGunner", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["TerrorUni6",["Item", "cloth"],["TerrorUni6", "Scout"], [500, 100], [0.1, "bomb", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Scout","Scout", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["TerrorUni7",["Item", "cloth"],["TerrorUni7", "Warlord"], [500, 100], [0.1, "bomb", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Warlord","Warlord", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
+//South Gov Skins
 ["SouthUni1",["Item", "cloth"],["SouthUni1", "Soldier"], [500, 100], [0.1, "southgov", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Soldier","Soldier", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["SouthUni2",["Item", "cloth"],["SouthUni2", "Soldier (Backpack)"], [500, 100], [0.1, "southgov", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Soldier (Backpack)","Soldier (Backpack)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["SouthUni3",["Item", "cloth"],["SouthUni3", "Soldier (Crew)"], [500, 100], [0.1, "southgov", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Soldier (Crew)","Soldier (Crew)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
@@ -706,6 +719,7 @@ INV_AlleItemsArray = [
 ["SouthUni5",["Item", "cloth"],["SouthUni5", "Pilot"], [500, 100], [0.1, "southgov", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Pilot","Pilot", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["SouthUni6",["Item", "cloth"],["SouthUni6", "Sniper"], [500, 100], [0.1, "southgov", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Sniper","Sniper", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["SouthUni7",["Item", "cloth"],["SouthUni7", "Special Forces"], [500, 100], [0.1, "southgov", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Special Forces","Special Forces", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
+//PMC Skins
 ["Pmcuni1",["Item", "cloth"],["PmcUni1", "Team Coordinator"], [500, 100], [0.1, "PMClicense", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Team Coordinator","Team Coordinator", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["Pmcuni2",["Item", "cloth"],["PmcUni2", "Bodyguard"], [500, 100], [0.1, "PMClicense", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Bodyguard","Bodyguard", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["Pmcuni3",["Item", "cloth"],["PmcUni3", "Defensive Marksman"], [500, 100], [0.1, "PMClicense", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Defensive Marksman","Defensive Marksman", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
@@ -714,14 +728,22 @@ INV_AlleItemsArray = [
 ["Pmcuni6",["Item", "cloth"],["PmcUni6", "Security Contractor"], [500, 100], [0.1, "PMClicense", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Security Contractor","Security Contractor", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["Pmcuni7",["Item", "cloth"],["PmcUni7", "PMC Pilot"], [500, 100], [0.1, "PMClicense", ""],[true,false,true, false, "armitxes\clothing.sqf"], "PMC Pilot","PMC Pilot", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["Pmcuni8",["Item", "cloth"],["PmcUni8", "Team Leader"], [500, 100], [0.1, "PMClicense", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Team Leader","Team Leader", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
-
-
+//Gang Skins
+["GangUni1",["Item", "cloth"],["GangUni1", "Gang Member (Hood)"], [1000, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Gang Member (Hood)","Gang Member (Hood)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
+["GangUni2",["Item", "cloth"],["GangUni2", "Gang Member (Balaclava)"], [1000, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Gang Member (Balaclava)","Gang Member (Balaclava)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
+["GangUni3",["Item", "cloth"],["GangUni3", "Gang Member (Cap)"], [1000, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Gang Member (Cap)","Gang Member (Cap)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
+["GangUni4",["Item", "cloth"],["GangUni4", "Gang Member (Boonie)"], [1000, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Gang Member (Boonie)","Gang Member (Boonie)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
+["GangUni5",["Item", "cloth"],["GangUni5", "Gang Leader"], [1000, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Gang Leader","Gang Leader", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
+["GangUni6",["Item", "cloth"],["GangUni6", "Gang Pilot"], [1000, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Gang Pilot","Gang Pilot", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 //DONATOR SKINS
 ["DonUni1",["Item", "cloth"],["DonUni1", "Profiteer (Skin)"], [150, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Profiteer","Profiteer", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["DonUni2",["Item", "cloth"],["DonUni2", "Villager (Skin)"], [150, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Villager","Villager", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["DonUni3",["Item", "cloth"],["DonUni3", "Worker (Skin)"], [150, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Worker","Worker", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["DonUni4",["Item", "cloth"],["DonUni4", "Woodlander (Skin)"], [150, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Woodlander","Woodlander", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["DonUni5",["Item", "cloth"],["DonUni5", "Rebel (Skin)"], [150, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Rebel","Rebel", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
+["DonUni6",["Item", "cloth"],["DonUni6", "Local (Skin)"], [150, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Local","Local", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
+["DonUni7",["Item", "cloth"],["DonUni7", "Bardak (Skin)"], [150, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Bardak","Bardak", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
+["DonUni8",["Item", "cloth"],["DonUni8", "Lopotev (Skin)"], [150, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Lopotev","Lopotev", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 
 // Pets
 ["Dog",["Animal","Dog"],["Dog","Dog (Pet)"], [7000,3500], [0.1, "", ""],[true,false,true, false, "armitxes\pet.sqf"],"Dog (Pet)","Dog (Pet)"],

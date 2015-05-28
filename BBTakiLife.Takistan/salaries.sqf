@@ -84,16 +84,10 @@ while {isciv} do
 		player groupChat format["The robbers are sharing the robbed Paychecks! You receive extra money."];
 		_income = _income + 100;
 	};
-
-	for [{_i=0}, {_i < (count BuildingsOwnerArray)}, {_i=_i+1}] do
-
-		{
-
-		_check = ( round( (random 2)*((BuyAbleBuildingsArray select _i) select 4) ) );
-		_income = _income + _check;
-
-		};
-
+	if (ispmc) then {
+	_income = _income + 500;};
+	
+	
 	if (timeinworkplace > 0) then
 
 		{

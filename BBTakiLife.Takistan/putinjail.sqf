@@ -4,9 +4,25 @@ _copobj = _this select 0;
 player setpos getmarkerpos "prisonspawn";  
 (format ["%1 switchmove ""%2"";", player, "normal"]) call toClients;
 call INV_EntferneIllegales;
-player setDamage 0;
-dmgHead = 0; dmgBody = 0; dmgHands = 0; dmgLegs = 0;
+if(stolencash > 0)then  
+{
+	_INVrmv = stolencash;
+	_BNKrmv = 0;
+	_dollarz   = "dollarz" call INV_getitemamount;
 
+	if(_dollarz < stolencash)then{_INVrmv = _dollarz;};
+	if((PLAYERDATA select 1) < (stolencash - _INVrmv))then{_BNKrmv = (PLAYERDATA select 1)};
+
+	["dollarz", -(_INVrmv)] call INV_addinventoryitem;
+   [-_BNKrmv] call setMoney;
+	(format ["server globalchat ""%1 was a bank robber and has been charged $%2!"";", name player, (_INVrmv + _BNKrmv)]) call broadcast;
+	
+};
+  
+  stolencash = 0;
+
+  player setDamage 0;
+dmgHead = 0; dmgBody = 0; dmgHands = 0; dmgLegs = 0;
 bountyToPay = 0;
 
 for [{_i=0}, {_i <= (count warrantarray)}, {_i=_i+1}] do {
@@ -25,7 +41,7 @@ while {true} do
 {
   bountyToPay = bountyToPay - 16.5;
 	_timetotake = bountyToPay / 16.5;
-	hintsilent format["Time until release: %1 seconds\nBail left to pay: $%2", round(_timetotake), round(bountyToPay*2)];
+	hintsilent format["Time until release: %1 seconds\nBail left to pay: $%2", round(_timetotake), round(bountyToPay*4)];
 	
 	if (isNull(player))                       exitWith {_exitart = ""};
 	if (!(alive player))                      exitWith {_exitart = "tot"};

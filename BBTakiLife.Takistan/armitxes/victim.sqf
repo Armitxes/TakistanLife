@@ -1,16 +1,17 @@
 if(isdead == 1)exitwith{};
 isdead = 1;
-["save"] execVM "armitxes\_db.sqf";
+
 
 _killer 	= _this select 0;
 _nearVehicles  	= _this select 1;
 _killerLicense  = 0;
 suicided    	= false;
 _murdered	= true;
+_crashed 	= false;
 _killerstring	= format["%1", _killer];
 
 if (!(_killer call ISSE_UnitExists)) then {
-  // suicide
+ _crashed = true;
 } else {
   _killedByVehicle = false;
   if (player == _killer) then {
@@ -39,8 +40,9 @@ if (!(_killer call ISSE_UnitExists)) then {
 
 (format ["
 if(%7 and !%5)then{server globalChat ""%3 was killed by %4""};
+if(%9)then{server globalChat ""%3 was killed in a crash""};
 if (%5) then {server globalChat ""%4 hit %3 with a vehicle"";};
 if(player == %8) then {[%1, %5, %6] execVM ""killer.sqf""};
-", player,  _killer, name player, name _killer, _killedByVehicle, _killerLicense, _murdered, _killerstring]) call broadcast;
+", player,  _killer, name player, name _killer, _killedByVehicle, _killerLicense, _murdered, _killerstring,_crashed]) call broadcast;
 
 };

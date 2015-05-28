@@ -9,8 +9,7 @@ _anzahl = _this select 2;
 _closeVcl   = dummyobj;
 _closest    = -1;
 _incarpark = false;
-
-	{
+  {
 
 	if (not(isNull(_x))) then
 
@@ -32,7 +31,7 @@ _incarpark = false;
 if (not(_closest == -1)) then
 
 	{
-
+	if (usepick) exitWith {player groupChat "You are already using a lockpick"};
 	if(_closeVcl isKindOf "Tank" || _closeVcl isKindOf "Air")exitwith{player groupchat "You cannot lockpick this vehicle!"};
 	if(typeof _closeVcl == "LAV25" || typeof _closeVcl == "M1133_MEV_EP1")exitwith{player groupchat "You cannot lockpick Armoured Vehicles!"};
 	if (_closeVcl in INV_VehicleArray) then
@@ -68,6 +67,10 @@ if (not(_closest == -1)) then
 			};
 
 			[_item, -1] call INV_AddInventoryItem;
+			format ["%1 switchmove ""AinvPknlMstpSlayWrflDnon_medic"";", player] call broadcast;
+			usepick = true;
+			sleep 8;
+			usepick = false;
 		};
 	}
 	else

@@ -17,5 +17,7 @@ player commandChat "God is off.";
 (vehicle player) removeAllEventHandlers "hit";
 (vehicle player) removeAllEventHandlers "dammaged";
 (vehicle player) allowDamage true;
-(vehicle player) addEventHandler ["handleDamage", { true }];
+(vehicle player) addEventHandler ["fired", {["fired", (_this select 4), (_this select 1)] execVM "stun.sqf";}];
+(vehicle player) addEventHandler ["handleDamage", {_this call compile preprocessfile "armitxes\setHit.sqf"}];
+(vehicle player) addEventHandler ["fired",{_this execVM "fired.sqf"}];
 };
