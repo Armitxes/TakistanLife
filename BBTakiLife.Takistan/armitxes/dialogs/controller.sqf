@@ -1,4 +1,6 @@
 _action = _this select 0;
+if(typeName _action != "STRING") then {_action=_this select 3;};
+
 switch (_action) do {
 	case "profession": {
 		createDialog "professions";

@@ -701,7 +701,6 @@ INV_AlleItemsArray = [
 ["civUni6",["Item", "cloth"],["civUni6", "Pilot (civil)"], [50, 50], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Pilot (civil)","Pilot (civil)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["civUni7",["Item", "cloth"],["civUni7", "Brown Suit"], [100, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Brown Suit","Brown Suit", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["civUni8",["Item", "cloth"],["civUni8", "Black Suit"], [100, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Black Suit","Black Suit", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
-["civUni9",["Item", "cloth"],["civUni9", "Judge Robes"], [500, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Judge Robes","Judge Robes", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 
 ["unUni4",["Item", "cloth"],["unUni4", "UN Pilot"], [100, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "UN Pilot","UN Pilot", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 //Medic Skins

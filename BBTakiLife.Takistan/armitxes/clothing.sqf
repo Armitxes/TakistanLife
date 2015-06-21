@@ -26,6 +26,7 @@ _uniforms = [
   ["civUni7","Functionary2_EP1"],
   ["civUni8","Functionary1_EP1"],
   ["civUni9","SchoolTeacher",[0,"images\judgeskin.paa"]],
+  ["lawyer","RU_Functionary2"],
   ["docUni","Dr_Hladik_EP1"],
   ["docUni2","USMC_LHD_Crew_Blue"],
   ["docUni3","Doctor"],

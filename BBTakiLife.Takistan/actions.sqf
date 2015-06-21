@@ -120,9 +120,10 @@ action150 = _role addaction ["<t color='#FF69B4'>Moderator Menu</t>","AdminMenu.
 action151 = _role addaction ["<t color='#FF69B4'>AdminCam</t>","gcam.sqf",[],1,false,true,"","(PLAYERDATA select 2) > 218"];
 //======================= CLOTHING SHOP ===============================================
 action152 = _role addAction ["<t color='#FFFF00'>Access Clothing Shop</t>","shopdialogs.sqf",[(clothciv call INV_getshopnum)],1,false,true,"","(player distance clothshop) <= 3 && isciv"];
-action153 = _role addAction ["<t color='#FFFF00'>Access Hospital Shop</t>","shopdialogs.sqf",[(clothciv call INV_getshopnum)+1],1,false,true,"","(player distance doc1 < 4) && isciv"];
-action154 = _role addAction ["<t color='#FFFF00'>Access Hospital Air Shop</t>","shopdialogs.sqf",[(clothciv call INV_getshopnum)+2],1,false,true,"","(player distance doc1 < 4) && isciv && ismedic"];
+action153 = _role addAction ["<t color='#FFFF00'>Access Hospital Shop</t>","shopdialogs.sqf",[(clothciv call INV_getshopnum)+1],1,false,true,"","(player distance doc1 < 4) && ismedic"];
+action154 = _role addAction ["<t color='#FFFF00'>Access Hospital Air Shop</t>","shopdialogs.sqf",[(clothciv call INV_getshopnum)+2],1,false,true,"","(player distance doc1 < 4) && ismedic"];
 action155 = _role addAction ["<t color='#FFFF00'>Access Clothing Shop</t>","shopdialogs.sqf",[(clothcivbase call INV_getshopnum)],1,false,true,"","(player distance clothshop2) <= 3 && isciv"];
+profAction = _role addAction ["<t color='#FFFF00'>Profession</t>","armitxes\dialogs\controller.sqf","profession",1,false,true,"","(player distance doc1) < 4 || (player distance clothshop2) <= 3 || (player distance Jshop) < 4"];
 
 
 action156 = _role addaction ["<t color='#FF0000'>Declare Terrorism</t>","terror.sqf",[],1,false,true,"","isciv and isterror"];

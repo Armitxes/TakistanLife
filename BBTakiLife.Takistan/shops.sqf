@@ -70,8 +70,7 @@ if (isServer) then {
   -1,// PMC Shop	
   -1,// PMC Car
   -1,// PMC Air
-  -1, // Pet Shop
-  -1 // Judge Shop
+  -1 // Pet Shop
   ];
 
   publicvariable "INV_itemstocks";
@@ -148,8 +147,7 @@ INV_itemmaxstocks = [
 -1,// PMC Shop	
 -1,// PMC Car
 -1,// PMC Air
--1,
--1 // Judge Shop
+-1
 ];
 
 
@@ -657,8 +655,6 @@ _petShop = [
 "Sheep","WildBoar"
 ];
 
-_js = ["civUni9"];
-
 if(!isDedicated) then {
   _vipLvl = PLAYERDATA select 3;
   if(_vipLvl > 0) then {
@@ -822,6 +818,5 @@ INV_ItemShops = [
 [pmcshop,"PMC Shop",pmcbox,dummyobj,_pmcshop,_pmcshop,true],
 [pmccar,"PMC Car Shop",dummyobj,pmccarspawn,_pmccar,_pmccar,true],
 [pmcair,"PMC Air Shop",dummyobj,pmcairspawn,_pmcair,_pmcair,true],
-[petshop,"Pet Shop",dummyobj,dummyobj,_petShop,_petShop,true],
-[Jshop,"Judge Shop",dummyobj,dummyobj,_js,_js,true]
+[petshop,"Pet Shop",dummyobj,dummyobj,_petShop,_petShop,true]
 ];

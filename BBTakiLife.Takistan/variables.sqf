@@ -365,7 +365,8 @@ civworkerarray	 = ["Worker1","Worker2","Worker3","Worker4"];
 terroristarray	 = ["TK_GUE_Soldier_3_EP1","TK_GUE_Soldier_AAT_EP1","TK_GUE_Soldier_AT_EP1","TK_GUE_Soldier_EP1","TK_GUE_Soldier_HAT_EP1","TK_INS_Soldier_AAT_EP1","TK_INS_Soldier_EP1"];
 profs = [
 	["Judge","STR_prof_judge",2000],
-	["Medic","STR_prof_medic",200],
+	["Lawyer","STR_prof_lawyer",1000],
+	["Medic","STR_prof_medic",200]
 ];
 
 if(isServer)then

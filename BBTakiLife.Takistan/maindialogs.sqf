@@ -76,15 +76,17 @@ switch (_art) do {
 	lbAdd [1, _trennlinie];
 	lbAdd [1, format ["Date: %3.%2.%1", (date select 0), (date select 1), (date select 2)]];
 	
-	_npcCount = 0; _medCount = 0; _judCount = 0;
+	_npcCount = 0; _medCount = 0; _judCount = 0; _lawyerCount = 0;
 	{ if (!isPlayer _x) then { _npcCount = _npcCount + 1; }; } forEach (nearestObjects [[6453,8127,0],["Man"], 10000]);
 	{
 		if((typeOf _x) in ["Dr_Hladik_EP1","USMC_LHD_Crew_Blue","Doctor"]) then { _medCount = _medCount + 1; };
 		if((typeOf _x) == "SchoolTeacher") then { _judCount = _judCount + 1; };
+		if((typeOf _x) == "RU_Functionary2") then { _lawyerCount = _lawyerCount + 1; };
 	} forEach playableUnits;
 	lbAdd [1, format ["There are %1 active NPCs",_npcCount]];
-	lbAdd [1, format["There are %1 medics online!",_medCount]];
+	lbAdd [1, format["There are %1 Medics online!",_medCount]];
 	lbAdd [1, format["There are %1 Judges online!",_judCount]];
+	lbAdd [1, format["There are %1 Lawyers online!",_lawyerCount]];
 	lbAdd [1, ""];
 	lbAdd [1, _trennlinie];
 	lbAdd [1, "SERVER STATUS"];

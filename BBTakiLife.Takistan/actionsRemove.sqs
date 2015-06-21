@@ -112,3 +112,4 @@ _role removeAction holsterPist;
 _role removeAction unholsterPist;
 _role removeAction c4Act1;
 _role removeAction c4ActBoom;
+_role removeAction profAction;
