@@ -214,7 +214,7 @@ _sv = ["SUV_TK_CIV_EP1_SCO","HMMWV_DES_EP1","HMMWV_M1151_M2_DES_EP1","M2A3_EP1",
 _sa = ["MH6J_EP1","UH60M_EP1"];
 // UN vehicles
 _unmemshop = ["FlagCarrierUNO_EP1","BMP2_UN_EP1","BAF_Jackal2_L2A1_D","M113_UN_EP1","LAV25","UH1Y"];
-_unveh = ["UAZ_Unarmed_UN_EP1","SUV_UN_EP1","Ural_UN_EP1","M113Ambul_UN_EP1","M1133_MEV_EP1"];
+_unveh = ["UAZ_Unarmed_UN_EP1","SUV_UN_EP1","Ural_UN_EP1","M113Ambul_UN_EP1","BTR40_UN_U","M1133_MEV_EP1"];
 _unair = ["Mi17_UN_CDF_EP1"];
 // South Government Vehicle Shop
 _souveh = ["T55_TK_GUE_EP1","T72_TK_EP1","BRDM2_TK_GUE_EP1","Ural_ZU23_TK_GUE_EP1","BTR40_MG_TK_INS_EP1","M113_TK_EP1","BTR60_TK_EP1","LandRover_MG_TK_EP1","UralReammo_TK_EP1","UralRefuel_TK_EP1","UralRepair_TK_EP1"];
