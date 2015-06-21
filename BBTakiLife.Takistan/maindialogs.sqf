@@ -76,15 +76,15 @@ switch (_art) do {
 	lbAdd [1, _trennlinie];
 	lbAdd [1, format ["Date: %3.%2.%1", (date select 0), (date select 1), (date select 2)]];
 	
-	_npcCount = 0;
-	_medCount = 0;
-	_JudCount = 0;
+	_npcCount = 0; _medCount = 0; _judCount = 0;
 	{ if (!isPlayer _x) then { _npcCount = _npcCount + 1; }; } forEach (nearestObjects [[6453,8127,0],["Man"], 10000]);
-	{ if((typeOf _x) in ["Dr_Hladik_EP1","USMC_LHD_Crew_Blue","Doctor"]) then { _medCount = _medCount + 1; }; } forEach playableUnits;
-	{ if(typeOf _x == "SchoolTeacher") then { _JudCount = _JudCount + 1; };} forEach playableUnits;
+	{
+		if((typeOf _x) in ["Dr_Hladik_EP1","USMC_LHD_Crew_Blue","Doctor"]) then { _medCount = _medCount + 1; };
+		if((typeOf _x) == "SchoolTeacher") then { _judCount = _judCount + 1; };
+	} forEach playableUnits;
 	lbAdd [1, format ["There are %1 active NPCs",_npcCount]];
 	lbAdd [1, format["There are %1 medics online!",_medCount]];
-	lbAdd [1, format["There are %1 Judges online!",_JudCount]];
+	lbAdd [1, format["There are %1 Judges online!",_judCount]];
 	lbAdd [1, ""];
 	lbAdd [1, _trennlinie];
 	lbAdd [1, "SERVER STATUS"];
@@ -436,13 +436,13 @@ switch (_art) do {
     };
 
     case "gangmenu": {
-	if (!(createDialog "gang_menu")) exitWith {hint "Dialog Error!";};
-	private "_i";
-	for [{_i=0}, {_i < (count gangsarray)}, {_i=_i+1}] do {
-	    _gangarray = gangsarray select _i;
-	    _index = lbAdd [202, format ["%1 - Memberlist: %2", (_gangarray select 0), (_gangarray select 1)]];
-	    lbSetData [202, _index, format ["%1", (_gangarray select 0)]];
-	};
+		if (!(createDialog "gang_menu")) exitWith {hint "Dialog Error!";};
+		private "_i";
+		for [{_i=0}, {_i < (count gangsarray)}, {_i=_i+1}] do {
+		    _gangarray = gangsarray select _i;
+		    _index = lbAdd [202, format ["%1 - Memberlist: %2", (_gangarray select 0), (_gangarray select 1)]];
+		    lbSetData [202, _index, format ["%1", (_gangarray select 0)]];
+		};
     };
 
     case "gildenverwaltung": {
@@ -469,4 +469,19 @@ switch (_art) do {
 	    lbSetData [102, _index, (format ["%1", _obj])];
 	};
     };
+	
+	case "constitution": {
+		if (!(createDialog "liste_1_button")) exitWith {hint "Dialog Error!";};
+		_trennlinie = "-------------------------------------------------";
+		lbAdd [1, ""];
+		lbAdd [1, "§ Constitution of Takistan §"];
+		lbAdd [1, _trennlinie];
+		
+		lbAdd [1, "§1 Slavery and slave trade is be prohibited in all their forms."];
+		lbAdd [1, "§2 No one shall be subjected to torture or to cruel, inhuman or degrading treatment or punishment."];
+		lbAdd [1, "§3 All are equal before the law without any discrimination to equal protection of the law."];
+		
+		lbAdd [1, _trennlinie];
+		lbAdd [1, "~ Passed by the Supreme Court of Takistan in cooperation with the United Nations"];
+	}
 };

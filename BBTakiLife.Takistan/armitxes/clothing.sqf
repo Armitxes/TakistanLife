@@ -69,7 +69,7 @@ _uniforms = [
   
 ];
 
-_medics = ["docUni","docUni2","docUni3"];
+_medics = ["docUni","docUni2","docUni3","docUni4"];
 _pmcs = ["PmcUni1","PmcUni2","PmcUni3","PmcUni4","PmcUni5","PmcUni6","PmcUni7","PmcUni8"];
 
 _action = (_this select 0);

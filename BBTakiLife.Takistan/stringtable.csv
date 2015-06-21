@@ -1,7 +1,9 @@
 LANGUAGE, English,
+STR_prof_medic,	"As medic it's your primary duty to save lives.\nYou are an impartial party!\n\nBy selecting this profession, you will get the following perks:\n- Ability to scrap vehicles\n- Ability to heal and revive unconscious players\n- Ability to impound vehicles\n- Access to speedupgrade in all vehicles"
+STR_prof_judge,	"As judge you have a great responsibility and operate on the same level as the United Nations.\n\nSometimes we forget, but at the end we all know what's wrong and right! You may will receive much devastating disapproval still your decisions should be fair as they are final.\n\nA good knowledge about the BB Act and the Server Rules is requirement. It's your duty to keep justice alive, the police has to enforce your judgements above all else."
 STRM_briefing_name,Takistan life 3,
 STRM_mission_description,Takistan life created by the British Borders Community,
-STRS_hints_vehicle_information,VEHICLE INFORMATION:<br /><br />Name: %4<br />Type: %1<br />Direction: %2°<br />Height ASL: %3m<br />Driver: %5<br />Free Cargo: %6<br />length: %7m<br /><br />%8,
+STRS_hints_vehicle_information,VEHICLE INFORMATION:<br /><br />Name: %4<br />Type: %1<br />Direction: %2ï¿½<br />Height ASL: %3m<br />Driver: %5<br />Free Cargo: %6<br />length: %7m<br /><br />%8,
 STRS_functions_crimelog_msg12,Speeding,
 STRS_anfang_laden,Loading.....\nPlease Wait,
 STRS_anfang_02,Welcome to Takistan life 3\n\n this is a role playing game,
@@ -179,7 +181,6 @@ STRD_description_handy_submit,Send,
 STRD_description_itemmenu_title,Buy Items,
 STRD_description_itemmenu_title2,Sell Items,
 STRD_description_inventar_gewicht,Item Weight single/overall:,
-STRD_description_spielerliste_header,Stats,
 STRD_description_gildegruenden_header,Create a new Gang,
 STRD_description_gildegruenden_submit,Create!,
 STRD_description_gildegruenden_name,Gang Name:,

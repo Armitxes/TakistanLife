@@ -301,24 +301,12 @@ switch _key do
 	};
 
 	//4 key
-	case 5:
-
-	{
-
-	if(!INV_shortcuts)exitwith{};
-
-	if(keyblock or (animationstate player == "CivilSitting"))exitwith{};
-
-	keyblock=true; [] spawn {sleep 2; keyblock=false;};
-
-	if(vehicle player == player)then{(format ["%1 switchmove ""%2"";", player, "normal"]) call broadcast;_handled=true;};
-
+	case 5: {
+		[0,0,0,["constitution"]] execVM "maindialogs.sqf";
 	};
 
 	//5 key
-	case 6:
-
-	{
+	case 6: {
 	if (!iscop) then
 		{
 		if(!INV_shortcuts)exitwith{};

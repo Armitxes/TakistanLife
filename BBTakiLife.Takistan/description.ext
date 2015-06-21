@@ -48,4 +48,4 @@ class CfgSounds
 #include "CodePad.hpp"
 #include "gcam_component.hpp"
 #include "armitxes\dialogs\common.hpp"
-#include "armitxes\dialogs\chat.hpp"
+#include "armitxes\dialogs\elements.hpp"
