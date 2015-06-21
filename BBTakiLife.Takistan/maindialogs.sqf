@@ -37,7 +37,7 @@ switch (_art) do {
 	    _list = lbAdd [4, "Theft of Civilian Vehicle"];
 	    _list = lbAdd [4, "Possession of Class A Drug"];
 	    _list = lbAdd [4, "Possession of Class B Drug"];
-	    _list = lbAdd [4, "Assault on an Officer"];
+	    _list = lbAdd [4, "Assault"];
 	    _list = lbAdd [4, "Rioting"];
 	    _list = lbAdd [4, "Slavery"];
 	    _list = lbAdd [4, "Perverting the Course of Justice"];  	
@@ -78,10 +78,13 @@ switch (_art) do {
 	
 	_npcCount = 0;
 	_medCount = 0;
+	_JudCount = 0;
 	{ if (!isPlayer _x) then { _npcCount = _npcCount + 1; }; } forEach (nearestObjects [[6453,8127,0],["Man"], 10000]);
 	{ if((typeOf _x) in ["Dr_Hladik_EP1","USMC_LHD_Crew_Blue","Doctor"]) then { _medCount = _medCount + 1; }; } forEach playableUnits;
+	{ if(typeOf _x == "SchoolTeacher") then { _JudCount = _JudCount + 1; };} forEach playableUnits;
 	lbAdd [1, format ["There are %1 active NPCs",_npcCount]];
 	lbAdd [1, format["There are %1 medics online!",_medCount]];
+	lbAdd [1, format["There are %1 Judges online!",_JudCount]];
 	lbAdd [1, ""];
 	lbAdd [1, _trennlinie];
 	lbAdd [1, "SERVER STATUS"];
@@ -199,6 +202,11 @@ switch (_art) do {
 	_civNum = (civilian countSide playableUnits);
 	if(_civNum > 0) then { _totalTaxes = round(_totalTaxes + (((count protesters) * 100) / _civNum)) };
 	lbAdd [1, format ["Protesters against PM: %1/300",_totalTaxes]];
+	lbAdd [1, _trennlinie];
+	if (mlaw) then { 
+	lbAdd [1, "MARTIAL LAW IS IN EFFECT"];}
+	else {
+	lbAdd [1, "MARTIAL LAW IS NOT IN EFFECT"];};
 
 	lbAdd [1,""];lbAdd [1,""];
 	lbAdd [1, _trennlinie];

@@ -260,7 +260,191 @@ class wantedrelease
 		idc = 1007;
 	};
 };
+class CCDialog
+{
+	idd = -1;
+	movingEnable = true;
+	controlsBackground[] = {DLG_BACK1, background, trennlinie1};
+	objects[] = { };
+	controls[] = {civlist, kopfgeld_eingabe, cost, reasonlist, header1, submit, ganglist,dec_martial_law, dummybutton};
 
+	class DLG_BACK1: RscBackground
+	{
+		x = 0.16;
+		y = 0.25;
+		w = 0.70;
+		h = 0.34;
+	};
+
+	class background : RscBgRahmen
+	{
+		x = 0.16;
+		y = 0.25;
+		w = 0.70;
+		h = 0.34;
+	};
+
+	class civlist : RscCombo
+	{
+		idc = 1;
+		x = 0.17;
+		y = 0.31;
+		w = 0.31;
+		h = 0.04;
+	};
+       
+	class kopfgeld_eingabe : RscEdit
+	{
+		idc = 2;
+		x = 0.53;
+		y = 0.38;
+		w = 0.31;
+		h = 0.04;
+		text = "Reason Not in List, Type Reason Here";
+	};
+
+	class cost : RscText
+	{
+		idc = 3;
+		x = 0.65;
+		y = 0.25;
+		w = 0.16;
+		h = 0.04;
+
+		text = "Reason:";
+	};
+
+	class reasonlist : RscCombo
+	{
+		idc = 4;
+		x = 0.53;
+		y = 0.31;
+		w = 0.31;
+		h = 0.04;
+	};
+
+	class header1 : RscText
+	{
+		x = 0.17;
+		y = 0.25;
+		w = 0.31;
+		h = 0.04;
+
+		style = ST_CENTER;
+		text = "Chief Constable Menu:";
+	};
+
+	class trennlinie1 : RscText
+	{
+		x = 0.49;
+		y = 0.25;
+		w = 0.02;
+		h = 0.24;
+
+		style = ST_FRAME;
+	};
+
+	class submit : RscButton
+	{
+		x = 0.17;
+		y = 0.45;
+		w = 0.15;
+		h = 0.04;
+
+		text = $STRD_description_submit;
+		action = "[(call compile lbData [1,(lbCurSel 1)]), (ctrlText 2),(lbCurSel 4),[(lbData [5,(lbCurSel 5)])]] execVM ""CCauth.sqf""; closeDialog 0";
+	};
+
+	class ganglist : RscCombo
+	{
+		idc = 5;
+		x = 0.17;
+		y = 0.38;
+		w = 0.31;
+		h = 0.04;
+	};
+	class dec_martial_law : RscButton
+	{
+		x = 0.35;
+		y = 0.50;
+		w = 0.31;
+		h = 0.05;
+		
+		text = "Declare/Revoke Martial Law!";
+		action = "closedialog 0; [""MarLDialog""] execVM ""CCDialog.sqf"";";
+	};
+
+	class dummybutton : RscDummy
+	{
+		idc = 1006;
+	};
+};
+class MarLDialog
+{
+	idd = -1;
+	movingEnable = true;
+	controlsBackground[] = {DLG_BACK1, background};
+	objects[] = { };
+	controls[] = {marlist,header1, martial_reason,submit,dummybutton};
+
+	class DLG_BACK1: RscBackground
+	{
+		x = 0.16;
+		y = 0.25;
+		w = 0.70;
+		h = 0.16;
+	};
+
+	class background : RscBgRahmen
+	{
+		x = 0.16;
+		y = 0.25;
+		w = 0.70;
+		h = 0.16;
+	};
+	class header1 : RscText
+	{
+		x = 0.17;
+		y = 0.26;
+		w = 0.31;
+		h = 0.04;
+
+		style = ST_CENTER;
+		text = $STRD_description_martial_martialmenu;
+	};
+	class  marlist : RscCombo 
+	{
+		idc = 1;
+		x = 0.17;
+		y = 0.30;
+		w = 0.31;
+		h = 0.04;
+	};
+	class martial_reason : RscEdit 
+	{
+		idc = 2;
+		x = 0.50;
+		y = 0.30;
+		w = 0.31;
+		h = 0.04;
+	 
+	    text = "Reason Not in List, Type Reason Here";
+	};
+	class submit : RscButton
+	{
+		x = 0.33;
+		y = 0.35;
+		w = 0.31;
+		h = 0.04;
+		
+		text = $STRD_description_submit;
+		action = "[(lbCurSel 1), (ctrlText 2)] execVM ""MarLMenu.sqf""; closeDialog 0";
+	};
+	class dummybutton : RscDummy
+	{
+		idc = 1106;
+	};
+};
 class baildialog
 {
 	idd = -1;
@@ -284,7 +468,7 @@ class baildialog
 		w = 0.42;
 		h = 0.22;
 
-		text = "Pay bail (2k = 1min)";
+		text = "Pay bail ($6000 = 1min)";
 	};
 
 	class button_paybail : RscButton
@@ -1358,8 +1542,8 @@ class CopMenuLite
 		w = 0.20;
 		h = 0.04;
 
-		text = "Access Denied";
-		action = "closedialog 0;";
+		text = "CC Menu";
+		action = "closedialog 0;[""CCdialog""] execVM ""CCdialog.sqf"";";
 	};
 
 	class closebutton : RscButton

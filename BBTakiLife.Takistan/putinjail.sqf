@@ -47,7 +47,7 @@ while {true} do
 	if (!(alive player))                      exitWith {_exitart = "tot"};
 	if (player Distance prison_logic >= 50)   exitWith 
   {
-    ["addWarrant",player,"Jailbreak",3000] execVM "warrant.sqf";
+    ["addWarrant",player,"Escaping Jail",7000] execVM "warrant.sqf";
     (format ["if (player == %1) then { server GLOBALCHAT format [localize ""STRS_civmenucheck_breakout"", name %1];", player]) call toClients;
     bountyToPay = 0;    
   };

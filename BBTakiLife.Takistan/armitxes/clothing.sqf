@@ -3,6 +3,7 @@ _uniforms = [
   ["unUni","UN_CDF_Soldier_EP1"],
   ["unUni2","UN_CDF_Soldier_Officer_EP1"],
   ["unUni3","UN_CDF_Soldier_Light_EP1"],
+  ["unUni4","UN_CDF_Soldier_Pilot_EP1"],
   ["cc","TK_Commander_EP1"],
   ["CopUniDef","Policeman"],
   ["copUni","Soldier_Crew_PMC",[0,"images\copTraffic.paa"]],
@@ -24,9 +25,11 @@ _uniforms = [
   ["civUni6","Pilot_EP1"],
   ["civUni7","Functionary2_EP1"],
   ["civUni8","Functionary1_EP1"],
+  ["civUni9","SchoolTeacher",[0,"images\judgeskin.paa"]],
   ["docUni","Dr_Hladik_EP1"],
   ["docUni2","USMC_LHD_Crew_Blue"],
   ["docUni3","Doctor"],
+  ["docUni4","INS_Worker2",[0,"images\paramedicskin.paa"]],
   ["TerrorUni1","TK_GUE_Soldier_3_EP1"],        // Terrorist (Bandana)
   ["TerrorUni2","TK_GUE_Soldier_5_EP1"],        // Terrorist (Turban)
   ["TerrorUni3","TK_GUE_Soldier_AA_EP1"],       // Terrorist (Brown)

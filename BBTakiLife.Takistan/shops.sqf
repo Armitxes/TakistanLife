@@ -70,7 +70,8 @@ if (isServer) then {
   -1,// PMC Shop	
   -1,// PMC Car
   -1,// PMC Air
-  -1
+  -1, // Pet Shop
+  -1 // Judge Shop
   ];
 
   publicvariable "INV_itemstocks";
@@ -147,7 +148,8 @@ INV_itemmaxstocks = [
 -1,// PMC Shop	
 -1,// PMC Car
 -1,// PMC Air
--1
+-1,
+-1 // Judge Shop
 ];
 
 
@@ -219,7 +221,7 @@ _souveh = ["T55_TK_GUE_EP1","T72_TK_EP1","BRDM2_TK_GUE_EP1","Ural_ZU23_TK_GUE_EP
 // South Government Air Shop
 _souair = ["Mi17_Ins","UH1H_TK_GUE_EP1","Mi17_medevac_Ins"];
 //Medic Shop
-_hos = ["medikit","docUni","docUni2","docUni3","S1203_ambulance_EP1","HMMWV_Ambulance","GAZ_Vodnik_MedEvac"];
+_hos = ["medikit","docUni","docUni2","docUni3","docUni4","S1203_ambulance_EP1","HMMWV_Ambulance","GAZ_Vodnik_MedEvac"];
 _hosair = ["UH60M_MEV_EP1"];
 //South Goverment Shop
 _soushop = [
@@ -405,6 +407,7 @@ _uns =
 "M16A2",
 "30Rnd_556x45_Stanag",
 "NVGoggles",
+"unUni4",
 "GPS",
 "vclammo",
 "copreparaturkit",
@@ -456,7 +459,8 @@ _unnco =
 "30Rnd_556x45_Stanag",
 "Mk13_EP1",
 "1Rnd_Smoke_M203",
-"M113_UN_EP1"
+"M113_UN_EP1",
+"BTR40_UN"
 ];
 
 _terrorshop_buy =
@@ -653,6 +657,8 @@ _petShop = [
 "Sheep","WildBoar"
 ];
 
+_js = ["civUni9"];
+
 if(!isDedicated) then {
   _vipLvl = PLAYERDATA select 3;
   if(_vipLvl > 0) then {
@@ -708,7 +714,8 @@ if(!isDedicated) then {
           if(iscop) then { _copshop_response = ["MP5SD"] + _copshop_response + _ng; };   
         };
       };
-      
+    }; 
+ 
       if(iscop) then {
         _ca = _ca + _as - _civair;
         _cv = _cv + _cs - _civveh;
@@ -717,10 +724,11 @@ if(!isDedicated) then {
         _uns = _uns + _gs - _civguns + ["M9","15Rnd_9x19_M9"];
         _unair = _unair + _as - _civair;
         _unveh = _unveh + _cs - _civveh;
-      };
-    };
-  };
-};
+      
+    };	  
+   };
+ };
+
 
 INV_ItemShops = [
 [fuelshop1,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true], // #1
@@ -814,5 +822,6 @@ INV_ItemShops = [
 [pmcshop,"PMC Shop",pmcbox,dummyobj,_pmcshop,_pmcshop,true],
 [pmccar,"PMC Car Shop",dummyobj,pmccarspawn,_pmccar,_pmccar,true],
 [pmcair,"PMC Air Shop",dummyobj,pmcairspawn,_pmcair,_pmcair,true],
-[petshop,"Pet Shop",dummyobj,dummyobj,_petShop,_petShop,true]
+[petshop,"Pet Shop",dummyobj,dummyobj,_petShop,_petShop,true],
+[Jshop,"Judge Shop",dummyobj,dummyobj,_js,_js,true]
 ];

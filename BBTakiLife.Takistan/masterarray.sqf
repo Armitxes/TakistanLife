@@ -134,7 +134,7 @@ INV_AlleWaffenObjekte = [
 
 ["PK",["Waffe", "mg"], ["pk", "PKM"], [13000, 7500], [2, "bomb", ""],[], "PK" call ISSE_Cfg_Weapons_GetName, "PK" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["holz", 30],["kupfer", 15]]],
 
-["PK_sou",["Waffe", "mg"], ["pk", "PKM"], [1300, 7500], [2, "southgov", ""],[], "PK" call ISSE_Cfg_Weapons_GetName, "PK" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["holz", 30],["kupfer", 15]]],
+["PK_sou",["Waffe", "mg"], ["pk", "PKM"], [13000, 7500], [2, "southgov", ""],[], "PK" call ISSE_Cfg_Weapons_GetName, "PK" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["holz", 30],["kupfer", 15]]],
 
 ["MetisLauncher", ["Waffe", "launcher"],["MetisLauncher", "Metis AT-13"], [12000, 11250], [3, "bomb", "sobr_training"], [], "JAVELIN" call ISSE_Cfg_Weapons_GetName, "JAVELIN" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 70],["plastik", 20],["kupfer", 15],["ebauteile", 5]]],
 
@@ -447,6 +447,7 @@ INV_AlleFahrzeugeArray = [
 ["ArmoredSUV_PM",["Fahrzeug", "car"],["ArmoredSUV_PMC", "Armored SUV"],[30000, 12500], [2, "car", "sobr_training", 100],[150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["HMMWV_M998_crows_M2_DES_EP1",["Fahrzeug", "car"],["Skoda", "HMMWV CROWS (M2)"],[58000, 0], [2, "car", "sobr_training", 150], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["M113_TK_EP1",["Fahrzeug", "car"],["M113_TK_EP1", "M113 UN MG (M2)"],[66800, 0], [2, "car", "sobr_training", 150], [150, [1,0,0,3]], "M113_TK_EP1" call ISSE_Cfg_Vehicle_GetName, "M113_TK_EP1" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["BTR40_UN",["Fahrzeug", "car"],["BTR40_MG_TK_INS_EP1", " UN BTR40"],[40000, 20000], [2, "southgov", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["M2A3_EP1",["Fahrzeug", "car"],["M2A3_EP1", "Bradley"],[180000, 0], [2, "car", "sobr_training", 150], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["HMMWV_M1151_M2_DES_EP1",["Fahrzeug", "car"],["HMMWV_M1151_M2_DES_EP1", "HMMWV GPK"],[38000, 7500], [2, "car", "sobr_training", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["M1126_ICV_M2_EP1",["Fahrzeug", "car"],["Skoda", "Stryker"],[85000, 40000], [2, "car", "sobr_training", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
@@ -699,10 +700,14 @@ INV_AlleItemsArray = [
 ["civUni6",["Item", "cloth"],["civUni6", "Pilot (civil)"], [50, 50], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Pilot (civil)","Pilot (civil)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["civUni7",["Item", "cloth"],["civUni7", "Brown Suit"], [100, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Brown Suit","Brown Suit", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["civUni8",["Item", "cloth"],["civUni8", "Black Suit"], [100, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Black Suit","Black Suit", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
+["civUni9",["Item", "cloth"],["civUni9", "Judge Robes"], [500, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Judge Robes","Judge Robes", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
+
+["unUni4",["Item", "cloth"],["unUni4", "UN Pilot"], [100, 100], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "UN Pilot","UN Pilot", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 //Medic Skins
 ["docUni",["Item", "cloth"],["docUni", "Emergency Service"], [500, 300], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Emergency Service","Emergency Service", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["docUni2",["Item", "cloth"],["docUni2", "Pilot"], [500, 300], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Pilot","Pilot", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
-["docUni3",["Item", "cloth"],["docUni3", "Doctor"], [500, 300], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Doctor","Doctor", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
+["docUni3",["Item", "cloth"],["docUni3", "Doctor"], [200, 300], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Doctor","Doctor", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
+["docUni4",["Item", "cloth"],["docUni4", "Paramedic"], [1000, 300], [0.1, "", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Paramedic","Paramedic", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 //Terror Skins
 ["TerrorUni1",["Item", "cloth"],["TerrorUni1", "Terrorist (Bandanna)"], [500, 100], [0.1, "bomb", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Terrorist (Bandanna)","Terrorist (Bandanna)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 ["TerrorUni2",["Item", "cloth"],["TerrorUni2", "Terrorist (Turban)"], [500, 100], [0.1, "bomb", ""],[true,false,true, false, "armitxes\clothing.sqf"], "Terrorist (Turban)","Terrorist (Turban)", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],

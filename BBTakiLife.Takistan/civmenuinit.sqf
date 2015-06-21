@@ -2,6 +2,7 @@ _civmenuciv  = civmenuciv; // Ziel
 _civmenu_civ = civmenu_civ;  // Auslöser
 _art         = _this select 0;
 _dollarz        = 'dollarz' call INV_GetItemAmount;
+//_civ			= compile _civmenu_civ
 
 if ((player distance _civmenuciv >= 25) or (!(alive _civmenuciv))) exitWith { player groupChat format[localize "STRS_civmenu_distance"]; };
 
@@ -9,7 +10,7 @@ if ((player distance _civmenuciv >= 25) or (!(alive _civmenuciv))) exitWith { pl
 switch (_art) do {
   case 1: { (format ["if (player == %1) then {[""drugs"", %2] execVM ""civmenu.sqf"";};", _civmenuciv, player]) call toClients; };
   case 2: {
-   if(!(_civmenuciv call ISSE_IsVictim))exitwith{hint localize "STRS_inventory_checknohands"};
+   //if(!(_civmenuciv call ISSE_IsVictim) || !([civmenu_civ] call plr_isUnConscious)) exitwith{hint localize "STRS_inventory_checknohands"};
     (format ["if (player == %1) then {[""disarm""] execVM ""civmenu.sqf"";};", _civmenuciv]) call toClients;
     player groupChat format [localize "STRS_civmenu_disarm", _civmenu_civ];
   };

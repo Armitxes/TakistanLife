@@ -114,6 +114,19 @@ DialogSpielerListe =
   [_Flistlen, _Feigenenum]
 };
 
+GangList = 
+{
+	private ["_i","_Fid"];
+    _Fid = _this select 0;
+
+for [{_i=0}, {_i < (count gangsarray)}, {_i=_i+1}] do {
+	    _gangarray = gangsarray select _i;
+	    _index = lbAdd [_Fid, format ["%1", (_gangarray select 0)]];
+	    lbSetData [_Fid, _index, format ["%1",(_gangarray select 0)]];
+	 
+	};
+};
+
 Isse_AddCrimeLogEntry = {
 private ["_logtime", "_logdate", "_logtext", "_logart", "_logplayer", "_zusatzinfo"];
   _logart = _this select 0;

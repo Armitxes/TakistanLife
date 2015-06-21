@@ -45,9 +45,9 @@ if (_art == "success") then {
 server globalchat format["The thief stole $%1!", (_this select 2)];
 sleep 4;
 server globalchat "The Casino has just been robbed successfully all bets are off for 10 minutes!!";
-nobet = true;publicVariable "nobet"; 
+nobet = true;
 sleep 600;
-nobet = false;publicVariable "nobet"; 
+nobet = false;
 server globalchat "The Casino has recovered it's losses, all bets are ON!!!!";
 server globalchat "The Casino has recovered it's losses, all bets are ON!!!!";};
 

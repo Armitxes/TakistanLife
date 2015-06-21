@@ -32,7 +32,8 @@ if((alive player)
             case "hands": { dmgHands = dmgHands + _damage; };
             case "legs": { dmgLegs = dmgLegs + _damage; };
           };
-		if ((vehicle player != player) && (_shooter == _vcl)  && (_damage > 1)) then { dmgBody = dmgBody + _damage};
+		if (!(isNil "_vcl")) then {
+		if ((vehicle player != player) && (_shooter == _vcl)) then { dmgBody = dmgBody + _damage};};
           
           player setHit ["hands",dmgHands]; player setHit ["legs",dmgLegs];
           

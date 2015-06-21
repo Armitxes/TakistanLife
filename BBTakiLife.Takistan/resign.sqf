@@ -13,11 +13,8 @@ if (!(createDialog "ja_nein")) exitWith {hint "Dialog Error!"};
 	isMayor = false;
 	MayorNumber = -1;
     publicVariable "MayorNumber";
-	for [{_i=0}, {_i < count(_WahlArrayp)}, {_i=_i+1}] do
-  {
-    _arr = (_WahlArrayp select _i);
-    if (_playernum in _arr) exitWith {_arr = _arr - [_playernum];	_WahlArrayp SET [_i, _arr];};
-  };
+	_WahlArrayp = [];
+for [{_i=0}, {_i < playercount}, {_i=_i+1}] do {_WahlArrayp = _WahlArrayp + [ [] ];};
   server setVariable ["PMVote",_WahlArrayp,true];
 	_msg = format ["Prime Minister %1 has resigned from office!",name player];
 	(format["hint ""%1"";", _msg]) call toClients;};

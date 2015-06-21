@@ -23,7 +23,7 @@ if((PLAYERDATA select 2) > 229) then { _access = true; } else {
     (_shop == coparmed && !((PLAYERDATA select 4) == 1 && (PLAYERDATA select 5) > 0)) ||
     ((_shop == swatcar || _shop == copswat || _shop == swatair) && !((PLAYERDATA select 4) == 1 && (PLAYERDATA select 5) > 99)) ||
     //MemBase, PM
-    (_shop == memshop && !((PLAYERDATA select 2) > 0)) ||
+    ((_shop == memshop || _shop == Jshop) && !((PLAYERDATA select 2) > 0)) ||
     ((_shop == mayorveh || _shop == mayorbox) && !isMayor) ||
 	//PMC
 	((_shop == pmcshop || _shop == pmccar || _shop == pmcair) && !((PLAYERDATA select 4) == 0 && (PLAYERDATA select 5) == 10))

@@ -2982,7 +2982,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=4058;
+		items=4059;
 		class Item0
 		{
 			position[]={6015.2627,-4.5776367e-005,10487.534};
@@ -42116,6 +42116,18 @@ class Mission
 			skill=0.60000002;
 			text="RingShop";
 			init="this allowDamage false; this enableSimulation false;";
+		};
+		class Item4058
+		{
+			position[]={4141.3696,127.13704,9464.4385};
+			azimut=875.75098;
+			special="NONE";
+			id=4206;
+			side="EMPTY";
+			vehicle="Infostand_2_EP1";
+			skill=0.60000002;
+			text="Jshop";
+			init="this allowDamage false; this enableSimulation false;this setpos [getpos this select 0, getpos this select 1, (getpos this select 2) + 1.18];this enableSimulation false;";
 		};
 	};
 	class Markers

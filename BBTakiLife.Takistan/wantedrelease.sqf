@@ -39,7 +39,7 @@ if (iscop && (_autoReason == 0)) then
       case 9: { _reason = "Theft of Civilian Vehicle"; _bounty = 4000; };
       case 10: { _reason = "Possession of Class A Drug"; _bounty = 8000; };
       case 11: { _reason = "Possession of Class B Drug"; _bounty = 6000; };
-      case 12: { _reason = "Assaulting an Officer"; _bounty = 5000; };
+      case 12: { _reason = "Assault"; _bounty = 5000; };
       case 13: { _reason = "Rioting"; _bounty = 3000; };
       case 14: { _reason = "Slavery"; _bounty = 12000; };
       case 15: { _reason = "Perverting the Course of Justice"; _bounty = 2000; };
@@ -49,11 +49,11 @@ if (iscop && (_autoReason == 0)) then
       case 19: { _reason = "Possession of Illegal Weapon"; _bounty = 3000; };
       case 20: { _reason = "Anti Social Behaviour"; _bounty = 2000; };
       case 21: { _reason = "Escaping Jail"; _bounty = 16000; };
-      case 22: { _reason = "Assisting a Jail Break"; _bounty = 8000; };
+      case 22: { _reason = "Assisting a Jail Break"; _bounty = 7000; };
       case 23: { _reason = "Arson"; _bounty = 5000; };
       case 24: { _reason = "Kidnap"; _bounty = 9000; };
       case 25: { _reason  = "Manslaughter"; _bounty = 5000;};
-      case 26: { _reason  = "Kidnapping a VIP"; _bounty = 18000;};
+      case 26: { _reason  = "Kidnapping a VIP"; _bounty = 11000;};
       case 27: { _reason  = "Breach of Aviation Law"; _bounty = 2500;};
       case 28: { _reason = "Terrorism"; _bounty = 15000; };
 	  case 29: { _reason = "Theft of UN/Cop Vehicle"; _bounty = 6000; };

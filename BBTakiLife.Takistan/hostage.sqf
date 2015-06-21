@@ -48,7 +48,8 @@ while {true} do
 if (_art == "getajob_hostage") then
 
 {
-
+_copplayernumber = playersNumber west;
+if (_copplayernumber < 5)exitWith{player groupchat "There are not enough cops on to start the hostage mission!"};
 if(workplacejob_hostage_active)exitWith{player groupChat "There are currently no more hostages.";};
 if(workplacejob_hostage_failed)exitWith{player groupChat "You have failed a hostage mission recently, maybe you can do it again later.";};
 
@@ -87,7 +88,7 @@ player groupChat "The Hostage is marked on the map, don't let the police get you
 "if (iscop) then {player sideChat ""Someone is trying to take a hostage. The hostage has been marked on the map. Arrest the hostage taker before its too late!""};" call broadcast;
 
 player groupchat "The police are on to you, hurry up!";
-["addWarrant",player,"Kidnapping a VIP",18000] execVM "warrant.sqf";
+["addWarrant",player,"Kidnapping a VIP",11000] execVM "warrant.sqf";
 
 while {true} do {
   "htargetmarker" setmarkerpos getpos hostage1;
