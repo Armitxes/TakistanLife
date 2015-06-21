@@ -40913,7 +40913,7 @@ class Mission
 		class Item3936
 		{
 			position[]={9040.4502,235.64143,5908.167};
-			azimut=3.9818039;
+			azimut=0.13648915;
 			id=4081;
 			side="EMPTY";
 			vehicle="FlagCarrierUNO_EP1";
@@ -43856,7 +43856,7 @@ class Mission
 		};
 		class Item205
 		{
-			position[]={3474.873,161.94133,8335.5693};
+			position[]={3499.4624,161.74858,8361.1484};
 			name="cpWest";
 			text="OPEN";
 			type="mil_join";
@@ -43865,12 +43865,12 @@ class Mission
 		};
 		class Item206
 		{
-			position[]={9012.3574,236.34155,5872.5337};
+			position[]={9040.3359,235.63766,5908.2881};
 			name="cpEast";
 			text="CLOSED";
 			type="mil_join";
 			colorName="ColorRed";
-			angle=-75.762077;
+			angle=-53.013203;
 		};
 		class Item207
 		{
@@ -43891,7 +43891,7 @@ class Mission
 		};
 		class Item209
 		{
-			position[]={3540.8291,160.91383,8373.9414};
+			position[]={3533.1045,160.97955,8376.0781};
 			name="ooga";
 			type="Empty";
 		};
