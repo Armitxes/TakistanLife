@@ -41,7 +41,7 @@ switch (_doAction) do
 			if ((count _prisoners) > 0) then {
 				('server globalChat "A prisonbus is heading towards the border";') call toClients;
 				
-				sleep 10;
+				sleep 120;
 				{
 					if(alive _x && (animationstate _x) == "civillying01") then {
 						format['if(player == %2)then{ [%1] execVM "putinjail.sqf"; };', player, _x] call toClients;					
