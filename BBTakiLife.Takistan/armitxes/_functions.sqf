@@ -32,9 +32,15 @@ if(!isDedicated) then
 				} else {
 					if(isciv) then {
 						_fcabbr = "| Civ]";
-						if(isMedic) then { _fcabbr = "| MEDIC]"; };
-						if(ispmc) then { _fcabbr = "| PMC]"; };
-						if(isMayor) then { _fcabbr = "| PM]"; };
+						if(ismedic) then { _fcabbr = "| MEDIC]"; } else {
+							if(ispmc) then { _fcabbr = "| PMC]"; } else {
+								if(isMayor) then { _fcabbr = "| PM]"; } else {
+									if(isjudge) then { _fcabbr = "| Judge]"; } else {
+										if(islawyer) then { _fcabbr = "| Lawyer]"; };
+									};
+								};
+							};
+						};
 					};
 				};
 			    _abbr = _abbr + _fcabbr;

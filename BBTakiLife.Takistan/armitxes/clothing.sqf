@@ -30,7 +30,7 @@ _uniforms = [
   ["docUni","Dr_Hladik_EP1"],
   ["docUni2","USMC_LHD_Crew_Blue"],
   ["docUni3","Doctor"],
-  ["docUni4","INS_Worker2",[0,"images\paramedicskin.paa"]],
+  ["docUni4","INS_Worker1",[0,"images\paramedicskin.paa"]],
   ["TerrorUni1","TK_GUE_Soldier_3_EP1"],        // Terrorist (Bandana)
   ["TerrorUni2","TK_GUE_Soldier_5_EP1"],        // Terrorist (Turban)
   ["TerrorUni3","TK_GUE_Soldier_AA_EP1"],       // Terrorist (Brown)
@@ -67,7 +67,6 @@ _uniforms = [
   ["GangUni4","GUE_Soldier_AR"],			   // Boonie
   ["GangUni5","GUE_Commander"],				   // Commander
   ["GangUni6","GUE_Soldier_Pilot"]			  // Gang Pilot
-  
 ];
 
 _medics = ["docUni","docUni2","docUni3","docUni4"];
