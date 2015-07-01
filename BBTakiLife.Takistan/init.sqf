@@ -28,20 +28,18 @@ canuseshopagain = 1;
 
 if (isServer) then
 {
-  warrantarray = [];
-  lastElection = 0;
-  
-  _WahlArray = [];
-  for [{_i=0}, {_i < playercount}, {_i=_i+1}] do {_WahlArray = _WahlArray + [ [] ];};
-  server setVariable ["PMVote",_WahlArray,true];
-  server setVariable ["CCVote",_WahlArray,true];
-  _WahlArray = nil;
+	warrantarray = [];
+	lastElection = 0;
+	
+	_WahlArray = [];
+	for [{_i=0}, {_i < playercount}, {_i=_i+1}] do {_WahlArray = _WahlArray + [ [] ];};
+	server setVariable ["PMVote",_WahlArray,true];
+	server setVariable ["CCVote",_WahlArray,true];
+	_WahlArray = nil;
  };
          
 execVM "Simple_house_lights_script.sqf";
 call compile preprocessfile "triggers.sqf";
-
-if(local server)then{execVM "targets.sqf";};
 
 waitUntil { ( (time > 1) and ((alive player) or (local server)) ) };
 

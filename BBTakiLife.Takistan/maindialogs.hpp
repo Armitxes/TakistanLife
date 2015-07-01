@@ -409,7 +409,7 @@ class liste_1_button
 };
 
 class constitution : liste_1_button {
-	controls[] = {spielerliste, close, dummybutton,btnAdd};
+	controls[] = {spielerliste, newConst, close, dummybutton, btnAdd};
     class btnAdd: RscButton
     {
     	text = "Add";
@@ -418,7 +418,16 @@ class constitution : liste_1_button {
     	w = 0.1 * safezoneW;
     	h = 0.0280057 * safezoneH;
 		action = "[""add""] execVM ""armitxes\basiclaw.sqf"";";
-    };	
+    };
+	class newConst : RscEdit
+	{
+		x = 0.25;
+		y = 1.0;
+		w = 0.6;
+		h = 0.04;
+		idc = 4;
+		text = "";
+	};	
 };
 
 class gang_menu

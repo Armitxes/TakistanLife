@@ -1,4 +1,5 @@
 "ArmA2Ext" callExtension "Init";
+constitution = "ArmA2Ext" callExtension "ArmiNET.DB loadLaws";
 
 "submitLoad" addPublicVariableEventHandler {
   _plr = (_this select 1);
@@ -12,3 +13,4 @@
 };
 
 "submitSave" addPublicVariableEventHandler { ("ArmA2Ext" callExtension format ["ArmiNET.DB save#%1",(_this select 1)]); };
+"constitution" addPublicVariableEventHandler { ("ArmA2Ext" callExtension format ["ArmiNET.DB addLaw#%1",(_this select 1)]); };
