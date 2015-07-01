@@ -374,7 +374,6 @@ class liste_1_button
 		w = 0.70;
 		h = 0.95;
 	};
-
 	class background : RscBgRahmen
 	{
 		x = 0.21;
@@ -382,7 +381,6 @@ class liste_1_button
 		w = 0.70;
 		h = 0.95;
 	};
-
 	class spielerliste : RscListBox
 	{
 		idc = 1;
@@ -393,23 +391,34 @@ class liste_1_button
 		SizeEX = 0.0195;
 		RowHeight = 0.03;
 	};
-
 	class close : RscButton
 	{
 		idc = 2;
-		x = 0.45;
-		y = 0.942;
+		x = 0.44;
+		y = 0.95;
 		w = 0.20;
 		h = 0.04;
 
 		text = $STRD_description_buyitem_close;
 		action = "closedialog 0;";
 	};
-
 	class dummybutton : RscDummy
 	{
 		idc = 1017;
 	};
+};
+
+class constitution : liste_1_button {
+	controls[] = {spielerliste, close, dummybutton,btnAdd};
+    class btnAdd: RscButton
+    {
+    	text = "Add";
+    	x = 0.618844 * safezoneW + safezoneX;
+    	y = 0.95;
+    	w = 0.1 * safezoneW;
+    	h = 0.0280057 * safezoneH;
+		action = "[""add""] execVM ""armitxes\basiclaw.sqf"";";
+    };	
 };
 
 class gang_menu

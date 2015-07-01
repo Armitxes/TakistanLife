@@ -239,14 +239,14 @@ class professions {
     enableSimulation = true;
 
     class controlsBackground {
-        class bgProfession: RscFrame
+        class bgProfession: RscBackground
         {
         	idc = -1;
         	x = 0.235902 * safezoneW + safezoneX;
         	y = 0.149928 * safezoneH + safezoneY;
         	w = 0.528196 * safezoneW;
         	h = 0.700143 * safezoneH;
-            colorBackground[] = { 1, 1, 1, 0.3 };
+            colorBackground[] = { 0, 0, 0, 0.8 };
         };
     };
     class objects {};  

@@ -79,7 +79,7 @@ switch (_art) do {
 	_npcCount = 0; _medCount = 0; _judCount = 0; _lawyerCount = 0;
 	{ if (!isPlayer _x) then { _npcCount = _npcCount + 1; }; } forEach (nearestObjects [[6453,8127,0],["Man"], 10000]);
 	{
-		if((typeOf _x) in ["Dr_Hladik_EP1","USMC_LHD_Crew_Blue","Doctor"]) then { _medCount = _medCount + 1; };
+		if((typeOf _x) in ["Dr_Hladik_EP1","USMC_LHD_Crew_Blue","Doctor","INS_Worker1"]) then { _medCount = _medCount + 1; };
 		if((typeOf _x) == "SchoolTeacher") then { _judCount = _judCount + 1; };
 		if((typeOf _x) == "RU_Functionary2") then { _lawyerCount = _lawyerCount + 1; };
 	} forEach playableUnits;
@@ -473,7 +473,7 @@ switch (_art) do {
     };
 	
 	case "constitution": {
-		if (!(createDialog "liste_1_button")) exitWith {hint "Dialog Error!";};
+		if (!(createDialog "constitution")) exitWith {hint "Dialog Error!";};
 		_trennlinie = "-------------------------------------------------";
 		lbAdd [1, ""];
 		lbAdd [1, "§ Constitution of Takistan §"];
