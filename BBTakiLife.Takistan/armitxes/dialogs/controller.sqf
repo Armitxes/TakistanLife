@@ -47,8 +47,9 @@ _initPlayerInteraction = {
 switch (_action) do {
 	case "sergeant": {
 		createDialog "sergeantmenu";
+		["police"] call _initPlayerInteraction;
 		_listbox = (_dsp displayCtrl 3);
-		{_listbox lbAdd (_x select 0);} forEach districs;
+		{_listbox lbAdd _x;} forEach districs;
 	};
 	case "profession": {
 		createDialog "professions";

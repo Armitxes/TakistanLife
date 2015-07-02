@@ -316,7 +316,7 @@ wpcapacity               = 10;
 INV_hasitemshop          = 0;
 INV_haswepshop           = 0;
 BuildingsOwnerArray 	 = [];
-districs = [["North",[]],["North/East",[]],["North/West",[]],["South",[]]];
+districs = ["North","North/East","North/West","South"];
 
 if(isciv) then {
 
@@ -373,7 +373,6 @@ if(isServer)then
   TankenCost = 10; publicvariable "TankenCost";
   
   onplayerconnected '
-  publicVariable "districts";
   publicVariable "convoywinner";
   publicVariable "GesetzArray";
   publicVariable "INV_ItemTypenArray";
