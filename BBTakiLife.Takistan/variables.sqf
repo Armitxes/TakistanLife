@@ -74,10 +74,10 @@ stolenfromtimeractive	 = false;  // dont change
 //===============MOTD==================
 motdwaittime = 60;
 //===============Cop Patrol==================
+onduty = true;
 pmissionactive = false;
 patrolwaittime = false;
 patrolmoneyperkm = 0.55;  // 1 would be equal to $7,000 for 1KM
-//========= government convoy =============
 govconvoybonus 		  = 3500;
 govconvoythiefbonus	= 15000;
 convoyrespawntime   = 30;  // 30 minutes
@@ -85,15 +85,12 @@ moneyintruck 	    	= true; //dont change
 convoyguardsdead		= false;
 convoywinner        = "Cops and UN";
 emMarkers = [];
-//===== Gas station robbing
 maxstationmoney = 2000;
-//==============================PETROL/OIL=========================================
 petroluse                = 1;
 maxpetroluse             = 80;
 //oildemand                = 1;
 oilsellpricedec          = 0.51;
 oilbaseprice		 = 2600;
-//==============================MINING=============================================
 shoveldur=20;
 shovelmax=2;
 pickaxedur=50;

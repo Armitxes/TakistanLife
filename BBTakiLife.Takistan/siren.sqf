@@ -8,14 +8,14 @@ _longDur      = 4.87;
 
 if (_art == "activate") then
 {
-	if (isNil "SIREN_SirenePlaying") then
+	if (isNil "siren") then
 	{
-		SIREN_SirenePlaying = false;
+		siren = false;
 	};
 
-	if ((SIREN_SirenePlaying) or (!(player == (driver (vehicle player))))) exitWith {};
+	if ((siren) or (!(player == (driver (vehicle player))))) exitWith {};
 
-	SIREN_SirenePlaying = true;
+	siren = true;
 	_turnOn       = false;
 
 	if (call compile format["isNil(""%1_Sirene_on"")", _vcl]) then
@@ -47,7 +47,7 @@ if (_art == "activate") then
 
 	sleep 1;
 
-	SIREN_SirenePlaying = false;
+	siren = false;
 };
 
 if (_art == "client") then

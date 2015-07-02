@@ -1,60 +1,66 @@
 while {iscop} do
 {
-  sleep 170;
-  player groupChat format[localize "STRS_dollarz_countdown", "2"];
-  sleep 60;
-  player groupChat format[localize "STRS_dollarz_countdown", "1"];
-  sleep 60;
+	sleep 170;
+	player groupChat format[localize "STRS_dollarz_countdown", "2"];
+	sleep 60;
+	player groupChat format[localize "STRS_dollarz_countdown", "1"];
+	sleep 50;
+	
+	_income = 350 + extrapay;
+	
+	if ("patrol_training" call INV_HasLicense) then { _income = _income + 25; };
+	if ("response_training" call INV_HasLicense) then { _income = _income + 50; };
+	if ("sobr_training" call INV_HasLicense) then { _income = _income + 75; };
+	if ("copAir" call INV_HasLicense) then { _income = _income + 50; };
+	
+	if (!(convoywinner == "Cops and UN") && !(convoywinner == "Neither")) then  
+	{
+		player groupChat format["No paychecks have been delivered by the last convoy, you'll receive less payment!"];
+		_income = _income - 150;
+	};
+	
+	if (ischief) then { _income = _income + chiefExtraPay; };
+	if(_vcl != player && iscop && onduty && !siren) then {
+		_district = player getVariable "district";
+		if(!isNil "_district" && !((getPos player) in _district)) then {
+			_income = _income - 150;
+		};
+	}
   
-  _income = 200 + extrapay;
-  
-  if ("patrol_training" call INV_HasLicense) then { _income = _income + (25); };
-  if ("response_training" call INV_HasLicense) then { _income = _income + (50); };
-  if ("sobr_training" call INV_HasLicense) then { _income = _income + (75); };
-  if ("copAir" call INV_HasLicense) then { _income = _income + (50); };
-  
-  if (!(convoywinner == "Cops and UN") && !(convoywinner == "Neither")) then  
-  {
-  	 player groupChat format["No paychecks have been delivered by the last convoy, you'll receive less payment!"];
-  	 _income = _income - 150;
-  };
-  
-  if (ischief) then {	_income = _income + chiefExtraPay; };
-  
-  _coptax = round(INV_SteuernGezahlt * 0.05);
-  [(round _income) + _coptax] call setMoney;
-  INV_SteuernGezahlt = 0;
-  
-  player groupchat format["You received $%1. as payment including taxes.", ((round _income) call ISSE_str_IntToStr)];
-  
-  sleep 1;
-  if(ischief)then{player groupchat format["As the Chief Constable you get an extra paycheck of $%1.", (chiefExtraPay call ISSE_str_IntToStr)]};
-  ["save"] execVM "armitxes\_db.sqf"; 
+	_coptax = round(INV_SteuernGezahlt * 0.05);
+	[(round _income) + (round _coptax)] call setMoney;
+	INV_SteuernGezahlt = 0;
+	
+	player groupchat format["You received $%1. as payment including taxes.", ((round _income) call ISSE_str_IntToStr)];
+	
+	sleep 1;
+	if(ischief)then{player groupchat format["As the Chief Constable you get an extra paycheck of $%1.", (chiefExtraPay call ISSE_str_IntToStr)]};
+	["save"] execVM "armitxes\_db.sqf"; 
 };
 
 while {isun} do
 {
-  sleep 170;
-  player groupChat format[localize "STRS_dollarz_countdown", "2"];
-  sleep 60;
-  player groupChat format[localize "STRS_dollarz_countdown", "1"];
-  sleep 60;
-  
-  _untax = round(INV_SteuernGezahlt * 0.025);
-  INV_SteuernGezahlt = 0;  
-  
-  _incomeun = 100 + extrapay;
+	sleep 170;
+	player groupChat format[localize "STRS_dollarz_countdown", "2"];
+	sleep 60;
+	player groupChat format[localize "STRS_dollarz_countdown", "1"];
+	sleep 60;
+	
+	_untax = round(INV_SteuernGezahlt * 0.025);
+	INV_SteuernGezahlt = 0;  
+	
+	_incomeun = 100 + extrapay;
 	_incomeun = _incomeun + 400 + _untax;
 	
 	if (!(convoywinner == "Cops and UN") && !(convoywinner == "Neither")) then  
-  {
+	{
 		player groupChat format["No paychecks have been delivered by the last convoy, you'll receive less payment!"];
 	  _incomeun = _incomeun - 150;
-  };
-  player groupChat format["The United Nations gave you a paycheck of $%1 and an extra of $%2 as bonus.",_incomeun,paybonus];
-  [(_incomeun + paybonus)] call setMoney;
-  paybonus = 0;
-  ["save"] execVM "armitxes\_db.sqf";
+	};
+	player groupChat format["The United Nations gave you a paycheck of $%1 and an extra of $%2 as bonus.",_incomeun,paybonus];
+	[(_incomeun + paybonus)] call setMoney;
+	paybonus = 0;
+	["save"] execVM "armitxes\_db.sqf";
 };
 
 while {isciv} do

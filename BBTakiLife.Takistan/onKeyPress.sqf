@@ -50,15 +50,15 @@ switch _key do
   	[] execVM "animdlgopen.sqf";
   };
   // u key
-  case 22: {
-    if(dialog || isNil("playerPet") || isNil("petOwner") )exitwith{};
-    if(player == playerPet) exitWith {
-      if(alive petOwner) then { selectPlayer petOwner; };
-    };
-    if(player == petOwner) exitWith {
-      if(alive playerPet) then { selectPlayer playerPet; };
-    };
-  };
+	case 22: {
+	if(dialog || isNil("playerPet") || isNil("petOwner") )exitwith{};
+		if(player == playerPet) exitWith {
+			if(alive petOwner) then { selectPlayer petOwner; };
+		};
+		if(player == petOwner) exitWith {
+			if(alive playerPet) then { selectPlayer playerPet; };
+		};
+	};
 	//TAB key
 	case 15:
 	{  
