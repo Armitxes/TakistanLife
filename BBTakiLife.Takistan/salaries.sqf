@@ -25,7 +25,7 @@ while {iscop} do
 		if(!isNil "_district" && !((getPos player) in _district)) then {
 			_income = _income - 150;
 		};
-	}
+	};
   
 	_coptax = round(INV_SteuernGezahlt * 0.05);
 	[(round _income) + (round _coptax)] call setMoney;
@@ -44,7 +44,7 @@ while {isun} do
 	player groupChat format[localize "STRS_dollarz_countdown", "2"];
 	sleep 60;
 	player groupChat format[localize "STRS_dollarz_countdown", "1"];
-	sleep 60;
+	sleep 50;
 	
 	_untax = round(INV_SteuernGezahlt * 0.025);
 	INV_SteuernGezahlt = 0;  
@@ -69,7 +69,7 @@ while {isciv} do
   player groupChat format[localize "STRS_dollarz_countdown", "2"];
   sleep 60;
   player groupChat format[localize "STRS_dollarz_countdown", "1"];
-  sleep 60;
+  sleep 50;
   
   if ((alive player) and (deadcam == 0)) then
 

@@ -13,18 +13,17 @@ RESISTANCE setFriend [EAST, 1];
 EAST setFriend [RESISTANCE, 1];
 RESISTANCE setFriend [WEST, 1];
 WEST setFriend [RESISTANCE, 1];
-version        	= "1.62";
-compatible     	= 1.62;
-internDebug    	= false;
-debug          	= false;
-addonversion   	= false;
-dedicatedServer = isDedicated;
-copscount      	= 22;
-civscount      	= 45;
-playercount    	= 77;
-debugarray     	= [];
-nopop	          = true;
-canuseshopagain = 1;
+version			= "1.62";
+compatible		= 1.62;
+enableDebug		= !isDedicated && isServer;
+addonversion	= false;
+copscount		= 22;
+civscount		= 45;
+playercount		= 77;
+debugarray		= [];
+nopop			= true;
+canuseshopagain	= 1;
+JIP_Stats_Ready = false;
 
 if (isServer) then
 {
@@ -96,7 +95,7 @@ publicvariable "station9robbed";
 publicvariable "station10robbed";
 
 
-if(!dedicatedserver) then {
+if(!isDedicated) then {
 
 ["clientloop"] execVM "clientloop.sqf";
 [0,0,0,["clientloop"]] execVM "gangs.sqf";

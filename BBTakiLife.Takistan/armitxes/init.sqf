@@ -1,8 +1,8 @@
 _funcs = execVM "armitxes\_functions.sqf"; waitUntil {scriptDone _funcs};
 
 if(isServer) then {
-  ["db\server",true] call execARM;
-  ["init_map",true] call execARM;
+	["db\server",true] call execARM;
+	["init_map",true] call execARM;
 };
 
 ["handler",true] call execARM;
@@ -11,20 +11,44 @@ if(isServer) then {
 
 if(!isDedicated) then 
 {
-  chatAbbr = "[Bugged ";
-  iscop = false;
-  isun = false;
-  isciv = false;
-  PLAYERDATA = [0];
+	chatAbbr = "[Bugged ";
+	iscop = false;
+	isun = false;
+	isciv = false;
+	PLAYERDATA = [0];
+	
+	if(enableDebug) then {
+		PLAYERDATA = [1,300000,245,4,2,230,[],0,[]];
+		if ((count PLAYERDATA) == 9) then {
+			lastArray = str(PLAYERDATA);
+			INV_LizenzOwner = [];
+			{ INV_LizenzOwner = INV_LizenzOwner + [(INV_Lizenzen select _x) select 0]; } forEach (PLAYERDATA select 6);    
+			extrapay = 0;
+			chatAbbr = "[DevTest ";
+			INV_Fabrikowner = [];
+			_z = 0;
+			{
+				_fac = (INV_ItemFabriken select _z);
+				if (_x > 0) then { 
+					INV_Fabrikowner = INV_Fabrikowner + [_fac select 1];
+					call compile format ["%1workers = %2;",(_fac select 8),_x];
+				} else { call compile format ["%1workers = %2;",(_fac select 8),0]; };
+				_z=_z+1; 
+			} forEach (PLAYERDATA select 8);
+		};
+		submitLoad = nil;
+		closeDialog 5000;
+		JIP_Stats_Ready = true;
+	};
 
-  waitUntil {alive player};
-  while {(count PLAYERDATA) != 9} do 
-  {
-    if (!(createDialog "Portal")) exitWith {hint "Dialog Error! - Portal";};
-    ((findDisplay 5000) displayCtrl 1) ctrlSetText format["%1", getPlayerUID player]; 
-    waitUntil { !dialog };
-  };
-  
-  ["elections",false] call execARM;
-  civstatsdone = true;
+	waitUntil {alive player};
+	while {(count PLAYERDATA) != 9} do 
+	{
+		if (!(createDialog "Portal")) exitWith {hint "Dialog Error! - Portal";};
+		((findDisplay 5000) displayCtrl 1) ctrlSetText format["%1", getPlayerUID player]; 
+		waitUntil { !dialog };
+	};
+	
+	["elections",false] call execARM;
+	civstatsdone = true;
 };

@@ -1,8 +1,5 @@
 waitUntil {((alive player) or (local server))};
 
-if(local server and !local player)then{dedicatedServer = true};
-if(local server and local player)then{hostedServer = true};
-
 /* Legal Advise!
 Script made by Armitxes (Jan Brodersen)
 All rights reserved, do not delete this note! */

@@ -41,16 +41,12 @@ while {true} do
   
 	if(player isKindOf "Animal") then {
 		if(alive petOwner) then {
-			waitUntil {alive player};
-			_playerPet = player;
-			_petGrp = (group _playerPet);
-			
 			selectPlayer petOwner;
-			
-			deleteVehicle _playerPet;
+			waitUntil {alive player};
+			_petGrp = (group playerPet);
+			deleteVehicle playerPet;
 			deleteGroup _petGrp;
 			playerPet = nil;
-			_playerPet = nil;
 			_petGrp = nil;
 			
 			waituntil {!(alive petOwner)};

@@ -24,10 +24,4 @@ _handler = [] execVM "shops.sqf";
 waitUntil {scriptDone _handler};
 _handler = [] execVM "vclarrsave.sqf";
 
-if (!dedicatedServer) then
-
-{
-
-_handler = [] execVM "shopfarmfaclicenseactions.sqf";
-
-};
+if (!isDedicated) then { _handler = [] execVM "shopfarmfaclicenseactions.sqf"; };

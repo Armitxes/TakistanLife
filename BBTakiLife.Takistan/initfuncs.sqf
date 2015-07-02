@@ -1,5 +1,4 @@
 if (isNil "debugarray") then {debugarray = []};
-if (isNil "debug") then {debug = false};
 
 _h = []	execVM "customfunctions.sqf";
 waitUntil{scriptDone  _h};

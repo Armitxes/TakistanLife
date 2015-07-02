@@ -8,7 +8,7 @@ if (_art == "ausrauben") then {
   if (_copplayernumber < 5)exitWith{player groupchat "There are not enough cops on to rob this safe"};
   if(_robpool < 15000)exitWith{player groupchat "This safe has recently been stolen from and is empty"};
   if(!robenable)exitwith{player groupchat "you are already robbing the bank"};
-  if(!(call INV_isArmed) and !debug)exitWith{player groupChat localize "STRS_bank_rob_noweapon";};
+  if(!(call INV_isArmed) and !enableDebug)exitWith{player groupChat localize "STRS_bank_rob_noweapon";};
   
   robenable = false;
   _startRob = round(time)+300;
