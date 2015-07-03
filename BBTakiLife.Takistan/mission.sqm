@@ -9944,12 +9944,11 @@ class Mission
 			vehicle="Notebook";
 			skill=0.60000002;
 			text="flarelaptop";
-			init="this allowdamage false;this attachto [derp, [0,0,9.4]];action1 = this addAction [""Fire Emergency flare"", ""flare1.sqf""];action2 = this addAction [""Fire Illumination flare"", ""flare2.sqf""];action3 = this addAction [""Fire All clear flare"", ""flare3.sqf""];";
+			init="this allowdamage false;this attachto [derp, [0,0,9.4]];action1 = this addAction [""Fire Emergency flare"", ""flare.sqf""];";
 		};
 		class Item664
 		{
-			position[]={8243.1162,309.0062,2065.9602};
-			azimut=329.87579;
+			position[]={8243.1162,309.0062,2065.9602};			azimut=329.87579;
 			id=739;
 			side="EMPTY";
 			vehicle="Land_HBarrier1";
