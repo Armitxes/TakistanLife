@@ -7,23 +7,22 @@ _gangarea 	= _this select 0;
 _type		= _this select 1;
 _control = _gangarea getvariable "control";
 
-if (_type == "capture") then 
-{
- (format['server globalchat "%1 is being captured by another gang!!";',_gangarea]) call toClients;
-_gangarea setvariable["control", "Nobody", true];
-_captime = round(time)+360;
-while {
-    (_captime > time) &&
-    ((player distance _gangarea) <= 30) &&
-    (animationstate player != "civillying01") &&
-    (alive player) &&
-    ((vehicle player) == player) &&
-	(gangmember)
+if (_type == "capture") then {
+	(format['server globalchat "%1 is being captured by another gang!!";',_gangarea]) call toClients;
+	_gangarea setvariable["control", "Nobody", true];
+	_captime = round(time)+360;
+	while {
+		(_captime > time) &&
+		((player distance _gangarea) <= 30) &&
+		(animationstate player != "civillying01") &&
+		(alive player) &&
+		((vehicle player) == player) &&
+		(gangmember)
 	} do {    
-    hint format ["%1 seconds until gang area capture!",round(_captime-time)];
-    sleep 1;
-  };
-  hint "";
+		hint format ["%1 seconds until gang area capture!",round(_captime-time)];
+		sleep 1;
+	};
+	hint "";
   
   if((animationstate player == "civillying01") || ((player distance _gangarea) > 30) || !(alive player) || ((vehicle player) != player) || !(gangmember)) then {
   _mygang  = call INV_mygang;

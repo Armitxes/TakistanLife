@@ -58,9 +58,9 @@ _h = [] execVM "bankexec.sqf";
 
 waitUntil{scriptDone  _h};
 
-_h = [] execVM "initWPmissions.sqf";
-
-waitUntil{scriptDone  _h};
+_h = [] execVM "workplacesettings.sqf";
+waitUntil {scriptDone _h};
+if (isServer) then { [0,0,0,["serverloop"]] execVM "hostage.sqf"; };
 
 _h = [] execVM "gfx.sqf";
 waitUntil{scriptDone  _h};

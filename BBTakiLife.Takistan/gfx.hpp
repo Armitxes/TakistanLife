@@ -27,17 +27,13 @@ class background : RscBgRahmen
 
 	};
 
-class sichtweite_text : RscText
-
-	{
-
+class sichtweite_text : RscText {
 	x = 0.40; y = 0.21;
 	w = 0.20; h = 0.04;
 	style = ST_CENTER;
 	SizeEX = 0.04;
 	text = $STRD_grafikeinstellungen_header_viewdistance;
-
-	};
+};
 
 class sichtweite_button1 : RscButton
 

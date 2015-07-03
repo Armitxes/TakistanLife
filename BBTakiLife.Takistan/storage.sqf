@@ -11,41 +11,25 @@ _vclClass = "";
 
 CtrlSetText [91,localize "STRS_inv_fabrik_dialogheader1"];
 CtrlSetText [92,localize "STRS_inv_fabrik_dialogheader2"];
-//sleep 0.1;
 _weight   = _arrname call INV_GetStorageWeight;
 
-if (count _this > 2) then
-
-{
-
-_extra = _this select 2;
-
-if (count _extra > 0) then
-
-	{
-
-	if (_extra select 0 == "vcl") then
-
-		{
-
-		_vclStore = true;
-		_vclClass = _extra select 1;
-		_maxweight = _vclClass call INV_getvehmaxkg;
-		CtrlSetText [765,format ["Storage: %1/%2", _weight, _maxweight]];
-
+if (count _this > 2) then {
+	_extra = _this select 2;
+	
+	if (count _extra > 0) then {
+		if (_extra select 0 == "vcl") then {
+			_vclStore = true;
+			_vclClass = _extra select 1;
+			_maxweight = _vclClass call INV_getvehmaxkg;
+			CtrlSetText [765,format ["Storage: %1/%2", _weight, _maxweight]];
 		};
-
 	};
-
 };
 
-for [{_i=0}, {_i < (count _arr)}, {_i=_i+1}] do
-
-{
-
-_item   = ((_arr select _i) select 0);
-_anzahl = ((_arr select _i) select 1);
-_infos  = _item call INV_getitemArray;
+for [{_i=0}, {_i < (count _arr)}, {_i=_i+1}] do {
+	_item   = ((_arr select _i) select 0);
+	_anzahl = ((_arr select _i) select 1);
+	_infos  = _item call INV_getitemArray;
 
 if (_anzahl > 0) then
 
