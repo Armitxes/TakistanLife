@@ -334,9 +334,8 @@ switch _key do
   {
     if(!INV_shortcuts)exitwith{};
     if(player isKindOf "Animal") then {
-      _target = cursorTarget;
-
-      if ((_target isKindOf "Man") && ((player distance _target) < 3)) then {
+      _target = nearestObject [player, "Man"];
+      if ((player distance _target) < 2) then {
         if((damage _target) == 0) then {
           _target setHit ["hands",1];
           _target setDamage 0.2;

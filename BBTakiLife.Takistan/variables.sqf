@@ -27,13 +27,11 @@ isstunned                = false;
 hatGanggebietErobert     = false;
 isterror                 = false;
 Antwort                  = 2;
-CivTimeInPrison          = 0;
 CopLog                   = [];
 MayorSteuern             = 0;
 MayorBekommtSteuern      = 60;
 chiefSteuern             = 0;
 chiefBekommtSteuern      = 60;
-eigene_zeit              = time;
 StunActiveTime           = 0;
 StunTimePerHit		       = 10;
 MaxStunTime		           = 30;
@@ -44,10 +42,7 @@ protesters		= [];
 gtbonus 		 = 10;
 gtactive		 = false;
 keyblock		 = false;
-maxboars		 = 35;
-maxrabbits		 = 35;
 maxmanitime		 = 2400;
-powerrestorecost = 1000;
 noholster		     = false;
 MGcost			     = 1000;
 PKcost			     = 1000;
@@ -285,16 +280,11 @@ shopactivescript = 0;
 deadcam_wechsel_dauer    = 5;
 deadcam_kameraposition   = round(random (count deadcam_position_array - 1));
 slave_cost               = 12500;
-slavemoneyprosekunde	   = 250;
+slavemoneyprosekunde	 = 250;
 maxslave                 = 6;
 copslaveallowed          = 0;
 localslave               = 0;
 localslavecounter        = 0;
-huren_cost               = 1000;
-hoemoneyprosekunde       = 500;
-maxhuren                 = 5;
-copworkerallowed         = 0;
-pimpactive               = 0;
 localhuren               = 0;
 localhurencounter        = 0;
 hideoutcost		           = 2000;
@@ -302,10 +292,7 @@ marker_ausserhalb        = param1;
 marker_innerhalb         = 5;
 marker_CopDistance       = 50; //controls distance cops need to be to make civ dots appear outside of towns.
 CivMarkerUngenau         = 20;
-copmarker_on             = 1;
-despawnarray	 	 = [["EvMoney", 300], ["Suitcase", 300]];
 workplacearray           = [[workplace1, 80], [workplace2, 80], [workplace3, 60]];
-huntingarray             = [["boarhunting", 300]];
 nonlethalweapons	 = ["Binocular", "NVGoggles", "ItemMap", "ItemCompass", "ItemRadio", "ItemWatch", "ItemGPS"];
 slavearray               = workplacearray;
 timeinworkplace          = 0;
@@ -314,51 +301,19 @@ INV_hasitemshop          = 0;
 INV_haswepshop           = 0;
 BuildingsOwnerArray 	 = [];
 districs = ["North","North/East","North/West","South"];
+lastAttack = 0;
 
 if(isciv) then {
-
-BuyAbleBuildingsArray    =
-
-[
-
-["wp1", "Workplace 1", workplace_getjobflag_1, 3000, 150, "wp", "WpAblage_1"],
-["wp2", "Workplace 2", workplace_getjobflag_2, 3000, 150, "wp", "WpAblage_2"],
-["wp3", "Workplace 3", workplace_getjobflag_3, 3000, 150, "wp", "WpAblage_3"]
-
-];
-
+	BuyAbleBuildingsArray = [
+		["wp1", "Workplace 1", workplace_getjobflag_1, 3000, 150, "wp", "WpAblage_1"],
+		["wp2", "Workplace 2", workplace_getjobflag_2, 3000, 150, "wp", "WpAblage_2"],
+		["wp3", "Workplace 3", workplace_getjobflag_3, 3000, 150, "wp", "WpAblage_3"]
+	];
 };
-// array used in taxi missions
-civclassarray		 =
 
-[
-
-"TK_CIV_Takistani01_EP1",
-"TK_CIV_Takistani02_EP1",
-"TK_CIV_Takistani03_EP1",
-"TK_CIV_Takistani04_EP1",
-"TK_CIV_Takistani05_EP1",
-"TK_CIV_Takistani06_EP1",
-"TK_CIV_Woman01_EP1",
-"TK_CIV_Woman02_EP1",
-"TK_CIV_Woman03_EP1",
-"TK_CIV_Worker01_EP1",
-"TK_CIV_Worker02_EP1",
-"Citizen2_EP1",
-"Citizen3_EP1",
-"CIV_EuroMan01_EP1",
-"CIV_EuroMan02_EP1",
-"Dr_Hladik_EP1",
-"Functionary1_EP1",
-"Functionary2_EP1",
-"Haris_Press_EP1",
-"Profiteer2_EP1"
-
-];
-
-civslavearray		 = ["TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1"];
-civworkerarray	 = ["Worker1","Worker2","Worker3","Worker4"];
-terroristarray	 = ["TK_GUE_Soldier_3_EP1","TK_GUE_Soldier_AAT_EP1","TK_GUE_Soldier_AT_EP1","TK_GUE_Soldier_EP1","TK_GUE_Soldier_HAT_EP1","TK_INS_Soldier_AAT_EP1","TK_INS_Soldier_EP1"];
+civslavearray	= ["TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1"];
+civworkerarray	= ["Worker1","Worker2","Worker3","Worker4"];
+terroristarray	= ["TK_GUE_Soldier_3_EP1","TK_GUE_Soldier_AAT_EP1","TK_GUE_Soldier_AT_EP1","TK_GUE_Soldier_EP1","TK_GUE_Soldier_HAT_EP1","TK_INS_Soldier_AAT_EP1","TK_INS_Soldier_EP1"];
 profs = [
 	["Judge","STR_prof_judge",2000],
 	["Lawyer","STR_prof_lawyer",1000],

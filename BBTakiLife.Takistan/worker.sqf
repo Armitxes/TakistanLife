@@ -4,11 +4,11 @@ _dollarz = 'dollarz' call INV_GetItemAmount;
 if (_art == "holen") exitWith
 
 {
-
-if (localhuren >= maxhuren) exitWith {role groupChat localize "STRS_arbeiter_zuviele";};
-if (_dollarz <= huren_cost)    exitWith {role groupChat localize "STRS_arbeiter_nomoney";};
-['dollarz', -(huren_cost)] call INV_AddInventoryItem;
-player groupChat format[localize "STRS_arbeiter_gekauft", rolestring, (huren_cost call ISSE_str_IntToStr)];
+_huren_cost = 1000;
+if (localhuren >= 5) exitWith {role groupChat localize "STRS_arbeiter_zuviele";};
+if (_dollarz <= _huren_cost)    exitWith {role groupChat localize "STRS_arbeiter_nomoney";};
+['dollarz', -(_huren_cost)] call INV_AddInventoryItem;
+player groupChat format[localize "STRS_arbeiter_gekauft", rolestring, (_huren_cost call ISSE_str_IntToStr)];
 _arbeiternummer   = localhurencounter;
 localhurencounter = localhurencounter + 1;
 localhuren        = localhuren + 1;
@@ -75,7 +75,7 @@ while {true} do
 
 		} forEach workplacearray;
 
-	if((_hoename in wp1unitarray) or (_hoename in wp2unitarray) or (_hoename in wp3unitarray))then{timeinworkplace = timeinworkplace + hoemoneyprosekunde/add_workplace};
+	if((_hoename in wp1unitarray) or (_hoename in wp2unitarray) or (_hoename in wp3unitarray))then{timeinworkplace = timeinworkplace + 500/add_workplace};
 
 	if(_hoename call INV_unitArmed) then
 

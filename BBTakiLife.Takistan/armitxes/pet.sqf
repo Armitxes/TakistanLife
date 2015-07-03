@@ -6,7 +6,6 @@ if(_action == "use") exitWith {
 	[(_this select 1), -1] call INV_AddInventoryItem;
 	petOwner = player;
 	_petGroup = group player;
-	
 	_petClass = "";
 	switch ((_this select 1)) do {
 		case "Rabbits": { _petClass = "rabbit"; };
