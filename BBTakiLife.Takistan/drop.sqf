@@ -17,8 +17,7 @@ if (_item call INV_getitemDropable) then {
 		_pos = getposASL player;
 		_object = _class createvehicle _pos;
 		_object setposASL getposASL player;
-		_object setVariable ["droparray", [_amount, _item], true];
-		_object setVehicleInit "this enableSimulation false;";
+		_object setVehicleInit format["this enableSimulation false;this setVariable [""droparray"",[%1, '%2', false]];",_amount, _item];
 		processInitCommands;
 	} else { player groupChat localize "STRS_inv_inventar_drop_zuwenig"; };
 } else { player groupChat localize "STRS_inv_inventar_ablege_verbot"; };

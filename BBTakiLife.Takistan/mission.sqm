@@ -9948,7 +9948,8 @@ class Mission
 		};
 		class Item664
 		{
-			position[]={8243.1162,309.0062,2065.9602};			azimut=329.87579;
+			position[]={8243.1162,309.0062,2065.9602};
+			azimut=329.87579;
 			id=739;
 			side="EMPTY";
 			vehicle="Land_HBarrier1";
@@ -39001,6 +39002,7 @@ class Mission
 			vehicle="Infostand_1_EP1";
 			skill=1;
 			text="passseller";
+			init="this enableSimulation false;";
 		};
 		class Item3716
 		{
@@ -39865,6 +39867,7 @@ class Mission
 			vehicle="Infostand_1_EP1";
 			skill=1;
 			text="passseller3";
+			init="this enableSimulation false;";
 		};
 		class Item3814
 		{
