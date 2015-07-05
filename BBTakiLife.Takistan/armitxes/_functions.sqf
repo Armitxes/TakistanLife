@@ -8,11 +8,51 @@ ARM_fnc_countDown = {
   true
 };
 
-//DB
 if(!isDedicated) then
 {
 	setMoney = {
 		PLAYERDATA set [1, (PLAYERDATA select 1) + (_this select 0)];
+	};
+	
+	getFactionRank = {
+		_facID = _this select 0; _rnkID = _this select 1;
+		_result = ["Factionless","-"];
+		switch (_facID) do {
+			case 1: {
+				_result set [0, "Police Force"];
+				switch (_rnkID) do {
+					case 0:{_result set [1,"Recruit"];};
+					case 3:{_result set [1,"Cadet"];};
+					case 5:{_result set [1,"Constable"];};
+					case 7:{_result set [1,"Sergeant"];};
+					case 9:{_result set [1,"Inspector"];};
+					case 11:{_result set [1,"Chief Inspector"];};
+					case 15:{_result set [1,"Superintendent"];};
+					case 16:{_result set [1,"Chief Superintendent"];};
+					case 19:{_result set [1,"Commander"];};
+					case 49:{_result set [1,"Deputy Comissioner"];};
+					case 50:{_result set [1,"Commissioner"];};
+					case 100:{_result set [1,"SCO19 Recruit"];};
+					case 101:{_result set [1,"SCO19 Officer"];};
+					case 102:{_result set [1,"SCO19 Commander"];};
+					case 150:{_result set [1,"Internal Affairs"];};
+				};
+			};
+			case 2: {
+				_result set [0, "United Nations"];
+				switch (_rnkID) do {
+					case 0:{_result set [1,"Recruit"];};
+					case 1:{_result set [1,"Private First Class"];};
+					case 2:{_result set [1,"Corporal"];};
+					case 3:{_result set [1,"Sergeant"];};
+					case 4:{_result set [1,"Sergeant Major"];};
+					case 10:{_result set [1,"Lieutenant"];};
+					case 20:{_result set [1,"Major"];};
+					case 50:{_result set [1,"General"];};
+				};
+			};
+		};
+		_result
 	};
 	
 	ARM_bannedTimer = 0;

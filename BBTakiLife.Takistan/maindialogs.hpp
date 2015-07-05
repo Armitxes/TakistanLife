@@ -1,6 +1,6 @@
 class wantedrelease
 {
-	idd = -1;
+	idd = 1603;
 	movingEnable = true;
 	controlsBackground[] = {DLG_BACK1, background, trennlinie1};
 	objects[] = { };
@@ -812,6 +812,7 @@ class ja_nein
 
 	class button1 : RscButton
 	{
+		idc = 2;
 		x = 0.40;
 		y = 0.32;
 		w = 0.10;
@@ -823,6 +824,7 @@ class ja_nein
 
 	class button2 : RscButton
 	{
+		idc = 3;
 		x = 0.53;
 		y = 0.32;
 		w = 0.10;
@@ -2313,55 +2315,6 @@ class ItemsMenu
 	};
 
 	class ItemsMenu_background:RscBackground
-	{
-		idc=-1;
-		x=0.288888888888889;
-		y=0.106666666666667;
-		w=0.422222222222222;
-		h=0.746666666666667;
-	};
-};
-
-class VehiclesMenu
-{
-	name=VehiclesMenu;
-	idd=-1;
-	movingEnable=1;
-	controlsBackground[]={VehiclesMenu_background};
-	objects[]={};
-	controls[]={VehiclesMenu_playerName, VehiclesMenu_options, VehiclesMenu_activate};
-
-	class VehiclesMenu_playerName:RscText
-	{
-		idc=-1;
-		text="Vehicles Menu";
-		x=0.355555555555556;
-		y=0.142222222222222;
-		w=0.1588888888888889;
-		h=0.0355555555555556;
-	};
-
-	class VehiclesMenu_options:RscListBox
-	{
-		idc=2119;
-		x=0.355555555555556;
-		y=0.213333333333333;
-		w=0.311111111111111;
-		h=0.497777777777778;
-	};
-
-	class VehiclesMenu_activate:RscButton
-	{
-		idc=-1;
-		text="Buy";
-		action="[player] execVM ""VehiclesSelect.sqf"";";
-		x=0.4;
-		y=0.746666666666667;
-		w=0.222222222222222;
-		h=0.0711111111111111;
-	};
-
-	class VehiclesMenu_background:RscBackground
 	{
 		idc=-1;
 		x=0.288888888888889;

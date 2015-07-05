@@ -38,10 +38,7 @@ switch (_art) do {
       (format ["systemChat ""%2 has been suspended from duty by IAD""; if (player == %1) then { iscop = false; isciv = true; [""use"",""civUni2""] execVM ""armitxes\clothing.sqf""; };", _civmenu_civ,(name _civmenu_civ)]) call toClients;
     } else { hint "You are not a IAD Officer"; };
   };
-   case 8: {
-    
-    (format ["if (rolestring == ""%1"") then {[""licencheck"", ""%2""] execVM ""civmenu.sqf"";}", _civmenu_civ, rolestring]) call toClients;
-  };
+  case 8: { (format ["if (rolestring == ""%1"") then {[""licencheck"", ""%2""] execVM ""civmenu.sqf"";}", _civmenu_civ, rolestring]) call toClients; };
   
   case 20: {
     if(!(_civmenuciv call ISSE_IsVictim))exitwith{hint localize "STRS_inventory_checknohands"};

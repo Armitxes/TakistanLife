@@ -32,7 +32,10 @@ if (_itemart == "Item")     then {player groupchat "creating...";closeDialog 0;f
 if (_itemart == "waffe")    then {player groupchat "creating...";closeDialog 0;fvspam=true;sleep 1;[(_infos call INV_getitemClassName), 1, _crate] spawn INV_CreateWeapon;fvspam=false};
 if (_itemart == "magazin")  then {player groupchat "creating...";closeDialog 0;fvspam=true;sleep 1;[(_infos call INV_getitemClassName), 1, _crate] spawn INV_CreateMag;fvspam=false};
 if (_itemart == "Fahrzeug") then {
-player groupchat "creating...";closeDialog 0;fvspam=true;sleep 5;[_classname, _spawn, _item] spawn INV_CreateVehicle;fvspam=false};
+  _pos=0;_dir=0;
+  if (typeName _spawn == "STRING") then {_pos=getMarkerPos _spawn;_dir=markerDir _spawn;} else {_pos=getpos _spawn;_dir=getDir _spawn;};
+  player groupchat "creating...";closeDialog 0;fvspam=true;sleep 5;[_classname, _pos, _item, _dir] spawn INV_CreateVehicle;fvspam=false
+};
 
 player groupchat "item created!";
 

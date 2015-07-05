@@ -313,23 +313,7 @@ switch (_art) do {
 	};
 	lbAdd [1, _trennlinie];
     };
-
-    case "licensecheck": {
-	if (!(createDialog "liste_1_button")) exitWith {hint "Dialog Error!";};
-	_licensearray  = (_array select 1);
 	
-	_trennlinie = "---------------------------------------------";
-	lbAdd [1, localize "STRS_statdialog_licenselist"];
-	private "_i"; //// ADD to fix bug
-	for [{_i=0}, {_i < (count _licensearray)}, {_i=_i+1}] do 
-	{
-	  _lizenz = (_licensearray select _i);
-	  lbAdd [1, format ["%1", (_lizenz call INV_GetLicenseName)]];
-	};
-	lbAdd [1, _trennlinie];
-	
-    };
-
     case "gesetz": {
 	if (!(createDialog "gesetzdialog")) exitWith {hint "Dialog Error!";};
 	{

@@ -18,8 +18,8 @@ if(!isDedicated) then
 	PLAYERDATA = [0];
 	
 	if(enableDebug) then {
-		PLAYERDATA = [1,300000,245,4,2,230,[],0,[]];
-		if ((count PLAYERDATA) == 9) then {
+		PLAYERDATA = [1,300000,245,4,2,1,[],0,[],0];
+		if ((count PLAYERDATA) == 10) then {
 			lastArray = str(PLAYERDATA);
 			INV_LizenzOwner = [];
 			{ INV_LizenzOwner = INV_LizenzOwner + [(INV_Lizenzen select _x) select 0]; } forEach (PLAYERDATA select 6);    
@@ -35,6 +35,8 @@ if(!isDedicated) then
 				} else { call compile format ["%1workers = %2;",(_fac select 8),0]; };
 				_z=_z+1; 
 			} forEach (PLAYERDATA select 8);
+			if(PLAYERDATA select 9 == 0) then { ["nation"] execVM "armitxes\dialogs\controller.sqf"; };
+			player setVariable ["pubPlrData",[PLAYERDATA select 4, PLAYERDATA select 5, PLAYERDATA select 9],true];
 		};
 		submitLoad = nil;
 		closeDialog 5000;
@@ -42,13 +44,13 @@ if(!isDedicated) then
 	};
 
 	waitUntil {alive player};
-	while {(count PLAYERDATA) != 9} do 
+	while {(count PLAYERDATA) != 10} do 
 	{
-		if (!(createDialog "Portal")) exitWith {hint "Dialog Error! - Portal";};
+		if (!(createDialog "Portal")) exitWith {hint "Dialog Error! - Portal"; endMission "LOSER";};
 		((findDisplay 5000) displayCtrl 1) ctrlSetText format["%1", getPlayerUID player]; 
 		waitUntil { !dialog };
 	};
-	
+	if(isciv && (PLAYERDATA select 9) == 2) then {player setPos (getMarkerPos "respawn_civilian2");};
 	["elections",false] call execARM;
 	civstatsdone = true;
 };

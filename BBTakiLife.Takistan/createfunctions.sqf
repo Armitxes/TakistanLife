@@ -42,34 +42,26 @@ INV_DialogPlayers =
 
 INV_CreateVehicle =
 {
-  private ["_classname","_itemname","_position","_dir"];
-  _classname = _this select 0;
-  _logic	   = _this select 1;
-  _itemname	   = _this select 2;
-  
-
-  call compile format ['
-
-newvehicle = _classname createVehicle %4;
-if !(isplayer _logic) then
-{
-	newvehicle setpos %4;
-};
-newvehicle setdir %5;
-newvehicle setVariable ["owner",getPlayerUID player,true];
-newvehicle setVehicleInit "
-this setVehicleVarName ""vehicle_%1_%2"";
-vehicle_%1_%2 = this;
-clearWeaponCargo this;
-clearMagazineCargo this;
-newvehicle lock true;  
-";
-processInitCommands;      
-INV_VehicleArray = INV_VehicleArray + [vehicle_%1_%2];
-"INV_ServerVclArray = INV_ServerVclArray + [vehicle_%1_%2];if (""%3"" != """") then {[""CreatedVehicle"", vehicle_%1_%2, typeOf vehicle_%1_%2, %4] execVM ""%3"";};" call broadcast;
-', player, round(time), INV_CALL_CREATVEHICLE, getpos _logic, getdir _logic];
-
-hintsilent format ["%1",_itemname];
+	private ["_classname","_itemname","_position","_dir"];
+	_classname = _this select 0;
+	_position = _this select 1;
+	_itemname = _this select 2;
+	_dir = _this select 3;
+	
+	newvehicle = _classname createVehicle _position;
+	newvehicle setpos _position;
+	newvehicle setdir _dir;
+	newvehicle setVariable ["owner",getPlayerUID player,true];
+	call compile format ['
+			newvehicle setVehicleInit "this setVehicleVarName ""vehicle_%1_%2"";
+			vehicle_%1_%2 = this;
+			clearWeaponCargo this;
+			clearMagazineCargo this;
+			newvehicle lock true;  
+		";
+		processInitCommands;
+		INV_VehicleArray = INV_VehicleArray + [vehicle_%1_%2];
+	',player,round(time)];
 
 // Attack helicopter re-armament
 if (_classname == "AW159_Lynx_BAF") then {

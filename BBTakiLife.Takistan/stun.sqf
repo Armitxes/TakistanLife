@@ -6,7 +6,7 @@ if (_art == "fired") then
   _wep	= _this select 2;
   _bullet = nearestObject  [getpos player, _ammo];
 
-  if((player distance copbase1 < 150) || (player distance (getMarkerPos "UNstat") < 150) || (player distance (getMarkerPos "civspawn") < 50)) exitWith
+  if((player distance copbase1 < 150) || (player distance (getMarkerPos "UNstat") < 150) || (player distance (getMarkerPos "civspawn") < 50 || (player distance (getMarkerPos "civspawn2") < 50)) exitWith
   {
     deletevehicle _bullet;
     if(firestrikes == 0) exitWith { removeAllWeapons player; firestrikes = 3; };

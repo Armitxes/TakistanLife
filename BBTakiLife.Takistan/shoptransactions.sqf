@@ -150,25 +150,20 @@ if (_art == "itemkauf") then {
 
 	};
 
-if (_itemart == "fahrzeug" and instock) then
-
-	{
+if (_itemart == "fahrzeug" and instock) then {
 	_menge = 1;
 	if (!(_license1 call INV_HasLicense) and isciv and _license) exitWith {player groupChat format[localize "STRS_inv_buyitems_nolicense", (_license1 call INV_GetLicenseName)]; _exitvar = 1};
 	if (!(_license2 call INV_HasLicense) and iscop and _license) exitWith {player groupChat format[localize "STRS_inv_buyitems_nolicensecop", (_license2 call INV_GetLicenseName)]; _exitvar = 1};
 	if (_dollarz < _CostMitTax) exitWith {player groupChat localize "STRS_inv_buyitems_keindollarz"; _exitvar = 1};
-	if(count (nearestobjects [getpos _logic,["Ship","car","motorcycle","truck"], 3]) > 0)exitwith{player groupchat "there is a vehicle blocking the spawn!"; _exitvar = 1};
+	_pos=0;_dir=0;
+	if (typeName _logic == "STRING") then {_pos=getMarkerPos _logic;_dir=markerDir _logic;} else {_pos=getpos _logic;_dir=getDir _logic;};
+	if(count (nearestobjects [_pos,["Ship","car","motorcycle","truck"], 3]) > 0)exitwith{player groupchat "there is a vehicle blocking the spawn!"; _exitvar = 1};
 	['dollarz', -(_CostMitTax)] call INV_AddInventoryItem;
 	INV_SteuernGezahlt = (INV_SteuernGezahlt + _einzelSteuer);
 	player groupChat format [localize "STRS_inv_buyvehicles_buy_car", (_infos call INV_getitemName), (_CostMitTax call ISSE_str_IntToStr)];
-	[_classname, _logic,_item] spawn
-
-		{
-  		if (not(alive player)) exitWith {};
-  		[_this select 0, _this select 1,_this select 2] spawn INV_CreateVehicle;
-		};
-
-	};
+	if (not(alive player)) exitWith {};
+	[_classname,_pos,_item,_dir] spawn INV_CreateVehicle;
+};
 
 if(!instock)exitwith{player groupchat "out of stock"};
 

@@ -1,6 +1,6 @@
 "PLAYERDATA" addPublicVariableEventHandler {
   PLAYERDATA = call (compile PLAYERDATA);
-  if ((count PLAYERDATA) == 9) then {
+  if ((count PLAYERDATA) == 10) then {
     lastArray = str(PLAYERDATA);
     
     INV_LizenzOwner = [];
@@ -49,7 +49,8 @@
       _z=_z+1; 
     } forEach (PLAYERDATA select 8);
     
-    waitUntil {(alive player)}; 
+    waitUntil {(alive player)};
+    if(PLAYERDATA select 9 == 0) then { ["nation"] execVM "armitxes\dialogs\controller.sqf"; };
     _rnk = (PLAYERDATA select 5);
     switch (playerSide) do {
       case WEST: {
@@ -71,6 +72,7 @@
           };
         };
       };
+      player setVariable ["pubPlrData",[PLAYERDATA select 4, PLAYERDATA select 5, PLAYERDATA select 9],true];
     };
   };
   submitLoad = nil;

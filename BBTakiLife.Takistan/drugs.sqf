@@ -98,28 +98,20 @@ if (_item == "Cocaine") then
 
 	};
 
-if (_item == "Cannabis") then
-
-	{
+if (_item == "Cannabis") then {
 
 	Flare = "SmokeShellGreen" createVehicle position player;
-	if (vehicle player != player) then { Flare attachTo [vehicle player,[0,0,0.]];}
-		else {Flare attachTo [player,[0,0,0.]];};
+	if (vehicle player != player) then { Flare attachTo [vehicle player,[0,0,0.]];} else {Flare attachTo [player,[0,0,0.]];};
 
-	while {time < _endeZeit} do
-
-		{
-
+	while {time < _endeZeit} do {
 		"colorCorrections" ppEffectEnable true;
 		"colorCorrections" ppEffectAdjust [1, 1, 0, [0,0,0,0.5], [random 5 - random 5,random 5 - random 5,random 5 - random 5,random 1], [random 5 - random 5,random 5 - random 5,random 5 - random 5, random 1]];
 		"colorCorrections" ppEffectCommit 1;
 		"chromAberration" ppEffectEnable true;
 		"chromAberration" ppEffectAdjust [0.01,0.01,true];
 		"chromAberration" ppEffectCommit 1;
-
 		sleep 3;
-
-		};
+	};
 
 	};
 

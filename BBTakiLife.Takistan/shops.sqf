@@ -1,76 +1,78 @@
 if (isServer) then {
   INV_itemstocks = [
-  [-1,10,10,10], //fuelshop1 #1
-  [-1,10,10,10], //fuelshop2 #2
-  [-1,10,10,10], //fuelshop3 #3
-  [-1,10,10,10], //fuelshop4 #4
-  [-1,10,10,10], //fuelshop5 #5
-  [-1,10,10,10], //fuelshop6 #6
-  [-1,10,10,10], //fuelshop7 #7
-  [-1,10,10,10], //fuelshop8 #8
-  [-1,10,10,10], //fuelshop9
-  [-1,10,10,10], //fuelshop10
-  [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop1 #9
-  [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop2 #10
-  [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop3 #11
-  [10000,10000,10000,10000,10000,10000,10000], //Barshop #13
-  [10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //gunshop #14
-  [100,100,100,100,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //equipmentshop #15
-  [10,10,10,10,10], //tuning1 #16
-  [10,10,10,10,10], //tuning2 #17
-  [10,10,10,10,10], //tuning3
-  [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop1 #19
-  [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop2 #20
-  [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop3 #21
-  [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop4 #22
-  [8,8,8,8,8,8,8,8,-1,-1,-1], //truckshop1 #23
-  [8,8,8,8,8,8,8,8,-1,-1,-1], //truckshop2 #24
-  [3,5,3,3,3,3,3,-1,-1,-1,-1], //airshop1 #25
-  [3,5,3,3,3,3,3,-1,-1,-1,-1], //airshop2 #26
-  [-1,-1,20], //miningtools #28
-  -1, //resources #29
-  -1, //ring shop #30
-  -1, //oil dealer #31
-  -1, //gangshop1 #32
-  -1, //gangshop2 #33
-  -1, //gangshop3 #34
-  -1, //cocaine #35
-  -1, //marijuana #36
-  -1, //lsd #37
-  -1, //heroin #38
-  -1, //copcar #39
-  -1, //copair #40
-  -1, //sobrcar #41
-  -1, //sobrair #41
-  -1, // UN Members #43
-  -1, // UN Car     #44
-  -1, // UN Air     #45
-  -1, // UN Equip   #46
-  -1, // UN Whitelist #47
-  -1, //copbasic #48
-  -1, //coppatrol #49
-  -1, //copresponse #50
-  -1, //sobritems #51
-  -1, //terrorvehicles #52
-  -1, //terrorshop #53
-  -1, //Mayor #54
-  -1, //Mayor #55
-  [100,100,100,100,-1,-1], //equipmentshop #56
-  -1, //Member troll shop #57
-  -1,//southvehshop #66
-  -1, //southairshop #67
-  -1, //southgovshop #68
-  [30,30,30,30,-1], //equipmentshop 3 #69
-  -1, // Trained Cop #70
-  -1, // UN NCO #71
-  -1,// Clothing Shop #72
-  -1,//Clothing Shop Basic
-  -1,//doc
-  -1,//hosair
-  -1,// PMC Shop	
-  -1,// PMC Car
-  -1,// PMC Air
-  -1 // Pet Shop
+    [-1,10,10,10], //fuelshop1 #1
+    [-1,10,10,10], //fuelshop2 #2
+    [-1,10,10,10], //fuelshop3 #3
+    [-1,10,10,10], //fuelshop4 #4
+    [-1,10,10,10], //fuelshop5 #5
+    [-1,10,10,10], //fuelshop6 #6
+    [-1,10,10,10], //fuelshop7 #7
+    [-1,10,10,10], //fuelshop8 #8
+    [-1,10,10,10], //fuelshop9
+    [-1,10,10,10], //fuelshop10
+    [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop1 #9
+    [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop2 #10
+    [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop3 #11
+    [10000,10000,10000,10000,10000,10000,10000], //Barshop #13
+    [10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //gunshop #14
+    [100,100,100,100,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //equipmentshop #15
+    [10,10,10,10,10], //tuning1 #16
+    [10,10,10,10,10], //tuning2 #17
+    [10,10,10,10,10], //tuning3
+    [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop1 #19
+    [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop2 #20
+    [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop3 #21
+    [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop4 #22
+    [8,8,8,8,8,8,8,8,-1,-1,-1], //truckshop1 #23
+    [8,8,8,8,8,8,8,8,-1,-1,-1], //truckshop2 #24
+    [3,5,3,3,3,3,3,-1,-1,-1,-1], //airshop1 #25
+    [3,5,3,3,3,3,3,-1,-1,-1,-1], //airshop2 #26
+    [-1,-1,20], //miningtools #28
+    -1, //resources #29
+    -1, //ring shop #30
+    -1, //oil dealer #31
+    -1, //gangshop1 #32
+    -1, //gangshop2 #33
+    -1, //gangshop3 #34
+    -1, //cocaine #35
+    -1, //marijuana #36
+    -1, //lsd #37
+    -1, //heroin #38
+    -1, //copcar #39
+    -1, //copair #40
+    -1, //sobrcar #41
+    -1, //sobrair #41
+    -1, // UN Members #43
+    -1, // UN Car     #44
+    -1, // UN Air     #45
+    -1, // UN Equip   #46
+    -1, // UN Whitelist #47
+    -1, //copbasic #48
+    -1, //coppatrol #49
+    -1, //copresponse #50
+    -1, //sobritems #51
+    -1, //terrorvehicles #52
+    -1, //terrorshop #53
+    -1, //Mayor #54
+    -1, //Mayor #55
+    [100,100,100,100,-1,-1], //equipmentshop #56
+    -1, //Member troll shop #57
+    -1,//southvehshop #66
+    -1, //southairshop #67
+    -1, //southgovshop #68
+    [30,30,30,30,-1], //equipmentshop 3 #69
+    -1, // Trained Cop #70
+    -1, // UN NCO #71
+    -1,// Clothing Shop #72
+    -1,//Clothing Shop Basic
+    -1,//doc
+    -1,//hosair
+    -1,// PMC Shop	
+    -1,// PMC Car
+    -1,// PMC Air
+    -1, // Pet Shop
+    [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],// South Car
+    -1 // RS 2
   ];
 
   publicvariable "INV_itemstocks";
@@ -147,7 +149,9 @@ INV_itemmaxstocks = [
 -1,// PMC Shop	
 -1,// PMC Car
 -1,// PMC Air
--1
+-1,
+[-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], // South Car
+-1 // RS 2
 ];
 
 
@@ -752,16 +756,16 @@ INV_ItemShops = [
 [tuning2,"Car Upgrades",dummyobj,dummyobj,_cu,_cu,true], // #17
 [tuning3,"Car Upgrades",dummyobj,dummyobj,_cu,_cu,true],
 
-[carshop1,"Car Shop",dummyobj,carspawn1,_cs,_cs,true],  // #18
-[carshop2,"Car Shop",dummyobj,carspawn2,_cs,_cs,true],  // #19
-[carshop3,"Car Shop",dummyobj,carspawn3,_cs,_cs,true],  // #20
-[carshop4,"Car Shop",dummyobj,carspawn4,_cs,_cs,true],  // #21
+[carshop1,"Car Shop",dummyobj,"carspawn1",_cs,_cs,true],  // #18
+[carshop2,"Car Shop",dummyobj,"carspawn2",_cs,_cs,true],  // #19
+[carshop3,"Car Shop",dummyobj,"carspawn3",_cs,_cs,true],  // #20
+[carshop4,"Car Shop",dummyobj,"carspawn4",_cs,_cs,true],  // #21
 
-[truckshop,"Truck Shop",dummyobj,truckspawn,_ts,_ts,true], // #21
-[truckshop2,"Truck Shop",dummyobj,truckspawn2,_ts,_ts,true], // #21
+[truckshop,"Truck Shop",dummyobj,"truckspawn",_ts,_ts,true], // #21
+[truckshop2,"Truck Shop",dummyobj,"truckspawn2",_ts,_ts,true], // #21
 
-[airshop,"Air Shop",dummyobj,asairspawn,_as,_as,true],  // #22
-[airshop_1,"Loy Manara Air Shop",dummyobj,asairspawn_1,_as,_as,true], // #23
+[airshop,"Air Shop",dummyobj,"asairspawn",_as,_as,true],  // #22
+[airshop_1,"Loy Manara Air Shop",dummyobj,"asairspawn_1",_as,_as,true], // #23
 
 [Oil_1,"Mining equipment",dummyobj,dummyobj,_ms,_ms,true], // #25
 
@@ -780,14 +784,14 @@ INV_ItemShops = [
 [ldrugsell,"Sell LSD",dummyobj,dummyobj,_emptyshop,_dsl,true],   // #34
 [hdrugsell,"Sell Heroin",dummyobj,dummyobj,_emptyshop,_dsh,true],   // #35
 
-[copcar,"Police vehicle Shop",dummyobj, ccarspawn,_cv,_cv,true],   // #36
-[copair,"Police Air-Vehicle Shop",dummyobj, cairspawn,_ca,_ca,true],  // #37
-[swatcar,"SOBR Vehicle Shop",dummyobj, scarspawn,_sv,_sv,true],       // #38
-[swatair,"SOBR Air Vehicles Shop",dummyobj, saairspawn,_sa,_sa,true], // #39
+[copcar,"Police vehicle Shop",dummyobj, "ccarspawn",_cv,_cv,true],   // #36
+[copair,"Police Air-Vehicle Shop",dummyobj, "cairspawn",_ca,_ca,true],  // #37
+[swatcar,"SCO Vehicle Shop",dummyobj, "scarspawn",_sv,_sv,true],       // #38
+[swatair,"SCO Air Vehicles Shop",dummyobj, "saairspawn",_sa,_sa,true], // #39
 
-[unmemshop,"UN Member Shop",dummyobj, uncarspawn,_unmemshop,_unmemshop,true], // 40
-[uncar,"UN Vehicle Shop",dummyobj, uncarspawn,_unveh,_unveh,true],  // 41
-[unair,"UN Air Shop",dummyobj, unairspawn,_unair,_unair,true],      // 42
+[unmemshop,"UN Member Shop",dummyobj, "uncarspawn",_unmemshop,_unmemshop,true], // 40
+[uncar,"UN Vehicle Shop",dummyobj, "uncarspawn",_unveh,_unveh,true],  // 41
+[unair,"UN Air Shop",dummyobj, "unairspawn",_unair,_unair,true],      // 42
 [unbox,"UN Equipment",unbox,dummyobj,_uns,_uns,true],               // 43
 [unmembox,"UN Equipment",unmembox,dummyobj,_unms,_unms,true],       // 44
 
@@ -796,27 +800,29 @@ INV_ItemShops = [
 [copcriminal,"Criminal Response-Officer",copcriminal,dummyobj,_copshop_response,_copshop_response,true], //47
 [copswat,"SOBR",copswat,dummyobj,_copshop_sobr,_copshop_sobr,true],   //48
                                                                                    
-[terrorvehicles33,"Terrorist vehicles",dummyobj,tairspawn,_terrorvehicles,_terrorvehicles,true],  // 49
+[terrorvehicles33,"Terrorist vehicles",dummyobj,"tairspawn",_terrorvehicles,_terrorvehicles,true],  // 49
 [terrorshop,"Terrorist Shop",tgunbox,dummyobj,_terrorshop_buy,_terrorshop_buy,true],              // 50
 
-[mayorveh,"Prime Minister Vehicles",dummyobj,mayorvehspawn,_mayorveh,_mayorveh,true],             // 51
+[mayorveh,"Prime Minister Vehicles",dummyobj,"mayorvehspawn",_mayorveh,_mayorveh,true],             // 51
 [mayorbox,"Prime Minister Shop",mayorbox,dummyobj,_mayorbox,_mayorbox,true],                      // 52
 [equipshop2,"Equipment Shop",equipbox2,dummyobj,_es,_es,true],    // 53
 [memshop,"Member Shop",membox2,dummyobj,_memshop,_memshop,true],  // 54
 
-[southveh, "South Government Vehicles",dummyobj,soucarspawn, _souveh,_souveh,true], //#63
-[southair, "South Government Air",dummyobj,souairspawn, _souair,_souair,true], //#64
+[southveh, "South Government Vehicles",dummyobj,"soucarspawn", _souveh,_souveh,true], //#63
+[southair, "South Government Air",dummyobj,"souairspawn", _souair,_souair,true], //#64
 [southshop, "South Government Shop",southbox,dummyobj, _soushop,_soushop,true], //#65
 [equipshop3,"Equipment Shop",equipbox3,dummyobj,_es,_es,true], //#70
 
-[coparmed, "Trained Firearms Officer",coparmed,cairspawn,_copfo,_copfo],
-[unnco, "UN NCO Equipment",unnco,uncarspawn,_unnco,_unnco],
+[coparmed, "Trained Firearms Officer",coparmed,"cairspawn",_copfo,_copfo],
+[unnco, "UN NCO Equipment",unnco,"uncarspawn",_unnco,_unnco],
 [clothciv, "Clothing Shop",dummyobj,dummyobj,_civCloth,_civCloth,true],
-[objNull,"Hospital",dummyobj,hosSpwn,_hos,_hos,false],
-[objNull,"Hospital Air",dummyobj,hosairSpwn,_hosair,_hosair,false],
+[objNull,"Hospital",dummyobj,"hosSpwn",_hos,_hos,false],
+[objNull,"Hospital Air",dummyobj,"hosairSpwn",_hosair,_hosair,false],
 [clothcivbase, "Clothing Shop",dummyobj,dummyobj,_civClothbase,_civClothbase,true],
 [pmcshop,"PMC Shop",pmcbox,dummyobj,_pmcshop,_pmcshop,true],
-[pmccar,"PMC Car Shop",dummyobj,pmccarspawn,_pmccar,_pmccar,true],
-[pmcair,"PMC Air Shop",dummyobj,pmcairspawn,_pmcair,_pmcair,true],
-[petshop,"Pet Shop",dummyobj,dummyobj,_petShop,_petShop,true]
+[pmccar,"PMC Car Shop",dummyobj,"pmccarspawn",_pmccar,_pmccar,true],
+[pmcair,"PMC Air Shop",dummyobj,"pmcairspawn",_pmcair,_pmcair,true],
+[petshop,"Pet Shop",dummyobj,dummyobj,_petShop,_petShop,true],
+[southcar,"Car Shop",dummyobj,"southcarspawn",_cs,_cs,true],
+[resourcesell2,"Sell Resources",dummyobj,dummyobj,_rs,_rs,true]
 ];

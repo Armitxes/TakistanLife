@@ -21,6 +21,7 @@ deliverymintime			 = 700;
 workplacejob_deliveryflagarray = [
   clothshop,
   resourcesell,
+  resourcesell2,
   shop1export,
   Bakery,
   Glassblower,
@@ -32,6 +33,7 @@ workplacejob_deliveryflagarray = [
 
 workplacejob_deliverynamearray = [
   "Clothing Shop",
+  "Resource Seller",
   "Resource Seller",
   "Market Export in Nagara",
   "Bakery",

@@ -289,6 +289,84 @@ class professions {
         };
     };
 };
+class ArmiID:liste_1_button {
+    idd = 1601;
+    movingEnable = 1;
+    enableSimulation = true;
+
+    controlsBackground[] = {bgID};
+    class objects {};  
+    controls[] = {lizenzen,lblName,lblFaction,lblRank,lblNation,lblUID};
+    class bgID: ARM_RscPicture
+    {
+        idc = -1;
+        text = "armitxes\img\id.paa";
+        x = 0.235902 * safezoneW + safezoneX;
+        y = 0.15 * safezoneH + safezoneY;
+        w = 0.4 * safezoneW;
+        h = 0.6 * safezoneH;
+		class Attributes { align = "left"; };
+    };
+	class lizenzen: spielerliste {
+		y = 0.15 * safezoneH + safezoneY;
+		x = 0.6;w = 0.3;
+		colorBackground[] = {0.14, 0.18, 0.13, 0.8};
+	};
+    class lblName: RscStructuredText
+    {
+        idc = 10;
+        text = "";
+        x = 0.335 * safezoneW + safezoneX;
+        y = 0.212 * safezoneH + safezoneY;
+        w = 0.15 * safezoneW;
+        h = 0.03 * safezoneH;
+		class Attributes { align = "left"; };
+        colorText[] = { 0, 0, 0, 1 };
+    };
+    class lblFaction: RscStructuredText
+    {
+        idc = 11;
+        text = "Faction: Factionless";
+        x = 0.335 * safezoneW + safezoneX;
+        y = 0.232 * safezoneH + safezoneY;
+        w = 0.15 * safezoneW;
+        h = 0.03 * safezoneH;
+		class Attributes { align = "left"; };
+        colorText[] = { 0, 0, 0, 1 };
+    };
+    class lblRank: RscStructuredText
+    {
+        idc = 12;
+        text = "Rank: None";
+        x = 0.335 * safezoneW + safezoneX;
+        y = 0.252 * safezoneH + safezoneY;
+        w = 0.15 * safezoneW;
+        h = 0.03 * safezoneH;
+		class Attributes { align = "left"; };
+        colorText[] = { 0, 0, 0, 1 };
+    };
+    class lblNation: RscStructuredText
+    {
+        idc = 13;
+        text = "Nation";
+        x = 0.3 * safezoneW + safezoneX;
+        y = 0.31 * safezoneH + safezoneY;
+        w = 0.15 * safezoneW;
+        h = 0.03 * safezoneH;
+        colorText[] = { 100, 100, 100, 1 };
+    };
+    class lblUID: RscStructuredText
+    {
+        idc = 14;
+        text = "UID";
+        x = 0.3 * safezoneW + safezoneX;
+        y = 0.33 * safezoneH + safezoneY;
+        w = 0.15 * safezoneW;
+        h = 0.03 * safezoneH;
+		size = 0.03;
+        colorText[] = { 100, 100, 100, 1 };
+    };
+};
 class chat {
   idd = 93005;
 	movingEnable = 1;
@@ -302,7 +380,7 @@ class chat {
     	y = 0.93202 * safezoneH + safezoneY;
     	w = 0.06375 * safezoneW;
     	h = 0.0850039 * safezoneH;
-      sizeEx = 0.040;
+		sizeEx = 0.040;
     	colorText[] = {255,-1,-1,1};
     };
   };

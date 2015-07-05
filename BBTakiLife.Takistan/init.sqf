@@ -35,9 +35,7 @@ if (isServer) then
 	server setVariable ["PMVote",_WahlArray,true];
 	server setVariable ["CCVote",_WahlArray,true];
 	_WahlArray = nil;
- };
-         
-execVM "Simple_house_lights_script.sqf";
+};
 call compile preprocessfile "triggers.sqf";
 
 waitUntil { ( (time > 1) and ((alive player) or (local server)) ) };
@@ -49,7 +47,7 @@ _h = [playercount, rolenumber] execVM "initfuncs.sqf";
 waitUntil{scriptDone  _h};
 
 _h = [] execVM "facharvest.sqf"; waitUntil {scriptDone _h};
-_w = execVM "armitxes\init.sqf"; waitUntil {scriptDone _w};
+_h = execVM "armitxes\init.sqf"; waitUntil {scriptDone _h};
 
 _h = [playerarray, playerstringarray, !iscop] execVM "INVvars.sqf";
 waituntil{scriptDone  _h};

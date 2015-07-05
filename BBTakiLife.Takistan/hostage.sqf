@@ -53,12 +53,7 @@ if (_copplayernumber < 5)exitWith{player groupchat "There are not enough cops on
 if(workplacejob_hostage_active)exitWith{player groupChat "There are currently no more hostages.";};
 if(workplacejob_hostage_failed)exitWith{player groupChat "You have failed a hostage mission recently, maybe you can do it again later.";};
 
-_array  = [[Hostagespawn1, 10], [Hostagespawn2, 10], [Hostagespawn3, 10], [Hostagespawn4, 10], [Hostagespawn5, 10]];
-_city   = (floor(random(count _array)));
-_pos    = (_array select _city) select 0;
-_radius = (_array select _city) select 1;
 _a1	= 0;
-
 //delete any left overs from last time this ran
 deletemarker "htargetmarker";
 deletevehicle hostage1;
@@ -66,7 +61,7 @@ deletevehicle hostage1;
 
 //creating VIP
 _group = createGroup east;
-hostage1 = _group createUnit ["Functionary1_EP1", _pos, [], _radius, "FORM"];
+hostage1 = _group createUnit ["Functionary1_EP1", (getMarkerPos "hostagespawn"), [], 10, "FORM"];
 hostage1 setvehicleinit 'hostage1 = this;this setVehicleVarName "hostage1";';
 
 processInitCommands;

@@ -1,4 +1,4 @@
-LANGUAGE, English, German
+LANGUAGE, English
 STR_prof_medic,	"As medic it's your primary duty to save lives.\nYou are an impartial party!\n\nBy selecting this profession, you will get the following perks:\n- Ability to scrap vehicles\n- Ability to heal and revive unconscious players\n- Ability to impound vehicles\n- Access to speedupgrade in all vehicles"
 STR_prof_judge,	"As judge you have a great responsibility and operate on the same level as the United Nations.\n\nSometimes we forget, but at the end we all know what's wrong and right! You may will receive much devastating disapproval still your decisions should be fair as they are final.\n\nA good knowledge about the BB Act and the Server Rules is requirement. It's your duty to keep justice alive, the police has to enforce your judgements above all else."
 STR_prof_lawywer, "Help your clients by defending them at court. Get reputation by showing that you can decide the outcome of courtcases.\n\nA good knowledge about Laws, Constitution and BB Act is recommended.",

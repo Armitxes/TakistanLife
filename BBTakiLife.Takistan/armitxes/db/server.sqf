@@ -14,3 +14,4 @@ constitution = "ArmA2Ext" callExtension "ArmiNET.DB loadLaws";
 
 "submitSave" addPublicVariableEventHandler { ("ArmA2Ext" callExtension format ["ArmiNET.DB save#%1",(_this select 1)]); };
 "constitution" addPublicVariableEventHandler { ("ArmA2Ext" callExtension format ["ArmiNET.DB addLaw#%1",(_this select 1)]); };
+"nation" addPublicVariableEventHandler { ("ArmA2Ext" callExtension format ["ArmiNET.DB setNation#%1",(_this select 1)]); };
