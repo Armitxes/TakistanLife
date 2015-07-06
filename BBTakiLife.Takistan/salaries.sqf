@@ -90,9 +90,7 @@ while {isciv} do
 		player groupChat format["The robbers are sharing the robbed Paychecks! You receive extra money."];
 		_income = _income + 100;
 	};
-	if (ispmc) then {
-	_income = _income + 500;};
-	
+	if (ispmc || isjudge) then {_income = _income + 500;};	
 	
 	if (timeinworkplace > 0) then
 
@@ -132,15 +130,11 @@ while {isciv} do
 
 		};
 
-	if(_mygang != "None") then
-
-		{
-
+	if(_mygang != "None") then {
 		if(gangarea1 getvariable "control" == _mygang)then{_income = _income + (gangincome/_activecount)};
 		if(gangarea2 getvariable "control" == _mygang)then{_income = _income + (gangincome/_activecount)};
 		if(gangarea3 getvariable "control" == _mygang)then{_income = _income + (gangincome/_activecount)};
-
-		};
+	};
 
 
 	timeinworkplace = 0;

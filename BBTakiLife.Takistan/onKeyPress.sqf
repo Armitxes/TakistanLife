@@ -311,7 +311,21 @@ switch _key do
 	};
 	// M key
 	case 50: {
-		if(!INV_shortcuts)exitwith{};
+		if(!INV_shortcuts || isciv)exitwith{};
+		_array = coptypes;
+		_playerType = typeOf player;
+		if(isun) then {_array = untypes;};
+		{
+			_markerName = format ["marker_%1",_x];
+			if (getMarkerColor _markerName != "") then {deleteMarkerLocal _markerName;};
+			if((typeOf _x) in _array) then {
+				_markerlocation = position _x;
+				_markerobj = createMarkerLocal [_markerName,_markerlocation];
+				_markerobj setMarkerShapeLocal "Icon";
+				_markerName setMarkerTypeLocal "dot";
+				_markerName setMarkerColorLocal "coloryellow";
+			};
+		} forEach playableUnits;
 	};	
 	// Space
 	case 57:

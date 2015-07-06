@@ -24,10 +24,10 @@ if(_playerType in coptypes) then
 {
   iscop          = true;
   isun           = false;
-  isciv	         = false;
-  sidenumber     = rolenumber - civscount;
-  longrolenumber = 1100 + sidenumber;
-  rolestring     = format["Cop%1", sidenumber];
+  isciv          = false;
+  sidenumber      = rolenumber - civscount;
+  longrolenumber  = 1100 + sidenumber;
+  rolestring      = format["Cop%1", sidenumber];
 };
 
 
