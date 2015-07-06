@@ -252,9 +252,7 @@ switch _key do
 	if(!INV_shortcuts)exitwith{};
 	if(dialog)exitwith{closeDialog 0;_handled=true;};
 
-	if(iscop) then
-
-		{
+	if(iscop) then {
 
 		if(vehicle player == player)then{[0,0,0,["copmenulite"]] execVM "maindialogs.sqf"};
 		if(vehicle player != player)then{[0,0,0,["copmenu"]] execVM "maindialogs.sqf"};
@@ -269,116 +267,96 @@ switch _key do
 	    if(!INV_shortcuts)exitwith{};
 	    _handled=true;
 	    if(dialog)exitWith{closeDialog 0;};
-
 	    call fn_ClearWarrantsArray;
 	    if (_shift) then { [0,0,0,["generalstats"]] execVM "maindialogs.sqf"; } else { [0,0,0,["spielerliste"]] execVM "maindialogs.sqf"; };
 	};
 
 	//2 key
-	case 3:
-	{
-    	if(!INV_shortcuts)exitwith{};
-    	_handled=true;
-    	if(dialog)exitwith{closeDialog 0;};
-    
-    	execVM "inventory.sqf";
-	};
-
-	//3 key
-	case 4:
-
-	{
-
-	if(!INV_shortcuts)exitwith{};
-
-	if(keyblock or vehicle player != player)exitwith{};
-
-	keyblock=true; [] spawn {sleep 2; keyblock=false;};
-
-	player playmove "amovpercmstpssurwnondnon";
-	_handled=true;
-
-	};
-
-	//4 key
-	case 5: {
-		[0,0,0,["constitution"]] execVM "maindialogs.sqf";
-	};
-
-	//5 key
-	case 6: {
-	if (!iscop) then
-		{
+	case 3: {
 		if(!INV_shortcuts)exitwith{};
 		_handled=true;
 		if(dialog)exitwith{closeDialog 0;};
+		execVM "inventory.sqf";
+	};
 
+	//3 key
+	case 4: {
+		if(!INV_shortcuts)exitwith{};
+		if(keyblock or vehicle player != player)exitwith{};
+		keyblock=true; [] spawn {sleep 2; keyblock=false;};
+		player playmove "amovpercmstpssurwnondnon";
+		_handled=true;
+	};
+
+	//4 key
+	case 5: { [0,0,0,["constitution"]] execVM "maindialogs.sqf"; };
+
+	//5 key
+	case 6: {
+	if (!iscop) then {
+		if(!INV_shortcuts)exitwith{};
+		_handled=true;
+		if(dialog)exitwith{closeDialog 0;};
 		[0,0,0,["gangmenu"]] execVM "maindialogs.sqf";};
 	};
    
    //6 key
-   case 7:
-   {
-	if (!isciv) then
-		{
-		if(!INV_shortcuts)exitwith{};
-		_handled=true;
-		if(dialog)exitwith{closeDialog 0;};
-
-		[0,0,0,["coplog"]] execVM "maindialogs.sqf";};
+	case 7: {
+		if (!isciv) then {
+			if(!INV_shortcuts)exitwith{};
+			_handled=true;
+			if(dialog)exitwith{closeDialog 0;};
+			[0,0,0,["coplog"]] execVM "maindialogs.sqf";
 		};
-	
-	
-  // Space (Speedcam)
-  case 57:
-  {
-    if(!INV_shortcuts)exitwith{};
-    if(player isKindOf "Animal") then {
-      _target = nearestObject [player, "Man"];
-      if ((player distance _target) < 2) then {
-        if((damage _target) == 0) then {
-          _target setHit ["hands",1];
-          _target setDamage 0.2;
-        } else {
-          if (canStand _target) then { _target setHit ["legs",1]; } else {
-            if(!(alive _target)) exitWith {};
-            _toDeath = ["civillying01","adthpercmstpslowwrfldnon_4","adthppnemstpsraswpstdnon_2"];
-            if(!dragging && (animationstate _target in _toDeath)) then {
-              _target setDamage 1;
-              (format["server globalchat ""%1 did bite %2 to death."";", name player, name _target]) call toClients;
-            } else {
-              (format ["if (player == %1) then {[""hit"", %2, ""Melee"", 1] execVM ""stun.sqf""};", _target, player]) call toClients;
-            };
-          };
-        };
-      };
-    } else {
-      if((iscop) and (vehicle player != player)) exitwith { player commandChat format ["Speedcam: %1 km/h", speed cursorTarget]; };
-      if((iscop || isun) and (vehicle player == player)) exitwith {
-        _targ = (cursorTarget);
-        if(_targ != vehicle _targ) then {hint "No target selected.";}
-        else
-        {
-          if (_targ iskindof "man") then
-          {
-            for [{_i=0}, {_i <= (count warrantarray)}, {_i=_i+1}] do
-            {
-              _singleWarrant = warrantarray select _i;
-              _pIdCiv  = _singleWarrant select 0;
-              _pReason = _singleWarrant select 1;
-              _pBounty = _singleWarrant select 2;  
-              
-              if(_targ == _pIdCiv) exitWith 
-              { 
-                player groupchat format ["%1(%4) (Bounty: %3) (Reason: %2)", _pIdCiv, _pReason, _pBounty, name _pIdCiv];
-              };
-            };      	
-          }
-          else {hint "No player selected."};
-        };
-      };
-    };
-  }; 
+	};
+	// M key
+	case 50: {
+		if(!INV_shortcuts)exitwith{};
+	};	
+	// Space
+	case 57:
+	{
+		if(!INV_shortcuts)exitwith{};
+		if(player isKindOf "Animal") then {
+			_target = nearestObject [player, "Man"];
+			if ((player distance _target) < 2) then {
+				if((damage _target) == 0) then {
+					_target setHit ["hands",1];
+					_target setDamage 0.2;
+				} else {
+					if (canStand _target) then { _target setHit ["legs",1]; } else {
+						if(!(alive _target)) exitWith {};
+						_toDeath = ["civillying01","adthpercmstpslowwrfldnon_4","adthppnemstpsraswpstdnon_2"];
+						if(!dragging && (animationstate _target in _toDeath)) then {
+							_target setDamage 1;
+							(format["server globalchat ""%1 did bite %2 to death."";", name player, name _target]) call toClients;
+						} else {
+							(format ["if (player == %1) then {[""hit"", %2, ""Melee"", 1] execVM ""stun.sqf""};", _target, player]) call toClients;
+						};
+					};
+				};
+			};
+		} else {
+			if((iscop) and (vehicle player != player)) exitwith { player commandChat format ["Speedcam: %1 km/h", speed cursorTarget]; };
+			if((iscop || isun) and (vehicle player == player)) exitwith {
+				_targ = (cursorTarget);
+				if(_targ != vehicle _targ) then {hint "No target selected.";} else {
+					if (_targ iskindof "man") then {
+						for [{_i=0}, {_i <= (count warrantarray)}, {_i=_i+1}] do {
+							_singleWarrant = warrantarray select _i;
+							_pIdCiv  = _singleWarrant select 0;
+							_pReason = _singleWarrant select 1;
+							_pBounty = _singleWarrant select 2;
+					
+							if(_targ == _pIdCiv) exitWith { 
+								player groupchat format ["%1(%4) (Bounty: %3) (Reason: %2)", _pIdCiv, _pReason, _pBounty, name _pIdCiv];
+							};
+						};	
+					} else {hint "No player selected."};
+				};
+			};
+		};
+	}; 
 };
 
 _handled;
