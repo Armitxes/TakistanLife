@@ -52,7 +52,7 @@ class Portal
 	class frmCredits: RscFrame
 	{
 		idc = -1;
-		text = " BETA BUILD - made by Armitxes";
+		text = " BETA BUILD - made by Armitxes ";
 		x = 0.149277 * safezoneW + safezoneX;
 		y = 0.816766 * safezoneH + safezoneY;
 		w = 0.70184 * safezoneW;
@@ -152,251 +152,268 @@ class ArmiPhone {
 	idd = -1;
 	movingEnable = 1;
 	enableSimulation = true;
+	
+	class controlsBackground {
+		class bgPhone: ARM_RscPicture {
+			idc = 1200;
+			text = "armitxes\img\phone.paa";
+			x = 0.0818 * safezoneW + safezoneX;
+			y = 0.17 * safezoneH + safezoneY;
+			w = 0.244375 * safezoneW;
+			h = 0.396 * safezoneH;
+			colorText[] = {1,1,1,1};
+		};  
+	};
+	class objects {};  
+	class controls {
+		class RscFrame_1800: ARM_RscFrameButton {
+			idc = 1800;
+			x = 0.0931719 * safezoneW + safezoneX;
+			y = 0.202 * safezoneH + safezoneY;
+			w = 0.0373437 * safezoneW;
+			h = 0.0598519 * safezoneH;
+			action = "['call_cop'] execVM 'armitxes\phone.sqf'; closeDialog 0;";
+		};
+		class RscFrame_1801: ARM_RscFrameButton {
+			idc = 1801;
+			x = 0.131741 * safezoneW + safezoneX;
+			y = 0.2019 * safezoneH + safezoneY;
+			w = 0.0373437 * safezoneW;
+			h = 0.0598519 * safezoneH;
+			action = "['call_medic'] execVM 'armitxes\phone.sqf'; closeDialog 0;";
+		};
+		class RscFrame_1802: ARM_RscFrameButton {
+			idc = 1802;
+			x = 0.170309 * safezoneW + safezoneX;
+			y = 0.2019 * safezoneH + safezoneY;
+			w = 0.0373437 * safezoneW;
+			h = 0.0598519 * safezoneH;
+			action = "['call_un'] execVM 'armitxes\phone.sqf'; closeDialog 0;";
+		};
+		class RscFrame_1803: ARM_RscFrameButton {
+			idc = 1803;
+			x = 0.0931719 * safezoneW + safezoneX;
+			y = 0.26482 * safezoneH + safezoneY;
+			w = 0.0373437 * safezoneW;
+			h = 0.0598519 * safezoneH;
+			action = "openMap true; closeDialog 0;";
+		};
+		class RscFrame_1804: ARM_RscFrameButton {
+			idc = 1804;
+			x = 0.131741 * safezoneW + safezoneX;
+			y = 0.26482 * safezoneH + safezoneY;
+			w = 0.0373437 * safezoneW;
+			h = 0.0598519 * safezoneH;
+			action = "['use'] execVM 'handy.sqf';";
+		};
+		class RscFrame_1805: ARM_RscFrameButton {
+			idc = 1805;
+			x = 0.170309 * safezoneW + safezoneX;
+			y = 0.26482 * safezoneH + safezoneY;
+			w = 0.0373437 * safezoneW;
+			h = 0.0598519 * safezoneH;
+			action = "['vote'] execVM 'armitxes\phone.sqf'; closeDialog 0;";
+		};
+		class RscFrame_1806: ARM_RscFrameButton {
+			idc = 1806;
+			x = 0.170309 * safezoneW + safezoneX;
+			y = 0.4527 * safezoneH + safezoneY;
+			w = 0.0373437 * safezoneW;
+			h = 0.0598519 * safezoneH;
+			action = "createDialog 'MainMenu';";
+		};
+	};
+};
 
-  class controlsBackground {
-    class bgPhone: ARM_RscPicture
-    {
-    	idc = 1200;
-    	text = "armitxes\img\phone.paa";
-    	x = 0.0818 * safezoneW + safezoneX;
-    	y = 0.17 * safezoneH + safezoneY;
-    	w = 0.244375 * safezoneW;
-    	h = 0.396 * safezoneH;
-      colorText[] = {1,1,1,1};
-    };  
-  };
-  class objects {};  
-  class controls {
-    class RscFrame_1800: ARM_RscFrameButton
-    {
-    	idc = 1800;
-    	x = 0.0931719 * safezoneW + safezoneX;
-    	y = 0.202 * safezoneH + safezoneY;
-    	w = 0.0373437 * safezoneW;
-    	h = 0.0598519 * safezoneH;
-      action = "['call_cop'] execVM 'armitxes\phone.sqf'; closeDialog 0;";
-    };
-    class RscFrame_1801: ARM_RscFrameButton
-    {
-    	idc = 1801;
-    	x = 0.131741 * safezoneW + safezoneX;
-    	y = 0.2019 * safezoneH + safezoneY;
-    	w = 0.0373437 * safezoneW;
-    	h = 0.0598519 * safezoneH;
-      action = "['call_medic'] execVM 'armitxes\phone.sqf'; closeDialog 0;";
-    };
-    class RscFrame_1802: ARM_RscFrameButton
-    {
-    	idc = 1802;
-    	x = 0.170309 * safezoneW + safezoneX;
-    	y = 0.2019 * safezoneH + safezoneY;
-    	w = 0.0373437 * safezoneW;
-    	h = 0.0598519 * safezoneH;
-      action = "['call_un'] execVM 'armitxes\phone.sqf'; closeDialog 0;";
-    };
-    class RscFrame_1803: ARM_RscFrameButton
-    {
-    	idc = 1803;
-    	x = 0.0931719 * safezoneW + safezoneX;
-    	y = 0.26482 * safezoneH + safezoneY;
-    	w = 0.0373437 * safezoneW;
-    	h = 0.0598519 * safezoneH;
-      action = "openMap true; closeDialog 0;";
-    };
-    class RscFrame_1804: ARM_RscFrameButton
-    {
-    	idc = 1804;
-    	x = 0.131741 * safezoneW + safezoneX;
-    	y = 0.26482 * safezoneH + safezoneY;
-    	w = 0.0373437 * safezoneW;
-    	h = 0.0598519 * safezoneH;
-      action = "['use'] execVM 'handy.sqf';";
-    };
-    class RscFrame_1805: ARM_RscFrameButton
-    {
-    	idc = 1805;
-    	x = 0.170309 * safezoneW + safezoneX;
-    	y = 0.26482 * safezoneH + safezoneY;
-    	w = 0.0373437 * safezoneW;
-    	h = 0.0598519 * safezoneH;
-      action = "['vote'] execVM 'armitxes\phone.sqf'; closeDialog 0;";
-    };
-    class RscFrame_1806: ARM_RscFrameButton
-    {
-    	idc = 1806;
-    	x = 0.170309 * safezoneW + safezoneX;
-    	y = 0.4527 * safezoneH + safezoneY;
-    	w = 0.0373437 * safezoneW;
-    	h = 0.0598519 * safezoneH;
-      action = "createDialog 'MainMenu';";
-    };
-  };
+class modPlayerSelection {
+	idd = -1;
+	movingEnable = 1;
+	enableSimulation = true;
+	
+	class controlsBackground {
+		class IGUIBack_2200: RscBackground
+		{
+		    idc = -1;
+			x = 0.235902 * safezoneW + safezoneX;
+			y = 0.149928 * safezoneH + safezoneY;
+			w = 0.528196 * safezoneW;
+			h = 0.700143 * safezoneH;
+			colorBackground[] = { 0, 0, 0, 0.8 };
+		};
+	};
+	class objects {};  
+	class controls {
+		class lblPlrDesc: RscStructuredText
+		{
+		    idc = -1;
+		    text = "Players";
+		    x = 0.242505 * safezoneW + safezoneX;
+		    y = 0.219943 * safezoneH + safezoneY;
+		    w = 0.0990367 * safezoneW;
+		    h = 0.0280057 * safezoneH;
+		};
+		class lstPlayers: RscListBox
+		{
+		    idc = 1;
+		    x = 0.242505 * safezoneW + safezoneX;
+		    y = 0.261951 * safezoneH + safezoneY;
+		    w = 0.0990367 * safezoneW;
+		    h = 0.350072 * safezoneH;
+		};
+	};
 };
 
 class professions {
-    idd = 1602;
-    movingEnable = 1;
-    enableSimulation = true;
-
-    class controlsBackground {
-        class bgProfession: RscBackground
-        {
-        	idc = -1;
-        	x = 0.235902 * safezoneW + safezoneX;
-        	y = 0.149928 * safezoneH + safezoneY;
-        	w = 0.528196 * safezoneW;
-        	h = 0.700143 * safezoneH;
-            colorBackground[] = { 0, 0, 0, 0.8 };
-        };
-    };
-    class objects {};  
-    class controls {
-        class lstProfessions: RscListBox
-        {
-        	idc = 1;
-        	x = 0.249107 * safezoneW + safezoneX;
-        	y = 0.219943 * safezoneH + safezoneY;
-        	w = 0.151856 * safezoneW;
-        	h = 0.588121 * safezoneH;
-        };
-        class lblProfessions: RscText
-        {
-        	idc = -1;
-        	text = "Professions";
-        	x = 0.249107 * safezoneW + safezoneX;
-        	y = 0.177934 * safezoneH + safezoneY;
-        	w = 0.0726269 * safezoneW;
-        	h = 0.0280057 * safezoneH;
-        };
-        class lblProfDesc: RscStructuredText
-        {
-        	idc = 2;
-        	text = "Please select a profession for more details.";
-        	x = 0.414168 * safezoneW + safezoneX;
-        	y = 0.219943 * safezoneH + safezoneY;
-        	w = 0.336725 * safezoneW;
-        	h = 0.532109 * safezoneH;
+	idd = 1602;
+	movingEnable = 1;
+	enableSimulation = true;
+	
+	class controlsBackground {
+		class bgProfession: RscBackground {
+			idc = -1;
+			x = 0.235902 * safezoneW + safezoneX;
+			y = 0.149928 * safezoneH + safezoneY;
+			w = 0.528196 * safezoneW;
+			h = 0.700143 * safezoneH;
+			colorBackground[] = { 0, 0, 0, 0.8 };
+		};
+	};
+	class objects {};  
+	class controls {
+		class lstProfessions: RscListBox {
+			idc = 1;
+			x = 0.249107 * safezoneW + safezoneX;
+			y = 0.219943 * safezoneH + safezoneY;
+			w = 0.151856 * safezoneW;
+			h = 0.588121 * safezoneH;
+		};
+		class lblProfessions: RscText {
+			idc = -1;
+			text = "Professions";
+			x = 0.249107 * safezoneW + safezoneX;
+			y = 0.177934 * safezoneH + safezoneY;
+			w = 0.0726269 * safezoneW;
+			h = 0.0280057 * safezoneH;
+		};
+		class lblProfDesc: RscStructuredText {
+			idc = 2;
+			text = "Please select a profession for more details.";
+			x = 0.414168 * safezoneW + safezoneX;
+			y = 0.219943 * safezoneH + safezoneY;
+			w = 0.336725 * safezoneW;
+			h = 0.532109 * safezoneH;
 			class Attributes { align = "left"; };
-        };
-        class btnJob: RscButton
-        {
-        	text = "Accept Profession";
-        	x = 0.618844 * safezoneW + safezoneX;
-        	y = 0.780057 * safezoneH + safezoneY;
-        	w = 0.132049 * safezoneW;
-        	h = 0.0280057 * safezoneH;
+		};
+		class btnJob: RscButton {
+			text = "Accept Profession";
+			x = 0.618844 * safezoneW + safezoneX;
+			y = 0.780057 * safezoneH + safezoneY;
+			w = 0.132049 * safezoneW;
+			h = 0.0280057 * safezoneH;
 			action = "[""select"",_this] execVM ""armitxes\profession.sqf"";";
-        };
-    };
+		};
+	};
 };
 class ArmiID:liste_1_button {
-    idd = 1601;
-    movingEnable = 1;
-    enableSimulation = true;
-
-    controlsBackground[] = {bgID};
-    class objects {};  
-    controls[] = {lizenzen,lblName,lblFaction,lblRank,lblNation,lblUID};
-    class bgID: ARM_RscPicture
-    {
-        idc = -1;
-        text = "armitxes\img\id.paa";
-        x = 0.235902 * safezoneW + safezoneX;
-        y = 0.15 * safezoneH + safezoneY;
-        w = 0.4 * safezoneW;
-        h = 0.6 * safezoneH;
+	idd = 1601;
+	movingEnable = 1;
+	enableSimulation = true;
+	
+	controlsBackground[] = {bgID};
+	class objects {};  
+	controls[] = {lizenzen,lblName,lblFaction,lblRank,lblNation,lblUID};
+	class bgID: ARM_RscPicture {
+		idc = -1;
+		text = "armitxes\img\id.paa";
+		x = 0.235902 * safezoneW + safezoneX;
+		y = 0.15 * safezoneH + safezoneY;
+		w = 0.4 * safezoneW;
+		h = 0.6 * safezoneH;
 		class Attributes { align = "left"; };
-    };
+	};
 	class lizenzen: spielerliste {
 		y = 0.15 * safezoneH + safezoneY;
 		x = 0.6;w = 0.3;
 		colorBackground[] = {0.14, 0.18, 0.13, 0.8};
 	};
-    class lblName: RscStructuredText
-    {
-        idc = 10;
-        text = "";
-        x = 0.335 * safezoneW + safezoneX;
-        y = 0.212 * safezoneH + safezoneY;
-        w = 0.15 * safezoneW;
-        h = 0.03 * safezoneH;
+	class lblName: RscStructuredText {
+		idc = 10;
+		text = "";
+		x = 0.335 * safezoneW + safezoneX;
+		y = 0.212 * safezoneH + safezoneY;
+		w = 0.15 * safezoneW;
+		h = 0.03 * safezoneH;
 		class Attributes { align = "left"; };
-        colorText[] = { 0, 0, 0, 1 };
-    };
-    class lblFaction: RscStructuredText
-    {
-        idc = 11;
-        text = "Faction: Factionless";
-        x = 0.335 * safezoneW + safezoneX;
-        y = 0.232 * safezoneH + safezoneY;
-        w = 0.15 * safezoneW;
-        h = 0.03 * safezoneH;
+		colorText[] = { 0, 0, 0, 1 };
+	};
+	class lblFaction: RscStructuredText {
+		idc = 11;
+		text = "Faction: Factionless";
+		x = 0.335 * safezoneW + safezoneX;
+		y = 0.232 * safezoneH + safezoneY;
+		w = 0.15 * safezoneW;
+		h = 0.03 * safezoneH;
 		class Attributes { align = "left"; };
-        colorText[] = { 0, 0, 0, 1 };
-    };
-    class lblRank: RscStructuredText
-    {
-        idc = 12;
-        text = "Rank: None";
-        x = 0.335 * safezoneW + safezoneX;
-        y = 0.252 * safezoneH + safezoneY;
-        w = 0.15 * safezoneW;
-        h = 0.03 * safezoneH;
+		colorText[] = { 0, 0, 0, 1 };
+	};
+	class lblRank: RscStructuredText {
+		idc = 12;
+		text = "Rank: None";
+		x = 0.335 * safezoneW + safezoneX;
+		y = 0.252 * safezoneH + safezoneY;
+		w = 0.15 * safezoneW;
+		h = 0.03 * safezoneH;
 		class Attributes { align = "left"; };
-        colorText[] = { 0, 0, 0, 1 };
-    };
-    class lblNation: RscStructuredText
-    {
-        idc = 13;
-        text = "Nation";
-        x = 0.3 * safezoneW + safezoneX;
-        y = 0.31 * safezoneH + safezoneY;
-        w = 0.15 * safezoneW;
-        h = 0.03 * safezoneH;
-        colorText[] = { 100, 100, 100, 1 };
-    };
-    class lblUID: RscStructuredText
-    {
-        idc = 14;
-        text = "UID";
-        x = 0.3 * safezoneW + safezoneX;
-        y = 0.33 * safezoneH + safezoneY;
-        w = 0.15 * safezoneW;
-        h = 0.03 * safezoneH;
+		colorText[] = { 0, 0, 0, 1 };
+	};
+	class lblNation: RscStructuredText {
+		idc = 13;
+		text = "Nation";
+		x = 0.3 * safezoneW + safezoneX;
+		y = 0.31 * safezoneH + safezoneY;
+		w = 0.15 * safezoneW;
+		h = 0.03 * safezoneH;
+		colorText[] = { 100, 100, 100, 1 };
+	};
+	class lblUID: RscStructuredText {
+		idc = 14;
+		text = "UID";
+		x = 0.3 * safezoneW + safezoneX;
+		y = 0.33 * safezoneH + safezoneY;
+		w = 0.15 * safezoneW;
+		h = 0.03 * safezoneH;
 		size = 0.03;
-        colorText[] = { 100, 100, 100, 1 };
-    };
+		colorText[] = { 100, 100, 100, 1 };
+	};
 };
 class chat {
-  idd = 93005;
+	idd = 93005;
 	movingEnable = 1;
-  
-  class controlsBackground {
-    class lblChatType: RscText
-    {
-    	idc = 1000;
-    	text = "Global";
-    	x = 0.00593747 * safezoneW + safezoneX;
-    	y = 0.93202 * safezoneH + safezoneY;
-    	w = 0.06375 * safezoneW;
-    	h = 0.0850039 * safezoneH;
-		sizeEx = 0.040;
-    	colorText[] = {255,-1,-1,1};
-    };
-  };
-  class objects {};
-  class controls {
-    class txtChat: RscEdit
-    {
-    	idc = 1404;
-    	text = "";
-    	x = 0.0584191 * safezoneW + safezoneX;
-    	y = 0.95475 * safezoneH + safezoneY;
-    	w = 0.932344 * safezoneW;
-    	h = 0.0340016 * safezoneH;
-    	colorText[] = {255,255,255,1};
-    	colorBackground[] = {255,-1,-1,1};
-    	colorActive[] = {255,-1,-1,1};
-    };
-  };
+	
+	class controlsBackground {
+		class lblChatType: RscText {
+			idc = 1000;
+			text = "Global";
+			x = 0.00593747 * safezoneW + safezoneX;
+			y = 0.93202 * safezoneH + safezoneY;
+			w = 0.06375 * safezoneW;
+			h = 0.0850039 * safezoneH;
+			sizeEx = 0.040;
+			colorText[] = {255,-1,-1,1};
+		};
+	};
+	class objects {};
+	class controls {
+		class txtChat: RscEdit {
+			idc = 1404;
+			text = "";
+			x = 0.0584191 * safezoneW + safezoneX;
+			y = 0.95475 * safezoneH + safezoneY;
+			w = 0.932344 * safezoneW;
+			h = 0.0340016 * safezoneH;
+			colorText[] = {255,255,255,1};
+			colorBackground[] = {255,-1,-1,1};
+			colorActive[] = {255,-1,-1,1};
+		};
+	};
 };

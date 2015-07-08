@@ -104,17 +104,16 @@ switch _key do
     
 	private ["_civ"];
 
-	for [{_i=1}, {_i < 3}, {_i=_i+1}] do
-		{
+	for [{_i=1}, {_i < 3}, {_i=_i+1}] do {
   		if(vehicle player != player) exitwith{};
-         		_range = _i;
-         		_dirV = vectorDir vehicle player;
-         		_pos = player modelToWorld [0,0,0];
-          	_posFind = [(_pos select 0)+(_dirV select 0)*_range,(_pos select 1)+(_dirV select 1)*_range,(_pos select 2)+(_dirV select 2)*_range];
-         	 	_men    = nearestobjects [_posFind,["Man", "Infostand_1_EP1", "Infostand_2_EP1", "RUBasicAmmunitionBox", "UNBasicAmmunitionBox_EP1"], 1] - [player];
-  		_atms   = nearestObjects [_posFind,["Infostand_1_EP1","Misc_cargo_cont_tiny"],2];
-  		_civ    = _men select 0;
-  		_atm	= _atms select 0;
+		_range = _i;
+		_dirV = vectorDir vehicle player;
+		_pos = player modelToWorld [0,0,0];
+		_posFind = [(_pos select 0)+(_dirV select 0)*_range,(_pos select 1)+(_dirV select 1)*_range,(_pos select 2)+(_dirV select 2)*_range];
+		_men    = nearestobjects [_posFind,["Man", "Infostand_1_EP1", "Infostand_2_EP1", "RUBasicAmmunitionBox", "UNBasicAmmunitionBox_EP1"], 1] - [player];
+		_atms = nearestObjects [_posFind,["Infostand_1_EP1","Misc_cargo_cont_tiny"],2];
+		_civ = _men select 0;
+		_atm = _atms select 0;
 
 		if(iscop && !(isnull _civ) && _civ in playerarray) exitwith
 		{
@@ -207,59 +206,47 @@ switch _key do
 	};
 
   //R key
-  case 19:
-	{            
-    if(!INV_shortcuts)exitwith{};
-    if(_shift && (vehicle player == player) && (count (magazines player) < 12)) then
-    {
-      player addMagazine "HandGrenade_Stone";
-      server globalChat "You picked up a stone";
-    };
-  };
-  
+	case 19: {
+	if(!INV_shortcuts)exitwith{};
+		if(_shift && (vehicle player == player) && (count (magazines player) < 12)) then
+		{
+			player addMagazine "HandGrenade_Stone";
+			server globalChat "You picked up a stone";
+		};
+	};
+ 
 	//F key 
-	case 33:
-	{
-    if(!INV_shortcuts)exitwith{};
-    if(iscop || ismedic) then {if(vehicle player != player)then{[0,0,0,["activate"]] execVM "siren.sqf"; _handled=true;};};
+	case 33: {
+		if(!INV_shortcuts)exitwith{};
+			if(iscop || ismedic) then {if(vehicle player != player)then{[0,0,0,["activate"]] execVM "siren.sqf"; _handled=true;};};
 
-    if(_shift and (vehicle player == player) and call INV_isArmed) then
-    {
-	if(keyblock)exitwith{};
-      _men = nearestobjects [getpos player, ["Man"], 2] - [player];
-      _men spawn {
-        (format ["%1 switchmove ""%2"";", player, "AwopPercMstpSgthWnonDnon_end"]) call toClients;
-        sleep 0.2;
-        if(count _this > 0) then
-        {
-          _civ = _this select 0;
-          if((_civ distance player) > 2 || (!isPlayer _civ) || ([_civ] call plr_isUnConscious))exitWith{};
-          (format ["if (player == %1) then {[""hit"", %2, ""Melee"", 1] execVM ""stun.sqf""};", _civ, player]) call toClients;
-          player groupchat "You stunned this player!";
-		  keyblock=true; [] spawn {sleep 2; keyblock=false;};
+		if(_shift and (vehicle player == player) and call INV_isArmed) then {
+			if(keyblock)exitwith{};
+			_men = nearestobjects [getpos player, ["Man"], 2] - [player];
+			_men spawn {
+				(format ["%1 switchmove ""%2"";", player, "AwopPercMstpSgthWnonDnon_end"]) call toClients;
+				sleep 0.2;
+				if(count _this > 0) then {
+					_civ = _this select 0;
+					if((_civ distance player) > 2 || (!isPlayer _civ) || ([_civ] call plr_isUnConscious))exitWith{};
+					(format ["if (player == %1) then {[""hit"", %2, ""Melee"", 1] execVM ""stun.sqf""};", _civ, player]) call toClients;
+					player groupchat "You stunned this player!";
+					keyblock=true; [] spawn {sleep 2; keyblock=false;};
 				};
 			};
-      
-      _handled=true;
-    };
-  };
+			_handled=true;
+		};
+	};
 
 	//tilde key
-	case 41:
-
-	{
-
-	if(!INV_shortcuts)exitwith{};
-	if(dialog)exitwith{closeDialog 0;_handled=true;};
-
-	if(iscop) then {
-
-		if(vehicle player == player)then{[0,0,0,["copmenulite"]] execVM "maindialogs.sqf"};
-		if(vehicle player != player)then{[0,0,0,["copmenu"]] execVM "maindialogs.sqf"};
-		_handled=true;
-
+	case 41: {
+		if(!INV_shortcuts)exitwith{};
+		if(dialog)exitwith{closeDialog 0;_handled=true;};
+		if(iscop) then {
+			if(vehicle player == player)then{[0,0,0,["copmenulite"]] execVM "maindialogs.sqf"}
+			else {[0,0,0,["copmenu"]] execVM "maindialogs.sqf"};
+			_handled=true;
 		};
-
 	};
 
 	//1 key
@@ -328,8 +315,7 @@ switch _key do
 		} forEach playableUnits;
 	};	
 	// Space
-	case 57:
-	{
+	case 57: {
 		if(!INV_shortcuts)exitwith{};
 		if(player isKindOf "Animal") then {
 			_target = nearestObject [player, "Man"];
