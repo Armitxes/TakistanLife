@@ -50,7 +50,6 @@
     } forEach (PLAYERDATA select 8);
     
     waitUntil {(alive player)};
-    if(PLAYERDATA select 9 == 0) then { ["nation"] execVM "armitxes\dialogs\controller.sqf"; };
     _rnk = (PLAYERDATA select 5);
     switch (playerSide) do {
       case WEST: {
@@ -59,7 +58,7 @@
           if(_rnk > 99 && _rnk < 103) then { ["use","copUni2"] execVM "armitxes\clothing.sqf"; };
          };        
       };
-      case CIVILIAN:  { isciv = true; };
+      case CIVILIAN:  { isciv = true; if(PLAYERDATA select 9 == 0) then { _w = ["nation"] execVM "armitxes\dialogs\controller.sqf"; waitUntil {scriptDone _w}; }; };
       case resistance: {
         isun = true;
         if((PLAYERDATA select 4) == 2) then {

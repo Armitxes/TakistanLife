@@ -2610,7 +2610,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=3956;
+		items=3957;
 		class Item0
 		{
 			position[]={6015.2627,-4.5776367e-005,10487.534};
@@ -40880,10 +40880,22 @@ class Mission
 			text="resourcesell2";
 			init="this allowDamage false; this enableSimulation false;this setpos [getpos this select 0, getpos this select 1, 0.2];";
 		};
+		class Item3956
+		{
+			position[]={571.41565,241.30087,2860.1499};
+			azimut=680.31024;
+			special="NONE";
+			id=4078;
+			side="EMPTY";
+			vehicle="Infostand_2_EP1";
+			skill=0.60000002;
+			text="gunlicsouth";
+			init="this allowDamage false; this enableSimulation false; this setObjectTexture [0,""images\shopWeapon.paa""];";
+		};
 	};
 	class Markers
 	{
-		items=263;
+		items=264;
 		class Item0
 		{
 			position[]={3028.9521,72.377098,21478.516};
@@ -43067,6 +43079,14 @@ class Mission
 			type="mil_dot";
 			colorName="ColorGreen";
 			angle=144.974;
+		};
+		class Item263
+		{
+			position[]={571.8147,241.28246,2860.2607};
+			name="gunlicense2";
+			text="Gun License";
+			type="mil_triangle";
+			angle=110.79931;
 		};
 	};
 	class Sensors

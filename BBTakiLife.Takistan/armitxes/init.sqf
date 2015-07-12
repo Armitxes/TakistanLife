@@ -35,7 +35,7 @@ if(!isDedicated) then
 				} else { call compile format ["%1workers = %2;",(_fac select 8),0]; };
 				_z=_z+1; 
 			} forEach (PLAYERDATA select 8);
-			if(PLAYERDATA select 9 == 0) then { ["nation"] execVM "armitxes\dialogs\controller.sqf"; };
+			if(isciv && PLAYERDATA select 9 == 0) then { _w = ["nation"] execVM "armitxes\dialogs\controller.sqf"; waitUntil {scriptDone _w}; };
 			player setVariable ["pubPlrData",[PLAYERDATA select 4, PLAYERDATA select 5, PLAYERDATA select 9],true];
 		};
 		submitLoad = nil;
