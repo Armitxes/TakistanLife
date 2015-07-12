@@ -409,6 +409,7 @@ class liste_1_button
 };
 
 class constitution : liste_1_button {
+	idd = 20;
 	controls[] = {spielerliste, newConst, close, dummybutton, btnAdd};
     class btnAdd: RscButton
     {
@@ -425,7 +426,7 @@ class constitution : liste_1_button {
 		y = 1.0;
 		w = 0.6;
 		h = 0.04;
-		idc = 4;
+		idc=200;
 		text = "";
 	};	
 };
@@ -778,7 +779,7 @@ class gilde_verwaltung
 
 class ja_nein
 {
-	idd = -1;
+	idd = 3000;
 	movingEnable = true;
 	controlsBackground[] = {DLG_BACK1, background};
 	objects[] = { };
@@ -804,7 +805,7 @@ class ja_nein
 		x = 0.40;
 		y = 0.21;
 		w = 0.34;
-		h = 0.10;
+		h = 0.15;
 
 		style = ST_MULTI;
 		lineSpacing = 1;
@@ -814,7 +815,7 @@ class ja_nein
 	{
 		idc = 2;
 		x = 0.40;
-		y = 0.32;
+		y = 0.37;
 		w = 0.10;
 		h = 0.04;
 
@@ -826,7 +827,7 @@ class ja_nein
 	{
 		idc = 3;
 		x = 0.53;
-		y = 0.32;
+		y = 0.37;
 		w = 0.10;
 		h = 0.04;
 

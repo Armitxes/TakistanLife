@@ -51,7 +51,7 @@ INV_CreateVehicle =
 	newvehicle = _classname createVehicle _position;
 	newvehicle setpos _position;
 	newvehicle setdir _dir;
-	newvehicle setVariable ["owner",getPlayerUID player,true];
+	newvehicle setVariable ["owner",[name player, getPlayerUID player],true];
 	call compile format ['
 			newvehicle setVehicleInit "this setVehicleVarName ""vehicle_%1_%2"";
 			vehicle_%1_%2 = this;

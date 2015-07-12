@@ -36,13 +36,13 @@ if(typeName (_this select 0) == "STRING") then {
         _pos = (position player);
         _cb = "Explosive" createVehicle _pos;
         _cb setPos [_pos select 0, _pos select 1, 0.2];
-        _cb setVariable ["owner",name player,true];
+        _cb setVariable ["bombowner",name player,true];
         server globalChat "C4 attached to Building";
       } else {
         bombAttachment = (position player);
         _cb = "Explosive" createVehicle bombAttachment;
         _cb setPos bombAttachment;
-        _cb setVariable ["owner",name player,true];
+        _cb setVariable ["bombowner",name player,true];
         server globalChat "C4 attached to Ground";
       };
     };
@@ -50,7 +50,7 @@ if(typeName (_this select 0) == "STRING") then {
 } else {
   if(_this select 3 == "defuse") exitWith {
     _bombs = nearestObjects [player, ["Explosive"], 200];
-    _owner = (_bombs select 0) getVariable "owner";
+    _owner = (_bombs select 0) getVariable "bombowner";
     if(count _bombs > 0) then { deleteVehicle (_bombs select 0); };
     server globalChat (format ["C4 defused. Forensics found the fingerprints of %1 on the explosive",_owner]);  
   };

@@ -463,9 +463,11 @@ switch (_art) do {
 		lbAdd [1, "§ Constitution of Takistan §"];
 		lbAdd [1, _trennlinie];
 		
-		lbAdd [1, "§1 Slavery and slave trade is be prohibited in all their forms."];
-		lbAdd [1, "§2 No one shall be subjected to torture or to cruel, inhuman or degrading treatment or punishment."];
-		lbAdd [1, "§3 All are equal before the law without any discrimination to equal protection of the law."];
+		_pgh = 1;
+		{
+			lbAdd [1, format ["§%1 %2",_pgh,_x]];
+			_pgh=_pgh+1;
+		} forEach constitution;
 		
 		lbAdd [1, _trennlinie];
 		lbAdd [1, "~ Passed by the Supreme Court of Takistan in cooperation with the United Nations"];

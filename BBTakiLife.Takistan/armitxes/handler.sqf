@@ -72,10 +72,10 @@
           };
         };
       };
-      player setVariable ["pubPlrData",[PLAYERDATA select 4, PLAYERDATA select 5, PLAYERDATA select 9],true];
     };
+    player setVariable ["pubPlrData",[PLAYERDATA select 4, PLAYERDATA select 5, PLAYERDATA select 9],true];
+    submitLoad = nil;
+    closeDialog 5000;
+    JIP_Stats_Ready = true;
   };
-  submitLoad = nil;
-  closeDialog 5000;
-  JIP_Stats_Ready = true;
 };

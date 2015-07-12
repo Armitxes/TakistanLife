@@ -72,7 +72,7 @@ switch _key do
       	_vcls = nearestobjects [getpos player, ["LandVehicle", "Air", "ship"], 25];
       	_vcl = _vcls select 0;
         _owner = _vcl getVariable "owner";
-        if((_owner == getPlayerUID player) && !(_vcl in INV_VehicleArray)) then { INV_VehicleArray = INV_VehicleArray + [_vcl]; }
+        if((_owner select 1 == getPlayerUID player) && !(_vcl in INV_VehicleArray)) then { INV_VehicleArray = INV_VehicleArray + [_vcl]; }
         else {
         	if(!(_vcl in INV_VehicleArray)) exitWith { player groupchat "You do not have the keys to this vehicle."; _handled=true; };
         	["schluessel", _vcl, 0] execVM "keys.sqf";
