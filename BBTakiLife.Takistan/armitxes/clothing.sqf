@@ -106,7 +106,7 @@ if(_action == "use") exitWith {
         if(_type in _pmcs) then { ispmc = true; } else { ispmc = false; };
 		selectPlayer _newUnit;
         _unit = vehicleVarName _old;
-        _plrInit = format['this setVehicleVarName "%1"; %1 = this;', _unit];
+        _plrInit = format['this setVehicleVarName "%1"; %1 = this; this setVariable ["pubPlrData",%2]; ', _unit, _old getVariable "pubPlrData"];
         if(count _x == 3) then { _plrInit = _plrInit + format["this setObjectTexture %1;", (_x select 2)]; 
 		respawnSkin = (_x select 2); 
 		}; 

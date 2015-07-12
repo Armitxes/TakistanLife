@@ -18,8 +18,8 @@ if(!isDedicated) then
 	PLAYERDATA = [0];
 	
 	if(enableDebug) then {
-		PLAYERDATA = [1,300000,245,4,2,5,[],0,[],0];
-		if ((count PLAYERDATA) == 10) then {
+		PLAYERDATA = [1,300000,245,4,2,5,[],0,[],0,''];
+		if ((count PLAYERDATA) == 11) then {
 			lastArray = str(PLAYERDATA);
 			INV_LizenzOwner = [];
 			{ INV_LizenzOwner = INV_LizenzOwner + [(INV_Lizenzen select _x) select 0]; } forEach (PLAYERDATA select 6);    
@@ -44,7 +44,7 @@ if(!isDedicated) then
 	};
 
 	waitUntil {alive player};
-	while {(count PLAYERDATA) != 10} do 
+	while {(count PLAYERDATA) != 11} do 
 	{
 		if (!(createDialog "Portal")) exitWith {hint "Dialog Error! - Portal"; endMission "LOSER";};
 		((findDisplay 5000) displayCtrl 1) ctrlSetText format["%1", getPlayerUID player]; 

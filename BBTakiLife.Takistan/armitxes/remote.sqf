@@ -1,5 +1,5 @@
 _doAction = _this select 0;
-
+if(typeName _doAction != "STRING") then {_doAction=_this select 3;};
 switch (_doAction) do
 { 
 	case "door": {
@@ -49,5 +49,31 @@ switch (_doAction) do
 				} forEach _prisoners;
 			} else { server globalChat "No prisoners found"; };
 		} else { server globalChat "Request Denied"; };
+	};
+	case "pGarage": {
+		_vcl = (nearestobjects [getpos player, ["Air","LandVehicle"], 3] select 0);
+		_owner = _vcl getVariable "owner";
+		if(_owner select 1 == getPlayerUID player) then {
+			_type = typeOf _vcl;
+			deleteVehicle _vcl;
+			PLAYERDATA set [10,_type];
+		} else {server globalChat "This is not your vehicle!";};
+	};
+	case "gGarage": {
+		if(PLAYERDATA select 10 != "") then {
+			_shops = nearestobjects [player,["Infostand_1_EP1", "Infostand_2_EP1"], 5];
+			_shop = _shops select 0;
+			if(!(isnull _shop) and _shop in shopusearray) exitwith
+			{
+				_classname = PLAYERDATA select 10;
+				PLAYERDATA set [10,""];
+				_id = _shop call INV_getshopnum;
+				_shop = INV_ItemShops select _id;
+				_marker = _shop select 3;
+				_pos = getMarkerPos _marker;
+				_dir = markerDir _marker;
+				[_classname,_pos,_classname,_dir] call INV_CreateVehicle;
+			};
+		} else { server globalChat "You have no vehicle in your garage!"};
 	};
 };

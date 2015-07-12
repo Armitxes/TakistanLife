@@ -1,6 +1,6 @@
 "PLAYERDATA" addPublicVariableEventHandler {
   PLAYERDATA = call (compile PLAYERDATA);
-  if ((count PLAYERDATA) == 10) then {
+  if ((count PLAYERDATA) == 11) then {
     lastArray = str(PLAYERDATA);
     
     INV_LizenzOwner = [];
@@ -52,13 +52,13 @@
     waitUntil {(alive player)};
     _rnk = (PLAYERDATA select 5);
     switch (playerSide) do {
-      case WEST: {
+      case west: {
         iscop = true;
         if((PLAYERDATA select 4) == 1) then {
           if(_rnk > 99 && _rnk < 103) then { ["use","copUni2"] execVM "armitxes\clothing.sqf"; };
          };        
       };
-      case CIVILIAN:  { isciv = true; if(PLAYERDATA select 9 == 0) then { _w = ["nation"] execVM "armitxes\dialogs\controller.sqf"; waitUntil {scriptDone _w}; }; };
+      case civilian:  { isciv = true; if(PLAYERDATA select 9 == 0) then { _w = ["nation"] execVM "armitxes\dialogs\controller.sqf"; waitUntil {scriptDone _w}; }; };
       case resistance: {
         isun = true;
         if((PLAYERDATA select 4) == 2) then {
