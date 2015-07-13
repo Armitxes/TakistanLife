@@ -230,38 +230,62 @@ class modPlayerSelection {
 	movingEnable = 1;
 	enableSimulation = true;
 	
-	class controlsBackground {
-		class IGUIBack_2200: RscBackground
-		{
-		    idc = -1;
-			x = 0.235902 * safezoneW + safezoneX;
-			y = 0.149928 * safezoneH + safezoneY;
-			w = 0.528196 * safezoneW;
-			h = 0.700143 * safezoneH;
-			colorBackground[] = { 0, 0, 0, 0.8 };
-		};
+	controlsBackground[] = {IGUIBack_2200};
+	class objects {};
+	controls[] = {lblPlrDesc,lstPlayers};
+	class IGUIBack_2200: RscBackground
+	{
+		idc = -1;
+		x = 0.235902 * safezoneW + safezoneX;
+		y = 0.2 * safezoneH + safezoneY;
+		w = 0.528196 * safezoneW;
+		h = 0.45 * safezoneH;
+		colorBackground[] = { 0, 0, 0, 0.8 };
 	};
-	class objects {};  
-	class controls {
-		class lblPlrDesc: RscStructuredText
-		{
-		    idc = -1;
-		    text = "Players";
-		    x = 0.242505 * safezoneW + safezoneX;
-		    y = 0.219943 * safezoneH + safezoneY;
-		    w = 0.0990367 * safezoneW;
-		    h = 0.0280057 * safezoneH;
-		};
-		class lstPlayers: RscListBox
-		{
-		    idc = 1;
-		    x = 0.242505 * safezoneW + safezoneX;
-		    y = 0.261951 * safezoneH + safezoneY;
-		    w = 0.0990367 * safezoneW;
-		    h = 0.350072 * safezoneH;
-		};
+	class lblPlrDesc: RscStructuredText
+	{
+	    idc = 1;
+	    text = "Players";
+	    x = 0.242505 * safezoneW + safezoneX;
+	    y = 0.23 * safezoneH + safezoneY;
+	    w = 0.0990367 * safezoneW;
+	    h = 0.0280057 * safezoneH;
+		class Attributes { align = "left"; };
+	};
+	class lstPlayers: RscListBox
+	{
+	    idc = 2;
+	    x = 0.242505 * safezoneW + safezoneX;
+	    y = 0.261951 * safezoneH + safezoneY;
+	    w = 0.0990367 * safezoneW;
+	    h = 0.350072 * safezoneH;
 	};
 };
+
+class sergeantmenu : modPlayerSelection {
+	idd = 1606;
+	movingEnable = 1;
+	enableSimulation = true;
+	controls[] = {lblPlrDesc,lstPlayers,lblDistDesc,lstDistricts};
+	class lblDistDesc: RscStructuredText
+	{
+	    idc = 10;
+	    text = "Districts";
+	    x = 0.35 * safezoneW + safezoneX;
+	    y = 0.23 * safezoneH + safezoneY;
+	    w = 0.0990367 * safezoneW;
+	    h = 0.0280057 * safezoneH;
+		class Attributes { align = "left"; };
+	};
+	class lstDistricts: RscListBox
+	{
+	    idc = 11;
+	    x = 0.35 * safezoneW + safezoneX;
+	    y = 0.261951 * safezoneH + safezoneY;
+	    w = 0.0990367 * safezoneW;
+	    h = 0.350072 * safezoneH;
+	};		
+}
 
 class professions {
 	idd = 1602;

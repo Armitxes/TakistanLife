@@ -3,11 +3,11 @@ if(typeName _action != "STRING") then {_action=_this select 3;};
 
 _initPlayerInteraction = {
 	private ["_playerbox","_entry"];
-	(_dsp displayCtrl 1) ctrlSetText (_this select 0);
-	_playerbox = (_dsp displayCtrl 2);
-
-	disableSerialisatzion;
+	disableSerialization;
 	_dsp = findDisplay 1606;
+	(_dsp displayCtrl 0) ctrlSetText (_this select 0);
+	_playerbox = (_dsp displayCtrl 2);
+	
 	switch(_this select 1) do {
 		case "all": {
 			_entry = _playerbox lbAdd "all";
@@ -21,25 +21,25 @@ _initPlayerInteraction = {
 			{if(alive _x) then {
 				_entry = _playerbox lbAdd (name _x);
 				_playerbox lbSetData [_entry,str(_x)];
-			}} forEach playableUnits;
+			};} forEach playableUnits;
 		};
 		case "police": {
-			{if(alive _x && (side _x) == west) then {
+			{if(alive _x && (typeOf _x) in coptypes) then {
 				_entry = _playerbox lbAdd (name _x);
 				_playerbox lbSetData [_entry,str(_x)];
-			}} forEach playableUnits;
+			};} forEach playableUnits;
 		};
 		case "un": {
-			{if(alive _x && (side _x) == resistance) then {
+			{if(alive _x && (typeOf _x) in untypes) then {
 				_entry = _playerbox lbAdd (name _x);
 				_playerbox lbSetData [_entry,str(_x)];
-			}} forEach playableUnits;
+			};} forEach playableUnits;
 		};
 		case "civilian": {
-			{if(alive _x && (side _x) == civilian) then {
+			{if(alive _x && !((typeOf _x) in coptypes) && !((typeOf _x) in untypes)) then {
 				_entry = _playerbox lbAdd (name _x);
 				_playerbox lbSetData [_entry,str(_x)];
-			}} forEach playableUnits;
+			};} forEach playableUnits;
 		};
 	};
 };
@@ -94,9 +94,12 @@ switch (_action) do {
 		};
 	};
 	case "sergeant": {
+		// ["sergeant"] execVM "armitxes\dialogs\controller.sqf";
 		createDialog "sergeantmenu";
-		["police"] call _initPlayerInteraction;
-		_listbox = (_dsp displayCtrl 3);
+		["Police Officers","police"] call _initPlayerInteraction;
+		disableSerialization;
+		_dsp = findDisplay 1606;
+		_listbox = (_dsp displayCtrl 11);
 		{_listbox lbAdd _x;} forEach districs;
 	};
 };
