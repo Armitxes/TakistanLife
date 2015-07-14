@@ -300,7 +300,7 @@ wpcapacity               = 10;
 INV_hasitemshop          = 0;
 INV_haswepshop           = 0;
 BuildingsOwnerArray 	 = [];
-districs = ["None","North","North/East","North/West","South","Partol Duty","Off-Duty","Suspended"];
+districts = ["None","North","North/East","North/West","South","Partol Duty","Off-Duty","Suspended"];
 lastAttack = 0;
 
 if(isciv) then {

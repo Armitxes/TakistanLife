@@ -21,9 +21,12 @@ while {iscop} do
 	
 	if (ischief) then { _income = _income + chiefExtraPay; };
 	if(_vcl != player && iscop && onduty && !siren) then {
-		_district = player getVariable "district";
-		if(!isNil "_district" && !((getPos player) in _district)) then {
-			_income = _income - 150;
+		_district = (player getVariable "pubPlrData") select 3;
+		_disName = districts select _district;
+		if(_district > 0 && _district < 5) then {
+			if(!((getPos player) in _disName)) then {
+				_income = _income - 150;
+			};
 		};
 	};
   

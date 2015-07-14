@@ -100,6 +100,6 @@ switch (_action) do {
 		disableSerialization;
 		_dsp = findDisplay 1606;
 		_listbox = (_dsp displayCtrl 11);
-		{_listbox lbAdd _x;} forEach districs;
+		{_listbox lbAdd _x;} forEach districts;
 	};
 };

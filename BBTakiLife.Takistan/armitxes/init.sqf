@@ -36,7 +36,7 @@ if(!isDedicated) then
 				_z=_z+1; 
 			} forEach (PLAYERDATA select 8);
 			if(isciv && PLAYERDATA select 9 == 0) then { _w = ["nation"] execVM "armitxes\dialogs\controller.sqf"; waitUntil {scriptDone _w}; };
-			player setVariable ["pubPlrData",[PLAYERDATA select 4, PLAYERDATA select 5, PLAYERDATA select 9],true];
+			player setVariable ["pubPlrData",[PLAYERDATA select 4, PLAYERDATA select 5, PLAYERDATA select 9,0],true];
 		};
 		submitLoad = nil;
 		closeDialog 5000;
