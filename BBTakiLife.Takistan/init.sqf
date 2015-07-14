@@ -7,6 +7,7 @@ BIS_Effects_Burn=compile preprocessFile "\ca\Data\ParticleEffects\SCRIPTS\destru
 sleep 0.5;
 
 enableSaving [false, false];
+enableEnvironment false;
 WEST setFriend [EAST, 1];
 EAST setFriend [WEST, 1];
 RESISTANCE setFriend [EAST, 1];
