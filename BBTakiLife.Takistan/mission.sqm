@@ -40895,7 +40895,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=264;
+		items=268;
 		class Item0
 		{
 			position[]={3028.9521,72.377098,21478.516};
@@ -43087,6 +43087,54 @@ class Mission
 			text="Gun License";
 			type="mil_triangle";
 			angle=110.79931;
+		};
+		class Item264
+		{
+			position[]={3111.094,96.552979,11383.6};
+			name="North/West";
+			markerType="RECTANGLE";
+			type="Empty";
+			fillName="Border";
+			a=2000;
+			b=2500;
+			angle=31.9494;
+			drawBorder=1;
+		};
+		class Item265
+		{
+			position[]={5956.9375,64.802963,10259.334};
+			name="North";
+			markerType="RECTANGLE";
+			type="Empty";
+			fillName="Border";
+			a=1000;
+			b=2900;
+			angle=31.9494;
+			drawBorder=1;
+		};
+		class Item266
+		{
+			position[]={10018.255,228.31111,9411.8906};
+			name="North/East";
+			markerType="RECTANGLE";
+			type="Empty";
+			fillName="Border";
+			a=2900;
+			b=3500;
+			angle=31.9494;
+			drawBorder=1;
+		};
+		class Item267
+		{
+			position[]={5477.7544,253.58939,4683.5923};
+			name="South";
+			markerType="RECTANGLE";
+			type="Empty";
+			fillName="Border";
+			a=2900;
+			b=6000;
+			angle=-58.4972;
+			drawBorder=1;
 		};
 	};
 	class Sensors
