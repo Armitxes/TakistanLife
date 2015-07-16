@@ -20,16 +20,17 @@ while {iscop} do
 	};
 	
 	if (ischief) then { _income = _income + chiefExtraPay; };
-	if(_vcl != player && iscop && onduty && !siren) then {
+	if(_vcl != player && iscop && !siren) then {
 		_district = (player getVariable "pubPlrData") select 3;
 		_disName = districts select _district;
 		if(_district > 0 && _district < 5) then {
-			if(!((getPos player) in _disName)) then {
+			if(!([player,_disName] call fnc_isInMarker)) then {
 				_income = _income - 150;
+				server globalChat format["You are not in the %1 district. You received $150 less payment.",_disName];
 			};
 		};
 	};
-  
+
 	_coptax = round(INV_SteuernGezahlt * 0.05);
 	[(round _income) + (round _coptax)] call setMoney;
 	INV_SteuernGezahlt = 0;

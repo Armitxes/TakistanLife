@@ -69,7 +69,6 @@ stolenfromtimeractive	 = false;  // dont change
 //===============MOTD==================
 motdwaittime = 60;
 //===============Cop Patrol==================
-onduty = true;
 pmissionactive = false;
 patrolwaittime = false;
 patrolmoneyperkm = 0.55;  // 1 would be equal to $7,000 for 1KM
