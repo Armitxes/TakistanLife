@@ -42955,7 +42955,7 @@ class Mission
 		};
 		class Item240
 		{
-			position[]={5179.9375,628.14935,2990.2971};
+			position[]={5072.7246,596.70447,3049.9202};
 			name="South";
 			markerType="RECTANGLE";
 			type="Empty";

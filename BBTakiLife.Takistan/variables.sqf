@@ -82,7 +82,6 @@ emMarkers = [];
 maxstationmoney = 2000;
 petroluse                = 1;
 maxpetroluse             = 80;
-//oildemand                = 1;
 oilsellpricedec          = 0.51;
 oilbaseprice		 = 2600;
 shoveldur=20;
