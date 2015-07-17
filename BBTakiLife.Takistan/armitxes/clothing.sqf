@@ -133,7 +133,6 @@ if(_action == "use") exitWith {
         [(_x select 0), -1] call INV_AddInventoryItem;
         player addEventHandler ["fired", {["fired", (_this select 4), (_this select 1)] execVM "stun.sqf";}];
         player addEventHandler ["handleDamage", {_this call compile preprocessfile "armitxes\setHit.sqf"}];
-        player addEventHandler ["fired",{_this execVM "fired.sqf"}];
 		if (_gnm) then {gangmember = true};
 		if (_gnl) then {gangleader = true};
 		

@@ -115,23 +115,22 @@ player addEventHandler ["fired", {["fired", (_this select 4), (_this select 1)] 
 player addEventHandler ["handleDamage", {_this call compile preprocessfile "armitxes\setHit.sqf"}];
 
 waituntil{vehicle player == player};
-player addEventHandler ["fired",{_this execVM "fired.sqf"}];
 []spawn {
-while{true}do
-{
-	sleep 1;
-	if(player getVariable "flashed" and isciv) then
+	while{true}do
 	{
-		_fadeInTime   = 0;
-		_fadeOutTime  = 5;
-		if (not(alive player)) exitWith {};
-		titleCut ["","WHITE OUT",0];
-		sleep _fadeOutTime;
-		titleCut ["","WHITE IN",0];
 		sleep 1;
-		player setVariable ["flashed",false, true];
+		if(player getVariable "flashed" and isciv) then
+		{
+			_fadeInTime   = 0;
+			_fadeOutTime  = 5;
+			if (not(alive player)) exitWith {};
+			titleCut ["","WHITE OUT",0];
+			sleep _fadeOutTime;
+			titleCut ["","WHITE IN",0];
+			sleep 1;
+			player setVariable ["flashed",false, true];
+		};
 	};
-};
 };
 
 onKeyDown = compile preprocessFile "onKeyDown.sqf";

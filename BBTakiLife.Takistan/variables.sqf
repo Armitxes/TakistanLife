@@ -328,8 +328,5 @@ if(isServer)then
   publicVariable "INV_ItemTypenArray";
   publicVariable "INV_itemstocks";
   currentTime = daytime; publicVariable "currentTime";
-  
-  format["if(%1)then{power1 setdamage 0};if(%2)then{power2 setdamage 0};", alive power1, alive power2] call broadcast;
-';
 };
 
