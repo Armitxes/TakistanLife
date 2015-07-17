@@ -266,7 +266,7 @@ class sergeantmenu : modPlayerSelection {
 	idd = 1606;
 	movingEnable = 1;
 	enableSimulation = true;
-	controls[] = {lblPlrDesc,lstPlayers,lblDistDesc,lstDistricts};
+	controls[] = {lblPlrDesc,lstPlayers,lblDistDesc,lstDistricts,lblPlrInfo};
 	class lblDistDesc: RscStructuredText
 	{
 	    idc = 10;
@@ -284,6 +284,16 @@ class sergeantmenu : modPlayerSelection {
 	    y = 0.261951 * safezoneH + safezoneY;
 	    w = 0.0990367 * safezoneW;
 	    h = 0.350072 * safezoneH;
+	};
+	class lblPlrInfo: RscStructuredText
+	{
+	    idc = 12;
+	    text = "~ INFO ~";
+	    x = 0.45 * safezoneW + safezoneX;
+	    y = 0.261951 * safezoneH + safezoneY;
+	    w = 0.2 * safezoneW;
+	    h = 0.3 * safezoneH;
+		class Attributes { align = "left"; };
 	};		
 }
 

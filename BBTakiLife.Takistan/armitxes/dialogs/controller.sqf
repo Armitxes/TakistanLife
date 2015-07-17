@@ -100,6 +100,7 @@ switch (_action) do {
 		disableSerialization;
 		_dsp = findDisplay 1606;
 		_listbox = (_dsp displayCtrl 11);
+		(_dsp displayCtrl 2) ctrlAddEventHandler ["LBSelChanged",{hint str _this;}];
 		{_listbox lbAdd _x;} forEach districts;
 	};
 };
