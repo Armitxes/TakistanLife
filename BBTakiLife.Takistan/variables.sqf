@@ -298,8 +298,9 @@ wpcapacity               = 10;
 INV_hasitemshop          = 0;
 INV_haswepshop           = 0;
 BuildingsOwnerArray 	 = [];
-districts = ["None","North","North/East","North/West","South","Partol Duty","Off-Duty","Suspended"];
+districts = ["None","North","North/East","North/West","South","Patrol Duty","Off-Duty","Suspended"];
 lastAttack = 0;
+offduty = time;
 
 if(isciv) then {
 	BuyAbleBuildingsArray = [

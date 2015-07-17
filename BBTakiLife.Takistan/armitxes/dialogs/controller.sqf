@@ -94,13 +94,13 @@ switch (_action) do {
 		};
 	};
 	case "sergeant": {
-		// ["sergeant"] execVM "armitxes\dialogs\controller.sqf";
 		createDialog "sergeantmenu";
 		["Police Officers","police"] call _initPlayerInteraction;
 		disableSerialization;
 		_dsp = findDisplay 1606;
+		_listPlr = (_dsp displayCtrl 2);
 		_listbox = (_dsp displayCtrl 11);
-		(_dsp displayCtrl 2) ctrlAddEventHandler ["LBSelChanged",{hint str _this;}];
 		{_listbox lbAdd _x;} forEach districts;
+		_listPlr ctrlAddEventHandler ["LBSelChanged","[""setDescr""] execVM ""armitxes\districts.sqf"";"];
 	};
 };

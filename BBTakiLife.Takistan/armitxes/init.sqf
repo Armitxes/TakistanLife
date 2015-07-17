@@ -18,7 +18,7 @@ if(!isDedicated) then
 	PLAYERDATA = [0];
 	
 	if(enableDebug) then {
-		PLAYERDATA = [1,300000,245,4,2,5,[],0,[],0,''];
+		PLAYERDATA = [1,300000,245,4,1,7,[],0,[],0,''];
 		if ((count PLAYERDATA) == 11) then {
 			lastArray = str(PLAYERDATA);
 			INV_LizenzOwner = [];

@@ -266,7 +266,7 @@ class sergeantmenu : modPlayerSelection {
 	idd = 1606;
 	movingEnable = 1;
 	enableSimulation = true;
-	controls[] = {lblPlrDesc,lstPlayers,lblDistDesc,lstDistricts,lblPlrInfo};
+	controls[] = {lblPlrDesc,lstPlayers,lblDistDesc,lstDistricts,lblPlrInfo,btnConfirm};
 	class lblDistDesc: RscStructuredText
 	{
 	    idc = 10;
@@ -291,10 +291,20 @@ class sergeantmenu : modPlayerSelection {
 	    text = "~ INFO ~";
 	    x = 0.45 * safezoneW + safezoneX;
 	    y = 0.261951 * safezoneH + safezoneY;
-	    w = 0.2 * safezoneW;
+	    w = 0.4 * safezoneW;
 	    h = 0.3 * safezoneH;
 		class Attributes { align = "left"; };
-	};		
+	};
+	class btnConfirm: RscButton
+	{
+		idc = -1;
+		text = "Confirm";
+		action="[""assignDistrict""] execVM ""armitxes\districts.sqf"";";
+		x = 0.65 * safezoneW + safezoneX;
+		y = 0.6 * safezoneH + safezoneY;
+		w = 0.1 * safezoneW;
+		h = 0.03 * safezoneH;
+	};
 }
 
 class professions {

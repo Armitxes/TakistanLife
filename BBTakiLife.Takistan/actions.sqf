@@ -151,10 +151,11 @@ CCAct = _role addAction ["<t color ='#58ACFA'>Resign from office </t>","resign.s
 MayAct =  _role addAction ["<t color ='#FFD700'>Resign from office </t>","resign.sqf",["PMresign"],0,false,true,"","player distance rathaus < 3 && isMayor"]; 
 protest = _role addAction ["<t color ='#FFD700'>Protest</t>","noscript.sqf",'protesters = protesters + [player];',0,false,true,"","player distance rathaus < 20 && !(player in protesters) && isciv"];
 
-holsterPrim = _role addaction ["Holster Primary","armitxes\holster.sqf",0,1,false,true,"","((primaryWeapon player) call INV_GetWeaponTyp) == 2"];
-unholsterPrim = _role addaction ["Unholster Primary","armitxes\holster.sqf",0,1,false,true,"","primHolster != ''"];
-holsterPist = _role addaction ["Holster Pistol","armitxes\holster.sqf",1,1,false,true,"","player call INV_getPistol != ''"];
-unholsterPist = _role addaction ["Unholster Pistol","armitxes\holster.sqf",1,1,false,true,"","pistolHolster != ''"];
+holsterPrim = _role addAction ["Holster Primary","armitxes\holster.sqf",0,1,false,true,"","((primaryWeapon player) call INV_GetWeaponTyp) == 2"];
+unholsterPrim = _role addAction ["Unholster Primary","armitxes\holster.sqf",0,1,false,true,"","primHolster != ''"];
+holsterPist = _role addAction ["Holster Pistol","armitxes\holster.sqf",1,1,false,true,"","player call INV_getPistol != ''"];
+unholsterPist = _role addAction ["Unholster Pistol","armitxes\holster.sqf",1,1,false,true,"","pistolHolster != ''"];
 
-actPGarage = _role addaction ["Put in Garage","armitxes\remote.sqf","pGarage",1,false,true,"",'_vcl = (nearestobjects [getpos player, ["Air","LandVehicle"], 3] select 0);player distance _vcl < 5 and _vcl in INV_VehicleArray'];
-actSGarage = _role addaction ["Garage","armitxes\remote.sqf","gGarage",1,false,true,"",'(player distance impoundbuy <= 5) || (player distance copcar <= 5) || (player distance unair <= 5) || (player distance southcar <= 5) || (player distance carshop1 <= 5)'];
+actPGarage = _role addAction ["Put in Garage","armitxes\remote.sqf","pGarage",1,false,true,"",'_vcl = (nearestobjects [getpos player, ["Air","LandVehicle"], 3] select 0);player distance _vcl < 5 and _vcl in INV_VehicleArray'];
+actSGarage = _role addAction ["Garage","armitxes\remote.sqf","gGarage",1,false,true,"",'(player distance impoundbuy <= 5) || (player distance copcar <= 5) || (player distance unair <= 5) || (player distance southcar <= 5) || (player distance carshop1 <= 5)'];
+actSergeant = _role addAction ["Sergeant Menu","armitxes\dialogs\controller.sqf","sergeant",1,false,true,"",'iscop && (PLAYERDATA select 4 == 1) && (PLAYERDATA select 5 > 6) && (PLAYERDATA select 5 < 51)'];

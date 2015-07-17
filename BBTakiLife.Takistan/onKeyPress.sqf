@@ -4,19 +4,7 @@ _key     = _this select 1;
 _shift   = _this select 2;
 _handled = false;
 
-fn_ClearWarrantsArray =
-{
-	// fix: remove OBJ-NULL entries from wanted list
-	for [{_i=0}, {_i < (count warrantarray)}, {_i=_i+1}] do
-	{
-	if ( isNull((warrantarray select _i) select 0) ) then
-		{
-			warrantarray set [_i,-1]; 
-		};
-	  };
-
-	warrantarray = warrantarray - [-1];
-};
+offduty = time;
 
 if(isstunned || (([player] call plr_isUnConscious) && _key != 50)) exitWith
 {
@@ -254,7 +242,7 @@ switch _key do
 	    if(!INV_shortcuts)exitwith{};
 	    _handled=true;
 	    if(dialog)exitWith{closeDialog 0;};
-	    call fn_ClearWarrantsArray;
+	    call fnc_ClearWarrantsArray;
 	    if (_shift) then { [0,0,0,["generalstats"]] execVM "maindialogs.sqf"; } else { [0,0,0,["spielerliste"]] execVM "maindialogs.sqf"; };
 	};
 

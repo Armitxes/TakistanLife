@@ -13,7 +13,17 @@ if(!isDedicated) then
 	setMoney = {
 		PLAYERDATA set [1, (PLAYERDATA select 1) + (_this select 0)];
 	};
-	
+
+	fnc_ClearWarrantsArray = {
+		// fix: remove OBJ-NULL entries from wanted list
+		for [{_i=0}, {_i < (count warrantarray)}, {_i=_i+1}] do {
+			if ( isNull((warrantarray select _i) select 0) ) then {
+				warrantarray set [_i,-1]; 
+			};
+		};
+		warrantarray = warrantarray - [-1];
+	};
+
 	getFactionRank = {
 		_facID = _this select 0; _rnkID = _this select 1;
 		_result = ["Factionless","-"];

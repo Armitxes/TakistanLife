@@ -110,3 +110,4 @@ _role removeAction c4ActBoom;
 _role removeAction profAction;
 _role removeAction actPGarage;
 _role removeAction actSGarage;
+_role removeAction actSergeant;
