@@ -63,70 +63,46 @@ if (Antwort == 1) then
 
 
 
-if (_loopart == "drugs") then
+if (_loopart == "drugs") then {
+	_checkcop = _this select 1;
+	drugsvalue = 0;
 
-{
-
-_checkcop = _this select 1;
-drugsvalue = 0;
-
-if (["INV_InventarArray", "illegal"] call INV_StorageHasKindOf) then
-
-	{
-
-	for [{_i=0}, {_i < (count INV_InventarArray)}, {_i=_i+1}] do
-
-		{
-
-		_item   = ((INV_InventarArray select _i) select 0);
-		_infos  = _item call INV_getitemArray;
-
-		if(_item call INV_getitemKindOf == "illegal") then
-
-			{
-
-			_amount = (_item call INV_GetItemAmount);
-			_preis  = (_infos call INV_getitemBuyCost);
-
-			drugsvalue = drugsvalue + (_preis*_amount);
-
+	if (["INV_InventarArray", "illegal"] call INV_StorageHasKindOf) then {
+		for [{_i=0}, {_i < (count INV_InventarArray)}, {_i=_i+1}] do {
+			_item   = ((INV_InventarArray select _i) select 0);
+			_infos  = _item call INV_getitemArray;
+			
+			if(_item call INV_getitemKindOf == "illegal") then {
+				_amount = (_item call INV_GetItemAmount);
+				_preis  = (_infos call INV_getitemBuyCost);
+				drugsvalue = drugsvalue + (_preis*_amount);
 			};
-
 		};
 
-	["INV_InventarArray", "illegal"] call INV_StorageRemoveKindOf;
-	[format ["addWarrant",player,"trafficking illegals (%1)",_infos call INV_getitemName],drugsvalue] execVM "warrant.sqf";
-
-	player groupChat localize "STRS_civmenucheck_beendrugsearched";
-
+		["INV_InventarArray", "illegal"] call INV_StorageRemoveKindOf;
+		[format ["addWarrant",player,"trafficking illegals (%1)",_infos call INV_getitemName],drugsvalue] execVM "warrant.sqf";
+		player groupChat localize "STRS_civmenucheck_beendrugsearched";
 	} else {(format ["if (player == %2) then {player groupChat localize ""STRS_civmenu_hasnodrugs"";};", player, _checkcop]) call toClients;};
 
 };
 
-if (_loopart == "inventcheck") then
-{
-
-_aktionsStarter = _this select 1;
-
-(format ['if (rolestring == "%1") then {[0, 0, 0, ["inventorycheck", %2, %3, %4]] execVM "maindialogs.sqf";};',_aktionsStarter, INV_LizenzOwner, INV_InventarArray, player]) call broadcast;
-
+if (_loopart == "inventcheck") then {
+	_aktionsStarter = _this select 1;
+	(format ['if (rolestring == "%1") then {[0, 0, 0, ["inventorycheck", %2, %3, %4]] execVM "maindialogs.sqf";};',_aktionsStarter, INV_LizenzOwner, INV_InventarArray, player]) call broadcast;
 };
 
-if (_loopart == "licencheck") then {										
-	(format ['if (rolestring == "%1") then {["idcard", %1, %2] execVM "armitxes\dialogs\controller.sqf";};',player,INV_LizenzOwner]) call broadcast;
-};
+if (_loopart == "licencheck") then { (format ['if (rolestring == "%1") then {["idcard", %1, %2] execVM "armitxes\dialogs\controller.sqf";};',player,INV_LizenzOwner]) call broadcast; };
 
-if (_loopart == "stealmoney") then
-{
-  _aktionsStarter = _this select 1;
-  if(stolenfromtimeractive) exitwith { };
-  
-  _dollarz  = 'dollarz' call INV_GetItemAmount;
-  _amounttosteal = (floor(random _dollarz));
-  ['dollarz',-_amounttosteal] call INV_AddInventoryItem;
-  
-  (format ['if (player == %1) then {["dollarz", %3] call INV_AddInventoryItem;}; hint "%2 stole %3 from %4";',_aktionsStarter ,name _aktionsStarter, _amounttosteal, name player]) call toClients;
-  stolenfromtimeractive = true;
-  sleep stolenfromtime;
-  stolenfromtimeractive = false;
+if (_loopart == "stealmoney") then {
+	_aktionsStarter = _this select 1;
+	if(stolenfromtimeractive) exitwith { };
+	
+	_dollarz  = 'dollarz' call INV_GetItemAmount;
+	_amounttosteal = (floor(random _dollarz));
+	['dollarz',-_amounttosteal] call INV_AddInventoryItem;
+	
+	(format ['if (player == %1) then {["dollarz", %3] call INV_AddInventoryItem;}; hint "%2 stole %3 from %4";',_aktionsStarter ,name _aktionsStarter, _amounttosteal, name player]) call toClients;
+	stolenfromtimeractive = true;
+	sleep stolenfromtime;
+	stolenfromtimeractive = false;
 };
