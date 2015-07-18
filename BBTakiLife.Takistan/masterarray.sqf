@@ -437,7 +437,7 @@ INV_AlleFahrzeugeArray = [
 ["AW159_Lynx_BAF",["Fahrzeug", "air"],["AW159_Lynx_BAF", "Wildcat AH11"],[50000, 25000], [5, "air", "copAir", 2000], [1000, [1,2,0,13] ], "AW159_Lynx_BAF", "AW159_Lynx_BAF", [["stahl", 500],["ebauteile", 15],["glas", 10],["plastik", 40],["mineraloel", 60],["dollarz",8000]]],
 
 // SCO19
-["BAF_Jackal2_L2A1_D",["Fahrzeug", "car"],["BAF_Jackal2_L2A1_D", "Jackal 2 HMG"],[48000, 30000], [2, "", "sobr_training", 100], [150, [1,0,0,3]], "BAF_Jackal2_L2A1_D" call ISSE_Cfg_Vehicle_GetName, "BAF_Jackal2_L2A1_D" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["BAF_Jackal2_L2A1_D",["Fahrzeug", "car"],["BAF_Jackal2_L2A1_D", "Jackal 2 HMG"],[38000, 19000], [2, "", "sobr_training", 100], [150, [1,0,0,3]], "BAF_Jackal2_L2A1_D" call ISSE_Cfg_Vehicle_GetName, "BAF_Jackal2_L2A1_D" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["LandRover_Special_CZ_EP1",["Fahrzeug", "car"],["LandRover_TK_CIV_EP1", "LandRover"],[40000, 750], [2, "", "sobr_training", 200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["steel ", 5],["iron", 10],["dollarz", 15000]] ],
 ["HMMWV_M998A2_SOV_DES_EP1",["Fahrzeug", "car"],["HMMWV_M998A2_SOV_DES_EP1", "HMMWV SOF GMV-S"],[58000, 0], [2, "", "sobr_training", 150], [150, [1,0,0,3]], "HMMWV_M998A2_SOV_DES_EP1" call ISSE_Cfg_Vehicle_GetName, "HMMWV_M998A2_SOV_DES_EP1" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["FlagCarrierBLUFOR_EP1",["Item", "misc"],["FlagCarrierBLUFOR_EP1", "Police Flag"],[100, 80], [1, "", "sobr_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_barrack",localize "STRS_inv_item_barrack_info", [] ],
@@ -450,7 +450,7 @@ INV_AlleFahrzeugeArray = [
 ["BTR40_UN",["Fahrzeug", "car"],["BTR40_MG_TK_INS_EP1", "UN BTR40"],[40000, 20000], [2, "southgov", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["BTR40_UN_U",["Fahrzeug", "car"],["BTR40_TK_INS_EP1", "UN BTR40 Unarmed"],[20000, 10000], [2, "southgov", "", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["M2A3_EP1",["Fahrzeug", "car"],["M2A3_EP1", "Bradley"],[180000, 0], [2, "car", "sobr_training", 150], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
-["HMMWV_M1151_M2_DES_EP1",["Fahrzeug", "car"],["HMMWV_M1151_M2_DES_EP1", "HMMWV GPK"],[38000, 7500], [2, "car", "sobr_training", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["HMMWV_M1151_M2_DES_EP1",["Fahrzeug", "car"],["HMMWV_M1151_M2_DES_EP1", "HMMWV GPK"],[38000, 19000], [2, "car", "sobr_training", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["M1126_ICV_M2_EP1",["Fahrzeug", "car"],["Skoda", "Stryker"],[85000, 40000], [2, "car", "sobr_training", 100], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 
 //armed civ/terrorist
@@ -503,7 +503,7 @@ INV_AlleItemsArray = [
 
 ["Fuelline", ["Item", "service"],["Syphon Fuelkit", "Syphon Fuel-kit"], [1600, 4], [1.7, "", "patrol_training"],[true,true,true, false, "syphon.sqf"], localize "STRS_inv_item_fuelcut", localize "STRS_inv_item_fuelcut_info",[["stahl", 1]] ],
 
-["OilBarrel", ["Item", "service"],["Oil Barrel", "Oil Barrel"], [1300, 650], [10, "", ""],[true,true,true, false, "refuelveh.sqf"], "Barrel of oil", localize "STRS_inv_item_kanister_info",[["Oil", 50]] ],
+["OilBarrel", ["Item", "service"],["Oil Barrel", "Oil Barrel"], [2200, 1200], [10, "", ""],[true,true,true, false, "refuelveh.sqf"], "Barrel of oil", localize "STRS_inv_item_kanister_info",[["Oil", 50]] ],
 
 ["schluesselbund",["Item", "carobjects"],["schluesselbund", "Key chain"],[0, 0], [0, ""], [false,false, false,false,"keys.sqf"],localize "STRS_inv_item_schluesselbund",localize "STRS_inv_item_schluesselb_info", [] ],
 
@@ -533,7 +533,7 @@ INV_AlleItemsArray = [
 
 ["sand", ["Item", "ressource"], ["sand", "Sand"],[20, 20], [1, ""],[true,true,true, false, "useresource.sqf"], localize "STRS_inv_item_sand", localize "STRS_inv_item_sand_info", []],
 
-["glass",["Item", "ressource"],["glas", "Glass"], [460, 300],[1.5, ""],[true,true,true, false, "useresource.sqf"], localize "STRS_item_glas", localize "STRS_item_farmitem_info", [["sand", 1],["silizium", 1]] ],
+["glass",["Item", "ressource"],["glas", "Glass"], [400, 170],[1.5, ""],[true,true,true, false, "useresource.sqf"], localize "STRS_item_glas", localize "STRS_item_farmitem_info", [["sand", 1],["silizium", 1]] ],
 
 ["getreide", ["Item", "ressource"], ["getreide", "Wheat"],[20, 20], [0.5, ""],[true,true,true, false, "food.sqf"], localize "STRS_inv_item_getreide", localize "STRS_inv_item_nahrung_info", []],
 
@@ -569,13 +569,13 @@ INV_AlleItemsArray = [
 
 ["Diamond rock",["Item", "ressource"],["Diamond rock", "Diamond rock"],[3, 10], [2, ""], [true, true, true,false,"useresource.sqf"],localize "STRS_item_Diamond",localize "STRS_item_farmitem_info", []],
 
-["Rubies",["Item", "ressource"],["Rubies", "Rubies"],[142.5, 62], [3, ""], [true, true, true,false,"useresource.sqf"],"Rubies",localize "STRS_item_farmitem_info", []],
+["Rubies",["Item", "ressource"],["Rubies", "Rubies"],[142, 71], [2, ""], [true, true, true,false,"useresource.sqf"],"Rubies",localize "STRS_item_farmitem_info", []],
 
-["Platinum",["Item", "ressource"],["Platinum", "Platinum"],[200, 90], [2, ""], [true, true, true,false,"useresource.sqf"],"Platinum",localize "STRS_item_farmitem_info", []],
+["Platinum",["Item", "ressource"],["Platinum", "Platinum"],[200, 100], [2, ""], [true, true, true,false,"useresource.sqf"],"Platinum",localize "STRS_item_farmitem_info", []],
 
 ["Silver",["Item", "ressource"],["Silver", "Silver"],[125, 57.5], [1.8, ""], [true, true, true,false,"useresource.sqf"],localize "STRS_item_silver",localize "STRS_item_farmitem_info", []],
 
-["Gold",["Item", "ressource"],["Gold", "Gold"],[250, 70], [4, ""], [true, true, true,false,"useresource.sqf"],localize "STRS_item_gold",localize "STRS_item_farmitem_info", []],
+["Gold",["Item", "ressource"],["Gold", "Gold"],[250, 125], [4, ""], [true, true, true,false,"useresource.sqf"],localize "STRS_item_gold",localize "STRS_item_farmitem_info", []],
 
 ["Oil",["Item", "ressource"],["Oil", "Oil"],[0, 0], [2, ""], [true, true, true,false,"useresource.sqf"],"Oil",localize "STRS_item_farmitem_info", []],
 
@@ -593,13 +593,13 @@ INV_AlleItemsArray = [
 
 ["Unprocessed_Heroin",["Item", "illegal"],["Unprocessed Heroin", "Unprocessed Heroin"],[0, 0], [1, ""], [true, true, true,true,"useresource.sqf"],localize "STRS_inv_item_heroin",localize "STRS_item_farmitem_info", [] ],
 
-["Cannabis",["Item", "illegal"],["Cannabis", "Cannabis"],[1512, 525], [2, ""], [true, true, true,true,"drugs.sqf"],localize "STRS_inv_item_Cannabis",localize "STRS_inv_item_drogen_info", [["Unprocessed_Cannabis", 8]]],
+["Cannabis",["Item", "illegal"],["Cannabis", "Cannabis"],[1512, 650], [2, ""], [true, true, true,true,"drugs.sqf"],localize "STRS_inv_item_Cannabis",localize "STRS_inv_item_drogen_info", [["Unprocessed_Cannabis", 8]]],
 
-["cocaine",["Item", "illegal"],["cocaine", "Cocaine"],[1512, 725], [2, ""], [true, true, true,true,"drugs.sqf"],localize "STRS_inv_item_cocaine",localize "STRS_inv_item_drogen_info", [["Unprocessed_Cocaine", 10]]],
+["cocaine",["Item", "illegal"],["cocaine", "Cocaine"],[1512, 800], [2, ""], [true, true, true,true,"drugs.sqf"],localize "STRS_inv_item_cocaine",localize "STRS_inv_item_drogen_info", [["Unprocessed_Cocaine", 10]]],
 
-["lsd", ["Item", "illegal"], ["lsd", "LSD"],[1512, 525], [2, ""],[true,true,true, true, "drugs.sqf"], localize "STRS_inv_item_lsd",localize "STRS_inv_item_drogen_info", [["Unprocessed_LSD", 15]]],
+["lsd", ["Item", "illegal"], ["lsd", "LSD"],[1512, 650], [2, ""],[true,true,true, true, "drugs.sqf"], localize "STRS_inv_item_lsd",localize "STRS_inv_item_drogen_info", [["Unprocessed_LSD", 15]]],
 
-["heroin", ["Item", "illegal"], ["heroin", "Heroin"],[1512, 725], [2, ""],[true,true,true, true, "drugs.sqf"], localize "STRS_inv_item_heroin",localize "STRS_inv_item_drogen_info", [["Unprocessed_Heroin", 20]]],
+["heroin", ["Item", "illegal"], ["heroin", "Heroin"],[1512, 800], [2, ""],[true,true,true, true, "drugs.sqf"], localize "STRS_inv_item_heroin",localize "STRS_inv_item_drogen_info", [["Unprocessed_Heroin", 20]]],
 
 ["handy",["Item", "Shop"], ["handy", "Smartphone"], [50, 22], [0, ""],[true,false,false, false, "handy.sqf"], localize "STRS_inv_item_handy",localize "STRS_inv_item_handy_info", [["plastik", 2],["ebauteile", 2]]],
 
@@ -645,7 +645,7 @@ INV_AlleItemsArray = [
 
 ["Fort_Barricade_EP1",["Item", "misc"],["Fort_Barricade_EP1", "Road barricade"],[500, 0], [60, "bomb", ""], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_barrack",localize "STRS_inv_item_barrack_info", [] ],
 
-["Diamondring",["Item", "Ring"],["Diamond Ring", "Diamond Ring"],[3300, 2400], [0.1, ""], [true, true, true, false,"nouse.sqf"],"Diamond Ring","Sell at the Jewelry store", [["Diamond rock", 10]]],
+["Diamondring",["Item", "Ring"],["Diamond Ring", "Diamond Ring"],[3200, 1600], [0.1, ""], [true, true, true, false,"nouse.sqf"],"Diamond Ring","Sell at the Jewelry store", [["Diamond rock", 10]]],
 
 ["EDiamondring",["Item", "Ring"],["Expensive Diamond Ring", "Expensive Diamond Ring"],[2100, 1600], [0.5, ""], [true, true, true, false,"nouse.sqf"],"Expensive Diamond Ring","Sell at the Jewelry store", [["Diamond rock", 15],["Gold", 10]]],
 
@@ -759,7 +759,7 @@ INV_AlleItemsArray = [
 ["Sheep",["Animal","Sheep"],["Sheep","Sheep (Pet)"], [2000,1000], [0.1, "", ""],[true,false,true, false, "armitxes\pet.sqf"],"Hen (Sheep)","Hen (Sheep)"],
 ["WildBoar",["Animal","WildBoar"],["WildBoar","Wild Boar (Pet)"], [2000,1000], [0.1, "", ""],[true,false,true, false, "armitxes\pet.sqf"],"Wild Boar (Pet)","Wild Boar (Pet)"],
 
-["C4",["Item","illegal"],["C4","C4 (Explosive)"], [15000,7500], [0.1, "bomb", "sobr_training"],[true,false,true, false, "armitxes\explosive.sqf"],"C4 (Explosive)","C4 (Explosive)"]
+["C4",["Item","illegal"],["C4","C4 (Explosive)"], [25000,7500], [0.1, "bomb", "sobr_training"],[true,false,true, false, "armitxes\explosive.sqf"],"C4 (Explosive)","C4 (Explosive)"]
 ];
 
 // Create an Array of Everything
