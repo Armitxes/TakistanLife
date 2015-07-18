@@ -37,7 +37,7 @@ switch (_action) do  {
 		buttonSetAction [3, "constLawAccepted=true;closeDialog 1603;"];
 		waitUntil {isNull ((findDisplay 3000) displayCtrl 3)};
 		if(constLawAccepted) then {
-			constitution = constitution + [_this select 1]; publicVariable constitution;
+			constitution = constitution + [_this select 1]; publicVariable "constitution";
 		} else { ('server globalChat "The United Nations denied a new constitution paragraph";') call toClients; };
 	};
 };
