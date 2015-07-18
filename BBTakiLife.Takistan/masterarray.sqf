@@ -759,7 +759,7 @@ INV_AlleItemsArray = [
 ["Sheep",["Animal","Sheep"],["Sheep","Sheep (Pet)"], [2000,1000], [0.1, "", ""],[true,false,true, false, "armitxes\pet.sqf"],"Hen (Sheep)","Hen (Sheep)"],
 ["WildBoar",["Animal","WildBoar"],["WildBoar","Wild Boar (Pet)"], [2000,1000], [0.1, "", ""],[true,false,true, false, "armitxes\pet.sqf"],"Wild Boar (Pet)","Wild Boar (Pet)"],
 
-["C4",["Item","illegal"],["C4","C4 (Explosive)"], [25000,7500], [0.1, "bomb", "sobr_training"],[true,false,true, false, "armitxes\explosive.sqf"],"C4 (Explosive)","C4 (Explosive)"]
+["C4",["Item","illegal"],["C4","C4 (Explosive)"], [15000,7500], [0.1, "bomb", "sobr_training"],[true,false,true, false, "armitxes\explosive.sqf"],"C4 (Explosive)","C4 (Explosive)"]
 ];
 
 // Create an Array of Everything

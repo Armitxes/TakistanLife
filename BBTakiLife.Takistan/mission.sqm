@@ -37612,13 +37612,13 @@ class Mission
 		class Item3606
 		{
 			position[]={6326.2861,326.05954,5002.4712};
-			azimut=-15.715508;
+			azimut=-15.7155;
 			id=3726;
 			side="EMPTY";
 			vehicle="T72_TK_EP1";
 			lock="LOCKED";
 			skill=0.2;
-			init="this allowdamage false; removeAllWeapons this;";
+			init="this allowdamage false; this enableSimulation false; removeAllWeapons this;";
 		};
 		class Item3607
 		{
@@ -37712,12 +37712,12 @@ class Mission
 		class Item3616
 		{
 			position[]={6328.3394,324.76083,5046.0615};
-			azimut=-32.699768;
+			azimut=-32.699799;
 			id=3736;
 			side="EMPTY";
 			vehicle="PowGen_Big_EP1";
 			skill=0.2;
-			init="this setpos [6328.3394, 5046.0615, 3.0517578e-005];";
+			init="this enableSimulation false; this allowDamage false;";
 		};
 		class Item3617
 		{
@@ -37737,7 +37737,7 @@ class Mission
 			vehicle="ZU23_TK_GUE_EP1";
 			lock="LOCKED";
 			skill=0.2;
-			init="removeAllWeapons this;; this setpos [6301.3125, 5048.4082, -3.0517578e-005];";
+			init="removeAllWeapons this;this enableSimulation false;";
 		};
 		class Item3619
 		{
