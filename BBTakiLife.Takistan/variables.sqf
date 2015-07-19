@@ -15,6 +15,7 @@ dmgLegs = 0;
 usepick = false;
 isheal = false;
 mlaw = false;
+lastBite = 0;
 add_workplace			= 75;
 copchoprespawntime		= 120;
 CopWaffenAvailable		= 0;

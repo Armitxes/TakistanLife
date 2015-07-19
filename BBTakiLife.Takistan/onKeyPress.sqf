@@ -306,20 +306,24 @@ switch _key do
 	case 57: {
 		if(!INV_shortcuts)exitwith{};
 		if(player isKindOf "Animal") then {
-			_target = nearestObject [player, "Man"];
-			if ((player distance _target) < 2) then {
-				if((damage _target) == 0) then {
-					_target setHit ["hands",1];
-					_target setDamage 0.2;
-				} else {
-					if (canStand _target) then { _target setHit ["legs",1]; } else {
-						if(!(alive _target)) exitWith {};
-						_toDeath = ["civillying01","adthpercmstpslowwrfldnon_4","adthppnemstpsraswpstdnon_2"];
-						if(!dragging && (animationstate _target in _toDeath)) then {
-							_target setDamage 1;
-							(format["server globalchat ""%1 did bite %2 to death."";", name player, name _target]) call toClients;
-						} else {
-							(format ["if (player == %1) then {[""hit"", %2, ""Melee"", 1] execVM ""stun.sqf""};", _target, player]) call toClients;
+			_targets = (nearestObjects [player,["Man"],5])-[player];
+			if(count(_targets) > 0 && lastBite+3 < time) then {
+				lastBite = time;
+				_target = _targets select 0;
+				if ((player distance _target) < 3) then {
+					if((damage _target) == 0) then {
+						_target setHit ["hands",1];
+						_target setDamage 0.2;
+					} else {
+						if (canStand _target) then { _target setHit ["legs",1]; } else {
+							if(!(alive _target)) exitWith {};
+							_toDeath = ["civillying01","adthpercmstpslowwrfldnon_4","adthppnemstpsraswpstdnon_2"];
+							if ( (!dragging && (animationstate _target in _toDeath)) || !isPlayer _target ) then {
+								_target setDamage 1;
+								(format["server globalchat ""%1 did bite %2 to death."";", name player, name _target]) call toClients;
+							} else {
+								(format ["if (player == %1) then {[""hit"", %2, ""Melee"", 1] execVM ""stun.sqf""};", _target, petOwner]) call toClients;
+							};
 						};
 					};
 				};

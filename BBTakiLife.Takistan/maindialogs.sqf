@@ -157,8 +157,8 @@ switch (_art) do {
 	lbAdd [1, _trennlinie];
 
 	lbAdd [1, "B A N K - & - CASINO SAFE"];
-	lbAdd [1, (format ["Est. total funds in the main bank safe: $%1", robpoolsafe])];
-	lbAdd [1, (format ["Est. total funds in the casino safe: $%1", crobpoolsafe])];
+	lbAdd [1, (format ["Est. total funds in the main bank safe: $%1", robsafes select 0])];
+	lbAdd [1, (format ["Est. total funds in the casino safe: $%1", robsafes select 1])];
 	if(!local_useBankPossible)then{lbAdd [1, (format ["Bank lockout time remaining: %1 seconds.", round rblock])]};
 
 	lbAdd [1,""];lbAdd [1,""];

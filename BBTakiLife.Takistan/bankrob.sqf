@@ -3,7 +3,7 @@ _art  = _this select 0;
 _safe = _this select 1;
 
 if (_art == "ausrauben") then {
-  _robpool = robpoolsafe;
+  _robpool = robsafes select 0;
   _copplayernumber = playersNumber west;
   if (_copplayernumber < 5)exitWith{player groupchat "There are not enough cops on to rob this safe"};
   if(_robpool < 15000)exitWith{player groupchat "This safe has recently been stolen from and is empty"};
@@ -12,8 +12,8 @@ if (_art == "ausrauben") then {
   
   robenable = false;
   _startRob = round(time)+300;
-  robpoolsafe = 0;
-  publicVariable "robpoolsafe"; 
+  robsafes set [0,0];
+  publicVariable "robsafes"; 
   player groupChat format[localize "STRS_bank_rob_info"];
   player playmove "AinvPknlMstpSlayWrflDnon_medic";
   
