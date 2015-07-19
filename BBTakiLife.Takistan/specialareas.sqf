@@ -10,6 +10,6 @@ while {true} do {
     };
     case "FlagCarrierBLUFOR_EP1": { titletext ["This area is under full jurisdiction of the Police!","plain down"]; };
   };
-  if((driver _vcl) == player && (offduty+900) < time) exitWith {endMission "loser";};
+  if((driver _vcl) == player && (afk+900) < time) exitWith {endMission "loser";};
   sleep 5;
 };

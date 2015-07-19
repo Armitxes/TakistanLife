@@ -4,7 +4,7 @@ _key     = _this select 1;
 _shift   = _this select 2;
 _handled = false;
 
-offduty = time;
+afk = time;
 
 if(isstunned || (([player] call plr_isUnConscious) && _key != 50)) exitWith
 {

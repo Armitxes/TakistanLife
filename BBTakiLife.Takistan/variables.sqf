@@ -301,7 +301,8 @@ INV_haswepshop           = 0;
 BuildingsOwnerArray 	 = [];
 districts = ["None","North","North/East","North/West","South","Patrol Duty","Off-Duty","Suspended"];
 lastAttack = 0;
-offduty = time;
+afk = time;
+onduty = time;
 
 if(isciv) then {
 	BuyAbleBuildingsArray = [

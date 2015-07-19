@@ -159,3 +159,4 @@ unholsterPist = _role addAction ["Unholster Pistol","armitxes\holster.sqf",1,1,f
 actPGarage = _role addAction ["Put in Garage","armitxes\remote.sqf","pGarage",1,false,true,"",'_vcl = (nearestobjects [getpos player, ["Air","LandVehicle"], 3] select 0);player distance _vcl < 5 and _vcl in INV_VehicleArray'];
 actSGarage = _role addAction ["Garage","armitxes\remote.sqf","gGarage",1,false,true,"",'(player distance impoundbuy <= 5) || (player distance copcar <= 5) || (player distance unair <= 5) || (player distance southcar <= 5) || (player distance carshop1 <= 5)'];
 actSergeant = _role addAction ["Sergeant Menu","armitxes\dialogs\controller.sqf","sergeant",1,false,true,"",'iscop && (((PLAYERDATA select 4 == 1) && (PLAYERDATA select 5 > 6) && (PLAYERDATA select 5 < 51)) || PLAYERDATA select 2 > 237)'];
+actOffDuty = _role addAction ["On/Off Duty","armitxes\districts.sqf","offduty",1,false,true,"",'iscop'];

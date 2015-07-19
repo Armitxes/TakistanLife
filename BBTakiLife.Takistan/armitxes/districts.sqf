@@ -1,4 +1,5 @@
 _action = _this select 0;
+if(typeName _action != "STRING") then {_action=_this select 3;};
 
 switch(_action) do {
 	case "assignDistrict": {
@@ -37,6 +38,21 @@ switch(_action) do {
 			sleep 300;
 			_data = player getVariable "pubPlrData";
 			if((_data select 3) == 7) then { ["save"] execVM "armitxes\_db.sqf"; endMission "loser"; } else {isciv = false; iscop=true;};
+		};
+	};
+	case "offduty": {
+		_pub = player getVariable "pubPlrData";
+		_duty = _pub select 3;
+		if(!(_duty == 7)) then {
+			if(_duty == 6) then {
+				_pub set [3,0];
+				player setVariable ["pubPlrData",_pub,true]; sleep 4; server globalChat "you are now on duty";
+			} else {
+				if(onduty+600 < time) then {
+					onduty = time; _pub set [3,6];
+					player setVariable ["pubPlrData",_pub,true]; sleep 4; server globalChat "you are now off duty";
+				} else { server globalChat "You must be on duty for atleast 10 minutes." };
+			};	
 		};
 	};
 };
