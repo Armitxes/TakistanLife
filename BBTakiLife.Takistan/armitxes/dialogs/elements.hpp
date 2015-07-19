@@ -363,7 +363,7 @@ class ArmiID:liste_1_button {
 	movingEnable = 1;
 	enableSimulation = true;
 	
-	controlsBackground[] = {bgID};
+	controlsBackground[] = {bgID,bgLics};
 	class objects {};  
 	controls[] = {lizenzen,lblName,lblFaction,lblRank,lblNation,lblUID};
 	class bgID: ARM_RscPicture {
@@ -374,6 +374,11 @@ class ArmiID:liste_1_button {
 		w = 0.4 * safezoneW;
 		h = 0.6 * safezoneH;
 		class Attributes { align = "left"; };
+	};
+	class bgLics: RscBackground {
+		y = 0.15 * safezoneH + safezoneY;
+		x = 0.6;w = 0.3;h = 0.86;
+		colorBackground[] = { 0, 0, 0, 0.8 };
 	};
 	class lizenzen: spielerliste {
 		y = 0.15 * safezoneH + safezoneY;
