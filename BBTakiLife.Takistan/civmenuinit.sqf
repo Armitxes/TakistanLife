@@ -33,13 +33,7 @@ switch (_art) do {
     if(!(_civmenuciv call ISSE_IsVictim))exitwith{hint localize "STRS_inventory_checknohands"};
     (format ["if (rolestring == ""%1"") then {[""inventcheck"", ""%2""] execVM ""civmenu.sqf"";}", _civmenu_civ, rolestring]) call toClients;  
   };
-  case 7: {
-    if(iscop && (((PLAYERDATA select 4) == 1 && ((PLAYERDATA select 5) == 150)) || ischief)) then {
-      (format ["systemChat ""%2 has been suspended from duty by IAD""; if (player == %1) then { iscop = false; isciv = true; [""use"",""civUni2""] execVM ""armitxes\clothing.sqf""; };", _civmenu_civ,(name _civmenu_civ)]) call toClients;
-    } else { hint "You are not a IAD Officer"; };
-  };
   case 8: { (format ["if (rolestring == ""%1"") then {[""licencheck"", ""%2""] execVM ""civmenu.sqf"";}", _civmenu_civ, rolestring]) call toClients; };
-  
   case 20: {
     if(!(_civmenuciv call ISSE_IsVictim))exitwith{hint localize "STRS_inventory_checknohands"};
     (format ["if (%1 == player) then {[""stealmoney"",%2] execVM ""civmenu.sqf"";};",_civmenuciv,player]) call toClients;

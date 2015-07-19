@@ -40870,15 +40870,15 @@ class Mission
 		};
 		class Item3955
 		{
-			position[]={1429.7213,222.28938,3527.9714};
-			azimut=754.42902;
+			position[]={1478.8195,235.23094,3662.3284};
+			azimut=1065.27;
 			special="NONE";
 			id=4077;
 			side="EMPTY";
 			vehicle="Infostand_2_EP1";
 			skill=0.60000002;
 			text="resourcesell2";
-			init="this allowDamage false; this enableSimulation false;this setpos [getpos this select 0, getpos this select 1, 0.2];";
+			init="this allowDamage false; this enableSimulation false;this setpos [getpos this select 0, getpos this select 1, 0];";
 		};
 		class Item3956
 		{
@@ -42726,7 +42726,7 @@ class Mission
 		};
 		class Item209
 		{
-			position[]={1424.0651,216.95166,3500.1646};
+			position[]={1433.6725,216.35301,3504.5706};
 			name="southcarspawn";
 			type="Empty";
 		};
@@ -42902,12 +42902,12 @@ class Mission
 		};
 		class Item235
 		{
-			position[]={1429.5997,222.28882,3527.6892};
+			position[]={1478.9342,235.2115,3662.6135};
 			name="resourcesell_2";
 			text="Resource Seller";
 			type="mil_dot";
 			colorName="ColorGreen";
-			angle=144.974;
+			angle=323.82037;
 		};
 		class Item236
 		{
