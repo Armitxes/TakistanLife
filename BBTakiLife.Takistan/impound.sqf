@@ -11,10 +11,11 @@ if(_art == "impound") then
   _dollarz = 200;
   format['hint format[localize "STRS_inventar_impound_gesehen", "%1", "(%2)", %3]', name player, player, _vcl] call toClients;
   
-  if (_vcl isKindOf "Motorcycle") then { _dollarz = 100; deleteVehicle _vcl; } else {
+  if (_vcl isKindOf "Motorcycle" || damage _vcl > 0.9) then { _dollarz = 100; deleteVehicle _vcl; } else {
     _vcl setdamage 0;
     _vcl engineOn false;
     _vcl setvehiclelock "locked";
+	(format ["%1 enableSimulation false;",_vcl]) call broadcast;
     _vcl setpos [(getPos impoundarea1 select 0)-(random 50)+(random 50), (getPos impoundarea1 select 1)-(random 50)+(random 50), getPos impoundarea1 select 2];
   };
 
@@ -42,7 +43,8 @@ if (_art == "buy") then {
       _closestImpound = _x;
     };
   } forEach (_impounds);
-
+  
+  (format ["%1 enableSimulation true;",_vcl]) call broadcast;
   _vcl setpos getpos _closestImpound;
   _vcl setdir getdir _closestImpound;
 
