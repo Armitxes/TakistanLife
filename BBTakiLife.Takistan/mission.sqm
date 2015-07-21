@@ -91,7 +91,7 @@ class Mission
 		briefingDescription="By British Borders (http://www.britishborders.co.uk)";
 		resistanceEast=1;
 		startWeather=0;
-		forecastWeather=1;
+		forecastWeather=0;
 		year=2015;
 		month=7;
 		minute=0;
