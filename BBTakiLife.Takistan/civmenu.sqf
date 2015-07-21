@@ -91,7 +91,10 @@ if (_loopart == "inventcheck") then {
 	(format ['if (rolestring == "%1") then {[0, 0, 0, ["inventorycheck", %2, %3, %4]] execVM "maindialogs.sqf";};',_aktionsStarter, INV_LizenzOwner, INV_InventarArray, player]) call broadcast;
 };
 
-if (_loopart == "licencheck") then { (format ['if (rolestring == "%1") then {["idcard", %1, %2] execVM "armitxes\dialogs\controller.sqf";};',player,INV_LizenzOwner]) call broadcast; };
+if (_loopart == "licencheck") then {
+	_aktionsStarter = _this select 1;
+	(format ['if (rolestring == "%1") then {["idcard", %2, %3] execVM "armitxes\dialogs\controller.sqf";};',_aktionsStarter,player,INV_LizenzOwner]) call broadcast;
+};
 
 if (_loopart == "stealmoney") then {
 	_aktionsStarter = _this select 1;

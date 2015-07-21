@@ -80,7 +80,6 @@ waitUntil{scriptDone  _h};
 execVM "BTK\Cargo Drop\Start.sqf"; // Initialize BTK Cargo Drop Script
 execVM "BB Elvis towing\Start.sqf"; // Initialize BB Elvis Towing
 
-[SkipTimeDay, SkipTimeNight, 1] execVM "skiptime.sqf";
 setPitchBank = compile preprocessfile "setPitchBank.sqf";
 publicvariable "station1robbed";
 publicvariable "station2robbed";

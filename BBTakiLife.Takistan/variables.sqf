@@ -143,9 +143,6 @@ RadioTextArt_4 = "direct";
 if(isnil "param1")then{param1 = 0};
 if(isnil "param2")then{param2 = 1024};
 
-SkipTimeDay	   	 = (floor(param2/100));
-SkipTimeNight  	   	 = (param2 mod 100);
-
 isdead			 = 0;
 extradeadtime		 = 10;
 respawntimeinc		 = 15;
@@ -321,15 +318,11 @@ profs = [
 	["Medic","STR_prof_medic",200]
 ];
 
-if(isServer)then
-{
-  TankenCost = 10; publicvariable "TankenCost";
-  
-  onplayerconnected '
-  publicVariable "convoywinner";
-  publicVariable "GesetzArray";
-  publicVariable "INV_ItemTypenArray";
-  publicVariable "INV_itemstocks";
-  currentTime = daytime; publicVariable "currentTime";
+if (isServer) then {
+	TankenCost = 10; publicvariable "TankenCost";
+	onplayerconnected '
+	publicVariable "convoywinner";
+	publicVariable "GesetzArray";
+	publicVariable "INV_ItemTypenArray";
+	publicVariable "INV_itemstocks";
 };
-

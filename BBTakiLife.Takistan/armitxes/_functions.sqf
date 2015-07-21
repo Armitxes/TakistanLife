@@ -15,7 +15,6 @@ if(!isDedicated) then
 	};
 
 	fnc_ClearWarrantsArray = {
-		// fix: remove OBJ-NULL entries from wanted list
 		for [{_i=0}, {_i < (count warrantarray)}, {_i=_i+1}] do {
 			if ( isNull((warrantarray select _i) select 0) ) then {
 				warrantarray set [_i,-1]; 

@@ -112,15 +112,15 @@ switch _key do
 
 		if(isun && !(isnull _civ) && _civ in playerarray) exitwith
 		{
-		  _i = 4;
-  		call compile format['[0,0,0, ["uninteraktion", "%1", %1]] execVM "interact.sqf";', _civ];
+			_i = 4;
+			call compile format['[0,0,0, ["uninteraktion", "%1", %1]] execVM "interact.sqf";', _civ];
 			_handled=true;
 		};
 
 		if(isciv && !(isnull _civ) && _civ in playerarray) exitwith
 		{
-		  _i = 4;
-  	 	call compile format['[0,0,0, ["civinteraktion", "%1", %1]] execVM "interact.sqf";', _civ];
+			_i = 4;
+			call compile format['[0,0,0, ["civinteraktion", "%1", %1]] execVM "interact.sqf";', _civ];
 			_handled=true;
 		};
 
