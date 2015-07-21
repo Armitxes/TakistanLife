@@ -320,7 +320,7 @@ switch _key do
 							_toDeath = ["civillying01","adthpercmstpslowwrfldnon_4","adthppnemstpsraswpstdnon_2"];
 							if ( (!dragging && (animationstate _target in _toDeath)) || !isPlayer _target ) then {
 								_target setDamage 1;
-								(format["server globalchat ""%1 did bite %2 to death."";", name player, name _target]) call toClients;
+								(format["server globalchat ""%1 did bit %2 to death."";", name player, name _target]) call toClients;
 							} else {
 								(format ["if (player == %1) then {[""hit"", %2, ""Melee"", 1] execVM ""stun.sqf""};", _target, petOwner]) call toClients;
 							};

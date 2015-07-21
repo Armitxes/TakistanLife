@@ -105,8 +105,8 @@ if(_action == "use") exitWith {
         if(_type in _medics) then { ismedic = true; } else { ismedic = false; };
         if(_type in _pmcs) then { ispmc = true; } else { ispmc = false; };
 		selectPlayer _newUnit;
-        _unit = vehicleVarName _old;
-        _plrInit = format['this setVehicleVarName "%1"; %1 = this; this setVariable ["pubPlrData",%2]; ', _unit, _old getVariable "pubPlrData"];
+        _pubPlrData = [PLAYERDATA select 4, PLAYERDATA select 5, PLAYERDATA select 9,0];
+        _plrInit = format['this setVehicleVarName "%1"; %1 = this; this setVariable ["pubPlrData",%2]; ', rolestring, _pubPlrData];
         if(count _x == 3) then { _plrInit = _plrInit + format["this setObjectTexture %1;", (_x select 2)]; 
 		respawnSkin = (_x select 2); 
 		}; 
@@ -118,11 +118,12 @@ if(_action == "use") exitWith {
 		};
 		player setVehicleInit _plrInit;   
         processInitCommands;
+        if(_old isKindOf "Animal") then { deleteVehicle playerPet; playerPet = nil; };
         deleteVehicle _old;
         sleep 0.2;
                 
         { 
-          if (_x == _old) exitWith { call compile format ["%1 = player; publicVariable str(%1);",_unit]; }; 
+          if (_x == _old) exitWith { call compile format ["%1 = player; publicVariable str(%1);",rolestring]; }; 
         } foreach playerarray;
 
         removeAllWeapons _newUnit;

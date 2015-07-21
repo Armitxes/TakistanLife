@@ -27,7 +27,6 @@ if(_playerType in coptypes) then
   isciv          = false;
   sidenumber      = rolenumber - civscount;
   longrolenumber  = 1100 + sidenumber;
-  rolestring      = format["Cop%1", sidenumber];
 };
 
 
@@ -38,7 +37,6 @@ if (_playerType in untypes) then
   iscop          = false;
   sidenumber     = rolenumber - civscount;
   longrolenumber = 1200 + sidenumber;
-  rolestring     = format["UN%1", sidenumber];
 };
 
 if (player in civarray) then
@@ -48,8 +46,9 @@ if (player in civarray) then
   iscop          = false;
   sidenumber     = rolenumber;
   longrolenumber = 1000 + sidenumber;
-  rolestring     = format["Civ%1", sidenumber];
 };
+
+rolestring = str(player);
 
 //Innocent Bystander 2/11
 if (typeName player == "OBJECT") then {
