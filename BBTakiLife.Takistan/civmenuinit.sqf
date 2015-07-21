@@ -31,9 +31,9 @@ switch (_art) do {
   };
   case 6: {
     if(!(_civmenuciv call ISSE_IsVictim))exitwith{hint localize "STRS_inventory_checknohands"};
-    (format ["if (rolestring == ""%1"") then {[""inventcheck"", ""%2""] execVM ""civmenu.sqf"";}", _civmenu_civ, rolestring]) call toClients;  
+    (format ["if (player == %1) then {[""inventcheck"", %1] execVM ""civmenu.sqf"";}", _civmenuciv]) call toClients;  
   };
-  case 8: { (format ["if (rolestring == ""%1"") then {[""licencheck"", ""%2""] execVM ""civmenu.sqf"";}", _civmenu_civ, rolestring]) call toClients; };
+  case 8: { (format ["if (player == %1) then {[""licencheck"", %1] execVM ""civmenu.sqf"";}", _civmenuciv]) call toClients; };
   case 20: {
     if(!(_civmenuciv call ISSE_IsVictim))exitwith{hint localize "STRS_inventory_checknohands"};
     (format ["if (%1 == player) then {[""stealmoney"",%2] execVM ""civmenu.sqf"";};",_civmenuciv,player]) call toClients;
