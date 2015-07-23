@@ -35,6 +35,12 @@ if("DevCon" in _patches) then
   while {true} do
   {
     if(
+      !isNil {DZE_StaticConstructionCount} ||
+      !isNil {l33thtmlv1} ||
+      !isNil {MainScripts} ||
+      !isNil {junbut} ||
+      !isNil {Lando_Godmode} ||
+      !isNil {B1g_B3nProEsp} ||
       !isNil {scroll_m_init_star} ||
       !isNil {exstr1} ||
       !isNil {pathtoscrdir3} ||
