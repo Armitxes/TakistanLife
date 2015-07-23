@@ -10,7 +10,8 @@ switch (_art) do {
   case 1: { (format ["if (player == %1) then {[""drugs"", %2] execVM ""civmenu.sqf"";};", _civmenuciv, player]) call toClients; };
   case 2: {
    //if(!(_civmenuciv call ISSE_IsVictim) || !([civmenu_civ] call plr_isUnConscious)) exitwith{hint localize "STRS_inventory_checknohands"};
-    (format ["if (player == %1) then {[""disarm""] execVM ""civmenu.sqf"";};", _civmenuciv]) call toClients;
+    if (isciv) exitWith {player groupchat "You cannot disarm people as a civilian"};
+	(format ["if (player == %1) then {[""disarm""] execVM ""civmenu.sqf"";};", _civmenuciv]) call toClients;
     player groupChat format [localize "STRS_civmenu_disarm", _civmenu_civ];
   };
   case 3: {
