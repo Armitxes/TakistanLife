@@ -33,7 +33,7 @@ if((alive player)
             case "legs": { dmgLegs = dmgLegs + _damage; };
           };
 		if (!(isNil "_vcl")) then {
-		if ((vehicle player != player) && (_shooter == _vcl)) then { dmgBody = dmgBody + _damage};};
+		if ((vehicle player != player) && (_shooter == _vcl) && (_damage > 0.1)) then { dmgBody = dmgBody + _damage};};
           
           player setHit ["hands",dmgHands]; player setHit ["legs",dmgLegs];
           
@@ -57,7 +57,7 @@ if((alive player)
               if (Antwort == 1) then {
                 _medCount = 0;
                 {
-                  if((typeOf _x) in ["Dr_Hladik_EP1","USMC_LHD_Crew_Blue","Doctor"]) then { _medCount = _medCount + 1; }; 
+                  if((typeOf _x) in ["Dr_Hladik_EP1","USMC_LHD_Crew_Blue","Doctor","Worker2"]) then { _medCount = _medCount + 1; }; 
                 } forEach playableUnits;
             
                 if (_medCount > 0) then {

@@ -6,29 +6,12 @@ if (_art == "use") then
 
 _item   = _this select 1;
 _anzahl = _this select 2;
-_closeVcl   = dummyobj;
-_closest    = -1;
+_vcls    = nearestobjects [getpos player,["LandVehicle", "Air", "ship"], 7];
+_closevcl     = _vcls select 0;
 _incarpark = false;
-  {
 
-	if (not(isNull(_x))) then
 
-		{
-
-		if (player distance _x < 7 and (player distance _x < _closest or _closest == -1)) then
-
-			{
-
-			_closest  = (player distance _x);
-			_closeVcl = _x;
-
-			};
-
-		};
-
-	} forEach INV_ServerVclArray;
-
-if (not(_closest == -1)) then
+if (!(isNull(_closevcl))) then
 
 	{
 	if (usepick) exitWith {player groupChat "You are already using a lockpick"};

@@ -324,5 +324,5 @@ if (isServer) then {
 	publicVariable "convoywinner";
 	publicVariable "GesetzArray";
 	publicVariable "INV_ItemTypenArray";
-	publicVariable "INV_itemstocks";
+	publicVariable "INV_itemstocks";';
 };
