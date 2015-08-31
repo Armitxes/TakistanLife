@@ -55,7 +55,7 @@ if(typeName (_this select 0) == "STRING") then {
     server globalChat (format ["C4 defused. Forensics found the fingerprints of %1 on the explosive",_owner]);  
   };
   if(_this select 3 == "explode") exitWith {
-    if(!(isNil "bombAttachment") && !(animationstate player == "civillying01") && !(player call ISSE_IsVictim)) then {    
+    if(!(isNil "bombAttachment") && !(animationState player == "civillying01") && !(player call ISSE_IsVictim)) then {    
       _bombs = nearestObjects [bombAttachment, ["Explosive"], 100];
       switch (typeName bombAttachment) do {
         case "OBJECT": {
