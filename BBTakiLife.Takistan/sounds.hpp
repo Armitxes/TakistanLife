@@ -5,10 +5,17 @@ class Siren_Short
 	titles[]	= {};
 };
 
-class Siren_Long
+class Siren_Cop
 {
 	name		= "";
-	sound[]		= {"\Siren_Long.ogg", 1, 1};
+	sound[]		= {"\Siren_Cop.ogg", 1, 1};
+	titles[]	= {};
+};
+
+class Siren_EMS
+{
+	name		= "";
+	sound[]		= {"\armitxes\sounds\Siren_EMS.ogg", 1, 1};
 	titles[]	= {};
 };
 
