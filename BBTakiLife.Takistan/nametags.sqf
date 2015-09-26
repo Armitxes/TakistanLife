@@ -1,6 +1,6 @@
 private ["_control2","_car","_faceTP", "_tag", "_vcls", "_stn", "_distTP", "_distCP", "_distSP"];
 
-call disableserialization;
+disableSerialization;
 
 while {true} do {
 	for [{_i=1}, {_i < 25}, {_i=_i+2}] do {
