@@ -59,7 +59,8 @@ switch (_art) do {
 	_list = lbAdd [4, "Theft of UN/Cop Vehicle"];
 	_list = lbAdd [4, "Illegal Border Crossing"];
 	_list = lbAdd [4, "Crimes Against Humanity"]; 
-    _list = lbAdd [4, "Abuse of Emergency call"];	
+    _list = lbAdd [4, "Abuse of Emergency call"];
+    _list = lbAdd [4, "Slavery"];	
   
 	lbSetCurSel [4, 0];
   

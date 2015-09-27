@@ -60,19 +60,23 @@ if (isServer) then {
     -1,//southvehshop #66
     -1, //southairshop #67
     -1, //southgovshop #68
-    [30,30,30,30,-1], //equipmentshop 3 #69
+    [100,100,100,100,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //equipmentshop 3 #69
     -1, // Trained Cop #70
     -1, // UN NCO #71
     -1,// Clothing Shop #72
-    -1,//Clothing Shop Basic
     -1,//doc
     -1,//hosair
+	-1,// Clothing Shop Basic
+	-1,// South Clothing Shop
     -1,// PMC Shop	
     -1,// PMC Car
     -1,// PMC Air
     -1, // Pet Shop
-    [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],// South Car
-    -1 // RS 2
+    -1,	// RS 2
+	[-1,-1,20], // Mining Tools South
+    [10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1] // Gunshop 2 
+	
+	
   ];
 
   publicvariable "INV_itemstocks";
@@ -139,19 +143,21 @@ INV_itemmaxstocks = [
 -1,//southvehshop #66
 -1, //southairshop #67
 -1, //southgovshop #68
-[30,30,30,30,-1], //equipmentshop 3 #69
+[100,100,100,100,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //equipmentshop 3 #69
 -1, // Trained Cop #70
 -1, // UN NCO #71
 -1,// Clothing Shop #72
--1,//Clothing Shop Basic
 -1,//doc
 -1,//hosair
+-1,//Clothing Shop Basic
+-1,//Clothing Shop South
 -1,// PMC Shop	
 -1,// PMC Car
 -1,// PMC Air
 -1,
-[-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], // South Car
--1 // RS 2
+-1, // RS 2
+[-1,-1,20], // Mining Tools South
+[20,-1,20,-1,20,-1,20,-1,20,-1,20,-1,20,-1,20,-1,20,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1] // Gunshop 2 
 ];
 
 
@@ -189,7 +195,7 @@ _as = ["AH6X_EP1","An2_1_TK_CIV_EP1","C130J_US_EP1","V3S_Repair_TK_GUE_EP1","V3S
 //Mining Shop
 _ms = ["Shovel","Pickaxe","JackHammer"];
 //Resource Shop
-_rs = ["Platinum","Gold","Silver","Rubies","iron","copper","steel","sand","glass"];
+_rs = ["Platinum","Gold","Silver","Rubies","iron","copper","steel","glass"];
 //Diamond Sell
 _gds = ["Diamondring","EDiamondring","Platinumring","EPlatinumring"];
 //Oil Trader/Seller
@@ -207,11 +213,11 @@ _dsl = ["lsd"];
 //Heroin Sell
 _dsh = ["heroin"];
 //Cop Vehicle Shop
-_cv = ["Old_bike_TK_INS_EP1","MMT_USMC","M1030_US_DES_EP1","ATV_US_EP1","VolhaLimo_TK_CIV_EP1","LadaLM","UAZ_Unarmed_TK_EP1","BAF_Offroad_D","SUV_TK_CIV_EP1_COP","HMMWV_M1035_DES_EP1","MTVR_DES_EP1","MtvrReammo_DES_EP1","MtvrRepair_DES_EP1","MtvrRefuel_DES_EP1"];
+_cv = ["Old_bike_TK_INS_EP1","MMT_USMC","M1030_US_DES_EP1","ATV_US_EP1","VolhaLimo_TK_CIV_EP1","LadaLM","UAZ_Unarmed_TK_EP1","BAF_Offroad_D","SUV_COP","HMMWV_M1035_DES_EP1","MTVR_DES_EP1","MtvrReammo_DES_EP1","MtvrRepair_DES_EP1","MtvrRefuel_DES_EP1"];
 //Cop Air Shop
 _ca = ["MH6J_EP1","AH6X_EP1_COP"];
 //SOBR Vehicle Shop
-_sv = ["SUV_TK_CIV_EP1_SCO","HMMWV_DES_EP1","HMMWV_M1151_M2_DES_EP1","M2A3_EP1","BAF_Jackal2_L2A1_D"];
+_sv = ["SUV_SCO","HMMWV_DES_EP1","HMMWV_M1151_M2_DES_EP1","M2A3_EP1","BAF_Jackal2_L2A1_D"];
 //SOBR Air Shop
 _sa = ["MH6J_EP1","UH60M_EP1"];
 // UN vehicles
@@ -387,6 +393,7 @@ _copfo=
 "copUni10",
 "US_Backpack_EP1",
 "M4A1",
+"M4A1_AIM",
 "M16A4",
 "M4A1_HWS_GL",
 "30Rnd_556x45_Stanag",
@@ -815,10 +822,12 @@ INV_ItemShops = [
 [objNull,"Hospital",dummyobj,"hosSpwn",_hos,_hos,false],
 [objNull,"Hospital Air",dummyobj,"hosairSpwn",_hosair,_hosair,false],
 [clothcivbase, "Clothing Shop",dummyobj,dummyobj,_civClothbase,_civClothbase,true],
+[objNull, "Clothing Shop",dummyobj,dummyobj,_civClothbase,_civClothbase,true],
 [pmcshop,"PMC Shop",pmcbox,dummyobj,_pmcshop,_pmcshop,true],
 [pmccar,"PMC Car Shop",dummyobj,"pmccarspawn",_pmccar,_pmccar,true],
 [pmcair,"PMC Air Shop",dummyobj,"pmcairspawn",_pmcair,_pmcair,true],
 [petshop,"Pet Shop",dummyobj,dummyobj,_petShop,_petShop,true],
-[southcar,"Car Shop",dummyobj,"southcarspawn",_cs,_cs,true],
-[resourcesell2,"Sell Resources",dummyobj,dummyobj,_rs,_rs,true]
+[resourcesell2,"Sell Resources",dummyobj,dummyobj,_rs,_rs,true],
+[Oil_2,"Mining equipment",dummyobj,dummyobj,_ms,_ms,true], 
+[gunshop2,"Gun Shop",gunbox2,dummyobj,_gs,_gs,true]
 ];

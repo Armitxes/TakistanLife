@@ -25,7 +25,7 @@ switch (_action) do {
 					if (isciv && _judCount < 1 && (PLAYERDATA select 2) > 0) then {
 						[-_cost] call setMoney;
 						["use","civUni9"] execVM "armitxes\clothing.sqf";
-						isjudge = true;
+						
 					} else { server globalChat "There can't be more than 1 judge and you must be a civ. Try again later."; }; 
 				};
 				case "Lawyer": {

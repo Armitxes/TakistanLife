@@ -9,7 +9,8 @@ if (_art == "use") then {
 	[_item, -1] call INV_AddInventoryItem;
 	_pos = [(position player select 0) + (sin(getdir player)*2), (position player select 1) + (cos(getdir player)*2), 0];
 	_obj = _class createvehicle [0, 0, 0];
-	_obj setVehicleInit "this enableSimulation false;";
+	if(_class != "M2StaticMG_US_EP1" || _class != "DSHKM_TK_INS_EP1") then {
+	_obj setVehicleInit "this enableSimulation false;";} else {_obj setVehicleInit "this enableSimulation true;";};
 	_obj setdir getdir player;
 	_obj setpos _pos;
 	processInitCommands;

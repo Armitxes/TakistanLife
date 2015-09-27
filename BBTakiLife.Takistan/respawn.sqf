@@ -109,8 +109,10 @@ while {true} do
 			deleteVehicle role;
 			waituntil {deadcam == 0};
 			isdead = 0;
-			player setPos (getMarkerPos "respawn_civilian");
-		};
+			if((PLAYERDATA select 9) == 2) then {player setPos (getMarkerPos "respawn_civilian2");
+			} else {
+			player setPos (getMarkerPos "respawn_civilian");};
+			};
 		
 		if (iscop || isun) then {
 			removeAllWeapons role;

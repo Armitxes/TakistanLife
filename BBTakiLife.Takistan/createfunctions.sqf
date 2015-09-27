@@ -51,7 +51,7 @@ INV_CreateVehicle =
 	newvehicle = _classname createVehicle _position;
 	newvehicle setpos _position;
 	newvehicle setdir _dir;
-	newvehicle setVariable ["owner",[name player, getPlayerUID player],true];
+	newvehicle setVariable ["owner",[name player, getPlayerUID player, _itemname],true];
 	call compile format ['
 			newvehicle setVehicleInit "this setVehicleVarName ""vehicle_%1_%2"";
 			vehicle_%1_%2 = this;
@@ -96,11 +96,11 @@ if (_classname == "An2_TK_EP1") then {
 };
 if (_itemname == "AH6X_EP1_COP") then {
 newvehicle setVehicleInit 'this setObjectTexture [0, "images\PoliceHeli.paa"]'; processInitCommands;};
-if (_classname == "SUV_TK_CIV_EP1") then {
-	if (_itemname == "SUV_TK_CIV_EP1_COP") then {
-newvehicle setVehicleInit 'this setObjectTexture [0, "images\copsuv.paa"]'; processInitCommands; };
-	if (_itemname == "SUV_TK_CIV_EP1_SCO") then {
-newvehicle setVehicleInit 'this setObjectTexture [0, "images\scosuv.paa"]'; processInitCommands; };};
+
+if (_itemname == "SUV_COP") then {
+	newvehicle setVehicleInit 'this setObjectTexture [0, "images\copsuv.paa"]'; processInitCommands; };
+if (_itemname == "SUV_SCO") then {
+    newvehicle setVehicleInit 'this setObjectTexture [0, "images\scosuv.paa"]'; processInitCommands; };
 if (_itemname == "SUV_RED") then {
 	newvehicle setVehicleInit 'this setObjectTexture [0, "images\RedSuv.paa"]'; processInitCommands; };
 if (_itemname == "SUV_BLUE") then {

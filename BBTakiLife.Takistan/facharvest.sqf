@@ -153,13 +153,13 @@ diamondqueue = [];
 
 INV_Lizenzen = [
   ["adminlicense",[adminbank,adminbank,adminbank],localize "STRS_license_adminlicense",0],
-  ["car",[atmsouth,atm1,adminbank],localize "STRS_license_car",100],
-  ["truck",[atmsouth,atm1,adminbank],localize "STRS_license_truck",1400],
-  ["air",[atmsouth,atm1,adminbank],localize "STRS_license_air",7500],
+  ["car",[atm4,atm1,adminbank],localize "STRS_license_car",100],
+  ["truck",[atm4,atm1,adminbank],localize "STRS_license_truck",1400],
+  ["air",[atm4,atm1,adminbank],localize "STRS_license_air",7500],
   ["Pistollicense",[gunlicsouth,licenseflag2,adminbank],"Pistol License",1500],
   ["Riflelicense",[gunlicsouth,licenseflag2,adminbank],"Rifle License",3000],
   ["automatic",[adminbank,licenseflag2,adminbank],"Automatic Rifle License",4500],
-  ["engineer",[atmsouth,atm1,memshop,memshop],localize "STRS_license_engineer",750],
+  ["engineer",[atm4,atm1,memshop,memshop],localize "STRS_license_engineer",750],
   ["bomb",[adminbank,dadaadw,objnull],"Terrorist License",70000],
   ["probator",[adminbank,copbank,copbank],localize "STRS_license_probator",100],
   ["patrol_training",[adminbank,copbank,copbank],localize "STRS_license_coppatrol",2000],
@@ -167,7 +167,7 @@ INV_Lizenzen = [
   ["sobr_training",[adminbank,copswat,copswat],localize "STRS_license_copswat",12500],
   ["copAir",[adminbank,copbank,copbank],localize "STRS_license_copairsupport",13000],
   ["passport_civilian",[passseller,passseller3,objNull],"Passport",100],
-  ["southgov",[atmsouth,southshop,southshop], "South Government License",140000],
+  ["southgov",[atm4,southshop,southshop], "South Government License",140000],
   ["PMClicense",[adminbank,pmcshop,pmcshop], "PMC License",5000]
 ];
 

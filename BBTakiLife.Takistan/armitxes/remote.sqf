@@ -51,12 +51,12 @@ switch (_doAction) do
 		} else { server globalChat "Request Denied"; };
 	};
 	case "pGarage": {
-		_vcl = (nearestobjects [getpos player, ["Air","LandVehicle"], 3] select 0);
+		_vcl = (nearestobjects [getpos player, ["LandVehicle"], 3] select 0);
 		_owner = _vcl getVariable "owner";
+		_item = _owner select 2;
 		if(_owner select 1 == getPlayerUID player) then {
-			_type = typeOf _vcl;
 			deleteVehicle _vcl;
-			PLAYERDATA set [10,_type];
+			PLAYERDATA set [10,_item];
 		} else {server globalChat "This is not your vehicle!";};
 	};
 	case "gGarage": {
@@ -65,14 +65,16 @@ switch (_doAction) do
 			_shop = _shops select 0;
 			if(!(isnull _shop) and _shop in shopusearray) exitwith
 			{
-				_classname = PLAYERDATA select 10;
+				_item  = PLAYERDATA select 10;
+				_infos = _item  call INV_getitemArray;
+				_classname  = _infos call INV_getitemClassName;
 				PLAYERDATA set [10,""];
 				_id = _shop call INV_getshopnum;
 				_shop = INV_ItemShops select _id;
 				_marker = _shop select 3;
 				_pos = getMarkerPos _marker;
 				_dir = markerDir _marker;
-				[_classname,_pos,_classname,_dir] call INV_CreateVehicle;
+				[_classname,_pos,_item,_dir] call INV_CreateVehicle;
 			};
 		} else { server globalChat "You have no vehicle in your garage!"};
 	};

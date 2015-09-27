@@ -4,7 +4,7 @@ _art = _this select 1;
 if(_art == "impound") then
 {
   if ((count crew _vcl) > 0) exitWith {player groupChat "The vehicle is not empty!"};
-  if(_vcl distance impoundarea2 < 30)exitwith{player groupchat "the vehicle is already impounded!"};
+  if(_vcl distance (getMarkerPos "impoundarea2") < 30)exitwith{player groupchat "the vehicle is already impounded!"};
   if(_vcl iskindof "air")exitwith{player groupchat "you cannot impound this vehicle!"};
   if(typeof _vcl == "SearchLight_US_EP1") exitwith {player groupchat "you cannot impound objects!"};
 
@@ -32,12 +32,12 @@ if (_art == "buy") then {
   ["dollarz", -_fine] call INV_AddInventoryItem;
   
   _vcl = call compile format["%1", _vcl];
-  _impounds = [impoundarea2,ccarspawn,uncarspawn];
+  _impounds = ["impoundarea2","ccarspawn","uncarspawn"];
   _closestDis = 100000;
   _closestImpound = "";
   
   {
-    _dist = player distance _x;
+    _dist = player distance (getMarkerPos _x);
     if (_closestDis > _dist) then {
       _closestDis = _dist;
       _closestImpound = _x;
@@ -45,8 +45,8 @@ if (_art == "buy") then {
   } forEach (_impounds);
   
   (format ["%1 enableSimulation true;",_vcl]) call broadcast;
-  _vcl setpos getpos _closestImpound;
-  _vcl setdir getdir _closestImpound;
+  _vcl setpos (getMarkerPos _closestImpound);
+  _vcl setdir (markerDir _closestImpound);
 
   player groupChat "You payed the fine and retrieved your vehicle!";
 };

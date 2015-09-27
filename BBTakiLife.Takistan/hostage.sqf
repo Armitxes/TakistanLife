@@ -112,7 +112,7 @@ while {true} do {
 	if(hostage1 distance getmarkerpos "hostagezone" > 150) exitWith {
 
 		"
-		server globalchat ""The Hostage taker has fled the area! Cops get $6000"";
+		server globalchat ""The Hostage taker has fled the area! Cops get $5000"";
 		_copplayernumber = playersNumber west;
 		_copbonus = 5000;
 		if (iscop) then {[_copbonus] call setMoney; player sidechat format[""you received $%1 for hostage taker fleeing the area"", _copbonus];};
