@@ -32,6 +32,9 @@ if((alive player)
             case "hands": { dmgHands = dmgHands + _damage; player setHit ["hands",dmgHands]; };
             case "legs": { dmgLegs = dmgLegs + _damage; player setHit ["legs",dmgLegs]; };
           };
+		if (!(isNil "_vcl")) then {
+		if ((vehicle player != player) && (_shooter == _vcl) && (_damage > 0.1)) then { dmgBody = dmgBody + _damage};};
+
 
           if (dmgHead > 0.99 || dmgBody > 0.99) then {
             skipDmg = true;    
