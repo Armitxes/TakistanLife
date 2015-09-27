@@ -302,7 +302,7 @@ if(!isDedicated) then {
 		["Lawyer","STR_prof_lawyer",1000],
 		["Medic","STR_prof_medic",200]
 	];
-	medicTypes = ["Dr_Hladik_EP1","USMC_LHD_Crew_Blue","Doctor"];
+	medicTypes = ["Dr_Hladik_EP1","USMC_LHD_Crew_Blue","Doctor","Worker2"];
 	districts = ["None","North","North/East","North/West","South","Patrol Duty","Off-Duty","Suspended"];
 	lastAttack = 0;
 	afk = time;
