@@ -41676,7 +41676,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=242;
+		items=241;
 		class Item0
 		{
 			position[]={3028.9521,72.377098,21478.516};
@@ -41976,12 +41976,12 @@ class Mission
 		};
 		class Item34
 		{
-			position[]={6259.3643,83.038887,11728.833};
-			name="impound";
+			position[]={6249.0713,83.040001,11730.102};
+			name="impoundarea2";
 			text="Impound Lot";
 			type="mil_dot";
 			colorName="ColorBlack";
-			angle=126.78111;
+			angle=223;
 		};
 		class Item35
 		{
@@ -43732,20 +43732,13 @@ class Mission
 		};
 		class Item239
 		{
-			position[]={6254.5649,83.037315,11734.617};
-			name="impoundarea 2 ";
-			type="Empty";
-			angle=223.756;
-		};
-		class Item240
-		{
 			position[]={10161.332,354.40939,2351.8494};
 			name="clothciv1_1_1";
 			text="Clothing";
 			type="mil_dot";
 			colorName="ColorPink";
 		};
-		class Item241
+		class Item240
 		{
 			position[]={10977.98,310.02176,6503.4253};
 			name="TLicSell";
