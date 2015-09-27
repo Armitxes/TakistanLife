@@ -39,8 +39,7 @@ switch (_art) do {
     (format ["if (%1 == player) then {[""stealmoney"",%2] execVM ""civmenu.sqf"";};",_civmenuciv,player]) call toClients;
   };
   case 40: {
-    if(animationstate civmenuciv == "civillying01")then
-  	{
+    if(animationState civmenuciv in animRestrained) then {
   	  dragging = true;
   	  dragciv = _civmenuciv;
       civmenuciv attachTo [player,[0,0.5,0]];

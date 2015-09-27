@@ -308,6 +308,8 @@ if(!isDedicated) then {
 	afk = time;
 	onduty = time;
 	fvspam = false;
+	
+	animRestrained = ["civillying01","civilsitting03","civilsitting02","civilsitting01","civilsitting"];
 };
 
 if(isciv) then {

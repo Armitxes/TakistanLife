@@ -22,7 +22,7 @@ if (_art == "ausrauben") then {
   while {
     (_startRob > time) &&
     ((player distance safe) <= 100) &&
-    (animationstate player != "civillying01") &&
+    (!((animationState player) in animRestrained)) &&
     (alive player) &&
     ((vehicle player) == player) && !([player] call plr_isUnConscious)
   } do {    
@@ -31,7 +31,7 @@ if (_art == "ausrauben") then {
   };
   hint ""; 
   
-  if((animationstate player == "civillying01") || ((player distance safe) >= 100) || !(alive player) || ((vehicle player) != player) || ([player] call plr_isUnConscious)) then {
+  if((animationState player) in animRestrained || ((player distance safe) >= 100) || !(alive player) || ((vehicle player) != player) || ([player] call plr_isUnConscious)) then {
     format['[0,1,2,["busted", "%1"]] execVM "bankrob.sqf";', name player] call toClients; 
   } else {
     format['[0,1,2,["opfer", %1, %2]] execVM "bankrob.sqf";', _safe, _robpool] call toClients;  

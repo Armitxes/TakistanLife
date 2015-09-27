@@ -37,13 +37,13 @@ switch (_doAction) do
 			_mans = _mans + nearestObjects [getMarkerPos "cpEast", ["Man"], 100];
 
 			_prisoners = [];
-			{if(alive _x && (animationstate _x) == "civillying01") then { _prisoners = _prisoners + [_x]; };} forEach _mans;
+			{if(alive _x && (animationState _x) in animRestrained) then { _prisoners = _prisoners + [_x]; };} forEach _mans;
 			if ((count _prisoners) > 0) then {
 				('server globalChat "A prisonbus is heading towards the border";') call toClients;
 				
 				sleep 120;
 				{
-					if(alive _x && (animationstate _x) == "civillying01") then {
+					if(alive _x && (animationState _x) in animRestrained) then {
 						format['if(player == %2)then{ [%1] execVM "putinjail.sqf"; };', player, _x] call toClients;					
 					}
 				} forEach _prisoners;

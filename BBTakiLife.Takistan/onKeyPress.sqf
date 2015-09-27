@@ -318,7 +318,7 @@ switch _key do
 						if (canStand _target) then { _target setHit ["legs",1]; } else {
 							if(!(alive _target)) exitWith {};
 							_toDeath = ["civillying01","adthpercmstpslowwrfldnon_4","adthppnemstpsraswpstdnon_2"];
-							if ( (!dragging && (animationstate _target in _toDeath)) || !isPlayer _target ) then {
+							if ( (!dragging && (animationState _target in _toDeath)) || !isPlayer _target ) then {
 								_target setDamage 1;
 								(format["server globalchat ""%1 bit %2 to death."";", name player, name _target]) call toClients;
 							} else {

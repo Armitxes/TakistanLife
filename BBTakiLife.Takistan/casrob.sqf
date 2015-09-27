@@ -22,7 +22,7 @@ if (_art == "robcas") then {
   while {
     (_startRob > time) &&
     ((player distance csafe) <= 60) &&
-    (animationstate player != "civillying01") &&
+    (!((animationState player) in animRestrained)) &&
     (alive player) &&
     ((vehicle player) == player) && !([player] call plr_isUnConscious)
   } do {    
@@ -31,7 +31,7 @@ if (_art == "robcas") then {
   };
   hint ""; 
   
-  if((animationstate player == "civillying01") || ((player distance csafe) >= 60) || !(alive player) || ((vehicle player) != player) || ([player] call plr_isUnConscious)) then {
+  if((animationState player) in animRestrained || ((player distance csafe) >= 60) || !(alive player) || ((vehicle player) != player) || ([player] call plr_isUnConscious)) then {
     format['[0,1,2,["busted", "%1"]] execVM "casrob.sqf";', name player] call toClients; 
   } else {
     format['[0,1,2,["success", %1, %2]] execVM "casrob.sqf";', _safe, _robpool] call toClients;  

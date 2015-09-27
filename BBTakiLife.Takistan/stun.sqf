@@ -51,7 +51,7 @@ if (_art == "hit") then {
   };
   StunActiveTime = 0;
   
-  if (animationstate player != "civillying01") then
+  if (animationState player in animRestrained) then
   {   
     isstunned = false;
     if(player call ISSE_IsVictim)then{(format ["%1 switchmove ""%2"";", player, "amovppnemstpsnonwnondnon"]) call toClients};

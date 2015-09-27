@@ -24,7 +24,7 @@ if (_type == "capture") then {
 	};
 	hint "";
   
-  if((animationstate player == "civillying01") || ((player distance _gangarea) > 30) || !(alive player) || ((vehicle player) != player) || !(gangmember)) then {
+  if((animationState player in animRestrained) || ((player distance _gangarea) > 30) || !(alive player) || ((vehicle player) != player) || !(gangmember)) then {
   _mygang  = call INV_mygang;
   (format['server globalchat "%1 has failed to capture %2";',_mygang, _gangarea]) call toClients;
   if (!isnil "_control") then {

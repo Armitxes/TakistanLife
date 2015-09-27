@@ -1,12 +1,8 @@
 _civ = civmenuciv;
 
-if(animationstate _civ == "civilsitting03" or animationstate _civ == "civilsitting02" or animationstate _civ == "civilsitting01" or animationstate _civ == "civilsitting") exitwith
-
-{
-
-(format ["%1 switchmove ""%2"";", _civ, "boundCaptive_unaErc"]) call toClients;
-player groupchat "You released the player";
-
+if(animationState _civ in animRestrained) exitWith {
+	(format ["%1 switchmove ""%2"";", _civ, "boundCaptive_unaErc"]) call toClients;
+	player groupchat "You released the player";
 };
 
 if(vehicle _civ != _civ)exitwith{player groupchat "the civ is in a vehicle!"};
@@ -17,4 +13,3 @@ if("ziptie" call INV_GetItemAmount < 1) exitwith {player groupchat "You need a z
 (format ["%1 switchmove ""%2"";", _civ, "CivilSitting"]) call toClients;
 ["ziptie", -1] call INV_AddInvItem;
 (format['server globalchat "%3 was zip tied by %2";if (rolestring == "%1") then {execVM "Unziptie.sqf";}', _civ, name player, name _civ]) call toClients;
-
