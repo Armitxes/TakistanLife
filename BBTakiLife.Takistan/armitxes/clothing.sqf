@@ -73,7 +73,6 @@ _medics = ["docUni","docUni2","docUni3","docUni4"];
 _pmcs = ["PmcUni1","PmcUni2","PmcUni3","PmcUni4","PmcUni5","PmcUni6","PmcUni7","PmcUni8"];
 
 
-
 _action = (_this select 0);
 if(_action == "use") exitWith {
   if((vehicle player) != player) exitWith { hint "You can't change your clothes while in a vehicle"; };
@@ -106,7 +105,7 @@ if(_action == "use") exitWith {
       if (!isnil ("_newUnit")) then {
         if(_type in _medics) then { ismedic = true; } else { ismedic = false; };
         if(_type in _pmcs) then { ispmc = true; } else { ispmc = false; };
-		
+		if(_type == "civUni9") then { isjudge = true; } else { isjudge = false;};
 		selectPlayer _newUnit;
         _pubPlrData = [PLAYERDATA select 4, PLAYERDATA select 5, PLAYERDATA select 9,0];
         _plrInit = format['this setVehicleVarName "%1"; %1 = this; this setVariable ["pubPlrData",%2]; ', rolestring, _pubPlrData];
