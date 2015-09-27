@@ -13,7 +13,7 @@ switch (_action) do {
 			switch (_data select 0) do {
 				case "Medic": {
 					_medCount = 0;
-					{ if((typeOf _x) in ["Dr_Hladik_EP1","USMC_LHD_Crew_Blue","Doctor"]) then { _medCount = _medCount + 1; }; } forEach playableUnits;
+					{ if((typeOf _x) in medicTypes) then { _medCount = _medCount + 1; }; } forEach playableUnits;
 					if (isciv && _medCount < 4) then {
 						[-_cost] call setMoney;
 						["use","docUni"] execVM "armitxes\clothing.sqf";

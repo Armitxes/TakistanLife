@@ -74,20 +74,16 @@ if (_art == "client") then
 	{
 		if (player distance _vcl < 500) then
 		{
-			if (speed _vcl == 0) then
-			{
+			if (speed _vcl == 0) then {
 				sleep 1;
-			}
-			else
-			{
+			} else {
 				if (speed _vcl > 60) then
 				{
-
-					_vcl say ["Siren_Long", 1];
+					if((typeOf (driver _vcl)) in medicTypes) then {
+						_vcl say ["Siren_EMS", 1];
+					} else { _vcl say ["Siren_Cop", 1]; };
 					sleep _longDur;
-				}
-				else
-				{
+				} else {
 					_vcl say ["Siren_Short", 1];
 					sleep _shortDur;
 				};

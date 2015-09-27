@@ -3,19 +3,7 @@ dragciv                  = 0;
 attached                 = false;
 INV_smscost		           = 5;
 
-fvspam = false;
-skipDmg = false;
-lastCall = -300;
-prioCall = false;
-
-dmgHead = 0;
-dmgBody = 0;
-dmgHands = 0;
-dmgLegs = 0;
-usepick = false;
-isheal = false;
 mlaw = false;
-lastBite = 0;
 add_workplace			= 75;
 copchoprespawntime		= 120;
 CopWaffenAvailable		= 0;
@@ -296,10 +284,31 @@ wpcapacity               = 10;
 INV_hasitemshop          = 0;
 INV_haswepshop           = 0;
 BuildingsOwnerArray 	 = [];
-districts = ["None","North","North/East","North/West","South","Patrol Duty","Off-Duty","Suspended"];
-lastAttack = 0;
-afk = time;
-onduty = time;
+
+if(!isDedicated) then {
+	skipDmg = false;
+	lastCall = -300;
+	prioCall = false;
+	dmgHead = 0;
+	dmgBody = 0;
+	dmgHands = 0;
+	dmgLegs = 0;
+
+	lastBite = 0;
+	usepick = false;
+	isheal = false;
+	profs = [
+		["Judge","STR_prof_judge",2000],
+		["Lawyer","STR_prof_lawyer",1000],
+		["Medic","STR_prof_medic",200]
+	];
+	medicTypes = ["Dr_Hladik_EP1","USMC_LHD_Crew_Blue","Doctor"];
+	districts = ["None","North","North/East","North/West","South","Patrol Duty","Off-Duty","Suspended"];
+	lastAttack = 0;
+	afk = time;
+	onduty = time;
+	fvspam = false;
+};
 
 if(isciv) then {
 	BuyAbleBuildingsArray = [
@@ -312,11 +321,6 @@ if(isciv) then {
 civslavearray	= ["TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1"];
 civworkerarray	= ["Worker1","Worker2","Worker3","Worker4"];
 terroristarray	= ["TK_GUE_Soldier_3_EP1","TK_GUE_Soldier_AAT_EP1","TK_GUE_Soldier_AT_EP1","TK_GUE_Soldier_EP1","TK_GUE_Soldier_HAT_EP1","TK_INS_Soldier_AAT_EP1","TK_INS_Soldier_EP1"];
-profs = [
-	["Judge","STR_prof_judge",2000],
-	["Lawyer","STR_prof_lawyer",1000],
-	["Medic","STR_prof_medic",200]
-];
 
 if (isServer) then {
 	TankenCost = 10; publicvariable "TankenCost";
