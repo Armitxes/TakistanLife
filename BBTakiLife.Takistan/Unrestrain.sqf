@@ -2,7 +2,7 @@ if (!alive player)exitwith{};
 
 isstunned=true;
 
-player groupchat "You have been restrained!";
+player groupChat "You have been restrained!";
 _resTime = (time/60);
 
 waitUntil {!(animationState player in animRestrained) or (_resTime+5 <= (time/60))};

@@ -43729,7 +43729,7 @@ class Mission
 		{
 			position[]={4389.6416,346.20001,781.99835};
 			name="gunMarkerX";
-			text=" Gunshop";
+			text=" Supermarket";
 			type="mil_objective";
 			colorName="ColorRed";
 			a=0.5;
