@@ -39,7 +39,6 @@ switch (_art) do {
 	    _list = lbAdd [4, "Possession of Class B Drug"];
 	    _list = lbAdd [4, "Assault"];
 	    _list = lbAdd [4, "Rioting"];
-	    _list = lbAdd [4, "Slavery"];
 	    _list = lbAdd [4, "Perverting the Course of Justice"];  	
 	    _list = lbAdd [4, "Robbery"];
 	    _list = lbAdd [4, "Attempted Murder"];
