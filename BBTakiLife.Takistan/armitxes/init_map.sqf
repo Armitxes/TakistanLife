@@ -29,8 +29,4 @@ _build = [
 	};
 } forEach _build;
 
-"North/West" setMarkerAlpha 0;
-"North/East" setMarkerAlpha 0;
-"South" setMarkerAlpha 0;
-
 processInitCommands;

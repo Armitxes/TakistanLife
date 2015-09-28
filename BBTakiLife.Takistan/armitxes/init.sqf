@@ -43,6 +43,11 @@ if(!isDedicated) then
 		JIP_Stats_Ready = true;
 	};
 
+	"North/West" setMarkerAlphaLocal 0;
+	"North/East" setMarkerAlphaLocal 0;
+	"South" setMarkerAlphaLocal 0;
+	if(!iscop) then { "North" setMarkerAlphaLocal 0; };
+
 	waitUntil {alive player};
 	while {(count PLAYERDATA) != 11} do 
 	{

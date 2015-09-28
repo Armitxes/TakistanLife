@@ -34,7 +34,7 @@ class uninteraktion : baseInteraction {
 
 class civinteraktion : baseInteraction {
 	idd = -1; movingEnable = true;
-	controls[] = {btnSteal,btnZiptie,btnPapers,btnDisarm,btnInventarsearch,btnCancel,btnDummy};
+	controls[] = {btnDrag,btnSteal,btnZiptie,btnPapers,btnDisarm,btnInventarsearch,btnCancel,btnDummy};
 	class btnDrag : RscButton {idc = 5;x = 0.41; y = 0.23;w = 0.20; h = 0.04;text = "Drag"; action = "[40] execVM ""civmenuinit.sqf""; closedialog 0";};
 	class btnSteal : RscButton {idc = 1; x = 0.41; y = 0.33;w = 0.20; h = 0.04; text = "Rob Inventory"; action = "[20] execVM ""civmenuinit.sqf""; closedialog 0";};
 	class btnZiptie : RscButton {idc = 15;x = 0.41; y = 0.38;w = 0.20; h = 0.04; text = $STRD_description_civmenu_ZipTie;action = "execVM ""ziptie.sqf""; closedialog 0";};

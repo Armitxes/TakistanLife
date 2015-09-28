@@ -2,10 +2,9 @@ _civ = civmenuciv;
 
 //=====================================UNRESTRAIN=========================================
 
-if(animationstate _civ == "civillying01") exitWith
-{
-  (format ["%1 switchmove ""%2"";", _civ, "amovppnemstpsnonwnondnon"]) call toClients;
-  player groupchat "You released the civilian!";
+if(animationState _civ in animRestrained) exitWith {
+	(format ["%1 switchmove ""%2"";", _civ, "amovppnemstpsnonwnondnon"]) call toClients;
+	player groupchat "You released the civilian!";
 };
 
 //==================================RESTRAIN=========================================
