@@ -56,9 +56,10 @@ if (iscop && (_autoReason == 0)) then
       case 26: { _reason  = "Breach of Aviation Law"; _bounty = 2500;};
       case 27: { _reason = "Terrorism"; _bounty = 15000; };
 	  case 28: { _reason = "Theft of UN/Cop Vehicle"; _bounty = 6000; };
-      case 39: { _reason = "Illegal Border Crossing"; _bounty = 5000; };
+      case 29: { _reason = "Illegal Border Crossing"; _bounty = 5000; };
       case 30: { _reason = "Crimes Against Humanity"; _bounty = 17000; };
       case 31: { _reason = "Abuse of Emergency call"; _bounty = 2500; };
+	  case 32: { _reason = "Slavery"; _bounty = 12000; };
     };
   } else {
     if(isun) then {
