@@ -222,6 +222,22 @@ class ArmiPhone {
 			h = 0.0598519 * safezoneH;
 			action = "createDialog 'MainMenu';";
 		};
+		class RscFrame_1807: ARM_RscFrameButton {
+			idc = 1807;
+			x = 0.0931719 * safezoneW + safezoneX;
+			y = 0.322 * safezoneH + safezoneY;
+			w = 0.0373437 * safezoneW;
+			h = 0.0598519 * safezoneH;
+			action = "['atm'] execVM 'armitxes\phone.sqf'; closeDialog 0;";
+		};
+		class RscFrame_1808: ARM_RscFrameButton {
+			idc = 1808;
+			x = 0.131741 * safezoneW + safezoneX;
+			y = 0.322 * safezoneH + safezoneY;
+			w = 0.0373437 * safezoneW;
+			h = 0.0598519 * safezoneH;
+			action = "['call_taxi'] execVM 'armitxes\phone.sqf'; closeDialog 0;";
+		};
 	};
 };
 
