@@ -22,53 +22,52 @@ for "_i" from 0 to count (_cfg)-1 do
   };
 };
  
-if("DevCon" in _patches) then
-{
-  _code = format["%1 is using dev-con to execute scripts.", name player];
-  anticheat = _code;
-  publicVariable "anticheat";
-  disableUserInput true;
+if("DevCon" in _patches) then {
+	_code = format["%1 is using dev-con to execute scripts.", name player];
+	anticheat = _code;
+	publicVariable "anticheat";
+	disableUserInput true;
 };
  
-[] spawn
-{
-  while {true} do
-  {
-    if(
-      !isNil {DZE_StaticConstructionCount} ||
-      !isNil {l33thtmlv1} ||
-      !isNil {MainScripts} ||
-      !isNil {junbut} ||
-      !isNil {Lando_Godmode} ||
-      !isNil {B1g_B3nProEsp} ||
-      !isNil {scroll_m_init_star} ||
-      !isNil {exstr1} ||
-      !isNil {pathtoscrdir3} ||
-      !isNil {Monky_funcs_inited} ||
-      !isNil {Monky_initMenu} ||
-      !isNil {player_zombieCheck} ||
-      !isNil {godlol} ||
-      !isNil {playericons} ||
-      !isNil {abcdefGEH} ||
-      !isNil {wierdo} ||
-      !isNil {go_invisible_infiSTAR} ||
-      !isNil {serverObjectMonitor} ||
-      !isNil {enamearr} ||
-      !isNil {initarr3} ||
-      !isNil {locdb} ||
-      !isNil {sCode} ||
-      !isNil {infAmmoIndex} ||
-      !isNil {nukeDONEstar} ||
-      !isNil {J_ro} ||
-      !isNil {executec0de}                    
-    ) then
-    {
-      _code = format["%1 is using cheats. PUID: %2", name player, getPlayerUID player];
-      anticheat = _code;
-      publicVariable "anticheat";
-      sleep 1;
-      endMission "Loser";
-    };
-    sleep 20;
-  };
+[] spawn {
+	while {true} do {
+		if(
+			!isNil {DayNightV4} ||
+			!isNil {whippyhtmlzV4} ||
+			!isNil {htmlzV4} ||
+			!isNil {DZE_StaticConstructionCount} ||
+			!isNil {l33thtmlv1} ||
+			!isNil {MainScripts} ||
+			!isNil {junbut} ||
+			!isNil {Lando_Godmode} ||
+			!isNil {B1g_B3nProEsp} ||
+			!isNil {scroll_m_init_star} ||
+			!isNil {exstr1} ||
+			!isNil {pathtoscrdir3} ||
+			!isNil {Monky_funcs_inited} ||
+			!isNil {Monky_initMenu} ||
+			!isNil {player_zombieCheck} ||
+			!isNil {godlol} ||
+			!isNil {playericons} ||
+			!isNil {abcdefGEH} ||
+			!isNil {wierdo} ||
+			!isNil {go_invisible_infiSTAR} ||
+			!isNil {serverObjectMonitor} ||
+			!isNil {enamearr} ||
+			!isNil {initarr3} ||
+			!isNil {locdb} ||
+			!isNil {sCode} ||
+			!isNil {infAmmoIndex} ||
+			!isNil {nukeDONEstar} ||
+			!isNil {J_ro} ||
+			!isNil {executec0de}                    
+		) then {
+			_code = format["%1 is using cheats. PUID: %2", name player, getPlayerUID player];
+			anticheat = _code;
+			publicVariable "anticheat";
+			sleep 1;
+			endMission "Loser";
+		};
+		sleep 20;
+	};
 };
