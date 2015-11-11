@@ -81,16 +81,6 @@ execVM "BTK\Cargo Drop\Start.sqf"; // Initialize BTK Cargo Drop Script
 execVM "BB Elvis towing\Start.sqf"; // Initialize BB Elvis Towing
 
 setPitchBank = compile preprocessfile "setPitchBank.sqf";
-publicvariable "station1robbed";
-publicvariable "station2robbed";
-publicvariable "station3robbed";
-publicvariable "station4robbed";
-publicvariable "station5robbed";
-publicvariable "station6robbed";
-publicvariable "station7robbed";
-publicvariable "station8robbed";
-publicvariable "station9robbed";
-publicvariable "station10robbed";
 
 
 if(!isDedicated) then {
@@ -150,39 +140,6 @@ if (isServer) then
 [] execVM "robpool.sqf";
 [] execVM "governmentconvoy.sqf";
    
-
-//=======================rob gas station init and variables================
-[] execVM "stationrobloop.sqf";
-station1money = 1000;
-publicvariable "station1money";
-
-station2money = 1000;
-publicvariable "station2money";
-
-station3money = 1000;
-publicvariable "station3money";
-
-station4money = 1000;
-publicvariable "station4money";
-
-station5money = 1000;
-publicvariable "station5money";
-
-station6money = 1000;
-publicvariable "station6money";
-
-station7money = 1000;
-publicvariable "station7money";
-
-station8money = 1000;
-publicvariable "station8money";
-
-station9money = 1000;
-publicvariable "station9money";
-
-station10money = 1000;
-publicvariable "station10money";
-
 for [{_i=0}, {_i < (count INV_ItemShops)}, {_i=_i+1}] do {((INV_ItemShops select _i) select 0) execVM "nomove.sqf"; sleep 0.2;};
 for [{_i=0}, {_i < (count workplacejob_deliveryflagarray)}, {_i=_i+1}] do {(workplacejob_deliveryflagarray select _i) execVM "nomove.sqf"; sleep 0.2;};
 

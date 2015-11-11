@@ -121,15 +121,17 @@ switch (_doAction) do
 			{ deleteMarkerLocal _x; } forEach _mrks;
 			
 			if ((camCoords distance _camObj) < 200) then {
-				_camera = "camera" camCreate (getPosATL _camObj);
-				if (!(createDialog "MainCamDialog")) exitWith {hint "Dialog Error!";};
-				[0,0,0,["camcontrol",_camera,[10,30]]] execVM "copcams.sqf";
-				_camera cameraEffect ["internal", "back"];
-				_camera camSetPos (getPosATL _camObj);
-				_camera setDir ((getDir _camObj)+180);
-				_camera camSetFov 0.700;
-				_camera camPreload 5;
-				_camera camCommit 0;
+				if(damage _camObj < 0.7) then {
+					_camera = "camera" camCreate (getPosATL _camObj);
+					if (!(createDialog "MainCamDialog")) exitWith {hint "Dialog Error!";};
+					[0,0,0,["camcontrol",_camera,[10,30]]] execVM "copcams.sqf";
+					_camera cameraEffect ["internal", "back"];
+					_camera camSetPos (getPosATL _camObj);
+					_camera setDir ((getDir _camObj)+180);
+					_camera camSetFov 0.700;
+					_camera camPreload 5;
+					_camera camCommit 0;
+				} else { hintSilent "Something is wrong with this camera!"; };
 			};
 		};
 	};

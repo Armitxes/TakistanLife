@@ -42,6 +42,7 @@ action53 = _role addaction ["Remove Small Breaching ladder","noscript.sqf",'if (
 action54 = _role addaction ["Remove UN Flag","noscript.sqf",'deletevehicle (nearestobjects [getpos player, ["FlagCarrierUNO_EP1"],  5] select 0);["FlagCarrierUNO_EP1", 1] call INV_AddInventoryItem;player groupchat "you picked up a UN Flag";',1,true,true,"",'player distance (nearestobjects [getpos player, ["FlagCarrierUNO_EP1"],  5] select 0) < 5 && isun && (typeOf (nearestobjects [getpos player, ["FlagCarrierUNO_EP1"],  5] select 0) == "FlagCarrierUNO_EP1")'];
 action55 = _role addaction ["Remove Police Flag","noscript.sqf",'deletevehicle (nearestobjects [getpos player, ["FlagCarrierBLUFOR_EP1"],  5] select 0);["FlagCarrierBLUFOR_EP1", 1] call INV_AddInventoryItem;player groupchat "you picked up a Police Flag";',1,true,true,"",'player distance (nearestobjects [getpos player, ["FlagCarrierUNO_EP1"],  5] select 0) < 5 && iscop && (typeOf (nearestobjects [getpos player, ["FlagCarrierBLUFOR_EP1"],  5] select 0) == "FlagCarrierBLUFOR_EP1")'];
 action56 = _role addaction ["Remove Spikestrip","noscript.sqf",'deletevehicle (nearestobjects [getpos player, ["Fort_RazorWire"],  5] select 0);["Spikestrip", 1] call INV_AddInventoryItem;player groupchat "You removed a Spikestrip";',1,true,true,"",'player distance (nearestobjects [getpos player, ["Fort_RazorWire"],  5] select 0) < 5 && (isun || iscop) && (typeOf (nearestobjects [getpos player, ["Fort_RazorWire"],  5] select 0) == "Fort_RazorWire")'];
+action57 = _role addAction ["Pickup Camera","noscript.sqf",'deletevehicle (nearestobjects [getpos player, ["Misc_Videoprojektor"],  5] select 0);["seccam", 1] call INV_AddInventoryItem;',1,true,true,"",'player distance (nearestobjects [getpos player, ["Misc_Videoprojektor"],  5] select 0) < 5 && (isun || iscop)'];
 //================================== ELECTION SYSTEM ===============================================
 action102 = _role addaction ["Change the Law","maindialogs.sqf",["gesetz"],1,false,true,"","player distance rathaus <= 3 and isMayor"];
 action103 = _role addaction ["Change taxes","maindialogs.sqf",["steuern"],1,false,true,"","player distance rathaus <= 3 and isMayor"];
@@ -93,17 +94,6 @@ _num3  = (gangarea3 call INV_getshopnum);
 action141 = _role addaction ["Gang Shop","shopdialogs.sqf",[_num1],1,false,true,"","_control = gangarea1 getvariable ""control"";!isnil ""_control"" and player distance gangarea1 <= 5 and (_control == (call INV_mygang))"];
 action142 = _role addaction ["Gang Shop","shopdialogs.sqf",[_num2],1,false,true,"","_control = gangarea2 getvariable ""control"";!isnil ""_control"" and player distance gangarea2 <= 5 and (_control == (call INV_mygang))"];
 action143 = _role addaction ["Gang Shop","shopdialogs.sqf",[_num3],1,false,true,"","_control = gangarea3 getvariable ""control"";!isnil ""_control"" and player distance gangarea3 <= 5 and (_control == (call INV_mygang))"];
-//===================================== Gas station Robbing===============================================
-gsshop1 = fuelshop1 addaction ["<t color='#FF0000'>Hack Gas Station (Rob)</t>","robthestations.sqf",["station 1"],1,false,true,"","isciv and station1money >= 1000"];
-gsshop2 = fuelshop2 addaction ["<t color='#FF0000'>Hack Gas Station (Rob)</t>","robthestations.sqf",["station 2"],1,false,true,"","isciv and station2money >= 1000"];
-gsshop3 = fuelshop3 addaction ["<t color='#FF0000'>Hack Gas Station (Rob)</t>","robthestations.sqf",["station 3"],1,false,true,"","isciv and station3money >= 1000"];
-gsshop4 = fuelshop4 addaction ["<t color='#FF0000'>Hack Gas Station (Rob)</t>","robthestations.sqf",["station 4"],1,false,true,"","isciv and station4money >= 1000"];
-gsshop5 = fuelshop5 addaction ["<t color='#FF0000'>Hack Gas Station (Rob)</t>","robthestations.sqf",["station 5"],1,false,true,"","isciv and station5money >= 1000"];
-gsshop6 = fuelshop6 addaction ["<t color='#FF0000'>Hack Gas Station (Rob)</t>","robthestations.sqf",["station 6"],1,false,true,"","isciv and station6money >= 1000"];
-gsshop7 = fuelshop7 addaction ["<t color='#FF0000'>Hack Gas Station (Rob)</t>","robthestations.sqf",["station 7"],1,false,true,"","isciv and station7money >= 1000"];
-gsshop8 = fuelshop8 addaction ["<t color='#FF0000'>Rob Supermarket</t>","robthestations.sqf",["supermarket"],1,false,true,"","isciv and station8money >= 1000"];
-gsshop9 = fuelshop9 addaction ["<t color='#FF0000'>Hack Gas Station (Rob)</t>","robthestations.sqf",["station 8"],1,false,true,"","isciv and station9money >= 1000"];
-gsshop10 = fuelshop10 addaction ["<t color='#FF0000'>Hack Gas Station (Rob)</t>","robthestations.sqf",["station 9"],1,false,true,"","isciv and station10money >= 1000"];
 //========================   unflip vehicle     ================================
 action144 = _role addaction ["Unflip vehicle","unflipvehicle.sqf",["unflip"],1,false,true,"",'_vcl = (nearestobjects [getpos player, ["Air", "Ship", "LandVehicle"], 3] select 0);player distance _vcl < 5 and _vcl in INV_VehicleArray'];
 //=========================    Cop Patrol actions   ==============================
