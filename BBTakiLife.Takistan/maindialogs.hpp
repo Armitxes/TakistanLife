@@ -1138,9 +1138,9 @@ class MainCamDialog
 	class DLG_BACK1: Rscbackground
 	{
 		x = -1.00;
-		y = 0.00;
+		y = -0.40;
 		w =  3.00;
-		h = 0.20;
+		h = 0.60;
 
 		colorBackground[] = {0,0,0,1};
 	};
@@ -1150,7 +1150,7 @@ class MainCamDialog
 		x = -1.00;
 		y = 0.80;
 		w =  3.00;
-		h = 0.20;
+		h = 0.80;
 
 		colorBackground[] = {0,0,0,1};
 	};
@@ -1262,7 +1262,7 @@ class CopMenu
 	movingEnable = true;
 	controlsBackground[] = {DLG_BACK1, background};
 	objects[] = { };
-	controls[] = {button1, button3, button4, button5, button6, button7, dummybutton};
+	controls[] = {button1, button3, button4, button5, button7, dummybutton};
 
 	class DLG_BACK1: Rscbackground
 	{
@@ -1300,8 +1300,8 @@ class CopMenu
 		w = 0.20;
 		h = 0.04;
 
-		text = "Jailcam";
-		action = "closedialog 0; [0,1,2,[""jailcam""]] execVM ""copcams.sqf"";";
+		text = "Cameras";
+		action = "closedialog 0; [0,1,2,[""camera""]] execVM ""armitxes\remote.sqf"";";
 	};
 
 	class button4 : RscButton
@@ -1324,17 +1324,6 @@ class CopMenu
 
 		text = "Crime log";
 		action = "closedialog 0; [0,1,2,[""coplog""]] execVM ""maindialogs.sqf"";";
-	};
-
-	class button6 : RscButton
-	{
-		x = 0.40;
-		y = 0.50;
-		w = 0.20;
-		h = 0.04;
-
-		text = "Copmarkers On/Off";
-		action = "closedialog 0;";
 	};
 
 	class button7 : RscButton

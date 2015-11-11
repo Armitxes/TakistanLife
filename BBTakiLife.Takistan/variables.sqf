@@ -1,3 +1,13 @@
+if (isServer) then {
+	GesetzArray = ["Always Drive on the RIGHT side of the road","Do not fly under 200 meters and Do not land in towns","Civilians in posession of a weapon MUST have it holstered at all times.","Any vehicle not in car parks will be impounded.","Speedlimit is 50km/h in town and 90km/h out of town.","","","","",""]; publicVariable "GesetzArray";
+	cameras = [[],[]]; publicVariable "cameras";
+	TankenCost = 10; publicVariable "TankenCost";
+	
+	convoywinner = "Cops and UN"; publicVariable "convoywinner";
+	publicVariable "INV_ItemTypenArray";
+	publicVariable "INV_itemstocks";
+};
+
 dragging                 = false;
 dragciv                  = 0;
 attached                 = false;
@@ -66,7 +76,6 @@ govconvoythiefbonus	= 15000;
 convoyrespawntime   = 30;  // 30 minutes
 moneyintruck 	    	= true; //dont change
 convoyguardsdead		= false;
-convoywinner        = "Cops and UN";
 emMarkers = [];
 maxstationmoney = 2000;
 petroluse                = 1;
@@ -145,7 +154,6 @@ CopsKilled               = 0;
 CivsKilled               = 0;
 SelfKilled               = 0;
 GesetzAnzahl             = 10;
-GesetzArray              = ["Always Drive on the RIGHT side of the road", "Do not fly under 200 meters and Do not land in towns", "Civilians in posession of a weapon MUST have it holstered at all times.","Any vehicle not in car parks will be impounded.", "Speedlimit is 50km/h in town and 90km/h out of town.","" ,"" , "", "" , ""];
 
 isMayor                  = false;
 MayorNumber              = -1;
@@ -323,12 +331,3 @@ if(isciv) then {
 civslavearray	= ["TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1"];
 civworkerarray	= ["Worker1","Worker2","Worker3","Worker4"];
 terroristarray	= ["TK_GUE_Soldier_3_EP1","TK_GUE_Soldier_AAT_EP1","TK_GUE_Soldier_AT_EP1","TK_GUE_Soldier_EP1","TK_GUE_Soldier_HAT_EP1","TK_INS_Soldier_AAT_EP1","TK_INS_Soldier_EP1"];
-
-if (isServer) then {
-	TankenCost = 10; publicvariable "TankenCost";
-	onplayerconnected '
-	publicVariable "convoywinner";
-	publicVariable "GesetzArray";
-	publicVariable "INV_ItemTypenArray";
-	publicVariable "INV_itemstocks";';
-};

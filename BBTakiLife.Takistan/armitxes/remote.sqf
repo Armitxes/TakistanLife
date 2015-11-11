@@ -1,5 +1,10 @@
 _doAction = _this select 0;
-if(typeName _doAction != "STRING") then {_doAction=_this select 3;};
+if(typeName _doAction != "STRING") then {
+	if(typeName (_this select 3) == "ARRAY") then {
+		_doAction=(_this select 3) select 0;
+	} else {_doAction=_this select 3;};
+};
+
 switch (_doAction) do
 { 
 	case "door": {
@@ -77,5 +82,55 @@ switch (_doAction) do
 				[_classname,_pos,_item,_dir] call INV_CreateVehicle;
 			};
 		} else { server globalChat "You have no vehicle in your garage!"};
+	};
+	case "camera": {
+		if(iscop || isun) then {
+			camCoords = nil;
+
+			_l = 0; if (isun) then { _l = 1; };
+			_cams = (cameras select _l);
+			_mrks = [];
+			
+			for [{_i=0}, {_i<(count _cams)}, {_i=_i+1}] do {
+				_curCam = _cams select _i;
+				_markerName = format ["camMarker%1",_i];
+				_marker = createMarkerLocal [_markerName, position _curCam];
+				_markerName setMarkerShapeLocal "ICON";
+				_markerName setMarkerTypeLocal "mil_circle";
+				_markerName setMarkerTextLocal "CAM";
+				_mrks = _mrks + [_markerName];
+			};
+		
+			openMap [true,true];
+			onMapSingleClick "camCoords = _pos;";
+			waitUntil {!isNil "camCoords"};
+			openMap [false,false];
+			
+			_camDist = 100000;
+			_camObj = nil;
+			for [{_i=0}, {_i<(count _cams)}, {_i=_i+1}] do {
+				_curCam = _cams select _i;
+
+				_dist = _curCam distance camCoords;
+				if (_dist < _camDist) then {
+					_camObj = _curCam;
+					_camDist = _dist;
+				};
+			};
+			
+			{ deleteMarkerLocal _x; } forEach _mrks;
+			
+			if ((camCoords distance _camObj) < 200) then {
+				_camera = "camera" camCreate (getPosATL _camObj);
+				if (!(createDialog "MainCamDialog")) exitWith {hint "Dialog Error!";};
+				[0,0,0,["camcontrol",_camera,[10,30]]] execVM "copcams.sqf";
+				_camera cameraEffect ["internal", "back"];
+				_camera camSetPos (getPosATL _camObj);
+				_camera setDir ((getDir _camObj)+180);
+				_camera camSetFov 0.700;
+				_camera camPreload 5;
+				_camera camCommit 0;
+			};
+		};
 	};
 };

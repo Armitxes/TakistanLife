@@ -89,14 +89,15 @@ class Mission
 	randomSeed=7826573;
 	class Intel
 	{
-		briefingName="BB Takistan Life RPG v3.0.2";
+		briefingName="BB Takistan Life RPG v3.0.3";
 		briefingDescription="By British Borders (http://www.britishborders.co.uk)";
 		resistanceEast=1;
 		startWeather=0;
 		forecastWeather=0;
+		forecastFog=0.65785968;
 		year=2015;
-		month=9;
-		day=28;
+		month=11;
+		day=11;
 		hour=9;
 		minute=0;
 	};

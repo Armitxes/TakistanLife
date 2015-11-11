@@ -228,11 +228,11 @@ switch _key do
 
 	//tilde key
 	case 41: {
-		if(!INV_shortcuts)exitwith{};
+		if(!INV_shortcuts)exitWith{};
 		if(dialog)exitwith{closeDialog 0;_handled=true;};
-		if(iscop) then {
-			if(vehicle player == player)then{[0,0,0,["copmenulite"]] execVM "maindialogs.sqf"}
-			else {[0,0,0,["copmenu"]] execVM "maindialogs.sqf"};
+		if(iscop || isun) then {
+			if(vehicle player == player)then{ if(iscop) then { [0,0,0,["copmenulite"]] execVM "maindialogs.sqf"; }; }
+			else {[0,0,0,["copmenu"]] execVM "maindialogs.sqf";};
 			_handled=true;
 		};
 	};

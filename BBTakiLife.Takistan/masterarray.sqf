@@ -609,6 +609,8 @@ INV_AlleItemsArray = [
 
 ["bargate",["Item", "misc"],["ZavoraAnim", "Bar Gate"],[25, 12], [5, "", "patrol_training"], [true, true, true,false,"createobject.sqf"],"Bargate",localize "STRS_inv_item_bargate_info", [] ],
 
+["seccam",["Item", "misc"],["Misc_Videoprojektor", "Security Camera"],[2000, 1000], [5, "", "response_training"], [true, true, true,false,"armitxes\itemlogic.sqf"],"seccam","Keep your eyes everywhere", [] ],
+
 ["BigbagfenceCorner",["Item", "misc"],["Land_fort_bagfence_corner", "Big bag fence (Corner)"],[79.5, 32], [8, "", "patrol_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_BigbagfenceCorner",localize "STRS_inv_item_BigbagfenceCorner_info", [] ],
 
 ["bigbagfence",["Item", "misc"],["Land_fort_bagfence_long", "Big bag fence"],[49.5, 21.5], [6, "", "patrol_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_bigbagfence",localize "STRS_inv_item_bigbagfence_info", [] ],
@@ -669,7 +671,7 @@ INV_AlleItemsArray = [
 
 ["fishingpole", ["Item", "Shop"], ["fishingpole", "Fishing Pole"],[75, 33], [3, "", "probator"],[true,true,true, false, "fishing.sqf"], "Fishing Pole", "Use it in a fishing area.",[["stahl", 1], ["plastik", 1],["ebauteile", 1]] ],
 
-["Spikestrip",["Item", "misc"],["Fort_RazorWire", "Spike Strip"],[350, 5], [2, "", "probator"], [true, true, true,false, "Spikestrip.sqf"], "Spike Strip", "Use it to pop a tire.",[["stahl", 1], ["plastik", 1],["ebauteile", 1]] ],
+["Spikestrip",["Item", "misc"],["Fort_RazorWire", "Spike Strip"],[350, 5], [2, "", "probator"], [true, true, true,false, "armitxes\itemlogic.sqf"], "Spike Strip", "Use it to pop a tire.",[["stahl", 1], ["plastik", 1],["ebauteile", 1]] ],
 
 ["LocalBasicWeaponsBox", ["Item", "misc"], ["LocalBasicWeaponsBox", "Storage box"],[1000, 375], [0, "", "", 200],[true,true,true, false, "nouse.sqf"], "Storage box", "Storage box",[] ],
 

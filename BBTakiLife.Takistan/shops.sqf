@@ -319,6 +319,7 @@ _copshop_response =
 [
 "copUni1",
 "M1014",
+"seccam",
 "8Rnd_B_Beneli_Pellets",
 "8Rnd_B_Beneli_74Slug",
 "mp5a5",
@@ -420,6 +421,7 @@ _uns =
 "GPS",
 "vclammo",
 "copreparaturkit",
+"seccam",
 "kanister",
 "medikit",
 "supgrade",

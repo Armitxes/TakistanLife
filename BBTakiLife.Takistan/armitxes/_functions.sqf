@@ -13,7 +13,21 @@ if(!isDedicated) then
 	setMoney = {
 		PLAYERDATA set [1, (PLAYERDATA select 1) + (_this select 0)];
 	};
+	
+	setHeight = {
+		private ["_obj","_pos","_y"];
+		_obj = _this select 0; _y = _this select 1;
+		_pos = getPosATL _obj;
+		_obj setPosATL [_pos select 0, _pos select 1, _y];
+	};
+	setHeightASL = {
+		private ["_obj","_pos","_y"];
+		_obj = _this select 0; _y = _this select 1;
+		_pos = getPosASL _obj;
+		_obj setPosASL [_pos select 0, _pos select 1, _y];
+	};
 
+	
 	fnc_ClearWarrantsArray = {
 		for [{_i=0}, {_i < (count warrantarray)}, {_i=_i+1}] do {
 			if ( isNull((warrantarray select _i) select 0) ) then {
