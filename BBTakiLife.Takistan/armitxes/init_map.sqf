@@ -19,14 +19,15 @@ _build = [
 	_cur setPos (_x select 1);
 	
 	if (_class == "Notebook") then {
-	_init = ""; 
-	    
-	{
-		_init = _init + format["this addAction %1;",_x];
-	} forEach (_x select 3);   
+		_init = ""; 
 	
+		{
+			_init = _init + format["this addAction %1;",_x];
+		} forEach (_x select 3);   
 		_cur setVehicleInit _init;      
 	};
 } forEach _build;
 
 processInitCommands;
+
+{ _x setVariable ["lastRob",0,true]; } forEach [fuelshop1,fuelshop2,fuelshop3,fuelshop4,fuelshop5,fuelshop6,fuelshop7,fuelshop8,fuelshop9,fuelshop10];
