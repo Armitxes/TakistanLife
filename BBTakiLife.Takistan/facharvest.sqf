@@ -21,6 +21,7 @@ _weaponfactory = [
   "M8_compact",
   "Rnd_556x45_G36",
   "Rnd_762x39_AK47",
+  "Rnd_762x51_FNFAL",
   "Saiga12K",
   "8Rnd_B_Saiga12_Pellets"
 ];

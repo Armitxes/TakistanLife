@@ -219,7 +219,8 @@ while {isciv} do
 			//if(player == _lunit and !gangleader)then{gangleader = true;};
 			if(_name == _leader) then {gangleader = true} else {gangleader = false};
 			if(_name in _members and !gangmember)then{gangmember = true};
-		//if(_name in _members and player != _lunit and !(player in (units _group))) then {[player] joinsilent _group;};
+			if(_name in _members and gangmember)then{_mygang = _gang; _mymembers = _members};
+			//if(_name in _members and player != _lunit and !(player in (units _group))) then {[player] joinsilent _group;};
 
 			};
 

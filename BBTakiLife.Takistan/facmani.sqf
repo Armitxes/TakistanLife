@@ -11,7 +11,7 @@ lbSetData [1, _index, ""];
 
 {
 
-_eta = round((_x call INV_getitemBuyCost)*.0150);
+_eta = round((_x call INV_getitemBuyCost)*.02250);
 if(_eta > maxmanitime)then{_eta = maxmanitime};
 if(_workers > 0)then{_eta = round(_eta/(_workers/5))};
 if(_eta > maxmanitime)then{_eta = maxmanitime};
