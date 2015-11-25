@@ -105,7 +105,7 @@ if(_action == "use") exitWith {
       if (!isnil ("_newUnit")) then {
         if(_type in _medics) then { ismedic = true; } else { ismedic = false; };
         if(_type in _pmcs) then { ispmc = true; } else { ispmc = false; };
-		if(_type == "civUni9") then { isjudge = true; } else { isjudge = false;};
+		if(_type == "civUni9") then { isjudge = true; } else { isjudge = false; };
 		selectPlayer _newUnit;
         _pubPlrData = [PLAYERDATA select 4, PLAYERDATA select 5, PLAYERDATA select 9,0];
         _plrInit = format['this setVehicleVarName "%1"; %1 = this; this setVariable ["pubPlrData",%2]; ', rolestring, _pubPlrData];

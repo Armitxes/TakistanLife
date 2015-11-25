@@ -10,7 +10,7 @@ while {iscop} do
 	
 	if ("patrol_training" call INV_HasLicense) then { _income = _income + 25; };
 	if ("response_training" call INV_HasLicense) then { _income = _income + 50; };
-	if ("sobr_training" call INV_HasLicense) then { _income = _income + 75; };
+	if ("SCO_training" call INV_HasLicense) then { _income = _income + 75; };
 	if ("copAir" call INV_HasLicense) then { _income = _income + 50; };
 	
 	if (!(convoywinner == "Cops and UN") && !(convoywinner == "Neither")) then  

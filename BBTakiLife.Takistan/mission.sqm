@@ -28909,7 +28909,7 @@ class Mission
 			vehicle="UNBasicAmmunitionBox_EP1";
 			leader=1;
 			skill=0.60000002;
-			text="copbasic";
+			text="copcriminal";
 			init="this allowdamage false; clearMagazineCargo this; clearWeaponCargo this;";
 		};
 		class Item2740
@@ -28927,13 +28927,13 @@ class Mission
 		class Item2741
 		{
 			position[]={5809.6011,98.720001,8534.3047};
-			azimut=83.907173;
+			azimut=83.907204;
 			id=2836;
 			side="EMPTY";
 			vehicle="UNBasicAmmunitionBox_EP1";
 			leader=1;
 			skill=0.60000002;
-			text="copcriminal";
+			text="copbasic";
 			init="this allowdamage false;clearMagazineCargo this; clearWeaponCargo this;";
 		};
 		class Item2742

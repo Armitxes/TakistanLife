@@ -40,8 +40,8 @@ if (isServer) then {
     -1, //heroin #38
     -1, //copcar #39
     -1, //copair #40
-    -1, //sobrcar #41
-    -1, //sobrair #41
+    -1, //SCOcar #41
+    -1, //SCOair #41
     -1, // UN Members #43
     -1, // UN Car     #44
     -1, // UN Air     #45
@@ -50,7 +50,7 @@ if (isServer) then {
     -1, //copbasic #48
     -1, //coppatrol #49
     -1, //copresponse #50
-    -1, //sobritems #51
+    -1, //SCOitems #51
     -1, //terrorvehicles #52
     -1, //terrorshop #53
     -1, //Mayor #54
@@ -123,8 +123,8 @@ INV_itemmaxstocks = [
 -1, //heroin #38
 -1, //copcar #39
 -1, //copair #40
--1, //sobrcar #41
--1, //sobrair #41
+-1, //SCOcar #41
+-1, //SCOair #41
 -1, // UN Members #43
 -1, // UN Car     #44
 -1, // UN Air     #45
@@ -133,7 +133,7 @@ INV_itemmaxstocks = [
 -1, //copbasic #48
 -1, //coppatrol #49
 -1, //copresponse #50
--1, //sobritems #51
+-1, //SCOitems #51
 -1, //terrorvehicles #52
 -1, //terrorshop #53
 -1, //Mayor #54
@@ -216,9 +216,9 @@ _dsh = ["heroin"];
 _cv = ["Old_bike_TK_INS_EP1","MMT_USMC","M1030_US_DES_EP1","ATV_US_EP1","VolhaLimo_TK_CIV_EP1","LadaLM","UAZ_Unarmed_TK_EP1","BAF_Offroad_D","SUV_COP","HMMWV_M1035_DES_EP1","MTVR_DES_EP1","MtvrReammo_DES_EP1","MtvrRepair_DES_EP1","MtvrRefuel_DES_EP1"];
 //Cop Air Shop
 _ca = ["MH6J_EP1","AH6X_EP1_COP"];
-//SOBR Vehicle Shop
+//SCO Vehicle Shop
 _sv = ["SUV_SCO","HMMWV_DES_EP1","HMMWV_M1151_M2_DES_EP1","M2A3_EP1","BAF_Jackal2_L2A1_D"];
-//SOBR Air Shop
+//SCO Air Shop
 _sa = ["MH6J_EP1","UH60M_EP1"];
 // UN vehicles
 _unmemshop = ["FlagCarrierUNO_EP1","BMP2_UN_EP1","BAF_Jackal2_L2A1_D","M113_UN_EP1","LAV25","UH1Y"];
@@ -233,54 +233,54 @@ _hos = ["medikit","docUni","docUni2","docUni3","docUni4","S1203_ambulance_EP1","
 _hosair = ["UH60M_MEV_EP1"];
 //South Goverment Shop
 _soushop = [
-"Binocular",
-"NVGoggles",
-"GPS",
-"kanister",
-"reparaturkit",
-"medikit",
-"vclammo",
-"US_Backpack_EP1",
-"SouthUni1",
-"SouthUni2",
-"SouthUni3",
-"SouthUni4",
-"SouthUni5",
-"SouthUni6",
-"SouthUni7",
-"AK_107_Kobra",
-"AK_107_GL_Kobra",
-"AK_107_PSO",
-"AK_107_GL_PSO",
-"30Rnd_545x39_AK",
-"1Rnd_HE_GP25",
-"Sa58V_CCO_EP1",
-"Sa58V_RCO_EP1",
-"30Rnd_762x39_SA58",
-"SVD_CAMO",
-"10Rnd_762x54_SVD",
-"KSVK_sou",
-"5Rnd_127x108_KSVK",
-"PK_sou",
-"100Rnd_762x54_PK",
-"RPG7V_sou",
-"PG7V",
-"PG7VR",
-"PG7VL",
-"RPG18",
-"RPG18_mag",
-"Strela_sou",
-"Strela_mag",
-"Igla_sou",
-"Igla_mag",
-"HandGrenade_sou",
-"Land_CamoNetVar_NATO_EP1",
-"Fort_Barricade_EP1",
-"Land_Campfire_burning",
-"US_WarfareBUAVterminal_Base_EP1",
-"CampEast_EP1",
-"Land_HBarrier5",
-"bargate"
+	"Binocular",
+	"NVGoggles",
+	"GPS",
+	"kanister",
+	"reparaturkit",
+	"medikit",
+	"vclammo",
+	"US_Backpack_EP1",
+	"SouthUni1",
+	"SouthUni2",
+	"SouthUni3",
+	"SouthUni4",
+	"SouthUni5",
+	"SouthUni6",
+	"SouthUni7",
+	"AK_107_Kobra",
+	"AK_107_GL_Kobra",
+	"AK_107_PSO",
+	"AK_107_GL_PSO",
+	"30Rnd_545x39_AK",
+	"1Rnd_HE_GP25",
+	"Sa58V_CCO_EP1",
+	"Sa58V_RCO_EP1",
+	"30Rnd_762x39_SA58",
+	"SVD_CAMO",
+	"10Rnd_762x54_SVD",
+	"KSVK_sou",
+	"5Rnd_127x108_KSVK",
+	"PK_sou",
+	"100Rnd_762x54_PK",
+	"RPG7V_sou",
+	"PG7V",
+	"PG7VR",
+	"PG7VL",
+	"RPG18",
+	"RPG18_mag",
+	"Strela_sou",
+	"Strela_mag",
+	"Igla_sou",
+	"Igla_mag",
+	"HandGrenade_sou",
+	"Land_CamoNetVar_NATO_EP1",
+	"Fort_Barricade_EP1",
+	"Land_Campfire_burning",
+	"US_WarfareBUAVterminal_Base_EP1",
+	"CampEast_EP1",
+	"Land_HBarrier5",
+	"bargate"
 ];
 
 _copshop        =
@@ -330,7 +330,7 @@ _copshop_response =
 "vclammo"
 ];
 
-_copshop_sobr =
+_copshop_SCO =
 [
 "FlagCarrierBLUFOR_EP1",
 "copUni2",
@@ -804,9 +804,9 @@ INV_ItemShops = [
 [unmembox,"UN Equipment",unmembox,dummyobj,_unms,_unms,true],       // 44
 
 [copbasic,"Police Shop",copbasic,dummyobj, _copshop,_copshop,true], // 45
-[coppatrol,"Patrol-Officer",coppatrol,dummyobj,_copshop_patrol,_copshop_patrol,true], //46
-[copcriminal,"Criminal Response-Officer",copcriminal,dummyobj,_copshop_response,_copshop_response,true], //47
-[copswat,"SOBR",copswat,dummyobj,_copshop_sobr,_copshop_sobr,true],   //48
+[coppatrol,"Patrol Officers",coppatrol,dummyobj,_copshop_patrol,_copshop_patrol,true], //46
+[copcriminal,"Advanced Officers",copcriminal,dummyobj,_copshop_response,_copshop_response,true], //47
+[copswat,"SCO19",copswat,dummyobj,_copshop_SCO,_copshop_SCO,true],   //48
                                                                                    
 [terrorvehicles33,"Terrorist vehicles",dummyobj,"tairspawn",_terrorvehicles,_terrorvehicles,true],  // 49
 [terrorshop,"Terrorist Shop",tgunbox,dummyobj,_terrorshop_buy,_terrorshop_buy,true],              // 50
