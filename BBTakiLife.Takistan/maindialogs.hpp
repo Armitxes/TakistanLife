@@ -90,7 +90,7 @@ class wantedrelease
 		h = 0.04;
 
 		text = $STRD_description_submit;
-		action = "[(call compile lbData [1,(lbCurSel 1)]), (ctrlText 2), 0, (lbCurSel 4)] execVM ""wantedrelease.sqf""; closeDialog 0";
+		action = "[(call compile lbData [1,(lbCurSel 1)]), (ctrlText 2), 0] execVM ""wantedrelease.sqf"";";
 	};
 
 	class set_unwanted : RscButton

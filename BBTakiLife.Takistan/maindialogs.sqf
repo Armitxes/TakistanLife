@@ -2,10 +2,7 @@ _array = _this select 3;
 _art   = _array select 0;
 _dollarz  = 'dollarz' call INV_GetItemAmount;_zusatzString = "";
 
-if ((count _array)>1) then
-{
-	_zusatzString = _array select 1;
-};
+if ((count _array)>1) then { _zusatzString = _array select 1; };
 
 switch (_art) do {
     case "bail": {
@@ -24,42 +21,40 @@ switch (_art) do {
 	lbSetCurSel [1, 0];
 
 	// Change this and I'll fcking kill you ;)
+	_list = lbAdd [4, "Crime not in List"]; lbSetData [4,_list,"1000"];
 	if(iscop) then {
-	    _list = lbAdd [4, "Crime not in List"];
-	    _list = lbAdd [4, "Murder"];
-	    _list = lbAdd [4, "Hit & Run"];
-	    _list = lbAdd [4, "Bribery"];
-	    _list = lbAdd [4, "VIP Assassination"];
-	    _list = lbAdd [4, "Bank/Casino Robbery"];
-	    _list = lbAdd [4, "Breach of Highway Code"];
-	    _list = lbAdd [4, "Evading a Police Checkpoint"];
-	    _list = lbAdd [4, "Evading the Police"];
-	    _list = lbAdd [4, "Theft of Civilian Vehicle"];
-	    _list = lbAdd [4, "Possession of Class A Drug"];
-	    _list = lbAdd [4, "Possession of Class B Drug"];
-	    _list = lbAdd [4, "Assault"];
-	    _list = lbAdd [4, "Rioting"];
-	    _list = lbAdd [4, "Perverting the Course of Justice"];  	
-	    _list = lbAdd [4, "Robbery"];
-	    _list = lbAdd [4, "Attempted Murder"];
-	    _list = lbAdd [4, "Attempted Vehicle Theft"];
-	    _list = lbAdd [4, "Possession of Illegal Weapon"];
-	    _list = lbAdd [4, "Anti Social Behaviour"];
-	    _list = lbAdd [4, "Escaping Jail"];
-	    _list = lbAdd [4, "Assisting a Jail Break"];
-	    _list = lbAdd [4, "Arson"];
-	    _list = lbAdd [4, "Kidnap"];
-	    _list = lbAdd [4, "Manslaughter"];
-	    _list = lbAdd [4, "Kidnapping a VIP"];
-	    _list = lbAdd [4, "Breach of Aviation Law"];
-	    _list = lbAdd [4, "Terrorism"];
-		
+	    _list = lbAdd [4, "Murder"]; lbSetData [4,_list,"18000"];
+	    _list = lbAdd [4, "Hit & Run"]; lbSetData [4,_list,"10000"];
+	    _list = lbAdd [4, "Bribery"]; lbSetData [4,_list,"2000"];
+	    _list = lbAdd [4, "VIP Assassination"]; lbSetData [4,_list,"18000"];
+	    _list = lbAdd [4, "Bank/Casino Robbery"]; lbSetData [4,_list,"8000"];
+	    _list = lbAdd [4, "Breach of Highway Code"]; lbSetData [4,_list,"1000"];
+	    _list = lbAdd [4, "Evading a Police Checkpoint"]; lbSetData [4,_list,"5000"];
+	    _list = lbAdd [4, "Evading the Police"]; lbSetData [4,_list,"3000"];
+	    _list = lbAdd [4, "Theft of Civilian Vehicle"]; lbSetData [4,_list,"1000"];
+	    _list = lbAdd [4, "Assault"]; lbSetData [4,_list,"5000"];
+	    _list = lbAdd [4, "Rioting"]; lbSetData [4,_list,"3000"];
+	    _list = lbAdd [4, "Perverting the Course of Justice"]; lbSetData [4,_list,"2000"];  	
+	    _list = lbAdd [4, "Robbery"]; lbSetData [4,_list,"4000"];
+	    _list = lbAdd [4, "Attempted Murder"]; lbSetData [4,_list,"6000"];
+	    _list = lbAdd [4, "Attempted Vehicle Theft"]; lbSetData [4,_list,"2000"];
+	    _list = lbAdd [4, "Possession of Illegal Weapon"]; lbSetData [4,_list,"3000"];
+	    _list = lbAdd [4, "Anti Social Behaviour"]; lbSetData [4,_list,"2000"];
+	    _list = lbAdd [4, "Escaping Jail"]; lbSetData [4,_list,"5000"];
+	    _list = lbAdd [4, "Assisting a Jail Break"]; lbSetData [4,_list,"7000"];
+	    _list = lbAdd [4, "Arson"]; lbSetData [4,_list,"5000"];
+	    _list = lbAdd [4, "Kidnap"]; lbSetData [4,_list,"9000"];
+	    _list = lbAdd [4, "Manslaughter"]; lbSetData [4,_list,"5000"];
+	    _list = lbAdd [4, "Breach of Aviation Law"]; lbSetData [4,_list,"2500"];
 	};
-	_list = lbAdd [4, "Theft of UN/Cop Vehicle"];
-	_list = lbAdd [4, "Illegal Border Crossing"];
-	_list = lbAdd [4, "Crimes Against Humanity"]; 
-    _list = lbAdd [4, "Abuse of Emergency call"];
-    _list = lbAdd [4, "Slavery"];	
+	_list = lbAdd [4, "Theft of UN/Cop Vehicle"]; lbSetData [4,_list,"6000"];
+	_list = lbAdd [4, "Illegal Border Crossing"]; lbSetData [4,_list,"5000"];
+	_list = lbAdd [4, "Crimes Against Humanity"]; lbSetData [4,_list,"17000"];
+    _list = lbAdd [4, "Abuse of Emergency call"]; lbSetData [4,_list,"3000"];
+	_list = lbAdd [4, "Possession of Class A Drug"]; lbSetData [4,_list,"8000"];
+	_list = lbAdd [4, "Possession of Class B Drug"]; lbSetData [4,_list,"6000"];
+    _list = lbAdd [4, "Slavery"]; lbSetData [4,_list,"10000"];
+	_list = lbAdd [4, "Terrorism"]; lbSetData [4,_list,"18000"];
   
 	lbSetCurSel [4, 0];
   

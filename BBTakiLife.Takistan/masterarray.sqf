@@ -609,7 +609,7 @@ INV_AlleItemsArray = [
 
 ["bargate",["Item", "misc"],["ZavoraAnim", "Bar Gate"],[25, 12], [5, "", "patrol_training"], [true, true, true,false,"createobject.sqf"],"Bargate",localize "STRS_inv_item_bargate_info", [] ],
 
-["seccam",["Item", "misc"],["Misc_Videoprojektor", "Security Camera"],[2000, 1000], [5, "", "response_training"], [true, true, true,false,"armitxes\itemlogic.sqf"],"seccam","Keep your eyes everywhere", [] ],
+["seccam",["Item", "misc"],["Misc_Videoprojektor", "Security Camera"],[10000, 2000], [5, "", "response_training"], [true, true, true,false,"armitxes\itemlogic.sqf"],"seccam","Keep your eyes everywhere", [] ],
 
 ["hackkit",["Item", "illegal"],["hackkit", "Hacking Device"],[2500, 1000], [5, "", "response_training"], [true, true, true,false,"armitxes\itemlogic.sqf"],"hackkit","Keep your eyes everywhere", [] ],
 
