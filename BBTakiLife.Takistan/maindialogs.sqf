@@ -357,17 +357,17 @@ switch (_art) do {
     case "steuern": {
 	if (!(createDialog "steuerdialog")) exitWith {hint "Dialog Error!";};
 	sliderSetSpeed [12, 1, 5];
-	sliderSetRange [12, 0, 40];
+	sliderSetRange [12, 0, 20];
 	sliderSetPosition [12,((INV_ItemTypenArray select 0) select 2)];
-	sliderSetSpeed [22, 1, 5];		sliderSetRange [22, 1, 40];
+	sliderSetSpeed [22, 1, 5];		sliderSetRange [22, 1, 20];
 	sliderSetPosition [22,((INV_ItemTypenArray select 1) select 2)];
-	sliderSetSpeed [32, 1, 5];				sliderSetRange [32, 1, 40];
+	sliderSetSpeed [32, 1, 5];				sliderSetRange [32, 1, 20];
 	sliderSetPosition [32,((INV_ItemTypenArray select 2) select 2)];
 	sliderSetSpeed [42, 1, 5];
-	sliderSetRange [42, 0, 40];
+	sliderSetRange [42, 0, 20];
 	sliderSetPosition [42,((INV_ItemTypenArray select 3) select 2)];
 	sliderSetSpeed [52, 1, 5];
-	sliderSetRange [52, 0, 40];
+	sliderSetRange [52, 0, 20];
 	sliderSetPosition [52,bank_steuer];
 	while {ctrlVisible 1032} do
 	{
