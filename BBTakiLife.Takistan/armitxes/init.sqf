@@ -6,7 +6,6 @@ if(isServer) then {
 };
 
 ["handler",true] call execARM;
-["veh_functions",true] call execARM;
 ["plr_functions",true] call execARM;
 
 if(!isDedicated) then 

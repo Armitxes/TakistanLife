@@ -3,7 +3,7 @@ if (_art == "clientloop") then {
 	while {true} do {
 		_vcl = vehicle player; 
 		_nextspike = getPos player nearestObject "Fort_RazorWire";
-		if((_vcl distance _nextspike) < 5 && _vcl != player) then { [_vcl] call veh_desWheels; };
+		if((_vcl distance _nextspike) < 5 && _vcl != player) then { ["spikes"] execVM "armitxes\vehtools.sqf"; };
 		if (!ismedic && driver _vcl == player && (typeOf _vcl) in ["GAZ_Vodnik_MedEvac","HMMWV_Ambulance","S1203_ambulance_EP1"]) then { player action ["EJECT",_vcl]; _vcl lock true; hintSilent "Nope, I'm not a medic"; };
 		{if ((player distance (_x select 0)) < (_x select 1)) then {timeinworkplace = timeinworkplace + 1;};} forEach workplacearray;
 		_dollarz = 'dollarz' call INV_GetItemAmount;

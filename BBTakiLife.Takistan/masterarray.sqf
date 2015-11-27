@@ -495,13 +495,12 @@ INV_AlleItemsArray = [
 
 ["medikit",["Item", "Shop"],["medikit", "Medikit"],[200, 12], [0.5, ""], [true, true, true,false,"code","[player,'[""medikit"",-1] call INV_AddInventoryItem;'] spawn plr_heal;"],localize "STRS_inv_item_medikit",localize "STRS_inv_item_medikit_info", [["plastik", 1],["stahl", 2]] ],
 
-["reparaturkit",["Item", "service"],["reparaturkit", "Repair Kit"],[1500, 64], [2, "engineer", ""],[true,true,true, false, "code","[cursorTarget,'[""reparaturkit"",-1] call INV_AddInventoryItem;'] spawn veh_repair;"],localize "STRS_inv_item_repairkit", localize "STRS_inv_item_repairkit_info",[["plastik", 1],["stahl", 2]] ],
-
-["copreparaturkit",["Item", "service"],["reparaturkit", "Repair Kit"],[400, 64], [2, "engineer", ""],[true,true,true, false, "code","[cursorTarget,'[""copreparaturkit"",-1] call INV_AddInventoryItem;'] spawn veh_repair;"],localize "STRS_inv_item_repairkit", localize "STRS_inv_item_repairkit_info",[["plastik", 1],["stahl", 2]] ],
+["reparaturkit",["Item", "service"],["reparaturkit", "Repair Kit"],[1500, 64], [2, "engineer", ""],[true,true,true, false, "code","['repair'] execVM 'armitxes\vehtools.sqf';"],localize "STRS_inv_item_repairkit", localize "STRS_inv_item_repairkit_info",[["plastik", 1],["stahl", 2]] ],
+["copreparaturkit",["Item", "service"],["reparaturkit", "Repair Kit"],[400, 64], [2, "engineer", ""],[true,true,true, false, "code","['repair'] execVM 'armitxes\vehtools.sqf';"],localize "STRS_inv_item_repairkit", localize "STRS_inv_item_repairkit_info",[["plastik", 1],["stahl", 2]] ],
 
 ["lighter",["Item", "illegal"],["lighter", "lighter"],[500, 1], [0.5, "", ""],[true,true,true, false, "ignitefuel.sqf"],localize "STRS_inv_item_lighter", localize "STRS_inv_item_lighter_info",[["erdoel", 2]] ],
 
-["kanister", ["Item", "service"],["kanister", "Refuel Can"], [1500, 10], [2, "", "patrol_training"],[true,true,true, false, "code","[cursorTarget,'[""kanister"",-1] call INV_AddInventoryItem;'] spawn veh_refuel;"], localize "STRS_inv_item_kanister", localize "STRS_inv_item_kanister_info",[["plastik", 1],["erdoel", 1]] ],
+["kanister", ["Item", "service"],["kanister", "Refuel Can"], [1500, 10], [2, "", "patrol_training"],[true,true,true, false, "code","['refuel'] execVM 'armitxes\vehtools.sqf';"], localize "STRS_inv_item_kanister", localize "STRS_inv_item_kanister_info",[["plastik", 1],["erdoel", 1]] ],
 
 ["Fuelline", ["Item", "service"],["Syphon Fuelkit", "Syphon Fuel-kit"], [1600, 4], [1.7, "", "patrol_training"],[true,true,true, false, "syphon.sqf"], localize "STRS_inv_item_fuelcut", localize "STRS_inv_item_fuelcut_info",[["stahl", 1]] ],
 

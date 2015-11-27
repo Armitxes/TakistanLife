@@ -92,11 +92,6 @@ _role RemoveAction action163;
 _role RemoveAction action164;
 _role RemoveAction action165;
 
-
-_role RemoveAction gsshop1;
-_role RemoveAction gsshop2;
-_role RemoveAction gsshop3;
-_role RemoveAction gsshop4;
 _role RemoveAction memkey;
 _role RemoveAction medAct;
 _role RemoveAction medAct3;

@@ -482,3 +482,40 @@ class chat {
 		};
 	};
 };
+
+class AL_RscProgress 
+{
+	type = 8;
+	style = 0;
+	colorFrame[] = {0,0,0,1};
+	colorBar[] = {1,1,1,1};
+	texture = "#(argb,8,8,3)color(1,1,1,1)";
+	w = 0.8;
+	h = 0.03;
+};
+class progressBar
+{
+	idd = 2459;
+	onLoad = "((_this select 0) displayCtrl -1) progressSetPosition 0.5";
+	class Controls
+	{
+		class Progress: AL_RscProgress 
+		{
+			idc = 1;
+			x = 0.38 * safezoneW + safezoneX;
+			y = 0.195 * safezoneH + safezoneY;
+			h = 0.025 * safezoneH;
+			w = 0.25 * safezoneW;
+		};
+		class lblText: RscStructuredText
+        {
+            idc = 2;
+            text = "Loading...";
+            x = 0.38 * safezoneW + safezoneX;
+            y = 0.2 * safezoneH + safezoneY;
+            w = 0.242431 * safezoneW;
+            h = 0.14304 * safezoneH;
+            colorBackground[] = {0,0,0,0};
+        };
+	};
+};

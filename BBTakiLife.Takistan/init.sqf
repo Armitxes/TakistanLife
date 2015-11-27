@@ -78,7 +78,6 @@ _h = [] execVM "variables.sqf";
 waitUntil{scriptDone  _h};
 
 execVM "BTK\Cargo Drop\Start.sqf"; // Initialize BTK Cargo Drop Script
-execVM "BB Elvis towing\Start.sqf"; // Initialize BB Elvis Towing
 
 setPitchBank = compile preprocessfile "setPitchBank.sqf";
 
