@@ -77,8 +77,6 @@ _h = [] execVM "variables.sqf";
 
 waitUntil{scriptDone  _h};
 
-execVM "BTK\Cargo Drop\Start.sqf"; // Initialize BTK Cargo Drop Script
-
 setPitchBank = compile preprocessfile "setPitchBank.sqf";
 
 
