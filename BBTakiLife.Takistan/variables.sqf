@@ -115,7 +115,7 @@ getmarkerpos "patrolpoint12",
 getmarkerpos "patrolpoint13"
 ];
 ['schluesselbund', 1] call INV_SetItemAmount;
-['treefixer', 1] call INV_SetItemAmount;
+['bugfixer', 1] call INV_SetItemAmount;
 ['handy', 1] call INV_SetItemAmount;
 playerWeapons            = [];
 playerMagazines          = [];

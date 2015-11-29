@@ -681,7 +681,7 @@ INV_AlleItemsArray = [
 ["supgrade",["Item", "carobjects"],["nitro", "Tuning kit"], [2500, 555], [2, "engineer", "patrol_training"],[true,true,true, false, "armitxes\veh_tuning.sqf"], "Tuning kit",localize "STRS_inv_item_supgrade_info", [["stahl", 1],["ebauteile", 1],["plastik", 1],["erdoel", 10]]],
 
 ["ziptie",["Item", "illegal"],["ziptie", "Zip Tie"], [4500, 4500], [0.5, "", ""],[true,true,true, false, "nouse.sqf"], "Zip Tie",localize "STRS_inv_item_ziptie_info", [["steel", 1],["ebauteile", 1],["plastic", 1],["plastic", 10]]],
-["treefixer", 						["Item", "misc"],["Treefixer", "Treefixer"], 								[1, 1], [0, "", ""],[true,false,true, false, "fixtrees.sqf"],"Treefixer","You can use this to pull fallen trees back up.", [] ],
+["bugfixer", ["Item", "misc"],["Bugfixer", "Bugfixer"], [1, 1], [0, "", ""],[true,false,true, false, "armitxes\bugfixer.sqf"],"Bugfixer","You can use this to pull fallen trees back up or to remove dead bodies from vehicles.", [] ],
 
 // Uniforms
 // Cop Skins

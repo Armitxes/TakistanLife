@@ -1,4 +1,5 @@
 _tool = _this select 0;
+if(typeName _tool == "OBJECT") then { _tool = (_this select 3) select 0; };
 _vcl = (nearestObjects [getpos player, ["LandVehicle","Air","Ship"], 10]) select 0;
 
 switch (_tool) do {

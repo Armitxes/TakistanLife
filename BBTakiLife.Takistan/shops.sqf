@@ -175,7 +175,7 @@ _pub = ["beer","beer2","vodka","smirnoff","wiskey","wine","wine2"];
 _gs = ["M9_Civ", "Rnd_9x19_M9","glock17_EP1","Rnd_9x19_glock17","Makarov","Rnd_9x18_Makarov","Colt1911", "Rnd_45ACP_1911", "revolver_EP1", "Rnd_45ACP", "LeeEnfield","x_303","Saiga12K","8Rnd_B_Saiga12_Pellets","M8_compact","m8_carbine","Rnd_556x45_G36"];
 //Equiptment shop
 //Bino's, NVG's, GPS, Lockpick
-_es = ["Binocular", "NVGoggles", "GPS","Fuelline","handy","treefixer","hackkit"];
+_es = ["Binocular", "NVGoggles", "GPS","Fuelline","handy","bugfixer","hackkit"];
 //Car Upgrades
 _cu = ["supgrade","towingtool"];
 //Car Shop
