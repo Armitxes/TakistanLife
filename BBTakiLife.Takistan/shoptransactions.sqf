@@ -200,23 +200,31 @@ if (_maxstock != -1) then
 
 if(_menge <= 0)exitwith{player groupchat "the shop has reached its maximum stock for this item/vehicle"};
 
-if (_itemart == "item") then
-
-	{
-
+if (_itemart == "item") then {
 	if (_item call INV_GetItemAmount == 0) exitWith {player groupChat localize "STRS_inv_buyitems_sell_notenough"; _exitvar = 1};
 	if (_item call INV_GetItemAmount < _menge) then {_menge = (_item call INV_GetItemAmount); _cost = _CostMitTax*_menge;};
-	// if (_item == OilBarrel) then { _cost = _cost + (_cost*
 
-	if (_infos call INV_getitemIsIllegal and _infos call INV_getitemKindOf == "illegal") then {
-    _list = _fahne getvariable "druglist";
-    if(isnil "_list")then{_list = [[player, _menge, _cost/_menge]]}else{_list = _list + [[player, _menge, _cost/_menge]]};
-    _fahne setvariable["druglist", _list, true];
+	if (_infos call INV_getitemIsIllegal && _infos call INV_getitemKindOf == "illegal") then {
+		_list = _fahne getVariable "druglist";
+		if(isNil "_list")then{_list = [[player, _menge, _cost]]}else{
+			_newEntry = true;
+			for [{_i=0}, {_i < (count _list)}, {_i=_i+1}] do {
+				_curLsPnt = _list select _i;
+				if (_curLsPnt select 0 == player) exitWith {
+					_newEntry = false;
+					_curLsPnt set [1,(_curLsPnt select 1) + _menge];
+					_curLsPnt set [2,(_curLsPnt select 2) + _cost];
+					_list set [_i,_curLsPnt];
+				};
+			};
+			if(_newEntry) then { _list = _list + [[player, _menge, _cost]]; };
+		};
+		_fahne setVariable["druglist", _list, true];
 	};
 
 	['dollarz', _cost] call INV_AddInventoryItem;
 	[_item, -(_menge)] call INV_AddInventoryItem;
-	if(primaryweapon player == "" and secondaryweapon player == "")then{player playmove "AmovPercMstpSnonWnonDnon_AinvPknlMstpSnonWnonDnon"}else{player playmove "AinvPknlMstpSlayWrflDnon"};
+	if(primaryWeapon player == "" and secondaryWeapon player == "")then{player playMove "AmovPercMstpSnonWnonDnon_AinvPknlMstpSnonWnonDnon"}else{player playMove "AinvPknlMstpSlayWrflDnon"};
 	player groupChat format [localize "STRS_inv_shop_sold", (_menge call ISSE_str_IntToStr), (_infos call INV_getitemName), (_cost call ISSE_str_IntToStr)];
 
 	};
