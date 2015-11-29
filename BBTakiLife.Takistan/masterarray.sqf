@@ -612,6 +612,8 @@ INV_AlleItemsArray = [
 
 ["seccam",["Item", "misc"],["Misc_Videoprojektor", "Security Camera"],[10000, 2000], [5, "", "response_training"], [true, true, true,false,"armitxes\itemlogic.sqf"],"seccam","Keep your eyes everywhere", [] ],
 
+["hackkit",["Item", "illegal"],["hackkit", "Hacking Device"],[2500, 1000], [5, "", "response_training"], [true, true, true,false,"armitxes\itemlogic.sqf"],"hackkit","Hack into every system", [] ],
+
 ["BigbagfenceCorner",["Item", "misc"],["Land_fort_bagfence_corner", "Big bag fence (Corner)"],[79.5, 32], [8, "", "patrol_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_BigbagfenceCorner",localize "STRS_inv_item_BigbagfenceCorner_info", [] ],
 
 ["bigbagfence",["Item", "misc"],["Land_fort_bagfence_long", "Big bag fence"],[49.5, 21.5], [6, "", "patrol_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_bigbagfence",localize "STRS_inv_item_bigbagfence_info", [] ],
