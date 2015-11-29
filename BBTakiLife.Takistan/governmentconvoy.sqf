@@ -40,11 +40,11 @@ convoytruck setVehicleInit "
 convoytruck = this; 
 this setVehicleVarName ""convoytruck"";  
 this setAmmoCargo 0;  
-clearweaponcargo this;
-clearmagazinecargo this;
+clearWeaponCargo this;
+clearMagazineCargo this;
 ";	
 processinitcommands;
-publicvariable "convoytruck";
+publicVariable "convoytruck";
  
 
 deleteVehicle convoysoldier;
@@ -67,7 +67,7 @@ govconvoygroup setCombatMode "GREEN";
 
 //put guards in car with convoysoldier
 sleep 2;
-convoysoldier domove getpos copbase1;
+convoysoldier doMove getPos copbase1;
 
 
 
