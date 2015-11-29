@@ -497,6 +497,8 @@ INV_AlleItemsArray = [
 
 ["reparaturkit",["Item", "service"],["reparaturkit", "Repair Kit"],[1500, 64], [2, "engineer", ""],[true,true,true, false, "code","['repair'] execVM 'armitxes\vehtools.sqf';"],localize "STRS_inv_item_repairkit", localize "STRS_inv_item_repairkit_info",[["plastik", 1],["stahl", 2]] ],
 ["copreparaturkit",["Item", "service"],["reparaturkit", "Repair Kit"],[400, 64], [2, "engineer", ""],[true,true,true, false, "code","['repair'] execVM 'armitxes\vehtools.sqf';"],localize "STRS_inv_item_repairkit", localize "STRS_inv_item_repairkit_info",[["plastik", 1],["stahl", 2]] ],
+["towingtool",["Item", "service"],["towingtool", "Towing Equipment"],[12000, 640], [2, "engineer", ""],[true,true,true, false, "code","['towing'] execVM 'armitxes\vehtools.sqf';"],"Towing Equipment", "Towing Equipment",[["plastik", 1],["stahl", 2]] ],
+
 
 ["lighter",["Item", "illegal"],["lighter", "lighter"],[500, 1], [0.5, "", ""],[true,true,true, false, "ignitefuel.sqf"],localize "STRS_inv_item_lighter", localize "STRS_inv_item_lighter_info",[["erdoel", 2]] ],
 

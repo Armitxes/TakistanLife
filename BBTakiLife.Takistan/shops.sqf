@@ -177,7 +177,7 @@ _gs = ["M9_Civ", "Rnd_9x19_M9","glock17_EP1","Rnd_9x19_glock17","Makarov","Rnd_9
 //Bino's, NVG's, GPS, Lockpick
 _es = ["Binocular", "NVGoggles", "GPS","Fuelline","handy","treefixer","hackkit"];
 //Car Upgrades
-_cu = ["supgrade"];
+_cu = ["supgrade","towingtool"];
 //Car Shop
 //Bike, Old Motorbike, Motorbike, ATV, Vohla Blue, Vohla Grey, Lada, Lada Hippie, S1203 Van, Landrover
 _cs = ["Old_bike_TK_CIV_EP1","MMT_Civ","Old_moto_TK_Civ_EP1","TT650_TK_CIV_EP1","ATV_CZ_EP1","Volha_1_TK_CIV_EP1","VWGolf","SkodaBlue","Lada1_TK_CIV_EP1","Lada2_TK_CIV_EP1","UAZ_Unarmed_TK_CIV_EP1","S1203_TK_CIV_EP1","hilux1_civil_3_open_EP1","LandRover_TK_CIV_EP1"];
@@ -229,7 +229,7 @@ _souveh = ["T55_TK_GUE_EP1","T72_TK_EP1","BRDM2_TK_GUE_EP1","Ural_ZU23_TK_GUE_EP
 // South Government Air Shop
 _souair = ["Mi17_Ins","UH1H_TK_GUE_EP1","Mi17_medevac_Ins"];
 //Medic Shop
-_hos = ["medikit","docUni","docUni2","docUni3","docUni4","S1203_ambulance_EP1","HMMWV_Ambulance","GAZ_Vodnik_MedEvac"];
+_hos = ["medikit","towingtool","docUni","docUni2","docUni3","docUni4","S1203_ambulance_EP1","HMMWV_Ambulance","GAZ_Vodnik_MedEvac"];
 _hosair = ["UH60M_MEV_EP1"];
 //South Goverment Shop
 _soushop = [
@@ -301,6 +301,7 @@ _copshop        =
 _copshop_patrol =
 [
 "copUni",
+"towingtool",
 "roadblock",
 "RoadBarrier",
 "bargate",
@@ -425,6 +426,7 @@ _uns =
 "kanister",
 "medikit",
 "supgrade",
+"towingtool",
 "handy",
 "SmokeShell",
 "Spikestrip",

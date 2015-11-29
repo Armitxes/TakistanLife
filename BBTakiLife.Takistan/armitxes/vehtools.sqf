@@ -10,38 +10,38 @@ switch (_tool) do {
 		_vcl setHit ["wheel_2_2_steering", 1];
 	};
 	case "repair": {
-		if(player != vehicle player) then { systemChat "I cant repair a vehicle from the inside ^^"; } else {
-			if (call fnc_isBusy) exitWith {systemChat "Wait, I am busy...";};
-			if (isNil "_vcl") then {systemChat "There is no vehicle here...";} else {
+		if(player != vehicle player) then { titleText ["I cant repair a vehicle from the inside ^^", "PLAIN DOWN", 0.5]; } else {
+			if (call fnc_isBusy) exitWith {titleText ["Wait! I'm busy...", "PLAIN DOWN", 0.5];};
+			if (isNil "_vcl") then {titleText ["There is no vehicle here...", "PLAIN DOWN", 0.5];} else {
 				if(player distance _vcl < 5) then {   
 					_dam = damage _vcl;
-					if(_dam >= 1) exitWith { systemChat "This vehicle is a mess, no chance I can repair it."; };
+					if(_dam >= 1) exitWith { titleText ["This vehicle is a mess, no chance I can repair it.", "PLAIN DOWN", 0.5]; };
 					_w = [(_dam * 15 + 7),"Repairing...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
 					waitUntil { scriptDone _w; };
-					if(player != vehicle player) exitWith { hint "You canceled the car repair"; };
-					_vcl setDamage 0; systemChat "The vehicle looks like new.";
-				} else { systemChat "What am I supposed to repair?"; };
+					if(player != vehicle player) exitWith { titleText ["Repair cancelled.", "PLAIN DOWN", 0.5]; };
+					_vcl setDamage 0; titleText ["The vehicle look like new. Well almost..", "PLAIN DOWN", 0.5];
+				} else { titleText ["What am I supposed to repair?", "PLAIN DOWN", 0.5]; };
 			};
 		};
 	};
 	case "carjack": {
-		if (isNil "_vcl") then {systemChat "There is no vehicle here...";} else {
-			if (call fnc_isBusy) exitWith {systemChat "Wait, I am busy...";};
-			systemChat "It works! Now I should slowly...";
+		if (isNil "_vcl") then {titleText ["Unflipping air is no much fun :)", "PLAIN DOWN", 0.5]; } else {
+			if (call fnc_isBusy) exitWith {titleText ["Wait! I'm busy...", "PLAIN DOWN", 0.5];};
+			titleText ["It works! Now I should slowly...", "PLAIN DOWN", 0.5];
 			sleep 5;
 		
 			if (player distance _vcl < 10) then {
-				_vcl setVectorUp [0.001,0.001,1.2]; systemChat "I made it!";
-			} else { systemChat "Damn, I slipped of! I should stay closer."; };		
+				_vcl setVectorUp [0.001,0.001,1.2]; titleText ["I made it!", "PLAIN DOWN", 0.5];
+			} else { titleText ["Damn, I slipped of! I should stay closer.", "PLAIN DOWN", 0.5]; };	
 		};
 	};
 	case "refuel": {                              
-		if(player != vehicle player) then { systemChat "I must leave the vehicle to refuel it!"; } else {
-			if (call fnc_isBusy) exitWith {systemChat "Wait, I am busy...";};
-			if (isNil "_vcl") then {systemChat "There is no car here...";} else {
+		if(player != vehicle player) then { titleText ["I must leave the vehicle to refuel it!", "PLAIN DOWN", 0.5]; } else {
+			if (call fnc_isBusy) exitWith {titleText ["Wait! I'm busy...", "PLAIN DOWN", 0.5];};
+			if (isNil "_vcl") then { titleText ["There is no vehicle close...", "PLAIN DOWN", 0.5]; } else {
 				if(player distance _vcl < 5) then {   
 					_fuel = fuel _vcl;
-					if(_fuel > 0.95) exitWith { hint "This vehicle needs no refuel"; };
+					if(_fuel > 0.95) exitWith { titleText ["This vehicle needs no refuel", "PLAIN DOWN", 0.5]; };
 					_vcl lock true;
 					_w = [((1-_fuel) * 10 + 7),"Refueling...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
 					waitUntil { scriptDone _w; };
@@ -50,24 +50,22 @@ switch (_tool) do {
 			};
 		};
 	};
-	case "tow": {
+	case "towing": {
 		_plrVcl = vehicle player;
-		if (_plrVcl != player) then {
-			_vcl = ((nearestObjects [_plrVcl,["LandVehicle"], 20]) - [_plrVcl]) select 0;
-			if (!isNil "_vcl") then {
-				if (speed _vcl == 0) then {
-					if (_plrVcl isKindOf "Air") then { _vcl attachTo [_plrVcl,[0,-0.2,-1]]; } else { _vcl attachTo [_plrVcl,[0,-4,0.5]]; };
-				} else { systemChat "I can't tow a moving vehicle, the risk is too high."; };
-			} else { systemChat "There is no vehicle close..."; };
-		} else { systemChat "I'm not that strong..."; };
-	};
-	case "untow": {
-		_vcls = nearestObjects [vehicle player,["LandVehicle"], 10];
-		if(count _vcls > 0) then {
-			{
-				//_objs = attachedObjects _x;
-				//if(count _objs > 0) then { _vcl = (_objs select 0); _vcl attachTo [vehicle player,[0,-11,0.5]]; detach _vcl; };
-			} forEach _vcls;
-		} else { systemChat "There is nothing around..."; };
+		_towing = _plrVcl getVariable "towing";
+		if(_plrVcl isKindOf "Motorcycle") exitWith { titleText ["How should that work out!?!", "PLAIN DOWN", 0.5]; };
+		if(isNil "_towing") then {
+			if (_plrVcl != player) then {
+				_vcl = ((nearestObjects [_plrVcl,["LandVehicle"], 20]) - [_plrVcl]) select 0;
+				if (!isNil "_vcl") then {
+					if(_vcl in INV_VehicleArray || ismedic || iscop || isun) then {
+						if (speed _vcl == 0) then {
+							if (_plrVcl isKindOf "Air") then { _vcl attachTo [_plrVcl,[0,-0.5,-10]]; } else { _vcl attachTo [_plrVcl,[0,-5,0.7]]; };
+							_plrVcl setVariable ["towing",_vcl,true];
+						} else { titleText ["I can't tow a moving vehicle, the risk is too high.", "PLAIN DOWN", 0.5]; };
+					} else { titleText ["I don't have the keys for the vehicle...", "PLAIN DOWN", 0.5]; };
+				} else { titleText ["There is no vehicle close...", "PLAIN DOWN", 0.5]; };
+			} else { titleText ["I'm not that strong...", "PLAIN DOWN", 0.5]; };
+		} else { _vcl = _plrVcl getVariable "towing"; detach _vcl; titleText ["Vehicle untowed.", "PLAIN DOWN", 0.5]; _plrVcl setVariable ["towing",nil,true]; };
 	};
 };
