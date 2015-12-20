@@ -5,6 +5,7 @@ INV_AlleWaffenObjekte = [
 ["Sa61_EP1",["Waffe", "pistol"],["Sa61_EP1", "Scorpion"],[2467, 1055], [2, "PMClicense", "response_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["UZI_EP1",["Waffe", "pistol"],["UZI_EP1", "Uzi"],[5250, 132], [2, "Automatic", "response_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["LeeEnfield",["Waffe", "rifle"],["LeeEnfield", "Lee Enfield"],[12500, 850], [2, "Riflelicense", "probator"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["", 5], ["", 5],["dollarz", 5000]] ],
+["LeeEnfield_Don",["Waffe", "rifle"],["LeeEnfield", "Lee Enfield"],[12500, 850], [2, "Riflelicense", "probator"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["", 5], ["", 5],["dollarz", 5000]] ],
 ["FN_FAL",["Waffe", "rifle"],["FN_FAL", "Fal"],[5145, 2195], [2, "automatic", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["iron", 0], ["copper", 0],["dollarz", 10000]] ],
 ["UZI_SD_EP1",["Waffe", "rifle"],["UZI_SD_EP1", "Uzi w/silencer"],[2200, 1000], [2, "", ""],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["revolver_gold_EP1",["Waffe", "rifle"],["revolver_gold_EP1", "Gold Plated Revolver .45cal"],[4550, 637], [1, "Pistollicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
@@ -158,6 +159,7 @@ INV_AlleWaffenObjekte = [
 ["M9",["Waffe", "pistol"],["M9", "M9"],[150, 50], [1, "Pistollicense", "probator"],[], "M9" call ISSE_Cfg_Weapons_GetName,"M9" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 
 ["M9_Civ",["Waffe", "pistol"],["M9", "M9"],[4850, 50], [1, "Pistollicense", "probator"],[], "M9" call ISSE_Cfg_Weapons_GetName,"M9" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+["M9_Don",["Waffe", "pistol"],["M9", "M9"],[4850, 50], [1, "Pistollicense", "probator"],[], "M9" call ISSE_Cfg_Weapons_GetName,"M9" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M9SD",["Waffe", "pistol"],["M9SD", "M9SD"],[150, 50], [1, "Pistollicense", "patrol_training"],[], "M9" call ISSE_Cfg_Weapons_GetName,"M9" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 
 ["Colt1911",["Waffe", "pistol"],["Colt1911", "M1911A1"],[4675, 408], [1, "Pistollicense", "patrol_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],

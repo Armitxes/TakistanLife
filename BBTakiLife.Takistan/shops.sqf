@@ -14,7 +14,7 @@ if (isServer) then {
     [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop2 #10
     [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop3 #11
     [10000,10000,10000,10000,10000,10000,10000], //Barshop #13
-    [10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //gunshop #14
+    [10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //gunshop #14
     [100,100,100,100,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //equipmentshop #15
     [5,5,5,5,5], //tuning1 #16
     [5,5,5,5,5], //tuning2 #17
@@ -74,7 +74,7 @@ if (isServer) then {
     -1, // Pet Shop
     -1,	// RS 2
 	[-1,5], // Mining Tools South
-    [10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1] // Gunshop 2 
+    [10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1] // Gunshop 2 
 	
 	
   ];
@@ -97,7 +97,7 @@ INV_itemmaxstocks = [
 [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop2 #10
 [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop3 #11
 [10000,10000,10000,10000,10000,10000,10000], //Barshop #13
-[10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //gunshop #14
+[10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],  //gunshop #14
 [100,100,100,100,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //equipmentshop #15
 [5,5,5,5,5], //tuning1 #16
 [5,5,5,5,5], //tuning2 #17
@@ -157,7 +157,7 @@ INV_itemmaxstocks = [
 -1,
 -1, // RS 2
 [-1,5], // Mining Tools South
-[10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1] // Gunshop 2 
+[10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1] // Gunshop 2 
 ];
 
 
@@ -172,7 +172,7 @@ _is = ["perch", "trout", "walleye", "bass", "Bread", "rabbit", "boar", "medikit"
 _pub = ["beer","beer2","vodka","smirnoff","wiskey","wine","wine2"];
 //Gun Shop
 //Guns - M9, 1911, Revolver-Silver, Lee Enfield
-_gs = ["M9_Civ", "Rnd_9x19_M9","glock17_EP1","Rnd_9x19_glock17","Makarov","Rnd_9x18_Makarov","Colt1911", "Rnd_45ACP_1911", "revolver_EP1", "Rnd_45ACP", "LeeEnfield","x_303","Saiga12K","8Rnd_B_Saiga12_Pellets","M8_compact","m8_carbine","Rnd_556x45_G36"];
+_gs = ["M9_Civ", "Rnd_9x19_M9","glock17_EP1","Rnd_9x19_glock17","Makarov","Rnd_9x18_Makarov","Colt1911", "Rnd_45ACP_1911", "revolver_EP1", "Rnd_45ACP", "LeeEnfield","x_303","Saiga12K","8Rnd_B_Saiga12_Pellets","M8_compact","Rnd_556x45_G36","m8_carbine"];
 //Equiptment shop
 //Bino's, NVG's, GPS, Lockpick
 _es = ["Binocular", "NVGoggles", "GPS","Fuelline","handy","bugfixer","hackkit"];
@@ -340,6 +340,8 @@ _copshop_SCO =
 "copUni5",
 "copUni6",
 "copUni7",
+"copUni11",
+"copUni12",
 "US_Backpack_EP1",
 "lockpick",
 "copreparaturkit",
@@ -683,7 +685,7 @@ if(!isDedicated) then {
                   "DonUni3","medikit","lockpick","NVGoggles","reparaturkit","lighter","handy",
                   "Fuelline","kanister","GPS","Binocular","supgrade"
                 ];
-    _ng = ["M9_Civ","15Rnd_9x19_M9","LeeEnfield","x_303"];
+    _ng = ["M9_Don","15Rnd_9x19_M9","LeeEnfield_Don","x_303"];
     _gangshop_buy = _gangshop_buy + ["GangUni3"];
     _gs = _gs + _ng;
     if (iscop) then { _copshop = ["M9SD"] + _copshop + _ng; };
