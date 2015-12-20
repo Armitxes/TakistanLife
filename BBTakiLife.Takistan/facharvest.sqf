@@ -2,7 +2,7 @@ _weaponfactory = [
 	"GPS",
 	"Binocular",
 	"NVGoggles",
-	"M9",
+	"M9_Civ",
 	"Rnd_9x19_M9",
 	"glock17_EP1",
 	"Rnd_9x19_glock17",
@@ -101,13 +101,10 @@ _itemfactory= [
 	"handy",
 	"reparaturkit",
 	"kanister",
-	"nitro",
 	"lockpick",
 	"medikit",
 	"lighter",
 	"fishingpole",
-	"Shovel",
-	"Pickaxe",
 	"JackHammer",
 	"supgrade"
 ];
@@ -159,9 +156,9 @@ INV_Lizenzen = [
 ];
 
 INV_ItemFabriken = [
-	[vehiclefactory,"factory1","Vehicle Factory",dummyobj,vfacspawn,_vehiclefactory,10000,"Fabrikablage1", "vehiclequeue"],
-	[ItemFabrik_1,"factory3","General Factory",igunbox,dummyobj,_itemfactory,5000,"Fabrikablage3", "itemqueue"],
-	[weaponfactory,"factory4","Weapon Factory",wfgunbox,dummyobj,_weaponfactory,45000,"Fabrikablage4", "weaponqueue"],
+	[vehiclefactory,"factory1","Vehicle Factory",dummyobj,vfacspawn,_vehiclefactory,20000,"Fabrikablage1", "vehiclequeue"],
+	[ItemFabrik_1,"factory3","General Factory",igunbox,dummyobj,_itemfactory,10000,"Fabrikablage3", "itemqueue"],
+	[weaponfactory,"factory4","Weapon Factory",wfgunbox,dummyobj,_weaponfactory,100000,"Fabrikablage4", "weaponqueue"],
 	[alcoholfactory,"factory7","Alcohol Factory",dummyobj,dummyobj,_alcoholfactory,1000,"Fabrikablage7", "alcoholfactoryqueue"]
 ];
 

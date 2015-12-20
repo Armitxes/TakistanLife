@@ -74,6 +74,8 @@ if(_vclStore)then
 
 if(_storageweight > _maxweight)exitwith{player groupchat "The vehicle's storage is full";};
 
+if ((!local_useBankPossible) && (_item call INV_getitemKindOf == "dollarz")) exitWith {player groupChat "You are cannot drop/give money while in  bank  lockout"};
+
 if
 (
 (_arrname call INV_StorageIsFactory) and

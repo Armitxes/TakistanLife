@@ -1,33 +1,33 @@
 if (isServer) then {
   INV_itemstocks = [
-    [-1,10,10,10], //fuelshop1 #1
-    [-1,10,10,10], //fuelshop2 #2
-    [-1,10,10,10], //fuelshop3 #3
-    [-1,10,10,10], //fuelshop4 #4
-    [-1,10,10,10], //fuelshop5 #5
-    [-1,10,10,10], //fuelshop6 #6
-    [-1,10,10,10], //fuelshop7 #7
-    [-1,10,10,10], //fuelshop8 #8
-    [-1,10,10,10], //fuelshop9
-    [-1,10,10,10], //fuelshop10
+    [5,5,5], //fuelshop1 #1
+    [5,5,5], //fuelshop2 #2
+    [5,5,5], //fuelshop3 #3
+    [5,5,5], //fuelshop4 #4
+    [5,5,5], //fuelshop5 #5
+    [5,5,5], //fuelshop6 #6
+    [5,5,5], //fuelshop7 #7
+    [5,5,5], //fuelshop8 #8
+    [5,5,5], //fuelshop9
+    [5,5,5], //fuelshop10
     [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop1 #9
     [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop2 #10
     [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop3 #11
     [10000,10000,10000,10000,10000,10000,10000], //Barshop #13
-    [10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //gunshop #14
+    [10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //gunshop #14
     [100,100,100,100,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //equipmentshop #15
-    [10,10,10,10,10], //tuning1 #16
-    [10,10,10,10,10], //tuning2 #17
-    [10,10,10,10,10], //tuning3
+    [5,5,5,5,5], //tuning1 #16
+    [5,5,5,5,5], //tuning2 #17
+    [5,5,5,5,5], //tuning3
     [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop1 #19
     [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop2 #20
     [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop3 #21
     [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop4 #22
-    [8,8,8,8,8,8,8,8,-1,-1,-1], //truckshop1 #23
-    [8,8,8,8,8,8,8,8,-1,-1,-1], //truckshop2 #24
+    [5,5,5,5,5,5,5,5,-1,-1,-1], //truckshop1 #23
+    [5,5,5,5,5,5,5,5,-1,-1,-1], //truckshop2 #24
     [3,5,3,3,3,3,3,-1,-1,-1,-1], //airshop1 #25
     [3,5,3,3,3,3,3,-1,-1,-1,-1], //airshop2 #26
-    [-1,-1,20], //miningtools #28
+    [-1,5], //miningtools #28
     -1, //resources #29
     -1, //ring shop #30
     -1, //oil dealer #31
@@ -73,8 +73,8 @@ if (isServer) then {
     -1,// PMC Air
     -1, // Pet Shop
     -1,	// RS 2
-	[-1,-1,20], // Mining Tools South
-    [10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1] // Gunshop 2 
+	[-1,5], // Mining Tools South
+    [10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1] // Gunshop 2 
 	
 	
   ];
@@ -83,34 +83,34 @@ if (isServer) then {
 };
               
 INV_itemmaxstocks = [
-[-1,20,20,20], //fuelshop1 #1
-[-1,20,20,20], //fuelshop2 #2
-[-1,20,20,20], //fuelshop3 #3
-[-1,20,20,20], //fuelshop4 #4
-[-1,20,20,20], //fuelshop5 #5
-[-1,20,20,20], //fuelshop6 #6
-[-1,20,20,20], //fuelshop7 #7
-[-1,20,20,20], //fuelshop8 #8
-[-1,20,20,20], //fuelshop9
-[-1,20,20,20], //fuelshop10
+[5,5,5], //fuelshop1 #1
+[5,5,5], //fuelshop2 #2
+[5,5,5], //fuelshop3 #3
+[5,5,5], //fuelshop4 #4
+[5,5,5], //fuelshop5 #5
+[5,5,5], //fuelshop6 #6
+[5,5,5], //fuelshop7 #7
+[5,5,5], //fuelshop8 #8
+[5,5,5], //fuelshop9
+[5,5,5], //fuelshop10
 [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop1 #9
 [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop2 #10
 [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop3 #11
 [10000,10000,10000,10000,10000,10000,10000], //Barshop #13
-[10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //gunshop #14
+[10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //gunshop #14
 [100,100,100,100,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //equipmentshop #15
-[15,15,15,15,15], //tuning1 #16
-[15,15,15,15,15], //tuning2 #17
-[15,15,15,15,15], //tuning3
+[5,5,5,5,5], //tuning1 #16
+[5,5,5,5,5], //tuning2 #17
+[5,5,5,5,5], //tuning3
 [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop1 #19
 [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop2 #20
 [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop3 #21
 [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop4 #22
-[13,13,13,13,13,13,13,13,-1,-1,-1], //truckshop1 #23
-[13,13,13,13,13,13,13,13,-1,-1,-1], //truckshop2 #24
+[5,5,5,5,5,5,5,5,-1,-1,-1], //truckshop1 #23
+[5,5,5,5,5,5,5,5,-1,-1,-1], //truckshop2 #24
 [3,5,3,3,3,3,3,-1,-1,-1,-1], //airshop1 #25
 [3,5,3,3,3,3,3,-1,-1,-1,-1], //airshop2 #26
-[-1,-1,20], //miningtools #28
+[-1,5], //miningtools #28
 -1, //resources #29
 -1, //ring shop #30
 -1, //oil dealer #31
@@ -156,8 +156,8 @@ INV_itemmaxstocks = [
 -1,// PMC Air
 -1,
 -1, // RS 2
-[-1,-1,20], // Mining Tools South
-[10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1] // Gunshop 2 
+[-1,5], // Mining Tools South
+[10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1] // Gunshop 2 
 ];
 
 
@@ -193,7 +193,7 @@ _ts = ["Ural_TK_CIV_EP1", "V3S_Open_TK_CIV_EP1", "V3S_Repair_TK_GUE_EP1", "V3S_R
 //Air Shops
 _as = ["AH6X_EP1","An2_1_TK_CIV_EP1","C130J_US_EP1","V3S_Repair_TK_GUE_EP1","V3S_Refuel_TK_GUE_EP1","TowingTractor","Mi17_Civilian"];
 //Mining Shop
-_ms = ["Shovel","Pickaxe","JackHammer"];
+_ms = ["Pickaxe","JackHammer"];
 //Resource Shop
 _rs = ["Platinum","Gold","Silver","Rubies","iron","copper","steel","glass"];
 //Diamond Sell
@@ -326,7 +326,7 @@ _copshop_response =
 "mp5a5",
 "30rnd_9x19_MP5",
 "30rnd_9x19_MP5SD",
-"glock17_EP1",
+"glock17_EP1_COP",
 "Rnd_9x19_glock17",
 "vclammo"
 ];
@@ -350,20 +350,19 @@ _copshop_SCO =
 "NVGoggles",
 "GPS",
 "Binocular_Vector",
-"C4",
+"glock17_EP1_COP",
+"Rnd_9x19_glock17",
 "M110_NVG_EP1",
 "20rnd_762x51_B_SCAR",
 "1Rnd_Smoke_M203",
-"M40A3",
-"5Rnd_762x51_M24",
 "M249_EP1",
 "200Rnd_556x45_M249",
 "MG36",
 "100Rnd_556x45_BetaCMag",
+"G36C",
 "G36A_camo",
 "G36K_camo",
 "G36_C_SD_eotech",
-"M4A3_CCO_EP1",
 "M4A1_HWS_GL_CAMO",
 "30Rnd_556x45_G36",
 "30Rnd_556x45_G36SD",
@@ -379,11 +378,7 @@ _copshop_SCO =
 "PipeBomb",
 "M2StaticMG_US_EP1",
 "Land_ladderEP1",
-"Land_ladder_half_EP1",
-"MP5A5",
-"30rnd_9x19_MP5",
-"30rnd_9x19_MP5SD",
-"US_WarfareBUAVterminal_Base_EP1"
+"Land_ladder_half_EP1"
 ];
 
 _copfo=
@@ -395,17 +390,19 @@ _copfo=
 "copUni10",
 "US_Backpack_EP1",
 "M4A1",
+"M16A2",
 "M4A1_AIM",
 "M16A4",
 "M4A1_HWS_GL",
 "30Rnd_556x45_Stanag",
-"G36C",
-"30Rnd_556x45_G36",
 "Mk13_EP1",
 "1Rnd_Smoke_M203",
 "Land_ladderEP1",
 "Land_ladder_half_EP1",
-"AW159_Lynx_BAF"
+"AW159_Lynx_BAF",
+"SUV_SCO",
+"US_WarfareBUAVterminal_Base_EP1",
+"FlagCarrierBLUFOR_EP1"
 ];
 
 _uns =
@@ -415,7 +412,7 @@ _uns =
 "M9",
 "Rnd_9x19_M9SD",
 "15Rnd_9x19_M9",
-"M16A2",
+"SCAR_L_CQC",
 "30Rnd_556x45_Stanag",
 "NVGoggles",
 "unUni4",
@@ -446,31 +443,31 @@ _uns =
 _unms        =
 [
 "US_Backpack_EP1",
-"M4A3_CCO_EP1",
 "30Rnd_556x45_Stanag",
 "SCAR_H_CQC_CCO",
 "M110_NVG_EP1",
 "20Rnd_762x51_B_SCAR",
-"M40A3",
+"M24_des_EP1",
 "5Rnd_762x51_M24",
 "M249_EP1",
 "200Rnd_556x45_M249",
 "BAF_L86A2_ACOG",
 "Stinger",
 "Stinger_mag",
-"C4",
-"SMAW",
-"SMAW_HEAA"
+"PipeBomb",
+"MAAWS",
+"MAAWS_HEAT",
+"Land_ladderEP1",
+"Land_ladder_half_EP1"
 ];
 
 _unnco =
 [
 "US_Backpack_EP1",
 "M16A4",
-"BAF_L85A2_RIS_Holo",
-"BAF_L85A2_RIS_ACOG",
+"SCAR_L_CQC_EGLM_Holo",
+"SCAR_L_STD_Mk4CQT",
 "30Rnd_556x45_Stanag",
-"Mk13_EP1",
 "1Rnd_Smoke_M203",
 "M113_UN_EP1",
 "BTR40_UN"
@@ -631,10 +628,6 @@ _pmcshop = [
 "Pmcuni8",
 "glock17_EP1_PMC",
 "Rnd_9x19_glock17",
-"Sa61_EP1",
-"Rnd_B_765x17_Ball",
-"UZI_EP1_PMC",
-"Rnd_9x19_UZI",
 "M8_compact_PMC",
 "m8_carbine_PMC",
 "m8_sharpshooter",
