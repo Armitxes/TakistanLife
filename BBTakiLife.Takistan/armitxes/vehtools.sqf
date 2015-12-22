@@ -60,10 +60,13 @@ switch (_tool) do {
 				_vcl = ((nearestObjects [_plrVcl,["LandVehicle"], 20]) - [_plrVcl]) select 0;
 				if (!isNil "_vcl") then {
 					if(_vcl in INV_VehicleArray || ismedic || iscop || isun) then {
-						if (speed _vcl == 0) then {
-							if (_plrVcl isKindOf "Air") then { _vcl attachTo [_plrVcl,[0,-0.5,-10]]; } else { _vcl attachTo [_plrVcl,[0,-5,0.7]]; };
-							_plrVcl setVariable ["towing",_vcl,true];
-						} else { titleText ["I can't tow a moving vehicle, the risk is too high.", "PLAIN DOWN", 0.5]; };
+						_vclAllow = _vcl getVariable "towing";
+						if (isNil "_vclAllow") then {
+							if (speed _vcl == 0) then {
+								if (_plrVcl isKindOf "Air") then { _vcl attachTo [_plrVcl,[0,-0.5,-10]]; } else { _vcl attachTo [_plrVcl,[0,-5,0.7]]; };
+								_plrVcl setVariable ["towing",_vcl,true];
+							} else { titleText ["I can't tow a moving vehicle, the risk is too high.", "PLAIN DOWN", 0.5]; };
+						} else { titleText ["I can't tow a towing vehicle...", "PLAIN DOWN", 0.5]; };
 					} else { titleText ["I don't have the keys for the vehicle...", "PLAIN DOWN", 0.5]; };
 				} else { titleText ["There is no vehicle close...", "PLAIN DOWN", 0.5]; };
 			} else { titleText ["I'm not that strong...", "PLAIN DOWN", 0.5]; };
