@@ -18,6 +18,7 @@ if ((_action == "use") and (INV_CanUseItem)) then {
   	["use", _item, _amount, []] execVM _pfad;
 	};
 };
-
+if ((!local_useBankPossible) && (_item call INV_getitemKindOf == "dollarz")) then {player groupChat "You are cannot drop/give money while in  bank lockout"
+  } else {
 if ((_action == "drop") and (INV_CanDropItem)) then { [_item, _amount] execVM "drop.sqf"; };
-if ((_action == "give") and (INV_CanGiveItem)) then { ["uebergabe", _item, _amount, _plyer] execVM "give.sqf"; };
+if ((_action == "give") and (INV_CanGiveItem)) then { ["uebergabe", _item, _amount, _plyer] execVM "give.sqf"; };};

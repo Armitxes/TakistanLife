@@ -296,7 +296,9 @@ BuildingsOwnerArray 	 = [];
 if(!isDedicated) then {
 	skipDmg = false;
 	lastCall = -300;
+	lastTCall = -300;
 	prioCall = false;
+	taxiCall = false;
 	dmgHead = 0;
 	dmgBody = 0;
 	dmgHands = 0;
