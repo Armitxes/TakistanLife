@@ -86,120 +86,108 @@ switch _key do
 
 	//E key
 	case 18: {
-	if(!INV_shortcuts)exitwith{};
-	if(keyblock)exitwith{};
-	if(dialog)exitwith{closeDialog 0;};
-    
-	private ["_civ"];
+		if(!INV_shortcuts)exitWith{};
+		if(keyblock)exitWith{};
+		if(dialog)exitWith{closeDialog 0;};
+		private ["_civ"];
 
-	for [{_i=1}, {_i < 3}, {_i=_i+1}] do {
-  		if(vehicle player != player) exitwith{};
-		_range = _i;
-		_dirV = vectorDir vehicle player;
-		_pos = player modelToWorld [0,0,0];
-		_posFind = [(_pos select 0)+(_dirV select 0)*_range,(_pos select 1)+(_dirV select 1)*_range,(_pos select 2)+(_dirV select 2)*_range];
-		_men    = nearestobjects [_posFind,["Man", "Infostand_1_EP1", "Infostand_2_EP1", "RUBasicAmmunitionBox", "UNBasicAmmunitionBox_EP1"], 1] - [player];
-		_atms = nearestObjects [_posFind,["Infostand_1_EP1","Misc_cargo_cont_tiny"],2];
-		_civ = _men select 0;
-		_atm = _atms select 0;
+		if (vehicle player == player) then {
+			for [{_i=1}, {_i < 3}, {_i=_i+1}] do {
+				_range = _i;
+				_dirV = vectorDir vehicle player;
+				_pos = player modelToWorld [0,0,0];
+				_posFind = [(_pos select 0)+(_dirV select 0)*_range,(_pos select 1)+(_dirV select 1)*_range,(_pos select 2)+(_dirV select 2)*_range];
+				_men    = nearestobjects [_posFind,["Man", "Infostand_1_EP1", "Infostand_2_EP1", "RUBasicAmmunitionBox", "UNBasicAmmunitionBox_EP1"], 1] - [player];
+				_atms = nearestObjects [_posFind,["Infostand_1_EP1","Misc_cargo_cont_tiny"],2];
+				_civ = _men select 0;
+				_atm = _atms select 0;
 
-		if(iscop && !(isnull _civ) && _civ in playerarray) exitwith
-		{
-  		_i = 4;
-  		call compile format['[0,0,0, ["civmenu", "%1", %1]] execVM "interact.sqf";', _civ];
-  		_handled=true;
-		};
+				if(iscop && !(isNull _civ) && _civ in playerarray) exitWith {
+					_i = 4;
+					call compile format['[0,0,0, ["civmenu", "%1", %1]] execVM "interact.sqf";', _civ];
+					_handled=true;
+				};
 
-		if(isun && !(isnull _civ) && _civ in playerarray) exitwith
-		{
-			_i = 4;
-			call compile format['[0,0,0, ["uninteraktion", "%1", %1]] execVM "interact.sqf";', _civ];
-			_handled=true;
-		};
+				if(isun && !(isNull _civ) && _civ in playerarray) exitWith {
+					_i = 4;
+					call compile format['[0,0,0, ["uninteraktion", "%1", %1]] execVM "interact.sqf";', _civ];
+					_handled=true;
+				};
 
-		if(isciv && !(isnull _civ) && _civ in playerarray) exitwith
-		{
-			_i = 4;
-			call compile format['[0,0,0, ["civinteraktion", "%1", %1]] execVM "interact.sqf";', _civ];
-			_handled=true;
-		};
+				if(isciv && !(isNull _civ) && _civ in playerarray) exitWith {
+					_i = 4;
+					call compile format['[0,0,0, ["civinteraktion", "%1", %1]] execVM "interact.sqf";', _civ];
+					_handled=true;
+				};
 
-		if(!(isnull _civ) and _civ in shopusearray) exitwith
-		{
-			_i = 4;
-			if((iscop || isun) and _civ in drugsellarray)exitWith{_civ execVM "drugsearch.sqf"};
-			_id = _civ call INV_getshopnum;
-			[0,0,0,[_id]] execVM "shopdialogs.sqf";
-			_handled=true;
-		};
+				if(!(isnull _civ) && _civ in shopusearray) exitWith {
+					_i = 4;
+					if((iscop || isun) and _civ in drugsellarray)exitWith{_civ execVM "drugsearch.sqf"};
+					_id = _civ call INV_getshopnum;
+					[0,0,0,[_id]] execVM "shopdialogs.sqf";
+					_handled=true;
+				};
 
-		if(!(isnull _atm) and _atm in bankflagarray) exitwith
-
-			{
-
-			_i = 4;
-			if(!local_useBankPossible)exitwith{hint "The ATM rejected your card"};
-			[] execVM "atm.sqf";
-			_handled=true;
+				if(!(isNull _atm) and _atm in bankflagarray) exitWith {
+					_i = 4;
+					if(!local_useBankPossible)exitWith{hint "The ATM rejected your card"};
+					[] execVM "atm.sqf";
+					_handled=true;
+				};
 
 			};
-
 		};
+		if(_handled)exitWith{};
 
-	if(_handled)exitwith{};
-
-
-	if(vehicle player == player) exitwith {
-		private ["_vcl"];
-		for [{_i=1}, {_i < 3}, {_i=_i+1}] do {
-
-       			_range = _i;
-       			_dirV = vectorDir vehicle player;
-       			_pos = player modelToWorld [0,0,0];
-        		_posFind = [(_pos select 0)+(_dirV select 0)*_range,(_pos select 1)+(_dirV select 1)*_range,(_pos select 2)+(_dirV select 2)*_range];
-       	 		_vcls    = nearestobjects [_posFind,["LandVehicle", "Air", "ship"], 2];
-			      _vcl     = _vcls select 0;
-            if(!(isnull _vcl))exitwith{_i = 4};
+		if(vehicle player == player) then {
+			private ["_vcl"];
+			for [{_i=1}, {_i < 3}, {_i=_i+1}] do {
+				_range = _i;
+				_dirV = vectorDir vehicle player;
+				_pos = player modelToWorld [0,0,0];
+				_posFind = [(_pos select 0)+(_dirV select 0)*_range,(_pos select 1)+(_dirV select 1)*_range,(_pos select 2)+(_dirV select 2)*_range];
+				_vcls    = nearestobjects [_posFind,["LandVehicle", "Air", "ship"], 2];
+				_vcl     = _vcls select 0;
+				if(!(isnull _vcl))exitwith{_i = 4};
 			};
 
-  		if(locked _vcl)exitwith{ player groupchat "The vehicle is locked."; };
-      
-      if(player isKindOf "Animal" && !(isnull _vcl)) then {
-        if (!attached) then {
-          attached = true;
-          player attachTo [_vcl,[0,0,-1]];
-        } else {
-          if(speed _vcl < 20) then {
-            attached = false;
-            detach player;
-            _apos = getPos player;
-            player setPos [(_apos select 0)+4, (_apos select 1)+4, 0];
-          } else { hintSilent "The vehicle is moving too fast"; };
-        };
-      } else {
-    		if(_vcl emptyPositions "Driver" > 0)exitwith   {player action ["getInDriver", _vcl]}; 
-    		if(_vcl emptyPositions "Gunner" > 0)exitwith   {player action ["getInGunner", _vcl]};
-    		if(_vcl emptyPositions "Commander" > 0)exitwith{player action ["getInCommander", _vcl]};
-    		if(_vcl emptyPositions "Cargo" > 0)exitwith    {player action ["getInDriver", _vcl];_vcl spawn {keyblock=true;sleep 0.5;player moveincargo _this; keyblock=false;};};
-      };		
-		};
+			if(locked _vcl)exitWith{ player groupchat "The vehicle is locked."; };
 
-    _vcl  = vehicle player;
-    if(_vcl != player) exitwith {
-  		if(locked _vcl)exitwith{player groupchat "The vehicle is locked."};
-  		if(speed _vcl > 30)exitwith{player groupchat "The vehicle is moving too fast"};
-  		player action ["getOut", _vcl];
+			if(player isKindOf "Animal" && !(isnull _vcl)) then {
+				if (!attached) then {
+					attached = true;
+					player attachTo [_vcl,[0,0,-1]];
+				} else {
+					if(speed _vcl < 20) then {
+						attached = false;
+						detach player;
+						_apos = getPos player;
+						player setPos [(_apos select 0)+4, (_apos select 1)+4, 0];
+					} else { hintSilent "The vehicle is moving too fast"; };
+				};
+			} else {
+				if (_vcl isKindOf "StaticWeapon") then { player moveInGunner _vcl; } else {
+					if(_vcl emptyPositions "Driver" > 0) exitWith {player action ["getInDriver", _vcl]}; 
+					if(_vcl emptyPositions "Gunner" > 0) exitWith {player action ["getInGunner", _vcl]};
+					if(_vcl emptyPositions "Commander" > 0) exitWith {player action ["getInCommander", _vcl]};
+					if(_vcl emptyPositions "Cargo" > 0) exitWith {player action ["getInDriver", _vcl]; _vcl spawn {keyblock=true;sleep 0.5;player moveincargo _this; keyblock=false;};};
+				};
+			};		
+		} else {
+			_vcl  = vehicle player;
+			if(locked _vcl)exitWith{player groupchat "The vehicle is locked."};
+			if(speed _vcl > 30)exitWith{player groupchat "The vehicle is moving too fast"};
+			player action ["getOut", _vcl];
 		};
-
 	};
 
-  //R key
+	//R key
 	case 19: {
-	if(!INV_shortcuts)exitwith{};
+	if(!INV_shortcuts)exitWith{};
 		if(_shift && (vehicle player == player) && (count (magazines player) < 12)) then
 		{
 			player addMagazine "HandGrenade_Stone";
-			server globalChat "You picked up a stone";
+			titleText ["I picked up a stone!", "PLAIN DOWN", 0.5];
 		};
 	};
  
