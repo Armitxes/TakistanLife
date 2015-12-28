@@ -106,13 +106,13 @@ INV_AlleWaffenObjekte = [
 ["MP5A5", ["Waffe", "rifle"],["mp5a5", "MP5A5"], [3800, 1212],[2, "smg", "response_training"], [], "MP5A5" call ISSE_Cfg_Weapons_GetName, "MP5A5" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 10],["plastik", 5],["kupfer", 5]]],
 ["MP5SD", ["Waffe", "rifle"],["mp5sd", "MP5SD"], [380, 380],[2, "smg", "response_training"], [], "MP5SD" call ISSE_Cfg_Weapons_GetName, "MP5SD" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 10],["plastik", 5],["kupfer", 5]]],
 
-["SVD", ["Waffe", "sniper"],["svd", "SVD"],[26550, 2500], [2, "bomb", "SCO_training"], [], "SVD" call ISSE_Cfg_Weapons_GetName, "SVD" call ISSE_Cfg_Weapons_GetDesc, [["", 5],["", 5],["dollarz", 10000]]],
+["SVD", ["Waffe", "sniper"],["svd", "SVD"],[28550, 2500], [2, "bomb", "SCO_training"], [], "SVD" call ISSE_Cfg_Weapons_GetName, "SVD" call ISSE_Cfg_Weapons_GetDesc, [["", 5],["", 5],["dollarz", 10000]]],
 
-["SVD_CAMO", ["Waffe", "sniper"],["svd_CAMO", "SVD (Camo)"],[25450, 4500], [2, "southgov", ""], [], "SVD" call ISSE_Cfg_Weapons_GetName, "SVD" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 40],["holz", 10],["kupfer", 10],["glas", 2]]],
+["SVD_CAMO", ["Waffe", "sniper"],["svd_CAMO", "SVD (Camo)"],[27450, 4500], [2, "southgov", ""], [], "SVD" call ISSE_Cfg_Weapons_GetName, "SVD" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 40],["holz", 10],["kupfer", 10],["glas", 2]]],
 
 ["Huntingrifle", ["Waffe", "sniper"],["Huntingrifle", "CZ 550 Scoped"],[15250, 4500], [2, "", "patrol_training"], [], "CZ 550 Scoped", "SVD" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 40],["holz", 10],["kupfer", 10],["glas", 2]]],
 
-["KSVK", ["Waffe", "sniper"],["ksvk", "KSVK"],[30450, 7500], [2, "bomb", ""], [], "KSVK" call ISSE_Cfg_Weapons_GetName, "KSVK" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["holz", 15],["kupfer", 20],["glas", 3]]],
+["KSVK", ["Waffe", "sniper"],["ksvk", "KSVK"],[35450, 7500], [2, "bomb", ""], [], "KSVK" call ISSE_Cfg_Weapons_GetName, "KSVK" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["holz", 15],["kupfer", 20],["glas", 3]]],
 
 ["KSVK_sou", ["Waffe", "sniper"],["ksvk", "KSVK"],[29850, 7500], [2, "southgov", ""], [], "KSVK" call ISSE_Cfg_Weapons_GetName, "KSVK" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["holz", 15],["kupfer", 20],["glas", 3]]],
 

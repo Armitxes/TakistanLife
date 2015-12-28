@@ -402,7 +402,6 @@ _copfo=
 "Land_ladderEP1",
 "Land_ladder_half_EP1",
 "AW159_Lynx_BAF",
-"SUV_SCO",
 "US_WarfareBUAVterminal_Base_EP1",
 "FlagCarrierBLUFOR_EP1"
 ];

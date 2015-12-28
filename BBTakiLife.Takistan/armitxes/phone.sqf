@@ -70,6 +70,6 @@ if(_legit) then {
     case "call_un": { (format["if (isun) then { [""emergency"",%1] execVM ""armitxes\phone.sqf""; };",player]) call toClients; };
     case "vote": { if (iscop) then { [0,0,0,["chief"]] execVM "maindialogs.sqf"; } else { [0,0,0,["wahlen"]] execVM "maindialogs.sqf"; }; };
 	case "atm": { execVM "atmphone.sqf"; }; // Done by: Redbully14
-    case "call_taxi": { (format["[""taxi"",%1] execVM ""armitxes\phone.sqf"";",player]) call toClients; }; // Done by: Redbully14
+    case "call_taxi": { (format["if (isciv) then { [""taxi"",%1] execVM ""armitxes\phone.sqf"";}",player]) call toClients; }; // Done by: Redbully14
   };
 };

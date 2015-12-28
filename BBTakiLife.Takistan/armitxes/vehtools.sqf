@@ -11,7 +11,7 @@ switch (_tool) do {
 		_vcl setHit ["wheel_2_2_steering", 1];
 	};
 	case "repair": {
-		if(player != vehicle player) then { titleText ["I cant repair a vehicle from the inside ^^", "PLAIN DOWN", 0.5]; } else {
+		if(player != vehicle player) then { titleText ["You cant repair a vehicle from the inside ^^", "PLAIN DOWN", 0.5]; } else {
 			if (call fnc_isBusy) exitWith {titleText ["Wait! I'm busy...", "PLAIN DOWN", 0.5];};
 			if (isNil "_vcl") then {titleText ["There is no vehicle here...", "PLAIN DOWN", 0.5];} else {
 				if(player distance _vcl < 5) then {   
@@ -42,7 +42,7 @@ switch (_tool) do {
 			if (isNil "_vcl") then { titleText ["There is no vehicle close...", "PLAIN DOWN", 0.5]; } else {
 				if(player distance _vcl < 5) then {   
 					_fuel = fuel _vcl;
-					if(_fuel > 0.95) exitWith { titleText ["This vehicle needs no refuel", "PLAIN DOWN", 0.5]; };
+					if(_fuel > 0.95) exitWith { titleText ["This vehicle does not need refueling", "PLAIN DOWN", 0.5]; };
 					_vcl lock true;
 					_w = [((1-_fuel) * 10 + 7),"Refueling...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
 					waitUntil { scriptDone _w; };
@@ -65,9 +65,9 @@ switch (_tool) do {
 							if (speed _vcl == 0) then {
 								if (_plrVcl isKindOf "Air") then { _vcl attachTo [_plrVcl,[0,-0.5,-10]]; } else { _vcl attachTo [_plrVcl,[0,-5,0.7]]; };
 								_plrVcl setVariable ["towing",_vcl,true];
-							} else { titleText ["I can't tow a moving vehicle, the risk is too high.", "PLAIN DOWN", 0.5]; };
-						} else { titleText ["I can't tow a towing vehicle...", "PLAIN DOWN", 0.5]; };
-					} else { titleText ["I don't have the keys for the vehicle...", "PLAIN DOWN", 0.5]; };
+							} else { titleText ["You can't tow a moving vehicle, the risk is too high.", "PLAIN DOWN", 0.5]; };
+						} else { titleText ["You can't tow a towing vehicle...", "PLAIN DOWN", 0.5]; };
+					} else { titleText ["You don't have the keys for the vehicle...", "PLAIN DOWN", 0.5]; };
 				} else { titleText ["There is no vehicle close...", "PLAIN DOWN", 0.5]; };
 			} else { titleText ["I'm not that strong...", "PLAIN DOWN", 0.5]; };
 		} else { _vcl = _plrVcl getVariable "towing"; detach _vcl; titleText ["Vehicle untowed.", "PLAIN DOWN", 0.5]; _plrVcl setVariable ["towing",nil,true]; };
