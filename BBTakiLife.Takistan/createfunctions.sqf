@@ -66,8 +66,9 @@ INV_CreateVehicle =
 // Attack helicopter re-armament
 if (_classname == "AW159_Lynx_BAF") then {
   //newvehicle removeWeapon "laserdesignator_mounted";
+  newvehicle removeMagazinesTurret ["12Rnd_CRV7",[0]];
   newvehicle removeMagazinesTurret ["1200Rnd_20mm_M621",[-1]];
-  newvehicle removeMagazinesTurret ["12Rnd_CRV7",[-1]];
+  
 };
 if (_classname == "Ka60_PMC") then {
 	hint "Reconfiguring helicopter armament...";
@@ -86,6 +87,7 @@ if (_classname == "AH6J_EP1") then {
 };
 if (_classname == "UH1Y") then {
 	hint "Reconfiguring helicopter armament...";
+	newvehicle removeMagazinesTurret ["14Rnd_FFAR",[-1]];
 	newvehicle removeweapon "FFARLauncher_14";	
 };
 if (_classname == "An2_TK_EP1") then {

@@ -88,6 +88,8 @@ if(_action == "use") exitWith {
       _grp = group player;
 	  _gnm = false;
 	  _gnl = false;
+	  _warrarr = [_old] call fnc_getWarrant;
+	  [(_warrarr select 1)] call fnc_removeWarrant;
 	  
 
       
@@ -140,9 +142,13 @@ if(_action == "use") exitWith {
         player addEventHandler ["handleDamage", {_this call compile preprocessfile "armitxes\setHit.sqf"}];
 		if (_gnm) then {gangmember = true};
 		if (_gnl) then {gangleader = true};
-		
+		_warrant = _warrarr select 0;
+		if !(count _warrant == 0) then {
+		_warrant set [0,player];
+		warrantarray = warrantarray + [_warrant];
+		publicVariable "warrantarray";
+		  };
 		};
-
       titleText ["Clothes changed", "BLACK IN"];  
       disableUserInput false;
     };
