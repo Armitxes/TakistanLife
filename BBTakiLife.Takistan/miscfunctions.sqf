@@ -126,6 +126,33 @@ for [{_i=0}, {_i < (count gangsarray)}, {_i=_i+1}] do {
 	};
 };
 
+fnc_getWarrant = {
+private ["_idCiv","_i"];
+_idCiv = _this select 0 ;
+_warrant = [];
+for [{_i=0}, {_i < (count warrantarray)}, {_i=_i+1}] do
+  {
+    _singleWarrant = warrantarray select _i;
+    _pIdCiv  = _singleWarrant select 0;
+	
+
+if(_idCiv == _pIdCiv) then {
+	_warrant = [_singlewarrant,_i];
+
+	};
+   };
+ 
+ _warrant; 
+ };
+ 
+ fnc_removeWarrant = {
+ private ["_pos"];
+ _pos = _this select 0;
+ 
+ warrantarray set [_pos,-1]; 
+ warrantarray = warrantarray - [-1];
+ };
+
 Isse_AddCrimeLogEntry = {
 private ["_logtime", "_logdate", "_logtext", "_logart", "_logplayer", "_zusatzinfo"];
   _logart = _this select 0;
