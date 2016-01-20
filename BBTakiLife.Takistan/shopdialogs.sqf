@@ -67,7 +67,6 @@ if(_access) then {
   
   		_preis        	= _infos call INV_getitemSteuer;
   		_control = _shop getvariable "control";
-  		if(_control == (call INV_mygang) and _infos call INV_getitemKindOf == "drug")then{_preis = 0};
   
   		};
   

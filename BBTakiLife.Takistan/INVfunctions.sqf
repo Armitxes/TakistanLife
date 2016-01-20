@@ -9,16 +9,16 @@ INV_AddInventoryItem = {
 	_Finfos         = _Fitem call INV_getitemArray;
 	_Fgesamtgewicht = 0;
 	_Fgesamtgewicht = ( (call INV_GetOwnWeight) + (_Famount * (_Finfos call INV_getitemTypeKg)) );
-		if (_Famount > 0) then {
-			if (_Fgesamtgewicht <= INV_Tragfaehigkeit) then {
-				([_Fitem, _Famount, "INV_InventarArray"] call INV_AddItemStorage)
-			} else {
-				false
-			};
-		} else {
+	if (_Famount > 0) then {
+		if (_Fgesamtgewicht <= INV_Tragfaehigkeit) then {
 			([_Fitem, _Famount, "INV_InventarArray"] call INV_AddItemStorage)
+		} else {
+			false
 		};
+	} else {
+		([_Fitem, _Famount, "INV_InventarArray"] call INV_AddItemStorage)
 	};
+};
 
 
 // Add Items to Storage
@@ -607,84 +607,12 @@ for "_i" from 0 to (count _arr) do
 
 	_obj = _arr select _i;
 	if(isNil "_obj") exitWith{};
-	if(!isnull _obj and name _obj == _name)exitwith{_unit = _obj};
+	if(!isNull _obj and name _obj == _name)exitwith{_unit = _obj};
 
 	};
 
 _unit
 
-};
-
-INV_mygang =
-
-{
-
-_mygang  = "";
-
-for "_c" from 0 to (count gangsarray - 1) do
-
-	{
-
-	_gangarray = gangsarray select _c;
-	_gang = _gangarray select 0;
-	_members = _gangarray select 1;
-	if(name player in _members)then{_mygang = _gang};
-
-	};
-
-_mygang
-
-};
-
-INV_Seen =
-
-{
-	private ["_c", "_obj", "_arr", "_dis", "_res"];
-	_obj = _this select 0;
-	_arr = (_this select 1) - [_obj];
-	_dis = _this select 2;
-	_res = false;
-	if (isNull _obj) then
-	{
-		_res = false;
-	}
-	else
-	{
-		for "_c" from 0 to (count _arr - 1) do {
-
-			if (not(isNull(_arr select _c))) then
-			{
-				if ((_obj distance (_arr select _c)) < _dis) then
-				{
-
-				_mygang = call INV_mygang;
-				_exitvar = false;
-
-				if(_mygang != "")then
-
-					{
-
-					for "_i" from 0 to (count gangsarray - 1) do
-
-						{
-
-						_gangarray = gangsarray select _i;
-						_gang = _gangarray select 0;
-						_members = _gangarray select 1;
-
-						if(_mygang == _gang and name (_arr select _c) in _members)then{_exitvar=true};
-
-						};
-
-					};
-
-				if(!_exitvar)then{_res = true};
-
-				};
-			};
-		};
-	};
-	_res
 };
 
 

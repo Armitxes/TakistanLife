@@ -1,4 +1,5 @@
 _doAction = _this select 0;
+
 if(typeName _doAction != "STRING") then {
 	if(typeName (_this select 3) == "ARRAY") then {
 		_doAction=(_this select 3) select 0;
@@ -9,13 +10,28 @@ switch (_doAction) do
 { 
 	case "door": {
 		_obj = _this select 1;
-		_cords = (getPosASL _obj);
-		if((_cords select 2) <= -1) exitWith { server globalChat "Security: Aborted. Door already open.";};
+		_cords = _this select 2;
 		_obj setPosASL [(_cords select 0),(_cords select 1),-5];
 		server globalChat "Security: Door open";
 		sleep 8;
 		_obj setPosASL [(_cords select 0),(_cords select 1),(_cords select 2)];
 		server globalChat "Security: Door closed";
+	};
+	case "prisonDoor": {
+		_obj = _this select 1;
+		_hacked = _obj getVariable "hacked";
+		if (isNil "_hacked") then { _hacked = -300; };
+
+		if (iscop || isun || _hacked+300 > time) then {
+			_cords = _this select 2;
+			_time = _this select 3;
+			if (isNil "_time") then { _time = 8; };
+			_obj setPosASL [(_cords select 0),(_cords select 1),-5];
+			server globalChat "Security: Door open";
+			sleep _time;
+			_obj setPosASL [(_cords select 0),(_cords select 1),(_cords select 2)];
+			server globalChat "Security: Door closed";
+		} else { titleText ["Wrong access code", "PLAIN DOWN", 0.1]; };
 	};
 	case "unCP": {
 		if (isun && ((PLAYERDATA select 4) == 2)) then {
@@ -119,8 +135,8 @@ switch (_doAction) do
 			};
 			
 			{ deleteMarkerLocal _x; } forEach _mrks;
-			
-			if ((camCoords distance _camObj) < 200) then {
+
+			if ((camCoords distance _camObj) < 400) then {
 				if(damage _camObj < 0.7) then {
 					_camera = "camera" camCreate (getPosATL _camObj);
 					if (!(createDialog "MainCamDialog")) exitWith {hint "Dialog Error!";};

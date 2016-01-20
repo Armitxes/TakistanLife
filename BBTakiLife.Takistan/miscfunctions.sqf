@@ -102,7 +102,6 @@ DialogSpielerListe =
       if (_Fname) then
       { _Findex = lbAdd [_Fid, format ["%1 - (%2)", _Fspieler, name (call compile _Fspieler)]]; } 
       else { _Findex = lbAdd [_Fid, _Fspieler]; };
-    
       lbSetData [_Fid, _Findex, format["%1", _c]];
       if (_Fspieler == rolestring) then
       { _Feigenenum = _Flistlen; };

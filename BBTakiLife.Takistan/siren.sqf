@@ -6,8 +6,7 @@ _lichtstaerke = 0.055;
 _shortDur     = 0.72;
 _longDur      = 4.87;
 
-if (_art == "activate") then
-{
+if (_art == "activate") then {
 	if (isNil "siren") then
 	{
 		siren = false;

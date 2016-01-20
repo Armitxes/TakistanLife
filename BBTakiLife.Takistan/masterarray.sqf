@@ -522,8 +522,6 @@ INV_AlleItemsArray = [
 
 ["waffentasche",["Item", "misc"],["waffentasche", "Weaponbag"],[100, 75], [0.5, "", ""], [true, true, true,false,"weaponbag.sqf"],localize "STRS_inv_item_waffentascbe",localize "STRS_inv_item_waffentascbe_info", [["plastik", 1]]],
 
-["bankversicherung", ["Item", "misc"], ["bankversicherung", "Bank insurance"],[500, 0], [0.2, ""],[true,true,false, false, "nouse.sqf"], localize "STRS_item_versicherung", localize "STRS_item_versicherung_info",[]],
-
 ["boar",["Item", "food"],["boar", "Boar meat"],[250, 150], [5, ""], [true, true, true,false,"food.sqf"],"Boar meat","Boar meat", [] ],
 
 ["rabbit",["Item", "food"],["rabbit", "Rabbit meat"],[150, 20], [1, ""], [true, true, true,false,"food.sqf"],"Rabbit meat","Rabbit meat", [] ],

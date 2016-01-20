@@ -28,33 +28,29 @@ if (_art == "ClientWahl") then
 };
 
 if (_art == "clientgesetz") then {
-
-_nummer = _this select 1;
-_text   = _this select 2;
-if (_nummer == -1) exitWith {};
-if (_nummer <= 4) exitwith {player groupchat "You cannot change this law";};
-if ((_text call ISSE_str_Length) > 60) exitWith {player groupChat localize "STRS_text_zu_lang";};
-format ["GesetzArray SET [%1, ""%2""];
-hint format [localize ""STRS_gilde_gesetze_public"", %1, ""%2""];", _nummer, _text] call broadcast;
-
+	_nummer = _this select 1;
+	_text   = _this select 2;
+	if (_nummer == -1) exitWith {};
+	if (_nummer <= 4) exitwith {player groupchat "You cannot change this law";};
+	if ((_text call ISSE_str_Length) > 60) exitWith {player groupChat localize "STRS_text_zu_lang";};
+	format ["GesetzArray SET [%1, ""%2""];
+	hint format [localize ""STRS_gilde_gesetze_public"", %1, ""%2""];", _nummer, _text] call broadcast;
 };
 
 if (_art == "steuernMayor") then
 
 {
-
-_item = _this select 1;
-_mag  = _this select 2;
-_weap = _this select 3;
-_vcl  = _this select 4;
-_bank = _this select 5;
-format ["
-(INV_ItemTypenArray select 0) SET [2, %1];
-(INV_ItemTypenArray select 1) SET [2, %2];
-(INV_ItemTypenArray select 2) SET [2, %3];
-(INV_ItemTypenArray select 3) SET [2, %4];
-bank_steuer = %5;
-hint ""The Prime Minister has changed the taxes!"";
-", _item, _vcl, _mag, _weap, _bank] call broadcast;
-
+	_item = _this select 1;
+	_mag  = _this select 2;
+	_weap = _this select 3;
+	_vcl  = _this select 4;
+	_bank = _this select 5;
+	format ["
+	(INV_ItemTypenArray select 0) SET [2, %1];
+	(INV_ItemTypenArray select 1) SET [2, %2];
+	(INV_ItemTypenArray select 2) SET [2, %3];
+	(INV_ItemTypenArray select 3) SET [2, %4];
+	bank_steuer = %5;
+	hint ""The Prime Minister has changed the taxes!"";
+	", _item, _vcl, _mag, _weap, _bank] call broadcast;
 };

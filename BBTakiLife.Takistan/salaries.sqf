@@ -86,8 +86,6 @@ while {isciv} do
 	_hashideoutmsg     = "";
 	
 	_income            = 100 + extrapay;
-	_mygang		   = "None";
-	_activecount	   = 0;
 
 	if (convoywinner == "Civs" && !(convoywinner == "Neither")) then
 	{
@@ -96,50 +94,17 @@ while {isciv} do
 	};
 	if (ispmc || isjudge) then {_income = _income + 500;};	
 	
-	if (timeinworkplace > 0) then
-
-		{
-
+	if (timeinworkplace > 0) then {
 		_workplacepaycheck = (round(add_workplace/180*timeinworkplace));
 		_income = _income + _workplacepaycheck;
 		_atworkplacemsg     = localize "STRS_dollarz_were";
-
-		};
-
-		for "_c" from 0 to (count gangsarray - 1) do
-
-		{
-
-		_gangarray = gangsarray select _c;
-		_gangname  = _gangarray select 0;
-		_members   = _gangarray select 1;
-
-		if((name player) in _members)then
-
-			{
-
-			_mygang = _gangname;
-
-			for "_i" from 0 to (count _members - 1) do
-
-				{
-
-				_civ = [(_members select _i), civarray] call INV_findunit;
-
-				if(!isnull _civ)then{_activecount = _activecount + 1};
-
-				};
-
-			};
-
-		};
-
-	if(_mygang != "None") then {
-		if(gangarea1 getvariable "control" == _mygang)then{_income = _income + (gangincome/_activecount)};
-		if(gangarea2 getvariable "control" == _mygang)then{_income = _income + (gangincome/_activecount)};
-		if(gangarea3 getvariable "control" == _mygang)then{_income = _income + (gangincome/_activecount)};
 	};
 
+	if(gangmember) then {
+		if((gangsarray select (gangarea1 getVariable "control")) select 1 == group player)then{_income = _income + gangincome;};
+		if((gangsarray select (gangarea2 getVariable "control")) select 1 == group player)then{_income = _income + gangincome;};
+		if((gangsarray select (gangarea3 getVariable "control")) select 1 == group player)then{_income = _income + gangincome;};
+	};
 
 	timeinworkplace = 0;
 	_income = round _income;

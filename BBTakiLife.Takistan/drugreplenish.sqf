@@ -7,7 +7,7 @@ for [{_i=0}, {_i < (count gangareas)}, {_i=_i+1}] do
 	{
 
 	_gangarea	= gangareas select _i;
-	_control 	= _gangarea getvariable "control";
+	_control 	= _gangarea getVariable "control";
 	_shopnum  	= _gangarea call INV_getshopnum;
 	
 	if(!isnil "_control")then

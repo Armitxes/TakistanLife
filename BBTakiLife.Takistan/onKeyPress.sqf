@@ -72,16 +72,16 @@ switch _key do
   	//T key
   	case 20:
   	{
-    	if(!INV_shortcuts)exitwith{};
+    	if(!INV_shortcuts)exitWith{};
     
-    	if(dialog)exitwith{closeDialog 0;};
+    	if(dialog)exitWith{closeDialog 0;};
     
     	_vcls = nearestobjects [getpos player, ["LandVehicle", "Air", "ship", "TKOrdnanceBox_EP1"], 25];
     	_vcl = _vcls select 0;
     
-    	if(!(_vcl in INV_VehicleArray) and typeof _vcl == "TKOrdnanceBox_EP1")exitwith{player groupchat "You do not have the keys to this hideout.";};
-    	if(!(_vcl in INV_VehicleArray))exitwith{player groupchat "You do not have the keys to this vehicle.";};
-    	if(!isnull _vcl)then{call compile format['[0,0,0,["%3", "public", ["vcl", "%2", %1]]] execVM "storage.sqf";', _vcl, (typeOf _vcl), format["%1_storage", _vcl]];};
+    	if(!(_vcl in INV_VehicleArray) and typeof _vcl == "TKOrdnanceBox_EP1")exitWith{player groupchat "You do not have the keys to this hideout.";};
+    	if(!(_vcl in INV_VehicleArray))exitWith{player groupChat "You do not have the keys to this vehicle.";};
+    	if(!isNull _vcl)then{call compile format['[0,0,0,["%3", "public", ["vcl", "%2", %1]]] execVM "storage.sqf";', _vcl, (typeOf _vcl), format["%1_storage", _vcl]];};
   	};
 
 	//E key
@@ -97,7 +97,7 @@ switch _key do
 				_dirV = vectorDir vehicle player;
 				_pos = player modelToWorld [0,0,0];
 				_posFind = [(_pos select 0)+(_dirV select 0)*_range,(_pos select 1)+(_dirV select 1)*_range,(_pos select 2)+(_dirV select 2)*_range];
-				_men    = nearestobjects [_posFind,["Man", "Infostand_1_EP1", "Infostand_2_EP1", "RUBasicAmmunitionBox", "UNBasicAmmunitionBox_EP1"], 1] - [player];
+				_men    = nearestObjects [_posFind,["Man", "Infostand_1_EP1", "Infostand_2_EP1", "RUBasicAmmunitionBox", "UNBasicAmmunitionBox_EP1"], 1] - [player];
 				_atms = nearestObjects [_posFind,["Infostand_1_EP1","Misc_cargo_cont_tiny"],2];
 				_civ = _men select 0;
 				_atm = _atms select 0;
@@ -256,11 +256,12 @@ switch _key do
 
 	//5 key
 	case 6: {
-	if (!iscop) then {
-		if(!INV_shortcuts)exitwith{};
-		_handled=true;
-		if(dialog)exitwith{closeDialog 0;};
-		[0,0,0,["gangmenu"]] execVM "maindialogs.sqf";};
+		if (isciv) then {
+			if(!INV_shortcuts)exitWith{};
+			_handled=true;
+			if(dialog)exitWith{closeDialog 0;};
+			[0,0,0,["gangmenu"]] execVM "maindialogs.sqf";
+		};
 	};
    
    //6 key

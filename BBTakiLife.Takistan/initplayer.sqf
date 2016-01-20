@@ -8,7 +8,7 @@ if(local server) then
 
 {
 
-publicvariable "gangsarray";
+publicVariable "gangsarray";
 civstatsdone=true; publicVariable "civstatsdone";
 
 };

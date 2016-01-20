@@ -20,7 +20,6 @@ if (_deletekopfgeld == 1) exitWith {
 	["deleteWarrant",_civvar, "", 0] execVM "warrant.sqf";    
 	player groupChat format [localize "STRS_kopfgeld_entfernt", _civ];
 };
-hint _txtReason;
 if (_reasonID == 0) then {
 	if (_txtReason == "Crime not in List? Log crime here!" || count (toArray _txtReason) < 3) exitWith {player groupChat "You must enter a description of the crime!"};
 	if ((!(alive _civvar)) or (_civarrestedvar == 1)) exitWith {role groupChat format [localize "STRS_kopfgeld_nokopfgeld", _civ];};

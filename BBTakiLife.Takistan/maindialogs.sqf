@@ -245,9 +245,9 @@ switch (_art) do {
 	_members   = _gangarray select 1;
 	_territory = "None";
 
-	_control1 = gangarea1 getvariable "control";
-	_control2 = gangarea2 getvariable "control";
-	_control3 = gangarea3 getvariable "control";
+	_control1 = gangarea1 getVariable "control";
+	_control2 = gangarea2 getVariable "control";
+	_control3 = gangarea3 getVariable "control";
 
 	if(_control1 == _gangname)then{_territory = "Gang area 1"};
 	if(_control2 == _gangname)then{if(_territory == "None")then{_territory = "Gang area 2"}else{_territory = _territory + ", Gang area 2"};};
@@ -343,50 +343,44 @@ switch (_art) do {
     };
 
     case "wahlen": {
-	if (!(createDialog "wahldialog")) exitWith {hint "Dialog Error!";};
-	_array = [0, 1, true, false] call DialogSpielerListe;
-	lbSetCurSel [1, _array select 1];
+		if (!(createDialog "wahldialog")) exitWith {hint "Dialog Error!";};
+		_array = [0, 1, true, false] call DialogSpielerListe;
+		lbSetCurSel [1, _array select 1];
     };
 
     case "chief": {
-	if (!(createDialog "chiefdialog")) exitWith {hint "Dialog Error!";};
-	_arrayc = [0, 1, true, false] call DialogSpielerListe;
-	lbSetCurSel [1, _arrayc select 1];
+		if (!(createDialog "chiefdialog")) exitWith {hint "Dialog Error!";};
+		_arrayc = [0, 1, true, false] call DialogSpielerListe;
+		lbSetCurSel [1, _arrayc select 1];
     };
 
-    case "steuern": {
-	if (!(createDialog "steuerdialog")) exitWith {hint "Dialog Error!";};
-	sliderSetSpeed [12, 1, 5];
-	sliderSetRange [12, 0, 20];
-	sliderSetPosition [12,((INV_ItemTypenArray select 0) select 2)];
-	sliderSetSpeed [22, 1, 5];		sliderSetRange [22, 1, 20];
-	sliderSetPosition [22,((INV_ItemTypenArray select 1) select 2)];
-	sliderSetSpeed [32, 1, 5];				sliderSetRange [32, 1, 20];
-	sliderSetPosition [32,((INV_ItemTypenArray select 2) select 2)];
-	sliderSetSpeed [42, 1, 5];
-	sliderSetRange [42, 0, 20];
-	sliderSetPosition [42,((INV_ItemTypenArray select 3) select 2)];
-	sliderSetSpeed [52, 1, 5];
-	sliderSetRange [52, 0, 20];
-	sliderSetPosition [52,bank_steuer];
-	while {ctrlVisible 1032} do
-	{
-	    ctrlSetText [11, format[localize "STRS_dialogandere_steuerdialog_itemsteuer", ((round(sliderPosition 12)) call ISSE_str_IntToStr)]];
-	    ctrlSetText [21, format[localize "STRS_dialogandere_steuerdialog_fahrzeugsteuer", ((round(sliderPosition 22)) call ISSE_str_IntToStr)]];
-	    ctrlSetText [31, format[localize "STRS_dialogandere_steuerdialog_magazinsteuer", ((round(sliderPosition 32)) call ISSE_str_IntToStr)]];
-	    ctrlSetText [41, format[localize "STRS_dialogandere_steuerdialog_waffesteuer", ((round(sliderPosition 42)) call ISSE_str_IntToStr)]];
-	    ctrlSetText [51, format[localize "STRS_dialogandere_steuerdialog_banksteuer", ((round(sliderPosition 52)) call ISSE_str_IntToStr)]];
-	    sleep 0.1;
+	case "steuern": {
+		if (!(createDialog "steuerdialog")) exitWith {hint "Dialog Error!";};
+		sliderSetSpeed [12, 1, 5];
+		sliderSetRange [12, 0, 20];
+		sliderSetPosition [12,((INV_ItemTypenArray select 0) select 2)];
+		sliderSetSpeed [22, 1, 5];		sliderSetRange [22, 1, 20];
+		sliderSetPosition [22,((INV_ItemTypenArray select 1) select 2)];
+		sliderSetSpeed [32, 1, 5];				sliderSetRange [32, 1, 20];
+		sliderSetPosition [32,((INV_ItemTypenArray select 2) select 2)];
+		sliderSetSpeed [42, 1, 5];
+		sliderSetRange [42, 0, 20];
+		sliderSetPosition [42,((INV_ItemTypenArray select 3) select 2)];
+		sliderSetSpeed [52, 1, 5];
+		sliderSetRange [52, 0, 20];
+		sliderSetPosition [52,bank_steuer];
+		while {ctrlVisible 1032} do {
+			ctrlSetText [11, format[localize "STRS_dialogandere_steuerdialog_itemsteuer", ((round(sliderPosition 12)) call ISSE_str_IntToStr)]];
+			ctrlSetText [21, format[localize "STRS_dialogandere_steuerdialog_fahrzeugsteuer", ((round(sliderPosition 22)) call ISSE_str_IntToStr)]];
+			ctrlSetText [31, format[localize "STRS_dialogandere_steuerdialog_magazinsteuer", ((round(sliderPosition 32)) call ISSE_str_IntToStr)]];
+			ctrlSetText [41, format[localize "STRS_dialogandere_steuerdialog_waffesteuer", ((round(sliderPosition 42)) call ISSE_str_IntToStr)]];
+			ctrlSetText [51, format[localize "STRS_dialogandere_steuerdialog_banksteuer", ((round(sliderPosition 52)) call ISSE_str_IntToStr)]];
+			sleep 0.1;
+		};
 	};
-    };
 
-    case "copmenu": {
-	if (!(createDialog "CopMenu")) exitWith {hint "Dialog Error!"};
-    };
-
-    case "copmenulite": {
-	if (!(createDialog "CopMenuLite")) exitWith {hint "Dialog Error!"};
-    };
+    case "copmenu": { if (!(createDialog "CopMenu")) exitWith {hint "Dialog Error!"}; };
+    case "copmenulite": { if (!(createDialog "CopMenuLite")) exitWith {hint "Dialog Error!"}; };
 
     case "distribute": {
 	if (!(createDialog "distribute")) exitWith {hint "Dialog Error!"};
@@ -418,37 +412,34 @@ switch (_art) do {
 
     case "gangmenu": {
 		if (!(createDialog "gang_menu")) exitWith {hint "Dialog Error!";};
-		private "_i";
-		for [{_i=0}, {_i < (count gangsarray)}, {_i=_i+1}] do {
-		    _gangarray = gangsarray select _i;
-		    _index = lbAdd [202, format ["%1 - Memberlist: %2", (_gangarray select 0), (_gangarray select 1)]];
-		    lbSetData [202, _index, format ["%1", (_gangarray select 0)]];
-		};
+		
+		{
+			_name = _x select 0;
+			_grp = _x select 1;
+			_mems = units _grp;
+			_txt = format ["%1 [%2 Member] (",_x select 0,count _mems];
+			{ _txt = _txt + (name _x) + ","; } forEach _mems;
+			_txt = _txt + ")";
+			
+			_index = lbAdd [202,_txt];
+		} forEach gangsarray;
     };
 
     case "gildenverwaltung": {
-	if(!gangleader)exitwith{player groupchat "you are not the gang leader!"};
-	closedialog 0;
-	if (!(createDialog "gilde_verwaltung")) exitWith {hint "Dialog Error!";};
+		_grp = group player;
+		if(player != leader _grp)exitWith{hintSilent "You are not the gang leader!"};
+		closedialog 0;
+		if (!(createDialog "gilde_verwaltung")) exitWith {hint "Dialog Error!";};
 
-	_members = [];
-	private "_i";
-	for [{_i=0}, {_i < (count gangsarray)}, {_i=_i+1}] do {if ((name player) in ((gangsarray select _i) select 1)) exitWith {_members = ((gangsarray select _i) select 1)};};
-
-	_index = lbAdd [201, localize "STRS_hints_ja"];
-	lbSetData [201, _index, "true"];
-	_index = lbAdd [201, localize "STRS_hints_nein"];
-	lbSetData [201, _index, "false"];
-
-	for [{_i=0}, {_i < (count _members)}, {_i=_i+1}] do {
-	    _member = (_members select _i);
-	    _obj 	= [_member, civarray] call INV_findunit;
-
-	    if(isnull _obj)then{_obj = "notingame"};
-
-	    _index = lbAdd [102, (format ["%1 (%2)", _member, _obj])];
-	    lbSetData [102, _index, (format ["%1", _obj])];
-	};
+		_index = lbAdd [201, localize "STRS_hints_ja"];
+		lbSetData [201, _index, "true"];
+		_index = lbAdd [201, localize "STRS_hints_nein"];
+		lbSetData [201, _index, "false"];
+		
+		{
+			_index = lbAdd [102, (format ["%1", name _x]) ];
+			lbSetData [102, _index, (format ["%1", _x])]
+		} forEach (units _grp);
     };
 	
 	case "constitution": {

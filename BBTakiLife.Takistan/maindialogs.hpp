@@ -465,7 +465,7 @@ class gang_menu
 		h = 0.04;
 
 		text = $STRD_description_gildehauptmenu_button_join;
-		action = "[0, 0, 0, [""join"", (lbData [202, (lbCurSel 202)])]] execVm ""gangs.sqf""; closedialog 0;";
+		action = "[0, 0, 0, [""join"",(lbCurSel 202)]] execVM ""gangs.sqf""; closedialog 0;";
 	};
 
 	class button_leave : RscButton
@@ -476,7 +476,7 @@ class gang_menu
 		h = 0.04;
 
 		text = $STRD_description_gildehauptmenu_button_leave;
-		action = "[0, 0, 0, [""leave""]] execVm ""gangs.sqf""; closedialog 0;";
+		action = "[0, 0, 0, [""leave""]] execVM ""gangs.sqf""; closedialog 0;";
 	};
 
 	class button_manage : RscButton
@@ -487,7 +487,7 @@ class gang_menu
 		h = 0.04;
 
 		text = $STRD_description_gildehauptmenu_button_manage;
-		action = "[0, 0, 0, [""gildenverwaltung""]] execVm ""maindialogs.sqf""; closedialog 0;";
+		action = "[0, 0, 0, [""gildenverwaltung""]] execVM ""maindialogs.sqf""; closedialog 0;";
 	};
 
 	class button_create : RscButton

@@ -30,24 +30,8 @@ if (!(isNull(_closevcl))) then
 			{
 				INV_VehicleArray = INV_VehicleArray + [_closeVcl];
 				_closeVcl setVariable ["owners",(_closeVcl getVariable "owners")+[getPlayerUID player],TRUE];
-
 				player groupChat localize "STRS_inventar_lockpick_success";
-
-				if (([player, (civarray), 40] call INV_Seen or _incarpark) and !iscop) then
-				{
-				   ["addWarrant",player,"Vehicletheft",4000] execVM "warrant.sqf";
-				};
-
-			}
-			else
-			{
-				player groupChat localize "STRS_inventar_lockpick_noluck";
-
-				if (([player, (civarray), 40] call INV_Seen or _incarpark) and !iscop) then
-				{
-					["addWarrant",player,"Attempted Vehicle Theft",2000] execVM "warrant.sqf";
-				};
-			};
+			} else { player groupChat localize "STRS_inventar_lockpick_noluck"; };
 
 			[_item, -1] call INV_AddInventoryItem;
 			format ["%1 switchmove ""AinvPknlMstpSlayWrflDnon_medic"";", player] call broadcast;

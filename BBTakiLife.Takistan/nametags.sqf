@@ -42,7 +42,7 @@ while {true} do {
 
 			if(count _objs > 0 and INV_shortcuts) then {
 				_tag = _objs select 0;
-				_distTP = (_tag distance player);
+				_distTP = _tag distance player;
 	
 				if(_tag in shopusearray and _distTP < 3) then {
 					_text = (_tag call INV_getshopArray) select 1;
@@ -52,7 +52,14 @@ while {true} do {
 					_control ctrlSetText format["%1 (E)", _text];
 					_control ctrlSetTextColor [1, 1, 1, 0.8];
 				};
-	
+
+				if (_tag != player and _tag in playerarray and alive _tag) then {
+					cutRsc["Rtags", "PLAIN"];
+					_control2 = (uiNamespace getVariable 'TAGS_HUD') displayCtrl 64437;
+					_control2 ctrlSetText format ["%1 (%2)", _tag, (name _tag)];
+					_control2 ctrlSetFontHeight (0.04 - (_i*0.001));
+				};
+
 				if (_distTP < 3 and _tag in civarray and _tag != player and alive _tag) then {
 					titleRsc["Rtags", "PLAIN"];
 					_control = (uiNamespace getVariable 'TAGS_HUD') displayCtrl 64438;

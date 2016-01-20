@@ -31,9 +31,8 @@ if (_art == "use") then
 			_obj = nearestObject [player,"Misc_Videoprojektor"];
 			if (player distance _obj < 3) then {
 				if (damage _obj < 0.7) then {
-					hintSilent "Jamming camera..."; 
-					player playMove "AinvPknlMstpSlayWrflDnon_medic"; sleep 10;
-					waitUntil {animationState player != "AinvPknlMstpSlayWrflDnon_medic"};
+					_w = [10,"[Easy] Jamming camera...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
+					waitUntil { scriptDone _w; };
 					_obj setDamage 0.8; hintSilent "Camera jammed!";
 				} else { hintSilent "Camera already jammed"; };
 			} else {
@@ -43,15 +42,30 @@ if (_art == "use") then
 					if (!isNil "_rob") then {
 						if (time > _rob + 1800) then {
 							_obj setVariable ["lastRob",time,true];
-							hintSilent "Hacking terminal..."; 
-							player playMove "AinvPknlMstpSlayWrflDnon_medic"; sleep 10;
-							waitUntil {animationState player != "AinvPknlMstpSlayWrflDnon_medic"};
+							_w = [10,"[Easy] Hacking Terminal...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
+							waitUntil { scriptDone _w; };
 							["dollarz",5000] call INV_addInventoryItem;
 							["addWarrant",player,"Robbery",3000] execVM "warrant.sqf";
 							(format ['hintSilent "Someone robbed %1!"',_obj]) call toClients;
 						} else { hintSilent "Someone was faster than I.."; };
 					} else { hintSilent "Hacking this terminal is to complicated!"; };
-				} else { hintSilent "Nothing to hack here"; };
+				} else {
+					if ( (player distance [5964.5,7483.3,1.18]) < 3 ) then {
+						_w = [10,"[Easy] Hacking Notebook...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
+						waitUntil { scriptDone _w; };
+						if (alive player && !((animationState player) in animRestrained)) then {
+							prisondoor setVariable ["hacked",time,true];
+							hintSilent "Code for Prison Door obtained, Security System will reset in 5 Minutes!";
+						};
+					} else {
+						_w = [60,"[Hard] Hacking Notebook...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
+						waitUntil { scriptDone _w; };
+						if (alive player && !((animationState player) in animRestrained)) then {
+							prisonDoor2 setVariable ["hacked",time,true];
+							hintSilent "Code for Prison Door obtained, Security System will reset in 5 Minutes!";
+						} else { hintSilent "Nothing to hack here"; };
+					};
+				};
 			};
 		};
 	};

@@ -16,7 +16,7 @@ if(!isDedicated) then
 	
 	setHeight = {
 		private ["_obj","_pos","_y"];
-		_obj = _this select 0; _y = _this select 1;
+		_obj = _this select 0; _y = _this select 1; _sim = _this select 2;
 		_pos = getPosATL _obj;
 		_obj setPosATL [_pos select 0, _pos select 1, _y];
 	};
@@ -26,7 +26,6 @@ if(!isDedicated) then
 		_pos = getPosASL _obj;
 		_obj setPosASL [_pos select 0, _pos select 1, _y];
 	};
-
 	
 	fnc_ClearWarrantsArray = {
 		for [{_i=0}, {_i < (count warrantarray)}, {_i=_i+1}] do {
