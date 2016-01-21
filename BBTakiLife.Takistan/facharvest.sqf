@@ -151,7 +151,7 @@ INV_Lizenzen = [
 	["SCO_training",[adminbank,copswat,copswat],"SCO19 Training",12500],
 	["copAir",[adminbank,copbank,copbank],"Air Support Training",13000],
 	["passport_civilian",[passseller,passseller3,objNull],"Passport",100],
-	["southgov",[atm4,southshop,southshop], "South Government License",140000],
+	["southgov",[objNull,objNull,objNull], "South Government License",140000],
 	["PMClicense",[adminbank,pmcshop,pmcshop], "PMC License",5000]
 ];
 

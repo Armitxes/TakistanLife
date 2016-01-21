@@ -164,7 +164,9 @@ switch (_art) do {
 	{
 		lbAdd [1,format["Prime Minister: %1",name (playerarray select MayorNumber)]];
 	} else { lbAdd [1,"There is no elected Prime Minister"]; };	
-	
+	if(!isNil "sgov") then {
+		lbAdd [1, "South Leader: " + name (leader sgov)];
+	} else { lbAdd [1,"There is no south leader"]; };	
 	if (not(chiefNumber == -1)) then
 	{
 	lbAdd [1,format["Police Constable: %1",name (playerarray select chiefNumber)]];
@@ -172,17 +174,27 @@ switch (_art) do {
   
 	lbAdd [1, format ["Next elections: %1 minutes",round((lastElection+35)-(time/60))]]; 
 		
-	lbAdd [1, _trennlinie];
+	lbAdd [1, "   " + _trennlinie];
+	lbAdd [1, "    Laws [North & South]"];
+	lbAdd [1, "   " + _trennlinie];
 	_i = 0;
 	{
-		if (not(_x == "")) then
+		if (!(_x == "")) then
 		{
 			_i = _i + 1;
-			lbAdd [1, (format ["%1: %2", _i, _x])];
+			lbAdd [1, (format ["   %1: %2", _i, _x])];
 		};
-	}
-	forEach GesetzArray;
-	lbAdd [1, _trennlinie];
+	} forEach (GesetzArray select 0);
+	lbAdd [1, "   " + _trennlinie];
+	_i = 0;
+	{
+		if (!(_x == "")) then
+		{
+			_i = _i + 1;
+			lbAdd [1, (format ["   %1: %2", _i, _x])];
+		};
+	} forEach (GesetzArray select 1);
+	lbAdd [1, "   " + _trennlinie];
 	_totalTaxes = 0;
 	{
 		if ((_x select 2) > 0) then
@@ -310,18 +322,17 @@ switch (_art) do {
     };
 	
     case "gesetz": {
-	if (!(createDialog "gesetzdialog")) exitWith {hint "Dialog Error!";};
-	{
-	  _index = lbAdd [1, _x];
-	  lbSetData [1, _index, _x];
-	}
-	forEach GesetzArray;
-	while {ctrlVisible 1020} do
-	{
-	  _selected = lbCurSel 1;
-	  ctrlSetText [2, lbText [1, _selected]];
-	  waitUntil {((not(_selected == lbCurSel 1)) or (not(ctrlVisible 1020)))};
-	};
+		if (!(createDialog "gesetzdialog")) exitWith {hint "Dialog Error!";};
+		{
+			_index = lbAdd [1, _x];
+			lbSetData [1, _index, _x];
+		} forEach (GesetzArray select 0);
+		while {ctrlVisible 1020} do
+		{
+			_selected = lbCurSel 1;
+			ctrlSetText [2, lbText [1, _selected]];
+			waitUntil {((!(_selected == lbCurSel 1)) or (!(ctrlVisible 1020)))};
+		};
     };
 
     case "coplog": {

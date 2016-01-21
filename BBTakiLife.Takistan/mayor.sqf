@@ -31,15 +31,27 @@ if (_art == "clientgesetz") then {
 	_nummer = _this select 1;
 	_text   = _this select 2;
 	if (_nummer == -1) exitWith {};
-	if (_nummer <= 4) exitwith {player groupchat "You cannot change this law";};
 	if ((_text call ISSE_str_Length) > 60) exitWith {player groupChat localize "STRS_text_zu_lang";};
-	format ["GesetzArray SET [%1, ""%2""];
-	hint format [localize ""STRS_gilde_gesetze_public"", %1, ""%2""];", _nummer, _text] call broadcast;
+
+	if (isMayor) then {
+		if (_nummer <= 4) exitWith {player groupChat "You cannot change this law";};
+		_temp = GesetzArray select 0;
+		_temp set [_nummer,_text];
+		GesetzArray set [0,_temp];
+		publicVariable "GesetzArray";
+	} else {
+		if(!(isNil "sgov")) then {
+			if (sgov == group player) then {
+				_temp = GesetzArray select 1;
+				_temp set [_nummer,_text];
+				GesetzArray set [1,_temp];
+				publicVariable "GesetzArray";
+			};
+		};
+	};
 };
 
-if (_art == "steuernMayor") then
-
-{
+if (_art == "steuernMayor") then {
 	_item = _this select 1;
 	_mag  = _this select 2;
 	_weap = _this select 3;

@@ -437,14 +437,14 @@ class gang_menu
 	movingEnable = true;
 	controlsBackground[] = {DLG_BACK1, background};
 	objects[] = { };
-	controls[] = {button_join, button_leave, button_manage, button_create, listbox_gilden, dummybutton};
+	controls[] = {button_join, button_leave, button_manage, btnSouthGov, btnSouthLaws, button_create, listbox_gilden, dummybutton};
 
 	class DLG_BACK1: RscBackground
 	{
 		x = 0.06;
 		y = 0.15;
 		w = 0.87;
-		h = 0.27;
+		h = 0.35;
 	};
 
 	class background : RscBgRahmen
@@ -452,7 +452,7 @@ class gang_menu
 		x = 0.06;
 		y = 0.15;
 		w = 0.87;
-		h = 0.27;
+		h = 0.35;
 
 		text = $STRD_description_gildehauptmenu_header;
 	};
@@ -464,8 +464,30 @@ class gang_menu
 		w = 0.20;
 		h = 0.04;
 
-		text = $STRD_description_gildehauptmenu_button_join;
+		text = "Join Gang";
 		action = "[0, 0, 0, [""join"",(lbCurSel 202)]] execVM ""gangs.sqf""; closedialog 0;";
+	};
+
+	class btnSouthGov : RscButton
+	{
+		x = 0.08;
+		y = 0.25;
+		w = 0.20;
+		h = 0.04;
+
+		text = "South Government";
+		action = "[""form""] execVM ""armitxes\southgov.sqf""; closedialog 0;";
+	};
+
+	class btnSouthLaws : RscButton
+	{
+		x = 0.29;
+		y = 0.25;
+		w = 0.20;
+		h = 0.04;
+
+		text = "Southern Laws";
+		action = "[""laws""] execVM ""armitxes\southgov.sqf""; closedialog 0;";
 	};
 
 	class button_leave : RscButton
@@ -505,7 +527,7 @@ class gang_menu
 	{
 		idc = 202;
 		x = 0.08;
-		y = 0.25;
+		y = 0.31;
 		w = 0.84;
 		h = 0.15;
 	};

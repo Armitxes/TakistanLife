@@ -1,5 +1,18 @@
 if (isServer) then {
-	GesetzArray = ["Always Drive on the RIGHT side of the road","Do not fly under 200 meters and Do not land in towns","Civilians in posession of a weapon MUST have it holstered at all times.","Any vehicle not in car parks will be impounded.","Speedlimit is 50km/h in town and 90km/h out of town.","","","","",""]; publicVariable "GesetzArray";
+	GesetzArray = [
+		[
+			"Always Drive on the RIGHT side of the road",
+			"Do not fly under 200 meters and Do not land in towns",
+			"Civilians in posession of a weapon MUST have it holstered at all times.",
+			"Any vehicle not in car parks will be impounded.",
+			"Speedlimit is 50km/h in town and 90km/h out of town.","","","","",""
+		],
+		[
+			"No speedlimits are in place",
+			"","","","","","","","",""
+		]
+	];
+	publicVariable "GesetzArray";
 	cameras = [[],[]]; publicVariable "cameras";
 	TankenCost = 10; publicVariable "TankenCost";
 	
