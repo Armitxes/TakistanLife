@@ -19,7 +19,7 @@ if (_art == "use") then
 
 _item   = _this select 1;
 _anzahl = _this select 2;
-if (INV_drogenusesperre == 1) exitWith {player groupChat localize "STRS_inv_item_druguse_toomany";};
+if (INV_drogenusesperre == 1) exitWith {hintSilent localize "STRS_inv_item_druguse_toomany";};
 if (INV_drogen_usesperre) then {INV_drogenusesperre = 1;};
 INV_DrogenCounter =  INV_DrogenCounter + _anzahl;
 [_item, -(_anzahl)] call INV_AddInventoryItem;
@@ -115,7 +115,7 @@ if (_item == "Cannabis") then {
 
 	};
 
-player groupChat localize "STRS_inv_item_druguse_ende";
+hintSilent localize "STRS_inv_item_druguse_ende";
 INV_drogenusesperre = 0;
 INV_DrogenCounter =  INV_DrogenCounter - _anzahl;
 

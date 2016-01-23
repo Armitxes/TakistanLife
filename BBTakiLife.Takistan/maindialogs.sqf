@@ -428,7 +428,10 @@ switch (_art) do {
 			_name = _x select 0;
 			_grp = _x select 1;
 			_mems = units _grp;
-			_txt = format ["%1 [%2 Member] (",_x select 0,count _mems];
+			if (!(isNil "sgov")) then {
+				if(sgov == group player) then { _name = "South Government"; };
+			};
+			_txt = format ["%1 [%2 Member] (",_name,count _mems];
 			{ _txt = _txt + (name _x) + ","; } forEach _mems;
 			_txt = _txt + ")";
 			

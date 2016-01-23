@@ -14,14 +14,14 @@ _incarpark = false;
 if (!(isNull(_closevcl))) then
 
 	{
-	if (usepick) exitWith {player groupChat "You are already using a lockpick"};
-	if(_closeVcl isKindOf "Tank" || _closeVcl isKindOf "Air")exitwith{player groupchat "You cannot lockpick this vehicle!"};
-	if(typeof _closeVcl == "LAV25" || typeof _closeVcl == "M1133_MEV_EP1")exitwith{player groupchat "You cannot lockpick Armoured Vehicles!"};
+	if (usepick) exitWith {hintSilent "You are already using a lockpick"};
+	if(_closeVcl isKindOf "Tank" || _closeVcl isKindOf "Air")exitwith{hintSilent "You cannot lockpick this vehicle!"};
+	if(typeof _closeVcl == "LAV25" || typeof _closeVcl == "M1133_MEV_EP1")exitwith{hintSilent "You cannot lockpick Armoured Vehicles!"};
 	if (_closeVcl in INV_VehicleArray) then
 
 		{
 
-		player groupchat localize "STRS_inventar_lockpick_already";
+		hintSilent localize "STRS_inventar_lockpick_already";
 
 		}
 		else
@@ -30,8 +30,8 @@ if (!(isNull(_closevcl))) then
 			{
 				INV_VehicleArray = INV_VehicleArray + [_closeVcl];
 				_closeVcl setVariable ["owners",(_closeVcl getVariable "owners")+[getPlayerUID player],TRUE];
-				player groupChat localize "STRS_inventar_lockpick_success";
-			} else { player groupChat localize "STRS_inventar_lockpick_noluck"; };
+				hintSilent localize "STRS_inventar_lockpick_success";
+			} else { hintSilent localize "STRS_inventar_lockpick_noluck"; };
 
 			[_item, -1] call INV_AddInventoryItem;
 			format ["%1 switchmove ""AinvPknlMstpSlayWrflDnon_medic"";", player] call broadcast;
@@ -42,7 +42,7 @@ if (!(isNull(_closevcl))) then
 	}
 	else
 	{
-		player groupChat localize "STRS_inventar_lockpick_zuweit";
+		hintSilent localize "STRS_inventar_lockpick_zuweit";
 	};
 };
 

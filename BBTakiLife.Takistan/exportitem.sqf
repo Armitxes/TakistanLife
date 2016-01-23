@@ -7,12 +7,12 @@ _shopnum    = _this select 4;
 
 fvspam=true;
 
-if(_stock >= _maxstock)exitwith{player groupchat "the shop has reached its maximum stock for this item";sleep 0.1;fvspam=false;};
+if(_stock >= _maxstock)exitwith{hintSilent "the shop has reached its maximum stock for this item";sleep 0.1;fvspam=false;};
 
 call compile format['favail = %1avail; %1avail = %1avail - 1;', _item];
 ['dollarz', _preis] call INV_AddInventoryItem;
 
-player groupchat format["The item has been exported for $%1!", _preis];
+hintSilent format["The item has been exported for $%1!", _preis];
 
 format['["%1", (%2 + 1), %3] call INV_itemstocksupdate;', _item, _stock, _shopnum] call broadcast;
 

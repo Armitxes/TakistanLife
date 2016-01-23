@@ -1,1 +1,0 @@
-player groupChat "Alarka has a story or two to tell, he can be found upstairs.";

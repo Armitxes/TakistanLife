@@ -49,9 +49,9 @@ if (_art == "getajob_hostage") then
 
 {
 _copplayernumber = playersNumber west;
-if (_copplayernumber < 5)exitWith{player groupchat "There are not enough cops on to start the hostage mission!"};
-if(workplacejob_hostage_active)exitWith{player groupChat "There are currently no more hostages.";};
-if(workplacejob_hostage_failed)exitWith{player groupChat "You have failed a hostage mission recently, maybe you can do it again later.";};
+if (_copplayernumber < 5)exitWith{hintSilent "There are not enough cops on to start the hostage mission!"};
+if(workplacejob_hostage_active)exitWith{hintSilent "There are currently no more hostages.";};
+if(workplacejob_hostage_failed)exitWith{hintSilent "You have failed a hostage mission recently, maybe you can do it again later.";};
 
 _a1	= 0;
 //delete any left overs from last time this ran
@@ -78,18 +78,18 @@ _markername SetMarkerPos _start;
 
 workplacejob_hostage_active = true; publicvariable "workplacejob_hostage_active";
 
-player groupChat "The Hostage is marked on the map, don't let the police get you.";
+hintSilent "The Hostage is marked on the map, don't let the police get you.";
 
 "if (iscop) then {player sideChat ""Someone is trying to take a hostage. The hostage has been marked on the map. Arrest the hostage taker before its too late!""};" call broadcast;
 
-player groupchat "The police are on to you, hurry up!";
+hintSilent "The police are on to you, hurry up!";
 ["addWarrant",player,"Kidnapping a VIP",11000] execVM "warrant.sqf";
 
 while {true} do {
   "htargetmarker" setmarkerpos getpos hostage1;
 	if (_minutecounter >= 750 and alive player) exitWith {
 		[30000] call setMoney;
-		player groupchat "Well done, you kept the hostage for 15 minutes, $30000 has been transfered to your account.";
+		hintSilent "Well done, you kept the hostage for 15 minutes, $30000 has been transfered to your account.";
 		sleep 10;
 		"server globalchat ""Hostage Taker WINS, he kept the hostage for 15 minutes."";" call broadcast;
 		["addWarrant",player,"Kidnapping",6000] execVM "warrant.sqf";
@@ -101,7 +101,7 @@ while {true} do {
 	};
 
 	if (!alive hostage1 and alive player) exitWith {
-		player groupchat "Hostage has been killed, No one WINS!!";
+		hintSilent "Hostage has been killed, No one WINS!!";
 		sleep 5;
 		"server globalchat ""The Hostage has been Killed, No one WINS!"";" call broadcast;
 		deletevehicle hostage1;
@@ -118,7 +118,7 @@ while {true} do {
 		if (iscop) then {[_copbonus] call setMoney; player sidechat format[""you received $%1 for hostage taker fleeing the area"", _copbonus];};
 		" call broadcast;
 		sleep 2;
-		player groupchat "You fled the area with the hostage, stay in the zone next time, mission failed!";
+		hintSilent "You fled the area with the hostage, stay in the zone next time, mission failed!";
 		workplacejob_hostage_failed = true;
 		deletevehicle hostage1;
 		deletemarker "htargetmarker";
@@ -139,7 +139,7 @@ while {true} do {
 		if (iscop) then {[_copbonus] call setMoney; player sidechat format[""you received $%1 for the successful rescue of the hostage"", _copbonus];};
 		" call broadcast;
 		sleep 2;
-		player groupchat "The Hostage was rescued, mission failed!";
+		hintSilent "The Hostage was rescued, mission failed!";
 		workplacejob_hostage_failed = true;
 		deletevehicle hostage1;
 		deletemarker "htargetmarker";

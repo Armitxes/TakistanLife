@@ -18,13 +18,13 @@ if (vehicle player == player) then
 
 		} forEach (player nearObjects ["Suitcase", 10]);
 
-	player groupChat format[localize "STRS_inv_items_itemdeleted", _deleted];
+	hintSilent format[localize "STRS_inv_items_itemdeleted", _deleted];
 
 	}
 	else
 	{
 
-	player groupchat "you must be on foot";
+	hintSilent "you must be on foot";
 
 	};
 

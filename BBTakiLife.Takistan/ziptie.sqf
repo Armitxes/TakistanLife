@@ -2,13 +2,13 @@ _civ = civmenuciv;
 
 if(animationState _civ in animRestrained) exitWith {
 	(format ["%1 switchmove ""%2"";", _civ, "boundCaptive_unaErc"]) call toClients;
-	player groupchat "You released the player";
+	hintSilent "You released the player";
 };
 
-if(vehicle _civ != _civ)exitwith{player groupchat "the civ is in a vehicle!"};
-if (!(_civ call ISSE_IsVictim)) exitwith {player groupchat localize "STRS_inventory_checknohandszip"};
-if(animationstate _civ == "CivilSitting") exitwith {player groupchat "Already ziptied"}; 
-if("ziptie" call INV_GetItemAmount < 1) exitwith {player groupchat "You need a zip tie in your inventory in order to use this function."};
+if(vehicle _civ != _civ)exitwith{hintSilent "the civ is in a vehicle!"};
+if (!(_civ call ISSE_IsVictim)) exitwith {hintSilent localize "STRS_inventory_checknohandszip"};
+if(animationstate _civ == "CivilSitting") exitwith {hintSilent "Already ziptied"}; 
+if("ziptie" call INV_GetItemAmount < 1) exitwith {hintSilent "You need a zip tie in your inventory in order to use this function."};
 (format ["%1 playmove ""%2"";", player, "AmovPercMstpSnonWnonDnon_AinvPknlMstpSnonWnonDnon"]) call toClients;
 (format ["%1 switchmove ""%2"";", _civ, "CivilSitting"]) call toClients;
 ["ziptie", -1] call INV_AddInvItem;

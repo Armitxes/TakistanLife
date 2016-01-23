@@ -91,18 +91,18 @@ if ((vehicle player) == player) then
 	if ([_item, _anzahl] call INV_AddInventoryItem) then
 	{
 		if(_anzahl == 0)exitwith{};
-		player groupChat format[localize "STRS_inv_buyitems_get_erhalten", (_anzahl call ISSE_str_IntToStr), (_item call INV_getitemName)];
+		hintSilent format[localize "STRS_inv_buyitems_get_erhalten", (_anzahl call ISSE_str_IntToStr), (_item call INV_getitemName)];
 	}	else {
-		player groupChat localize "STRS_inv_buyitems_get_zuschwer";
+		hintSilent localize "STRS_inv_buyitems_get_zuschwer";
 	};
 } else
 {
 	if ([_item, _anzahl, format["%1_storage", (vehicle player)]] call INV_AddItemStorage) then
 	{
 		if(_anzahl == 0)exitwith{};
-		player groupChat format[localize "STRS_inv_buyitems_get_erhalten", (_anzahl call ISSE_str_IntToStr), (_item call INV_getitemName)];
+		hintSilent format[localize "STRS_inv_buyitems_get_erhalten", (_anzahl call ISSE_str_IntToStr), (_item call INV_getitemName)];
 	}	else {
-		player groupChat localize "STRS_inv_buyitems_get_zuschwer";
+		hintSilent localize "STRS_inv_buyitems_get_zuschwer";
 	};
 };
 

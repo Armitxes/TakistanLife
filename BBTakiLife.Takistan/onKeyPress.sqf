@@ -62,7 +62,7 @@ switch _key do
         _owner = _vcl getVariable "owner";
         if((_owner select 1 == getPlayerUID player) && !(_vcl in INV_VehicleArray)) then { INV_VehicleArray = INV_VehicleArray + [_vcl]; }
         else {
-        	if(!(_vcl in INV_VehicleArray)) exitWith { player groupchat "You do not have the keys to this vehicle."; _handled=true; };
+        	if(!(_vcl in INV_VehicleArray)) exitWith { hintSilent "You do not have the keys to this vehicle."; _handled=true; };
         	["schluessel", _vcl, 0] execVM "keys.sqf";
         };
       	_handled=true;
@@ -79,8 +79,8 @@ switch _key do
     	_vcls = nearestobjects [getpos player, ["LandVehicle", "Air", "ship", "TKOrdnanceBox_EP1"], 25];
     	_vcl = _vcls select 0;
     
-    	if(!(_vcl in INV_VehicleArray) and typeof _vcl == "TKOrdnanceBox_EP1")exitWith{player groupchat "You do not have the keys to this hideout.";};
-    	if(!(_vcl in INV_VehicleArray))exitWith{player groupChat "You do not have the keys to this vehicle.";};
+    	if(!(_vcl in INV_VehicleArray) and typeof _vcl == "TKOrdnanceBox_EP1")exitWith{hintSilent "You do not have the keys to this hideout.";};
+    	if(!(_vcl in INV_VehicleArray))exitWith{hintSilent "You do not have the keys to this vehicle.";};
     	if(!isNull _vcl)then{call compile format['[0,0,0,["%3", "public", ["vcl", "%2", %1]]] execVM "storage.sqf";', _vcl, (typeOf _vcl), format["%1_storage", _vcl]];};
   	};
 
@@ -151,7 +151,7 @@ switch _key do
 				if(!(isnull _vcl))exitwith{_i = 4};
 			};
 
-			if(locked _vcl)exitWith{ player groupchat "The vehicle is locked."; };
+			if(locked _vcl)exitWith{ hintSilent "The vehicle is locked."; };
 
 			if(player isKindOf "Animal" && !(isnull _vcl)) then {
 				if (!attached) then {
@@ -175,8 +175,8 @@ switch _key do
 			};		
 		} else {
 			_vcl  = vehicle player;
-			if(locked _vcl)exitWith{player groupchat "The vehicle is locked."};
-			if(speed _vcl > 30)exitWith{player groupchat "The vehicle is moving too fast"};
+			if(locked _vcl)exitWith{hintSilent "The vehicle is locked."};
+			if(speed _vcl > 30)exitWith{hintSilent "The vehicle is moving too fast"};
 			player action ["getOut", _vcl];
 		};
 	};
@@ -206,7 +206,7 @@ switch _key do
 					_civ = _this select 0;
 					if((_civ distance player) > 2 || (!isPlayer _civ) || ([_civ] call plr_isUnConscious))exitWith{};
 					(format ["if (player == %1) then {[""hit"", %2, ""Melee"", 1] execVM ""stun.sqf""};", _civ, player]) call toClients;
-					player groupchat "You stunned this player!";
+					hintSilent "You stunned this player!";
 					keyblock=true; [] spawn {sleep 2; keyblock=false;};
 				};
 			};
@@ -330,7 +330,7 @@ switch _key do
 							_pBounty = _singleWarrant select 2;
 					
 							if(_targ == _pIdCiv) exitWith { 
-								player groupchat format ["%1(%4) (Bounty: %3) (Reason: %2)", _pIdCiv, _pReason, _pBounty, name _pIdCiv];
+								hintSilent format ["%1(%4) (Bounty: %3) (Reason: %2)", _pIdCiv, _pReason, _pBounty, name _pIdCiv];
 							};
 						};	
 					} else {hint "No player selected."};

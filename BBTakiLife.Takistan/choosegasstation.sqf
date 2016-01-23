@@ -172,4 +172,4 @@ buttonSetAction [3, format['[%1,"%2",%3,%4,%5] execVM "exportitem.sqf";', _preis
 };
 
 
-player groupchat "No shops will buy the selected item.";
+hintSilent "No shops will buy the selected item.";

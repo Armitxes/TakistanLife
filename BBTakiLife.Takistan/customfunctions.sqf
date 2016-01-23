@@ -7,7 +7,7 @@ TastenDruck =
 	if (ISSE_str_const_validInput find _zeichennummer < 0) then
 	{
 		closedialog 0;
-		player groupChat format[localize "STRS_wrong_input", _zeichennummer];
+		hintSilent format[localize "STRS_wrong_input", _zeichennummer];
 	};
 };
 ISSE_UnitExists =

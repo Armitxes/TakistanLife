@@ -5,7 +5,7 @@ _type     = typeof _vcl;
 
 switch _doAction do {
   case 'use': {
-    if (_vcl isKindof "Tank") exitwith {player groupchat "You cannot tune this vehicle"};
+    if (_vcl isKindof "Tank") exitwith {hintSilent "You cannot tune this vehicle"};
 	if(vehicle player != player) then {
       _lvl = 1.009;
       
@@ -21,7 +21,7 @@ switch _doAction do {
       
       _vcl setVariable ["tuning",_lvl,true];
       [_item, -1] call INV_AddInventoryItem;
-      player groupchat "Vehicle tuned";
-    } else {player groupchat "Not in a vehicle";};
+      hintSilent "Vehicle tuned";
+    } else {hintSilent "Not in a vehicle";};
   };
 };

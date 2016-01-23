@@ -80,7 +80,7 @@ player Action ["eject", vehicle player];
    player setpos (getmarkerpos "hospitaltent");
  };
 
- player groupChat localize "STRS_verbotene_zone_teleport";
+ hintSilent localize "STRS_verbotene_zone_teleport";
 };
 
 DialogSpielerListe = 

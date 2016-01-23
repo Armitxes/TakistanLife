@@ -33,7 +33,7 @@ if (!_isInArea) exitwith
 
 	{
 
-	player groupChat "You are not where the fish are.";
+	hintSilent "You are not where the fish are.";
 	working = false;
 
 	};
@@ -58,8 +58,8 @@ if(_item == "fishingpole")then
 		_avail = floor (INV_Tragfaehigkeit - (call INV_GetOwnWeight));
 
 		totalamount = totalamount + _amount;
-		if((totalamount*2) >= _avail)exitwith{totalamount = (_avail/2); player groupchat "maximum weight reached"; _i=6;};
-		player groupchat format["You got %1 %2.", _amount, _name];
+		if((totalamount*2) >= _avail)exitwith{totalamount = (_avail/2); hintSilent "maximum weight reached"; _i=6;};
+		hintSilent format["You got %1 %2.", _amount, _name];
 
 		};
 	totalamount = (floor (totalamount));

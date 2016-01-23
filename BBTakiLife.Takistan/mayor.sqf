@@ -6,7 +6,7 @@ if (_art == "ClientWahl") then
 {
   if (isNil("WahlSperre")) then {WahlSperre = false;};
   
-  if (WahlSperre) exitWith {player groupChat "You just voted.";};
+  if (WahlSperre) exitWith {hintSilent "You just voted.";};
   _spielernum = call compile (_this select 1);
   _waehlernum = (rolenumber-1);
   _WahlArray = server getVariable "PMVote";
@@ -20,7 +20,7 @@ if (_art == "ClientWahl") then
   _WahlArray SET [_spielernum, ((_WahlArray select _spielernum)+ [_waehlernum])];
   
   server setVariable ["PMVote",_WahlArray,true];
-  player groupChat format[localize "STRS_regierung_votedfor",(playerstringarray select _spielernum)];
+  hintSilent format[localize "STRS_regierung_votedfor",(playerstringarray select _spielernum)];
   
   WahlSperre = true;
   sleep 30;
@@ -31,10 +31,10 @@ if (_art == "clientgesetz") then {
 	_nummer = _this select 1;
 	_text   = _this select 2;
 	if (_nummer == -1) exitWith {};
-	if ((_text call ISSE_str_Length) > 60) exitWith {player groupChat localize "STRS_text_zu_lang";};
+	if ((_text call ISSE_str_Length) > 60) exitWith {hintSilent localize "STRS_text_zu_lang";};
 
 	if (isMayor) then {
-		if (_nummer <= 4) exitWith {player groupChat "You cannot change this law";};
+		if (_nummer <= 4) exitWith {hintSilent "You cannot change this law";};
 		_temp = GesetzArray select 0;
 		_temp set [_nummer,_text];
 		GesetzArray set [0,_temp];

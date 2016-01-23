@@ -5,16 +5,16 @@ _safe = _this select 1;
 if (_art == "ausrauben") then {
 	_robpool = robsafes select 0;
 	_copplayernumber = playersNumber west;
-	if (_copplayernumber < 5)exitWith{player groupchat "There are not enough cops on to rob this safe"};
-	if(_robpool < 15000)exitWith{player groupchat "This safe has recently been stolen from and is empty"};
-	if(!robenable)exitwith{player groupchat "you are already robbing the bank"};
-	if(!(call INV_isArmed) and !enableDebug)exitWith{player groupChat localize "STRS_bank_rob_noweapon";};
+	if (_copplayernumber < 5)exitWith{hintSilent "There are not enough cops on to rob this safe"};
+	if(_robpool < 15000)exitWith{hintSilent "This safe has recently been stolen from and is empty"};
+	if(!robenable)exitwith{hintSilent "you are already robbing the bank"};
+	if(!(call INV_isArmed) and !enableDebug)exitWith{hintSilent localize "STRS_bank_rob_noweapon";};
 
 	robenable = false;
 	_startRob = round(time)+300;
 	robsafes set [0,0];
 	publicVariable "robsafes"; 
-	player groupChat format[localize "STRS_bank_rob_info"];
+	hintSilent format[localize "STRS_bank_rob_info"];
 	player playmove "AinvPknlMstpSlayWrflDnon_medic";
 
 	('titleText [localize "STRS_bank_rob_titlemsg", "plain"]; _safe say "Bank_alarm";') call toClients;
@@ -36,7 +36,7 @@ if (_art == "ausrauben") then {
 	} else {
 		format['[0,1,2,["opfer", %1, %2]] execVM "bankrob.sqf";', _safe, _robpool] call toClients;  
 		['dollarz', _robpool] call INV_AddInventoryItem;
-		player groupChat format[localize "STRS_bank_rob_success"];
+		hintSilent format[localize "STRS_bank_rob_success"];
 		stolencash = stolencash + _robpool; 
 		local_useBankPossible = false;
 		robenable = true;
@@ -77,10 +77,10 @@ if (_art == "opfer") then
 		};
 
 		[-_verlust] call setMoney;
-		player groupChat format[localize "STRS_bank_rob_somemoneylost", (_verlust call ISSE_str_IntToStr), (_moneyz call ISSE_str_IntToStr)];
+		hintSilent format[localize "STRS_bank_rob_somemoneylost", (_verlust call ISSE_str_IntToStr), (_moneyz call ISSE_str_IntToStr)];
 	} else {
 		PLAYERDATA set [1,0];
-		player groupChat localize "STRS_bank_rob_allmoneylost";
+		hintSilent localize "STRS_bank_rob_allmoneylost";
 	};
 };
 

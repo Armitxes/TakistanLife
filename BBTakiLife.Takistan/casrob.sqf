@@ -5,16 +5,16 @@ _safe = _this select 1;
 if (_art == "robcas") then {
   _robpool = robsafes select 1;
   _copplayernumber = playersNumber west;
-  if (_copplayernumber < 5)exitWith{player groupchat "There are not enough cops on to rob this safe"};
-  if(_robpool < 15000)exitWith{player groupchat "This safe has recently been stolen from and is empty"};
-  if(!robenable)exitwith{player groupchat "you are already robbing the casino"};
-  if(!(call INV_isArmed) and !enableDebug)exitWith{player groupChat localize "STRS_casino_rob_noweapon";};
+  if (_copplayernumber < 5)exitWith{hintSilent "There are not enough cops on to rob this safe"};
+  if(_robpool < 15000)exitWith{hintSilent "This safe has recently been stolen from and is empty"};
+  if(!robenable)exitwith{hintSilent "you are already robbing the casino"};
+  if(!(call INV_isArmed) and !enableDebug)exitWith{hintSilent localize "STRS_casino_rob_noweapon";};
   
   robenable = false;
   _startRob = round(time)+600;
   robsafes set [1,0];
   publicVariable "robsafes"; 
-  player groupChat format[localize "STRS_casino_rob_info"];
+  hintSilent format[localize "STRS_casino_rob_info"];
   player playmove "AinvPknlMstpSlayWrflDnon_medic";
   
   ('titleText [localize "STRS_casino_rob_titlemsg", "plain"]; _safe say "Bank_alarm";') call toClients;
@@ -36,7 +36,7 @@ if (_art == "robcas") then {
   } else {
     format['[0,1,2,["success", %1, %2]] execVM "casrob.sqf";', _safe, _robpool] call toClients;  
     ['dollarz', _robpool] call INV_AddInventoryItem;
-    player groupChat format[localize "STRS_casino_rob_success"];
+    hintSilent format[localize "STRS_casino_rob_success"];
   };
   
   robenable = true;

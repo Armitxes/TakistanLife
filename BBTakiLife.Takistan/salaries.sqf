@@ -1,9 +1,9 @@
 while {iscop} do
 {
 	sleep 170;
-	player groupChat format[localize "STRS_dollarz_countdown", "2"];
+	hintSilent format[localize "STRS_dollarz_countdown", "2"];
 	sleep 60;
-	player groupChat format[localize "STRS_dollarz_countdown", "1"];
+	hintSilent format[localize "STRS_dollarz_countdown", "1"];
 	sleep 50;
 	
 	_income = 350 + extrapay;
@@ -15,7 +15,7 @@ while {iscop} do
 	
 	if (!(convoywinner == "Cops and UN") && !(convoywinner == "Neither")) then  
 	{
-		player groupChat format["No paychecks have been delivered by the last convoy, you'll receive less payment!"];
+		hintSilent format["No paychecks have been delivered by the last convoy, you'll receive less payment!"];
 		_income = _income - 150;
 	};
 	
@@ -35,19 +35,19 @@ while {iscop} do
 	[(round _income) + (round _coptax)] call setMoney;
 	INV_SteuernGezahlt = 0;
 	
-	player groupchat format["You received $%1. as payment including taxes.", ((round _income) call ISSE_str_IntToStr)];
+	hintSilent format["You received $%1. as payment including taxes.", ((round _income) call ISSE_str_IntToStr)];
 	
 	sleep 1;
-	if(ischief)then{player groupchat format["As the Chief Constable you get an extra paycheck of $%1.", (chiefExtraPay call ISSE_str_IntToStr)]};
+	if(ischief)then{hintSilent format["As the Chief Constable you get an extra paycheck of $%1.", (chiefExtraPay call ISSE_str_IntToStr)]};
 	["save"] execVM "armitxes\_db.sqf"; 
 };
 
 while {isun} do
 {
 	sleep 170;
-	player groupChat format[localize "STRS_dollarz_countdown", "2"];
+	hintSilent format[localize "STRS_dollarz_countdown", "2"];
 	sleep 60;
-	player groupChat format[localize "STRS_dollarz_countdown", "1"];
+	hintSilent format[localize "STRS_dollarz_countdown", "1"];
 	sleep 50;
 	
 	_untax = round(INV_SteuernGezahlt * 0.025);
@@ -58,10 +58,10 @@ while {isun} do
 	
 	if (!(convoywinner == "Cops and UN") && !(convoywinner == "Neither")) then  
 	{
-		player groupChat format["No paychecks have been delivered by the last convoy, you'll receive less payment!"];
+		hintSilent format["No paychecks have been delivered by the last convoy, you'll receive less payment!"];
 	  _incomeun = _incomeun - 150;
 	};
-	player groupChat format["The United Nations gave you a paycheck of $%1 and an extra of $%2 as bonus.",_incomeun,paybonus];
+	hintSilent format["The United Nations gave you a paycheck of $%1 and an extra of $%2 as bonus.",_incomeun,paybonus];
 	[(_incomeun + paybonus)] call setMoney;
 	paybonus = 0;
 	["save"] execVM "armitxes\_db.sqf";
@@ -70,9 +70,9 @@ while {isun} do
 while {isciv} do
 {
   sleep 170;
-  player groupChat format[localize "STRS_dollarz_countdown", "2"];
+  hintSilent format[localize "STRS_dollarz_countdown", "2"];
   sleep 60;
-  player groupChat format[localize "STRS_dollarz_countdown", "1"];
+  hintSilent format[localize "STRS_dollarz_countdown", "1"];
   sleep 50;
   
   if ((alive player) and (deadcam == 0)) then
@@ -89,7 +89,7 @@ while {isciv} do
 
 	if (convoywinner == "Civs" && !(convoywinner == "Neither")) then
 	{
-		player groupChat format["The robbers are sharing the robbed Paychecks! You receive extra money."];
+		hintSilent format["The robbers are sharing the robbed Paychecks! You receive extra money."];
 		_income = _income + 100;
 	};
 	if (ispmc || isjudge) then {_income = _income + 500;};	
@@ -109,14 +109,14 @@ while {isciv} do
 	timeinworkplace = 0;
 	_income = round _income;
 	[_income] call setMoney;
-	player groupChat format[localize "STRS_dollarz_civmoneyadd", rolestring, (_income call ISSE_str_IntToStr)];
+	hintSilent format[localize "STRS_dollarz_civmoneyadd", rolestring, (_income call ISSE_str_IntToStr)];
 	
   if (isMayor) then
 	{
   	MayorSteuern = MayorSteuern + INV_SteuernGezahlt;
   	MayorSteuern = round((MayorSteuern / 100) * MayorBekommtSteuern);
   	[MayorSteuern + MayorExtraPay] call setMoney;
-  	player groupchat format["As a Prime Minister you get an extra paycheck of $%1. You also got $%2 taxes.", (MayorExtraPay call ISSE_str_IntToStr), (MayorSteuern call ISSE_str_IntToStr)];
+  	hintSilent format["As a Prime Minister you get an extra paycheck of $%1. You also got $%2 taxes.", (MayorExtraPay call ISSE_str_IntToStr), (MayorSteuern call ISSE_str_IntToStr)];
 	}
 	else
 	{ 
@@ -127,6 +127,6 @@ while {isciv} do
 	INV_SteuernGezahlt = 0;
 
 	}
-	else { player groupChat format[localize "STRS_dollarz_paycheckdead"]; };
+	else { hintSilent format[localize "STRS_dollarz_paycheckdead"]; };
   ["save"] execVM "armitxes\_db.sqf";
 };

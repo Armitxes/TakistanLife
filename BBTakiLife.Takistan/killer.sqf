@@ -21,13 +21,13 @@ if ((_victim in coptypes) || (_victim in untypes)) then
   if (iscop || isun) then
 	{
   	extradeadtime = extradeadtime + killedplayerinc;
-  	player groupChat format [localize "STRS_handlerdeadpub_copkilledbycop", _victim];
+  	hintSilent format [localize "STRS_handlerdeadpub_copkilledbycop", _victim];
 	}
 	else
 	{
 
 	extradeadtime = extradeadtime + killedplayerinc;
-	player groupChat format [localize "STRS_handlerdeadpub_copkilled", _victim];
+	hintSilent format [localize "STRS_handlerdeadpub_copkilled", _victim];
 
 	};
 

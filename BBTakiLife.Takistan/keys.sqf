@@ -26,12 +26,12 @@ if (_art == "schluessel") then
     if (!(locked _vcl)) then
     {
       _vcl lock true;
-      player groupChat localize "STRS_inv_items_vehiclelock_locked";
+      hintSilent localize "STRS_inv_items_vehiclelock_locked";
     } else {
       _vcl lock false;
-      player groupChat localize "STRS_inv_items_vehiclelock_unlocked";
+      hintSilent localize "STRS_inv_items_vehiclelock_unlocked";
     };
-  } else { player groupChat localize "STRS_inv_items_vehiclelock_closer"; };
+  } else { hintSilent localize "STRS_inv_items_vehiclelock_closer"; };
 };
 
 if (_art == "dropschluessel") then
@@ -39,7 +39,7 @@ if (_art == "dropschluessel") then
   _vcl = _this select 1;
   _sel = _this select 2;
   INV_VehicleArray = INV_VehicleArray - [_vcl];
-  player groupChat localize "STRS_inv_items_weggeworfen";
+  hintSilent localize "STRS_inv_items_weggeworfen";
 };
 
 if (_art == "schluesseluebergabe") then
@@ -50,23 +50,23 @@ if (_art == "schluesseluebergabe") then
 _spieler = INV_PLAYERSTRINGLIST select _spielernum;
  _playerobject = INV_PLAYERLIST select _spielernum;
    if (!(_spieler call ISSE_UnitExists))  exitWith {
-player groupChat localize "STRS_inv_not_ingame";
+hintSilent localize "STRS_inv_not_ingame";
 };
 
  if (_playerobject == player)   exitWith {
-player groupChat localize "STRS_inv_inventar_uebergabe_self";
+hintSilent localize "STRS_inv_inventar_uebergabe_self";
 };
 
    if (player distance _playerobject > 20)  exitWith {
-player groupChat localize "STRS_inv_inventar_uebergabe_distance";
+hintSilent localize "STRS_inv_inventar_uebergabe_distance";
 };
 
     format ["if (INV_ROLESTRING == ""%1"") then
  {
 INV_VehicleArray = INV_VehicleArray + [%2];
- player groupChat localize ""STRS_inv_items_uebergabe_schluessel_success""};
+ hintSilent localize ""STRS_inv_items_uebergabe_schluessel_success""};
 
 ", _spieler, _vcl] call broadcast;
-  player groupChat localize "STRS_inv_items_uebergabe_schluessel_success_self";
+  hintSilent localize "STRS_inv_items_uebergabe_schluessel_success_self";
 };
 

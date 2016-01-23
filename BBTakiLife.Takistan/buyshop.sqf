@@ -10,10 +10,10 @@ if (_art == "immobilie") then
 _cost = ((BuyAbleBuildingsArray select _num) select 3);
 _name = ((BuyAbleBuildingsArray select _num) select 0);
 
-if (_name in BuildingsOwnerArray) exitWith {player groupChat localize "STRS_alreadygotshop";};
-if (_dollarz < _cost)                exitWith {player groupChat localize "STRS_kein_dollarz";};
+if (_name in BuildingsOwnerArray) exitWith {hintSilent localize "STRS_alreadygotshop";};
+if (_dollarz < _cost)                exitWith {hintSilent localize "STRS_kein_dollarz";};
 ['dollarz', -(_cost)] call INV_AddInventoryItem;
-player groupChat format[localize "STRS_gotshop", rolestring, (_cost call ISSE_str_IntToStr)];
+hintSilent format[localize "STRS_gotshop", rolestring, (_cost call ISSE_str_IntToStr)];
 BuildingsOwnerArray = BuildingsOwnerArray + [_name];
 
 };

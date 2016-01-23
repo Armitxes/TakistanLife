@@ -1,4 +1,4 @@
-if(pickingup)exitwith{player groupchat "you are already picking up an item"};
+if(pickingup)exitwith{hintSilent "you are already picking up an item"};
 pickingup   = true;
 
 _action	    = _this select 2;
@@ -16,7 +16,7 @@ _time       = round time;
 
 if ((_ownweight + _itemweight) > INV_Tragfaehigkeit) then {
   _amount = (floor((INV_Tragfaehigkeit - _ownweight) / (_infos call INV_getitemTypeKg)));
-  if (_amount <= 0) exitWith {player groupChat localize "STRS_inv_buyitems_maxgewicht"; _exitvar = 1;};
+  if (_amount <= 0) exitWith {hintSilent localize "STRS_inv_buyitems_maxgewicht"; _exitvar = 1;};
 };
 
 if(_exitvar == 1)exitwith{};
@@ -30,7 +30,7 @@ sleep 1;
 
 [_item, _amount, "INV_InventarArray"] call INV_CreateItem;
 
-player groupchat format["You picked up %1 %2", _amount, _name];
+hintSilent format["You picked up %1 %2", _amount, _name];
 
 if(_amount < _tamount) then
 

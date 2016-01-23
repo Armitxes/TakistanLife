@@ -8,7 +8,7 @@ if (alreadygotaworkplacejob == 2)    exitWith
 
 	{
 
-	player groupChat localize "STRS_workplacemission_searchalready";
+	hintSilent localize "STRS_workplacemission_searchalready";
 
 	};
 
@@ -16,7 +16,7 @@ if (alreadygotaworkplacejob == 1)    exitWith
 
 	{
 
-	player groupChat localize "STRS_workplacemission_search_alreadydelivery";
+	hintSilent localize "STRS_workplacemission_search_alreadydelivery";
 
 	};
 
@@ -24,7 +24,7 @@ if (workplacejob_search_cancel == 1) exitWith
 
 	{
 
-	player groupChat localize "STRS_workplacemission_nochgesperrt";
+	hintSilent localize "STRS_workplacemission_nochgesperrt";
 
 	};
 
@@ -39,7 +39,7 @@ _objectposition = getpos (_objectlogic);
 _objectradius   = _objposarray select 1;
 _objectradius2  = _objposarray select 2;
 _searchobject = _searchobj createVehicleLocal [((_objectposition select 0)+(random(_objectradius)-random(_objectradius))), ((_objectposition select 1)+(random(_objectradius2)-random(_objectradius2))), _objectposition select 2];
-player groupChat _searchmsg;
+hintSilent _searchmsg;
 _action            = 0;
 _action2	   = 0;
 _distancenachricht = 0;
@@ -99,7 +99,7 @@ while {true} do
 
 		{
 
-		player groupChat localize "STRS_workplacemission_searchjob_targetreached";
+		hintSilent localize "STRS_workplacemission_searchjob_targetreached";
 
 		_distancenachricht = 1;
 
@@ -124,7 +124,7 @@ while {true} do
 
 		deletevehicle _searchobject;
 
-		player groupChat format[localize "STRS_workplacemission_search_finish", (_money call ISSE_str_IntToStr)];
+		hintSilent format[localize "STRS_workplacemission_search_finish", (_money call ISSE_str_IntToStr)];
 
 		['dollarz', _money] call INV_AddInventoryItem;
 
@@ -152,7 +152,7 @@ if (_art == "canceljob_search") then
 veh removeaction searchinfoaction;
 player removeaction searchinfoaction;
 deletevehicle ((_this select 3) select 1);
-player groupChat format[localize "STRS_workplacemission_search_cancel", (workplacejob_search_cancelsperre call ISSE_str_IntToStr)];
+hintSilent format[localize "STRS_workplacemission_search_cancel", (workplacejob_search_cancelsperre call ISSE_str_IntToStr)];
 alreadygotaworkplacejob = 0;
 player REMOVEACTION workplace_searchaction_cancel;
 workplacejob_search_cancel = 1;

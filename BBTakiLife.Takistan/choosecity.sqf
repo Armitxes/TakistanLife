@@ -138,7 +138,7 @@ buttonSetAction [4, format['[%1,"%2",%3,%4,%5] execVM "exportvehicle.sqf";', _pr
 };
 
 
-player groupchat "No shops will buy the selected vehicle.";
+hintSilent "No shops will buy the selected vehicle.";
 
 
 

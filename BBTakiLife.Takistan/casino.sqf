@@ -6,10 +6,10 @@ _winner = floor(random 500);
 
 if(_art == "slotmachine") then
 {
-if (_dollarz < 2000) exitwith {player groupchat "You do not have enough money to play!"};
+if (_dollarz < 2000) exitwith {hintSilent "You do not have enough money to play!"};
 if ((_winner >= 465) && !(_winner <= 7)) then {
     ['dollarz', -2000] call INV_AddInventoryItem;
-	player groupchat "Congratulations you have won the jackpot of $10000";
+	hintSilent "Congratulations you have won the jackpot of $10000";
 	['dollarz', 10000] call INV_AddInventoryItem;
 	isbet = true;
 	sleep 2;
@@ -17,14 +17,14 @@ if ((_winner >= 465) && !(_winner <= 7)) then {
 	};
 if  ((_winner < 465) && (_winner > 7)) then {
 	['dollarz', -2000] call INV_AddInventoryItem;
-	player groupchat "Unlucky you have not won this time please try again";
+	hintSilent "Unlucky you have not won this time please try again";
 	isbet = true;
 	sleep 2;
 	isbet = false;
 	};
 if ((_winner <= 7) && (_winner > 2)) then {
 	['dollarz', -2000] call INV_AddInventoryItem;
-	player groupchat "Congratulations you have won the Super Jackpot of $50000";
+	hintSilent "Congratulations you have won the Super Jackpot of $50000";
 	['dollarz', 50000] call INV_AddInventoryItem;
 	isbet = true;
 	sleep 2;
@@ -32,7 +32,7 @@ if ((_winner <= 7) && (_winner > 2)) then {
 	};
 if (_winner <= 2) then {
 	['dollarz', -2000] call INV_AddInventoryItem;
-	player groupchat "Congratulations you have won the Mega Jackpot of $100000";
+	hintSilent "Congratulations you have won the Mega Jackpot of $100000";
 	(format['server globalchat "%1 has won the Mega Jackpot of $100000!!";',name _gambler]) call toClients;
 	['dollarz', 100000] call INV_AddInventoryItem;
 	isbet = true;
@@ -42,10 +42,10 @@ if (_winner <= 2) then {
 };
 if(_art == "slotmachineb") then
 {
-if (_dollarz < 100) exitwith {player groupchat "You do not have enough money to play!"};
+if (_dollarz < 100) exitwith {hintSilent "You do not have enough money to play!"};
 if ((_winner >= 465) && !(_winner <= 7)) then {
     ['dollarz', -100] call INV_AddInventoryItem;
-	player groupchat "Congratulations you have won the jackpot of $750";
+	hintSilent "Congratulations you have won the jackpot of $750";
 	['dollarz', 750] call INV_AddInventoryItem;
 	isbet = true;
 	sleep 2;
@@ -53,14 +53,14 @@ if ((_winner >= 465) && !(_winner <= 7)) then {
 	};
 if  ((_winner < 465) && (_winner > 7)) then {
 	['dollarz', -100] call INV_AddInventoryItem;
-	player groupchat "Unlucky you have not won this time please try again";
+	hintSilent "Unlucky you have not won this time please try again";
 	isbet = true;
 	sleep 2;
 	isbet = false;
 	};
 if ((_winner <= 7) && (_winner > 2)) then {
 	['dollarz', -100] call INV_AddInventoryItem;
-	player groupchat "Congratulations you have won the Super Jackpot of $5000";
+	hintSilent "Congratulations you have won the Super Jackpot of $5000";
 	['dollarz',5000] call INV_AddInventoryItem;
 	isbet = true;
 	sleep 2;
@@ -68,7 +68,7 @@ if ((_winner <= 7) && (_winner > 2)) then {
 	};
 if (_winner <= 2) then {
 	['dollarz', -100] call INV_AddInventoryItem;
-	player groupchat "Congratulations you have won the Mega Jackpot of $10000";
+	hintSilent "Congratulations you have won the Mega Jackpot of $10000";
 	(format['server globalchat "%1 has won the Mega Jackpot of $10000!!";',name _gambler]) call toClients;
 	['dollarz', 10000] call INV_AddInventoryItem;
 	isbet = true;

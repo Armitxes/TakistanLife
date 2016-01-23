@@ -30,7 +30,7 @@ for [{_i=0}, {_i <= (count warrantarray)}, {_i=_i+1}] do {
 	_pBounty = _singleWarrant select 2;
 
 	if(player == _pIdCiv) exitWith {
-		(format ["if (player == %1) then { [%2] call setMoney; player groupChat ""You received $%2 for the arrest""; };", _copobj, round(_pBounty)]) call toClients;    
+		(format ["if (player == %1) then { [%2] call setMoney; hintSilent ""You received $%2 for the arrest""; };", _copobj, round(_pBounty)]) call toClients;    
 		bountyToPay = _pBounty;
 	};
 };  
@@ -56,7 +56,7 @@ while {true} do
 		player setDamage 0;
 		dmgHead = 0; dmgBody = 0; dmgHands = 0; dmgLegs = 0;
 		["deleteWarrant",player, "", 0] execVM "warrant.sqf";
-		(format ["if (player == %1) then { player groupChat localize ""STRS_civmenucheck_free_self"";}; server GLOBALCHAT format [localize ""STRS_civmenucheck_free_global"", name %1];", player]) call toClients;
+		(format ["if (player == %1) then { hintSilent localize ""STRS_civmenucheck_free_self"";}; server GLOBALCHAT format [localize ""STRS_civmenucheck_free_global"", name %1];", player]) call toClients;
 	};
 
 	sleep 1;

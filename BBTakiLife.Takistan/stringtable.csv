@@ -525,7 +525,6 @@ STRS_inv_buyitems_maxgewicht,Max weight reached. You can not carry any more item
 STRS_inv_buyitems_keindollarz,You do not have enough money.,
 STRS_inv_buyitems_gekauft,You bought %1 %2 for $%3,
 STRS_inv_buyvehicles_store_in_use,This store is busy at the moment. Please try again later.,
-STRS_inv_buyvehicles_buy_car,You bought a %1 for $%2. Please wait 5 seconds until the vehicle spawns.,
 STRS_inv_buyvehicles_destroyed,The vehicles is destroyed.,
 STRS_inv_buyvehicles_noowner,You are not the owner of this vehicle.,
 STRS_inv_buyitems_sell_notenough,You do not have enough items to sell.,

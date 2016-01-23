@@ -6,7 +6,7 @@ if (_art == "ClientWahlc") then
 {
   if (isNil("WahlChief")) then {WahlChief = false;};
   
-  if (WahlChief) exitWith {player groupChat "You just voted.";};
+  if (WahlChief) exitWith {hintSilent "You just voted.";};
   _spielernum = call compile (_this select 1);
   _waehlernum = (rolenumber-1);
   _WahlArrayc = server getVariable "CCVote";
@@ -20,7 +20,7 @@ if (_art == "ClientWahlc") then
   _WahlArrayc SET [_spielernum, ((_WahlArrayc select _spielernum)+ [_waehlernum])];
   
   server setVariable ["CCVote",_WahlArrayc,true];
-  player groupChat format[localize "STRS_chief_votedfor", (playerstringarray select _spielernum)];
+  hintSilent format[localize "STRS_chief_votedfor", (playerstringarray select _spielernum)];
   WahlChief = true;
   sleep 15;
   WahlChief = false;

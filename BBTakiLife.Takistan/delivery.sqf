@@ -7,7 +7,7 @@ if (alreadygotaworkplacejob == 2) exitWith
 
 	{
 
-	player groupChat localize "STRS_workplacemission_searchalready";
+	hintSilent localize "STRS_workplacemission_searchalready";
 
 	};
 
@@ -15,7 +15,7 @@ if (alreadygotaworkplacejob == 1) exitWith
 
 	{
 
-	player groupChat format [localize "STRS_workplacemission_already", workplacejob_deliveryname];
+	hintSilent format [localize "STRS_workplacemission_already", workplacejob_deliveryname];
 
 	};
 
@@ -23,7 +23,7 @@ if(canceltime) exitwith
 
 	{
 
-	player groupchat "You cannot start another delivery mission so soon after failing one!";
+	hintSilent "You cannot start another delivery mission so soon after failing one!";
 
 	};
 
@@ -34,7 +34,7 @@ _msg = (workplacejob_deliverymsg select (round(random((count workplacejob_delive
 workplacejob_deliveryflag = workplacejob_deliveryflagarray select (_whereto);
 workplacejob_deliveryname = workplacejob_deliverynamearray select (_whereto);
 while{workplacejob_deliveryflag distance player < 1500}do{_whereto = floor(random (count workplacejob_deliveryflagarray));workplacejob_deliveryflag = workplacejob_deliveryflagarray select (_whereto);workplacejob_deliveryname = workplacejob_deliverynamearray select (_whereto);};
-player groupChat format[localize _msg, workplacejob_deliveryname];
+hintSilent format[localize _msg, workplacejob_deliveryname];
 workplacemissioninfos = ["Delivery Mission", format["%1", (_whereto+1)]];
 timetaken = 0;
 _a1 = 0;
@@ -56,7 +56,7 @@ while {true} do
 
 		player removeaction deliveryinfoaction;
 		vcl removeaction deliveryinfoaction;
-		player groupChat format[localize "STRS_workplacemission_delivery_finish", (workplacejob_deliverymoney call ISSE_str_IntToStr)];
+		hintSilent format[localize "STRS_workplacemission_delivery_finish", (workplacejob_deliverymoney call ISSE_str_IntToStr)];
 		hint format["Destination: %1\nTime taken: %2 seconds.\nPay: $%3\nDistance remaining: %4m", workplacejob_deliveryname, timetaken, round workplacejob_deliverymoney, (round(workplacejob_deliveryflag Distance player))];
 		['dollarz', round workplacejob_deliverymoney] call INV_AddInventoryItem;
 		alreadygotaworkplacejob = 0;
@@ -105,7 +105,7 @@ if (_art == "cancel") then
 player removeAction deliveryinfoaction;
 player removeAction deliverycancelaction;
 vcl removeaction deliveryinfoaction;
-player groupchat "delivery mission failed!";
+hintSilent "delivery mission failed!";
 alreadygotaworkplacejob = 0;
 workplacemissioninfos = ["", ""];
 

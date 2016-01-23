@@ -1,1 +1,0 @@
-player groupChat "My gun you say, i got it from the black market merchant a little bit west of Zavarak, but he wants a bribe first, pay me and then you can go down there";

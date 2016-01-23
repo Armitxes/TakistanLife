@@ -20,14 +20,14 @@ if (vehicle player == player) then
 
 		} forEach (player nearObjects ["weaponholder", 5]);
 
-	player groupChat format[localize "STRS_inv_items_weapondeleted", _deleted];
+	hintSilent format[localize "STRS_inv_items_weapondeleted", _deleted];
 
 	}
 	else
 	{
 
 	format ["clearWeaponCargo %1; clearMagazineCargo %1;", (vehicle player)] call broadcast;
-	player groupChat "STRS_inv_items_weaponcargocleared";
+	hintSilent "STRS_inv_items_weaponcargocleared";
 	_deleted = 1;
 
 	};

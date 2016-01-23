@@ -32063,7 +32063,7 @@ class Mission
 			vehicle="Infostand_2_EP1";
 			skill=0.60000002;
 			text="southshop";
-			init="this allowDamage false; this enableSimulation false;this setObjectTexture [0,""images\shopWeapon.paa""];";
+			init="this allowDamage false; this enableSimulation false;this setObjectTexture [0,""images\shopWeapon.paa""]; this addAction [""<t color='#FF0000'>Declare War</t>"",""armitxes\southgov.sqf"",[""declare""],1,false,true,"""",""!(isNil """"sgov"""")""];";
 		};
 		class Item3035
 		{
@@ -40341,12 +40341,11 @@ class Mission
 		class Item3888
 		{
 			position[]={5963.8677,118.99426,7506.48};
-			azimut=8.6204872;
+			azimut=8.6204901;
 			id=4014;
 			side="EMPTY";
 			vehicle="Concrete_Wall_EP1";
 			skill=0.2;
-			init="this setpos [5963.8677, 7506.48, 0.017527698];";
 		};
 		class Item3889
 		{
@@ -40534,12 +40533,11 @@ class Mission
 		class Item3908
 		{
 			position[]={5976.2871,119.30386,7505.3442};
-			azimut=5.1789036;
+			azimut=5.1788998;
 			id=4034;
 			side="EMPTY";
 			vehicle="Concrete_Wall_EP1";
 			skill=0.2;
-			init="this setpos [5976.2871, 7505.3442, 1.5258789e-005];";
 		};
 		class Item3909
 		{
@@ -40583,12 +40581,11 @@ class Mission
 		class Item3913
 		{
 			position[]={5983.6729,119.35753,7504.6445};
-			azimut=5.1789036;
+			azimut=5.1788998;
 			id=4039;
 			side="EMPTY";
 			vehicle="Concrete_Wall_EP1";
 			skill=0.2;
-			init="this setpos [5983.6729, 7504.6445, 3.0517578e-005];";
 		};
 		class Item3914
 		{
@@ -40763,12 +40760,11 @@ class Mission
 		class Item3931
 		{
 			position[]={5989.4556,119.56638,7493.9595};
-			azimut=88.53093;
+			azimut=88.530899;
 			id=4057;
 			side="EMPTY";
 			vehicle="Concrete_Wall_EP1";
 			skill=0.2;
-			init="this setpos [5989.4556, 7493.9595, 3.0517578e-005];";
 		};
 		class Item3932
 		{
@@ -41408,12 +41404,11 @@ class Mission
 		class Item3997
 		{
 			position[]={5962.1108,119.03333,7498.8633};
-			azimut=96.786263;
+			azimut=96.786301;
 			id=4123;
 			side="EMPTY";
 			vehicle="Concrete_Wall_EP1";
 			skill=0.2;
-			init="this setpos [5962.1108, 7498.8633, 2.2888184e-005];";
 		};
 		class Item3998
 		{
@@ -41437,12 +41432,11 @@ class Mission
 		class Item4000
 		{
 			position[]={5962.626,118.98223,7504.6426};
-			azimut=95.366455;
+			azimut=95.366501;
 			id=4126;
 			side="EMPTY";
 			vehicle="Concrete_Wall_EP1";
 			skill=0.2;
-			init="this setpos [5962.626, 7504.6426, 1.5258789e-005];";
 		};
 		class Item4001
 		{

@@ -6,7 +6,7 @@ if (_fuel >= 0.99) exitWith
 
 {
 
-player groupChat localize "STRS_gasstation_bereits_getankt";
+hintSilent localize "STRS_gasstation_bereits_getankt";
 
 };
 
@@ -30,7 +30,7 @@ if (not(['dollarz', -(TankenCost)] call INV_AddInventoryItem)) exitWith
 
 	{
 
-	player groupChat localize "STRS_gasstation_tanken_money";
+	hintSilent localize "STRS_gasstation_tanken_money";
 	_exitvar = 1;
 
 	};
@@ -39,7 +39,7 @@ if (_tankvehicle == player) exitWith
 
 	{
 
-	player groupChat localize "STRS_gasstation_tanken_vclleft";
+	hintSilent localize "STRS_gasstation_tanken_vclleft";
 	_exitvar = 1;
 
 	};
@@ -48,7 +48,7 @@ if (vehicle player distance _fuelstartposition > 6) exitWith
 
 	{
 
-	player groupChat localize "STRS_gasstation_tanken_vclmoved";
+	hintSilent localize "STRS_gasstation_tanken_vclmoved";
 	_exitvar = 1;
 
 	};
@@ -66,4 +66,4 @@ publicvariable "oildemand";
 
 if (_exitvar == 1) exitWith {};
 
-player groupChat localize "STRS_gasstation_tanken_finished";
+hintSilent localize "STRS_gasstation_tanken_finished";

@@ -21,7 +21,7 @@ while {isciv} do
 		  if(_speed >= 130) then {_penalty = 4};
 
 
-		  player groupchat format["You have just been caught speeding! (Limit: 90, Speed: %1)", round _speed];
+		  hintSilent format["You have just been caught speeding! (Limit: 90, Speed: %1)", round _speed];
 
 		  sleep 2;
 
@@ -33,7 +33,7 @@ while {isciv} do
 			  ["addWarrant",player,"Driving Without a License",2000] execVM "warrant.sqf";
 			  INV_LizenzOwner = INV_LizenzOwner - ["truck"];
 		      };
-		      player groupchat format["Truck Demerit points lost: %1. Truck Demerit points remaining: %2", _penalty, truckDemerits];
+		      hintSilent format["Truck Demerit points lost: %1. Truck Demerit points remaining: %2", _penalty, truckDemerits];
 		  } else {
 		      if(demerits == 0 || !("car" call INV_HasLicense)) exitWith {};
 		      demerits = demerits - _penalty;
@@ -42,7 +42,7 @@ while {isciv} do
 			  ["addWarrant",player,"Driving Without a License",2000] execVM "warrant.sqf";
 			  INV_LizenzOwner = INV_LizenzOwner - ["car"];
 		      };
-		      player groupchat format["Demerit points lost: %1. Demerit points remaining: %2", _penalty, demerits];
+		      hintSilent format["Demerit points lost: %1. Demerit points remaining: %2", _penalty, demerits];
 		  };
 	    };
     } foreach speedcamarray;

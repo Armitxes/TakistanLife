@@ -245,13 +245,13 @@ INV_RemoveIllegalStorage = {
 
 	[_arrayname, "illegal"] call INV_StorageRemoveKindOf;
 	_re        = true;
-	(format ["if (player == %2) then {player groupChat ""%1 had Illegal Items in its trunk, you removed them.""};", _vcl, player]) call broadcast;
+	(format ["if (player == %2) then {hintSilent ""%1 had Illegal Items in its trunk, you removed them.""};", _vcl, player]) call broadcast;
 
 	}
 	else
 	{
 
-	player groupchat "No illegal items found.";
+	hintSilent "No illegal items found.";
 
 	};
 

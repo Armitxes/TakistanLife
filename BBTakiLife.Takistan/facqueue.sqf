@@ -6,15 +6,15 @@ if(typename _this == "ARRAY") exitWith {
 	_dollarz 	 = "dollarz" call INV_getitemamount;
 	_workers = call compile format['%1workers', _queue];
 
-	if(_workers >= maxfacworkers)exitwith{player groupchat "max factory workers reached!"};
-	if((PLAYERDATA select 1) < facworkercost)exitwith{player groupchat "you do not have enough money"};
+	if(_workers >= maxfacworkers)exitwith{hintSilent "max factory workers reached!"};
+	if((PLAYERDATA select 1) < facworkercost)exitwith{hintSilent "you do not have enough money"};
 
 	[-facworkercost] call setMoney;
                                                 
   call compile format['%1workers = %1workers + 1;', _queue];
   (PLAYERDATA select 8) set [_id,((PLAYERDATA select 8) select _id) + 1];
                                                   
-	player groupchat "factory worker hired!";
+	hintSilent "factory worker hired!";
 
 	if(count _fqueue > 0)then{call compile format['%1eta = %1eta - (%1eta/maxfacworkers);', (_fqueue select 0)];};
 };
@@ -53,7 +53,7 @@ for [{_i=0}, {_i < _t}, {_i=_i+1}] do {sleep 1; if(%3workers > 0)then{%1eta = %1
 %3 set [0, 0];
 %3 = %3 - [0];
 
-player groupchat "a %4 is now available at one of your factories!";
+hintSilent "a %4 is now available at one of your factories!";
 
 ', (fqueue select 0), round(((fqueue select 0) call INV_getitemBuyCost)*.01125), _queue, ((fqueue select 0) call INV_getitemname)];
 

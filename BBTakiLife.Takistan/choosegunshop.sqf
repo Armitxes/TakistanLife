@@ -37,4 +37,4 @@ buttonSetAction [4, format['[%1,"%2",%3,%4,%5] execVM "exportweapon.sqf";', _pre
 };
 
 
-player groupchat "No shops will buy the selected item.";
+hintSilent "No shops will buy the selected item.";

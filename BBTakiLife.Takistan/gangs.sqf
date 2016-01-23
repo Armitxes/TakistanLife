@@ -6,18 +6,18 @@ if(_art == "create") then {
 	_name = name player;
 	_dollarz = 'dollarz' call INV_getitemamount;
 
-	if (gangmember) exitWith {player groupChat "You are already in a gang!";};
-	if (_text == "South Government") exitWith {player groupChat "Illegal name";};
+	if (gangmember) exitWith {hintSilent "You are already in a gang!";};
+	if (_text == "South Government") exitWith {hintSilent "Illegal name";};
 	
-	if ((_text call ISSE_str_Length) > 30 or (_text call ISSE_str_Length) < 3) exitWith {player groupChat "the entered text is either too long or too short";};
-	if(_dollarz < 15000) exitWith {player groupchat "You need atleast 15k to found this gang."};
+	if ((_text call ISSE_str_Length) > 30 or (_text call ISSE_str_Length) < 3) exitWith {hintSilent "the entered text is either too long or too short";};
+	if(_dollarz < 15000) exitWith {hintSilent "You need atleast 15k to found this gang."};
 	['dollarz', -15000] call INV_addinventoryitem;
 
 	_gangGroup = group player;
 	_gangGroup selectLeader player;
 	enableRadio false; 5 fadeRadio 0;
 	gangsarray = gangsarray + [[_text,_gangGroup,true]];
-	player groupChat format["you have created a new gang called %1!", _text];
+	hintSilent format["you have created a new gang called %1!", _text];
 	publicVariable "gangsarray";
 	gangmember = true;
 };
@@ -61,7 +61,6 @@ if(_art == "allowjoin") then {
 				if(_x select 1 == _grp) exitWith {
 					_open = _x select 2;
 					_x set [2, !_open];
-					player groupChat format ["Group open: %1",_open];
 					gangsarray set [_i,_x];
 				};
 				_i = _i + 1;

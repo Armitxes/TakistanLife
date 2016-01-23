@@ -11,7 +11,7 @@ _gang		   = _gangarray select 0;
 
 
 if (_selanno == 0) then {
-	if (_announce == "Reason Not in List, Type Reason Here") exitWith {player groupChat "You must enter a reason!"};
+	if (_announce == "Reason Not in List, Type Reason Here") exitWith {hintSilent "You must enter a reason!"};
 	
 	format["server globalChat ""The Chief Constable(%1) has given authorisation on %2 to %3"";",name player, name _civvar,_announce] call toClients;
 	} else {
@@ -28,7 +28,7 @@ if (_selanno == 0) then {
 
 	if (_announce != "") then {
 	if ((_selanno) > 2) then {
-	if (isNil "_gang") then {player groupChat "You must select a Gang";
+	if (isNil "_gang") then {hintSilent "You must select a Gang";
 	} else { 
 	format["server globalChat ""The Chief Constable (%1) has issued a warrant on %2 to %3"";",name player, _gang,_announce] call toClients;};
 	};

@@ -1,5 +1,5 @@
 _art = _this select 0;
-if !(ischief) exitwith {player groupChat "You are not the Chief Constable"};
+if !(ischief) exitwith {hintSilent "You are not the Chief Constable"};
 	if (_art == "CCdialog") then {
 	if (!(createDialog "CCdialog")) exitWith {hint "Dialog Error!";};
 	[2, 1, true, false] call DialogSpielerListe;

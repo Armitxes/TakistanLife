@@ -8,7 +8,7 @@ _huren_cost = 1000;
 if (localhuren >= 5) exitWith {role groupChat localize "STRS_arbeiter_zuviele";};
 if (_dollarz <= _huren_cost)    exitWith {role groupChat localize "STRS_arbeiter_nomoney";};
 ['dollarz', -(_huren_cost)] call INV_AddInventoryItem;
-player groupChat format[localize "STRS_arbeiter_gekauft", rolestring, (_huren_cost call ISSE_str_IntToStr)];
+hintSilent format[localize "STRS_arbeiter_gekauft", rolestring, (_huren_cost call ISSE_str_IntToStr)];
 _arbeiternummer   = localhurencounter;
 localhurencounter = localhurencounter + 1;
 localhuren        = localhuren + 1;
@@ -45,7 +45,7 @@ while {true} do
 		if(_hoename in wp1unitarray)then{wp1unitarray = wp1unitarray - [_hoename ]; publicvariable "wp1unitarray";};
 		if(_hoename in wp2unitarray)then{wp2unitarray = wp2unitarray - [_hoename ]; publicvariable "wp2unitarray";};
 		if(_hoename in wp3unitarray)then{wp3unitarray = wp3unitarray - [_hoename ]; publicvariable "wp3unitarray";};
-		player groupChat localize "STRS_arbeiter_tot";
+		hintSilent localize "STRS_arbeiter_tot";
 		localhuren = localhuren - 1;
 		_hoename SETDAMAGE 1;
 		sleep 5;
@@ -81,7 +81,7 @@ while {true} do
 
 		{
 
-		player groupchat "You cannot arm workers!";
+		hintSilent "You cannot arm workers!";
 		removeallweapons _hoename;
 
 		};

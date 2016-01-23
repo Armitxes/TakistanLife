@@ -10,7 +10,7 @@ if (count _this > 3) then {_CodeArray = (_this select 3) select 0; _OnTrue = (_t
 keypad_num = 0;
 
 _ok = createDialog "RUG_Codepad";
-if (!_ok) exitWith {Player groupChat "Codepad dialog error!"};
+if (!_ok) exitWith {hintSilent "Codepad dialog error!"};
 
 // Some dialog IDCs
 

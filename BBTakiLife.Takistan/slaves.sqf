@@ -11,7 +11,7 @@ if (_dollarz <= slave_cost) exitWith {role groupChat localize "STRS_slave_nomone
 
 ['dollarz', -(slave_cost)] call INV_AddInventoryItem;
 
-player groupChat format[localize "STRS_slave_gekauft", rolestring, (slave_cost call ISSE_str_IntToStr)];
+hintSilent format[localize "STRS_slave_gekauft", rolestring, (slave_cost call ISSE_str_IntToStr)];
 
 _arbeiternummer   = localslavecounter;
 localslavecounter = localslavecounter + 1;
@@ -46,7 +46,7 @@ while {true} do
 
 		{
 
-		if ( (not(alive _slavename)) or (not(alive player)))  exitWith {sleep 2; if(!isnull _slavename)then{player groupChat localize "STRS_slave_tot"}else{ player groupChat "A slave you owned has been set free! you are now wanted."; ["addWarrant",player,"Slavery",6000] execVM "warrant.sqf"; }; localslave = localslave - 1; deleteVehicle _slavename; _exitvar = 1;};
+		if ( (not(alive _slavename)) or (not(alive player)))  exitWith {sleep 2; if(!isnull _slavename)then{hintSilent localize "STRS_slave_tot"}else{ hintSilent "A slave you owned has been set free! you are now wanted."; ["addWarrant",player,"Slavery",6000] execVM "warrant.sqf"; }; localslave = localslave - 1; deleteVehicle _slavename; _exitvar = 1;};
 
 		if ((player distance _slavename >= 5 or (call compile format ["arbeitergeld%1 == 0", _arbeiternummer])) and _a1 == 1) then {player removeaction _action; _a1 = 0;};
 
@@ -56,7 +56,7 @@ while {true} do
 
 			{
 
-			player groupChat localize "STRS_arbeiter_in_copbase";
+			hintSilent localize "STRS_arbeiter_in_copbase";
 			if (not((vehicle _slavename) == _slavename)) then {_slavename action ["eject", (vehicle _slavename)];};
 			_slavename setpos getmarkerpos "civarea";
 
@@ -88,13 +88,13 @@ if (_arbeitergeld > 0) then
 
 	['dollarz', _arbeitergeld] call INV_AddInventoryItem;
 	call compile format ["arbeitergeld%1 = 0;", _arbeiternummer];
-	player groupChat format [localize "STRS_slave_geldabnahme_ja", (_arbeitergeld call ISSE_str_IntToStr)];
+	hintSilent format [localize "STRS_slave_geldabnahme_ja", (_arbeitergeld call ISSE_str_IntToStr)];
 
 	}
 
 else    {
 
-	player groupChat localize "STRS_slave_geldabnahme_nein";
+	hintSilent localize "STRS_slave_geldabnahme_nein";
 
 	};
 

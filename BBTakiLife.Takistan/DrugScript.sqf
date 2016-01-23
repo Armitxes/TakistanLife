@@ -10,21 +10,21 @@ if (_type == "Cannabis") then
 {
 _plant = nearestObject [player, "FxWindGrass1"];
 deleteVehicle _plant;
-player groupChat localize "STRS_Drugs_Cannabis_Burn";
+hintSilent localize "STRS_Drugs_Cannabis_Burn";
 };
 
 if (_type == "Cocaine") then
 {
 _plant = nearestObject [player, "AAPL001"];
 deletevehicle _plant;
-player groupchat localize "STRS_Drugs_Cocaine_Burn";
+hintSilent localize "STRS_Drugs_Cocaine_Burn";
 };
 
 if (_type == "Olive") then
 {
 _plant = nearestObject [player, "AAPL055"];
 deletevehicle _plant;
-player groupchat localize "STRS_action_Drugs_olive_Burn";
+hintSilent localize "STRS_action_Drugs_olive_Burn";
 };
 
 };
@@ -38,13 +38,13 @@ if (_art == "Harvest") then
 		_Plant = nearestobject [player, "Cannabis"];
 		deletevehicle _Plant;
 
-		if (_Weight > 59) exitwith { player groupchat localize "STRS_inv_buyitems_get_zuschwer"; };
-		if (IsCop) exitwith { player groupchat "Cops cannot do this"; };
+		if (_Weight > 59) exitwith { hintSilent localize "STRS_inv_buyitems_get_zuschwer"; };
+		if (IsCop) exitwith { hintSilent "Cops cannot do this"; };
 
 		['Unprocessed_Cannabis', +(1)] call INV_AddInventoryItem;
 		['CannabisSeed', +(2)] call INV_AddInventoryItem;
 
-		player groupchat localize "STRS_Drugs_HarvestCannabis";
+		hintSilent localize "STRS_Drugs_HarvestCannabis";
 	};
 
 	if (_type == "Cocaine") then
@@ -53,13 +53,13 @@ if (_art == "Harvest") then
 		_Plant = nearestobject [player, "AAPL001"];
 		deletevehicle _Plant;
 
-		if (_Weight > 59) exitwith { player groupchat localize "STRS_inv_buyitems_get_zuschwer"; };
-		if (IsCop) exitwith { player groupchat "Cops cannot do this"; };
+		if (_Weight > 59) exitwith { hintSilent localize "STRS_inv_buyitems_get_zuschwer"; };
+		if (IsCop) exitwith { hintSilent "Cops cannot do this"; };
 
 		['CocaineUP', +(1)] call INV_AddInventoryItem;
 		['CocaineSeed', +(2)] call INV_AddInventoryItem;
 
-		player groupchat localize "STRS_Drugs_HarvestCocaine";
+		hintSilent localize "STRS_Drugs_HarvestCocaine";
 	};
 
 	if (_type == "Olive") then
@@ -68,13 +68,13 @@ if (_art == "Harvest") then
 		_Plant = nearestobject [player, "AAPL055"];
 		deletevehicle _Plant;
 
-		if (_Weight > 59) exitwith { player groupchat localize "STRS_inv_buyitems_get_zuschwer"; };
-		if (IsCop) exitwith { player groupchat "Cops cannot do this"; };
+		if (_Weight > 59) exitwith { hintSilent localize "STRS_inv_buyitems_get_zuschwer"; };
+		if (IsCop) exitwith { hintSilent "Cops cannot do this"; };
 
 		['Olives', +(1)] call INV_AddInventoryItem;
 		['OliveSeed', +(2)] call INV_AddInventoryItem;
 
-		player groupchat localize "STRS_Drugs_Harvestolive";
+		hintSilent localize "STRS_Drugs_Harvestolive";
 	};
 };
 
@@ -94,7 +94,7 @@ if (_art == "Destroy") then
 		}
 		else
 		{
-			player groupchat localize "STRS_Drugs_DestroyShed";
+			hintSilent localize "STRS_Drugs_DestroyShed";
 		};
 
 
@@ -105,7 +105,7 @@ if (_art == "Destroy") then
 
 if (_art == "Process") then
 {
-	if (IsCop) exitwith { player groupchat "Cops cannot do this"; };
+	if (IsCop) exitwith { hintSilent "Cops cannot do this"; };
 
 	if (_type == "Cannabis") then
 	{
@@ -113,13 +113,13 @@ if (_art == "Process") then
 
 		if (_Ammount > 0) then
 		{
-			player groupchat localize "STRS_Drugs_ProcessCannabis";
+			hintSilent localize "STRS_Drugs_ProcessCannabis";
 			['CannabisUP', -(1)] call INV_AddInventoryItem;
 			['marihuana', +(1)] call INV_AddInventoryItem;
 		}
 		else
 		{
-			player groupchat localize "STRS_Drugs_NoCannabis";
+			hintSilent localize "STRS_Drugs_NoCannabis";
 		};
 
 	};
@@ -130,13 +130,13 @@ if (_art == "Process") then
 
 		if (_Ammount > 0) then
 		{
-			player groupchat localize "STRS_Drugs_ProcessCocaine";
+			hintSilent localize "STRS_Drugs_ProcessCocaine";
 			['CocaineUP', -(1)] call INV_AddInventoryItem;
 			['kokain', +(1)] call INV_AddInventoryItem;
 		}
 		else
 		{
-			player groupchat localize "STRS_Drugs_NoCocaine";
+			hintSilent localize "STRS_Drugs_NoCocaine";
 		};
 	};
 

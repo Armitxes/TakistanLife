@@ -3,7 +3,7 @@ _dollarz    = 'dollarz' call INV_GetItemAmount;
 
 if (_loopart == "disarm") then {
   call INV_EntferneIllegales;
-  player groupChat localize "STRS_civmenucheck_beendisarmed";
+  hintSilent localize "STRS_civmenucheck_beendisarmed";
 };
 
 
@@ -35,8 +35,8 @@ if (Antwort == 1) then
 
 		};
 
-	player groupChat format [localize "STRS_civmenucheck_ticketself", (_strafe call ISSE_str_IntToStr)];
-	(format ["server globalChat format [localize ""STRS_civmenu_didpayticket"", name %2, %3]; if (iscop) then{player groupChat ""You got $%4 because the %2 paid the ticket."";[""dollarz"", %4] call INV_AddInventoryItem;};", _cop, player, (_strafe call ISSE_str_IntToStr), (_copticket call ISSE_str_IntToStr)]) call toClients;
+	hintSilent format [localize "STRS_civmenucheck_ticketself", (_strafe call ISSE_str_IntToStr)];
+	(format ["server globalChat format [localize ""STRS_civmenu_didpayticket"", name %2, %3]; if (iscop) then{hintSilent ""You got $%4 because the %2 paid the ticket."";[""dollarz"", %4] call INV_AddInventoryItem;};", _cop, player, (_strafe call ISSE_str_IntToStr), (_copticket call ISSE_str_IntToStr)]) call toClients;
 
 	if(_dollarz > _strafe) exitwith {['dollarz', -(_strafe)] call INV_AddInventoryItem;};
 	if ((PLAYERDATA select 1) > _strafe) exitwith {[-_strafe] call setMoney;};
@@ -56,7 +56,7 @@ if (Antwort == 1) then
 
   if (Antwort == 2) then {
     (format ["server globalChat format [localize ""STRS_civmenu_didpaynothing"", name %2];", _cop, player, (_strafe call ISSE_str_IntToStr)]) call toClients;
-    player groupChat localize "STRS_civmenu_youdidnotpay";
+    hintSilent localize "STRS_civmenu_youdidnotpay";
 	};
   Antwort = 2;
 };
@@ -81,8 +81,8 @@ if (_loopart == "drugs") then {
 
 		["INV_InventarArray", "illegal"] call INV_StorageRemoveKindOf;
 		[format ["addWarrant",player,"trafficking illegals (%1)",_infos call INV_getitemName],drugsvalue] execVM "warrant.sqf";
-		player groupChat localize "STRS_civmenucheck_beendrugsearched";
-	} else {(format ["if (player == %2) then {player groupChat localize ""STRS_civmenu_hasnodrugs"";};", player, _checkcop]) call toClients;};
+		hintSilent localize "STRS_civmenucheck_beendrugsearched";
+	} else {(format ["if (player == %2) then {hintSilent localize ""STRS_civmenu_hasnodrugs"";};", player, _checkcop]) call toClients;};
 
 };
 

@@ -3,9 +3,9 @@ _target = (crew _this) select 0;
 _n 	= 10;
 _exitvar = false;
 
-player groupChat format ["You're pulling out %1. Stay close to the car!", _target];
+hintSilent format ["You're pulling out %1. Stay close to the car!", _target];
 
-for [{_i=0}, {_i < _n}, {_i=_i+1}] do {if (player distance _target > 6) exitWith {player groupChat "You are too far away."; _exitvar = true;};sleep 0.3;};
+for [{_i=0}, {_i < _n}, {_i=_i+1}] do {if (player distance _target > 6) exitWith {hintSilent "You are too far away."; _exitvar = true;};sleep 0.3;};
 
 if(_exitvar)exitwith{};
 

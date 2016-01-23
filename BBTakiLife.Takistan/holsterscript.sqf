@@ -31,7 +31,7 @@ if (_art == "animation") then
 
 	_animScriptName     = _this select 1;
 	if (isNil "INV_changeweapon_active") then {INV_changeweapon_active = 0;};
-	if (INV_changeweapon_active == 1) exitWith {player groupChat localize "STRS_inv_item_waffe_noholster";};
+	if (INV_changeweapon_active == 1) exitWith {hintSilent localize "STRS_inv_item_waffe_noholster";};
 	INV_changeweapon_active = 1;
 	if (player == vehicle player) then {(format ["%1 switchmove ""normal"";", player]) call broadcast;
 	sleep 0.5;
@@ -75,16 +75,16 @@ if ((_animScriptName == "HolsterPistol") or (_animScriptName == "HolsterRifle"))
 
 	{
 
-	if (_HandWeapon == "") exitWith {player groupChat localize "STRS_inv_item_waffe_noweapon";};
+	if (_HandWeapon == "") exitWith {hintSilent localize "STRS_inv_item_waffe_noweapon";};
 	player RemoveWeapon _HandWeapon;
 	sleep 4;
-	if (_invWeapon != "") then {player AddWeapon _invWeapon;player groupChat localize "STRS_inv_item_waffe_weaponHiddenAlready";
+	if (_invWeapon != "") then {player AddWeapon _invWeapon;hintSilent localize "STRS_inv_item_waffe_weaponHiddenAlready";
 
 	}
 	else
 	{
 
-	player groupChat localize "STRS_inv_item_waffe_weaponHidden";
+	hintSilent localize "STRS_inv_item_waffe_weaponHidden";
 
 	};
 
@@ -117,13 +117,13 @@ if ((_animScriptName == "unholsterPistol") or (_animScriptName == "unholsterRifl
 
 		player RemoveWeapon _invWeapon;
 		sleep 4;
-		player groupChat localize "STRS_inv_item_waffe_weaponHiddenAlready";
+		hintSilent localize "STRS_inv_item_waffe_weaponHiddenAlready";
 
 		}
 		else
 		{
 
-		player groupChat localize "STRS_inv_item_waffe_weaponTakenout";
+		hintSilent localize "STRS_inv_item_waffe_weaponTakenout";
 
 		};
 

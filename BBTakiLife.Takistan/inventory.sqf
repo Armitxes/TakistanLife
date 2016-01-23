@@ -20,7 +20,7 @@ if (_anzahl > 0) then
 
 };
 
-if (_itemcounter == 0) exitWith {player groupChat localize "STRS_inv_inventardialog_empty";};
+if (_itemcounter == 0) exitWith {hintSilent localize "STRS_inv_inventardialog_empty";};
 
 for [{_c=0}, {_c < (count INV_PLAYERSTRINGLIST)}, {_c=_c+1}] do
 

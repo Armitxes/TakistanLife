@@ -42,7 +42,7 @@ if ( (_zusatzString == "speichern") and (ctrlVisible 1034) ) then
 
 		};
 
-	player groupChat "Saved!";
+	hintSilent "Saved!";
 
 	};
 
