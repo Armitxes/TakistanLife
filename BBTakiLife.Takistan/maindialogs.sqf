@@ -248,28 +248,24 @@ switch (_art) do {
 	lbAdd [1, "G A N G S:"];
 	lbAdd [1, _trennlinie];
 
-	for [{_i=0}, {_i < (count gangsarray)}, {_i=_i+1}] do
+	for [{_i=0}, {_i < (count gangsarray)}, {_i=_i+1}] do {
+		_gangarray = gangsarray select _i;
+		_gangname  = _gangarray select 0;
+		_members   = _gangarray select 1;
+		_territory = "None";
 
-	{
+		_control1 = gangarea1 getVariable "control";
+		_control2 = gangarea2 getVariable "control";
+		_control3 = gangarea3 getVariable "control";
 
-	_gangarray = gangsarray select _i;
-	_gangname  = _gangarray select 0;
-	_members   = _gangarray select 1;
-	_territory = "None";
+		if(_control1 == _gangname)then{_territory = "Gang area 1"};
+		if(_control2 == _gangname)then{if(_territory == "None")then{_territory = "Gang area 2"}else{_territory = _territory + ", Gang area 2"};};
+		if(_control3 == _gangname)then{if(_territory == "None")then{_territory = "Gang area 3"}else{_territory = _territory + ", Gang area 3"};};
+		_territory = _territory + ".";
 
-	_control1 = gangarea1 getVariable "control";
-	_control2 = gangarea2 getVariable "control";
-	_control3 = gangarea3 getVariable "control";
-
-	if(_control1 == _gangname)then{_territory = "Gang area 1"};
-	if(_control2 == _gangname)then{if(_territory == "None")then{_territory = "Gang area 2"}else{_territory = _territory + ", Gang area 2"};};
-	if(_control3 == _gangname)then{if(_territory == "None")then{_territory = "Gang area 3"}else{_territory = _territory + ", Gang area 3"};};
-	_territory = _territory + ".";
-
-	lbAdd [1, format["%1 - Territory: %2 - Members:", _gangarray select 0, _territory]];
-	private "_j"; /// BUG FIX
-	for [{_j=0}, {_j < (count _members)}, {_j=_j+1}] do {if(_j == 0)then{lbAdd [1, format["%1 (leader)", _members select _j]]}else{lbAdd [1, format["%1", _members select _j]]};};
-
+		lbAdd [1, format["%1 - Territory: %2 - Members:", _gangarray select 0, _territory]];
+		private "_j"; /// BUG FIX
+		for [{_j=0}, {_j < (count _members)}, {_j=_j+1}] do {if(_j == 0)then{lbAdd [1, format["%1 (leader)", _members select _j]]}else{lbAdd [1, format["%1", _members select _j]]};};
 	};
     };
     case "inventorycheck": {

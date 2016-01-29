@@ -50,7 +50,13 @@ switch _key do
 	//TAB key
 	case 15:
 	{  
-    if(INV_shortcuts)then{INV_shortcuts=false; titletext["BB keys off", "PLAIN DOWN"];[] execVM "actionsRemove.sqs"}else{INV_shortcuts=true; titletext["BB keys on", "PLAIN DOWN"];[] execVM "actions.sqf"};};
+    	if(INV_shortcuts)then{
+			INV_shortcuts=false; titletext["BB keys off", "PLAIN DOWN"];[] execVM "actionsRemove.sqs";
+		}else{
+			INV_shortcuts=true; titletext["BB keys on", "PLAIN DOWN"];[] execVM "actions.sqf";
+			{ player reveal _x; } forEach (nearestObjects [player,["Man","AllVehicles","Infostand_1_EP1","Infostand_2_EP1","Notebook"],10]);
+		};
+	};
   
     //L key
   	case 38:
@@ -275,6 +281,7 @@ switch _key do
 	};
 	// M key
 	case 50: {
+		_handled=true;
 		if(!INV_shortcuts || isciv)exitwith{};
 		_array = coptypes;
 		_playerType = typeOf player;
@@ -290,10 +297,11 @@ switch _key do
 				_markerName setMarkerColorLocal "coloryellow";
 			};
 		} forEach playableUnits;
-	};	
+	};
 	// Space
 	case 57: {
 		if(!INV_shortcuts)exitwith{};
+		_handled=true;
 		if(player isKindOf "Animal") then {
 			_targets = (nearestObjects [player,["Man"],5])-[player];
 			if(count(_targets) > 0 && lastBite+3 < time) then {
