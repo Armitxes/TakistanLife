@@ -49,7 +49,7 @@ switch (_doAction) do {
 			waitUntil {isNull ((findDisplay 3000) displayCtrl 3)};
 
 			if(Antwort == 1) then {
-				warStartTime = time+30;
+				warStartTime = time+600;
 				(format ["[""warPrep"",%1,%2] execVM ""armitxes\southgov.sqf"";",ismayor,warStartTime]) call toClients;
 				_boxInit = "clearWeaponCargo this; clearMagazineCargo this;
 				this addWeaponCargo ['M4A1_AIM_CAMO',50]; this addWeaponCargo ['SCAR_H_CQC_CCO',50]; this addWeaponCargo ['SCAR_H_LNG_Sniper',3];
@@ -86,6 +86,8 @@ switch (_doAction) do {
 
 				if(Antwort == 1) then {
 					if(PLAYERDATA select 9 == 2) then { ["use","SouthUni1"] execVM "armitxes\clothing.sqf"; } else { ["use","northWar"] execVM "armitxes\clothing.sqf"; };
+					sleep 4;
+					warStarted = true;
 				} else { hintSilent "You decided to stay out of the war. You may seek UNs protection you go your own way (on your own risk)"; };		
 			};
 		};
@@ -97,7 +99,7 @@ switch (_doAction) do {
 	};
 	case "warCap": {
 		if (!(isNil "warStartTime")) then {
-			if (warStartTime+600 < time) then {
+			if (warStartTime+30 < time) then {
 				_side = "";
 				_plrNation = PLAYERDATA select 9;
 				if ( (player distance southGov) < 60 && _plrNation == 1 ) then { _side = "south"; };
@@ -114,7 +116,7 @@ switch (_doAction) do {
 						sleep 1;
 					};
 					if (alive player && time >= capSuccessTime) then {
-						(format ['hint parseText "<img image=""Pics\led_red.paa"" size=""10"" /><br /><t color=""#FF0000"" size=""1.5"">WAR IS OVER!</t><br /><br />The %1 has lost its territory and must surrender!"; warStartTime=nil;',_side]) call toClients;
+						(format ['hint parseText "<img image=""Pics\led_red.paa"" size=""10"" /><br /><t color=""#FF0000"" size=""1.5"">WAR IS OVER!</t><br /><br />The %1 has lost its territory and must surrender!"; warStartTime=nil; warStarted=false;',_side]) call toClients;
 					};
 				} else { hintSilent "You can't capture your own base."; };
 			} else {hintSilent "It's too soon to cap this base.";};

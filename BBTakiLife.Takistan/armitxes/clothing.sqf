@@ -79,6 +79,7 @@ _pmcs = ["PmcUni1","PmcUni2","PmcUni3","PmcUni4","PmcUni5","PmcUni6","PmcUni7","
 _action = (_this select 0);
 if(_action == "use") exitWith {
 	if((vehicle player) != player) exitWith { hint "You can't change your clothes while in a vehicle"; };
+	if(warStarted) exitWith { hint "You can't change your clothing during a war!"; };
 	{
 		_type = (_x select 0);
 		if (_type == (_this select 1)) exitWith {

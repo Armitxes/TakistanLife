@@ -430,7 +430,7 @@ switch (_art) do {
 			_mems = units _grp;
 			if (!(isNil "sgov")) then {
 				if(sgov == _grp) then {
-					if (count _mems > 3) then {
+					if (count _mems > 3 || !(isNil("warStartTime")) ) then {
 						_name = "South Government";
 					} else { ("hint ""The South Government dropped below 4 members and was dissolved!""; sgov = nil;") call toClients; };
 				};

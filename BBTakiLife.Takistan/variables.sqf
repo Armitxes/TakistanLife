@@ -27,6 +27,7 @@ attached                 = false;
 INV_smscost		           = 5;
 
 mlaw = false;
+warStarted				= false;
 add_workplace			= 75;
 copchoprespawntime		= 120;
 CopWaffenAvailable		= 0;
