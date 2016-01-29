@@ -26,10 +26,10 @@ if (_art == "schluessel") then
     if (!(locked _vcl)) then
     {
       _vcl lock true;
-      hintSilent localize "STRS_inv_items_vehiclelock_locked";
+	  titleText ["Vehicle locked", "PLAIN DOWN", 0.4];
     } else {
       _vcl lock false;
-      hintSilent localize "STRS_inv_items_vehiclelock_unlocked";
+      titleText ["Vehicle unlocked", "PLAIN DOWN", 0.4];
     };
   } else { hintSilent localize "STRS_inv_items_vehiclelock_closer"; };
 };

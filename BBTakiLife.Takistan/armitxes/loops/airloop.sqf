@@ -32,10 +32,11 @@ if (_veh isKindOf "air") then {
 				if(_veh distance prisonDoor < 30) then {
 					hintSilent parseText "<t color='#FFA500' size='1.5'>PRISON WARNING</t><br /><br />Prison defences detected you! Don't take any prisoners with you or you'll be engaged!";
 					_oldCrew = count (units _veh);
-					waitUntil {!(alive player) || (_veh distance prisonDoor) >= 100 || !(alive _veh) };
+					waitUntil {!(alive player) || (_veh distance prisonDoor) >= 150 || !(alive _veh) };
 					if (count (units _veh) > _oldCrew) then {
 						_airWarnings set [0,3];
 						_veh setVariable ["airWarnings",_airWarnings,true];
+						("hintSilent ""Prison Defenses registred an aerial prison break - border defences engaging."";") call toClients; sleep 3;
 						hintSilent parseText "<t color='#FF0000' size='1.5'>URGENT WARNING</t><br /><br />Prison Break! All defense systems are now locked on you. better get the hell out of here!";
 					};
 				};
@@ -54,9 +55,9 @@ if (_veh isKindOf "air") then {
 		};
 
 		if (lastAirWarning+400 <= time) then {
-			_b1 = nearestObjects [passseller,untypes,100]; _b2 = nearestObjects [passseller3,untypes,100];
-			if (count _b1 > 0 || count _b2 > 0) then {
-				if ( (_firstPosY > _midPosY && (_lastPosY+400) < _midPosY) || (_firstPosY < _midPosY && (_lastPosY-400) > _midPosY) ) then {
+			if ( (_firstPosY > _midPosY && (_lastPosY+400) < _midPosY) || (_firstPosY < _midPosY && (_lastPosY-400) > _midPosY) ) then {
+				_b1 = nearestObjects [passseller,untypes,100]; _b2 = nearestObjects [passseller3,untypes,100];
+				if (count _b1 > 0 || count _b2 > 0) then {
 					if(_airWarnings select 0 < 4 && (_airWarnings select 1)+600 < time) then {
 						_airWarnings set [0, (_airWarnings select 0)+1]; lastAirWarning = time; _firstPosY = 0; _lastPosY = 0; _midPosY = 0;
 						_veh setVariable ["airWarnings",_airWarnings,true];
@@ -64,7 +65,7 @@ if (_veh isKindOf "air") then {
 							hint parseText format ["<t color='#FF0000' size='1.5'>WARNING</t><br /><br />You illegally crossed the border! You may be shot down if you fail to land too often.<br /><br />Warning: %1/3",_airWarnings select 0];
 						};
 					};
-				};
+				} else { hintSilent "You illegally crossed the border - no penalty is given as there is no UN manning the border."; };
 			};
 		};
 		sleep 2;

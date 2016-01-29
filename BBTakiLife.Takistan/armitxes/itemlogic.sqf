@@ -62,6 +62,7 @@ if (_art == "use") then
 						waitUntil { scriptDone _w; };
 						if (alive player && !((animationState player) in animRestrained)) then {
 							prisonDoor2 setVariable ["hacked",time,true];
+							("hintSilent ""Prison Security System was taken down!"";") call toClients; sleep 3;
 							hintSilent "Code for Prison Door obtained, Security System will reset in 5 Minutes!";
 						} else { hintSilent "Nothing to hack here"; };
 					};
