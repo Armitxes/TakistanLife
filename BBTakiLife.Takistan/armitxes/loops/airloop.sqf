@@ -11,7 +11,7 @@ if (_veh isKindOf "air") then {
 	if (isNil "_airWarnings") then { _veh setVariable ["airWarnings",[0,-600],true]; _airWarnings = [0,-600]; };
 	_perms = "Denied"; if ( (_airWarnings select 1)+600 > time ) then { _perms = "Granted"; };
 	titleText [format ["Flight Warnings: %1/3 - Flight Permission: %2",_airWarnings select 0,_perms], "PLAIN DOWN", 0.4];
-	
+
 	while { (driver _veh) == player && alive _veh } do {
 		_aas = nearestObjects [getPosATL _veh,["Stinger_Pod"],1000];
 		if (count _aas > 0) then {

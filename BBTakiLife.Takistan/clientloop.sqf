@@ -17,7 +17,7 @@ if (_art == "clientloop") then {
         } forEach playerarray;
 		
 		if (isciv) then {
-			if (!inAirVehicle && _vcl isKindOf "air") then { inAirVehicle = true; [] execVM "armitxes\loops\airloop.sqf"; };
+			if (!inAirVehicle && _vcl isKindOf "air" && !ismedic) then { inAirVehicle = true; [] execVM "armitxes\loops\airloop.sqf"; };
 			if (!ismedic && driver _vcl == player && (typeOf _vcl) in ["GAZ_Vodnik_MedEvac","HMMWV_Ambulance","S1203_ambulance_EP1"]) then { player action ["EJECT",_vcl]; _vcl lock true; hintSilent "Nope, I'm not a medic"; };
 			{if ((player distance (_x select 0)) < (_x select 1)) then {timeinworkplace = timeinworkplace + 1;};} forEach workplacearray;
 		} else {
