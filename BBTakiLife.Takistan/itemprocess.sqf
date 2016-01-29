@@ -1,6 +1,6 @@
 if(!isciv)exitWith{hintSilent "only civilians can do this!"};
-if (processactivescript == 1) exitwith {hintSilent "script already active"};
-processactivescript = 1;
+if (shopactivescript == 1) exitWith {hintSilent "script already active"};
+shopactivescript = 1;
 
 _this 	 = _this select 3;
 _item1	 = _this select 0;
@@ -20,4 +20,4 @@ _name2   = _item2 call INV_getitemName;
 
 hintSilent format["%1 %2 was processed into %3 %4!", _total, _name1, _multi, _name2];};
 sleep 3;
-processactivescript = 0;
+shopactivescript = 0;

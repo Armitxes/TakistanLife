@@ -108,7 +108,6 @@ if(!isDedicated) then {
 
 if (isServer) then {
 	[] execVM "druguse.sqf";
-	[] execVM "drugreplenish.sqf";
 	[] execVM "robpool.sqf";
 	[] execVM "governmentconvoy.sqf";
 };

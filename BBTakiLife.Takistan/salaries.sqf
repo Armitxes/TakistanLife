@@ -101,9 +101,9 @@ while {isciv} do
 	};
 
 	if(gangmember) then {
-		if((gangsarray select (gangarea1 getVariable "control")) select 1 == group player)then{_income = _income + gangincome;};
-		if((gangsarray select (gangarea2 getVariable "control")) select 1 == group player)then{_income = _income + gangincome;};
-		if((gangsarray select (gangarea3 getVariable "control")) select 1 == group player)then{_income = _income + gangincome;};
+		if(gangarea1 getVariable "control" == group player)then{_income = _income + gangincome;};
+		if(gangarea2 getVariable "control" == group player)then{_income = _income + gangincome;};
+		if(gangarea3 getVariable "control" == group player)then{_income = _income + gangincome;};
 	};
 
 	timeinworkplace = 0;

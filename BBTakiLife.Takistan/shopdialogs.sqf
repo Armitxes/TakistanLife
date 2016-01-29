@@ -57,21 +57,6 @@ if(_access) then {
   
   	};
   
-  if(_infos call INV_getitemType == "item")then
-  
-  	{
-  
-  	if (_item call INV_getitemIsIllegal) then
-  
-  		{
-  
-  		_preis        	= _infos call INV_getitemSteuer;
-  		_control = _shop getvariable "control";
-  
-  		};
-  
-  	};
-  
   if (_stock != -1) then
   
   	{
