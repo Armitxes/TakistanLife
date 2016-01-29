@@ -9,8 +9,7 @@ if(typeName _doAction != "STRING") then {
 
 switch (_doAction) do {
 	case "form": {
-		//gangmember && leader _grp == player && count (units _grp) > 4
-		if ( true ) then {
+		if ( gangmember && leader _grp == player && count (units _grp) > 4 ) then {
 			if (isNil "sgov") then {
 				_cost = 100000;
 				if(PLAYERDATA select 9 == 2) then {_cost = 60000;};
@@ -98,14 +97,14 @@ switch (_doAction) do {
 	};
 	case "warCap": {
 		if (!(isNil "warStartTime")) then {
-			if (warStartTime+30 < time) then {
+			if (warStartTime+600 < time) then {
 				_side = "";
 				_plrNation = PLAYERDATA select 9;
 				if ( (player distance southGov) < 60 && _plrNation == 1 ) then { _side = "south"; };
 				if ( (player distance northGov) < 60 && ( _plrNation == 2 || player in (units sgov) ) ) then { _side = "north"; };
 				
 				if (_side != "") then {
-					capSuccessTime = time + 10;
+					capSuccessTime = time + 600;
 					(format ['player say "bank_alarm"; hintSilent "Someone is capturing the %2 government complex!";',_side]) call toClients;
 					sleep 1;
 					hintSilent "Stay alive inside the base for 10 Minutes within 100 Meters to win the war!";
