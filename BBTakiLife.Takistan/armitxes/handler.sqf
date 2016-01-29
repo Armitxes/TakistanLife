@@ -61,7 +61,7 @@
       case civilian:  { isciv = true; if(PLAYERDATA select 9 == 0) then { _w = ["nation"] execVM "armitxes\dialogs\controller.sqf"; waitUntil {scriptDone _w}; }; };
       case resistance: {
         isun = true;
-        if((PLAYERDATA select 4) == 2) then {
+        if ((PLAYERDATA select 4) == 2) then {
           switch (_rnk) do {
             case 3: { ["use","unUni2"] execVM "armitxes\clothing.sqf"; };
             case 4: { ["use","unUni2"] execVM "armitxes\clothing.sqf"; };

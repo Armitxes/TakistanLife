@@ -37,7 +37,7 @@ switch(_action) do {
 			server globalChat "You were suspended from duty! If this doesn't change within the next 5 minutes, you will be kicked from your copslot.";
 			sleep 300;
 			_data = player getVariable "pubPlrData";
-			if((_data select 3) == 7) then { ["save"] execVM "armitxes\_db.sqf"; endMission "loser"; } else {isciv = false; iscop=true;};
+			if ((_data select 3) == 7) then { ["save"] execVM "armitxes\_db.sqf"; endMission "loser"; } else {isciv = false; iscop=true;};
 		};
 	};
 	case "offduty": {
