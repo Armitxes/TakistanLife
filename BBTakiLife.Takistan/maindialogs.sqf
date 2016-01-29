@@ -429,7 +429,11 @@ switch (_art) do {
 			_grp = _x select 1;
 			_mems = units _grp;
 			if (!(isNil "sgov")) then {
-				if(sgov == group player) then { _name = "South Government"; };
+				if(sgov == _grp) then {
+					if (count _mems > 3) then {
+						_name = "South Government";
+					} else { ("hint ""The South Government dropped below 4 members and was dissolved!""; sgov = nil;") call toClients; };
+				};
 			};
 			_txt = format ["%1 [%2 Member] (",_name,count _mems];
 			{ _txt = _txt + (name _x) + ","; } forEach _mems;
