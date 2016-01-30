@@ -64,55 +64,56 @@ switch (_art) do {
 	};
     };
     case "generalstats": {
-	if (!(createDialog "liste_1_button")) exitWith {hint "Dialog Error!";};
-	_trennlinie = "---------------------------------------------";
-	lbAdd [1, _trennlinie];
-	lbAdd [1, "GENERAL INFO"];
-	lbAdd [1, _trennlinie];
-	lbAdd [1, format ["Date: %3.%2.%1", (date select 0), (date select 1), (date select 2)]];
-	
-	_npcCount = 0; _medCount = 0; _judCount = 0; _lawyerCount = 0;
-	{ if (!isPlayer _x) then { _npcCount = _npcCount + 1; }; } forEach (nearestObjects [[6453,8127,0],["Man"], 10000]);
-	{
-		if((typeOf _x) in ["Dr_Hladik_EP1","USMC_LHD_Crew_Blue","Doctor","Worker2"]) then { _medCount = _medCount + 1; };
-		if((typeOf _x) == "SchoolTeacher") then { _judCount = _judCount + 1; };
-		if((typeOf _x) == "RU_Functionary2") then { _lawyerCount = _lawyerCount + 1; };
-	} forEach playableUnits;
-	lbAdd [1, format ["There are %1 active NPCs",_npcCount]];
-	lbAdd [1, format["There are %1 Medics online!",_medCount]];
-	lbAdd [1, format["There are %1 Judges online!",_judCount]];
-	lbAdd [1, format["There are %1 Lawyers online!",_lawyerCount]];
-	lbAdd [1, ""];
-	lbAdd [1, _trennlinie];
-	lbAdd [1, "SERVER STATUS"];
-	lbAdd [1, _trennlinie];
-	lbAdd [1, format ["Runtime: %1 minutes", (round(time/60))]];
-	if (!isNil "svrStats") then {
-	    svrFPS = svrStats select 0;
-	    svrDelay = svrStats select 1;
-	    svrPerf = "Perfect";
-	    if(svrFPS < 1.9) then {
-	      svrPerf = "Good";
-	      if(svrFPS < 1.3) then {
-		svrPerf = "Average";
-		if(svrFPS < 1.01) then {
-		  svrPerf = "Bad - Consider Restart";
-		  if(svrFPS < 0.8) then { svrPerf = "Critical - RESTART NEEDED!"; };
-		  hintSilent parseText format['Server Performance<br /><t size="1.4" color="#E62B2B">%4</t><br /><br />Server delay: %1m<br />Server FPS: %2<br />Client FPS: %3<br /><br />The lower the evaluation, the higher the desync and lagg!',round((time/60)-(svrDelay/60)),svrFPS,diag_fps,svrPerf];
+		if (!(createDialog "liste_1_button")) exitWith {hint "Dialog Error!";};
+		_trennlinie = "---------------------------------------------";
+		lbAdd [1, _trennlinie];
+		lbAdd [1, "GENERAL INFO"];
+		lbAdd [1, _trennlinie];
+		lbAdd [1, format ["Date: %3.%2.%1", (date select 0), (date select 1), (date select 2)]];
+		
+		_npcCount = 0; _medCount = 0; _judCount = 0; _lawyerCount = 0;
+		{ if (!isPlayer _x) then { _npcCount = _npcCount + 1; }; } forEach (nearestObjects [[6453,8127,0],["Man"], 10000]);
+		{
+			if((typeOf _x) in ["Dr_Hladik_EP1","USMC_LHD_Crew_Blue","Doctor","Worker2"]) then { _medCount = _medCount + 1; };
+			if((typeOf _x) == "SchoolTeacher") then { _judCount = _judCount + 1; };
+			if((typeOf _x) == "RU_Functionary2") then { _lawyerCount = _lawyerCount + 1; };
+		} forEach playableUnits;
+		lbAdd [1, format ["There are %1 active NPCs",_npcCount]];
+		lbAdd [1, format["There are %1 Medics online!",_medCount]];
+		lbAdd [1, format["There are %1 Judges online!",_judCount]];
+		lbAdd [1, format["There are %1 Lawyers online!",_lawyerCount]];
+		lbAdd [1, ""];
+		lbAdd [1, _trennlinie];
+		lbAdd [1, "SERVER STATUS"];
+		lbAdd [1, _trennlinie];
+		lbAdd [1, format ["Runtime: %1 minutes", (round(time/60))]];
+		if (!isNil "svrStats") then {
+			svrFPS = svrStats select 0;
+			svrDelay = svrStats select 1;
+			svrPerf = "Perfect";
+			if(svrFPS < 1.9) then {
+				svrPerf = "Good";
+				if(svrFPS < 1.3) then {
+					svrPerf = "Average";
+					if(svrFPS < 1.01) then {
+						svrPerf = "Bad - Consider Restart";
+						if(svrFPS < 0.8) then { svrPerf = "Critical - RESTART NEEDED!"; };
+						hintSilent parseText format['Server Performance<br /><t size="1.4" color="#E62B2B">%4</t><br /><br />Server delay: %1m<br />Server FPS: %2<br />Client FPS: %3<br /><br />The lower the evaluation, the higher the desync and lagg!',round((time/60)-(svrDelay/60)),svrFPS,diag_fps,svrPerf];
+					};
+				};
+			};
+			
+			lbAdd [1, format ["Performance (FPS): %1 (%2)",svrPerf,svrFPS]];
+			lbAdd [1, format ["Server Delay: %1m",round((time/60)-(svrDelay/60))]];
+			lbAdd [1, ""];
 		};
-	      };
-	    };
-	    
-	    lbAdd [1, format ["Performance (FPS): %1 (%2)",svrPerf,svrFPS]];
-	    lbAdd [1, format ["Server Delay: %1m",round((time/60)-(svrDelay/60))]];
-	    lbAdd [1, ""];
-	    lbAdd [1, _trennlinie];
-	    lbAdd [1, "CLIENT STATUS"];
-	    lbAdd [1, _trennlinie];
-	    lbAdd [1, format ["FPS: %1",diag_fps]];
-	    lbAdd [1, format ["%1: %2",    localize "STRS_statdialog_deaths", deadtimes]];
-	    lbAdd [1, format ["Respawn time: %1 seconds",round(DeadWaitSec+extradeadtime)]];
-	};
+
+		lbAdd [1, _trennlinie];
+		lbAdd [1, "CLIENT STATUS"];
+		lbAdd [1, _trennlinie];
+		lbAdd [1, format ["FPS: %1",diag_fps]];
+		lbAdd [1, format ["%1: %2",    localize "STRS_statdialog_deaths", deadtimes]];
+		lbAdd [1, format ["Respawn time: %1 seconds",round(DeadWaitSec+extradeadtime)]];
     };
     case "spielerliste": {
 	_money = "dollarz" call INV_GetItemAmount;

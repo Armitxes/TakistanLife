@@ -110,6 +110,9 @@ if (isServer) then {
 	[] execVM "druguse.sqf";
 	[] execVM "robpool.sqf";
 	[] execVM "governmentconvoy.sqf";
+	if (isDedicated) then {
+		[] spawn { while {true} do { svrStats = [diag_fps,time]; publicVariable "svrStats"; sleep 300; }; };
+	};
 };
 
 if(!isDedicated) then {
