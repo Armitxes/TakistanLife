@@ -426,23 +426,31 @@ switch (_art) do {
     case "gangmenu": {
 		if (!(createDialog "gang_menu")) exitWith {hint "Dialog Error!";};
 		
+		_i = 0;
 		{
 			_name = _x select 0;
 			_grp = _x select 1;
 			_mems = units _grp;
-			if (!(isNil "sgov")) then {
-				if(sgov == _grp) then {
-					if (count _mems > 3 || !(isNil("warStartTime")) ) then {
-						_name = "South Government";
-					} else { ("hint ""The South Government dropped below 4 members and was dissolved!""; sgov = nil;") call toClients; };
-				};
-			};
-			_txt = format ["%1 [%2 Member] (",_name,count _mems];
-			{ _txt = _txt + (name _x) + ","; } forEach _mems;
-			_txt = _txt + ")";
 			
-			_index = lbAdd [202,_txt];
+			if(count _mems > 0) then {
+				if (!(isNil "sgov")) then {
+					if(sgov == _grp) then {
+						if (count _mems > 3 || !(isNil("warStartTime")) ) then {
+							_name = "South Government";
+						} else { ("hint ""The South Government dropped below 4 members and was dissolved!""; sgov = nil;") call toClients; };
+					};
+				};
+				_txt = format ["%1 [%2 Member] (",_name,count _mems];
+				{ _txt = _txt + (name _x) + ","; } forEach _mems;
+				_txt = _txt + ")";
+				
+				_index = lbAdd [202,_txt];
+			} else {
+				gangsarray set [_i,-1];
+			};
+			_i = _i + 1;
 		} forEach gangsarray;
+		gangsarray = gangsarray - [-1];
     };
 
     case "gildenverwaltung": {
