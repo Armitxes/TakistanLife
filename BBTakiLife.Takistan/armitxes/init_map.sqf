@@ -31,4 +31,4 @@ _build = [
 } forEach _build;
 processInitCommands;
 
-{ _x setVariable ["lastRob",0,true]; } forEach [fuelshop1,fuelshop2,fuelshop3,fuelshop4,fuelshop5,fuelshop6,fuelshop7,fuelshop8,fuelshop9,fuelshop10,gunshop2];
+{ _x setVariable ["lastRob",0,true]; } forEach [gasstation1,gasstation2,gasstation3,gasstation4,gasstation5,gasstation6,gasstation7,northsupermarket,gasstation8,gasstation9,southsupermarket];
