@@ -107,7 +107,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=111;
+		items=110;
 		class Item0
 		{
 			side="LOGIC";
@@ -473,13 +473,13 @@ class Mission
 					special="NONE";
 					id=66;
 					side="CIV";
-					vehicle="TK_CIV_Takistani05_EP1";
+					vehicle="CIV_EuroMan01_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 					text="Civ10";
 					init="this setpos [getpos this select 0, getpos this select 1, (getpos this select 2) - 0.01]; removeallweapons this;";
-					description="Civ10 - Takistani (scarf)";
+					description="Civ10 - EuroMan";
 				};
 			};
 		};
@@ -991,7 +991,7 @@ class Mission
 			side="LOGIC";
 			class Vehicles
 			{
-				items=9;
+				items=10;
 				class Item0
 				{
 					position[]={5973.373,119.45106,7496.1377};
@@ -1091,6 +1091,18 @@ class Mission
 					vehicle="Logic";
 					skill=0.60000002;
 					text="workplace3";
+				};
+				class Item9
+				{
+					position[]={7116.375,284.44452,7700.6001};
+					azimut=106.511;
+					special="NONE";
+					id=4007;
+					side="GUER";
+					vehicle="UN_CDF_Soldier_Guard_EP1";
+					forceHeadlessClient=1;
+					skill=1;
+					init="this allowDamage false; this moveInGunner unoAA4;";
 				};
 			};
 		};
@@ -2621,6 +2633,7 @@ class Mission
 					id=4003;
 					side="GUER";
 					vehicle="UN_CDF_Soldier_Light_EP1";
+					text="unoCommander";
 					skill=1;
 					init="this moveInGunner unoAA; this allowDamage false; this disableAI ""FSM""; this disableAI ""WALK""; this disableAI ""ANIM""; this disableConversation true;";
 				};
@@ -2656,26 +2669,6 @@ class Mission
 					vehicle="UN_CDF_Soldier_Light_EP1";
 					skill=1;
 					init="this moveInGunner unoAA6; this allowDamage false; this disableAI ""FSM""; this disableAI ""WALK""; this disableAI ""ANIM""; this disableConversation true;";
-				};
-			};
-		};
-		class Item110
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={7116.375,284.44452,7700.6001};
-					azimut=106.511;
-					special="NONE";
-					id=4007;
-					side="GUER";
-					vehicle="UN_CDF_Soldier_Guard_EP1";
-					leader=1;
-					skill=1;
-					init="this allowDamage false; this moveInGunner unoAA4;";
 				};
 			};
 		};

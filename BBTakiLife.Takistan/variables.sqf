@@ -335,6 +335,6 @@ if(isciv) then {
 	];
 };
 
-civslavearray	= ["TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1","TK_CIV_Worker01_EP1"];
+civslavearray	= ["TK_CIV_Worker01_EP1"];
 civworkerarray	= ["Worker1","Worker2","Worker3","Worker4"];
 terroristarray	= ["TK_GUE_Soldier_3_EP1","TK_GUE_Soldier_AAT_EP1","TK_GUE_Soldier_AT_EP1","TK_GUE_Soldier_EP1","TK_GUE_Soldier_HAT_EP1","TK_INS_Soldier_AAT_EP1","TK_INS_Soldier_EP1"];

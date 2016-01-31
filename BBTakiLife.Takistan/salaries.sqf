@@ -111,8 +111,7 @@ while {isciv} do
 	[_income] call setMoney;
 	hintSilent format[localize "STRS_dollarz_civmoneyadd", rolestring, (_income call ISSE_str_IntToStr)];
 	
-  if (isMayor) then
-	{
+  if (isMayor) then {
   	MayorSteuern = MayorSteuern + INV_SteuernGezahlt;
   	MayorSteuern = round((MayorSteuern / 100) * MayorBekommtSteuern);
   	[MayorSteuern + MayorExtraPay] call setMoney;
@@ -126,7 +125,6 @@ while {isciv} do
 	MayorSteuern   = 0;
 	INV_SteuernGezahlt = 0;
 
-	}
-	else { hintSilent format[localize "STRS_dollarz_paycheckdead"]; };
+	} else { hintSilent format[localize "STRS_dollarz_paycheckdead"]; };
   ["save"] execVM "armitxes\_db.sqf";
 };

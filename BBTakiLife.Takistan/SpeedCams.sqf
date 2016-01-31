@@ -8,8 +8,7 @@ while {isciv} do
     _type   = typeof _car;
 
     {
-	    if ((player == driver _car) and (_car distance _x < 30) and (_speed >= 95) and !(_car iskindof "Air")) then
-	    {
+	    if ((player == driver _car) and (_car distance _x < 30) and (_speed >= 95) and !(_car iskindof "Air")) then {
 		  _infos   = _type call INV_getitemArray;
 		  _license = (_infos select 4) select 1;
 

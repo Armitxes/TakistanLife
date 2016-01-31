@@ -117,13 +117,13 @@ if (_classname == "SUV_UN_EP1") then { newvehicle setVehicleInit 'this setObject
 if (_classname == "VolhaLimo_TK_CIV_EP1") then { newvehicle setVehicleInit 'this setObjectTexture [0, "images\copvolha.paa"]'; processInitCommands; };
 if (_classname == "ArmoredSUV_PMC") then
 {
-	newvehicle setVehicleInit '
+newvehicle setVehicleInit '
 this animate["HideGun_01",1]; 
 this animate["HideGun_02",1];
 this animate["HideGun_03",1];
 this animate["HideGun_04",1]; 
 this animate["CloseCover1",1]; 
-this animate["CloseCover2",1];';processInitcommands;
+this animate["CloseCover2",1];';processInitCommands;
 newvehicle removeweapon "M134";
 };
 };

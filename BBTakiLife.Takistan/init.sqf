@@ -26,8 +26,7 @@ nopop			= true;
 canuseshopagain	= 1;
 JIP_Stats_Ready = false;
 
-if (isServer) then
-{
+if (isServer) then {
 	warrantarray = [];
 	lastElection = 0;
 	
@@ -111,7 +110,29 @@ if (isServer) then {
 	[] execVM "robpool.sqf";
 	[] execVM "governmentconvoy.sqf";
 	if (isDedicated) then {
-		[] spawn { while {true} do { svrStats = [diag_fps,time]; publicVariable "svrStats"; sleep 300; }; };
+		fakeHcClient = objNull;
+		[] spawn {
+			while {true} do {
+				svrStats = [diag_fps,time]; publicVariable "svrStats"; sleep 300;
+				_serverId = owner server;
+				if (isNull fakeHcClient || owner unoCommander == _serverId) then {
+					_newClient = objNull;
+					{ if (isPlayer _x) exitWith { _newClient = _x; };  } forEach civarray;
+					fakeHcClient = _newClient;
+					if (!isNull fakeHcClient) then {
+						{
+							if (owner _x == _serverId) then {
+								if (!(alive _x) || _x isKindOf "Animal" || _x in civslavearray) then {
+									_delGrp = group _x; deleteVehicle _x; deleteGroup _delGrp;
+								} else { _x setOwner (owner fakeHcClient); };
+							};
+						} forEach (nearestObjects [[6453,8127,0],["Man","Animal"], 9000]);
+						prisondoor setOwner (owner fakeHcClient);
+						prisonDoor3 setOwner (owner fakeHcClient);
+					};
+				};
+			};
+		};
 	};
 };
 
