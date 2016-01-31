@@ -31910,7 +31910,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Infostand_2_EP1";
 			skill=0.60000002;
-			text="fuelshop4";
+			text="gasstation4";
 			init="this allowDamage false; this enableSimulation false; this setpos [getpos this select 0, getpos this select 1,0.2];";
 		};
 		class Item3023
@@ -31922,7 +31922,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Infostand_2_EP1";
 			skill=0.60000002;
-			text="fuelshop7";
+			text="gasstation7";
 			init="this allowDamage false; this enableSimulation false; this setpos [getpos this select 0, getpos this select 1,0.3];";
 		};
 		class Item3024
@@ -31934,7 +31934,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Infostand_2_EP1";
 			skill=0.60000002;
-			text="fuelshop3";
+			text="gasstation3";
 			init="this allowDamage false; this enableSimulation false; this setpos [getpos this select 0, getpos this select 1,0.2];";
 		};
 		class Item3025
@@ -31946,7 +31946,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Infostand_2_EP1";
 			skill=0.60000002;
-			text="fuelshop6";
+			text="gasstation6";
 			init="this allowDamage false; this enableSimulation false; this setpos [getpos this select 0, getpos this select 1,0.2];";
 		};
 		class Item3026
@@ -31958,7 +31958,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Infostand_2_EP1";
 			skill=0.60000002;
-			text="fuelshop1";
+			text="gasstation1";
 			init="this allowDamage false; this enableSimulation false; this setpos [getpos this select 0, getpos this select 1,0.1];";
 		};
 		class Item3027
@@ -31970,7 +31970,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Infostand_2_EP1";
 			skill=0.60000002;
-			text="fuelshop5";
+			text="gasstation5";
 			init="this allowDamage false; this enableSimulation false; this setpos [getpos this select 0, getpos this select 1,0.2];";
 		};
 		class Item3028
@@ -32030,7 +32030,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Infostand_2_EP1";
 			skill=0.60000002;
-			text="fuelshop2";
+			text="gasstation2";
 			init="this allowDamage false; this enableSimulation false;";
 		};
 		class Item3033
@@ -32372,7 +32372,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Infostand_2_EP1";
 			skill=0.60000002;
-			text="fuelshop8";
+			text="northsupermarket";
 			init="this allowDamage false; this enableSimulation false; this setpos [getpos this select 0, getpos this select 1,0.7];";
 		};
 		class Item3061
@@ -35679,7 +35679,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Infostand_2_EP1";
 			skill=0.60000002;
-			text="fuelshop9";
+			text="gasstation8";
 			init="this allowDamage false; this enableSimulation false; this setpos [getpos this select 0, getpos this select 1,0.2];";
 		};
 		class Item3397
@@ -35713,7 +35713,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Infostand_2_EP1";
 			skill=0.60000002;
-			text="fuelshop10";
+			text="gasstation9";
 			init="this allowDamage false; this enableSimulation false; this setpos [getpos this select 0, getpos this select 1,0.2];";
 		};
 		class Item3400
@@ -39795,7 +39795,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Infostand_2_EP1";
 			skill=1;
-			text="gunshop2";
+			text="southsupermarket";
 			init="this allowDamage false; this enableSimulation false;this setObjectTexture [0,""images\shopWeapon.paa""];";
 		};
 		class Item3834

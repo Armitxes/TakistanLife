@@ -25,8 +25,8 @@ workplacejob_deliveryflagarray = [
   shop1export,
   Bakery,
   Glassblower,
-  fuelshop1,
-  fuelshop5,
+  gasstation1,
+  gasstation5,
   equipshop2,
   airshop
 ];

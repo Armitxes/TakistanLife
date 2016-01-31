@@ -17,15 +17,15 @@ bankflagarray            = [mainbank, copbank, atm1, atm2, atm3, atm4, atm5, atm
 speedcamarray            = [speed6,speed7,speed8,speed10];
 drugsellarray		 = [mdrugsell,cdrugsell,ldrugsell,hdrugsell];
 TankstellenArray         = [scofuel,soufuel,pmcfuel,copfuel,
-(nearestobject[getpos fuelshop1,"Land_Ind_FuelStation_Feed_Ep1"]),
-(nearestobject[getpos fuelshop2,"Land_Ind_FuelStation_Feed_Ep1"]),
-(nearestobject[getpos fuelshop3,"Land_Ind_FuelStation_Feed_Ep1"]),
-(nearestobject[getpos fuelshop4,"Land_Ind_FuelStation_Feed_Ep1"]),
-(nearestobject[getpos fuelshop5,"Land_Ind_FuelStation_Feed_Ep1"]),
-(nearestobject[getpos fuelshop6,"Land_Ind_FuelStation_Feed_Ep1"]),
-(nearestobject[getpos fuelshop7,"Land_Ind_FuelStation_Feed_Ep1"]),
-(nearestobject[getpos fuelshop9,"Land_Ind_FuelStation_Build_Ep1"]),
-(nearestobject[getpos fuelshop10,"Land_Ind_FuelStation_Feed_Ep1"]),
+(nearestobject[getpos gasstation1,"Land_Ind_FuelStation_Feed_Ep1"]),
+(nearestobject[getpos gasstation2,"Land_Ind_FuelStation_Feed_Ep1"]),
+(nearestobject[getpos gasstation3,"Land_Ind_FuelStation_Feed_Ep1"]),
+(nearestobject[getpos gasstation4,"Land_Ind_FuelStation_Feed_Ep1"]),
+(nearestobject[getpos gasstation5,"Land_Ind_FuelStation_Feed_Ep1"]),
+(nearestobject[getpos gasstation6,"Land_Ind_FuelStation_Feed_Ep1"]),
+(nearestobject[getpos gasstation7,"Land_Ind_FuelStation_Feed_Ep1"]),
+(nearestobject[getpos gasstation8,"Land_Ind_FuelStation_Build_Ep1"]),
+(nearestobject[getpos gasstation9,"Land_Ind_FuelStation_Feed_Ep1"]),
 (nearestobject[getpos airfuel1,"Land_Fuel_tank_stairs"]),
 (nearestobject[getpos airfuel2,"Land_Fuel_tank_stairs"])
 ];

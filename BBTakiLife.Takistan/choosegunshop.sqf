@@ -23,7 +23,7 @@ _preis        = round((_preisOhneTax*(_preis/_preisOhneTax)) - _demand);
 ctrlSetText [3, format["Gunshop 1 for $%1", _preis]];
 buttonSetAction [3, format['[%1,"%2",%3,%4,%5] execVM "exportweapon.sqf";', _preis, _item, _stock, _maxstock, _shopnum]];
 
-_shopnum      = gunshop2 call INV_getshopnum;
+_shopnum      = southsupermarket call INV_getshopnum;
 _stock        = [_item, _shopnum] call INV_getstock;
 _maxstock     = [_item, _shopnum] call INV_getmaxstock;
 _preisOhneTax = (_infos call INV_getitemBuyCost)*1;

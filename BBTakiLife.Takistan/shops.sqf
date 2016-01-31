@@ -1,15 +1,15 @@
 if (isServer) then {
   INV_itemstocks = [
-    [5,5,5], //fuelshop1 #1
-    [5,5,5], //fuelshop2 #2
-    [5,5,5], //fuelshop3 #3
-    [5,5,5], //fuelshop4 #4
-    [5,5,5], //fuelshop5 #5
-    [5,5,5], //fuelshop6 #6
-    [5,5,5], //fuelshop7 #7
-    [5,5,5], //fuelshop8 #8
-    [5,5,5], //fuelshop9
-    [5,5,5], //fuelshop10
+    [5,5,5], //gasstation1 #1
+    [5,5,5], //gasstation2 #2
+    [5,5,5], //gasstation3 #3
+    [5,5,5], //gasstation4 #4
+    [5,5,5], //gasstation5 #5
+    [5,5,5], //gasstation6 #6
+    [5,5,5], //gasstation7 #7
+    [5,5,5], //northsupermarket #8
+    [5,5,5], //gasstation8
+    [5,5,5], //gasstation9
     [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop1 #9
     [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop2 #10
     [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop3 #11
@@ -83,16 +83,16 @@ if (isServer) then {
 };
               
 INV_itemmaxstocks = [
-[5,5,5], //fuelshop1 #1
-[5,5,5], //fuelshop2 #2
-[5,5,5], //fuelshop3 #3
-[5,5,5], //fuelshop4 #4
-[5,5,5], //fuelshop5 #5
-[5,5,5], //fuelshop6 #6
-[5,5,5], //fuelshop7 #7
-[5,5,5], //fuelshop8 #8
-[5,5,5], //fuelshop9
-[5,5,5], //fuelshop10
+[5,5,5], //gasstation1 #1
+[5,5,5], //gasstation2 #2
+[5,5,5], //gasstation3 #3
+[5,5,5], //gasstation4 #4
+[5,5,5], //gasstation5 #5
+[5,5,5], //gasstation6 #6
+[5,5,5], //gasstation7 #7
+[5,5,5], //northsupermarket #8
+[5,5,5], //gasstation8
+[5,5,5], //gasstation9
 [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop1 #9
 [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop2 #10
 [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //itemshop3 #11
@@ -735,16 +735,16 @@ if(!isDedicated) then {
 
 
 INV_ItemShops = [
-[fuelshop1,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true], // #1
-[fuelshop2,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true], // #2
-[fuelshop3,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true], // #3
-[fuelshop4,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true], // #4
-[fuelshop5,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true], // #5
-[fuelshop6,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true], // #6
-[fuelshop7,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true], // #7
-[fuelshop8,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true], // #8
-[fuelshop9,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true],
-[fuelshop10,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true],
+[gasstation1,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true], // #1
+[gasstation2,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true], // #2
+[gasstation3,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true], // #3
+[gasstation4,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true], // #4
+[gasstation5,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true], // #5
+[gasstation6,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true], // #6
+[gasstation7,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true], // #7
+[northsupermarket,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true], // #8
+[gasstation8,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true],
+[gasstation9,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true],
 
 [shop1,"Item Shop",dummyobj,dummyobj,_is,_is,true], // #9
 [shop2,"Item Shop",dummyobj,dummyobj,_is,_is,true], // #10
@@ -830,5 +830,5 @@ INV_ItemShops = [
 [petshop,"Pet Shop",dummyobj,dummyobj,_petShop,_petShop,true],
 [resourcesell2,"Sell Resources",dummyobj,dummyobj,_rs,_rs,true],
 [Oil_2,"Mining equipment",dummyobj,dummyobj,_ms,_ms,true], 
-[gunshop2,"Gun Shop",gunbox2,dummyobj,_gs,_gs,true]
+[southsupermarket,"Gun Shop",gunbox2,dummyobj,_gs,_gs,true]
 ];
