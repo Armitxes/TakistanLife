@@ -118,7 +118,8 @@ switch (_art) do {
     case "spielerliste": {
 	_money = "dollarz" call INV_GetItemAmount;
 	if (!(createDialog "liste_1_button")) exitWith {hint "Dialog Error!";};
-	lbAdd [1, "Press [SHIFT+1] for additional information"];
+	lbAdd [1, "------- ~ Logfile Shortcuts ~ -------"];
+	lbAdd [1, "[SHIFT+1] Performance | [SHIFT+2] Finances | [SHIFT+3] Crimes | [SHIFT+4] Police Actions"];
 	_trennlinie = "---------------------------------------------";
 	lbAdd [1, _trennlinie];
 	lbAdd [1, localize "STRS_statdialog_playerinfo"];
@@ -485,5 +486,5 @@ switch (_art) do {
 		
 		lbAdd [1, _trennlinie];
 		lbAdd [1, "~ Passed by the Supreme Court of Takistan in cooperation with the United Nations"];
-	}
+	};
 };

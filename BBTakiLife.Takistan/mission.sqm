@@ -43975,7 +43975,7 @@ class Mission
 		{
 			position[]={10101.581,346.67084,2342.9355};
 			name="licenses2";
-			text="Licences [+ South Gov Licence]";
+			text="Licences";
 			type="mil_flag";
 			angle=34.606701;
 		};
@@ -44317,7 +44317,7 @@ class Mission
 			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
-			text="test groups";
+			text="Count Groups";
 			expActiv="groupnumber = count allgroups; hint format[""%1 many groups"" , groupnumber];";
 			class Effects
 			{
@@ -44330,7 +44330,7 @@ class Mission
 			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
-			text="give cords";
+			text="Give Coords";
 			expActiv="theplayerpos21 = getpos player; hint format [""%1"",theplayerpos21];";
 			class Effects
 			{
