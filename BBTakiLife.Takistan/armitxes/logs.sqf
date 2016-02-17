@@ -1,22 +1,33 @@
-/* Usage: ["add","crimes"] execVM "armitxes\logs.sqf"; */
+/* Usage: ["add","crimes","msg",doNotify] execVM "logs.sqf"; */
 _exe = _this select 0;
 _log = 0;
 _params = 0;
 
-if (count _this > 1) then {
+_c = count _this;
+if (_c > 1) then {
 	_log = _this select 1;
-	if (count _this > 2) then {
+	if (_c > 2) then {
 		_params = _this select 2;
 	};
 };
 
 switch (_exe) do {
-	case "wipe": {
-		tempNotifyLog = [];
-		logFinances = [];
-		logPolice = [];
-		logAdmin = [];
-		logCrimes = [];
+	case "wipeold": {
+		if (isNil "logFinances") then {
+			tempNotifyLog = [];
+			logFinances = [];
+			logPolice = [];
+			logAdmin = [];
+			logCrimes = [];
+			logOther = [];
+		} else {
+			tempNotifyLog = tempNotifyLog resize 10;
+			logFinances = logFinances resize 10;
+			logPolice = logPolice resize 10;
+			logAdmin = logAdmin resize 10;
+			logCrimes = logCrimes resize 10;
+			logOther = logOther resize 10;
+		};
 	};
 	case "add": {
 		if (typeName _log == "STRING" && typeName _params == "STRING") then {
@@ -24,6 +35,7 @@ switch (_exe) do {
 			
 			switch (_log) do {
 				case "admin": { logAdmin = [_params] + logAdmin; };
+				case "other": { logOther = [_params] + logOther; };
 				case "police": { logPolice = [_params] + logPolice; _doNotify=false; };
 				case "finances": { logFinances = [_params] + logFinances; _doNotify=false; };
 				case "crimes": {
@@ -31,7 +43,11 @@ switch (_exe) do {
 					if (PLAYERDATA select 7 != 2) then {_doNotify=false;};
 				};
 			};
-				
+			
+			if (_c > 3) then {
+				_n = _this select 3;
+				if (typeName _n == "BOOLEAN") then { _doNotify = _n; }; 
+			}; 
 			if (_doNotify) then {
 				tempNotifyLog = [_params] + tempNotifyLog;
 				tempNotifyLog resize 3;
@@ -54,6 +70,7 @@ switch (_exe) do {
 			case "police": { _logArray = logPolice; };
 			case "finances": { _logArray = logFinances; };
 			case "crimes": { _logArray = logCrimes; };
+			case "other": { _logArray = logOther; };
 		};
 		
 		if (!(createDialog "liste_1_button")) exitWith {hint "Dialog Error!";};
