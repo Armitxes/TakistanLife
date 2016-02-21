@@ -1,58 +1,27 @@
 _art = _this select 0;
 
-if (_art == "use") then
+if (_art == "use") then {
+	_item   = _this select 1;
+	_anzahl = _this select 2;
+	_vcls    = nearestObjects [getPos player,["LandVehicle", "Air", "ship"],7];
+	_closevcl     = _vcls select 0;
 
-{
+	if (!(isNull(_closevcl))) then {
+		if (call fnc_isBusy) exitWith {};
+		if (_closeVcl isKindOf "Air") exitWith {titleText ["You cannot lockpick this vehicle!", "PLAIN DOWN", 0.3];};
+		if (_closeVcl in INV_VehicleArray) then {
+			titleText [localize "STRS_inventar_lockpick_already", "PLAIN DOWN", 0.3];
+		} else {
+			_w = [8,"Lockpicking...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
+			waitUntil { scriptDone _w; };
 
-_item   = _this select 1;
-_anzahl = _this select 2;
-_vcls    = nearestobjects [getpos player,["LandVehicle", "Air", "ship"], 7];
-_closevcl     = _vcls select 0;
-_incarpark = false;
-
-
-if (!(isNull(_closevcl))) then
-
-	{
-	if (usepick) exitWith {hintSilent "You are already using a lockpick"};
-	if(_closeVcl isKindOf "Tank" || _closeVcl isKindOf "Air")exitwith{hintSilent "You cannot lockpick this vehicle!"};
-	if(typeof _closeVcl == "LAV25" || typeof _closeVcl == "M1133_MEV_EP1")exitwith{hintSilent "You cannot lockpick Armoured Vehicles!"};
-	if (_closeVcl in INV_VehicleArray) then
-
-		{
-
-		hintSilent localize "STRS_inventar_lockpick_already";
-
-		}
-		else
-		{
-			if ((random 100) < lockpickchance) then
-			{
+			if ((random 100) < 41) then {
 				INV_VehicleArray = INV_VehicleArray + [_closeVcl];
-				_closeVcl setVariable ["owners",(_closeVcl getVariable "owners")+[getPlayerUID player],TRUE];
-				hintSilent localize "STRS_inventar_lockpick_success";
-			} else { hintSilent localize "STRS_inventar_lockpick_noluck"; };
+				_closeVcl setVariable ["owners",(_closeVcl getVariable "owners")+[getPlayerUID player],true];
+				titleText [localize "STRS_inventar_lockpick_success", "PLAIN DOWN", 0.3];
+			} else { titleText [localize "STRS_inventar_lockpick_noluck", "PLAIN DOWN", 0.3]; };
 
 			[_item, -1] call INV_AddInventoryItem;
-			format ["%1 switchmove ""AinvPknlMstpSlayWrflDnon_medic"";", player] call broadcast;
-			usepick = true;
-			sleep 8;
-			usepick = false;
 		};
-	}
-	else
-	{
-		hintSilent localize "STRS_inventar_lockpick_zuweit";
-	};
+	} else { titleText [localize "STRS_inventar_lockpick_zuweit", "PLAIN DOWN", 0.3]; };
 };
-
-
-
-
-
-
-
-
-
-
-

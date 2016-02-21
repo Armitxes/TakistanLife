@@ -72,7 +72,6 @@ firingcaptive		 = false;
 pickingup   		 = false;
 isbet				 = false;
 nobet				 = false;
-lockpickchance	 = 40;
 planting		     = false;
 drugstockinc		 = 900;
 druguserate		   = 120;
@@ -312,7 +311,6 @@ if(!isDedicated) then {
 	dmgLegs = 0;
 
 	lastBite = 0;
-	usepick = false;
 	isheal = false;
 	profs = [
 		["Judge","STR_prof_judge",2000],
