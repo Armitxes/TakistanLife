@@ -26,7 +26,7 @@ dragciv                  = 0;
 attached                 = false;
 INV_smscost		           = 5;
 
-["wipe"] execVM "armitxes\logs.sqf";
+["wipeold"] execVM "armitxes\logs.sqf";
 
 mlaw = false;
 warStarted				= false;

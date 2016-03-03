@@ -1,5 +1,4 @@
 _action = _this select 0;
-
 switch (_action) do  {
 	case "add": {
 		if(isjudge && PLAYERDATA select 2 > 0) then {
