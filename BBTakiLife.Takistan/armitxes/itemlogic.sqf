@@ -46,25 +46,25 @@ if (_art == "use") then
 							waitUntil { scriptDone _w; };
 							["dollarz",5000] call INV_addInventoryItem;
 							["addWarrant",player,"Robbery",3000] execVM "warrant.sqf";
-							(format ['hintSilent "Someone robbed %1!"',_obj]) call toClients;
-						} else { hintSilent "Someone was faster than I.."; };
-					} else { hintSilent "Hacking this terminal is to complicated!"; };
+							('["add","crimes",format ["Someone robbed %1!",_obj]] execVM "armitxes\logs.sqf";') call toClients;
+						} else { ["add","other","Someone was faster than me...",true] execVM "armitxes\logs.sqf"; };
+					} else { ["add","other","Hacking this terminal is too complicated!",true] execVM "armitxes\logs.sqf"; };
 				} else {
 					if ( (player distance [5964.5,7483.3,1.18]) < 3 ) then {
 						_w = [10,"[Easy] Hacking Notebook...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
 						waitUntil { scriptDone _w; };
 						if (alive player && !((animationState player) in animRestrained)) then {
 							prisondoor setVariable ["hacked",time,true];
-							hintSilent "Code for Prison Door obtained, Security System will reset in 5 Minutes!";
+							["add","crimes","Code for Prison Door 1 obtained, Security System will reset in 5 Minutes!",true] execVM "armitxes\logs.sqf";
 						};
 					} else {
 						_w = [60,"[Hard] Hacking Notebook...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
 						waitUntil { scriptDone _w; };
 						if (alive player && !((animationState player) in animRestrained)) then {
 							prisonDoor2 setVariable ["hacked",time,true];
-							("hintSilent ""Prison Security System was taken down!"";") call toClients; sleep 3;
-							hintSilent "Code for Prison Door obtained, Security System will reset in 5 Minutes!";
-						} else { hintSilent "Nothing to hack here"; };
+							('["add","crimes","Prison Security System was taken down!"] execVM "armitxes\logs.sqf";') call toClients;
+							["add","crimes","Code for Prison Door 2 obtained, Security System will reset in 5 Minutes!",true] execVM "armitxes\logs.sqf";
+						} else { ["add","other","Nothing to hack here",true] execVM "armitxes\logs.sqf"; };
 					};
 				};
 			};

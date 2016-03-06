@@ -61,9 +61,6 @@ if ( (_anzahl > 0) and (_infos call INV_getitemDropable) ) then
 
 };
 
-buttonSetAction [3,   format['if ((lbCurSel 1) >= 0) then {["nehmen",  "%1", ctrlText 2, (lbData [1, (lbCurSel 1)]),"%3", %2] execVM "addstorage.sqf"; closedialog 0; [0,0,0,["%1", "%3", %2]] execVM "storage.sqf";};', _arrname, _extra, _public] ];
-buttonSetAction [103, format['if ((lbCurSel 101) >= 0) then {["ablegen", "%1", ctrlText 102, (lbData [101, (lbCurSel 101)]), "%3", %2] execVM "addstorage.sqf"; closedialog 0; [0,0,0,["%1", "%3", %2]] execVM "storage.sqf";};', _arrname, _extra, _public] ];
-
 while {ctrlVisible 1015} DO
 
 {

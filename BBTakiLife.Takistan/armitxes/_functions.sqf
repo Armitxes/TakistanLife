@@ -112,10 +112,11 @@ if(!isDedicated) then
 	ARM_fnc_betterChat = {
 		_banTime = (ARM_bannedTimer-time);
 		if(_banTime > 0) exitWith { systemChat format["You have been banned from this chat. %1 seconds(s) left.",floor(_banTime)]; };
-		
 		_param = (_this select 0);
 		if ((typeName _param) == "STRING" && _param != "") then {
 			_thisArr = toArray(_param);
+			if (_thisArr select 0 == 47) exitWith { [_param] execVM "armitxes\chatcmd.sqf"; };
+			
 			if( !(39 in _thisArr) &&  !(34 in _thisArr) ) then {
 				_abbr = chatAbbr;
 				_fcabbr = "| UN]";
@@ -140,7 +141,7 @@ if(!isDedicated) then
 		     
 				_message = format ["systemChat ""%1 (%2): %3"";",_abbr, name player, _param];
 				(_message) call toClients;
-			} else { systemChat "You are not allowed to use '' or ' in global chat! ";};
+			} else { systemChat "You are not allowed to use '' or ' in global chat!";};
 		};
 	};
 

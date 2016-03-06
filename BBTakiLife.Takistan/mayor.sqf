@@ -63,6 +63,6 @@ if (_art == "steuernMayor") then {
 	(INV_ItemTypenArray select 2) SET [2, %3];
 	(INV_ItemTypenArray select 3) SET [2, %4];
 	bank_steuer = %5;
-	hint ""The Prime Minister has changed the taxes!"";
+	[""add"",""finances"",""The Prime Minister has changed the taxes!"",false] execVM ""armitxes\logs.sqf"";
 	", _item, _vcl, _mag, _weap, _bank] call broadcast;
 };

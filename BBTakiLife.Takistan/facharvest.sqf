@@ -136,7 +136,7 @@ terrorfactoryitemsqueue = [];
 diamondqueue = [];
 
 INV_Lizenzen = [
-	["adminlicense",[adminbank,adminbank,adminbank],localize "STRS_license_adminlicense",0],
+	["adminlicense",[adminbank,adminbank,adminbank],"Admin",0],
 	["car",[atm4,atm1,adminbank],localize "STRS_license_car",100],
 	["truck",[atm4,atm1,adminbank],localize "STRS_license_truck",1400],
 	["air",[atm4,atm1,adminbank],localize "STRS_license_air",15000],

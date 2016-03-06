@@ -17,10 +17,12 @@ if (isServer) then {
 	TankenCost = 10; publicVariable "TankenCost";
 	
 	convoywinner = "Cops and UN"; publicVariable "convoywinner";
+	INV_ItemTypenArray = [ ["Item", "Item", 5], ["Fahrzeug", "Vehicle",5], ["Magazin","Magazine",5], ["Waffe","Weapon",5]];
 	publicVariable "INV_ItemTypenArray";
 	publicVariable "INV_itemstocks";
 };
 
+constitution = [];
 dragging                 = false;
 dragciv                  = 0;
 attached                 = false;

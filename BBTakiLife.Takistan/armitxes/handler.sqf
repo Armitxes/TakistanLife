@@ -5,7 +5,6 @@
     
     INV_LizenzOwner = [];
     { INV_LizenzOwner = INV_LizenzOwner + [(INV_Lizenzen select _x) select 0]; } forEach (PLAYERDATA select 6);    
-    extrapay = 0;
     
     chatAbbr = "[Guest ";
     
@@ -29,13 +28,6 @@
             chatAbbr = "[Support ";
         };};};
       };
-    };
-    
-    switch (PLAYERDATA select 3) do {
-      case 1: { extrapay = 150; };
-      case 2: { extrapay = 350; };
-      case 3: { extrapay = 750; };
-      case 4: { extrapay = 1050; };
     };
     
     INV_Fabrikowner = [];

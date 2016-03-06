@@ -18,16 +18,18 @@ if (!(_civ call ISSE_UnitExists)) exitWith {role groupChat localize "STRS_player
 
 if (_deletekopfgeld == 1) exitWith {
 	["deleteWarrant",_civvar, "", 0] execVM "warrant.sqf";    
-	hintSilent format [localize "STRS_kopfgeld_entfernt", _civ];
+	["add","police","Warrant removed",true] execVM "armitxes\logs.sqf";
 };
 if (_reasonID == 0) then {
 	if (_txtReason == "Crime not in List? Log crime here!" || count (toArray _txtReason) < 3) exitWith {hintSilent "You must enter a description of the crime!"};
 	if ((!(alive _civvar)) or (_civarrestedvar == 1)) exitWith {role groupChat format [localize "STRS_kopfgeld_nokopfgeld", _civ];};
-	format ["server globalchat ""%2 is wanted for %3 by %1"";", name player, name _civvar, _txtReason] call toClients;
+	_txt = format ["%2 is wanted for %3 by %1", name player, name _civvar, _txtReason];
+	(format ['["add","police","%1",true] execVM "armitxes\logs.sqf";',_txt]) call toClients;
 	["addWarrant",_civvar,_txtReason,_lbBounty] execVM "warrant.sqf";
 } else {
 	if (_lbReason != "") then {
-		format ["server globalchat ""%2 is wanted for %3 by %1"";", name player, name _civvar, _lbReason] call toClients;
+		_txt = format ["%2 is wanted for %3 by %1", name player, name _civvar, _lbReason];
+		(format ['["add","police","%1",true] execVM "armitxes\logs.sqf";',_txt]) call toClients;
 		["addWarrant",_civvar,_lbReason,_lbBounty] execVM "warrant.sqf";
 	};	
 };

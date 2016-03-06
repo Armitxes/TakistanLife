@@ -1,8 +1,8 @@
+_income = 100;
+
 while {iscop} do
 {
 	sleep 300;
-	_income = 350 + extrapay;
-
 	if ("patrol_training" call INV_HasLicense) then { _income = _income + 25; };
 	if ("response_training" call INV_HasLicense) then { _income = _income + 50; };
 	if ("SCO_training" call INV_HasLicense) then { _income = _income + 75; };
@@ -15,36 +15,27 @@ while {iscop} do
 		_disName = districts select _district;
 		if(_district > 0 && _district < 5) then {
 			if(!([player,_disName] call fnc_isInMarker)) then {
-				_income = _income - 150;
+				_income = _income - 50;
 				server globalChat format["You are not in the %1 district. You received $150 less payment.",_disName];
 			};
 		};
 	};
 
-	_coptax = round(INV_SteuernGezahlt * 0.05);
-	[(round _income) + (round _coptax)] call setMoney;
+	_income = round (_income + (INV_SteuernGezahlt * 0.5));
+	[_income] call setMoney;
 	INV_SteuernGezahlt = 0;
 
-	["add","finances",format ["You received $%1 as payment including taxes.", ((round _income) call ISSE_str_IntToStr)],true] execVM "armitxes\logs.sqf";
-	sleep 1;
-	["save"] execVM "armitxes\_db.sqf"; 
+	["add","finances",format ["You received $%1 as payment including taxes.", _income],true] execVM "armitxes\logs.sqf";
+	sleep 1; ["save"] execVM "armitxes\_db.sqf"; 
 };
 
 while {isun} do
 {
 	sleep 300;
-
-	_untax = round(INV_SteuernGezahlt * 0.025);
-	INV_SteuernGezahlt = 0;  
-	
-	_incomeun = 100 + extrapay;
-	_incomeun = _incomeun + 400 + _untax;
-
-	if (!(convoywinner == "Cops and UN") && !(convoywinner == "Neither")) then { _incomeun = _incomeun - 150; };
-	["add","finances",format ["The United Nations gave you a paycheck of $%1 and an extra of $%2 as bonus.",_incomeun,paybonus],true] execVM "armitxes\logs.sqf";
-	[(_incomeun + paybonus)] call setMoney; paybonus = 0;
-	sleep 1;
-	["save"] execVM "armitxes\_db.sqf";
+	if (!(convoywinner == "Cops and UN") && !(convoywinner == "Neither")) then { _income = _income - 150; };
+	["add","finances",format ["The United Nations gave you a paycheck of $%1 and an extra of $%2 as bonus.",_income,paybonus],true] execVM "armitxes\logs.sqf";
+	[(_income + paybonus)] call setMoney; paybonus = 0;
+	sleep 1; ["save"] execVM "armitxes\_db.sqf";
 };
 
 while {isciv} do
@@ -55,8 +46,6 @@ while {isciv} do
 	_unimsg            = "";
 	_atworkplacemsg    = localize "STRS_dollarz_nowere";
 	_hashideoutmsg     = "";
-
-	_income            = 100 + extrapay;
 
 	if (convoywinner == "Civs" && !(convoywinner == "Neither")) then { _income = _income + 100; };
 	if (ispmc || isjudge) then {_income = _income + 500;};	

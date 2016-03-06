@@ -25,7 +25,7 @@ if (_art == "deposit") then {
   if (not((INV_PLAYERSTRINGLIST select _transfer) call ISSE_UnitExists)) exitWith {hintSilent localize "STRS_bank_player_not_ingame";};
 
   if ((PLAYERDATA select 1) < _steuern) then {
-    hintSilent format[localize "STRS_bank_no_money", (_transfermoney call ISSE_str_IntToStr), (bank_steuer call ISSE_str_IntToStr)];
+    ["add","finances","You don't have enough money on your account",true] execVM "armitxes\logs.sqf";
 	} else {
     [-_steuern] call setMoney;
     INV_SteuernGezahlt = (INV_SteuernGezahlt + (_steuern - _transfermoney));

@@ -1,4 +1,4 @@
-/* Usage: ["add","crimes","msg",doNotify] execVM "armitxes\logs.sqf"; */
+/* Usage: ["add","crimes","msg",doNotify] execVM "logs.sqf"; */
 _exe = _this select 0;
 _log = 0;
 _params = 0;
@@ -46,7 +46,7 @@ switch (_exe) do {
 			
 			if (_c > 3) then {
 				_n = _this select 3;
-				if (typeName _n == "BOOLEAN") then { _doNotify = _n; }; 
+				if (typeName _n == "BOOL") then { _doNotify = _n; }; 
 			}; 
 			if (_doNotify) then {
 				tempNotifyLog = [_params] + tempNotifyLog;

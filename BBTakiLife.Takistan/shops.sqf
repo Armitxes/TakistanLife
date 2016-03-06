@@ -664,7 +664,7 @@ _petShop = [
 ];
 
 if(!isDedicated) then {
-  _vipLvl = PLAYERDATA select 3;
+  _vipLvl = 4; //PLAYERDATA select 3;
   if(_vipLvl > 0) then {
     _civguns = _gs;
     _civair = _as;

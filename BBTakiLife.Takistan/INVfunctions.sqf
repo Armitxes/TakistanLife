@@ -303,7 +303,6 @@ INV_StorageIsFactory = {
 INV_GetObjectSteuer = {
 	private ["_c", "_result"];
 	_result = 0;
-	//for [{_c=0}, {_c < (count INV_ItemTypenArray)}, {_c=_c+1}] do {
 	for "_c" from 0 to (count INV_ItemTypenArray - 1) do {
 		if (((INV_ItemTypenArray select _c) select 0) == _this) exitWith {
 			_result = ((INV_ItemTypenArray select _c) select 2);
@@ -369,47 +368,14 @@ INV_getitemSteuer= {
 	[_cost, (_type call INV_GetObjectSteuer)] call INV_AddProzent;
 };
 
-
-//Function Price Taxes
-INV_getitemPreisSteuer= {
-	private ["_type", "_preis", "_result"];
-	_type  = (_this select 0) call INV_getitemType;
-	_preis = (_this select 1);
-	[_preis, (_type call INV_GetObjectSteuer)] call INV_AddProzent;
-};
-
-
-// Add Items to Storage Window Box
-INV_AddStorageToDialog = {
-	private ["_c", "_item", "_anzahl", "_infos", "_KindOf", "_CrctlID", "_Findex", "_Arrayname", "_Array"];
-	_Arrayname = _this select 0;
-	_CrctlID   = _this select 1;
-	_KindsOf   = "";
-	if (count _this > 2) then {_KindOf = _this select 2;};
-	if (isNil(_Arrayname)) then {_Arrayname call INV_StorageLeeren};
-	_Array = call compile (_Arrayname);
-	for [{_c=0}, {_c < (count _Array)}, {_c=_c+1}] do {
-		_item   = ((_array select c) select 0);
-		_anzahl = ((_array select c) select 1);
-		_infos  = _item call INV_getitemArray;
-		if ( ((_KindsOf == "") or (_infos call INV_getitemKindOf == _KindsOf)) and (_anzahl > 0) ) then {
-			_Findex = lbAdd [_CrctlID, format ["%1 - (%2)", _infos call INV_getitemName, _anzahl]];
-			lbSetData [_CrctlID, _Findex, _item];
-		};
-	};
-	true
-};
-
 // Check if Player Owns Licence
 INV_HasLicense = {
-	if ((_this == "") or ((_this in INV_LizenzOwner) or ("adminlicense" in INV_LizenzOwner))) then {
-//	if ( (_this == "") or (_this in INV_LizenzOwner) ) then {
+	if ((_this == "") or (_this in INV_LizenzOwner)) then {
 		true
 	} else {
 		false
 	};
 };
-
 
 // Get Name of Licence
 INV_GetLicenseName = {
@@ -420,7 +386,6 @@ INV_GetLicenseName = {
 		};
 	};
 };
-
 
 // Unknown
 INV_GetScriptFromClass_Mag = {
@@ -502,9 +467,7 @@ INV_getshopnum = {
 
 // Get shopitem number
 
-INV_getshopitemnum =
-
-{
+INV_getshopitemnum = {
 
 private ["_c", "_Fshopitemnum"];
 _Fshopitemnum = [];
@@ -578,9 +541,7 @@ INV_getmaxstock = {
   (INV_itemmaxstocks select _shopnum) select _itemnum
 };
 
-INV_itemstocksupdate =
-
-{
+INV_itemstocksupdate = {
 
 _item     = _this select 0;
 _stock    = _this select 1;
@@ -593,9 +554,7 @@ _itemnum  = [_item, _shopinv] call INV_getshopitemnum;
 
 };
 
-INV_findunit =
-
-{
+INV_findunit = {
 
 _name   = _this select 0;
 _arr    = _this select 1;

@@ -22,7 +22,6 @@ if(!isDedicated) then
 			lastArray = str(PLAYERDATA);
 			INV_LizenzOwner = [];
 			{ INV_LizenzOwner = INV_LizenzOwner + [(INV_Lizenzen select _x) select 0]; } forEach (PLAYERDATA select 6);    
-			extrapay = 0;
 			chatAbbr = "[DevTest ";
 			INV_Fabrikowner = [];
 			_z = 0;

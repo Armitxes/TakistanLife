@@ -4,13 +4,13 @@ _art = _this select 1;
 if(_art == "impound") then
 {
 	if ((count crew _vcl) > 0) exitWith {hintSilent "The vehicle is not empty!"};
-	if(_vcl distance (getMarkerPos "impoundarea2") < 30)exitwith{hintSilent "the vehicle is already impounded!"};
-	if(_vcl isKindOf "air")exitwith{hintSilent "you cannot impound this vehicle!"};
-	if(typeOf _vcl == "SearchLight_US_EP1") exitwith {hintSilent "you cannot impound objects!"};
+	if(_vcl distance (getMarkerPos "impoundarea2") < 30)exitWith{hintSilent "the vehicle is already impounded!"};
+	if(_vcl isKindOf "air")exitWith{hintSilent "you cannot impound this vehicle!"};
+	if(typeOf _vcl == "SearchLight_US_EP1") exitWith {hintSilent "you cannot impound objects!"};
 
 	_dollarz = 200;
 	_txt = format ["%1 has impounded vehicle %2!",name player, _vcl];
-	(format ['["add","police","Hi",false] execVM "armitxes\logs.sqf";',_txt]) call toClients;
+	(format ['["add","police","%1"] execVM "armitxes\logs.sqf";',_txt]) call toClients;
 	
 	if (_vcl isKindOf "Motorcycle" || damage _vcl > 0.9) then { _dollarz = 100; deleteVehicle _vcl; } else {
 		_vcl setdamage 0;

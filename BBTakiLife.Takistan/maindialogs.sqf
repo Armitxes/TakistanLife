@@ -205,7 +205,7 @@ switch (_art) do {
 		    _totalTaxes = _totalTaxes + _tax;
 		    lbAdd [1, format["%1 Tax: %2", (_x select 1), (_x select 2)] + "%" ];
 		};
-	} foreach INV_ItemTypenArray;
+	} forEach INV_ItemTypenArray;
 	_totalTaxes = _totalTaxes + (bank_steuer * 0.5);
 	lbAdd [1, format["Transfer Tax: %1", bank_steuer] + "%" ];
 	
