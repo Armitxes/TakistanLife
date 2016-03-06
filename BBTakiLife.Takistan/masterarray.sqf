@@ -491,9 +491,9 @@ INV_AlleItemsArray = [
 
 ["SearchLight_US_EP1",["Item", "misc"],["SearchLight_US_EP1", "Search Light"],[19, 5], [2, "", "patrol_training"], [true, true, true,false,"createobject.sqf"],localize "STRS_inv_item_searchlight",localize "STRS_inv_item_searchlight_info", [] ],
 
-["M2StaticMG_US_EP1",["Item", "misc"],["M2StaticMG_US_EP1", "M2 Static"],[9700, 1000], [20, "bomb", "SCO_training"],[true, true, true,false,"createobject.sqf"], "M2StaticMG_US_EP1" call ISSE_Cfg_Weapons_GetName,"M2StaticMG_US_EP1" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
-["DSHKM_TK_INS_EP1",["Item", "misc"],["DSHKM_TK_INS_EP1", "DSHKM Static"],[9700, 1000], [20, "bomb", "SCO_training"],[true, true, true,false,"createobject.sqf"], "M2StaticMG_US_EP1" call ISSE_Cfg_Weapons_GetName,"M2StaticMG_US_EP1" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
-["DSHKM_TK_INS_EP1_sou",["Item", "misc"],["DSHKM_TK_INS_EP1", "DSHKM Static"],[9700, 1000], [20, "southgov", "SCO_training"],[true, true, true,false,"createobject.sqf"], "M2StaticMG_US_EP1" call ISSE_Cfg_Weapons_GetName,"M2StaticMG_US_EP1" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+["M2StaticMG_US_EP1",["Item", "misc"],["M2StaticMG_US_EP1", "M2 Static"],[9700, 1000], [30, "bomb", "SCO_training"],[true, true, true,false,"createobject.sqf"], "M2StaticMG_US_EP1" call ISSE_Cfg_Weapons_GetName,"M2StaticMG_US_EP1" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+["DSHKM_TK_INS_EP1",["Item", "misc"],["DSHKM_TK_INS_EP1", "DSHKM Static"],[9700, 1000], [34, "bomb", "SCO_training"],[true, true, true,false,"createobject.sqf"], "M2StaticMG_US_EP1" call ISSE_Cfg_Weapons_GetName,"M2StaticMG_US_EP1" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+["DSHKM_TK_INS_EP1_sou",["Item", "misc"],["DSHKM_TK_INS_EP1", "DSHKM Static"],[9700, 1000], [34, "southgov", "SCO_training"],[true, true, true,false,"createobject.sqf"], "M2StaticMG_US_EP1" call ISSE_Cfg_Weapons_GetName,"M2StaticMG_US_EP1" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 
 ["dollarz",["Item", "dollarz"], ["Takistani Dollars", "Takistani Dollars"], [1, 1],[0, ""],[true,true,true, false, ""],localize "STRS_item_dollarz", localize "STRS_item_dollarz_info",[]],
 

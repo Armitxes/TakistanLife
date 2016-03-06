@@ -664,75 +664,72 @@ _petShop = [
 ];
 
 if(!isDedicated) then {
-  _vipLvl = 4; //PLAYERDATA select 3;
-  if(_vipLvl > 0) then {
-    _civguns = _gs;
-    _civair = _as;
-    _civveh = _cs;
-	
-  
-    _cs = _cs + [
-      "SUV_PMC_BAF",
-      "TT650_Civ",
-      "car_hatchback",
-      "datsun1_civil_2_covered"
-    ];
-    
-    _ts = _ts + ["MtvrRepair_DES_EP1","MtvrRefuel_DES_EP1"];
-    _as = _as + ["Ka137_PMC"];
-    _es = _es + [
-                  "DonUni3","medikit","lockpick","NVGoggles","reparaturkit","lighter","handy",
-                  "Fuelline","kanister","GPS","Binocular","supgrade"
-                ];
-    _ng = ["M9_Don","15Rnd_9x19_M9","LeeEnfield_Don","x_303"];
-    _gangshop_buy = _gangshop_buy + ["GangUni3"];
-    _gs = _gs + _ng;
-    if (iscop) then { _copshop = ["M9SD"] + _copshop + _ng; };
-    
-    if(_vipLvl > 1) then {
-      _cs = _cs + ["SUV_WHITE","Tractor","TT650_Gue","hilux1_civil_1_open"];
-      _as = _as + ["MH6J_EP1"];
-      _es = _es + ["DonUni6","DonUni2"];
-      _ng = ["MakarovSD","8Rnd_9x18_MakarovSD","Huntingrifle","x_22_LR_17_HMR","AKS_74_UN_Kobra","30Rnd_545x39_AKSD","AKS_GOLD","Rnd_762x39_AK47"];
-      _gs = _gs + _ng;
-      _gangshop_buy = _gangshop_buy + ["GangUni4"];
-	  if(iscop) then { _copshop_patrol = _copshop_patrol + _ng; }; 
-      
-      if(_vipLvl > 2) then {
-        _cs = _cs + ["SUV_RED","hilux1_civil_2_covered"];
-        _ts = _ts + ["UralOpen_CDF"];
-        _es = _es + ["DonUni7","DonUni4","DonUni5"];
-        _ng = ["G36_C_SD_Camo","30Rnd_556x45_G36SD","SCAR_L_CQC_Holo","30Rnd_556x45_Stanag"]; 
-        _gs = _gs + _ng;
-        _gangshop_buy = _gangshop_buy + ["GangUni5"];
-		if(iscop) then { _copshop_response = _copshop_response + _ng; };  
-        
-        if(_vipLvl > 3) then {
-          _as = _as + ["BAF_Merlin_HC3_D","MV22"];
-          _es = _es + ["DonUni8","DonUni1"];
-		  _cs = _cs + ["SUV_BLUE"];
-		 
-		  _ng = ["M8_HOLO_SD","M4A1_AIM_SD_CAMO","30Rnd_556x45_StanagSD","RPK_74","75Rnd_545x39_RPK","VSS_Vintorez","10Rnd_9x39_SP5_VSS"];
-          _gs = _gs + _ng;
-		  _gangshop_buy = _gangshop_buy + ["GangUni6"];
-          if(iscop) then { _copshop_response = ["MP5SD"] + _copshop_response + _ng; };   
-        };
-      };
-    }; 
- 
-      if(iscop) then {
-        _ca = _ca + _as - _civair;
-        _cv = _cv + _cs - _civveh;
-      };
-      if(isun) then {
-        _uns = _uns + _gs - _civguns + ["M9","15Rnd_9x19_M9"];
-        _unair = _unair + _as - _civair;
-        _unveh = _unveh + _cs - _civveh;
-      
-    };	  
-   };
- };
+	_vipLvl = 4;
+	if(_vipLvl > 0) then {
+		_civguns = _gs;
+		_civair = _as;
+		_civveh = _cs;
 
+		_cs = _cs + [
+			"SUV_PMC_BAF",
+			"TT650_Civ",
+			"car_hatchback",
+			"datsun1_civil_2_covered"
+		];
+    
+		_ts = _ts + ["MtvrRepair_DES_EP1","MtvrRefuel_DES_EP1"];
+		_as = _as + ["Ka137_PMC"];
+		_es = _es + [
+						"DonUni3","medikit","lockpick","NVGoggles","reparaturkit","lighter","handy",
+						"Fuelline","kanister","GPS","Binocular","supgrade"
+					];
+		_ng = ["M9_Don","15Rnd_9x19_M9","LeeEnfield_Don","x_303"];
+		_gangshop_buy = _gangshop_buy + ["GangUni3"];
+		_gs = _gs + _ng;
+		if (iscop) then { _copshop = ["M9SD"] + _copshop + _ng; };
+    
+		if(_vipLvl > 1) then {
+			_cs = _cs + ["SUV_WHITE","Tractor","TT650_Gue","hilux1_civil_1_open"];
+			_as = _as + ["MH6J_EP1"];
+			_es = _es + ["DonUni6","DonUni2"];
+			_ng = ["MakarovSD","8Rnd_9x18_MakarovSD","Huntingrifle","x_22_LR_17_HMR","AKS_74_UN_Kobra","30Rnd_545x39_AKSD","AKS_GOLD","Rnd_762x39_AK47"];
+			_gs = _gs + _ng;
+			_gangshop_buy = _gangshop_buy + ["GangUni4"];
+			if(iscop) then { _copshop_patrol = _copshop_patrol + _ng; }; 
+
+			if(_vipLvl > 2) then {
+				_cs = _cs + ["SUV_RED","hilux1_civil_2_covered"];
+				_ts = _ts + ["UralOpen_CDF"];
+				_es = _es + ["DonUni7","DonUni4","DonUni5"];
+				_ng = ["G36_C_SD_Camo","30Rnd_556x45_G36SD","SCAR_L_CQC_Holo","30Rnd_556x45_Stanag"]; 
+				_gs = _gs + _ng;
+				_gangshop_buy = _gangshop_buy + ["GangUni5"];
+				if(iscop) then { _copshop_response = _copshop_response + _ng; };  
+
+				if(_vipLvl > 3) then {
+					_as = _as + ["BAF_Merlin_HC3_D","MV22"];
+					_es = _es + ["DonUni8","DonUni1"];
+					_cs = _cs + ["SUV_BLUE"];
+
+					_ng = ["M8_HOLO_SD","M4A1_AIM_SD_CAMO","30Rnd_556x45_StanagSD","RPK_74","75Rnd_545x39_RPK","VSS_Vintorez","10Rnd_9x39_SP5_VSS"];
+					_gs = _gs + _ng;
+					_gangshop_buy = _gangshop_buy + ["GangUni6"];
+					if(iscop) then { _copshop_response = ["MP5SD"] + _copshop_response + _ng; };   
+				};
+			};
+		}; 
+ 
+		if(iscop) then {
+			_ca = _ca + _as - _civair;
+			_cv = _cv + _cs - _civveh;
+		};
+		if(isun) then {
+			_uns = _uns + _gs - _civguns + ["M9","15Rnd_9x19_M9"];
+			_unair = _unair + _as - _civair;
+			_unveh = _unveh + _cs - _civveh;
+		};	  
+	};
+};
 
 INV_ItemShops = [
 [gasstation1,"Fuel-station Shop",dummyobj,dummyobj,_fs,_fs,true], // #1
