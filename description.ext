@@ -1,0 +1,42 @@
+loadScreen = "images\loading.jpg";
+onLoadIntro   = $STRD_description_onloadintro;
+onLoadMission = $STRD_description_onloadmission;
+showCompass   = 1;
+showGPS       = 1;
+showMap       = 1;
+showNotePad   = 1;
+showWatch     = 1;
+debriefing    = 1;
+respawn       = 3;
+respawnDelay  = 30;
+disabledAI    = 1;
+
+// Define UN Custom GPS Skin
+onMinimapScript[] = {"BIS_fnc_customGPS_Spawn"};
+class Header {gameType = Team; minPlayers = 1; maxPlayers = 77;};
+
+disableChannels[]={0,2};
+
+class CfgSounds 
+{
+  sounds[] = {}; 
+  #include "sounds.hpp"
+};
+
+#include "RscDefines.hpp"
+#include "gfx.hpp"
+#include "animDlg.hpp"
+#include "1614524.hpp"
+#include "INVdialogs.hpp"
+#include "4782911.hpp"
+#include "bank.hpp"
+#include "4461230.hpp"
+#include "maindialogs.hpp"
+#include "civmenu.hpp"
+#include "RscTitles.hpp"
+#include "dev.hpp"
+#include "plantclass.hpp"
+#include "CodePad.hpp"
+#include "gcam_component.hpp"
+#include "armitxes\dialogs\common.hpp"
+#include "armitxes\dialogs\elements.hpp"
