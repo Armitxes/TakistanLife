@@ -104,7 +104,7 @@ switch (_doAction) do {
 				_plrNation = PLAYERDATA select 9;
 				if ( (player distance southGov) < 60 && _plrNation == 1 ) then { _side = "south"; };
 				if ( (player distance northGov) < 60 && ( _plrNation == 2 || player in (units sgov) ) ) then { _side = "north"; };
-				
+
 				if (_side != "") then {
 					capSuccessTime = time + 600;
 					(format ['player say "bank_alarm"; hintSilent "Someone is capturing the %2 government complex!";',_side]) call toClients;

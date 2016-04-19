@@ -285,35 +285,35 @@ _soushop = [
 
 _copshop        =
 [
-"CopUniDef",
-"M9",
-"Rnd_9x19_M9SD",
-"15Rnd_9x19_M9",
-"Binocular",
-"NVGoggles",
-"copreparaturkit",
-"kanister",
-"medikit",
-"handy",
-"SmokeShell"
+	"CopUniDef",
+	"M9",
+	"Rnd_9x19_M9SD",
+	"15Rnd_9x19_M9",
+	"Binocular",
+	"NVGoggles",
+	"copreparaturkit",
+	"kanister",
+	"medikit",
+	"handy",
+	"SmokeShell"
 ];
 
 _copshop_patrol =
 [
-"copUni",
-"towingtool",
-"roadblock",
-"RoadBarrier",
-"bargate",
-"SearchLight_US_EP1",
-"roadcone",
-"bunkersmall",
-"Spikestrip",
-"Sign_Checkpoint_US_EP1",
-"Land_CamoNetVar_NATO_EP1",
-"Land_HBarrier5",
-"Hedgehog_EP1",
-"supgrade"
+	"copUni",
+	"towingtool",
+	"roadblock",
+	"RoadBarrier",
+	"bargate",
+	"SearchLight_US_EP1",
+	"roadcone",
+	"bunkersmall",
+	"Spikestrip",
+	"Sign_Checkpoint_US_EP1",
+	"Land_CamoNetVar_NATO_EP1",
+	"Land_HBarrier5",
+	"Hedgehog_EP1",
+	"supgrade"
 ];
 
 _copshop_response = [
