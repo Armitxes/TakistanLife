@@ -11,4 +11,6 @@ Thanks to the continuous development and the new roleplay ideas of every player 
 **10.07.2016**: Our cooperation with British Borders will not be expanded. As the current state of the mission is stable, the development will now focus on ArmiLife. Any community is hereby granted to continue the project, if you need help in setup please ask for help in the forums.
 
 ## Links
-Project Website: https://armitxes.net/Projects/TakistanLife/ <br /> Official Forum: https://armitxes.net/Forum
+Project Website: https://armitxes.net/Projects/TakistanLife/ <br />
+Official Forum: https://armitxes.net/Forum <br />
+Changelogs: https://armitxes.net/Projects/TakistanLife/Changelogs
