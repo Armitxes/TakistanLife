@@ -22,7 +22,6 @@ if (isServer) then {
 	publicVariable "INV_itemstocks";
 };
 
-constitution = [];
 dragging                 = false;
 dragciv                  = 0;
 attached                 = false;

@@ -26,16 +26,6 @@ nopop			= true;
 canuseshopagain	= 1;
 JIP_Stats_Ready = false;
 
-if (isServer) then {
-	warrantarray = [];
-	lastElection = 0;
-	
-	_WahlArray = [];
-	for [{_i=0}, {_i < playercount}, {_i=_i+1}] do {_WahlArray = _WahlArray + [ [] ];};
-	server setVariable ["PMVote",_WahlArray,true];
-	server setVariable ["CCVote",_WahlArray,true];
-	_WahlArray = nil;
-};
 call compile preprocessfile "triggers.sqf";
 
 waitUntil { ( (time > 1) and ((alive player) or (local server)) ) };
@@ -139,6 +129,6 @@ if(!isDedicated) then {
 	execVM "specialareas.sqf";
 	execVM "armitxes\anticheat.sqf";
 	player globalchat "[Info] Welcome to Takistan Life: Rise of South";
-	player globalchat "[Info] Project website: https://github.com/Armitxes/TakistanLife";
-	//_bounty = (PLAYERDATA select 7); if(_bounty > 0) then { ["addWarrant",player,"Various Crimes",_bounty] execVM "warrant.sqf"; };
+	player globalchat "[Info] This server is protected by the Armitxes Network.";
+	_bounty = (PLAYERDATA select 7); if(_bounty > 0) then { ["addWarrant",player,"Various Crimes",_bounty] execVM "warrant.sqf"; };
 };

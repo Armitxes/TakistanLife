@@ -1,15 +1,13 @@
 _funcs = execVM "armitxes\_functions.sqf"; waitUntil {scriptDone _funcs};
 
-if(isServer) then {
-	["db\server",true] call execARM;
-	["init_map",true] call execARM;
+if (isServer) then {
+	_w = execVM "\tkl_server\init.sqf"; waitUntil {scriptDone _w};
 };
 
-["handler",true] call execARM;
-["plr_functions",true] call execARM;
+_w = execVM "armitxes\handler.sqf"; waitUntil {scriptDone _w};
+_w = execVM "armitxes\plr_functions.sqf"; waitUntil {scriptDone _w};
 
-if(!isDedicated) then 
-{
+if(!isDedicated) then {
 	chatAbbr = "[Bugged ";
 	iscop = false;
 	isun = false;
@@ -21,7 +19,7 @@ if(!isDedicated) then
 		if ((count PLAYERDATA) == 11) then {
 			lastArray = str(PLAYERDATA);
 			INV_LizenzOwner = [];
-			{ INV_LizenzOwner = INV_LizenzOwner + [(INV_Lizenzen select _x) select 0]; } forEach (PLAYERDATA select 6);    
+			{ INV_LizenzOwner = INV_LizenzOwner + [(INV_Lizenzen select _x) select 0]; } forEach (PLAYERDATA select 6);
 			chatAbbr = "[DevTest ";
 			INV_Fabrikowner = [];
 			_z = 0;

@@ -2,7 +2,7 @@ waitUntil {((alive player) or (local server))};
 
 /* Legal Advise!
 Script made by Armitxes (Jan Brodersen)
-All rights reserved, do not delete this note! */
+Do not delete this note! */
 
 _playerType = typeOf player;
 coptypes = ["Policeman","Soldier_Crew_PMC","BAF_crewman_MTP","BAF_Soldier_L_MTP","TK_Commander_EP1","BAF_Soldier_Marksman_MTP","BAF_Pilot_MTP"];

@@ -45,7 +45,7 @@ if (_art == "use") then
 							_w = [10,"[Easy] Hacking Terminal...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
 							waitUntil { scriptDone _w; };
 							["dollarz",5000] call INV_addInventoryItem;
-							["addWarrant",player,"Robbery",3000] execVM "warrant.sqf";
+							["addWarrant",player,"Robbery",1000] execVM "warrant.sqf";
 							('["add","crimes",format ["Someone robbed %1!",_obj]] execVM "armitxes\logs.sqf";') call toClients;
 						} else { ["add","other","Someone was faster than me...",true] execVM "armitxes\logs.sqf"; };
 					} else { ["add","other","Hacking this terminal is too complicated!",true] execVM "armitxes\logs.sqf"; };

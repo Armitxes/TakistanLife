@@ -29,7 +29,7 @@ while {isciv} do
 		      truckDemerits = truckDemerits - _penalty;
 		      if(truckDemerits <= 0) then {
 			  truckDemerits = 0;
-			  ["addWarrant",player,"Driving Without a License",2000] execVM "warrant.sqf";
+			  ["addWarrant",player,"Driving Without a License",250] execVM "warrant.sqf";
 			  INV_LizenzOwner = INV_LizenzOwner - ["truck"];
 		      };
 		      hintSilent format["Truck Demerit points lost: %1. Truck Demerit points remaining: %2", _penalty, truckDemerits];
@@ -38,7 +38,7 @@ while {isciv} do
 		      demerits = demerits - _penalty;
 		      if(demerits <= 0) then {
 			  demerits = 0;
-			  ["addWarrant",player,"Driving Without a License",2000] execVM "warrant.sqf";
+			  ["addWarrant",player,"Driving Without a License",200] execVM "warrant.sqf";
 			  INV_LizenzOwner = INV_LizenzOwner - ["car"];
 		      };
 		      hintSilent format["Demerit points lost: %1. Demerit points remaining: %2", _penalty, demerits];

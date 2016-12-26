@@ -23,34 +23,34 @@ switch (_art) do {
 	// Change this and I'll fcking kill you ;)
 	_list = lbAdd [4, "Crime not in List"]; lbSetData [4,_list,"1000"];
 	if(iscop) then {
-	    _list = lbAdd [4, "Murder"]; lbSetData [4,_list,"18000"];
+	    _list = lbAdd [4, "Murder"]; lbSetData [4,_list,"10000"];
 	    _list = lbAdd [4, "Hit & Run"]; lbSetData [4,_list,"10000"];
 	    _list = lbAdd [4, "Bribery"]; lbSetData [4,_list,"2000"];
-	    _list = lbAdd [4, "VIP Assassination"]; lbSetData [4,_list,"18000"];
-	    _list = lbAdd [4, "Bank/Casino Robbery"]; lbSetData [4,_list,"8000"];
-	    _list = lbAdd [4, "Breach of Highway Code"]; lbSetData [4,_list,"1000"];
-	    _list = lbAdd [4, "Evading a Police Checkpoint"]; lbSetData [4,_list,"5000"];
+	    _list = lbAdd [4, "VIP Assassination"]; lbSetData [4,_list,"10100"];
+	    _list = lbAdd [4, "Bank/Casino Robbery"]; lbSetData [4,_list,"7000"];
+	    _list = lbAdd [4, "Breach of Highway Code"]; lbSetData [4,_list,"500"];
+	    _list = lbAdd [4, "Evading a Police Checkpoint"]; lbSetData [4,_list,"2000"];
 	    _list = lbAdd [4, "Evading the Police"]; lbSetData [4,_list,"3000"];
-	    _list = lbAdd [4, "Theft of Civilian Vehicle"]; lbSetData [4,_list,"1000"];
+	    _list = lbAdd [4, "Theft of Civilian Vehicle"]; lbSetData [4,_list,"1500"];
 	    _list = lbAdd [4, "Assault"]; lbSetData [4,_list,"5000"];
 	    _list = lbAdd [4, "Rioting"]; lbSetData [4,_list,"3000"];
-	    _list = lbAdd [4, "Perverting the Course of Justice"]; lbSetData [4,_list,"2000"];  	
+	    _list = lbAdd [4, "Perverting the Course of Justice"]; lbSetData [4,_list,"500"];  	
 	    _list = lbAdd [4, "Robbery"]; lbSetData [4,_list,"4000"];
-	    _list = lbAdd [4, "Attempted Murder"]; lbSetData [4,_list,"6000"];
-	    _list = lbAdd [4, "Attempted Vehicle Theft"]; lbSetData [4,_list,"2000"];
+	    _list = lbAdd [4, "Attempted Murder"]; lbSetData [4,_list,"5000"];
+	    _list = lbAdd [4, "Attempted Vehicle Theft"]; lbSetData [4,_list,"1000"];
 	    _list = lbAdd [4, "Possession of Illegal Weapon"]; lbSetData [4,_list,"3000"];
-	    _list = lbAdd [4, "Anti Social Behaviour"]; lbSetData [4,_list,"2000"];
-	    _list = lbAdd [4, "Escaping Jail"]; lbSetData [4,_list,"5000"];
+	    _list = lbAdd [4, "Anti Social Behaviour"]; lbSetData [4,_list,"200"];
+	    _list = lbAdd [4, ""]; lbSetData [4,_list,"0"];
 	    _list = lbAdd [4, "Assisting a Jail Break"]; lbSetData [4,_list,"7000"];
 	    _list = lbAdd [4, "Arson"]; lbSetData [4,_list,"5000"];
-	    _list = lbAdd [4, "Kidnap"]; lbSetData [4,_list,"9000"];
+	    _list = lbAdd [4, "Kidnap"]; lbSetData [4,_list,"6000"];
 	    _list = lbAdd [4, "Manslaughter"]; lbSetData [4,_list,"5000"];
-	    _list = lbAdd [4, "Breach of Aviation Law"]; lbSetData [4,_list,"2500"];
+	    _list = lbAdd [4, "Breach of Aviation Law"]; lbSetData [4,_list,"750"];
 	};
-	_list = lbAdd [4, "Theft of UN/Cop Vehicle"]; lbSetData [4,_list,"6000"];
-	_list = lbAdd [4, "Illegal Border Crossing"]; lbSetData [4,_list,"5000"];
-	_list = lbAdd [4, "Crimes Against Humanity"]; lbSetData [4,_list,"17000"];
-    _list = lbAdd [4, "Abuse of Emergency call"]; lbSetData [4,_list,"3000"];
+	_list = lbAdd [4, "Theft of UN/Cop Vehicle"]; lbSetData [4,_list,"1700"];
+	_list = lbAdd [4, "Illegal Border Crossing"]; lbSetData [4,_list,"2500"];
+	_list = lbAdd [4, "Crimes Against Humanity"]; lbSetData [4,_list,"18000"];
+    _list = lbAdd [4, "Abuse of Emergency call"]; lbSetData [4,_list,"1500"];
 	_list = lbAdd [4, "Possession of Class A Drug"]; lbSetData [4,_list,"8000"];
 	_list = lbAdd [4, "Possession of Class B Drug"]; lbSetData [4,_list,"6000"];
     _list = lbAdd [4, "Slavery"]; lbSetData [4,_list,"10000"];
@@ -475,16 +475,15 @@ switch (_art) do {
 		if (!(createDialog "constitution")) exitWith {hint "Dialog Error!";};
 		_trennlinie = "-------------------------------------------------";
 		lbAdd [1, ""];
-		lbAdd [1, "§ Constitution of Takistan §"];
+		lbAdd [1, "§ Armitxes Network Rulebook §"];
 		lbAdd [1, _trennlinie];
-		
-		_pgh = 1;
-		{
-			lbAdd [1, format ["§%1 %2",_pgh,_x]];
-			_pgh=_pgh+1;
-		} forEach constitution;
-		
+		lbAdd [1, "Hacking & cheating = [ArmA 2, ArmA 3] Network & Player Index Ban"];
+		lbAdd [1, "Bug & glitch abusing = [ArmA 2] Network Ban (1 week -> 2 months -> Perma)"];
+		lbAdd [1, "Money cheating servers = [ArmA 2, Arma 3] Server & User IP Ban (Permanent)"];
+		lbAdd [1, ""];
 		lbAdd [1, _trennlinie];
-		lbAdd [1, "~ Passed by the Supreme Court of Takistan in cooperation with the United Nations"];
+		lbAdd [1, "§ Server Rulebook §"];
+		lbAdd [1, _trennlinie];
+		lbAdd [1, "Enter your server rules at the bottom of the maindialogs.sqf"];
 	};
 };

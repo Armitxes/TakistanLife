@@ -10,11 +10,14 @@
     
     _rank = (PLAYERDATA select 2);
     switch (_rank) do {
-      case 1: { chatAbbr = "[Verified "; };
+      case 1: { chatAbbr = "[Registred "; };
+      case 4: { chatAbbr = "[Member "; };
+      case 5: { chatAbbr = "[Veteran "; };
       case 230: { chatAbbr = "[DEV "; };
-      case 245: { chatAbbr = "[Director "; };
-      case 250: { chatAbbr = "[HR "; };
-      case 255: { chatAbbr = "[Owner "; };
+      case 250: { chatAbbr = "[Server Owner "; };
+      // Don't modify the 2 entries below
+      case 254: { chatAbbr = "[Network Admin "; };
+      case 255: { chatAbbr = "[Network Owner "; };
       default {
         if(_rank <= 240 && _rank >= 238) then {
             chatAbbr = "[Admin ";

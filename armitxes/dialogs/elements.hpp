@@ -101,7 +101,7 @@ class Portal
 	class lblInfoLong: RscStructuredText
 	{
 		idc = -1;
-		text = "Big thanks to Tonic for the creation of Takistan Life!<br />Takistan Life: Rise of South is an complete overhaul and continues the story of Takistan Life: Revolution!<br />Since Feb. 2013 TKL:RoS is being developed by Armitxes.<br /><br />Project: https://github.com/Armitxes/TakistanLife";
+		text = "Big thanks to Tonic for the creation of Takistan Life!<br />Takistan Life: Rise of South is an complete overhaul and continues the story of Takistan Life: Revolution!<br />Since Feb. 2013 TKL:RoS is being developed by Armitxes and open for every community to use/develop on.<br /><br />Website: armitxes.net/Projects/TakistanLife<br />Sources: https://github.com/Armitxes/TakistanLife";
 		x = 0.45321 * safezoneW + safezoneX;
 		y = 0.553715 * safezoneH + safezoneY;
 		w = 0.360011 * safezoneW;

@@ -1,15 +1,13 @@
-execARM = { _scr = execVM (format ["armitxes\%1.sqf",_this select 0]); if((_this select 1)) then { waitUntil {scriptDone _scr}; } };
 execString = { _code = _this select 0; if(_code != "") then { call compile _code; }; }; 
 msg_pd = { titleText [_this select 0, "plain down"]; };
 
 ARM_fnc_countDown = {
-  _c = _this select 0;
-  for [{_x=0},{_x<=_c},{_x=_x+1}] do { sleep 1; };
-  true
+	_c = _this select 0;
+	for [{_x=0},{_x<=_c},{_x=_x+1}] do { sleep 1; };
+	true
 };
 
-if(!isDedicated) then
-{
+if(!isDedicated) then {
 	setMoney = {
 		PLAYERDATA set [1, (PLAYERDATA select 1) + (_this select 0)];
 	};

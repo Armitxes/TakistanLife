@@ -83,7 +83,7 @@ hintSilent "The Hostage is marked on the map, don't let the police get you.";
 "if (iscop) then {player sideChat ""Someone is trying to take a hostage. The hostage has been marked on the map. Arrest the hostage taker before its too late!""};" call broadcast;
 
 hintSilent "The police are on to you, hurry up!";
-["addWarrant",player,"Kidnapping a VIP",11000] execVM "warrant.sqf";
+["addWarrant",player,"Kidnapping a VIP",5000] execVM "warrant.sqf";
 
 while {true} do {
   "htargetmarker" setmarkerpos getpos hostage1;
@@ -92,12 +92,11 @@ while {true} do {
 		hintSilent "Well done, you kept the hostage for 15 minutes, $30000 has been transfered to your account.";
 		sleep 10;
 		"server globalchat ""Hostage Taker WINS, he kept the hostage for 15 minutes."";" call broadcast;
-		["addWarrant",player,"Kidnapping",6000] execVM "warrant.sqf";
 		sleep 1;
 		deletevehicle hostage1;
 		deletemarker "htargetmarker";
 		_minutecounter = 0;
-    deleteGroup _group;
+		deleteGroup _group;
 	};
 
 	if (!alive hostage1 and alive player) exitWith {

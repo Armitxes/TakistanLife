@@ -80,7 +80,7 @@ if (_loopart == "drugs") then {
 		};
 
 		["INV_InventarArray", "illegal"] call INV_StorageRemoveKindOf;
-		[format ["addWarrant",player,"trafficking illegals (%1)",_infos call INV_getitemName],drugsvalue] execVM "warrant.sqf";
+		[format ["addWarrant",player,"trafficking illegals (%1)",_infos call INV_getitemName],drugsvalue/2] execVM "warrant.sqf";
 		hintSilent localize "STRS_civmenucheck_beendrugsearched";
 	} else {(format ["if (player == %2) then {hintSilent localize ""STRS_civmenu_hasnodrugs"";};", player, _checkcop]) call toClients;};
 

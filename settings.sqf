@@ -57,11 +57,11 @@ if (_art == "Tutorial") then {
 if (_art == "FAQ") then {
 	if (!(createDialog "InfoDialog")) exitWith {hint "Dialog Error!";};
 	ctrlSetText[2, " FAQ "];
-	ctrlSetText[1, "\nIf you need any help please ask via global chat or get on teamspeak."];
+	ctrlSetText[1, "\nIf you need any help please ask via chat or get on teamspeak."];
 };
 
 if (_art == "About") then {
 	if (!(createDialog "InfoDialog")) exitWith {hint "Dialog Error!";};
 	ctrlSetText[2, " About "];
-	ctrlSetText[1, "\nTakistan Life - Developed for British Borders\n\n- DEVELOPERS -\nA big thanks to our developers who made this mission and keep it up2date.\n\n- Tonic\n- Armitxes\n- Elivs\n"];
+	ctrlSetText[1, "\nTakistan Life RoS\n\n- DEVELOPERS -\nA big thanks to our developers who made this mission and keep it up2date.\n\n- Tonic\n- Armitxes\n"];
 };
