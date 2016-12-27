@@ -10,6 +10,7 @@ ANY COMMUNITY IS HEREBY ALLOWED TO USE THIS MISSION FOR IT'S SERVER. ALSO, YOU A
 
 ## Announcements
 **26.12.2016**: Big news! You only require a windows machine and 5 minutes of your time!! Click on the "Register Server" button for a guide, saving system included without database setup! Link can be found in the "Links" section.
+
 **10.07.2016**: Our cooperation with British Borders will not be expanded. As the current state of the mission is stable, the development will now focus on ArmiLife. Any community is hereby granted to continue the project, if you need help in setup please ask for help in the forums.
 
 ## Links
