@@ -34,7 +34,7 @@ switch (_doAction) do
 		} else { titleText ["Wrong access code", "PLAIN DOWN", 0.1]; };
 	};
 	case "unCP": {
-		if (isun && ((PLAYERDATA select 4) == 2)) then {
+		if (isun) then {
 			_mrk = _this select 1;
 			if ((markerText _mrk) == "OPEN") then { 
 				_mrk setMarkerText "CLOSED";

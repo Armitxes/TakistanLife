@@ -4,10 +4,9 @@
     lastArray = str(PLAYERDATA);
     
     INV_LizenzOwner = [];
-    { INV_LizenzOwner = INV_LizenzOwner + [(INV_Lizenzen select _x) select 0]; } forEach (PLAYERDATA select 6);    
-    
+    { INV_LizenzOwner = INV_LizenzOwner + [(INV_Lizenzen select _x) select 0]; } forEach (PLAYERDATA select 6);
+
     chatAbbr = "[Guest ";
-    
     _rank = (PLAYERDATA select 2);
     switch (_rank) do {
       case 1: { chatAbbr = "[Registred "; };
@@ -15,7 +14,6 @@
       case 5: { chatAbbr = "[Veteran "; };
       case 230: { chatAbbr = "[DEV "; };
       case 250: { chatAbbr = "[Server Owner "; };
-      // Don't modify the 2 entries below
       case 254: { chatAbbr = "[Network Admin "; };
       case 255: { chatAbbr = "[Network Owner "; };
       default {
