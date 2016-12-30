@@ -13,7 +13,7 @@ if(!isDedicated) then {
 	isun = false;
 	isciv = false;
 	PLAYERDATA = [0];
-	
+
 	if(enableDebug) then {
 		PLAYERDATA = [1,300000,245,4,2,50,[],0,[],0,''];
 		if ((count PLAYERDATA) == 11) then {
@@ -52,6 +52,6 @@ if(!isDedicated) then {
 		waitUntil { !dialog };
 	};
 	if(isciv && (PLAYERDATA select 9) == 2) then {player setPos (getMarkerPos "respawn_civilian2");};
-	["elections",false] call execARM;
+	[] execVM "elections.sqf";
 	civstatsdone = true;
 };

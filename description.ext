@@ -13,7 +13,7 @@ disabledAI    = 1;
 
 // Define UN Custom GPS Skin
 onMinimapScript[] = {"BIS_fnc_customGPS_Spawn"};
-class Header {gameType = Team; minPlayers = 1; maxPlayers = 77;};
+class Header {gameType = Life; minPlayers = 1; maxPlayers = 77;};
 
 disableChannels[]={0,2};
 

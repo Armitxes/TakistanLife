@@ -104,7 +104,7 @@ if (isServer) then {
 			while {true} do {
 				svrStats = [diag_fps,time]; publicVariable "svrStats"; sleep 300;
 				_serverId = owner server;
-				if (isNull fakeHcClient || owner unoCommander == _serverId) then {
+				if (isNull fakeHcClient) then {
 					_newClient = objNull;
 					{ if (isPlayer _x) exitWith { _newClient = _x; };  } forEach civarray;
 					fakeHcClient = _newClient;
@@ -117,7 +117,7 @@ if (isServer) then {
 							};
 						} forEach (nearestObjects [[6453,8127,0],["Man","Animal"], 9000]);
 						prisondoor setOwner (owner fakeHcClient);
-						prisonDoor3 setOwner (owner fakeHcClient);
+						prisonDoor2 setOwner (owner fakeHcClient);
 					};
 				};
 			};
