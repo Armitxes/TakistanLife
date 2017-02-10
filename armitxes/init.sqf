@@ -52,6 +52,6 @@ if(!isDedicated) then {
 		waitUntil { !dialog };
 	};
 	if(isciv && (PLAYERDATA select 9) == 2) then {player setPos (getMarkerPos "respawn_civilian2");};
-	[] execVM "elections.sqf";
+	[] execVM "armitxes\elections.sqf";
 	civstatsdone = true;
 };
