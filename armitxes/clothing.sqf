@@ -6,19 +6,19 @@ _uniforms = [
   ["unUni4","UN_CDF_Soldier_Pilot_EP1"],
   ["cc","TK_Commander_EP1"],
   ["CopUniDef","Policeman"],
-  ["copUni","Soldier_Crew_PMC"],
-  ["copUni1","Soldier_Crew_PMC"],
-  ["copUni2","BAF_Soldier_Marksman_MTP"],
-  ["copUni3","BAF_Soldier_L_MTP"],
-  ["copUni4","BAF_crewman_MTP"],
-  ["copUni5","BAF_Soldier_L_MTP"],
-  ["copUni6","BAF_Pilot_MTP"],
-  ["copUni7","BAF_Pilot_MTP"],
-  ["copUni8","Soldier_Crew_PMC"],
-  ["copUni9","Soldier_Crew_PMC"],
-  ["copUni10","Soldier_Crew_PMC"],
-  ["copUni11","BAF_crewman_MTP"],
-  ["copUni12","BAF_Soldier_L_MTP"],
+  ["copUni","Soldier_Crew_PMC",[0,"images\copTraffic.paa"]],
+  ["copUni1","Soldier_Crew_PMC",[0,"images\copCR.paa"]],
+  ["copUni2","BAF_Soldier_Marksman_MTP",[1,"images\SCO19arm.paa"],[2,"images\SCO19equip.paa"]],
+  ["copUni3","BAF_Soldier_L_MTP",[1,"images\SCO19arm.paa"],[2,"images\SCO19equip.paa"]],
+  ["copUni4","BAF_crewman_MTP",[0,"images\SCO19cloth.paa"],[1,"images\SCO19arm.paa"],[2,"images\SCO19equip.paa"]],
+  ["copUni5","BAF_Soldier_L_MTP",[0,"images\SCO19cloth.paa"],[1,"images\SCO19arm.paa"],[2,"images\SCO19equip.paa"]],
+  ["copUni6","BAF_Pilot_MTP",[1,"images\SCO19arm.paa"],[2,"images\SCO19equip.paa"]],
+  ["copUni7","BAF_Pilot_MTP",[0,"images\SCO19cloth.paa"],[1,"images\SCO19arm.paa"],[2,"images\SCO19equip.paa"]],
+  ["copUni8","Soldier_Crew_PMC",[0,"images\policesgt.paa"]],
+  ["copUni9","Soldier_Crew_PMC",[0,"images\polinter.paa"]],
+  ["copUni10","Soldier_Crew_PMC",[0,"images\copmp.paa"]],
+  ["copUni11","BAF_crewman_MTP",[0,"images\SCO19clothgrey.paa"],[1,"images\SCO19arm.paa"],[2,"images\SCO19equip.paa"]],
+  ["copUni12","BAF_Soldier_L_MTP",[0,"images\SCO19clothgrey.paa"],[1,"images\SCO19arm.paa"],[2,"images\SCO19equip.paa"]],
   ["civUni1","TK_CIV_Takistani01_EP1"],
   ["civUni2","TK_CIV_Takistani02_EP1"],
   ["civUni3","TK_CIV_Takistani03_EP1"],
@@ -32,6 +32,7 @@ _uniforms = [
   ["docUni","Dr_Hladik_EP1"],
   ["docUni2","USMC_LHD_Crew_Blue"],
   ["docUni3","Doctor"],
+  ["docUni4","Worker2",[0,"images\paramedicskin.paa"]],
   ["TerrorUni1","TK_GUE_Soldier_3_EP1"],        // Terrorist (Bandana)
   ["TerrorUni2","TK_GUE_Soldier_5_EP1"],        // Terrorist (Turban)
   ["TerrorUni3","TK_GUE_Soldier_AA_EP1"],       // Terrorist (Brown)
@@ -62,7 +63,7 @@ _uniforms = [
   ["PmcUni6","Soldier_GL_M16A2_PMC"],			// Security Contractor
   ["PmcUni7","Soldier_Pilot_PMC"],				// PMC Pilot
   ["PmcUni8","Ry_PMC"],						   // Team Leader
-  ["GangUni1","GUE_Soldier_MG"],				// Hood		
+  ["GangUni1","GUE_Soldier_MG"],				// Hood
   ["GangUni2","GUE_Soldier_GL"],               //Balaclava
   ["GangUni3","GUE_Soldier_CO"],			   // Cap
   ["GangUni4","GUE_Soldier_AR"],			   // Boonie
@@ -71,7 +72,7 @@ _uniforms = [
   ["northWar","US_Soldier_EP1"]			  // North War
 ];
 
-_medics = ["docUni","docUni2","docUni3"];
+_medics = ["docUni","docUni2","docUni3","docUni4"];
 _pmcs = ["PmcUni1","PmcUni2","PmcUni3","PmcUni4","PmcUni5","PmcUni6","PmcUni7","PmcUni8"];
 
 
@@ -109,32 +110,32 @@ if(_action == "use") exitWith {
 				_pubPlrData = [PLAYERDATA select 4, PLAYERDATA select 5, PLAYERDATA select 9,0];
 				_plrInit = format['this setVehicleVarName "%1"; %1 = this; this setVariable ["pubPlrData",%2]; ', rolestring, _pubPlrData];
 				if(count _x == 3) then {
-					_plrInit = _plrInit + format["this setObjectTexture %1;", (_x select 2)]; 
-					respawnSkin = (_x select 2); 
-				}; 
+					_plrInit = _plrInit + format["this setObjectTexture %1;", (_x select 2)];
+					respawnSkin = (_x select 2);
+				};
 				if(count _x == 4) then {
-					_plrInit = _plrInit + format["this setObjectTexture %1;this setObjectTexture %2", (_x select 2), (_x select 3)]; 
-					respawnSkin = (_x select 2); respawnSkinb = (_x select 3); 
-				}; 
+					_plrInit = _plrInit + format["this setObjectTexture %1;this setObjectTexture %2", (_x select 2), (_x select 3)];
+					respawnSkin = (_x select 2); respawnSkinb = (_x select 3);
+				};
 				if(count _x == 5) then {
-					_plrInit = _plrInit + format["this setObjectTexture %1;this setObjectTexture %2;this setObjectTexture %3",(_x select 2),(_x select 3),(_X select 4)]; 
-					respawnSkin = (_x select 2); respawnSkinb = (_x select 3); respawnSkinc = (_x select 4); 
+					_plrInit = _plrInit + format["this setObjectTexture %1;this setObjectTexture %2;this setObjectTexture %3",(_x select 2),(_x select 3),(_X select 4)];
+					respawnSkin = (_x select 2); respawnSkinb = (_x select 3); respawnSkinc = (_x select 4);
 				};
 				player setVehicleInit _plrInit;
 				processInitCommands;
 				if(_old isKindOf "Animal") then { deleteVehicle playerPet; playerPet = nil; };
 				deleteVehicle _old;
 				sleep 0.2;
-						
-				{ 
-					if (_x == _old) exitWith { call compile format ["%1 = player; publicVariable str(%1);",rolestring]; }; 
+
+				{
+					if (_x == _old) exitWith { call compile format ["%1 = player; publicVariable str(%1);",rolestring]; };
 				} foreach playerarray;
 
 				removeAllWeapons _newUnit;
 				{_newUnit addMagazine _x} forEach _mag;
 				{_newUnit addWeapon _x} forEach _wep;
 				_newUnit selectWeapon _pwep;
-				
+
 				[(_x select 0), -1] call INV_AddInventoryItem;
 				player addEventHandler ["fired", {["fired", (_this select 4), (_this select 1)] execVM "stun.sqf";}];
 				player addEventHandler ["handleDamage", {_this call compile preprocessfile "armitxes\setHit.sqf"}];
@@ -145,7 +146,7 @@ if(_action == "use") exitWith {
 					publicVariable "warrantarray";
 				};
 			};
-			titleText ["Clothes changed", "BLACK IN"];  
+			titleText ["Clothes changed", "BLACK IN"];
 			disableUserInput false;
 		};
 	} forEach _uniforms;
@@ -159,7 +160,7 @@ if(_action == "respawn" && !(isNil "respawnSkin")) then {
 		if ( !(isNil "respawnSkinc") ) then {
 			_plrInit = _plrInit + format["this setObjectTexture %1;",respawnSkinc];
 		}
-	};		
+	};
 	player setVehicleInit _plrInit;
 	processInitCommands;
 };

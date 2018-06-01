@@ -68,20 +68,20 @@ if (isServer) then {
     -1,//hosair
 	-1,// Clothing Shop Basic
 	-1,// South Clothing Shop
-    -1,// PMC Shop	
+    -1,// PMC Shop
     -1,// PMC Car
     -1,// PMC Air
     -1, // Pet Shop
     -1,	// RS 2
 	[-1,5], // Mining Tools South
-    [10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1] // Gunshop 2 
-	
-	
+    [10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1] // Gunshop 2
+
+
   ];
 
   publicvariable "INV_itemstocks";
 };
-              
+
 INV_itemmaxstocks = [
 [5,5,5], //gasstation1 #1
 [5,5,5], //gasstation2 #2
@@ -151,13 +151,13 @@ INV_itemmaxstocks = [
 -1,//hosair
 -1,//Clothing Shop Basic
 -1,//Clothing Shop South
--1,// PMC Shop	
+-1,// PMC Shop
 -1,// PMC Car
 -1,// PMC Air
 -1,
 -1, // RS 2
 [-1,5], // Mining Tools South
-[10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1] // Gunshop 2 
+[10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1] // Gunshop 2
 ];
 
 
@@ -180,7 +180,7 @@ _es = ["Binocular", "NVGoggles", "GPS","Fuelline","handy","bugfixer","hackkit","
 _cu = ["supgrade","towingtool"];
 //Car Shop
 //Bike, Old Motorbike, Motorbike, ATV, Vohla Blue, Vohla Grey, Lada, Lada Hippie, S1203 Van, Landrover
-_cs = ["Old_bike_TK_CIV_EP1","MMT_Civ","Old_moto_TK_Civ_EP1","TT650_TK_CIV_EP1","ATV_CZ_EP1","Volha_1_TK_CIV_EP1","VWGolf","SkodaBlue","Lada1_TK_CIV_EP1","Lada2_TK_CIV_EP1","UAZ_Unarmed_TK_CIV_EP1","S1203_TK_CIV_EP1","hilux1_civil_3_open_EP1","LandRover_TK_CIV_EP1","SUV_PMC_BAF","SUV_BLUE","TT650_Civ","car_hatchback","datsun1_civil_2_covered","Tractor","TT650_Gue","hilux1_civil_1_open","hilux1_civil_2_covered"];
+_cs = ["Old_bike_TK_CIV_EP1","MMT_Civ","Old_moto_TK_Civ_EP1","TT650_TK_CIV_EP1","ATV_CZ_EP1","Volha_1_TK_CIV_EP1","VWGolf","SkodaBlue","Lada1_TK_CIV_EP1","Lada2_TK_CIV_EP1","UAZ_Unarmed_TK_CIV_EP1","S1203_TK_CIV_EP1","hilux1_civil_3_open_EP1","LandRover_TK_CIV_EP1","SUV_PMC_BAF","SUV_WHITE","SUV_BLUE","SUV_BLUEWHITE","SUV_RED","TT650_Civ","car_hatchback","datsun1_civil_2_covered","Tractor","TT650_Gue","hilux1_civil_1_open","hilux1_civil_2_covered"];
 //Pickup Shop - Unused Arma2
 _ps = ["datsun1_civil_1_open", "datsun1_civil_2_covered", "datsun1_civil_3_open", "hilux1_civil_1_open", "hilux1_civil_2_covered"];
 //Vehicle Shop - Same as Car Shop, Used for Car Shop 3
@@ -332,237 +332,237 @@ _copshop_response = [
 
 _copshop_SCO =
 [
-"FlagCarrierBLUFOR_EP1",
-"copUni2",
-"copUni3",
-"copUni4",
-"copUni5",
-"copUni6",
-"copUni7",
-"copUni11",
-"copUni12",
-"US_Backpack_EP1",
-"lockpick",
-"copreparaturkit",
-"kanister",
-"medikit",
-"handy",
-"vclammo",
-"NVGoggles",
-"GPS",
-"Binocular_Vector",
-"glock17_EP1_COP",
-"Rnd_9x19_glock17",
-"M110_NVG_EP1",
-"20rnd_762x51_B_SCAR",
-"1Rnd_Smoke_M203",
-"M249_EP1",
-"200Rnd_556x45_M249",
-"MG36",
-"100Rnd_556x45_BetaCMag",
-"G36C",
-"G36A_camo",
-"G36K_camo",
-"G36_C_SD_eotech",
-"M4A1_HWS_GL_CAMO",
-"30Rnd_556x45_G36",
-"30Rnd_556x45_G36SD",
-"30Rnd_556x45_Stanag",
-"BAF_LRR_scoped",
-"5Rnd_86x70_L115A1",
-"SMAW",
-"SMAW_HEAA",
-"M47Launcher_EP1",
-"Dragon_EP1",
-"Stinger",
-"Stinger_mag",
-"PipeBomb",
-"M2StaticMG_US_EP1",
-"Land_ladderEP1",
-"Land_ladder_half_EP1"
+	"FlagCarrierBLUFOR_EP1",
+	"copUni2",
+	"copUni3",
+	"copUni4",
+	"copUni5",
+	"copUni6",
+	"copUni7",
+	"copUni11",
+	"copUni12",
+	"US_Backpack_EP1",
+	"lockpick",
+	"copreparaturkit",
+	"kanister",
+	"medikit",
+	"handy",
+	"vclammo",
+	"NVGoggles",
+	"GPS",
+	"Binocular_Vector",
+	"glock17_EP1_COP",
+	"Rnd_9x19_glock17",
+	"M110_NVG_EP1",
+	"20rnd_762x51_B_SCAR",
+	"1Rnd_Smoke_M203",
+	"M249_EP1",
+	"200Rnd_556x45_M249",
+	"MG36",
+	"100Rnd_556x45_BetaCMag",
+	"G36C",
+	"G36A_camo",
+	"G36K_camo",
+	"G36_C_SD_eotech",
+	"M4A1_HWS_GL_CAMO",
+	"30Rnd_556x45_G36",
+	"30Rnd_556x45_G36SD",
+	"30Rnd_556x45_Stanag",
+	"BAF_LRR_scoped",
+	"5Rnd_86x70_L115A1",
+	"SMAW",
+	"SMAW_HEAA",
+	"M47Launcher_EP1",
+	"Dragon_EP1",
+	"Stinger",
+	"Stinger_mag",
+	"PipeBomb",
+	"M2StaticMG_US_EP1",
+	"Land_ladderEP1",
+	"Land_ladder_half_EP1"
 ];
 
 _copfo=
 [
-"copUni7",
-"copUni6",
-"copUni8",
-"copUni9",
-"copUni10",
-"US_Backpack_EP1",
-"M4A1",
-"M16A2",
-"M4A1_AIM",
-"M16A4",
-"M4A1_HWS_GL",
-"30Rnd_556x45_Stanag",
-"Mk13_EP1",
-"1Rnd_Smoke_M203",
-"Land_ladderEP1",
-"Land_ladder_half_EP1",
-"AW159_Lynx_BAF",
-"US_WarfareBUAVterminal_Base_EP1",
-"FlagCarrierBLUFOR_EP1"
+	"copUni7",
+	"copUni6",
+	"copUni8",
+	"copUni9",
+	"copUni10",
+	"US_Backpack_EP1",
+	"M4A1",
+	"M16A2",
+	"M4A1_AIM",
+	"M16A4",
+	"M4A1_HWS_GL",
+	"30Rnd_556x45_Stanag",
+	"Mk13_EP1",
+	"1Rnd_Smoke_M203",
+	"Land_ladderEP1",
+	"Land_ladder_half_EP1",
+	"AW159_Lynx_BAF",
+	"US_WarfareBUAVterminal_Base_EP1",
+	"FlagCarrierBLUFOR_EP1"
 ];
 
 _uns =
 [
-"MP5SD",
-"30rnd_9x19_MP5SD",
-"M9",
-"Rnd_9x19_M9SD",
-"15Rnd_9x19_M9",
-"SCAR_L_CQC",
-"30Rnd_556x45_Stanag",
-"NVGoggles",
-"unUni4",
-"GPS",
-"vclammo",
-"copreparaturkit",
-"seccam",
-"kanister",
-"medikit",
-"supgrade",
-"towingtool",
-"handy",
-"SmokeShell",
-"Spikestrip",
-"Sign_Checkpoint_US_EP1",
-"roadblock",
-"bargate",
-"RoadBarrier",
-"SearchLight_US_EP1",
-"roadcone",
-"Land_HBarrier5",
-"Land_CamoNetVar_NATO_EP1",
-"bunkersmall",
-"Hedgehog_EP1",
-"CampEast_EP1"
+	"MP5SD",
+	"30rnd_9x19_MP5SD",
+	"M9",
+	"Rnd_9x19_M9SD",
+	"15Rnd_9x19_M9",
+	"SCAR_L_CQC",
+	"30Rnd_556x45_Stanag",
+	"NVGoggles",
+	"unUni4",
+	"GPS",
+	"vclammo",
+	"copreparaturkit",
+	"seccam",
+	"kanister",
+	"medikit",
+	"supgrade",
+	"towingtool",
+	"handy",
+	"SmokeShell",
+	"Spikestrip",
+	"Sign_Checkpoint_US_EP1",
+	"roadblock",
+	"bargate",
+	"RoadBarrier",
+	"SearchLight_US_EP1",
+	"roadcone",
+	"Land_HBarrier5",
+	"Land_CamoNetVar_NATO_EP1",
+	"bunkersmall",
+	"Hedgehog_EP1",
+	"CampEast_EP1"
 ];
 
 _unms        =
 [
-"US_Backpack_EP1",
-"30Rnd_556x45_Stanag",
-"SCAR_H_CQC_CCO",
-"M110_NVG_EP1",
-"20Rnd_762x51_B_SCAR",
-"M24_des_EP1",
-"5Rnd_762x51_M24",
-"M249_EP1",
-"200Rnd_556x45_M249",
-"BAF_L86A2_ACOG",
-"Stinger",
-"Stinger_mag",
-"PipeBomb",
-"MAAWS",
-"MAAWS_HEAT",
-"Land_ladderEP1",
-"Land_ladder_half_EP1"
+	"US_Backpack_EP1",
+	"30Rnd_556x45_Stanag",
+	"SCAR_H_CQC_CCO",
+	"M110_NVG_EP1",
+	"20Rnd_762x51_B_SCAR",
+	"M24_des_EP1",
+	"5Rnd_762x51_M24",
+	"M249_EP1",
+	"200Rnd_556x45_M249",
+	"BAF_L86A2_ACOG",
+	"Stinger",
+	"Stinger_mag",
+	"PipeBomb",
+	"MAAWS",
+	"MAAWS_HEAT",
+	"Land_ladderEP1",
+	"Land_ladder_half_EP1"
 ];
 
 _unnco =
 [
-"US_Backpack_EP1",
-"M16A4",
-"SCAR_L_CQC_EGLM_Holo",
-"SCAR_L_STD_Mk4CQT",
-"30Rnd_556x45_Stanag",
-"1Rnd_Smoke_M203",
-"M113_UN_EP1",
-"BTR40_UN"
+	"US_Backpack_EP1",
+	"M16A4",
+	"SCAR_L_CQC_EGLM_Holo",
+	"SCAR_L_STD_Mk4CQT",
+	"30Rnd_556x45_Stanag",
+	"1Rnd_Smoke_M203",
+	"M113_UN_EP1",
+	"BTR40_UN"
 ];
 
 _terrorshop_buy =
 [
-"C4",
-"reparaturkit",
-"Binocular",
-"NVGoggles",
-"GPS",
-"lockpick",
-"ziptie",
-"medikit",
-"vclammo",
-"hackkit",
-"TerrorUni1",
-"TerrorUni2",
-"TerrorUni3",
-"TerrorUni4",
-"TerrorUni5",
-"TerrorUni6",
-"TerrorUni7",
-"US_Backpack_EP1",
-"Makarov",
-"Rnd_9x18_Makarov",
-"AK74",
-"AK74GL",
-"AKS74U",
-"AKS74pso",
-"30Rnd_545x39_AK",
-"Rnd_762x39_AK47",
-"1Rnd_HE_GP25",
-"Sa58P_EP1",
-"Sa58V_EP1",
-"30Rnd_762x39_SA58",
-"SVD",
-"10Rnd_762x54_SVD",
-"KSVK",
-"5Rnd_127x108_KSVK",
-"PK",
-"100Rnd_762x54_PK",
-"RPG7V",
-"PG7VR",
-"PG7VL",
-"PG7V",
-"OG7",
-"Strela",
-"Strela_mag",
-"HandGrenade",
-"DSHKM_TK_INS_EP1",
-"Land_CamoNetVar_NATO_EP1",
-"Fort_Barricade_EP1",
-"Land_Campfire_burning",
-"US_WarfareBUAVterminal_Base_EP1",
-"CampEast_EP1",
-"Land_HBarrier5"
+	"C4",
+	"reparaturkit",
+	"Binocular",
+	"NVGoggles",
+	"GPS",
+	"lockpick",
+	"ziptie",
+	"medikit",
+	"vclammo",
+	"hackkit",
+	"TerrorUni1",
+	"TerrorUni2",
+	"TerrorUni3",
+	"TerrorUni4",
+	"TerrorUni5",
+	"TerrorUni6",
+	"TerrorUni7",
+	"US_Backpack_EP1",
+	"Makarov",
+	"Rnd_9x18_Makarov",
+	"AK74",
+	"AK74GL",
+	"AKS74U",
+	"AKS74pso",
+	"30Rnd_545x39_AK",
+	"Rnd_762x39_AK47",
+	"1Rnd_HE_GP25",
+	"Sa58P_EP1",
+	"Sa58V_EP1",
+	"30Rnd_762x39_SA58",
+	"SVD",
+	"10Rnd_762x54_SVD",
+	"KSVK",
+	"5Rnd_127x108_KSVK",
+	"PK",
+	"100Rnd_762x54_PK",
+	"RPG7V",
+	"PG7VR",
+	"PG7VL",
+	"PG7V",
+	"OG7",
+	"Strela",
+	"Strela_mag",
+	"HandGrenade",
+	"DSHKM_TK_INS_EP1",
+	"Land_CamoNetVar_NATO_EP1",
+	"Fort_Barricade_EP1",
+	"Land_Campfire_burning",
+	"US_WarfareBUAVterminal_Base_EP1",
+	"CampEast_EP1",
+	"Land_HBarrier5"
 ];
 
 _terrorvehicles = [
-"Pickup_PK_TK_GUE_EP1",
-"UAZ_MG_TK_EP1",
-"Offroad_DSHKM_TK_GUE_EP1",
-"Mi17_TK_EP1",
-"UH1H_TK_EP1"
+	"Pickup_PK_TK_GUE_EP1",
+	"UAZ_MG_TK_EP1",
+	"Offroad_DSHKM_TK_GUE_EP1",
+	"Mi17_TK_EP1",
+	"UH1H_TK_EP1"
 ];
 
 _gangshop_buy =
 [
-"revolver_gold_EP1",
-"Rnd_45ACP",
-"UZI_EP1",
-"Rnd_9x19_UZI",
-"Binocular",
-"NVGoggles",
-"GPS",
-"hackkit",
-"reparaturkit",
-"lockpick",
-"lighter",
-"Fuelline",
-"ziptie",
-"kanister",
-"medikit",
-"bargate",
-"BigbagfenceCorner",
-"bigbagfence",
-"bigbagfenceRound",
-"Land_CamoNetVar_NATO_EP1",
-"bunkersmall",
-"US_WarfareBUAVterminal_Base_EP1",
-"CampEast_EP1",
-"GangUni1","GangUni2","GangUni3",
-"GangUni4","GangUni5","GangUni6"
+	"revolver_gold_EP1",
+	"Rnd_45ACP",
+	"UZI_EP1",
+	"Rnd_9x19_UZI",
+	"Binocular",
+	"NVGoggles",
+	"GPS",
+	"hackkit",
+	"reparaturkit",
+	"lockpick",
+	"lighter",
+	"Fuelline",
+	"ziptie",
+	"kanister",
+	"medikit",
+	"bargate",
+	"BigbagfenceCorner",
+	"bigbagfence",
+	"bigbagfenceRound",
+	"Land_CamoNetVar_NATO_EP1",
+	"bunkersmall",
+	"US_WarfareBUAVterminal_Base_EP1",
+	"CampEast_EP1",
+	"GangUni1","GangUni2","GangUni3",
+	"GangUni4","GangUni5","GangUni6"
 ];
 _mayorveh =
 [
@@ -731,7 +731,7 @@ INV_ItemShops = [
 [coppatrol,"Patrol Officers",coppatrol,dummyobj,_copshop_patrol,_copshop_patrol,true], //46
 [copcriminal,"Advanced Officers",copcriminal,dummyobj,_copshop_response,_copshop_response,true], //47
 [copswat,"SCO19",copswat,dummyobj,_copshop_SCO,_copshop_SCO,true],   //48
-                                                                                   
+
 [terrorvehicles33,"Terrorist vehicles",dummyobj,"tairspawn",_terrorvehicles,_terrorvehicles,true],  // 49
 [terrorshop,"Terrorist Shop",tgunbox,dummyobj,_terrorshop_buy,_terrorshop_buy,true],              // 50
 
@@ -757,6 +757,6 @@ INV_ItemShops = [
 [pmcair,"PMC Air Shop",dummyobj,"pmcairspawn",_pmcair,_pmcair,true],
 [petshop,"Pet Shop",dummyobj,dummyobj,_petShop,_petShop,true],
 [resourcesell2,"Sell Resources",dummyobj,dummyobj,_rs,_rs,true],
-[Oil_2,"Mining equipment",dummyobj,dummyobj,_ms,_ms,true], 
+[Oil_2,"Mining equipment",dummyobj,dummyobj,_ms,_ms,true],
 [southsupermarket,"Gun Shop",gunbox2,dummyobj,_gs,_gs,true]
 ];

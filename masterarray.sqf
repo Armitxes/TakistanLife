@@ -394,7 +394,8 @@ INV_AlleFahrzeugeArray = [
 ["UAZ_Unarmed_TK_EP1",["Fahrzeug", "car"],["UAZ_Unarmed_TK_EP1", "UAZ (police)"],[812, 373], [2, "car", "patrol_training",200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["LadaLM",["Fahrzeug", "car"],["LadaLM", "Lada (Police)"],[812, 373], [2, "car", "patrol_training",200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["SUV_PMC_BAF",["Fahrzeug", "car"],["SUV_PMC_BAF", "Black SUV"],[5000, 2000], [2, "car", "patrol_training", 200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
-["SUV_BLUE",["Fahrzeug", "car"],["SUV_PMC_BAF", "Blue SUV"],[5000, 2000], [2, "car", "patrol_training", 200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["SUV_BLUE",["Fahrzeug", "car"],["SUV_PMC_BAF", "BlueWhite SUV"],[5000, 2000], [2, "car", "patrol_training", 200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
+["SUV_BLUEWHITE",["Fahrzeug", "car"],["SUV_PMC_BAF", "BlueWhite SUV"],[5000, 2000], [2, "car", "patrol_training", 200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["SUV_RED",["Fahrzeug", "car"],["SUV_PMC_BAF", "Red SUV"],[5000, 2000], [2, "car", "patrol_training", 200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["SUV_WHITE",["Fahrzeug", "car"],["SUV_PMC_BAF", "White SUV"],[5000, 2000], [2, "car", "patrol_training", 200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
 ["SUV_UN_EP1",["Fahrzeug", "car"],["SUV_UN_EP1", "UN SUV"],[5000, 2000], [2, "car", "patrol_training", 200], [150, [1,0,0,3]], "Skoda" call ISSE_Cfg_Vehicle_GetName, "Skoda" call ISSE_Cfg_Vehicle_GetDesc, [["stahl", 4],["glas", 1],["plastik", 1],["erdoel", 4]] ],
@@ -666,7 +667,7 @@ INV_AlleItemsArray = [
 ["hideout",["Item", "misc"],["hideout", "Hideout"],[2000, 1], [0, ""], [false, true, false,false,"hideout.sqf"],localize "STRS_item_hideout",localize "STRS_item_hideout_info", [] ],
 
 ["lockpick", ["Item", "illegal"],["Dietrich", "Lockpick"], [250, 10], [0.3, "", "patrol_training"],[true,true,true, false, "lockpick.sqf"],localize "STRS_item_lockpick",localize "STRS_item_lockpick_info", [["stahl", 1]] ],
-                                                     
+
 ["Shovel", ["Item", "misc"], ["Shovel", "Shovel"],[35, 12], [1, "", ""],[true,true,true, false, "mine.sqf"], "Shovel", "Use it in a mining area. Durability: 20 Mining speed: slow",[["holz", 2]] ],
 
 ["Pickaxe", ["Item", "misc"], ["Pickaxe", "Pickaxe"],[125, 49], [2, "", ""],[true,true,true, false, "mine.sqf"], "Pickaxe", "Use it in a mining area. Durability: 50 Mining speed: average",[ ["holz", 2]] ],
