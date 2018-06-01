@@ -229,7 +229,7 @@ _souveh = ["T55_TK_GUE_EP1","T72_TK_EP1","BRDM2_TK_GUE_EP1","Ural_ZU23_TK_GUE_EP
 // South Government Air Shop
 _souair = ["Mi17_Ins","UH1H_TK_GUE_EP1","Mi17_medevac_Ins"];
 //Medic Shop
-_hos = ["medikit","towingtool","docUni","docUni2","docUni3","S1203_ambulance_EP1","HMMWV_Ambulance","GAZ_Vodnik_MedEvac"];
+_hos = ["medikit","towingtool","docUni","docUni2","docUni3","docUni4","S1203_ambulance_EP1","HMMWV_Ambulance","GAZ_Vodnik_MedEvac"];
 _hosair = ["UH60M_MEV_EP1"];
 //South Goverment Shop
 _soushop = [
