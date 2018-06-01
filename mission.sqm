@@ -94,7 +94,7 @@ class Mission
 	randomSeed=7826573;
 	class Intel
 	{
-		briefingName="Takistan Life RPG: Rise of South v3.5";
+		briefingName="Takistan Life RPG: Rise of South v3.6";
 		briefingDescription="by Tonic and Armitxes";
 		resistanceEast=1;
 		startWeather=0;
