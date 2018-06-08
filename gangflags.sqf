@@ -15,10 +15,10 @@ if (_type == "capture") then {
 	if(gangmember && !_owns) then {
 		(format['server globalchat "%1 is being captured by another gang!!";',_gangarea]) call toClients;
 
-		_captime = round(time)+300;
+		_captime = round(time)+150;
 		while {
 			(_captime > time) &&
-			((player distance _gangarea) <= 30) &&
+			((player distance _gangarea) <= 60) &&
 			(animationState player != "civillying01") &&
 			(alive player) &&
 			((vehicle player) == player) &&
@@ -28,7 +28,7 @@ if (_type == "capture") then {
 			sleep 1;
 		};
 		hint "";
-		
+
 		if((animationState player in animRestrained) || ((player distance _gangarea) > 30) || !(alive player) || ((vehicle player) != player) || !gangmember) then {
 			(format['server globalChat "%1 has failed to capture %2";',_mygang, _gangarea]) call toClients;
 		} else {
