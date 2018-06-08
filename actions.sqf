@@ -126,8 +126,8 @@ action162 =_role addAction ["<t color='#FFD700'>Low Slotmachine ($100)</t>","cas
 action163 =_role addAction ["<t color='#FFD700'>High Slotmachine ($2000)</t>","casino.sqf",["slotmachine"],1,false,true,"","player distance gamble3 < 4 && isciv && !isbet && !nobet"];
 action164 =_role addAction ["<t color='#FFD700'>High Slotmachine ($2000)</t>","casino.sqf",["slotmachine"],1,false,true,"","player distance gamble4 < 4 && isciv && !isbet && !nobet"];
 action165 =_role addAction ["<t color='#FF0000'>Rob Casino</t>","casrob.sqf", ["robcas", csafe],1,false,true,"","player distance csafe <= 3 and isciv"];
-// ====== Armis Medic ======  
-medAct = _role addAction ["Remove Body","noscript.sqf",'deleteVehicle cursorTarget; ["dollarz",1500] call INV_AddInventoryItem;',1,false,true,"",'ismedic && !(alive cursorTarget) && cursorTarget isKindOf "Man"'];                                                                                                                       
+// ====== Armis Medic ======
+medAct = _role addAction ["Remove Body","noscript.sqf",'deleteVehicle cursorTarget; ["dollarz",1500] call INV_AddInventoryItem;',1,false,true,"",'ismedic && !(alive cursorTarget) && cursorTarget isKindOf "Man"'];
 medAct2 = _role addAction ["Revive","noscript.sqf",'_tar = cursorTarget; [_tar] spawn plr_heal; format [''%1 switchMove "AmovPsitMstpSlowWrflDnon_ground";'',_tar] call toClients; if !(isheal) then {["dollarz",2000] call INV_AddInventoryItem;};',1,false,true,"",'ismedic && ([cursorTarget] call plr_isUnConscious)'];
 medAct3 = _role addAction ["Heal","noscript.sqf",'[cursorTarget] spawn plr_heal; if !(isheal) then {["dollarz",2000] call INV_AddInventoryItem;};',1,false,true,"",'ismedic && alive cursorTarget && [cursorTarget] call plr_isWounded && cursorTarget isKindOf "Man"'];
 medAct4 = _role addAction ["Repair vehicle","noscript.sqf",'_vcl = (nearestobjects [getpos player, ["LandVehicle"], 3] select 0); ["repair"] execVM "armitxes\vehtools.sqf";',1,true,true,"",'_vcl = (nearestobjects [getpos player, ["LandVehicle"], 3] select 0); player distance _vcl < 10 and ismedic'];
@@ -137,8 +137,8 @@ c4Act1 = _role addAction ["Defuse Bomb","armitxes\explosive.sqf","defuse",1,fals
 c4ActBoom = _role addAction ["Detonate Bomb","armitxes\explosive.sqf","explode",1,false,true,"",'!isNil "bombAttachment"'];
 armiPhone = _role addAction ["<t color='#FFA500'>ArmiPhone</t>","noscript.sqf",'createDialog "ArmiPhone"',20,false,true,"","('handy' call INV_GetItemAmount) > 0"];
 //======= PM/CC Resign============
-CCAct = _role addAction ["<t color ='#58ACFA'>Resign from office </t>","resign.sqf",["CCresign"],0,false,true,"","player distance rathaus < 3 && isChief"]; 
-MayAct =  _role addAction ["<t color ='#FFD700'>Resign from office </t>","resign.sqf",["PMresign"],0,false,true,"","player distance rathaus < 3 && isMayor"]; 
+CCAct = _role addAction ["<t color ='#58ACFA'>Resign from office </t>","resign.sqf",["CCresign"],0,false,true,"","player distance rathaus < 3 && isChief"];
+MayAct =  _role addAction ["<t color ='#FFD700'>Resign from office </t>","resign.sqf",["PMresign"],0,false,true,"","player distance rathaus < 3 && isMayor"];
 protest = _role addAction ["<t color ='#FFD700'>Protest</t>","noscript.sqf",'protesters = protesters + [player];',0,false,true,"","player distance rathaus < 20 && !(player in protesters) && isciv"];
 
 holsterPrim = _role addAction ["Holster Primary","armitxes\holster.sqf",0,1,false,true,"","((primaryWeapon player) call INV_GetWeaponTyp) == 2"];
@@ -151,3 +151,4 @@ actSGarage = _role addAction ["Garage","armitxes\remote.sqf","gGarage",1,false,t
 actSergeant = _role addAction ["Sergeant Menu","armitxes\dialogs\controller.sqf","sergeant",1,false,true,"",'iscop && (((PLAYERDATA select 4 == 1) && (PLAYERDATA select 5 > 6) && (PLAYERDATA select 5 < 51)) || PLAYERDATA select 2 > 237)'];
 actOffDuty = _role addAction ["On/Off Duty","armitxes\districts.sqf","offduty",1,false,true,"",'iscop'];
 actClearance = _role addAction ["Give Flight Permission","noscript.sqf",'_vcl = nearestObject [player,"Air"]; _vcl setVariable ["airWarnings",[0,time],true];',1,false,true,"",'_vcl = nearestObject [player,"Air"]; isun && player distance _vcl < 6'];
+actRobGas = _role addAction ["<t color='#FF0000'>Rob Gasstation</t>","noscript.sqf",'["use", "hackkit"] execVM "armitxes\itemlogic.sqf";',1,false,true,"",'_cc = cursorTarget getvariable "lastRob";  (!(isNil "_cc") and (call INV_isArmed))'];

@@ -1,4 +1,4 @@
-execString = { _code = _this select 0; if(_code != "") then { call compile _code; }; }; 
+execString = { _code = _this select 0; if(_code != "") then { call compile _code; }; };
 msg_pd = { titleText [_this select 0, "plain down"]; };
 
 ARM_fnc_countDown = {
@@ -11,7 +11,7 @@ if(!isDedicated) then {
 	setMoney = {
 		PLAYERDATA set [1, (PLAYERDATA select 1) + (_this select 0)];
 	};
-	
+
 	setHeight = {
 		private ["_obj","_pos","_y"];
 		_obj = _this select 0; _y = _this select 1; _sim = _this select 2;
@@ -24,11 +24,11 @@ if(!isDedicated) then {
 		_pos = getPosASL _obj;
 		_obj setPosASL [_pos select 0, _pos select 1, _y];
 	};
-	
+
 	fnc_ClearWarrantsArray = {
 		for [{_i=0}, {_i < (count warrantarray)}, {_i=_i+1}] do {
 			if ( isNull((warrantarray select _i) select 0) ) then {
-				warrantarray set [_i,-1]; 
+				warrantarray set [_i,-1];
 			};
 		};
 		warrantarray = warrantarray - [-1];
@@ -77,10 +77,10 @@ if(!isDedicated) then {
 
 	fnc_isInMarker = {
 		private ["_p","_m", "_px", "_py", "_mpx", "_mpy", "_msx", "_msy", "_rpx", "_rpy", "_xmin", "_xmax", "_ymin", "_ymax", "_ma", "_res", "_ret"];
-		
+
 		_p = _this select 0; // object
 		_m = _this select 1; // marker
-		
+
 		if (typeName _p == "OBJECT") then {
 			_px = position _p select 0;
 			_py = position _p select 1;
@@ -88,7 +88,7 @@ if(!isDedicated) then {
 			_px = getMarkerPos _p select 0;
 			_py = getMarkerPos _p select 1;
 		};
-		
+
 		_mpx = getMarkerPos _m select 0;
 		_mpy = getMarkerPos _m select 1;
 		_msx = getMarkerSize _m select 0;
@@ -105,7 +105,7 @@ if(!isDedicated) then {
 		};
 		_ret;
 	};
-	
+
 	ARM_bannedTimer = 0;
 	ARM_fnc_betterChat = {
 		_banTime = (ARM_bannedTimer-time);
@@ -114,7 +114,7 @@ if(!isDedicated) then {
 		if ((typeName _param) == "STRING" && _param != "") then {
 			_thisArr = toArray(_param);
 			if (_thisArr select 0 == 47) exitWith { [_param] execVM "armitxes\chatcmd.sqf"; };
-			
+
 			if( !(39 in _thisArr) &&  !(34 in _thisArr) ) then {
 				_abbr = chatAbbr;
 				_fcabbr = "| UN]";
@@ -136,7 +136,7 @@ if(!isDedicated) then {
 					};
 				};
 			    _abbr = _abbr + _fcabbr;
-		     
+
 				_message = format ["systemChat ""%1 (%2): %3"";",_abbr, name player, _param];
 				(_message) call toClients;
 			} else { systemChat "You are not allowed to use '' or ' in global chat!";};

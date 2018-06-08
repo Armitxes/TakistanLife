@@ -109,3 +109,4 @@ _role removeAction actSGarage;
 _role removeAction actSergeant;
 _role removeAction actOffDuty;
 _role removeAction actClearance;
+_role removeAction actRobGas;

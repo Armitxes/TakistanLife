@@ -14,7 +14,7 @@ if (_art == "use") then
 				_obj setDir getDir player;
 				_obj setPosASL _plrPos;
 				[_obj,((_plrPos select 2) + 2.2)] call setHeightASL;
-				
+
 				_l = 0; if (isun) then { _l = 1; };
 				_arr = cameras select _l; _arr = _arr + [_obj];
 				cameras set [_l, _arr]; publicVariable "cameras";
@@ -70,6 +70,6 @@ if (_art == "use") then
 			};
 		};
 	};
-	
+
 	if (_r) then { [_item, -1] call INV_AddInventoryItem; };
 };
