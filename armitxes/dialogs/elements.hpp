@@ -44,7 +44,7 @@ class Portal
 		y = 0.245209 * safezoneH + safezoneY;
 		w = 0.257153 * safezoneW;
 		h = 0.236639 * safezoneH;
-		text = "Please make sure that you read the Rules on our Website before you start playing!<br />For questions please visit the support channels on our TS3.<br /><br />Spawns are greenzones, do not commit any crimes there!";
+		text = "Please make sure that you read the Rules on our Website before you start playing! - thebga.uk<br /><br />For questions please visit the support channels on our TeamSpeak 3 Server - TS3: 62.104.20.206:10137.<br /><br />Spawns are greenzones, do not commit any crimes there!";
 		colorText[] = {255,255,255,255};
 		colorBackground[] = {-1,-1,-1,0};
 		colorBackgroundActive[] = {-1,-1,-1,0};
@@ -52,7 +52,7 @@ class Portal
 	class frmCredits: RscFrame
 	{
 		idc = -1;
-		text = " BETA BUILD - made by Armitxes ";
+		text = " BETA BUILD - made by Armitxes (armitxes.net) ";
 		x = 0.149277 * safezoneW + safezoneX;
 		y = 0.816766 * safezoneH + safezoneY;
 		w = 0.70184 * safezoneW;
@@ -101,7 +101,7 @@ class Portal
 	class lblInfoLong: RscStructuredText
 	{
 		idc = -1;
-		text = "Big thanks to Tonic for the creation of Takistan Life!<br />Takistan Life: Rise of South is an complete overhaul and continues the story of Takistan Life: Revolution!<br />Since Feb. 2013 TKL:RoS is being developed by Armitxes and open for every community to use/develop on.<br /><br />Website: armitxes.net/Projects/TakistanLife<br />Sources: https://github.com/Armitxes/TakistanLife";
+		text = "Big thanks to Tonic for the creation of Takistan Life!<br />Takistan Life: Rise of South is a complete overhaul and continues the story of Takistan Life: Revolution!<br />Since Feb. 2013 TKL:RoS is being developed by Armitxes and open for every community to use/develop on.<br /><br />TS3: 62.104.20.206:10137<br />Community Website: thebga.uk<br />Network Website: armitxes.net";
 		x = 0.45321 * safezoneW + safezoneX;
 		y = 0.553715 * safezoneH + safezoneY;
 		w = 0.360011 * safezoneW;
@@ -152,7 +152,7 @@ class ArmiPhone {
 	idd = -1;
 	movingEnable = 1;
 	enableSimulation = true;
-	
+
 	class controlsBackground {
 		class bgPhone: ARM_RscPicture {
 			idc = 1200;
@@ -162,9 +162,9 @@ class ArmiPhone {
 			w = 0.244375 * safezoneW;
 			h = 0.396 * safezoneH;
 			colorText[] = {1,1,1,1};
-		};  
+		};
 	};
-	class objects {};  
+	class objects {};
 	class controls {
 		class RscFrame_1800: ARM_RscFrameButton {
 			idc = 1800;
@@ -245,7 +245,7 @@ class modPlayerSelection {
 	idd = -1;
 	movingEnable = 1;
 	enableSimulation = true;
-	
+
 	controlsBackground[] = {IGUIBack_2200};
 	class objects {};
 	controls[] = {lblPlrDesc,lstPlayers};
@@ -327,7 +327,7 @@ class professions {
 	idd = 1602;
 	movingEnable = 1;
 	enableSimulation = true;
-	
+
 	class controlsBackground {
 		class bgProfession: RscBackground {
 			idc = -1;
@@ -338,7 +338,7 @@ class professions {
 			colorBackground[] = { 0, 0, 0, 0.8 };
 		};
 	};
-	class objects {};  
+	class objects {};
 	class controls {
 		class lstProfessions: RscListBox {
 			idc = 1;
@@ -378,9 +378,9 @@ class ArmiID:liste_1_button {
 	idd = 1601;
 	movingEnable = 1;
 	enableSimulation = true;
-	
+
 	controlsBackground[] = {bgID,bgLics};
-	class objects {};  
+	class objects {};
 	controls[] = {lizenzen,lblName,lblFaction,lblRank,lblNation,lblUID};
 	class bgID: ARM_RscPicture {
 		idc = -1;
@@ -454,7 +454,7 @@ class ArmiID:liste_1_button {
 class chat {
 	idd = 93005;
 	movingEnable = 1;
-	
+
 	class controlsBackground {
 		class lblChatType: RscText {
 			idc = 1000;
@@ -483,7 +483,7 @@ class chat {
 	};
 };
 
-class AL_RscProgress 
+class AL_RscProgress
 {
 	type = 8;
 	style = 0;
@@ -499,7 +499,7 @@ class progressBar
 	onLoad = "((_this select 0) displayCtrl -1) progressSetPosition 0.5";
 	class Controls
 	{
-		class Progress: AL_RscProgress 
+		class Progress: AL_RscProgress
 		{
 			idc = 1;
 			x = 0.38 * safezoneW + safezoneX;
