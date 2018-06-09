@@ -44,7 +44,7 @@ class Portal
 		y = 0.245209 * safezoneH + safezoneY;
 		w = 0.257153 * safezoneW;
 		h = 0.236639 * safezoneH;
-		text = "Please make sure that you read the Rules on our Website before you start playing! - thebga.uk<br /><br />For questions please visit the support channels on our TeamSpeak 3 Server - TS3: 62.104.20.206:10137.<br /><br />Spawns are greenzones, do not commit any crimes there!";
+		text = "Please make sure that you read the Rules on our Website before you start playing! - thebga.uk<br /><br />For questions please visit the support channels on our TeamSpeak 3 Server - TS3: bgats3.uk:9010.<br /><br />Spawns are greenzones, do not commit any crimes there!";
 		colorText[] = {255,255,255,255};
 		colorBackground[] = {-1,-1,-1,0};
 		colorBackgroundActive[] = {-1,-1,-1,0};
@@ -101,7 +101,7 @@ class Portal
 	class lblInfoLong: RscStructuredText
 	{
 		idc = -1;
-		text = "Big thanks to Tonic for the creation of Takistan Life!<br />Takistan Life: Rise of South is a complete overhaul and continues the story of Takistan Life: Revolution!<br />Since Feb. 2013 TKL:RoS is being developed by Armitxes and open for every community to use/develop on.<br /><br />TS3: 62.104.20.206:10137<br />Community Website: thebga.uk<br />Network Website: armitxes.net";
+		text = "Big thanks to Tonic for the creation of Takistan Life!<br />Takistan Life: Rise of South is a complete overhaul and continues the story of Takistan Life: Revolution!<br />Since Feb. 2013 TKL:RoS is being developed by Armitxes and open for every community to use/develop on.<br /><br />TS3: bgats3.uk:9010<br />Community Website: thebga.uk<br />Network Website: armitxes.net";
 		x = 0.45321 * safezoneW + safezoneX;
 		y = 0.553715 * safezoneH + safezoneY;
 		w = 0.360011 * safezoneW;
