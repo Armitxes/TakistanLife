@@ -5,7 +5,7 @@ _safe = _this select 1;
 if (_art == "ausrauben") then {
 	_robpool = robsafes select 0;
 	_copplayernumber = playersNumber west;
-	if (_copplayernumber < 5)exitWith{hintSilent "There are not enough cops on to rob this safe"};
+	if (_copplayernumber < 3)exitWith{hintSilent "There are not enough cops on to rob this safe"};
 	if(_robpool < 15000)exitWith{hintSilent "This safe has recently been stolen from and is empty"};
 	if(!robenable)exitwith{hintSilent "you are already robbing the bank"};
 	if(!(call INV_isArmed) and !enableDebug)exitWith{hintSilent localize "STRS_bank_rob_noweapon";};
@@ -13,7 +13,7 @@ if (_art == "ausrauben") then {
 	robenable = false;
 	_startRob = round(time)+300;
 	robsafes set [0,0];
-	publicVariable "robsafes"; 
+	publicVariable "robsafes";
 	hintSilent format[localize "STRS_bank_rob_info"];
 	player playmove "AinvPknlMstpSlayWrflDnon_medic";
 
@@ -25,19 +25,19 @@ if (_art == "ausrauben") then {
 		(!((animationState player) in animRestrained)) &&
 		(alive player) &&
 		((vehicle player) == player) && !([player] call plr_isUnConscious)
-	} do {    
+	} do {
 		hintSilent format ["%1 seconds until successful robbery!",round(_startRob-time)];
 		sleep 1;
 	};
-	hintSilent ""; 
+	hintSilent "";
 
 	if((animationState player) in animRestrained || ((player distance safe) >= 100) || !(alive player) || ((vehicle player) != player) || ([player] call plr_isUnConscious)) then {
-		format['[0,1,2,["busted", "%1"]] execVM "bankrob.sqf";', name player] call toClients; 
+		format['[0,1,2,["busted", "%1"]] execVM "bankrob.sqf";', name player] call toClients;
 	} else {
-		format['[0,1,2,["opfer", %1, %2]] execVM "bankrob.sqf";', _safe, _robpool] call toClients;  
+		format['[0,1,2,["opfer", %1, %2]] execVM "bankrob.sqf";', _safe, _robpool] call toClients;
 		['dollarz', _robpool] call INV_AddInventoryItem;
 		hintSilent format[localize "STRS_bank_rob_success"];
-		stolencash = stolencash + _robpool; 
+		stolencash = stolencash + _robpool;
 		local_useBankPossible = false;
 		robenable = true;
 		rblock = rblock + ((_robpool/5000)*60);
@@ -70,7 +70,7 @@ if (_art == "opfer") then
 	if (_moneyz >  _verlust) then {
 		if (_moneyz >= 100000) then {
 			_verlust = round(_moneyz*MaxbankrobpercentlostA);
-			
+
 			if (_moneyz >= 1000000) then {
 				_verlust = round(_moneyz*MaxbankrobpercentlostB);
 			};
