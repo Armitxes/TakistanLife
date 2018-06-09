@@ -524,7 +524,7 @@ INV_getstock = {
   _shoparr = INV_itemshops select _shopnum;
   _shopinv = _shoparr select 4;
   _itemnum = [_item, _shopinv] call INV_getshopitemnum;
-  
+
   if(typename (INV_itemmaxstocks select _shopnum) != "ARRAY")exitwith{-1};
   (INV_itemstocks select _shopnum) select _itemnum
 };
@@ -535,9 +535,9 @@ INV_getmaxstock = {
   _shoparr = INV_itemshops select _shopnum;
   _shopinv = _shoparr select 4;
   _itemnum = [_item, _shopinv] call INV_getshopitemnum;
-  
+
   if(typename (INV_itemmaxstocks select _shopnum) != "ARRAY")exitwith{-1};
-  
+
   (INV_itemmaxstocks select _shopnum) select _itemnum
 };
 
@@ -602,7 +602,7 @@ INV_getVehicleCanCarry = { ((_this call INV_getitemArray) select 5) select 0 };
 
 
 // By Armi
-INV_getItemID = { 
+INV_getItemID = {
 	_id = -1;
 	if ((typeName _this) == "STRING") then {
 		for "_c" from 0 to (count INV_Lizenzen - 1) do {
