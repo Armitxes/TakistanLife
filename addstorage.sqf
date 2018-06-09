@@ -18,107 +18,65 @@ _vclStore = false;
 _vclClass = "";
 _packed   = false;
 _storageweight = 0;
-_collide = 0;       
+_collide = 0;
 
-if (count (_this select 5) > 0) then
+if (count (_this select 5) > 0) then {
+	_extra = _this select 5;
 
-{
+	if (_extra select 0 == "vcl") then {
+		call compile format ["%1 = name player; PublicVariable ""%1"";", format["%1_storagelock", _extra select 2]];
+		sleep 0.5;
+		call compile format ['if !(%1 == name player) then {_collide = 1;};', format["%1_storagelock", _extra select 2]];
 
-_extra = _this select 5;
-
-if (_extra select 0 == "vcl") then
-
-	{
-
-	call compile format ["%1 = name player; PublicVariable ""%1"";", format["%1_storagelock", _extra select 2]];
-	sleep 0.5;
-	call compile format ['if !(%1 == name player) then {_collide = 1;};', format["%1_storagelock", _extra select 2]];
-
-	_vclStore = true;
-	_vclClass = _extra select 1;
-	_maxweight = _vclClass call INV_getvehmaxkg;
-
-
+		_vclStore = true;
+		_vclClass = _extra select 1;
+		_maxweight = _vclClass call INV_getvehmaxkg;
 	};
-
 };
 
 if (_art == "nehmen" && _collide != 1) then {
-  _itemweight = (_infos call INV_getitemTypeKg)*_menge;
-  _ownweight  = call INV_GetOwnWeight;
+	_itemweight = (_infos call INV_getitemTypeKg)*_menge;
+	_ownweight  = call INV_GetOwnWeight;
 
-  if ((_ownweight + _itemweight) > INV_Tragfaehigkeit) then {
-    _amount = (floor((INV_Tragfaehigkeit - _ownweight) / (_infos call INV_getitemTypeKg)));
-    if (_amount <= 0) exitWith { hintSilent localize "STRS_inv_buyitems_maxgewicht"; };
-  } else {
-  	if ([_item, -(_menge), _arrname] call INV_AddItemStorage) then
-  	{
-      [_item, _menge] call INV_AddInventoryItem;
-      hintSilent format[localize "STRS_inv_storage_took", (_menge call ISSE_str_IntToStr)];
-      _packed = true;
-  	} else { hintSilent localize "STRS_inv_storage_toomuch"; };
-  };
+	if ((_ownweight + _itemweight) > INV_Tragfaehigkeit) then {
+		_amount = (floor((INV_Tragfaehigkeit - _ownweight) / (_infos call INV_getitemTypeKg)));
+		if (_amount <= 0) exitWith { hintSilent localize "STRS_inv_buyitems_maxgewicht"; };
+	} else {
+		if ([_item, -(_menge), _arrname] call INV_AddItemStorage) then {
+			[_item, _menge] call INV_AddInventoryItem;
+			hintSilent format[localize "STRS_inv_storage_took", (_menge call ISSE_str_IntToStr)];
+			_packed = true;
+		} else { hintSilent localize "STRS_inv_storage_toomuch"; };
+	};
 };
 
-if (_art == "ablegen") then
+if (_art == "ablegen") then {
 
-{
-
-if(_vclStore)then
-
-	{
-
-	_storageweight = ( (_arrname call INV_GetStorageWeight) + (_menge * (_infos call INV_getitemTypeKg)) );
-
+	if (_vclStore) then {
+		_storageweight = ( (_arrname call INV_GetStorageWeight) + (_menge * (_infos call INV_getitemTypeKg)) );
 	};
 
-if(_storageweight > _maxweight)exitwith{hintSilent "The vehicle's storage is full";};
+	if(_storageweight > _maxweight)exitwith{hintSilent "The vehicle's storage is full";};
+	if ((!local_useBankPossible) && (_item call INV_getitemKindOf == "dollarz")) exitWith {hintSilent "You are cannot drop/give money while in  bank  lockout"};
 
-if ((!local_useBankPossible) && (_item call INV_getitemKindOf == "dollarz")) exitWith {hintSilent "You are cannot drop/give money while in  bank  lockout"};
-
-if
-(
-(_arrname call INV_StorageIsFactory) and
+	if
 	(
-	(_item call INV_getitemKindOf != "ressource") and
-	(_item call INV_getitemKindOf != "drug") and
-	(_item call INV_getitemKindOf != "dollarz")
-	)
-) exitWith
+		(_arrname call INV_StorageIsFactory) and
+		(
+			(_item call INV_getitemKindOf != "ressource") and
+			(_item call INV_getitemKindOf != "drug") and
+			(_item call INV_getitemKindOf != "dollarz")
+		)
+	) exitWith { hintSilent localize "STRS_inv_storage_dropnotallowed"; };
 
-	{
-
-	hintSilent localize "STRS_inv_storage_dropnotallowed";
-
+	if (not([_item, -(_menge)] call INV_AddInventoryItem)) then {
+		hintSilent localize "STRS_inv_storage_dropunablesomuch";
+	} else {
+		if ([_item, _menge, _arrname, _vclClass] call INV_AddItemStorage) then {
+			hintSilent format[localize "STRS_inv_storage_dropped", (_menge call ISSE_str_IntToStr)];
+			_packed = true;
+		} else { hintSilent localize "STRS_inv_storage_cannotdropsomuch"; };
 	};
-
-if (not([_item, -(_menge)] call INV_AddInventoryItem)) then
-
-	{
-
-	hintSilent localize "STRS_inv_storage_dropunablesomuch";
-
-	}
-	else
-	{
-
-	if ([_item, _menge, _arrname, _vclClass] call INV_AddItemStorage) then
-
-		{
-
-		hintSilent format[localize "STRS_inv_storage_dropped", (_menge call ISSE_str_IntToStr)];
-		_packed = true;
-
-		}
-		else
-		{
-
-		hintSilent localize "STRS_inv_storage_cannotdropsomuch";
-
-		};
-
-	};
-
 };
 
 if (_art == "delete") then
