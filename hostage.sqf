@@ -49,7 +49,7 @@ if (_art == "getajob_hostage") then
 
 {
 _copplayernumber = playersNumber west;
-if (_copplayernumber < 5)exitWith{hintSilent "There are not enough cops on to start the hostage mission!"};
+if (_copplayernumber < 3)exitWith{hintSilent "There are not enough cops on to start the hostage mission!"};
 if(workplacejob_hostage_active)exitWith{hintSilent "There are currently no more hostages.";};
 if(workplacejob_hostage_failed)exitWith{hintSilent "You have failed a hostage mission recently, maybe you can do it again later.";};
 

@@ -217,7 +217,7 @@ _cv = ["Old_bike_TK_INS_EP1","MMT_USMC","M1030_US_DES_EP1","ATV_US_EP1","VolhaLi
 //Cop Air Shop
 _ca = ["MH6J_EP1","AH6X_EP1_COP"];
 //SCO Vehicle Shop
-_sv = ["HMMWV_DES_EP1","HMMWV_M1151_M2_DES_EP1","M2A3_EP1","BAF_Jackal2_L2A1_D"];
+_sv = ["SUV_SCO","HMMWV_DES_EP1","HMMWV_M1151_M2_DES_EP1","M2A3_EP1","BAF_Jackal2_L2A1_D"];
 //SCO Air Shop
 _sa = ["MH6J_EP1","UH60M_EP1"];
 // UN vehicles
