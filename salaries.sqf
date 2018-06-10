@@ -1,5 +1,5 @@
 while {iscop} do {
-	_income = 100;
+	_income = 250;
 	sleep 300;
 	if ("patrol_training" call INV_HasLicense) then { _income = _income + 25; };
 	if ("response_training" call INV_HasLicense) then { _income = _income + 50; };
@@ -29,7 +29,7 @@ while {iscop} do {
 
 while {isun} do
 {
-	_income = 100;
+	_income = 200;
 	sleep 300;
 	if (!(convoywinner == "Cops and UN") && !(convoywinner == "Neither")) then { _income = _income - 150; };
 	["add","finances",format ["The United Nations gave you a paycheck of $%1 and an extra of $%2 as bonus.",_income,paybonus],true] execVM "armitxes\logs.sqf";
@@ -39,7 +39,7 @@ while {isun} do
 
 while {isciv} do
 {
-	_income = 100;
+	_income = 350;
 	sleep 300;
 	_workplacepaycheck = 0;
 	_uniPaycheck       = 0;
