@@ -15,7 +15,7 @@ if (isServer) then {
 	publicVariable "GesetzArray";
 	cameras = [[],[]]; publicVariable "cameras";
 	TankenCost = 10; publicVariable "TankenCost";
-	
+
 	convoywinner = "Cops and UN"; publicVariable "convoywinner";
 	INV_ItemTypenArray = [ ["Item", "Item", 5], ["Fahrzeug", "Vehicle",5], ["Magazin","Magazine",5], ["Waffe","Weapon",5]];
 	publicVariable "INV_ItemTypenArray";
@@ -107,8 +107,6 @@ hammerdur=100;
 hammermax=6;
 working=false;
 //===============================GANGS=============================================
-gangincome		 = 100;
-gangdeltime		 = 350;
 gangsarray		 = [];
 gangmember		 = false;
 gangleader		 = false;
@@ -322,7 +320,7 @@ if(!isDedicated) then {
 	afk = time;
 	onduty = time;
 	fvspam = false;
-	
+
 	animRestrained = ["civillying01","civilsitting03","civilsitting02","civilsitting01","civilsitting"];
 };
 

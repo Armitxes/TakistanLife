@@ -1,7 +1,5 @@
-_income = 100;
-
-while {iscop} do
-{
+while {iscop} do {
+	_income = 100;
 	sleep 300;
 	if ("patrol_training" call INV_HasLicense) then { _income = _income + 25; };
 	if ("response_training" call INV_HasLicense) then { _income = _income + 50; };
@@ -26,11 +24,12 @@ while {iscop} do
 	INV_SteuernGezahlt = 0;
 
 	["add","finances",format ["You received $%1 as payment including taxes.", _income],true] execVM "armitxes\logs.sqf";
-	sleep 1; ["save"] execVM "armitxes\_db.sqf"; 
+	sleep 1; ["save"] execVM "armitxes\_db.sqf";
 };
 
 while {isun} do
 {
+	_income = 100;
 	sleep 300;
 	if (!(convoywinner == "Cops and UN") && !(convoywinner == "Neither")) then { _income = _income - 150; };
 	["add","finances",format ["The United Nations gave you a paycheck of $%1 and an extra of $%2 as bonus.",_income,paybonus],true] execVM "armitxes\logs.sqf";
@@ -40,6 +39,7 @@ while {isun} do
 
 while {isciv} do
 {
+	_income = 100;
 	sleep 300;
 	_workplacepaycheck = 0;
 	_uniPaycheck       = 0;
@@ -48,7 +48,7 @@ while {isciv} do
 	_hashideoutmsg     = "";
 
 	if (convoywinner == "Civs" && !(convoywinner == "Neither")) then { _income = _income + 100; };
-	if (ispmc || isjudge) then {_income = _income + 500;};	
+	if (ispmc || isjudge) then {_income = _income + 500;};
 
 	if (timeinworkplace > 0) then {
 		_workplacepaycheck = (round(add_workplace/180*timeinworkplace));
@@ -57,9 +57,9 @@ while {isciv} do
 	};
 
 	if(gangmember) then {
-		if(gangarea1 getVariable "control" == group player)then{_income = _income + gangincome;};
-		if(gangarea2 getVariable "control" == group player)then{_income = _income + gangincome;};
-		if(gangarea3 getVariable "control" == group player)then{_income = _income + gangincome;};
+		if(gangarea1 getVariable "control" == group player)then{_income = _income + 100;};
+		if(gangarea2 getVariable "control" == group player)then{_income = _income + 100;};
+		if(gangarea3 getVariable "control" == group player)then{_income = _income + 100;};
 	};
 
 	if (isMayor) then {
