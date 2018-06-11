@@ -23,11 +23,7 @@ if (_veh isKindOf "air") then {
 				hint parseText "<t color='#FFA500' size='1.5'>WARNING</t><br /><br />You are approaching the borderline! Please land at a UN Checkpoint if you wish to cross.";
 			};
 
-			_closestAA reveal _veh;
-			_closestAA doWatch _veh;
-			
 			sleep 3;
-			
 			if(speed _veh < 30) then {
 				if(_veh distance prisonDoor < 30) then {
 					hintSilent parseText "<t color='#FFA500' size='1.5'>PRISON WARNING</t><br /><br />Prison defences detected you! Don't take any prisoners with you or you'll be engaged!";
@@ -36,21 +32,16 @@ if (_veh isKindOf "air") then {
 					if (count (units _veh) > _oldCrew) then {
 						_airWarnings set [0,3];
 						_veh setVariable ["airWarnings",_airWarnings,true];
-						("hintSilent ""Prison Defenses registred an aerial prison break - border defences engaging."";") call toClients; sleep 3;
-						hintSilent parseText "<t color='#FF0000' size='1.5'>URGENT WARNING</t><br /><br />Prison Break! All defense systems are now locked on you. better get the hell out of here!";
+						(format["server globalChat ""Air control authorized air vehicle of %1 to be shot down. Reason: Prison Break"";",(name player)]) call toClients;
+						hintSilent parseText "<t color='#FF0000' size='1.5'>URGENT WARNING</t><br /><br />Prison Break! All defense systems are now locked on you. Better get the hell out of here!";
 					};
 				};
 			};
-			
+
 			_airWarnings = _veh getVariable "airWarnings";
 			if(_airWarnings select 0 > 2) then {
-				_aimTime = time + 25;
 				hintSilent parseText "<t color='#FF0000' size='1.5'>URGENT WARNING</t><br /><br />You either repeatedly illegally crossed the border or commited a prison break!<br /><br />Air Defences will be engaging you.";
-				_closestAA addMagazine "2Rnd_Stinger";
-				waitUntil {_closestAA aimedAtTarget [_veh] > 0 || time > _aimTime};
-				_airWarnings = _veh getVariable "airWarnings";
-				if (_closestAA aimedAtTarget [_veh] > 0 && (_airWarnings select 0) > 0) then { _closestAA fireAtTarget [_veh]; };
-				
+				(format["server globalChat ""Air control authorized air vehicle of %1 to be shot down. Reason: Repeated illegal border crossing."";",(name player)]) call toClients;
 			};
 		};
 
@@ -70,7 +61,7 @@ if (_veh isKindOf "air") then {
 		};
 		sleep 2;
 	};
-	
+
 	sleep 2; // For the case they changed seats
 	if ((vehicle player) isKindOf "air") then { 0 execVM "armitxes\loops\airloop.sqf"; } else { inAirVehicle = false; };
 };
