@@ -12,14 +12,13 @@ respawnDelay  = 30;
 disabledAI    = 1;
 
 // Define UN Custom GPS Skin
-onMinimapScript[] = {"BIS_fnc_customGPS_Spawn"};
 class Header {gameType = Life; minPlayers = 1; maxPlayers = 77;};
 
 disableChannels[]={0,2};
 
-class CfgSounds 
+class CfgSounds
 {
-  sounds[] = {}; 
+  sounds[] = {};
   #include "sounds.hpp"
 };
 

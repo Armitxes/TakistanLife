@@ -51,6 +51,3 @@ deletevehicle _object;
 };
 
 pickingup   = false;
-
-
-

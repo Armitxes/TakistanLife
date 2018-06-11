@@ -30,7 +30,7 @@ class wantedrelease
 		w = 0.31;
 		h = 0.04;
 	};
-       
+
 	class kopfgeld_eingabe : RscEdit
 	{
 		idc = 2;
@@ -141,7 +141,7 @@ class CCDialog
 		w = 0.31;
 		h = 0.04;
 	};
-       
+
 	class kopfgeld_eingabe : RscEdit
 	{
 		idc = 2;
@@ -218,7 +218,7 @@ class CCDialog
 		y = 0.50;
 		w = 0.31;
 		h = 0.05;
-		
+
 		text = "Declare/Revoke Martial Law!";
 		action = "closedialog 0; [""MarLDialog""] execVM ""CCDialog.sqf"";";
 	};
@@ -261,7 +261,7 @@ class MarLDialog
 		style = ST_CENTER;
 		text = $STRD_description_martial_martialmenu;
 	};
-	class  marlist : RscCombo 
+	class  marlist : RscCombo
 	{
 		idc = 1;
 		x = 0.17;
@@ -269,14 +269,14 @@ class MarLDialog
 		w = 0.31;
 		h = 0.04;
 	};
-	class martial_reason : RscEdit 
+	class martial_reason : RscEdit
 	{
 		idc = 2;
 		x = 0.50;
 		y = 0.30;
 		w = 0.31;
 		h = 0.04;
-	 
+
 	    text = "Reason Not in List, Type Reason Here";
 	};
 	class submit : RscButton
@@ -285,7 +285,7 @@ class MarLDialog
 		y = 0.35;
 		w = 0.31;
 		h = 0.04;
-		
+
 		text = $STRD_description_submit;
 		action = "[(lbCurSel 1), (ctrlText 2)] execVM ""MarLMenu.sqf""; closeDialog 0";
 	};
@@ -1695,7 +1695,7 @@ controls[] = {fs1, fs2, fs3, fs4, closebutton};
 
 
 	};
-	
+
 	class fs4 : RscButton
 
 	{
@@ -1707,7 +1707,7 @@ controls[] = {fs1, fs2, fs3, fs4, closebutton};
 
 	};
 
-	
+
 	class closebutton : RscButton
 
 	{
@@ -1841,7 +1841,7 @@ controls[] = {fs1, fs2, fs3, fs4, fs5, fs6, fs7, fs8, closebutton};
 
 
 	};
-	
+
 	class fs4 : RscButton
 
 	{
@@ -1896,7 +1896,7 @@ controls[] = {fs1, fs2, fs3, fs4, fs5, fs6, fs7, fs8, closebutton};
 
 
 	};
-	
+
 		class fs9 : RscButton
 
 	{
@@ -2062,7 +2062,7 @@ class SpawnList
 	};
 		class SpawnMenu_3:RscText
 	{
-		idc=38763;                              
+		idc=38763;
 		text="Weapons";
 		x=0.1;
 		y=0.83;
@@ -2135,7 +2135,7 @@ class SpawnList
 		y=0.106666666666667;
 		w=1.352222222222222;
 		h=1.000666666666667;
-	}; 
+	};
 };
 class PlayersMenu
 {
@@ -2158,7 +2158,7 @@ class PlayersMenu
   {
   	idc = 13371;
   	onLBSelChanged = "[2,_this select 1] execVM ""importvalues.sqf"";";
-  
+
   	x = 0.197187 * safezoneW + safezoneX;
   	y = 0.108982 * safezoneH + safezoneY;
   	w = 0.605625 * safezoneW;
@@ -2167,7 +2167,7 @@ class PlayersMenu
   class PlayersMenu_1: RscText
   {
   	idc = 38861;
-  
+
   	text = "Object"; //--- ToDo: Localize;
   	x = 0.197187 * safezoneW + safezoneX;
   	y = 0.755012 * safezoneH + safezoneY;
@@ -2177,7 +2177,7 @@ class PlayersMenu
   class PlayersMenu_3: RscText
   {
   	idc = 38863;
-  
+
   	text = "Weapons"; //--- ToDo: Localize;
   	x = 0.197187 * safezoneW + safezoneX;
   	y = 0.602005 * safezoneH + safezoneY;
@@ -2187,7 +2187,7 @@ class PlayersMenu
   class PlayersMenu_4: RscText
   {
   	idc = 38864;
-  
+
   	text = "Magazines"; //--- ToDo: Localize;
   	x = 0.197187 * safezoneW + safezoneX;
   	y = 0.653007 * safezoneH + safezoneY;
@@ -2197,7 +2197,7 @@ class PlayersMenu
   class PlayersMenu_6: RscText
   {
   	idc = 38866;
-  
+
   	text = "Position"; //--- ToDo: Localize;
   	x = 0.197187 * safezoneW + safezoneX;
   	y = 0.704009 * safezoneH + safezoneY;
@@ -2208,7 +2208,7 @@ class PlayersMenu
   {
   	idc = -1;
   	action = "[0] execVM ""kickselect.sqf"";";
-  
+
   	text = "Kick to Lobby"; //--- ToDo: Localize;
   	x = 0.5 * safezoneW + safezoneX;
   	y = 0.806014 * safezoneH + safezoneY;
@@ -2219,7 +2219,7 @@ class PlayersMenu
   {
   	idc = -1;
   	action = "[1] execVM ""kickselect.sqf"";";
-  
+
   	text = "Ban"; //--- ToDo: Localize;
   	x = 0.5 * safezoneW + safezoneX;
   	y = 0.857016 * safezoneH + safezoneY;
@@ -2230,7 +2230,7 @@ class PlayersMenu
   {
   	idc = 19000;
   	action = "[2] execVM ""kickselect.sqf"";";
-  
+
   	text = "Cam"; //--- ToDo: Localize;
   	x = 0.603594 * safezoneW + safezoneX;
   	y = 0.806014 * safezoneH + safezoneY;
@@ -2241,7 +2241,7 @@ class PlayersMenu
   {
   	idc = -1;
   	action = "[3] execVM ""kickselect.sqf"";";
-  
+
   	text = "Warn"; //--- ToDo: Localize;
   	x = 0.603594 * safezoneW + safezoneX;
   	y = 0.857016 * safezoneH + safezoneY;
@@ -2251,7 +2251,7 @@ class PlayersMenu
   class PlayersMenu_editbox: RscEdit
   {
   	idc = 19001;
-  
+
   	x = 0.197187 * safezoneW + safezoneX;
   	y = 0.820295 * safezoneH + safezoneY;
   	w = 0.278906 * safezoneW;
@@ -2261,59 +2261,11 @@ class PlayersMenu
   {
   	idc = -1;
   	action = "[9] execVM ""kickselect.sqf"";";
-  
+
   	text = "Chatban"; //--- ToDo: Localize;
   	x = 0.707188 * safezoneW + safezoneX;
   	y = 0.806014 * safezoneH + safezoneY;
   	w = 0.0970417 * safezoneW;
   	h = 0.0434465 * safezoneH;
   };
-};
-class ItemsMenu
-{
-	name=ItemsMenu;
-	idd=-1;
-	movingEnable=1;
-	controlsBackground[]={ItemsMenu_background};
-	objects[]={};
-	controls[]={ItemsMenu_playerName, ItemsMenu_options, ItemsMenu_activate};
-
-	class ItemsMenu_playerName:RscText
-	{
-		idc=-1;
-		text="Items Menu";
-		x=0.355555555555556;
-		y=0.142222222222222;
-		w=0.1588888888888889;
-		h=0.0355555555555556;
-	};
-
-	class ItemsMenu_options:RscListBox
-	{
-		idc=2119;
-		x=0.355555555555556;
-		y=0.213333333333333;
-		w=0.311111111111111;
-		h=0.497777777777778;
-	};
-
-	class ItemsMenu_activate:RscButton
-	{
-		idc=-1;
-		text="Buy";
-		action="[player] execVM ""ItemsSelect.sqf"";";
-		x=0.4;
-		y=0.746666666666667;
-		w=0.222222222222222;
-		h=0.0711111111111111;
-	};
-
-	class ItemsMenu_background:RscBackground
-	{
-		idc=-1;
-		x=0.288888888888889;
-		y=0.106666666666667;
-		w=0.422222222222222;
-		h=0.746666666666667;
-	};
 };
