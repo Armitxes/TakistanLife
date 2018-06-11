@@ -12,8 +12,8 @@ switch (AdminSelect) do
 		execVM "vitems.sqf";
 	};
     case 2: //God
-	{ 
-    _start = createDialog "GodMenu"; 
-    #define GodMenu 14098 
+	{
+    _start = createDialog "GodMenu";
+    #define GodMenu 14098
   };
 };
