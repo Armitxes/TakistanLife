@@ -7,7 +7,7 @@ if(typeName _doAction != "STRING") then {
 };
 
 switch (_doAction) do
-{ 
+{
 	case "door": {
 		_obj = _this select 1;
 		_cords = _this select 2;
@@ -36,24 +36,24 @@ switch (_doAction) do
 	case "unCP": {
 		if (isun) then {
 			_mrk = _this select 1;
-			if ((markerText _mrk) == "OPEN") then { 
+			if ((markerText _mrk) == "OPEN") then {
 				_mrk setMarkerText "CLOSED";
 				_mrk setMarkerColor "ColorRed";
 		    	('server globalChat "United Nations: A Checkpoint has been closed."') call broadcast;
-		    
+
 				{
 					_x animate ["bargate",1];
 					_x setDamage 0;
-				} forEach (nearestObjects [getMarkerPos _mrk, ["ZavoraAnim"], 100]); 
+				} forEach (nearestObjects [getMarkerPos _mrk, ["ZavoraAnim"], 100]);
 			} else {
 				_mrk setMarkerText "OPEN";
 				_mrk setMarkerColor "ColorGreen";
-				('server globalChat "United Nations: A Checkpoint has been opened."') call broadcast;      
+				('server globalChat "United Nations: A Checkpoint has been opened."') call broadcast;
 			};
 		} else { server globalChat "Access Denied"; };
 	};
 	case "jailbus": {
-		if(isUN && (PLAYERDATA select 2) > 0) then {
+		if(isUN) then {
 			_mans = nearestObjects [getMarkerPos "cpWest", ["Man"], 100];
 			_mans = _mans + nearestObjects [getMarkerPos "cpEast", ["Man"], 100];
 
@@ -61,11 +61,11 @@ switch (_doAction) do
 			{if(alive _x && (animationState _x) in animRestrained) then { _prisoners = _prisoners + [_x]; };} forEach _mans;
 			if ((count _prisoners) > 0) then {
 				('server globalChat "A prisonbus is heading towards the border";') call toClients;
-				
+
 				sleep 120;
 				{
 					if(alive _x && (animationState _x) in animRestrained) then {
-						format['if(player == %2)then{ [%1] execVM "putinjail.sqf"; };', player, _x] call toClients;					
+						format['if(player == %2)then{ [%1] execVM "putinjail.sqf"; };', player, _x] call toClients;
 					}
 				} forEach _prisoners;
 			} else { server globalChat "No prisoners found"; };
@@ -106,7 +106,7 @@ switch (_doAction) do
 			_l = 0; if (isun) then { _l = 1; };
 			_cams = (cameras select _l);
 			_mrks = [];
-			
+
 			for [{_i=0}, {_i<(count _cams)}, {_i=_i+1}] do {
 				_curCam = _cams select _i;
 				_markerName = format ["camMarker%1",_i];
@@ -116,12 +116,12 @@ switch (_doAction) do
 				_markerName setMarkerTextLocal "CAM";
 				_mrks = _mrks + [_markerName];
 			};
-		
+
 			openMap [true,true];
 			onMapSingleClick "camCoords = _pos;";
 			waitUntil {!isNil "camCoords"};
 			openMap [false,false];
-			
+
 			_camDist = 100000;
 			_camObj = nil;
 			for [{_i=0}, {_i<(count _cams)}, {_i=_i+1}] do {
@@ -133,7 +133,7 @@ switch (_doAction) do
 					_camDist = _dist;
 				};
 			};
-			
+
 			{ deleteMarkerLocal _x; } forEach _mrks;
 
 			if ((camCoords distance _camObj) < 400) then {
