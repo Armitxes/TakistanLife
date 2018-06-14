@@ -130,5 +130,5 @@ if(!isDedicated) then {
 	execVM "armitxes\anticheat.sqf";
 	player globalchat "[Info] Welcome to Takistan Life: Rise of South";
 	player globalchat "[Info] This server is protected by the Armitxes Network.";
-	_bounty = (PLAYERDATA select 7); if(_bounty > 0) then { ["addWarrant",player,"Various Crimes",_bounty] execVM "warrant.sqf"; };
+	// _bounty = (PLAYERDATA select 7); if(_bounty > 0) then { ["addWarrant",player,"Various Crimes",_bounty] execVM "warrant.sqf"; };
 };
