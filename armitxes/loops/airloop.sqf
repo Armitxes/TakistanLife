@@ -8,7 +8,7 @@ if (_veh isKindOf "air") then {
 	_closestAA = unoAA;
 	_aaGrp = (group _closestAA);
 	_airWarnings = _veh getVariable "airWarnings";
-	if (isNil "_airWarnings") then { _veh setVariable ["airWarnings",[0,-600],true]; _airWarnings = [0,-600]; };
+	if (isNil "_airWarnings") then { air_warning_time = -1800; _veh setVariable ["airWarnings",[0,-600],true]; _airWarnings = [0,-600]; };
 	_perms = "Denied"; if ( (_airWarnings select 1)+600 > time ) then { _perms = "Granted"; };
 	titleText [format ["Flight Warnings: %1/3 - Flight Permission: %2",_airWarnings select 0,_perms], "PLAIN DOWN", 0.4];
 
@@ -32,7 +32,7 @@ if (_veh isKindOf "air") then {
 					if (count (units _veh) > _oldCrew) then {
 						_airWarnings set [0,3];
 						_veh setVariable ["airWarnings",_airWarnings,true];
-						(format["server globalChat ""Air control authorized air vehicle of %1 to be shot down. Reason: Prison Break"";",(name player)]) call toClients;
+						if (air_warning_time+1800 < time) then { air_warning_time = time; (format["server globalChat ""Air control authorized the air vehicle of %1 to be shot down. Reason: Prison Break"";",(name player)]) call toClients; };
 						hintSilent parseText "<t color='#FF0000' size='1.5'>URGENT WARNING</t><br /><br />Prison Break! All defense systems are now locked on you. Better get the hell out of here!";
 					};
 				};
@@ -41,7 +41,7 @@ if (_veh isKindOf "air") then {
 			_airWarnings = _veh getVariable "airWarnings";
 			if(_airWarnings select 0 > 2) then {
 				hintSilent parseText "<t color='#FF0000' size='1.5'>URGENT WARNING</t><br /><br />You either repeatedly illegally crossed the border or commited a prison break!<br /><br />Air Defences will be engaging you.";
-				(format["server globalChat ""Air control authorized air vehicle of %1 to be shot down. Reason: Repeated illegal border crossing."";",(name player)]) call toClients;
+				if (air_warning_time+1800 < time) then { air_warning_time = time; (format["server globalChat ""Air control authorized the air vehicle of %1 to be shot down. Reason: Repeated illegal border crossing."";",(name player)]) call toClients; };
 			};
 		};
 
