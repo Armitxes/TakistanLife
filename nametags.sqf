@@ -8,7 +8,7 @@ while {true} do {
 		_dirV = vectorDir vehicle player;
 		_pos = player modelToWorld [0,0,0];
 		_posFind = [(_pos select 0)+(_dirV select 0)*_range,(_pos select 1)+(_dirV select 1)*_range,(_pos select 2)+(_dirV select 2)*_range];
-	
+
 		if (vehicle player == player) then {
 			_objs = nearestObjects [_posFind,["Man", "Infostand_1_EP1", "Infostand_2_EP1", "Misc_cargo_cont_tiny", "RUBasicAmmunitionBox","UNBasicAmmunitionBox_EP1"],1];
 			_vcls = nearestobjects [_posFind,["LandVehicle", "Air", "ship", "LocalBasicWeaponsBox"], 3];
@@ -17,7 +17,7 @@ while {true} do {
 			if(count _vcls > 0 and INV_shortcuts) then {
 				_car = _vcls select 0;
 				_distCP = (_car distance player);
-				
+
 				if(typeof _car != "LocalBasicWeaponsBox" and !(isnull _car) and alive _car and !(locked _car) and vehicle player == player and _distCP < 3) then {
 					titleRsc["Rtags", "PLAIN"];
 					_control = (uiNamespace getVariable 'TAGS_HUD') displayCtrl 64438;
@@ -32,7 +32,7 @@ while {true} do {
 			if(count _atms > 0 and INV_shortcuts) then {
 				_atm = _atms select 0;
 				_distTP = (_atm distance player);
-				
+
 				if(_atm in bankflagarray and _distTP < 3) then {
 					titleRsc["Rtags", "PLAIN"];
 					_control = (uiNamespace getVariable 'TAGS_HUD') displayCtrl 64438;
@@ -43,7 +43,7 @@ while {true} do {
 			if(count _objs > 0 and INV_shortcuts) then {
 				_tag = _objs select 0;
 				_distTP = _tag distance player;
-	
+
 				if(_tag in shopusearray and _distTP < 3) then {
 					_text = (_tag call INV_getshopArray) select 1;
 					titleRsc["Rtags", "PLAIN"];

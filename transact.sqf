@@ -10,10 +10,8 @@ if (_art == "deposit") then {
   _transfermoney = _transfermoney call ISSE_str_StrToInt;
   if (_transfermoney <= 0) exitWith {};
   _steuern       = round((_transfermoney*100)/(100-bank_steuer));
-  //_targetString  = INV_PLAYERLIST select _transfer;
   _targetString  = call compile (INV_PLAYERSTRINGLIST select _transfer);
 
-  // if (INV_PLAYERLIST select _transfer == player) exitWith
   if (_targetString == player) exitWith {
     if (_dollarz < _transfermoney) then {
 			["add","finances","You cannot transfer that much money!",true] execVM "armitxes\logs.sqf";

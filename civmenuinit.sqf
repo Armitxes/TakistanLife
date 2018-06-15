@@ -9,8 +9,7 @@ if ((player distance _civmenuciv >= 25) or (!(alive _civmenuciv))) exitWith { hi
 switch (_art) do {
   case 1: { (format ["if (player == %1) then {[""drugs"", %2] execVM ""civmenu.sqf"";};", _civmenuciv, player]) call toClients; };
   case 2: {
-   //if(!(_civmenuciv call ISSE_IsVictim) || !([civmenu_civ] call plr_isUnConscious)) exitwith{hint localize "STRS_inventory_checknohands"};
-    if (isciv) exitWith {hintSilent "You cannot disarm people as a civilian"};
+  if (isciv) exitWith {hintSilent "You cannot disarm people as a civilian"};
 	(format ["if (player == %1) then {[""disarm""] execVM ""civmenu.sqf"";};", _civmenuciv]) call toClients;
     hintSilent format [localize "STRS_civmenu_disarm", _civmenu_civ];
   };
@@ -27,11 +26,11 @@ switch (_art) do {
   };
   case 5: {
     (format ["%1 setdamage 0; if (%1 == player) then { dmgHead = 0; dmgBody = 0; dmgHands = 0; dmgLegs = 0; hintSilent localize ""STRS_civmenucheck_youarehealed"";};", _civmenuciv]) call toClients;
-    hintSilent format [localize "STRS_civmenu_heal", _civmenu_civ];  
+    hintSilent format [localize "STRS_civmenu_heal", _civmenu_civ];
   };
   case 6: {
     if(!(_civmenuciv call ISSE_IsVictim))exitwith{hint localize "STRS_inventory_checknohands"};
-    (format ["if (player == %1) then {[""inventcheck"", %2] execVM ""civmenu.sqf"";}", _civmenuciv,player]) call toClients;  
+    (format ["if (player == %1) then {[""inventcheck"", %2] execVM ""civmenu.sqf"";}", _civmenuciv,player]) call toClients;
   };
   case 8: { (format ["if (player == %1) then {[""licencheck"", %2] execVM ""civmenu.sqf"";}", _civmenuciv,player]) call toClients; };
   case 20: {
@@ -45,4 +44,4 @@ switch (_art) do {
       civmenuciv attachTo [player,[0,0.5,0]];
     };
   };
-};                                              
+};
