@@ -138,7 +138,7 @@ INV_Lizenzen = [
 	["Riflelicense",[gunlicsouth,licenseflag2,adminbank],"Rifle License",20000],
 	["automatic",[gunlicsouth,adminbank,licenseflag2,adminbank],"Automatic Rifle License",50000],
 	["engineer",[atm4,atm1,memshop,memshop],"Engineer Training",750],
-	["bomb",[adminbank,atm12,objnull],"Terrorist License",35000],
+	["bomb",[adminbank,atm12,objnull],"Terrorist License",80000],
 	["probator",[adminbank,copbank,copbank],localize "STRS_license_probator",100],
 	["patrol_training",[adminbank,copbank,copbank],localize "STRS_license_coppatrol",2000],
 	["response_training",[adminbank,copbank,copbank],"Advanced Officer Training",10000],
