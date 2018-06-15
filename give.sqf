@@ -11,7 +11,6 @@ if (_art == "uebergabe") then
 
 _spielernum   = call compile (_this select 3);
 _spieler      = INV_PLAYERSTRINGLIST select _spielernum;
-//_playerobject = INV_PLAYERLIST       select _spielernum;
 _playerobject = call compile _spieler;
 _closeplayers = nearestobjects [getpos player, ["LandVehicle", "Air", "Man"], 20];
 
