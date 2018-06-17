@@ -24,7 +24,7 @@ switch (_art) do {
 	_list = lbAdd [4, "Crime not in List"]; lbSetData [4,_list,"1000"];
 	if(iscop) then {
 	    _list = lbAdd [4, "Murder"]; lbSetData [4,_list,"10000"];
-	    _list = lbAdd [4, "Hit & Run"]; lbSetData [4,_list,"10000"];
+	    _list = lbAdd [4, "Hit and Run"]; lbSetData [4,_list,"10000"];
 	    _list = lbAdd [4, "Bribery"]; lbSetData [4,_list,"2000"];
 	    _list = lbAdd [4, "VIP Assassination"]; lbSetData [4,_list,"10100"];
 	    _list = lbAdd [4, "Bank/Casino Robbery"]; lbSetData [4,_list,"7000"];
