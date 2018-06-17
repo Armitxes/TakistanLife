@@ -1,4 +1,4 @@
-if(pickingup)exitwith{hintSilent "you are already picking up an item"};
+if(pickingup)exitwith{hintSilent "You are already picking up an item"};
 pickingup   = true;
 
 _action	    = _this select 2;
@@ -16,38 +16,23 @@ _time       = round time;
 
 if ((_ownweight + _itemweight) > INV_Tragfaehigkeit) then {
   _amount = (floor((INV_Tragfaehigkeit - _ownweight) / (_infos call INV_getitemTypeKg)));
-  if (_amount <= 0) exitWith {hintSilent localize "STRS_inv_buyitems_maxgewicht"; _exitvar = 1;};
+  if (_amount <= 0) exitWith {pickingup=false; hintSilent localize "STRS_inv_buyitems_maxgewicht"; };
 };
 
-if(_exitvar == 1)exitwith{};
-pickingup   = true;
-
 _object setvariable ["droparray", nil, true];
-
 if(primaryweapon player == "" and secondaryweapon player == "")then{player playmove "AmovPercMstpSnonWnonDnon_AinvPknlMstpSnonWnonDnon"}else{player playmove "AinvPknlMstpSlayWrflDnon"};
 
 sleep 1;
 
 [_item, _amount, "INV_InventarArray"] call INV_CreateItem;
-
 hintSilent format["You picked up %1 %2", _amount, _name];
 
-if(_amount < _tamount) then
-
-{
-
-_amount = _tamount - _amount;
-_object setvariable ["droparray", [_amount, _item], true];
-_n = iactionarr find _object;
-iactionarr set [_n, 0];
-iactionarr = iactionarr - [0, (iactionarr select (_n + 1))];
-
-}
-else
-{
-
-deletevehicle _object;
-
-};
+if (_amount < _tamount) then {
+  _amount = _tamount - _amount;
+  _object setvariable ["droparray", [_amount, _item], true];
+  _n = iactionarr find _object;
+  iactionarr set [_n, 0];
+  iactionarr = iactionarr - [0, (iactionarr select (_n + 1))];
+} else { deletevehicle _object; };
 
 pickingup   = false;
