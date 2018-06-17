@@ -24,7 +24,7 @@ switch (_art) do {
 	_list = lbAdd [4, "Crime not in List"]; lbSetData [4,_list,"1000"];
 	if(iscop) then {
 	    _list = lbAdd [4, "Murder"]; lbSetData [4,_list,"10000"];
-	    _list = lbAdd [4, "Hit & Run"]; lbSetData [4,_list,"10000"];
+	    _list = lbAdd [4, "Hit and Run"]; lbSetData [4,_list,"10000"];
 	    _list = lbAdd [4, "Bribery"]; lbSetData [4,_list,"2000"];
 	    _list = lbAdd [4, "VIP Assassination"]; lbSetData [4,_list,"10100"];
 	    _list = lbAdd [4, "Bank/Casino Robbery"]; lbSetData [4,_list,"7000"];
@@ -34,7 +34,7 @@ switch (_art) do {
 	    _list = lbAdd [4, "Theft of Civilian Vehicle"]; lbSetData [4,_list,"1500"];
 	    _list = lbAdd [4, "Assault"]; lbSetData [4,_list,"5000"];
 	    _list = lbAdd [4, "Rioting"]; lbSetData [4,_list,"3000"];
-	    _list = lbAdd [4, "Perverting the Course of Justice"]; lbSetData [4,_list,"500"];  	
+	    _list = lbAdd [4, "Perverting the Course of Justice"]; lbSetData [4,_list,"500"];
 	    _list = lbAdd [4, "Robbery"]; lbSetData [4,_list,"4000"];
 	    _list = lbAdd [4, "Attempted Murder"]; lbSetData [4,_list,"5000"];
 	    _list = lbAdd [4, "Attempted Vehicle Theft"]; lbSetData [4,_list,"1000"];
@@ -55,9 +55,9 @@ switch (_art) do {
 	_list = lbAdd [4, "Possession of Class B Drug"]; lbSetData [4,_list,"6000"];
     _list = lbAdd [4, "Slavery"]; lbSetData [4,_list,"10000"];
 	_list = lbAdd [4, "Terrorism"]; lbSetData [4,_list,"18000"];
-  
+
 	lbSetCurSel [4, 0];
-  
+
 	while {ctrlVisible 1007} do
 	{
 		sleep 0.3;
@@ -70,7 +70,7 @@ switch (_art) do {
 		lbAdd [1, "GENERAL INFO"];
 		lbAdd [1, _trennlinie];
 		lbAdd [1, format ["Date: %3.%2.%1", (date select 0), (date select 1), (date select 2)]];
-		
+
 		_npcCount = 0; _medCount = 0; _judCount = 0; _lawyerCount = 0;
 		{ if (!isPlayer _x) then { _npcCount = _npcCount + 1; }; } forEach (nearestObjects [[6453,8127,0],["Man"], 10000]);
 		{
@@ -102,7 +102,7 @@ switch (_art) do {
 					};
 				};
 			};
-			
+
 			lbAdd [1, format ["Performance (FPS): %1 (%2)",svrPerf,svrFPS]];
 			lbAdd [1, format ["Server Delay: %1m",round((time/60)-(svrDelay/60))]];
 			lbAdd [1, ""];
@@ -127,7 +127,7 @@ switch (_art) do {
 	lbAdd [1, format ["Money: $%1",_money]];
 	lbAdd [1, format ["Savings: $%1",((PLAYERDATA select 1) call ISSE_str_IntToStr)]];
 	lbAdd [1, format ["%1: %2/%3", localize "STRS_statdialog_weight", (call INV_GetOwnWeight), INV_Tragfaehigkeit]];
-		
+
 	lbAdd [1, _trennlinie];
 	lbAdd [1, localize "STRS_statdialog_licenselist"];
 	for [{_i=0}, {_i < (count INV_Lizenzen)}, {_i=_i+1}] do
@@ -165,17 +165,17 @@ switch (_art) do {
 	if (not(MayorNumber == -1)) then
 	{
 		lbAdd [1,format["Prime Minister: %1",name (playerarray select MayorNumber)]];
-	} else { lbAdd [1,"There is no elected Prime Minister"]; };	
+	} else { lbAdd [1,"There is no elected Prime Minister"]; };
 	if(!isNil "sgov") then {
 		lbAdd [1, "South Leader: " + name (leader sgov)];
-	} else { lbAdd [1,"There is no south leader"]; };	
+	} else { lbAdd [1,"There is no south leader"]; };
 	if (not(chiefNumber == -1)) then
 	{
 	lbAdd [1,format["Police Constable: %1",name (playerarray select chiefNumber)]];
 	} else { lbAdd [1,"There is no elected Police Constable"]; };
-  
-	lbAdd [1, format ["Next elections: %1 minutes",round((lastElection+35)-(time/60))]]; 
-		
+
+	lbAdd [1, format ["Next elections: %1 minutes",round((lastElection+35)-(time/60))]];
+
 	lbAdd [1, "   " + _trennlinie];
 	lbAdd [1, "    Laws [North & South]"];
 	lbAdd [1, "   " + _trennlinie];
@@ -208,13 +208,13 @@ switch (_art) do {
 	} forEach INV_ItemTypenArray;
 	_totalTaxes = _totalTaxes + (bank_steuer * 0.5);
 	lbAdd [1, format["Transfer Tax: %1", bank_steuer] + "%" ];
-	
+
 	protesters = protesters - [objNull];
 	_civNum = (civilian countSide playableUnits);
 	if(_civNum > 0) then { _totalTaxes = round(_totalTaxes + (((count protesters) * 100) / _civNum)) };
 	lbAdd [1, format ["Protesters against PM: %1/300",_totalTaxes]];
 	lbAdd [1, _trennlinie];
-	if (mlaw) then { 
+	if (mlaw) then {
 	lbAdd [1, "MARTIAL LAW IS IN EFFECT"];}
 	else {
 	lbAdd [1, "MARTIAL LAW IS NOT IN EFFECT"];};
@@ -226,17 +226,17 @@ switch (_art) do {
 	lbAdd [1,"Oil Barrel Trader demand: 1"];}
 	else {
 	lbAdd [1, format["Oil Barrel Trader demand: %1", oildemand]];};
-	
+
 	lbAdd [1, _trennlinie];
 	lbAdd [1, "W A N T E D:"];
 	lbAdd [1, _trennlinie];
-         
+
 	for [{_i=0}, {_i < (count warrantarray)}, {_i=_i+1}] do
 	{
 		_singleWarrant = warrantarray select _i;
 		_idCiv = _singleWarrant select 0;
 		_pReason = _singleWarrant select 1;
-		_pBounty = _singleWarrant select 2;  
+		_pBounty = _singleWarrant select 2;
 
 		lbAdd [1,(format ["%1 %2 ( Cop Bounty: %3, Jail Time: %4 min/s,Total Bail : %5): is wanted for :", _idCiv, (name _idCiv), _pBounty, round (_pBounty/(16.5*60)),(_pBounty*4)])];
 		lbAdd [1,(format ["  %1", _pReason])];
@@ -323,7 +323,7 @@ switch (_art) do {
 	};
 	lbAdd [1, _trennlinie];
     };
-	
+
     case "gesetz": {
 		if (!(createDialog "gesetzdialog")) exitWith {hint "Dialog Error!";};
 		{
@@ -349,9 +349,9 @@ switch (_art) do {
 	    _singleWarrant = warrantarray select _i;
 	    _idCiv = _singleWarrant select 0;
 	    _pReason = _singleWarrant select 1;
-	    _pBounty = _singleWarrant select 2;  
+	    _pBounty = _singleWarrant select 2;
 	    lbAdd [1, (format ["%1 %2 ( Cop Bounty: %3, Jail Time: %4 min/s,Total Bail : %5): is wanted for :", _idCiv, (name _idCiv), _pBounty, round (_pBounty/(16.5*60)),(_pBounty*4)])];
-	    lbAdd [1,(format ["  %1", _pReason])]; 	
+	    lbAdd [1,(format ["  %1", _pReason])];
 	};
 	lbAdd [1, _trennlinie];
     };
@@ -426,13 +426,13 @@ switch (_art) do {
 
     case "gangmenu": {
 		if (!(createDialog "gang_menu")) exitWith {hint "Dialog Error!";};
-		
+
 		_i = 0;
 		{
 			_name = _x select 0;
 			_grp = _x select 1;
 			_mems = units _grp;
-			
+
 			if(count _mems > 0) then {
 				if (!(isNil "sgov")) then {
 					if(sgov == _grp) then {
@@ -444,7 +444,7 @@ switch (_art) do {
 				_txt = format ["%1 [%2 Member] (",_name,count _mems];
 				{ _txt = _txt + (name _x) + ","; } forEach _mems;
 				_txt = _txt + ")";
-				
+
 				_index = lbAdd [202,_txt];
 			} else {
 				gangsarray set [_i,-1];
@@ -464,13 +464,13 @@ switch (_art) do {
 		lbSetData [201, _index, "true"];
 		_index = lbAdd [201, localize "STRS_hints_nein"];
 		lbSetData [201, _index, "false"];
-		
+
 		{
 			_index = lbAdd [102, (format ["%1", name _x]) ];
 			lbSetData [102, _index, (format ["%1", _x])]
 		} forEach (units _grp);
     };
-	
+
 	case "constitution": {
 		if (!(createDialog "constitution")) exitWith {hint "Dialog Error!";};
 		_trennlinie = "-------------------------------------------------";
