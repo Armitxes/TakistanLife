@@ -43,7 +43,6 @@ _h = [playerarray, playerstringarray, !iscop] execVM "INVvars.sqf";
 waituntil{scriptDone  _h};
 
 _h = [] execVM "bankexec.sqf";
-
 waitUntil{scriptDone  _h};
 
 _h = [] execVM "workplacesettings.sqf";
@@ -55,15 +54,12 @@ waitUntil{scriptDone  _h};
 setTerrainGrid(75);
 
 _h = [] execVM "animList.sqf";
-
 waitUntil{scriptDone  _h};
 
 _h = []	execVM "miscfunctions.sqf";
-
 waitUntil{scriptDone  _h};
 
 _h = [] execVM "variables.sqf";
-
 waitUntil{scriptDone  _h};
 
 setPitchBank = compile preprocessfile "setPitchBank.sqf";
@@ -80,7 +76,6 @@ if(!isDedicated) then {
 	[] execVM "initplayer.sqf";
 	[] execVM "salaries.sqf";
 	[] execVM "actions.sqf";
-	[] execVM "moo.sqf";
 
 	for [{_i=0}, {_i < (count INV_ItemFabriken)}, {_i=_i+1}] do {_i execVM "facqueue.sqf"};
 
@@ -128,6 +123,8 @@ if (isServer) then {
 if(!isDedicated) then {
 	execVM "specialareas.sqf";
 	execVM "armitxes\anticheat.sqf";
+	[] execVM "moo.sqf";
+
 	player globalchat "[Info] Welcome to Takistan Life: Rise of South";
 	player globalchat "[Info] This server is protected by the Armitxes Network.";
 	_bounty = (PLAYERDATA select 7);
