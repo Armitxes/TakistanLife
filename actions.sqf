@@ -121,10 +121,10 @@ action160 = _role addAction ["<t color='#00FFFF'>Put in Vehicle</t>","putinvehic
 
 memkey = _role addaction ["Member Keypad","CodePad.sqf",[[2,4,8,5,2], {["door",hgate] execVM "armitxes\remote.sqf"}, {ctrlSetText [999,"Wrong code!"]; sleep 1; ctrlSetText [999, ""];}],1,false,true,"","player distance memcont <= 5"];
 //==========  CASINO ======================
-action161 =_role addAction ["<t color='#FFD700'>Low Slotmachine ($100)</t>","casino.sqf",["slotmachineB"],1,false,true,"","player distance gamble1 < 4 && isciv && !isbet && (time_casino_rob_lockdown < time)"];
-action162 =_role addAction ["<t color='#FFD700'>Low Slotmachine ($100)</t>","casino.sqf",["slotmachineB"],1,false,true,"","player distance gamble2 < 4 && isciv && !isbet && (time_casino_rob_lockdown < time)"];
-action163 =_role addAction ["<t color='#FFD700'>High Slotmachine ($2000)</t>","casino.sqf",["slotmachine"],1,false,true,"","player distance gamble3 < 4 && isciv && !isbet && (time_casino_rob_lockdown < time)"];
-action164 =_role addAction ["<t color='#FFD700'>High Slotmachine ($2000)</t>","casino.sqf",["slotmachine"],1,false,true,"","player distance gamble4 < 4 && isciv && !isbet && (time_casino_rob_lockdown < time)"];
+action161 =_role addAction ["<t color='#FFD700'>Low Slotmachine ($100)</t>","casino.sqf",["slotmachineB"],1,false,true,"","player distance gamble1 < 4 && isciv && (time_casino_rob_lockdown < time)"];
+action162 =_role addAction ["<t color='#FFD700'>Low Slotmachine ($100)</t>","casino.sqf",["slotmachineB"],1,false,true,"","player distance gamble2 < 4 && isciv && (time_casino_rob_lockdown < time)"];
+action163 =_role addAction ["<t color='#FFD700'>High Slotmachine ($2000)</t>","casino.sqf",["slotmachine"],1,false,true,"","player distance gamble3 < 4 && isciv && (time_casino_rob_lockdown < time)"];
+action164 =_role addAction ["<t color='#FFD700'>High Slotmachine ($2000)</t>","casino.sqf",["slotmachine"],1,false,true,"","player distance gamble4 < 4 && isciv && (time_casino_rob_lockdown < time)"];
 action165 =_role addAction ["<t color='#FF0000'>Rob Casino</t>","casrob.sqf", ["robcas", csafe],1,false,true,"","player distance csafe <= 3 and isciv"];
 // ====== Armis Medic ======
 medAct = _role addAction ["Remove Body","noscript.sqf",'deleteVehicle cursorTarget; ["dollarz",1500] call INV_AddInventoryItem;',1,false,true,"",'ismedic && !(alive cursorTarget) && cursorTarget isKindOf "Man"'];

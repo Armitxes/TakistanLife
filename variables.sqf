@@ -65,7 +65,6 @@ facworkercost		 = 500;
 maxfacworkers		 = 20;
 firingcaptive		 = false;
 pickingup   		 = false;
-isbet				 = false;
 time_bank_rob_lockdown = -1200;
 time_casino_rob_lockdown = -1200;
 planting		     = false;
