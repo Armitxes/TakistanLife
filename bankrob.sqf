@@ -38,19 +38,9 @@ if (_art == "ausrauben") then {
 		['dollarz', _robpool] call INV_AddInventoryItem;
 		hintSilent format[localize "STRS_bank_rob_success"];
 		stolencash = stolencash + _robpool;
-		local_useBankPossible = false;
 		robenable = true;
-		rblock = rblock + ((_robpool/5000)*60);
-		_rblock = rblock;
-
-		sleep 2;
-
-		if(_rblock != rblock)exitwith{};
-
-		for [{rblock}, {rblock > -1}, {rblock=rblock-1}] do {sleep 1;};
-
-		local_useBankPossible = true;
-		rblock	   = 0;
+		time_bank_rob_lockdown = time + 600;
+		time_bank_lockout = time + ((_robpool/20000)*60);
 		stolencash = 0;
 	};
 

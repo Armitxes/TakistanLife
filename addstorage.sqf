@@ -57,7 +57,7 @@ if (_art == "ablegen") then {
 	};
 
 	if(_storageweight > _maxweight)exitwith{hintSilent "The vehicle's storage is full";};
-	if ((!local_useBankPossible) && (_item call INV_getitemKindOf == "dollarz")) exitWith {hintSilent "You are cannot drop/give money while in  bank  lockout"};
+	if ((time_bank_lockout > time) && (_item call INV_getitemKindOf == "dollarz")) exitWith {hintSilent "You are cannot drop/give money while in  bank  lockout";};
 
 	if
 	(
