@@ -29,15 +29,10 @@ INV_smscost		           = 5;
 
 ["wipeold"] execVM "armitxes\logs.sqf";
 
+bountyToPay = 0;
 mlaw = false;
 warStarted				= false;
 add_workplace			= 75;
-copchoprespawntime		= 120;
-CopWaffenAvailable		= 0;
-CopIsInPrison			= false;
-CopInPrisonTime			= 180;
-shooting_self            = 0;
-srHinbewegen             = 0;
 deadcam                  = 0;
 isstunned                = false;
 hatGanggebietErobert     = false;

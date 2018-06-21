@@ -54,8 +54,6 @@ action112 = _role addaction [format ["<t color='#FF0000'>Buy Slave ($%1)</t>", s
 action113 = _role addaction ["Private storage","storage.sqf",["private_storage", "save"],1,false,true,"","player distance atm1 < 7"];
 action114 = _role addaction ["Private storage","storage.sqf",["private_storage", "save"],1,false,true,"","player distance copbank < 7"];
 action115 = _role addaction ["Private storage","storage.sqf",["private_storage", "save"],1,false,true,"","player distance uncar < 7"];
-//========================================= BAIL ======================================================
-action116 = _role addaction [format ["Pay Bail", slave_cost],"maindialogs.sqf", ["bail"],1,false,true,"","player distance bailflag <= 5"];
 //===================================== ITEM PROCESS ==================================================
 action117 = _role addaction ["Process Diamond rock","itemprocess.sqf",["Diamond rock", "Diamondring", 10, "diamond"],1,false,true,"","player distance Diamond_1 <= 5 and isciv"];
 action118 = _role addaction ["Process Oil","itemprocess.sqf",["Oil", "OilBarrel", 10, "oil"],1,false,true,"","player distance Oil_1 <= 5 and isciv"];
