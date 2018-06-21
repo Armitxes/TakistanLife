@@ -6,7 +6,7 @@ if (_art == "robcas") then {
   _robpool = robsafes select 1;
   if ((playersNumber west) < 3)exitWith{hintSilent "There are not enough cops on to rob this safe"};
   if(_robpool < 15000)exitWith{hintSilent "This safe has recently been stolen from and is empty"};
-  if(!robenable)exitwith{hintSilent "you are already robbing the casino"};
+  if(!robenable)exitwith{hintSilent "You are already robbing the casino"};
   if(!(call INV_isArmed) and !enableDebug)exitWith{hintSilent localize "STRS_casino_rob_noweapon";};
 
   robenable = false;
