@@ -93,7 +93,7 @@ class Mission
 	randomSeed=7826573;
 	class Intel
 	{
-		briefingName="Takistan Life RPG: Rise of South v3.6";
+		briefingName="Takistan Life RPG: Rise of South v3.7";
 		briefingDescription="by Tonic and Armitxes";
 		resistanceEast=1;
 		startWeather=0;
@@ -28203,7 +28203,7 @@ class Mission
 			azimut=26.218399;
 			id=2776;
 			side="EMPTY";
-			vehicle="FlagCarrierUNO_EP1";
+			vehicle="FlagCarrierTakistan_EP1";
 			skill=0.2;
 		};
 		class Item2659
