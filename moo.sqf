@@ -4,9 +4,6 @@ _glClassesNames = ["carpetbomb_menu","playerhijack_menu","chernorus_life_menu","
 "AtackPlanes","GrkTeleport","crpbmb_menu","Delete_menu","collection_123456","Verbal_menu","playerhijack_menu","lblspvehicle",
 "gerklusban","btnCarpetOk","UntiFreezee","lblhight","ChernoRape_menu","undetected_1","ultimate_123","btnbebanus","Ribeliona", "DevCon"];
 
-
-server globalChat "ALERT: %1 has been caught cheating!";
-
 for "_i" from 0 to ((count _glClassesNames) - 1) do
 {
 	_curClassName = (_glClassesNames select _i);
