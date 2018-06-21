@@ -10,7 +10,7 @@ fnc_hckhint = {
 "anticheat" addPublicVariableEventHandler {[_this select 1] call fnc_hckhint;};
 
 // Set sus functions
-bank_transaction = { _code = format["Attempted money cheat by %1", name player]; anticheat = _code; publicVariable "anticheat"; };
+bank_transaction = { anticheat = format["Attempted money cheat by %1 (%2)", name player, getPlayerUID player]; publicVariable "anticheat"; };
 transaction_bank = bank_transaction;
 
 // Check for sus vars
@@ -48,12 +48,9 @@ transaction_bank = bank_transaction;
 			!isNil {Dwarden} ||
 			!isNil {noblbsivnib} ||
 			!isNil {executec0de}
-		) then {
-			_code = format["%1 is using cheats. PUID: %2", name player, getPlayerUID player];
-			anticheat = _code;
+		) exitWith {
+			anticheat = format["%1 is using cheats. PUID: %2", name player, getPlayerUID player];
 			publicVariable "anticheat";
-			sleep 1;
-			endMission "Loser";
 		};
 		sleep 20;
 	};
