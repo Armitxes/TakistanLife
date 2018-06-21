@@ -4,8 +4,7 @@ _safe = _this select 1;
 
 if (_art == "ausrauben") then {
 	_robpool = robsafes select 0;
-	_copplayernumber = playersNumber west;
-	if (_copplayernumber < 3)exitWith{hintSilent "There are not enough cops on to rob this safe"};
+	if ((playersNumber west) < 3)exitWith{hintSilent "There are not enough cops on to rob this safe"};
 	if(_robpool < 15000)exitWith{hintSilent "This safe has recently been stolen from and is empty"};
 	if(!robenable)exitwith{hintSilent "you are already robbing the bank"};
 	if(!(call INV_isArmed) and !enableDebug)exitWith{hintSilent localize "STRS_bank_rob_noweapon";};
