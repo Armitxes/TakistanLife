@@ -4,10 +4,9 @@ _safe = _this select 1;
 
 if (_art == "robcas") then {
   _robpool = robsafes select 1;
-  _copplayernumber = playersNumber west;
-  if (_copplayernumber < 3)exitWith{hintSilent "There are not enough cops on to rob this safe"};
+  if ((playersNumber west) < 3)exitWith{hintSilent "There are not enough cops on to rob this safe"};
   if(_robpool < 15000)exitWith{hintSilent "This safe has recently been stolen from and is empty"};
-  if(!robenable)exitwith{hintSilent "you are already robbing the casino"};
+  if(!robenable)exitwith{hintSilent "You are already robbing the casino"};
   if(!(call INV_isArmed) and !enableDebug)exitWith{hintSilent localize "STRS_casino_rob_noweapon";};
 
   robenable = false;
@@ -37,21 +36,18 @@ if (_art == "robcas") then {
     format['[0,1,2,["success", %1, %2]] execVM "casrob.sqf";', _safe, _robpool] call toClients;
     ['dollarz', _robpool] call INV_AddInventoryItem;
     hintSilent format[localize "STRS_casino_rob_success"];
+    time_casino_rob_lockdown = time + 600;
+    time_bank_lockout = time + ((_robpool/20000)*60);
   };
 
   robenable = true;
 };
+
 if (_art == "success") then {
-server globalchat format["The thief stole $%1!", (_this select 2)];
-sleep 4;
-server globalchat "The Casino has just been robbed successfully all bets are off for 10 minutes!!";
-nobet = true;
-sleep 600;
-nobet = false;
-server globalchat "The Casino has recovered it's losses, all bets are ON!!!!";
-server globalchat "The Casino has recovered it's losses, all bets are ON!!!!";};
-
-
-if (_art == "busted") then {
-  server globalchat format["%1 was caught robbing the casino!", _safe];
+  time_casino_rob_lockdown = time + 600;
+  server globalchat format["The thief stole $%1!", (_this select 2)];
+  server globalchat "The Casino has just been robbed successfully all bets are off for 10 minutes!!";
 };
+
+
+if (_art == "busted") then { server globalchat format["%1 was caught robbing the casino!", _safe]; };

@@ -54,8 +54,6 @@ action112 = _role addaction [format ["<t color='#FF0000'>Buy Slave ($%1)</t>", s
 action113 = _role addaction ["Private storage","storage.sqf",["private_storage", "save"],1,false,true,"","player distance atm1 < 7"];
 action114 = _role addaction ["Private storage","storage.sqf",["private_storage", "save"],1,false,true,"","player distance copbank < 7"];
 action115 = _role addaction ["Private storage","storage.sqf",["private_storage", "save"],1,false,true,"","player distance uncar < 7"];
-//========================================= BAIL ======================================================
-action116 = _role addaction [format ["Pay Bail", slave_cost],"maindialogs.sqf", ["bail"],1,false,true,"","player distance bailflag <= 5"];
 //===================================== ITEM PROCESS ==================================================
 action117 = _role addaction ["Process Diamond rock","itemprocess.sqf",["Diamond rock", "Diamondring", 10, "diamond"],1,false,true,"","player distance Diamond_1 <= 5 and isciv"];
 action118 = _role addaction ["Process Oil","itemprocess.sqf",["Oil", "OilBarrel", 10, "oil"],1,false,true,"","player distance Oil_1 <= 5 and isciv"];
@@ -121,10 +119,10 @@ action160 = _role addAction ["<t color='#00FFFF'>Put in Vehicle</t>","putinvehic
 
 memkey = _role addaction ["Member Keypad","CodePad.sqf",[[2,4,8,5,2], {["door",hgate] execVM "armitxes\remote.sqf"}, {ctrlSetText [999,"Wrong code!"]; sleep 1; ctrlSetText [999, ""];}],1,false,true,"","player distance memcont <= 5"];
 //==========  CASINO ======================
-action161 =_role addAction ["<t color='#FFD700'>Low Slotmachine ($100)</t>","casino.sqf",["slotmachineB"],1,false,true,"","player distance gamble1 < 4 && isciv && !isbet && !nobet"];
-action162 =_role addAction ["<t color='#FFD700'>Low Slotmachine ($100)</t>","casino.sqf",["slotmachineB"],1,false,true,"","player distance gamble2 < 4 && isciv && !isbet && !nobet"];
-action163 =_role addAction ["<t color='#FFD700'>High Slotmachine ($2000)</t>","casino.sqf",["slotmachine"],1,false,true,"","player distance gamble3 < 4 && isciv && !isbet && !nobet"];
-action164 =_role addAction ["<t color='#FFD700'>High Slotmachine ($2000)</t>","casino.sqf",["slotmachine"],1,false,true,"","player distance gamble4 < 4 && isciv && !isbet && !nobet"];
+action161 =_role addAction ["<t color='#FFD700'>Low Slotmachine ($100)</t>","casino.sqf",["slotmachineB"],1,false,true,"","player distance gamble1 < 4 && isciv && (time_casino_rob_lockdown < time)"];
+action162 =_role addAction ["<t color='#FFD700'>Low Slotmachine ($100)</t>","casino.sqf",["slotmachineB"],1,false,true,"","player distance gamble2 < 4 && isciv && (time_casino_rob_lockdown < time)"];
+action163 =_role addAction ["<t color='#FFD700'>High Slotmachine ($2000)</t>","casino.sqf",["slotmachine"],1,false,true,"","player distance gamble3 < 4 && isciv && (time_casino_rob_lockdown < time)"];
+action164 =_role addAction ["<t color='#FFD700'>High Slotmachine ($2000)</t>","casino.sqf",["slotmachine"],1,false,true,"","player distance gamble4 < 4 && isciv && (time_casino_rob_lockdown < time)"];
 action165 =_role addAction ["<t color='#FF0000'>Rob Casino</t>","casrob.sqf", ["robcas", csafe],1,false,true,"","player distance csafe <= 3 and isciv"];
 // ====== Armis Medic ======
 medAct = _role addAction ["Remove Body","noscript.sqf",'deleteVehicle cursorTarget; ["dollarz",1500] call INV_AddInventoryItem;',1,false,true,"",'ismedic && !(alive cursorTarget) && cursorTarget isKindOf "Man"'];

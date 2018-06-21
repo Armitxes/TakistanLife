@@ -112,7 +112,6 @@ while {true} do {
 
 		"
 		server globalchat ""The Hostage taker has fled the area! Cops get $5000"";
-		_copplayernumber = playersNumber west;
 		_copbonus = 5000;
 		if (iscop) then {[_copbonus] call setMoney; player sidechat format[""you received $%1 for hostage taker fleeing the area"", _copbonus];};
 		" call broadcast;
@@ -133,7 +132,6 @@ while {true} do {
 
 		"
 		server globalchat ""The Hostage taker has lost!"";
-		_copplayernumber = playersNumber west;
 		_copbonus = 20000;
 		if (iscop) then {[_copbonus] call setMoney; player sidechat format[""you received $%1 for the successful rescue of the hostage"", _copbonus];};
 		" call broadcast;

@@ -1,11 +1,9 @@
 maxcopbonus		 = 150;
 maxcivbonus 	 	 = 120;
-robb_timeSperre          = 1500;
-local_useBankPossible    = true;
+time_bank_lockout    	 = -1200;
 BankRaubKontoverlust     = 400;
 ShopRaubKontovershop     = 0;
 ShopRaubProzentVershop   = 0;
-rblock			 = 0;
 stolencash		 = 0;
 Maxbankrobpercentlost    = 0.01;
 MaxbankrobpercentlostA   = 0.025;

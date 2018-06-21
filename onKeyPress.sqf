@@ -15,7 +15,7 @@ if(isstunned || (([player] call plr_isUnConscious) && _key != 50)) exitWith
 
 switch _key do
 {
-	// Enter key 
+	// Enter key
 	case 28:
 	{
     if(!dialog) then {
@@ -49,7 +49,7 @@ switch _key do
 	};
 	//TAB key
 	case 15:
-	{  
+	{
     	if(INV_shortcuts)then{
 			INV_shortcuts=false; titletext["TKL keys off", "PLAIN DOWN"];[] execVM "actionsRemove.sqs";
 		}else{
@@ -57,7 +57,7 @@ switch _key do
 			{ player reveal _x; } forEach (nearestObjects [player,["Man","AllVehicles","Infostand_1_EP1","Infostand_2_EP1","Notebook"],10]);
 		};
 	};
-  
+
     //L key
   	case 38:
   	{
@@ -79,12 +79,12 @@ switch _key do
   	case 20:
   	{
     	if(!INV_shortcuts)exitWith{};
-    
+
     	if(dialog)exitWith{closeDialog 0;};
-    
+
     	_vcls = nearestobjects [getpos player, ["LandVehicle", "Air", "ship", "TKOrdnanceBox_EP1"], 25];
     	_vcl = _vcls select 0;
-    
+
     	if(!(_vcl in INV_VehicleArray) and typeof _vcl == "TKOrdnanceBox_EP1")exitWith{hintSilent "You do not have the keys to this hideout.";};
     	if(!(_vcl in INV_VehicleArray))exitWith{hintSilent "You do not have the keys to this vehicle.";};
     	if(!isNull _vcl)then{call compile format['[0,0,0,["%3", "public", ["vcl", "%2", %1]]] execVM "storage.sqf";', _vcl, (typeOf _vcl), format["%1_storage", _vcl]];};
@@ -136,7 +136,7 @@ switch _key do
 
 				if(!(isNull _atm) and _atm in bankflagarray) exitWith {
 					_i = 4;
-					if(!local_useBankPossible)exitWith{hint "The ATM rejected your card"};
+					if (time_bank_lockout > time) exitWith { hint "The ATM rejected your card"; };
 					[] execVM "atm.sqf";
 					_handled=true;
 				};
@@ -173,12 +173,12 @@ switch _key do
 				};
 			} else {
 				if (_vcl isKindOf "StaticWeapon") then { player moveInGunner _vcl; } else {
-					if(_vcl emptyPositions "Driver" > 0) exitWith {player action ["getInDriver", _vcl]}; 
+					if(_vcl emptyPositions "Driver" > 0) exitWith {player action ["getInDriver", _vcl]};
 					if(_vcl emptyPositions "Gunner" > 0) exitWith {player action ["getInGunner", _vcl]};
 					if(_vcl emptyPositions "Commander" > 0) exitWith {player action ["getInCommander", _vcl]};
 					if(_vcl emptyPositions "Cargo" > 0) exitWith {player action ["getInDriver", _vcl]; _vcl spawn {keyblock=true;sleep 0.5;player moveincargo _this; keyblock=false;};};
 				};
-			};		
+			};
 		} else {
 			_vcl  = vehicle player;
 			if(locked _vcl)exitWith{hintSilent "The vehicle is locked."};
@@ -196,8 +196,8 @@ switch _key do
 			titleText ["I picked up a stone!", "PLAIN DOWN", 0.5];
 		};
 	};
- 
-	//F key 
+
+	//F key
 	case 33: {
 		if(!INV_shortcuts)exitwith{};
 			if(iscop || ismedic) then {if(vehicle player != player)then{[0,0,0,["activate"]] execVM "siren.sqf"; _handled=true;};};
@@ -269,7 +269,7 @@ switch _key do
 			[0,0,0,["gangmenu"]] execVM "maindialogs.sqf";
 		};
 	};
-   
+
    //6 key
 	case 7: {
 		if (!isciv) then {
@@ -336,16 +336,16 @@ switch _key do
 							_pIdCiv  = _singleWarrant select 0;
 							_pReason = _singleWarrant select 1;
 							_pBounty = _singleWarrant select 2;
-					
-							if(_targ == _pIdCiv) exitWith { 
+
+							if(_targ == _pIdCiv) exitWith {
 								hintSilent format ["%1(%4) (Bounty: %3) (Reason: %2)", _pIdCiv, _pReason, _pBounty, name _pIdCiv];
 							};
-						};	
+						};
 					} else {hint "No player selected."};
 				};
 			};
 		};
-	}; 
+	};
 };
 
 _handled;

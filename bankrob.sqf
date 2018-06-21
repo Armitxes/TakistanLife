@@ -4,8 +4,7 @@ _safe = _this select 1;
 
 if (_art == "ausrauben") then {
 	_robpool = robsafes select 0;
-	_copplayernumber = playersNumber west;
-	if (_copplayernumber < 3)exitWith{hintSilent "There are not enough cops on to rob this safe"};
+	if ((playersNumber west) < 3)exitWith{hintSilent "There are not enough cops on to rob this safe"};
 	if(_robpool < 15000)exitWith{hintSilent "This safe has recently been stolen from and is empty"};
 	if(!robenable)exitwith{hintSilent "you are already robbing the bank"};
 	if(!(call INV_isArmed) and !enableDebug)exitWith{hintSilent localize "STRS_bank_rob_noweapon";};
@@ -38,19 +37,9 @@ if (_art == "ausrauben") then {
 		['dollarz', _robpool] call INV_AddInventoryItem;
 		hintSilent format[localize "STRS_bank_rob_success"];
 		stolencash = stolencash + _robpool;
-		local_useBankPossible = false;
 		robenable = true;
-		rblock = rblock + ((_robpool/5000)*60);
-		_rblock = rblock;
-
-		sleep 2;
-
-		if(_rblock != rblock)exitwith{};
-
-		for [{rblock}, {rblock > -1}, {rblock=rblock-1}] do {sleep 1;};
-
-		local_useBankPossible = true;
-		rblock	   = 0;
+		time_bank_rob_lockdown = time + 600;
+		time_bank_lockout = time + ((_robpool/20000)*60);
 		stolencash = 0;
 	};
 
