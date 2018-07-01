@@ -485,7 +485,7 @@ switch (_art) do {
 		lbAdd [1, "~ armitxes.net"];
 		lbAdd [1, ""];
 		lbAdd [1, _trennlinie];
-		lbAdd [1, "§ British Gaming Association Rulebook §"];
+		lbAdd [1, "§ Server Rulebook §"];
 		lbAdd [1, _trennlinie];
 		lbAdd [1, "Enter your server rules at the bottom of the maindialogs.sqf"];
 	};
