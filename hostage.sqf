@@ -88,8 +88,8 @@ hintSilent "The police are on to you, hurry up!";
 while {true} do {
   "htargetmarker" setmarkerpos getpos hostage1;
 	if (_minutecounter >= 750 and alive player) exitWith {
-		[30000] call setMoney;
-		hintSilent "Well done, you kept the hostage for 15 minutes, $30000 has been transfered to your account.";
+		[50000] call setMoney;
+		hintSilent "Well done, you kept the hostage for 15 minutes, $50000 has been transfered to your account.";
 		sleep 10;
 		"server globalchat ""Hostage Taker WINS, he kept the hostage for 15 minutes."";" call broadcast;
 		sleep 1;
