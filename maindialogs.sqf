@@ -157,8 +157,8 @@ switch (_art) do {
 	lbAdd [1, (format ["Est. total funds in the main bank safe: $%1", robsafes select 0])];
 	lbAdd [1, (format ["Est. total funds in the casino safe: $%1", robsafes select 1])];
 	if (time_bank_rob_lockdown > time) then { lbAdd [1, (format ["Bank lockdown: %1 seconds.", (time_bank_rob_lockdown-time)])]; };
-	if (time_casino_rob_lockdown > time) then { lbAdd [1, (format ["Casino lockdown: %1 seconds.", (time_bank_rob_lockdown-time)])]; };
-	if (time_bank_lockout > time) then { lbAdd [1, (format ["Bank lockout time remaining: %1 seconds.", (time_bank_rob_lockdown-time)])]; };
+	if (time_casino_rob_lockdown > time) then { lbAdd [1, (format ["Casino lockdown: %1 seconds.", (time_casino_rob_lockdown-time)])]; };
+	if (time_bank_lockout > time) then { lbAdd [1, (format ["Bank lockout time remaining: %1 seconds.", (time_bank_lockout-time)])]; };
 
 	lbAdd [1,""];lbAdd [1,""];
 	lbAdd [1, _trennlinie];
