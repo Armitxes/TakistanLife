@@ -17,7 +17,7 @@ switch _doAction do {
       ) then { _lvl = 1.0055; };
       if(
           (_vcl isKindOf "HMMWV_Base")
-      ) then { _lvl = 1.011; };    
+      ) then { _lvl = 1.02; };    
       
       _vcl setVariable ["tuning",_lvl,true];
       [_item, -1] call INV_AddInventoryItem;

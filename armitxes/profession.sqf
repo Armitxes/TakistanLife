@@ -9,7 +9,7 @@ switch (_action) do {
 		closeDialog 1602;
 		
 		_cost = _data select 2;
-		if (_cost < PLAYERDATA select 1) then {
+		if (_cost < PLAYERDATA select 0) then {
 			switch (_data select 0) do {
 				case "Medic": {
 					_medCount = 0;

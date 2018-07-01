@@ -49,7 +49,7 @@ switch (_doAction) do {
 			waitUntil {isNull ((findDisplay 3000) displayCtrl 3)};
 
 			if(Antwort == 1) then {
-				warStartTime = time+600;
+				warStartTime = time+1800;
 				(format ["[""warPrep"",%1,%2] execVM ""armitxes\southgov.sqf"";",ismayor,warStartTime]) call toClients;
 				_boxInit = "clearWeaponCargo this; clearMagazineCargo this;
 				this addWeaponCargo ['M4A1_AIM_CAMO',50]; this addWeaponCargo ['SCAR_H_CQC_CCO',50]; this addWeaponCargo ['SCAR_H_LNG_Sniper',3];
@@ -77,11 +77,11 @@ switch (_doAction) do {
 		if (!(isNil "sgov")) then {
 			_declarer = "south"; _declared = "north"; if(_this select 1) then { _declarer = "north"; _declared = "south"; };
 			player say "bank_alarm"; warStartTime = _this select 2;
-			hintSilent "War will start in 10 minutes! Head to your government complex to participate or follow UN instructions.";
+			hintSilent "War will start in 30 minutes! Head to your government complex to participate or follow UN instructions.";
 			if (isciv && group player != sgov) then {
 				Antwort = 2;
 				if (!(createDialog "ja_nein")) exitWith {hint "Dialog Error!"};
-				ctrlSetText [1, format ["The %1 declared war against the %2! 10 minutes prepartion time is given. If you wish to defend your support, move to your gov complex for equipment. DO YOU WISH TO SUPPORT YOUR COUNTRY?",_declarer,_declared] ];
+				ctrlSetText [1, format ["The %1 declared war against the %2! 30 minutes prepartion time is given. If you wish to defend your support, move to your gov complex for equipment. DO YOU WISH TO SUPPORT YOUR COUNTRY?",_declarer,_declared] ];
 				waitUntil {isNull ((findDisplay 3000) displayCtrl 3)};
 
 				if(Antwort == 1) then {

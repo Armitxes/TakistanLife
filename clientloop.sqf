@@ -10,7 +10,6 @@ if (_art == "clientloop") then {
 		if((_vcl distance _nextspike) < 5 && _vcl != player) then { ["spikes"] execVM "armitxes\vehtools.sqf"; };
 		sleep 0.5;
 		{if ( (parseNumber _x) + 360 <= time ) then { deleteMarkerLocal _x; };} forEach emMarkers;
-		if(_vcl != player && _vcl isKindOf "tank" && cameraView == "External") then {_vcl switchCamera "Internal";};
 		{
 			if ((rating _x) < 0) then {_x addRating (abs (rating _x))};
 			if ((score _x) < 0)  then {_x addScore  (abs (score _x))};

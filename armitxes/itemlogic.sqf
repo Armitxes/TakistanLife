@@ -45,7 +45,7 @@ if (_art == "use") then
 							_w = [10,"[Easy] Hacking Terminal...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
 							waitUntil { scriptDone _w; };
 							["dollarz",5000] call INV_addInventoryItem;
-							["addWarrant",player,"Robbery",1000] execVM "warrant.sqf";
+							["addWarrant",player,"Robbery",2000] execVM "warrant.sqf";
 							('["add","crimes",format ["Someone robbed %1!",_obj]] execVM "armitxes\logs.sqf";') call toClients;
 						} else { ["add","other","Someone was faster than me...",true] execVM "armitxes\logs.sqf"; };
 					} else { ["add","other","Hacking this terminal is too complicated!",true] execVM "armitxes\logs.sqf"; };
@@ -56,6 +56,8 @@ if (_art == "use") then
 						if (alive player && !((animationState player) in animRestrained)) then {
 							prisondoor setVariable ["hacked",time,true];
 							["add","crimes","Code for Prison Door 1 obtained, Security System will reset in 5 Minutes!",true] execVM "armitxes\logs.sqf";
+							if (side player == west) then {hint "Someone is attempting a Jail Break!"};
+    						["addWarrant",player,"Assisting a Jail Break",5000] execVM "warrant.sqf";
 						};
 					} else {
 						_w = [60,"[Hard] Hacking Notebook...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;

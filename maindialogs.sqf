@@ -157,8 +157,8 @@ switch (_art) do {
 	lbAdd [1, (format ["Est. total funds in the main bank safe: $%1", robsafes select 0])];
 	lbAdd [1, (format ["Est. total funds in the casino safe: $%1", robsafes select 1])];
 	if (time_bank_rob_lockdown > time) then { lbAdd [1, (format ["Bank lockdown: %1 seconds.", (time_bank_rob_lockdown-time)])]; };
-	if (time_casino_rob_lockdown > time) then { lbAdd [1, (format ["Casino lockdown: %1 seconds.", (time_casino_rob_lockdown-time)])]; };
-	if (time_bank_lockout > time) then { lbAdd [1, (format ["Bank lockout time remaining: %1 seconds.", (time_bank_lockout-time)])]; };
+	if (time_casino_rob_lockdown > time) then { lbAdd [1, (format ["Casino lockdown: %1 seconds.", (time_bank_rob_lockdown-time)])]; };
+	if (time_bank_lockout > time) then { lbAdd [1, (format ["Bank lockout time remaining: %1 seconds.", (time_bank_rob_lockdown-time)])]; };
 
 	lbAdd [1,""];lbAdd [1,""];
 	lbAdd [1, _trennlinie];
@@ -482,9 +482,10 @@ switch (_art) do {
 		lbAdd [1, "Hacking & cheating = [ArmA 2, ArmA 3] Network & Player Index Ban"];
 		lbAdd [1, "Bug & glitch abusing = [ArmA 2] Network Ban (1 week -> 2 months -> Perma)"];
 		lbAdd [1, "Money cheating servers = [ArmA 2, Arma 3] Server & User IP Ban (Permanent)"];
+		lbAdd [1, "~ armitxes.net"];
 		lbAdd [1, ""];
 		lbAdd [1, _trennlinie];
-		lbAdd [1, "§ Server Rulebook §"];
+		lbAdd [1, "§ British Gaming Association Rulebook §"];
 		lbAdd [1, _trennlinie];
 		lbAdd [1, "Enter your server rules at the bottom of the maindialogs.sqf"];
 	};
