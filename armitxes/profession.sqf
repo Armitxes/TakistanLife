@@ -7,7 +7,7 @@ switch (_action) do {
 		_listbox = (_display displayCtrl 1);
 		_data = (call compile (_listbox lbData (lbCurSel 1)));
 		closeDialog 1602;
-		
+
 		_cost = _data select 2;
 		if (_cost < PLAYERDATA select 1) then {
 			switch (_data select 0) do {
@@ -17,7 +17,7 @@ switch (_action) do {
 					if (isciv && _medCount < 4) then {
 						[-_cost] call setMoney;
 						["use","docUni"] execVM "armitxes\clothing.sqf";
-					} else { server globalChat "There can't be more than 3 medics at once and you must be a civ. Try again later."; }; 
+					} else { server globalChat "There can't be more than 3 medics at once and you must be a civ. Try again later."; };
 				};
 				case "Judge": {
 					_judCount = 0;
@@ -25,8 +25,8 @@ switch (_action) do {
 					if (isciv && _judCount < 1 && (PLAYERDATA select 2) > 0) then {
 						[-_cost] call setMoney;
 						["use","civUni9"] execVM "armitxes\clothing.sqf";
-						
-					} else { server globalChat "There can't be more than 1 judge and you must be a civ. Try again later."; }; 
+
+					} else { server globalChat "There can't be more than 1 judge and you must be a civ. Try again later."; };
 				};
 				case "Lawyer": {
 					_judCount = 0;
@@ -39,7 +39,7 @@ switch (_action) do {
 						[-_cost] call setMoney;
 						["use","lawyer"] execVM "armitxes\clothing.sqf";
 						islawyer = true;
-					} else { server globalChat "There can't be more than 2 Lawyers, there must be 1 judge and you must be a civ. Try again later."; }; 
+					} else { server globalChat "There can't be more than 2 Lawyers, there must be 1 judge and you must be a civ. Try again later."; };
 				};
 			}
 		} else { hintSilent "You don't have enough money on your bank account to accept this profession"; }

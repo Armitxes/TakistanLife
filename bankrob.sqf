@@ -10,7 +10,7 @@ if (_art == "ausrauben") then {
 	if(!(call INV_isArmed) and !enableDebug)exitWith{hintSilent localize "STRS_bank_rob_noweapon";};
 
 	robenable = false;
-	_startRob = round(time)+300;
+	_startRob = round(time)+600;
 	robsafes set [0,0];
 	publicVariable "robsafes";
 	hintSilent format[localize "STRS_bank_rob_info"];
