@@ -25,7 +25,7 @@ if((PLAYERDATA select 2) > 229) then { _access = true; } else {
 		((_shop == mayorveh || _shop == mayorbox) && !isMayor) ||
 		//PMC
 		((_shop == pmcshop || _shop == pmccar || _shop == pmcair) && !((PLAYERDATA select 4) == 0 && (PLAYERDATA select 5) == 10))
-	) then { _access = false; }; 
+	) then { _access = false; };
 };
 
 _sgov = grpNull;
