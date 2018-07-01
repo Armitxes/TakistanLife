@@ -295,6 +295,7 @@ if(!isDedicated) then {
 	dmgBody = 0;
 	dmgHands = 0;
 	dmgLegs = 0;
+	riot_end_time = -3600;
 
 	lastBite = 0;
 	isheal = false;
