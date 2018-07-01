@@ -75,9 +75,7 @@ if (isServer) then {
     -1,	// RS 2
 	[-1,5], // Mining Tools South
     [10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1] // Gunshop 2
-
-
-  ];
+];
 
   publicvariable "INV_itemstocks";
 };
@@ -374,7 +372,7 @@ _copshop_SCO =
 	"Stinger_mag",
 	"PipeBomb",
 	"M2StaticMG_US_EP1",
-	"supgrade"
+	"supgrade",
 	"Spikestrip",
 	"bigbagfence",
 	"lighter",
