@@ -105,7 +105,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=110;
+		items=109;
 		class Item0
 		{
 			side="LOGIC";
@@ -2589,24 +2589,6 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					init="myBuilding = ""Land_A_FuelStation_Shed"" createVehicle position this; deleteVehicle this; myBuilding setdir 53; this allowDamage false;";
-				};
-			};
-		};
-		class Item109
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={8709.0557,394.92111,1437.4276};
-					id=4086;
-					side="WEST";
-					vehicle="USMC_Soldier";
-					player="PLAYER COMMANDER";
-					leader=1;
-					skill=0.60000002;
 				};
 			};
 		};
@@ -11126,14 +11108,14 @@ class Mission
 		class Item811
 		{
 			position[]={4657.8257,132.75482,9484.3135};
-			azimut=242.40414;
+			azimut=242.40401;
 			special="NONE";
 			id=874;
 			side="EMPTY";
 			vehicle="ClutterCutter_EP1";
 			leader=1;
 			skill=0.60000002;
-			text="jail_fever1_1_11_12_16_4_10_12_2_20_7_106_82_3_5";
+			text="jail_fever55";
 		};
 		class Item812
 		{
@@ -41035,7 +41017,7 @@ class Mission
 			position[]={8662.2607,403.6149,1434.8452};
 			azimut=257;
 			special="NONE";
-			id=4087;
+			id=4086;
 			side="EMPTY";
 			vehicle="Infostand_2_EP1";
 			skill=0.60000002;
