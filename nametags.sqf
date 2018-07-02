@@ -18,15 +18,12 @@ while {true} do {
 				_car = _vcls select 0;
 				_distCP = (_car distance player);
 
-				if(typeof _car != "LocalBasicWeaponsBox" and !(isnull _car) and alive _car and !(locked _car) and vehicle player == player and _distCP < 3) then {
+				if(typeof _car != "LocalBasicWeaponsBox" and !(isnull _car) and alive _car and vehicle player == player and _distCP < 3) then {
 					titleRsc["Rtags", "PLAIN"];
 					_control = (uiNamespace getVariable 'TAGS_HUD') displayCtrl 64438;
-					_control ctrlSetText "Enter (E)";
-				};
-				if((_car in INV_VehicleArray) and typeof _car == "LocalBasicWeaponsBox" and !(isnull _car) and vehicle player == player and _distCP < 3) then {
-					titleRsc["Rtags", "PLAIN"];
-					_control = (uiNamespace getVariable 'TAGS_HUD') displayCtrl 64438;
-					_control ctrlSetText "Trunk (T)";
+					if (locked _car) then { _control ctrlSetText "Unlock (L)"; }
+					else { _control ctrlSetText "Enter (E) | Trunk (T) | Lock (L)"; };
+
 				};
 			};
 			if(count _atms > 0 and INV_shortcuts) then {
