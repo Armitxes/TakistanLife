@@ -93,7 +93,7 @@ class Mission
 	randomSeed=7826573;
 	class Intel
 	{
-		briefingName="Takistan Life RPG: Rise of South v4.0";
+		briefingName="Takistan Life RPG: Rise of South v3.7";
 		briefingDescription="by Tonic and Armitxes";
 		resistanceEast=1;
 		startWeather=0;
@@ -105,7 +105,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=109;
+		items=110;
 		class Item0
 		{
 			side="LOGIC";
@@ -2592,10 +2592,28 @@ class Mission
 				};
 			};
 		};
+		class Item109
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={8709.0557,394.92111,1437.4276};
+					id=4086;
+					side="WEST";
+					vehicle="USMC_Soldier";
+					player="PLAYER COMMANDER";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
-		items=3966;
+		items=3967;
 		class Item0
 		{
 			position[]={6015.2627,-4.5776367e-005,10487.534};
@@ -31240,7 +31258,7 @@ class Mission
 			vehicle="Infostand_2_EP1";
 			skill=0.60000002;
 			text="copcar";
-			init="this allowDamage false; this enableSimulation false; this setObjectTexture [0,""images\shops\car.paa""];";
+			init="this allowDamage false; this enableSimulation false; this setObjectTexture [0,""images\shops\car.paa""]; this addAction [""Impound Lot"",""maindialogs.sqf"",[""impound""],1,false,true,"""",""(player distance copcar <= 5)""];";
 		};
 		class Item2970
 		{
@@ -31689,7 +31707,7 @@ class Mission
 			vehicle="Infostand_2_EP1";
 			skill=0.60000002;
 			text="impoundbuy";
-			init="this allowDamage false; this enableSimulation false;";
+			init="this allowDamage false; this enableSimulation false; this addAction [""Impound Lot"",""maindialogs.sqf"",[""impound""],1,false,true,"""",""(player distance impoundbuy <= 5)""];";
 			description="Clothing Shop";
 		};
 		class Item3007
@@ -31798,7 +31816,7 @@ class Mission
 			vehicle="Infostand_2_EP1";
 			skill=0.60000002;
 			text="unair";
-			init="this allowDamage false; this enableSimulation false;this setObjectTexture [0,""images\shops\air.paa""];";
+			init="this allowDamage false; this enableSimulation false;this setObjectTexture [0,""images\shops\air.paa""]; this addAction [""Impound Lot"",""maindialogs.sqf"",[""impound""],1,false,true,"""",""(player distance unair <= 5)""];";
 		};
 		class Item3016
 		{
@@ -40727,14 +40745,14 @@ class Mission
 		class Item3940
 		{
 			position[]={5973.166,119.66971,7487.6177};
-			azimut=725.19226;
+			azimut=725.19202;
 			special="NONE";
 			id=4060;
 			side="EMPTY";
 			vehicle="Infostand_2_EP1";
 			skill=0.60000002;
 			text="vehicleShopPrison";
-			init="this allowDamage false; this enableSimulation false; this setObjectTexture [0,""images\shops\car.paa""];";
+			init="this allowDamage false; this enableSimulation false; this setObjectTexture [0,""images\shops\car.paa""]; this addAction [""Impound Lot"",""maindialogs.sqf"",[""impound""],1,false,true,"""",""(player distance vehicleShopPrison <= 5)""];";
 		};
 		class Item3941
 		{
@@ -41012,10 +41030,23 @@ class Mission
 			skill=0.60000002;
 			init="this allowDamage False;";
 		};
+		class Item3966
+		{
+			position[]={8662.2607,403.6149,1434.8452};
+			azimut=257;
+			special="NONE";
+			id=4087;
+			side="EMPTY";
+			vehicle="Infostand_2_EP1";
+			skill=0.60000002;
+			text="impoundbuySouth";
+			init="this allowDamage false; this enableSimulation false; this addAction [""Impound Lot"",""maindialogs.sqf"",[""impound""],1,false,true,"""",""(player distance impoundbuySouth <= 5)""];";
+			description="Clothing Shop";
+		};
 	};
 	class Markers
 	{
-		items=231;
+		items=232;
 		class Item0
 		{
 			position[]={3028.9521,72.377098,21478.516};
@@ -42999,6 +43030,15 @@ class Mission
 			a=0.5;
 			b=0.5;
 			angle=-54.140202;
+		};
+		class Item231
+		{
+			position[]={8675.7969,399.8197,1437.9697};
+			name="impoundSouth";
+			text="Impound Lot";
+			type="mil_dot";
+			colorName="ColorBlack";
+			angle=257;
 		};
 	};
 	class Sensors
