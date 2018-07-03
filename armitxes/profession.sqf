@@ -22,10 +22,9 @@ switch (_action) do {
 				case "Judge": {
 					_judCount = 0;
 					{ if((typeOf _x) == "SchoolTeacher") then { _judCount = _judCount + 1; }; } forEach playableUnits;
-					if (isciv && _judCount < 1 && (PLAYERDATA select 2) > 0) then {
+					if (isciv && _judCount < 1) then {
 						[-_cost] call setMoney;
 						["use","civUni9"] execVM "armitxes\clothing.sqf";
-
 					} else { server globalChat "There can't be more than 1 judge and you must be a civ. Try again later."; };
 				};
 				case "Lawyer": {
