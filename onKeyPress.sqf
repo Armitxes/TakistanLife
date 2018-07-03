@@ -200,7 +200,7 @@ switch _key do
 	//F key
 	case 33: {
 		if(!INV_shortcuts)exitwith{};
-			if(iscop || ismedic) then {if(vehicle player != player)then{[0,0,0,["activate"]] execVM "siren.sqf"; _handled=true;};};
+			if(iscop || ismedic || isun) then {if(vehicle player != player)then{[0,0,0,["activate"]] execVM "siren.sqf"; _handled=true;};};
 
 		if(_shift and (vehicle player == player) and call INV_isArmed) then {
 			if(keyblock)exitwith{};

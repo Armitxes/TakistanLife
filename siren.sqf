@@ -2,7 +2,7 @@ _this = _this select 3;
 _art  = _this select 0;
 _vcl  = vehicle player;
 _playtime     = 120;
-_lichtstaerke = 0.055; 
+_lichtstaerke = 0.055;
 _shortDur     = 0.72;
 _longDur      = 4.87;
 
@@ -76,11 +76,10 @@ if (_art == "client") then
 			if (speed _vcl == 0) then {
 				sleep 1;
 			} else {
-				if (speed _vcl > 60) then
-				{
-					if((typeOf (driver _vcl)) in medicTypes) then {
-						_vcl say ["Siren_EMS", 1];
-					} else { _vcl say ["Siren_Cop", 1]; };
+				if (speed _vcl > 60) then {
+					if (ismedic) then { _vcl say ["Siren_EMS", 1]; };
+					if (iscop) then { _vcl say ["Siren_Cop", 1]; };
+					if (isun) then { _vcl say ["Siren_UN", 1]; _longDur = 0.7; };
 					sleep _longDur;
 				} else {
 					_vcl say ["Siren_Short", 1];
@@ -121,7 +120,7 @@ if (_art == "licht") then
 			_light2 setLightBrightness _lichtstaerke;
 		};
 
-	
+
 		_light1 lightAttachObject [_vcl, [-0.9,+2.30,+1.10]];
 		_light2 lightAttachObject [_vcl, [+0.9,-3,+1.10]];
 
@@ -136,7 +135,7 @@ if (_art == "licht") then
 
 		_light2 lightAttachObject [_vcl, [+0.9,+2.30,+1.10]];
                 _light1 lightAttachObject [_vcl, [-0.9,-3,+1.10]];
-	
+
 		sleep 0.1;
 
 		LightDetachObject _light2;
@@ -145,7 +144,7 @@ if (_art == "licht") then
 		_light1 setpos [0,0,0];
 
 		sleep 0.1;
-		
+
 		_light1 lightAttachObject [_vcl, [-0.9,+2.30,-1.10]];
 		_light2 lightAttachObject [_vcl, [+0.9,-3,-1.10]];
 
@@ -161,7 +160,7 @@ if (_art == "licht") then
 		_light2 lightAttachObject [_vcl, [+0.9,+2.30,-1.10]];
         _light1 lightAttachObject [_vcl, [-0.9,-3,-1.10]];
 
-	
+
 		sleep 0.1;
 
 		LightDetachObject _light1;
