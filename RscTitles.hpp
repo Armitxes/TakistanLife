@@ -2,7 +2,7 @@ class RscTitles
 {
 #define screenwidth  (1 - safeZonex*2)
 #define screenheight (1 - safeZoney*2)
-	
+
 	class Rtags
 	{
 		idd=64431;
@@ -13,7 +13,7 @@ class RscTitles
 		name="TAGS_HUD";
 		controls[]={"interact"};
 		onLoad="uiNamespace setVariable ['TAGS_HUD', _this select 0]";
-		
+
 		class interact
 		{
 			type = 0;
@@ -21,7 +21,7 @@ class RscTitles
 			style = 0;
 			x = 0.50;
 			y = 0.47;
-			w = 0.3;
+			w = 0.6;
 			h = 0.2;
 			font = "Zeppelin33Italic";
 			sizeEx = 0.03;
@@ -29,6 +29,6 @@ class RscTitles
 			colorBackground[]={0,0,0,0.0};
 			text = "";
 		};
-	
+
 	};
 };

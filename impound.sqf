@@ -11,7 +11,7 @@ if(_art == "impound") then
 	_dollarz = 200;
 	_txt = format ["%1 has impounded vehicle %2!",name player, _vcl];
 	(format ['["add","police","%1"] execVM "armitxes\logs.sqf";',_txt]) call toClients;
-	
+
 	if (_vcl isKindOf "Motorcycle" || damage _vcl > 0.9) then { _dollarz = 100; deleteVehicle _vcl; } else {
 		_vcl setdamage 0;
 		_vcl engineOn false;
@@ -27,15 +27,15 @@ if(_art == "impound") then
 if (_art == "buy") then {
   _dollarz = "dollarz" call INV_getitemamount;
   _fine = 250;
-  if (_vcl isKindOf "Motorcycle") then { _fine = 75; };  
+  if (_vcl isKindOf "Motorcycle") then { _fine = 75; };
   if(_dollarz < _fine)exitWith{hintSilent "You do not have enough money"};
   ["dollarz", -_fine] call INV_AddInventoryItem;
-  
+
   _vcl = call compile format["%1", _vcl];
-  _impounds = ["impoundarea2","ccarspawn","uncarspawn"];
+  _impounds = ["impoundSouth", "impoundarea2","ccarspawn","uncarspawn", "vehicleShopPrisonSpawn"];
   _closestDis = 100000;
   _closestImpound = "";
-  
+
   {
     _dist = player distance (getMarkerPos _x);
     if (_closestDis > _dist) then {
@@ -43,15 +43,10 @@ if (_art == "buy") then {
       _closestImpound = _x;
     };
   } forEach (_impounds);
-  
+
   (format ["%1 enableSimulation true;",_vcl]) call broadcast;
   _vcl setpos (getMarkerPos _closestImpound);
   _vcl setdir (markerDir _closestImpound);
 
   hintSilent "You payed the fine and retrieved your vehicle!";
 };
-
-
-
-
-

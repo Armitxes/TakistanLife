@@ -23,6 +23,7 @@ if (isServer) then {
     [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop2 #20
     [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop3 #21
     [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop4 #22
+	[-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //prison car shop #22
     [5,5,5,5,5,5,5,5,-1,-1,-1], //truckshop1 #23
     [5,5,5,5,5,5,5,5,-1,-1,-1], //truckshop2 #24
     [3,5,3,3,3,3,3,-1,-1,-1,-1], //airshop1 #25
@@ -104,6 +105,7 @@ INV_itemmaxstocks = [
 [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop2 #20
 [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop3 #21
 [-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //carshop4 #22
+[-1,-1,10,10,10,-1,-1,5,5,5,5,5,5,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], //prison car shop #22
 [5,5,5,5,5,5,5,5,-1,-1,-1], //truckshop1 #23
 [5,5,5,5,5,5,5,5,-1,-1,-1], //truckshop2 #24
 [3,5,3,3,3,3,3,-1,-1,-1,-1], //airshop1 #25
@@ -695,6 +697,8 @@ INV_ItemShops = [
 [carshop2,"Car Shop",dummyobj,"carspawn2",_cs,_cs,true],  // #19
 [carshop3,"Car Shop",dummyobj,"carspawn3",_cs,_cs,true],  // #20
 [carshop4,"Car Shop",dummyobj,"carspawn4",_cs,_cs,true],  // #21
+[vehicleShopPrison,"Prison Vehicle Shop",dummyobj,"vehicleShopPrisonSpawn",_cs,_cs,true],
+
 
 [truckshop,"Truck Shop",dummyobj,"truckspawn",_ts,_ts,true], // #21
 [truckshop2,"Truck Shop",dummyobj,"truckspawn2",_ts,_ts,true], // #21
