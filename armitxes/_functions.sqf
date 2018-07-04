@@ -115,7 +115,7 @@ if(!isDedicated) then {
 			_thisArr = toArray(_param);
 			if (_thisArr select 0 == 47) exitWith { [_param] execVM "armitxes\chatcmd.sqf"; };
 
-			if( !(39 in _thisArr) &&  !(34 in _thisArr) ) then {
+			if( !(34 in _thisArr) ) then {
 				_abbr = chatAbbr;
 				_fcabbr = "| UN]";
 				if(iscop) then {
@@ -139,7 +139,7 @@ if(!isDedicated) then {
 
 				_message = format ["systemChat ""%1 (%2): %3"";",_abbr, name player, _param];
 				(_message) call toClients;
-			} else { systemChat "You are not allowed to use '' or ' in global chat!";};
+			} else { systemChat "You are not allowed to use '' in global chat!";};
 		};
 	};
 
