@@ -9454,7 +9454,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GuardShed";
 			skill=0.60000002;
-			init="this allowdamage false; this addAction [""To Rasman"", ""elevatordown.sqf""]; this addAction [""To Mosque"", ""elevatorside.sqf""]; ";
+			init="this allowdamage false;";
 		};
 		class Item654
 		{
@@ -9475,7 +9475,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GuardShed";
 			skill=0.60000002;
-			init="this allowdamage false; this addAction [""To Goverment Complex"", ""elevatorup.sqf""]; this addAction [""To Mosque"", ""elevatorside.sqf""]; ";
+			init="this allowdamage false;";
 		};
 		class Item656
 		{
@@ -9496,7 +9496,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GuardShed";
 			skill=0.60000002;
-			init="this allowdamage false; this addAction [""To Rasman"", ""elevatordown.sqf""]; this addAction [""To Goverment Complex"", ""elevatorup.sqf""] ";
+			init="this allowdamage false;";
 		};
 		class Item658
 		{
@@ -35025,7 +35025,7 @@ class Mission
 			vehicle="Infostand_2_EP1";
 			skill=1;
 			text="gamble1";
-			init="this allowdamage false;this enableSimulation false;";
+			init="this allowdamage false; this enableSimulation false; this addAction [""<t color='#FFD700'>Low Slotmachine ($100)</t>"",'casino.sqf',['slotmachineB'],1,false,true,'','player distance gamble1 < 4 && isciv && (time_casino_rob_lockdown < time)'];";
 		};
 		class Item3345
 		{
@@ -35036,7 +35036,7 @@ class Mission
 			vehicle="Infostand_2_EP1";
 			skill=1;
 			text="gamble4";
-			init="this allowdamage false;this enableSimulation false;";
+			init="this allowdamage false;this enableSimulation false; this addAction [""<t color='#FFD700'>High Slotmachine ($2000)</t>"",'casino.sqf',['slotmachine'],1,false,true,'','player distance gamble4 < 4 && isciv && (time_casino_rob_lockdown < time)'];";
 		};
 		class Item3346
 		{
@@ -35047,7 +35047,7 @@ class Mission
 			vehicle="Infostand_2_EP1";
 			skill=1;
 			text="gamble3";
-			init="this allowdamage false;this setpos [getpos this select 0, getpos this select 1, (getpos this select 2) + 0.22];this enableSimulation false;";
+			init="this allowdamage false; this enableSimulation false; this addAction [""<t color='#FFD700'>High Slotmachine ($2000)</t>"",'casino.sqf',['slotmachine'],1,false,true,'','player distance gamble3 < 4 && isciv && (time_casino_rob_lockdown < time)'];";
 		};
 		class Item3347
 		{
@@ -35058,7 +35058,7 @@ class Mission
 			vehicle="Infostand_2_EP1";
 			skill=1;
 			text="gamble2";
-			init="this allowdamage false;this setpos [getpos this select 0, getpos this select 1, (getpos this select 2) + 0.22];this enableSimulation false;";
+			init="this allowdamage false; this enableSimulation false; this addAction [""<t color='#FFD700'>Low Slotmachine ($100)</t>"",'casino.sqf',['slotmachineB'],1,false,true,'','player distance gamble2 < 4 && isciv && (time_casino_rob_lockdown < time)'];";
 		};
 		class Item3348
 		{
@@ -35070,7 +35070,7 @@ class Mission
 			vehicle="Misc_cargo_cont_tiny";
 			skill=0.60000002;
 			text="csafe";
-			init="this allowdamage false;this setpos [getpos this select 0, getpos this select 1, (getpos this select 2) + 3.8];clearMagazineCargo this; clearWeaponCargo this;";
+			init="this allowdamage false; clearMagazineCargo this; clearWeaponCargo this; this addAction [""<t color='#FF0000'>Rob Casino</t>"",'casrob.sqf', ['robcas', csafe],1,false,true,'','player distance csafe <= 3 and isciv'];";
 		};
 		class Item3349
 		{
