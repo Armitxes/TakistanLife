@@ -1,4 +1,3 @@
-_arena = 0;
 _role = player;
 //==================================== GANG MENU ======================================================
 action1 =	_role addAction ["Gang Menu","maindialogs.sqf",["gangmenu"],1,false,true,"","player distance rathaus <= 3 and isciv"];
@@ -107,9 +106,7 @@ action153 = _role addAction ["<t color='#FFFF00'>Access Hospital Shop</t>","shop
 action154 = _role addAction ["<t color='#FFFF00'>Access Hospital Air Shop</t>","shopdialogs.sqf",[(clothciv call INV_getshopnum)+2],1,false,true,"","(player distance doc1 < 4) && ismedic"];
 action155 = _role addAction ["<t color='#FFFF00'>Access Clothing Shop</t>","shopdialogs.sqf",[(clothcivbase call INV_getshopnum)],1,false,true,"","(player distance clothshop2) <= 3 && isciv"];
 action156 = _role addAction ["<t color='#FFFF00'>Access Clothing Shop</t>","shopdialogs.sqf",[(clothcivbase call INV_getshopnum)+1],1,false,true,"","(player distance equipshop3) <= 3 && isciv"];
-profAction = _role addAction ["<t color='#FFFF00'>Profession</t>","armitxes\dialogs\controller.sqf","profession",1,false,true,"","(player distance doc1) < 4 || (player distance clothshop2) <= 3 || (player distance Jshop) < 4"];
-profAction = _role addAction ["<t color='#FFFF00'>Profession</t>","armitxes\dialogs\controller.sqf","profession",1,false,true,"","(player distance doc1) < 4 || (player distance equipshop3) <= 3 || (player distance Jshop) < 4"];
-
+profAction = _role addAction ["<t color='#FFFF00'>Profession</t>","armitxes\dialogs\controller.sqf","profession",1,false,true,"","(player distance doc1) < 4 || (player distance clothshop2) <= 3 || (player distance equipshop3) <= 3 || (player distance Jshop) < 4"];
 
 action157 = _role addAction ["<t color='#FF0000'>Declare Terrorism</t>","terror.sqf",[],1,false,true,"","isciv and isterror"];
 action158 = _role addAction ["<t color='#00FFFF'>Release</t>","drag.sqf",[],1,false,true,"","dragging"];
@@ -117,12 +114,6 @@ action159 = _role addAction ["<t color='#00FFFF'>Pull and Drag</t>","noscript.sq
 action160 = _role addAction ["<t color='#00FFFF'>Put in Vehicle</t>","putinvehicle.sqf",[],1,true,true,"",'_vcl = (nearestobjects [getpos player, ["Air", "Ship", "LandVehicle"], 9] select 0); player distance _vcl < 10 and dragging'];
 
 memkey = _role addaction ["Member Keypad","CodePad.sqf",[[2,4,8,5,2], {["door",hgate] execVM "armitxes\remote.sqf"}, {ctrlSetText [999,"Wrong code!"]; sleep 1; ctrlSetText [999, ""];}],1,false,true,"","player distance memcont <= 5"];
-//==========  CASINO ======================
-action161 =_role addAction ["<t color='#FFD700'>Low Slotmachine ($100)</t>","casino.sqf",["slotmachineB"],1,false,true,"","player distance gamble1 < 4 && isciv && (time_casino_rob_lockdown < time)"];
-action162 =_role addAction ["<t color='#FFD700'>Low Slotmachine ($100)</t>","casino.sqf",["slotmachineB"],1,false,true,"","player distance gamble2 < 4 && isciv && (time_casino_rob_lockdown < time)"];
-action163 =_role addAction ["<t color='#FFD700'>High Slotmachine ($2000)</t>","casino.sqf",["slotmachine"],1,false,true,"","player distance gamble3 < 4 && isciv && (time_casino_rob_lockdown < time)"];
-action164 =_role addAction ["<t color='#FFD700'>High Slotmachine ($2000)</t>","casino.sqf",["slotmachine"],1,false,true,"","player distance gamble4 < 4 && isciv && (time_casino_rob_lockdown < time)"];
-action165 =_role addAction ["<t color='#FF0000'>Rob Casino</t>","casrob.sqf", ["robcas", csafe],1,false,true,"","player distance csafe <= 3 and isciv"];
 // ====== Armis Medic ======
 medAct = _role addAction ["Remove Body","noscript.sqf",'deleteVehicle cursorTarget; ["dollarz",1500] call INV_AddInventoryItem;',1,false,true,"",'ismedic && !(alive cursorTarget) && cursorTarget isKindOf "Man"'];
 medAct2 = _role addAction ["Revive","noscript.sqf",'_tar = cursorTarget; [_tar] spawn plr_heal; format [''%1 switchMove "AmovPsitMstpSlowWrflDnon_ground";'',_tar] call toClients; if !(isheal) then {["dollarz",2000] call INV_AddInventoryItem;};',1,false,true,"",'ismedic && ([cursorTarget] call plr_isUnConscious)'];

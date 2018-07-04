@@ -83,11 +83,6 @@ _role RemoveAction action157;
 _role RemoveAction action158;
 _role RemoveAction action159;
 _role RemoveAction action160;
-_role RemoveAction action161;
-_role RemoveAction action162;
-_role RemoveAction action163;
-_role RemoveAction action164;
-_role RemoveAction action165;
 
 _role RemoveAction memkey;
 _role RemoveAction medAct;
