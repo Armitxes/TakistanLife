@@ -52,6 +52,11 @@ transaction_bank = bank_transaction;
 			anticheat = format["%1 is using cheats. PUID: %2", name player, getPlayerUID player];
 			publicVariable "anticheat";
 		};
+
+		if ((unitRecoilCoefficient player) != 1) exitWith {
+			anticheat = format["%1 is cheating (no recoil). PUID: %2", name player, getPlayerUID player];
+			publicVariable "anticheat";
+		};
 		sleep 20;
 	};
 };
