@@ -73,6 +73,4 @@ if (_art == "opfer") then
 	};
 };
 
-if (_art == "busted") then {
-	server globalchat format["%1 was caught robbing the bank!", _safe];
-};
+if (_art == "busted") then { server globalchat format["%1 was caught robbing the bank!", _safe]; };
