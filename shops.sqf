@@ -469,7 +469,6 @@ _unnco =
 	"US_Backpack_EP1",
 	"M16A4",
 	"BAF_L85A2_UGL_Holo",
-	"SCAR_L_STD_Mk4CQT",
 	"30Rnd_556x45_Stanag",
 	"1Rnd_Smoke_M203",
 	"M113_UN_EP1",
