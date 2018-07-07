@@ -845,7 +845,7 @@ class Mission
 					skill=0.60000002;
 					text="UN1";
 					init="removeallweapons this;";
-					description="UN Solider";
+					description="UN Soldier";
 				};
 			};
 		};
@@ -1358,7 +1358,7 @@ class Mission
 					skill=0.60000002;
 					text="UN2";
 					init="removeallweapons this;";
-					description="UN Solider";
+					description="UN Soldier";
 				};
 			};
 		};
@@ -1473,7 +1473,7 @@ class Mission
 					skill=0.60000002;
 					text="UN4";
 					init="removeallweapons this;";
-					description="UN Solider";
+					description="UN Soldier";
 				};
 			};
 		};
