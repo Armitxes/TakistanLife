@@ -6,10 +6,10 @@ while{true} do {
  
 waituntil
 {
-	((nearestObject [getpos player, "SmokeShell"]) distance player < 11);
+	((nearestObject [getpos player, "G_40mm_Smoke"]) distance player < 14);
 };
 
-	titleCut ["*** TEAR GAS ***", "BLACK FADED", 3];
-	sleep 3;
+	titleCut ["*** TEAR GAS ***", "BLACK FADED", 1];
+	sleep 1;
 };
 };
