@@ -41047,7 +41047,7 @@ class Mission
 		{
 			position[]={9931.499,129.98312,11349.759};
 			name="gangmarker2";
-			text="Gang Area 2 [Herion - LSD]";
+			text="Gang Area 2 [Heroin - LSD]";
 			type="mil_warning";
 			colorName="ColorOrange";
 		};
