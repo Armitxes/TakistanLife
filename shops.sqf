@@ -217,7 +217,7 @@ _cv = ["Old_bike_TK_INS_EP1","MMT_USMC","M1030_US_DES_EP1","ATV_US_EP1","VolhaLi
 //Cop Air Shop
 _ca = ["MH6J_EP1","AH6X_EP1_COP"];
 //SCO Vehicle Shop
-_sv = ["SUV_SCO","HMMWV_DES_EP1","HMMWV_M1151_M2_DES_EP1","M2A3_EP1","BAF_Jackal2_L2A1_D"];
+_sv = ["SUV_SCO","SUV_PMC_BAF","HMMWV_DES_EP1","HMMWV_M1151_M2_DES_EP1","M2A3_EP1","BAF_Jackal2_L2A1_D"];
 //SCO Air Shop
 _sa = ["MH6J_EP1","UH60M_EP1"];
 // UN vehicles
@@ -358,8 +358,9 @@ _copshop_SCO =
 	"M249_EP1",
 	"BAF_L110A1_Aim",
     "200Rnd_556x45_M249",
-	"M4A1_AIM",
+	"M4A3_CCO_EP1",
 	"m16a4_acg",
+	"M4A1",
 	"100Rnd_556x45_BetaCMag",
 	"M4A1_HWS_GL_SD_CAMO",
 	"30Rnd_556x45_StanagSD",
@@ -395,10 +396,7 @@ _copfo=
 	"US_Backpack_EP1",
 	"G36C",
 	"G36A_camo",
-	"G36K_camo",
 	"30Rnd_556x45_G36",
-	"G36_C_SD_eotech",
-	"30Rnd_556x45_G36SD",
 	"M4A1_HWS_GL",
 	"30Rnd_556x45_Stanag",
 	"Mk13_EP1",
@@ -449,7 +447,7 @@ _unms        =
 [
 	"US_Backpack_EP1",
 	"30Rnd_556x45_Stanag",
-	"SCAR_H_CQC_CCO",
+	"BAF_L85A2_RIS_ACOG",
 	"M110_NVG_EP1",
 	"20Rnd_762x51_B_SCAR",
 	"M24_des_EP1",
@@ -470,7 +468,7 @@ _unnco =
 [
 	"US_Backpack_EP1",
 	"M16A4",
-	"SCAR_L_CQC_EGLM_Holo",
+	"BAF_L85A2_UGL_Holo",
 	"SCAR_L_STD_Mk4CQT",
 	"30Rnd_556x45_Stanag",
 	"1Rnd_Smoke_M203",
@@ -633,15 +631,12 @@ _pmcshop = [
 "Pmcuni8",
 "glock17_EP1_PMC",
 "Rnd_9x19_glock17",
+"MG36",
 "M8_compact_PMC",
-"m8_carbine_PMC",
-"m8_sharpshooter",
-"M4A3_CCO_EP1",
+"M4A1_AIM_CAMO",
 "30Rnd_556x45_Stanag",
-"100Rnd_556x45_BetaCMag",
-"Sa58V_CCO_EP1_PMC",
-"Sa58V_RCO_EP1_PMC",
-"30Rnd_762x39_SA58",
+"M24_des_EP1",
+"5Rnd_762x51_M24",
 "Sign_Checkpoint_US_EP1",
 "roadblock",
 "bargate",
@@ -649,12 +644,13 @@ _pmcshop = [
 "SearchLight_US_EP1",
 "roadcone",
 "Land_HBarrier5",
+"supgrade",
 "Land_CamoNetVar_NATO_EP1"
 ];
 _pmccar = [
 "ATV_CZ_EP1",
 "ArmoredSUV_PMC",
-"LandRover_TK_CIV_EP1"
+"SUV_PMC_BAF"
 ];
 _pmcair = [
 	"Ka60_PMC",

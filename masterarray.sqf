@@ -28,7 +28,7 @@ INV_AlleWaffenObjekte = [
 
 //Rocket Launcherrrr!!!!!!
 ["MAAWS",["Waffe", "launcher"],["MAAWS", "MAAWS"],[20000, 10000], [3, "bomb", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
-["SMAW",["Waffe", "launcher"],["SMAW", "SMAW"],[20000, 8000], [3, "bomb", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+["SMAW",["Waffe", "launcher"],["SMAW", "SMAW"],[10000, 8000], [3, "bomb", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M32_EP1",["Waffe", "launcher"],["M32_EP1", "M32 Crowdcontrol"],[3000, 1000], [3, "bomb", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M47Launcher_EP1",["Waffe", "launcher"],["M47Launcher_EP1", "M47 Launcher"],[25000, 10000], [3, "bomb", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 
@@ -37,15 +37,15 @@ INV_AlleWaffenObjekte = [
 ["glock17_EP1",["Waffe", "pistol"],["glock17_EP1", "Glock"],[1650, 260], [1, "Pistollicense", "response_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["glock17_EP1_COP",["Waffe", "pistol"],["glock17_EP1", "Glock"],[250, 412], [1, "Pistollicense", "response_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M14_EP1",["Waffe", "rifle"],["M14_EP1", "M14"],[5000, 1000], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
-["m16a4_acg",["Waffe", "rifle"],["m16a4_acg", "M16 ACOG"],[5000, 1000], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+["m16a4_acg",["Waffe", "rifle"],["m16a4_acg", "M16 ACOG"],[7000, 1000], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["Sa58P_EP1",["Waffe", "rifle"],["Sa58P_EP1", "Sa-58P"],[19750, 1000], [2, "bomb", "response_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["Sa58V_EP1",["Waffe", "rifle"],["Sa58V_EP1", "Sa-58V"],[19750, 1000], [2, "bomb", "response_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M4A3_CCO_EP1",["Waffe", "rifle"],["M4A3_CCO_EP1", "M4A3 CCO"],[7000, 2816], [2, "PMClicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
-["M24_des_EP1",["Waffe", "rifle"],["M24_des_EP1", "M24 Desert"],[14500, 1000], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+["M24_des_EP1",["Waffe", "rifle"],["M24_des_EP1", "M24 Desert"],[25000, 1000], [2, "Riflelicense", "PMClicense"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M40A3",["Waffe", "rifle"],["M40A3", "M40A3"],[11000, 1000], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M249_EP1",["Waffe", "rifle"],["M249_EP1", "M249"],[12500, 1000], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M79_EP1",["Waffe", "rifle"],["M79_EP1", "M79 Thumper"],[6800, 1000], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
-["G36A_camo",["Waffe", "rifle"],["G36A_camo", "G36A camo"],[8000, 1000], [2, "Riflelicense", "response_training"],[], "G36A_camo" call ISSE_Cfg_Weapons_GetName,"G36A_camo" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+["G36A_camo",["Waffe", "rifle"],["G36A_camo", "G36A camo"],[18000, 1000], [2, "Riflelicense", "response_training"],[], "G36A_camo" call ISSE_Cfg_Weapons_GetName,"G36A_camo" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["G36C_camo",["Waffe", "rifle"],["G36C_camo", "G36C camo"],[8000, 1000], [2, "Riflelicense", "response_training"],[], "G36C_camo" call ISSE_Cfg_Weapons_GetName,"G36C_camo" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["G36_C_SD_camo",["Waffe", "rifle"],["G36_C_SD_camo", "G36C SD Camo"],[44500, 1000], [2, "", "response_training"],[], "G36_C_SD_camo" call ISSE_Cfg_Weapons_GetName,"G36_C_SD_camo" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["G36K_camo",["Waffe", "rifle"],["G36K_camo", "G36K camo"],[8000, 1000], [2, "Riflelicense", "response_training"],[], "G36K_camo" call ISSE_Cfg_Weapons_GetName,"G36K_camo" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
@@ -59,25 +59,27 @@ INV_AlleWaffenObjekte = [
 ["M4A1_HWS_GL_SD_CAMO",["Waffe", "rifle"],["M4A1_HWS_GL_SD_CAMO", "M4A1 SD HOLO with Tear Gas Launcher"],[8000, 1000], [2, "", "SCO_training"],[], "M4A1_HWS_GL_SD_CAMO" call ISSE_Cfg_Weapons_GetName,"M4A1_HWS_GL_SD_CAMO" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M8_HOLO_SD",["Waffe", "rifle"],["M8_HOLO_SD", "M8 HOLO SD"],[43500, 1000], [2, "", "response_training"],[], "M8_HOLO_SD" call ISSE_Cfg_Weapons_GetName,"M8_HOLO_SD" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 //PMC Weapons
-["glock17_EP1_PMC",["Waffe", "pistol"],["glock17_EP1", "Glock"],[4900, 412], [1, "PMClicense", "response_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
-["M8_compact_PMC",["Waffe", "rifle"],["M8_compact", "XM8 Compact"],[8000, 1875], [2, "PMClicense", "response_training"],[], "M8_compact" call ISSE_Cfg_Weapons_GetName, "M8_compact" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 10],["plastik", 5],["kupfer", 5]]],
+["glock17_EP1_PMC",["Waffe", "pistol"],["glock17_EP1", "Glock"],[250, 412], [1, "PMClicense", "response_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+["M8_compact_PMC",["Waffe", "rifle"],["M8_compact", "XM8 Compact"],[5000, 1875], [2, "PMClicense", "response_training"],[], "M8_compact" call ISSE_Cfg_Weapons_GetName, "M8_compact" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 10],["plastik", 5],["kupfer", 5]]],
 ["m8_carbine_PMC",["Waffe", "rifle"],["m8_carbine", "M8 Carbine"],[9500, 1200], [2, "PMClicense", "SCO_training"],[], "m8_carbine" call ISSE_Cfg_Weapons_GetName,"m8_carbine" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["UZI_EP1_PMC",["Waffe", "pistol"],["UZI_EP1", "Uzi"],[900, 132], [1, "PMClicense", "response_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["m8_sharpshooter",["Waffe", "rifle"],["m8_sharpshooter", "M8 Sharpshooter"],[11000, 1200], [2, "PMClicense", "SCO_training"],[], "m8_sharpshooter" call ISSE_Cfg_Weapons_GetName,"m8_sharpshooter" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["Sa58V_CCO_EP1_PMC",["Waffe", "rifle"],["Sa58V_CCO_EP1", "Sa58V CCO"],[9000, 1000], [2, "PMClicense", ""],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["Sa58V_RCO_EP1_PMC",["Waffe", "rifle"],["Sa58V_RCO_EP1", "Sa-58V RCO"],[10000, 1000], [2, "PMClicense", ""],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+["M4A1_AIM_CAMO",["Waffe", "rifle"],["M4A1_AIM_CAMO", "M4A1 CCO CAMO"],[12000, 1000], [2, "PMClicense", ""],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 
-["BAF_L85A2_RIS_ACOG",["Waffe", "rifle"],["BAF_L85A2_RIS_ACOG", "L85A2 acog"],[10000, 1201], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+["BAF_L85A2_RIS_ACOG",["Waffe", "rifle"],["BAF_L85A2_RIS_ACOG", "L85A2 ACOG"],[10000, 1201], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["BAF_L110A1_Aim",["Waffe", "rifle"],["BAF_L110A1_Aim", "L110A1"],[12000, 2600], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["BAF_L7A2_GPMG",["Waffe", "rifle"],["BAF_L7A2_GPMG", "L7A2"],[11000, 2200], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["BAF_LRR_scoped",["Waffe", "rifle"],["BAF_LRR_scoped", "LRR Scoped"],[22000, 1000], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M16A2",["Waffe", "rifle"],["M16A2", "M16A2"],[6500, 3000], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M16A4",["Waffe", "rifle"],["M16A4", "M16A4"],[7000, 3000], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
-["M4A3_RCO_GL_EP1",["Waffe", "rifle"],["M4A3_RCO_GL_EP1", "M4A3GL AGOC"],[10000, 7000], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+["M4A3_RCO_GL_EP1",["Waffe", "rifle"],["M4A3_RCO_GL_EP1", "M4A3GL RCO"],[10000, 7000], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["BAF_L85A2_RIS_SUSAT",["Waffe", "rifle"],["BAF_L85A2_RIS_SUSAT", "L85A2 SUSAT"],[11000, 7000], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["BAF_AS50_scoped",["Waffe", "rifle"],["BAF_AS50_scoped", "AS50 Scoped"],[24000, 1000], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["BAF_L86A2_ACOG",["Waffe", "rifle"],["BAF_L86A2_ACOG", "L86A2 LSW"],[10000, 1201], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["BAF_L85A2_RIS_Holo",["Waffe", "rifle"],["BAF_L85A2_RIS_Holo", "L85A2 Holo"],[8500, 1201], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+["BAF_L85A2_UGL_Holo",["Waffe", "rifle"],["BAF_L85A2_UGL_Holo", "L85A2 Holo GL"],[8500, 1201], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 
 ["SCAR_H_CQC_CCO",["Waffe", "rifle"],["SCAR_H_CQC_CCO", "Mk17 Aimpoint"],[8000, 4000], [2, "Riflelicense", "SCO_training"],[], "SCAR_H_CQC_CCO" call ISSE_Cfg_Weapons_GetName,"SCAR_H_CQC_CCO" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["SCAR_H_STD_EGLM_Spect",["Waffe", "rifle"],["SCAR_H_STD_EGLM_Spect", "Mk17 Scope GL"],[19000, 12000], [2, "Riflelicense", "SCO_training"],[], "SCAR_H_STD_EGLM_Spect" call ISSE_Cfg_Weapons_GetName,"SCAR_H_STD_EGLM_Spect" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
@@ -89,7 +91,7 @@ INV_AlleWaffenObjekte = [
 ["SCAR_L_CQC_EGLM_Holo",["Waffe", "rifle"],["SCAR_L_CQC_EGLM_Holo", "Mk16 CQC GL Holo"],[9000, 7500], [2, "Riflelicense", "response_training"],[], "SCAR_L_CQC_EGLM_Holo" call ISSE_Cfg_Weapons_GetName,"SCAR_L_CQC_EGLM_Holo" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["SCAR_L_CQC_EGLM_RCO",["Waffe", "rifle"],["SCAR_L_CQC_EGLM_RCO", "Mk16 CQC GL RCO"],[11000, 7500], [2, "Riflelicense", "response_training"],[], "SCAR_L_CQC_EGLM_Holo" call ISSE_Cfg_Weapons_GetName,"SCAR_L_CQC_EGLM_Holo" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 
-["Mk13_EP1",["Waffe", "rifle"],["Mk13_EP1", "Mk13 Tear Gas Launcher"],[8000, 4000], [2, "Riflelicense", "SCO_training"],[], "SCAR_H_CQC_CCO" call ISSE_Cfg_Weapons_GetName,"SCAR_H_CQC_CCO" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+["Mk13_EP1",["Waffe", "rifle"],["Mk13_EP1", "Mk13 Tear Gas Launcher"],[500, 4000], [2, "Riflelicense", "response_training"],[], "SCAR_H_CQC_CCO" call ISSE_Cfg_Weapons_GetName,"SCAR_H_CQC_CCO" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 
 ["Binocular", ["Waffe", "Equipment"],["Binocular", "Binocular"], [5, 2], [1, "", ""], [], "Binocular" call ISSE_Cfg_Weapons_GetName, "Binocular" call ISSE_Cfg_Weapons_GetDesc, [["plastik", 1],["glas", 1]]],
 ["NVGoggles",["Waffe", "Equipment"],["NVGoggles", "NVGoggles"], [80, 35], [2.5, "", ""],[], "NVGoggles" call ISSE_Cfg_Weapons_GetName,"NVGoggles" call ISSE_Cfg_Weapons_GetDesc,[["plastik", 1],["glas", 1],["ebauteile", 1]]],
@@ -136,7 +138,7 @@ INV_AlleWaffenObjekte = [
 
 ["RPK_74", ["Waffe", "mg"],["RPK_74", "RPK-74"], [30000, 13000], [2, "", "response_training"], [], "M240" call ISSE_Cfg_Weapons_GetName, "M240" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["plastik", 10],["kupfer", 15]]],
 
-["MG36", ["Waffe", "mg"],["MG36", "MG36"], [13000, 7500], [2, "terrorist", "SCO_training"], [], "M249" call ISSE_Cfg_Weapons_GetName, "M249" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["plastik", 10],["kupfer", 15]]],
+["MG36", ["Waffe", "mg"],["MG36", "MG36"], [17000, 7500], [2, "PMClicense", "SCO_training"], [], "M249" call ISSE_Cfg_Weapons_GetName, "M249" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["plastik", 10],["kupfer", 15]]],
 
 ["PK",["Waffe", "mg"], ["pk", "PKM"], [25450, 7500], [2, "bomb", ""],[], "PK" call ISSE_Cfg_Weapons_GetName, "PK" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["holz", 30],["kupfer", 15]]],
 
@@ -203,7 +205,7 @@ INV_AlleMagazinObjekte = [
 ["6Rnd_Smoke_M203",["Magazin", "rifle"],["6Rnd_Smoke_M203", "6Rnd M32 Tear Gas"],[120, 120], [1, ""], [], "1Rnd_Smoke_M203" call ISSE_Cfg_MagazineInfo, "1Rnd_Smoke_M203" call ISSE_Cfg_MagazineInfo, [["kupfer", 1],["schwarzpulver", 1]] ],
 ["Rnd_9x19_M9SD",["Magazin", "pistol"],["15Rnd_9x19_M9SD", "15rnd M9 Stun Rounds"],[28, 11], [1, "","patrol_training"], [], "15Rnd_9x19_M9SD" call ISSE_Cfg_MagazineInfo, "15Rnd_9x19_M9SD" call ISSE_Cfg_MagazineInfo, [["kupfer", 1],["schwarzpulver", 1]] ],
 ["Rnd_9x19_M9",["Magazin", "pistol"],["15Rnd_9x19_M9", "15Rnd 9mm M9 FMJ"],[54, 22], [1, ""], [], "15Rnd_9x19_M9" call ISSE_Cfg_MagazineInfo, "15Rnd_9x19_M9" call ISSE_Cfg_MagazineInfo, [["kupfer", 1],["schwarzpulver", 1]] ],
-["100Rnd_556x45_BetaCMag",["Magazin", "rifle"],["100Rnd_556x45_BetaCMag", "100rnd BetaCMag"],[120, 120], [1, ""], [], "100Rnd_556x45_BetaCMag" call ISSE_Cfg_MagazineInfo, "100Rnd_556x45_BetaCMag" call ISSE_Cfg_MagazineInfo, [["kupfer", 1],["schwarzpulver", 1]] ],
+["100Rnd_556x45_BetaCMag",["Magazin", "rifle"],["100Rnd_556x45_BetaCMag", "100rnd BetaCMag"],[120, 120], [1, "","SCO_training"], [], "100Rnd_556x45_BetaCMag" call ISSE_Cfg_MagazineInfo, "100Rnd_556x45_BetaCMag" call ISSE_Cfg_MagazineInfo, [["kupfer", 1],["schwarzpulver", 1]] ],
 ["5Rnd_127x99_as50",["Magazin", "rifle"],["5Rnd_127x99_as50", "5Rnd LRR Scoped ammo"],[150, 150], [1, ""], [], "5Rnd_127x99_as50" call ISSE_Cfg_MagazineInfo, "5Rnd_127x99_as50" call ISSE_Cfg_MagazineInfo, [["kupfer", 1],["schwarzpulver", 1]] ],
 //South Goverment Weapons
 ["AK_107_Kobra",["Waffe", "rifle"], ["AK_107_Kobra", "AK-107 Kobra"], [18750, 700], [2, "southgov", ""], [], "AK_107_Kobra" call ISSE_Cfg_Weapons_GetName, "AK_107_Kobra" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 25],["plastik", 5],["holz", 10]]],
