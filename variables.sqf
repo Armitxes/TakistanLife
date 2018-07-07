@@ -66,6 +66,7 @@ planting		     = false;
 drugstockinc		 = 900;
 druguserate		   = 120;
 gangcap  = false;
+blockSiren = -20;
 ismedic = false; ispmc = false; isjudge = false; islawyer = false;
 paybonus = 0;
 //========robbing variables===========
