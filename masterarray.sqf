@@ -41,7 +41,7 @@ INV_AlleWaffenObjekte = [
 ["Sa58P_EP1",["Waffe", "rifle"],["Sa58P_EP1", "Sa-58P"],[19750, 1000], [2, "bomb", "response_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["Sa58V_EP1",["Waffe", "rifle"],["Sa58V_EP1", "Sa-58V"],[19750, 1000], [2, "bomb", "response_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M4A3_CCO_EP1",["Waffe", "rifle"],["M4A3_CCO_EP1", "M4A3 CCO"],[7000, 2816], [2, "PMClicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
-["M24_des_EP1",["Waffe", "rifle"],["M24_des_EP1", "M24 Desert"],[25000, 1000], [2, "Riflelicense", "PMClicense"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+["M24_des_EP1",["Waffe", "rifle"],["M24_des_EP1", "M24 Desert"],[20000, 1000], [2, "Riflelicense", "PMClicense"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M40A3",["Waffe", "rifle"],["M40A3", "M40A3"],[11000, 1000], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M249_EP1",["Waffe", "rifle"],["M249_EP1", "M249"],[12500, 1000], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["M79_EP1",["Waffe", "rifle"],["M79_EP1", "M79 Thumper"],[6800, 1000], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
@@ -60,13 +60,13 @@ INV_AlleWaffenObjekte = [
 ["M8_HOLO_SD",["Waffe", "rifle"],["M8_HOLO_SD", "M8 HOLO SD"],[43500, 1000], [2, "", "response_training"],[], "M8_HOLO_SD" call ISSE_Cfg_Weapons_GetName,"M8_HOLO_SD" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 //PMC Weapons
 ["glock17_EP1_PMC",["Waffe", "pistol"],["glock17_EP1", "Glock"],[250, 412], [1, "PMClicense", "response_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
-["M8_compact_PMC",["Waffe", "rifle"],["M8_compact", "XM8 Compact"],[5000, 1875], [2, "PMClicense", "response_training"],[], "M8_compact" call ISSE_Cfg_Weapons_GetName, "M8_compact" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 10],["plastik", 5],["kupfer", 5]]],
+["M8_compact_PMC",["Waffe", "rifle"],["M8_compact", "XM8 Compact"],[4000, 1875], [2, "PMClicense", "response_training"],[], "M8_compact" call ISSE_Cfg_Weapons_GetName, "M8_compact" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 10],["plastik", 5],["kupfer", 5]]],
 ["m8_carbine_PMC",["Waffe", "rifle"],["m8_carbine", "M8 Carbine"],[9500, 1200], [2, "PMClicense", "SCO_training"],[], "m8_carbine" call ISSE_Cfg_Weapons_GetName,"m8_carbine" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["UZI_EP1_PMC",["Waffe", "pistol"],["UZI_EP1", "Uzi"],[900, 132], [1, "PMClicense", "response_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["m8_sharpshooter",["Waffe", "rifle"],["m8_sharpshooter", "M8 Sharpshooter"],[11000, 1200], [2, "PMClicense", "SCO_training"],[], "m8_sharpshooter" call ISSE_Cfg_Weapons_GetName,"m8_sharpshooter" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["Sa58V_CCO_EP1_PMC",["Waffe", "rifle"],["Sa58V_CCO_EP1", "Sa58V CCO"],[9000, 1000], [2, "PMClicense", ""],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["Sa58V_RCO_EP1_PMC",["Waffe", "rifle"],["Sa58V_RCO_EP1", "Sa-58V RCO"],[10000, 1000], [2, "PMClicense", ""],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
-["M4A1_AIM_CAMO",["Waffe", "rifle"],["M4A1_AIM_CAMO", "M4A1 CCO CAMO"],[12000, 1000], [2, "PMClicense", ""],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
+["M4A1_AIM_CAMO",["Waffe", "rifle"],["M4A1_AIM_CAMO", "M4A1 CCO CAMO"],[6000, 1000], [2, "PMClicense", ""],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 
 ["BAF_L85A2_RIS_ACOG",["Waffe", "rifle"],["BAF_L85A2_RIS_ACOG", "L85A2 ACOG"],[10000, 1201], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
 ["BAF_L110A1_Aim",["Waffe", "rifle"],["BAF_L110A1_Aim", "L110A1"],[12000, 2600], [2, "Riflelicense", "SCO_training"],[], "Makarov" call ISSE_Cfg_Weapons_GetName,"Makarov" call ISSE_Cfg_Weapons_GetDesc,[["stahl", 5], ["kupfer", 1],["plastik", 1]] ],
@@ -138,7 +138,7 @@ INV_AlleWaffenObjekte = [
 
 ["RPK_74", ["Waffe", "mg"],["RPK_74", "RPK-74"], [30000, 13000], [2, "", "response_training"], [], "M240" call ISSE_Cfg_Weapons_GetName, "M240" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["plastik", 10],["kupfer", 15]]],
 
-["MG36", ["Waffe", "mg"],["MG36", "MG36"], [17000, 7500], [2, "PMClicense", "SCO_training"], [], "M249" call ISSE_Cfg_Weapons_GetName, "M249" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["plastik", 10],["kupfer", 15]]],
+["MG36", ["Waffe", "mg"],["MG36", "MG36"], [10000, 7500], [2, "PMClicense", "SCO_training"], [], "M249" call ISSE_Cfg_Weapons_GetName, "M249" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["plastik", 10],["kupfer", 15]]],
 
 ["PK",["Waffe", "mg"], ["pk", "PKM"], [25450, 7500], [2, "bomb", ""],[], "PK" call ISSE_Cfg_Weapons_GetName, "PK" call ISSE_Cfg_Weapons_GetDesc, [["stahl", 60],["holz", 30],["kupfer", 15]]],
 

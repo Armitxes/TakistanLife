@@ -130,3 +130,5 @@ if(!isDedicated) then {
 	_bounty = (PLAYERDATA select 7);
 	if(isciv and _bounty > 0) then { ["addWarrant",player,"Warrant for Arrest",_bounty] execVM "warrant.sqf"; };
 };
+
+[] execVM "corza\teargas.sqf";
