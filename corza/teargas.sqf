@@ -8,8 +8,10 @@ waituntil
 {
 	((nearestObject [getpos player, "G_40mm_Smoke"]) distance player < 14);
 };
-
-	titleCut ["*** TEAR GAS ***", "BLACK FADED", 1];
+	
+	(vehicle player) switchCamera "INTERNAL";
+	addcamshake [100, 1, 100];
+	titleCut ["*** TEAR GAS ***", "PLAIN", 1];
 	sleep 1;
 };
 };
