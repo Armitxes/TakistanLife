@@ -451,6 +451,7 @@ _unms        =
 	"US_Backpack_EP1",
 	"30Rnd_556x45_Stanag",
 	"M110_NVG_EP1",
+	"SCAR_H_CQC_CCO",
 	"20Rnd_762x51_B_SCAR",
 	"M24_des_EP1",
 	"5Rnd_762x51_M24",
