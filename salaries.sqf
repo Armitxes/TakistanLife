@@ -8,13 +8,18 @@ while {iscop} do {
 	if (!(convoywinner == "Cops and UN") && !(convoywinner == "Neither")) then { _income = _income - 150; };
 
 	if (ischief) then { _income = _income + chiefExtraPay; };
-	if((vehicle player) != player && iscop && !siren) then {
+
+	_vcl = vehicle player;
+	if(_vcl != player && iscop) then {
+		hasSiren = _vcl getVariable "siren";
+
+		if (isNil "hasSiren") then { hasSiren = false; };
 		_district = (player getVariable "pubPlrData") select 3;
 		_disName = districts select _district;
-		if(_district > 0 && _district < 5) then {
+		if(_district > 0 && _district < 5 && !hasSiren) then {
 			if(!([player,_disName] call fnc_isInMarker)) then {
 				_income = _income - 50;
-				server globalChat format["You are not in the %1 district. You received $150 less payment.",_disName];
+				server globalChat format["You are not in the %1 district. You received $50 less payment.",_disName];
 			};
 		};
 	};
