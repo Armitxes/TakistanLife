@@ -68,6 +68,8 @@ STRD_description_gildegruenden_hinweis," ""Note: The Name MUST NOT contain quote
 STRD_description_gildeverwalten_sperren_submit," ""Update!""",
 STRD_description_gildeverwalten_sperren_header," ""Join allowed?""",
 STRS_addaction_removesperre,Remove Roadblock/Spikestrip,
+STRS_addaction_sirene,Siren On/Off,
+STRS_addaction_lightbar,Lights On/Off,
 STRS_addaction_lock,Lock/Unlock,
 STRS_addaction_crimelog,Crime Log,
 STRS_addaction_trunk,Trunk,

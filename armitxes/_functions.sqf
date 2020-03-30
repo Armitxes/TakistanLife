@@ -1,10 +1,11 @@
 execString = { _code = _this select 0; if(_code != "") then { call compile _code; }; };
 msg_pd = { titleText [_this select 0, "plain down"]; };
 
-ARM_fnc_countDown = {
-	_c = _this select 0;
-	for [{_x=0},{_x<=_c},{_x=_x+1}] do { sleep 1; };
-	true
+setHeightASL = {
+	private ["_obj","_pos","_y"];
+	_obj = _this select 0; _y = _this select 1;
+	_pos = getPosASL _obj;
+	_obj setPosASL [_pos select 0, _pos select 1, _y];
 };
 
 if(!isDedicated) then {
@@ -17,12 +18,6 @@ if(!isDedicated) then {
 		_obj = _this select 0; _y = _this select 1; _sim = _this select 2;
 		_pos = getPosATL _obj;
 		_obj setPosATL [_pos select 0, _pos select 1, _y];
-	};
-	setHeightASL = {
-		private ["_obj","_pos","_y"];
-		_obj = _this select 0; _y = _this select 1;
-		_pos = getPosASL _obj;
-		_obj setPosASL [_pos select 0, _pos select 1, _y];
 	};
 
 	fnc_ClearWarrantsArray = {
