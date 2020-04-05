@@ -173,8 +173,8 @@ switch (_art) do {
 	} else { lbAdd [1,"There is no south leader"]; };
 	if (not(chiefNumber == -1)) then
 	{
-	lbAdd [1,format["Police Constable: %1",name (playerarray select chiefNumber)]];
-	} else { lbAdd [1,"There is no elected Police Constable"]; };
+	lbAdd [1,format["Chief Constable: %1",name (playerarray select chiefNumber)]];
+	} else { lbAdd [1,"There is no elected Chief Constable"]; };
 
 	lbAdd [1, format ["Next elections: %1 minutes",round((lastElection+35)-(time/60))]];
 
