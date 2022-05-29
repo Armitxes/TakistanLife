@@ -10,7 +10,7 @@ if (_art == "save") exitWith {
   } forEach INV_LizenzOwner;
 
   submitSave = format [
-    '%1,%2,"%3",%4,"%5","%6"',
+    '%1,%2,%3,%4,%5,%6',
     (PLAYERDATA select 0),
     (PLAYERDATA select 1),
     _lics,
